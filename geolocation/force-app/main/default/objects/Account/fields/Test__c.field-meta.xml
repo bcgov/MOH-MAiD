@@ -4,7 +4,7 @@
     <defaultValue>false</defaultValue>
     <description>Used to capture test data</description>
     <externalId>false</externalId>
-    <inlineHelpText>Help for Test</inlineHelpText>
+    <inlineHelpText>How to use the Test field</inlineHelpText>
     <label>Test</label>
     <trackFeedHistory>false</trackFeedHistory>
     <type>Checkbox</type>
