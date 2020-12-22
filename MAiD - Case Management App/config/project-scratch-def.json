@@ -1,7 +1,7 @@
 {
-  "orgName": "Demo company",
-  "edition": "Developer",
-  "features": [],
+  "orgName": "MAiD Dev",
+  "edition": "Enterprise",
+  "features": ["PersonAccounts", "LightningServiceConsole", "ServiceCloud"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
