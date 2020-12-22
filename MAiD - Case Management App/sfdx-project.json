@@ -1,22 +1,13 @@
 {
   "packageDirectories": [
-      {
-          "path": "dev-app-pre",
-          "default": false
-      },
-      {
-          "path": "force-app",
-          "default": true,
-          "package": "MAiD - Case Management App",
-          "versionName": "ver 0.1",
-          "versionNumber": "0.1.0.NEXT"
-      },
-      {
-          "path": "dev-app-post",
-          "default": false
-      }
+    {
+      "path": "force-app",
+      "default": true,
+      "package": "MAiD - Case Management App",
+      "versionNumber": "0.1"
+    }
   ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "50.0"
- }
+}
