@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Authority__c</fullName>
+    <externalId>false</externalId>
+    <label>Health Authority</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Vancouver Island Health Authority</fullName>
+                <default>false</default>
+                <label>Vancouver Island Health Authority</label>
+            </value>
+            <value>
+                <fullName>Fraser Health Authority</fullName>
+                <default>false</default>
+                <label>Fraser Health Authority</label>
+            </value>
+            <value>
+                <fullName>Interior Health Authority</fullName>
+                <default>false</default>
+                <label>Interior Health Authority</label>
+            </value>
+            <value>
+                <fullName>Vancouver Coastal Health Authority</fullName>
+                <default>false</default>
+                <label>Vancouver Coastal Health Authority</label>
+            </value>
+            <value>
+                <fullName>Northern Health Authority</fullName>
+                <default>false</default>
+                <label>Northern Health Authority</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
