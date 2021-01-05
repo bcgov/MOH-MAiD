@@ -13,6 +13,9 @@
     },
     "mobileSettings": {
       "enableS1EncryptedStoragePref2": false
+    },
+    "nameSettings": {
+      "enableMiddleName": true
     }
   }
 }
