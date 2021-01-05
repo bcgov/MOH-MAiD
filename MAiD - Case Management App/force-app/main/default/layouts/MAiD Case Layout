@@ -118,12 +118,12 @@
                 <field>Status</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
-                <field>Reportable_to_Health_Canada__c</field>
+                <behavior>Edit</behavior>
+                <field>Type</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>Case_Type__c</field>
+                <field>Reportable_to_Health_Canada__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
