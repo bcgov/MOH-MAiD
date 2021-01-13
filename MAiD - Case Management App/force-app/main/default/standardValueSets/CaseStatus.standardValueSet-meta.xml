@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+        <closed>true</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>MAiD Request</fullName>
+        <default>true</default>
+        <label>MAiD Request</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Request</fullName>
+        <default>false</default>
+        <label>Patient Request</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Transfer Parking lot</fullName>
+        <default>false</default>
+        <label>Transfer Parking lot</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>MAiD Assessment</fullName>
+        <default>false</default>
+        <label>MAiD Assessment</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Awaiting forms for CC review / checks</fullName>
+        <default>false</default>
+        <label>Awaiting forms for CC review / checks</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Follow-up needed for CC review/checks</fullName>
+        <default>false</default>
+        <label>Follow-up needed for CC review/checks</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Ready for CC review/checks</fullName>
+        <default>false</default>
+        <label>Ready for CC review/checks</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>CC review/checks - In progress</fullName>
+        <default>false</default>
+        <label>CC review/checks - In progress</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Ready for 2nd Review</fullName>
+        <default>false</default>
+        <label>Ready for 2nd Review</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>CC review / checks complete - pract.</fullName>
+        <default>false</default>
+        <label>CC review / checks complete - pract.</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>follow up</fullName>
+        <default>false</default>
+        <label>follow up</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>College Referral / hold</fullName>
+        <default>false</default>
+        <label>College Referral / hold</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Ready for Manager Review</fullName>
+        <default>false</default>
+        <label>Ready for Manager Review</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Data Entry to Close</fullName>
+        <default>false</default>
+        <label>Data Entry to Close</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Final checks</fullName>
+        <default>false</default>
+        <label>Final checks</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>External complaint</fullName>
+        <default>false</default>
+        <label>External complaint</label>
+        <closed>false</closed>
+    </standardValue>
+</StandardValueSet>
