@@ -60,6 +60,14 @@
     </types>
     <types>
         <members>*</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ContentAsset</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>StandardValueSet</name>
     </types>
     <types>
@@ -68,7 +76,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>ValidationRules</name>
+        <name>ValidationRule</name>
     </types>
     <version>50.0</version>
 </Package>
