@@ -78,5 +78,9 @@
         <members>*</members>
         <name>ValidationRule</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>Profile</name>
+    </types>
     <version>50.0</version>
 </Package>

@@ -225,6 +225,9 @@
     <relatedLists>
         <relatedList>RelatedActivityAttachmentList</relatedList>
     </relatedLists>
+    <relatedLists>
+        <relatedList>RelatedFileList</relatedList>
+    </relatedLists>
     <relatedObjects>WhoId</relatedObjects>
     <relatedObjects>WhatId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
