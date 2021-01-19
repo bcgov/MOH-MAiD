@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Required_Account_first_Name</fullName>
+    <fullName>Required_Account_First_Name</fullName>
     <active>true</active>
-    <errorConditionFormula>ISBLANK( PersonContact.FirstName )</errorConditionFormula>
+    <errorConditionFormula>ISBLANK(FirstName)</errorConditionFormula>
     <errorMessage>Account First Name is required</errorMessage>
 </ValidationRule>
