@@ -7,6 +7,21 @@
     </applicationVisibilities>
     <custom>true</custom>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Specialty_Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.Specialty__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Account.College_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Case.AccountId</field>
         <readable>true</readable>
@@ -302,7 +317,24 @@
         <readable>false</readable>
     </fieldPermissions>
     <layoutAssignments>
+        <layout>Account-Account Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
         <layout>Case-MAiD Case Layout</layout>
+    </layoutAssignments>
+     <layout>Event-Event Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PersonAccount-Nurse Practitioner</layout>
+        <recordType>PersonAccount.Nurse_Practitioner</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PersonAccount-Pharmacist</layout>
+        <recordType>PersonAccount.Pharmacist</recordType>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>PersonAccount-Physician</layout>
+        <recordType>PersonAccount.Physician</recordType>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
@@ -316,6 +348,31 @@
         <object>Case</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+ <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>PersonAccount.Nurse_Practitioner</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>PersonAccount.Pharmacist</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>true</default>
+        <recordType>PersonAccount.Physician</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>PersonAccount.PersonAccount</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <default>false</default>
+        <recordType>Account.Business_Account</recordType>
+        <visible>false</visible>
+    </recordTypeVisibilities>
     <tabVisibilities>
         <tab>standard-Case</tab>
         <visibility>DefaultOn</visibility>
