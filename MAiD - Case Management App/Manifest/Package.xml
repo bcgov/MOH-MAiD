@@ -8,6 +8,15 @@
 <members>LeadSource</members> 
 <name>StandardValueSet</name> 
 </types> 
+<types>
+    <members>*</members>
+    <name>WorkflowRule</name>
+</types>
+</types>
+         <members>*</members>
+        <name>WorkflowFieldUpdate</name>
+    </types>
+<types> 
     <types>
         <members>Account.recordTypeName</members>
         <name>RecordType</name>
