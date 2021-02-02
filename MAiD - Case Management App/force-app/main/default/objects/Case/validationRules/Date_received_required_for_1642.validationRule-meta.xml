@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_received_required_for_1642</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNULL(      X1642_Date_Received__c )  &amp;&amp;  
+(  
+ ISPICKVAL( X1642__c , &quot;Yes&quot;)  ||  ISPICKVAL(X1642__c , &quot;Incomplete&quot;)
+)</errorConditionFormula>
+    <errorMessage>1642 Date Received is required</errorMessage>
+</ValidationRule>
