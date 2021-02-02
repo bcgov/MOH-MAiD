@@ -43,7 +43,7 @@
                 <behavior>Edit</behavior>
                 <field>Practitioner_Name__c</field>
             </layoutItems>
-             <layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>College_ID__c</field>
             </layoutItems>
