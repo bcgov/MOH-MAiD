@@ -7,6 +7,11 @@
     </applicationVisibilities>
     <custom>true</custom>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.College_ID__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.AccountId</field>
         <readable>true</readable>
@@ -29,6 +34,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.ClosedOnCreate</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.College_ID__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -150,6 +160,11 @@
         <editable>false</editable>
         <field>Case.Practitioner_Name__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Prevent_save_on_duplicate_PHN__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
