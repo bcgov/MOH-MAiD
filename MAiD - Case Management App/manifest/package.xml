@@ -12,6 +12,14 @@
         <members>*</members>
         <name>WorkflowFieldUpdate</name>
     </types>
+    <types>
+        <members>*</members>
+        <name>Workflow</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Flow</name>
+    </types>
     <types> 
         <members>LeadSource</members> 
         <name>StandardValueSet</name> 
