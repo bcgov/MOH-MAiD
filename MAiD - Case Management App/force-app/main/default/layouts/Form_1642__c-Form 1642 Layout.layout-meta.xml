@@ -20,6 +20,10 @@
                 <field>PHN__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Patient_Name__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Patient_Date_of_Birth__c</field>
             </layoutItems>
