@@ -173,19 +173,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-<<<<<<< HEAD
-        <field>Case.ProductId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Province_or_Territory_that_issued_PHN__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-=======
->>>>>>> dev
         <field>Case.Reason</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -836,12 +823,6 @@
         <layout>Case-MAiD Case Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-<<<<<<< HEAD
-        <layout>Form_1641__c-Form 1641 Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
-        <layout>Form_1642__c-Form 1642 Layout</layout>
-=======
      <layout>Event-Event Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
@@ -855,7 +836,6 @@
     <layoutAssignments>
         <layout>PersonAccount-Physician</layout>
         <recordType>PersonAccount.Physician</recordType>
->>>>>>> dev
     </layoutAssignments>
     <layoutAssignments>
         <layout>Task-Task Layout</layout>
@@ -890,17 +870,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>PersonAccount.Nurse_Practitioner</recordType>
-<<<<<<< HEAD
-        <visible>false</visible>
-=======
         <visible>true</visible>
->>>>>>> dev
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>PersonAccount.Pharmacist</recordType>
-<<<<<<< HEAD
-=======
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
@@ -911,16 +885,11 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>PersonAccount.PersonAccount</recordType>
->>>>>>> dev
         <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
-<<<<<<< HEAD
-        <recordType>PersonAccount.Physician</recordType>
-=======
         <recordType>Account.Business_Account</recordType>
->>>>>>> dev
         <visible>false</visible>
     </recordTypeVisibilities>
     <tabVisibilities>
