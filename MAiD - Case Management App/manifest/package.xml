@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-<types> 
-<members>Account.AccountSource</members> 
-<name>CustomField</name> 
-</types> 
-<types>
-    <members>*</members>
-    <name>WorkflowRule</name>
-</types>
-</types>
-         <members>*</members>
+    <types> 
+        <members>Account.AccountSource</members> 
+        <name>CustomField</name> 
+    </types> 
+    <types>
+        <members>*</members>
+        <name>WorkflowRule</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>WorkflowFieldUpdate</name>
     </types>
-<types> 
-<members>LeadSource</members> 
-<name>StandardValueSet</name> 
-</types> 
+    <types>
+        <members>*</members>
+        <name>Workflow</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Flow</name>
+    </types>
+    <types> 
+        <members>LeadSource</members> 
+        <name>StandardValueSet</name> 
+    </types> 
     <types>
         <members>Account.recordTypeName</members>
         <name>RecordType</name>
@@ -24,16 +32,14 @@
         <members>PersonAccount.recordTypeName</members>
         <name>RecordType</name>
     </types>
-<types>
-  <members>*</members>
-  <members>Account</members>
-  <members>PersonAccounts</members>
-  <name>CustomObject</name>
-</types>
-<types>
-    <members>*</members>
-    <name>Layout</name>
-</types>
+    <types>
+        <members>*</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Layout</name>
+    </types>
     <types>
         <members>*</members>
         <name>ApexClass</name>
