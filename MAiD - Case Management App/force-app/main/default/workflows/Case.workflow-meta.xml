@@ -47,9 +47,6 @@ null))))</formula>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
-    
-  
-    
     <rules>
         <fullName>Reportable Date to end of current quarter</fullName>
         <actions>
@@ -88,7 +85,7 @@ null))))</formula>
         <active>true</active>
         <criteriaItems>
             <field>Case.Patient_MAiD_Request_Date__c</field>
-            <operation>greaterThan</operation>
+            <operation>greaterOrEqual</operation>
             <value>11/1/2018</value>
         </criteriaItems>
         <criteriaItems>
