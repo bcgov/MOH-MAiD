@@ -3,11 +3,10 @@
     <fullName>CPBC_Receiving_Pharmacist_License__c</fullName>
     <externalId>false</externalId>
     <label>CPBC Receiving Pharmacist License #</label>
-    <precision>5</precision>
+    <length>5</length>
     <required>false</required>
-    <scale>0</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
+    <type>Text</type>
     <unique>false</unique>
 </CustomField>

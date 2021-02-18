@@ -3,7 +3,7 @@
     <fullName>PHN__c</fullName>
     <externalId>false</externalId>
     <label>PHN</label>
-    <length>100</length>
+    <length>10</length>
     <required>true</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
