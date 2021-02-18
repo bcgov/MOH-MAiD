@@ -12,7 +12,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>10mg tablet</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>10mg tablet</label>
             </value>
         </valueSetDefinition>

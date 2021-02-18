@@ -12,7 +12,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>5mg/mL injection</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>5mg/mL injection</label>
             </value>
         </valueSetDefinition>

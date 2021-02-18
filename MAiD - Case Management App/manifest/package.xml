@@ -4,14 +4,6 @@
 <members>Account.AccountSource</members> 
 <name>CustomField</name> 
 </types> 
-<types>
-    <members>*</members>
-    <name>WorkflowRule</name>
-</types>
-</types>
-         <members>*</members>
-        <name>WorkflowFieldUpdate</name>
-    </types>
 <types> 
 <members>LeadSource</members> 
 <name>StandardValueSet</name> 
