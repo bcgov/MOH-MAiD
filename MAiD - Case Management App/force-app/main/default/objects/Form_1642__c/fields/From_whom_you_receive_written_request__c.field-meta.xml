@@ -12,7 +12,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>1 - Patient directly (form 1632)</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>1 - Patient directly (form 1632)</label>
             </value>
             <value>
