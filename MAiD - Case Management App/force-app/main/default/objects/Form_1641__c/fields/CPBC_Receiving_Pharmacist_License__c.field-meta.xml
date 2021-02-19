@@ -3,7 +3,11 @@
     <fullName>CPBC_Receiving_Pharmacist_License__c</fullName>
     <externalId>false</externalId>
     <label>CPBC Receiving Pharmacist License #</label>
+<<<<<<< HEAD
     <length>5</length>
+=======
+    <precision>5</precision>
+>>>>>>> 361091940bead845f13ae6402edd85b684b8c0a6
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
