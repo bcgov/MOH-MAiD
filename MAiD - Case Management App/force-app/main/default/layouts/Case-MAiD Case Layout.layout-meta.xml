@@ -17,7 +17,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
-                <field>PHN_No__c</field>
+                <field>PHN__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>

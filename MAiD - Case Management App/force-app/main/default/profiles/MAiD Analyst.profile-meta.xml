@@ -158,7 +158,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.PHN_No__c</field>
+        <field>Case.PHN__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
