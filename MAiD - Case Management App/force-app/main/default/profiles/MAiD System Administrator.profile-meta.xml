@@ -78,6 +78,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Health_Canada_Reportable_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.If_1632_Incomplete__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -204,11 +209,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Reason</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Reportable_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -918,6 +918,12 @@
     </fieldPermissions>
     <layoutAssignments>
         <layout>Case-MAiD Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CaseClose-Close Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CaseInteraction-Case Feed Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>Form_1632__c-Form 1632 Layout</layout>
