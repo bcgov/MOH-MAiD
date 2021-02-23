@@ -2,7 +2,7 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PHN_Numeric_Only</fullName>
     <active>true</active>
-    <errorConditionFormula>NOT(REGEX( PHN_No__c , &quot;[0-9]{0,10}&quot;) )</errorConditionFormula>
-    <errorDisplayField>PHN_No__c</errorDisplayField>
+    <errorConditionFormula>NOT(REGEX( PHN__c , &quot;[0-9]{0,10}&quot;) )</errorConditionFormula>
+    <errorDisplayField>PHN__c</errorDisplayField>
     <errorMessage>PHN must be numeric</errorMessage>
 </ValidationRule>

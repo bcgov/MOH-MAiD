@@ -2,7 +2,7 @@
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <fieldUpdates>
         <fullName>Reportable_Date_field_update</fullName>
-        <field>Reportable_Date__c</field>
+        <field>Health_Canada_Reportable_Date__c</field>
         <formula>IF( TODAY() &gt;= DATE(YEAR(TODAY()),1,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),3,31) , DATE(YEAR(TODAY()),3,31),
 
 IF(TODAY() &gt;= DATE(YEAR(TODAY()),4,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),6,30) , DATE(YEAR(TODAY()),6,30),
@@ -20,7 +20,7 @@ null))))</formula>
     </fieldUpdates>
     <fieldUpdates>
         <fullName>Reportable_date_blanks</fullName>
-        <field>Reportable_Date__c</field>
+        <field>Health_Canada_Reportable_Date__c</field>
         <name>Reportable date blanks</name>
         <notifyAssignee>false</notifyAssignee>
         <operation>Null</operation>
