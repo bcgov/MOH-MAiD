@@ -8,6 +8,11 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Account.College_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Account.Specialty_Other__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -15,26 +20,6 @@
         <editable>true</editable>
         <field>Account.Specialty__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.College_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.College_ID__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Specialty_Other__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Specialty__c</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -43,13 +28,8 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.ContactId</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Case.AssetId</field>
-        <readable>true</readable>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -89,6 +69,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Health_Authority__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Health_Canada_Reportable_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -138,7 +123,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.PHN_No__c</field>
+        <field>Case.PHN__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -178,12 +163,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.Reason</field>
+        <field>Case.Province_or_Territory_that_issued_PHN__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.Reportable_Date__c</field>
+        <field>Case.Reason</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -300,6 +285,56 @@
         <editable>false</editable>
         <field>Contact.Specialty__c</field>
         <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1632__c.Date_Written_Request_Received__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1632__c.Patient_Name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1632__c.Practitioner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1632__c.Proxy_Signature_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1632__c.Proxy_Signed_Date_for_Request__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1632__c.Proxy_for_Requestor_Initialed_Safeguards__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1632__c.Requestor_Signature_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1632__c.Witness_Initialed_Safeguards__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1632__c.Witness_Signature_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1632__c.Witness_Signed__c</field>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -822,13 +857,22 @@
         <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
-        <layout>Account-Account Layout</layout>
-    </layoutAssignments>
-    <layoutAssignments>
         <layout>Case-MAiD Case Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
-     <layout>Event-Event Layout</layout>
+        <layout>CaseClose-Close Case Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>CaseInteraction-Case Feed Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Form_1632__c-Form 1632 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Form_1641__c-Form 1641 Layout</layout>
+    </layoutAssignments>
+    <layoutAssignments>
+        <layout>Form_1642__c-Form 1642 Layout</layout>
     </layoutAssignments>
     <layoutAssignments>
         <layout>PersonAccount-Nurse Practitioner</layout>
@@ -853,6 +897,15 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Case</object>
         <viewAllRecords>false</viewAllRecords>
+    </objectPermissions>
+    <objectPermissions>
+        <allowCreate>true</allowCreate>
+        <allowDelete>true</allowDelete>
+        <allowEdit>true</allowEdit>
+        <allowRead>true</allowRead>
+        <modifyAllRecords>true</modifyAllRecords>
+        <object>Form_1632__c</object>
+        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
@@ -887,16 +940,6 @@
         <recordType>PersonAccount.Physician</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>PersonAccount.PersonAccount</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
-    <recordTypeVisibilities>
-        <default>false</default>
-        <recordType>Account.Business_Account</recordType>
-        <visible>false</visible>
-    </recordTypeVisibilities>
     <tabVisibilities>
         <tab>standard-Case</tab>
         <visibility>DefaultOn</visibility>
@@ -904,31 +947,11 @@
     <userLicense>Salesforce</userLicense>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ActivateContract</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ActivateOrder</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ActivitiesAccess</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>AddDirectMessageMembers</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ApexRestServices</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>ApiEnabled</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ApproveContract</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -1149,7 +1172,7 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>InboundMigrationToolsUser</name>
-    </userPermissions>S
+    </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
         <name>LightningConsoleAllowedForUser</name>
@@ -1493,22 +1516,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>UseWebLink</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ManageQuotas</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewAllForecasts</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewDataLeakageEvents</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewPlatformEvents</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
