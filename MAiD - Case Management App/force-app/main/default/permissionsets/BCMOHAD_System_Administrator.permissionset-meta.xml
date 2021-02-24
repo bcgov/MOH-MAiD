@@ -5,10 +5,6 @@
         <visible>true</visible>
     </applicationVisibilities>
     <applicationVisibilities>
-        <application>PPC__ProfileToPermSetConvertor</application>
-        <visible>true</visible>
-    </applicationVisibilities>
-    <applicationVisibilities>
         <application>standard__AllTabSet</application>
         <visible>true</visible>
     </applicationVisibilities>
@@ -72,18 +68,6 @@
         <application>standard__TrustCard</application>
         <visible>true</visible>
     </applicationVisibilities>
-    <classAccesses>
-        <apexClass>PPC__BatchForFieldPermission</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>PPC__ProfileToPermSetConvertor</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
-    <classAccesses>
-        <apexClass>PPC__ProfileToPermSetConvertorTest</apexClass>
-        <enabled>true</enabled>
-    </classAccesses>
     <fieldPermissions>
         <editable>true</editable>
         <field>Account.AccountSource</field>
@@ -3469,10 +3453,6 @@
         <object>WorkOrder</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
-    <pageAccesses>
-        <apexPage>PPC__ProfileToPermSetConvertor</apexPage>
-        <enabled>true</enabled>
-    </pageAccesses>
     <userPermissions>
         <enabled>true</enabled>
         <name>ActivitiesAccess</name>
