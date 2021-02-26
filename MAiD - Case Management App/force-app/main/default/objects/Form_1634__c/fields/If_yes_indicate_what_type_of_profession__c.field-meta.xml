@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_yes_indicate_what_type_of_profession__c</fullName>
+    <externalId>false</externalId>
+    <label>If yes, indicate what type of profession</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A - Nurse</fullName>
+                <default>false</default>
+                <label>A - Nurse</label>
+            </value>
+            <value>
+                <fullName>B - Oncologist</fullName>
+                <default>false</default>
+                <label>B - Oncologist</label>
+            </value>
+            <value>
+                <fullName>C - Palliative care specialist</fullName>
+                <default>false</default>
+                <label>C - Palliative care specialist</label>
+            </value>
+            <value>
+                <fullName>D - Primary care provide</fullName>
+                <default>false</default>
+                <label>D - Primary care provide</label>
+            </value>
+            <value>
+                <fullName>E - Phychiatrist</fullName>
+                <default>false</default>
+                <label>E - Phychiatrist</label>
+            </value>
+            <value>
+                <fullName>F - Phychologist</fullName>
+                <default>false</default>
+                <label>F - Phychologist</label>
+            </value>
+            <value>
+                <fullName>G - Social Worker</fullName>
+                <default>false</default>
+                <label>G - Social Worker</label>
+            </value>
+            <value>
+                <fullName>H - Speech pathologist</fullName>
+                <default>false</default>
+                <label>H - Speech pathologist</label>
+            </value>
+            <value>
+                <fullName>I - Other</fullName>
+                <default>false</default>
+                <label>I - Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

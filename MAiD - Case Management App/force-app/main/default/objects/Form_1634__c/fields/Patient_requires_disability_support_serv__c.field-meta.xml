@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_requires_disability_support_serv__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Patient requires disability support services?</inlineHelpText>
+    <label>Patient needs disability support service</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Yes</fullName>
+                <default>false</default>
+                <label>1 - Yes</label>
+            </value>
+            <value>
+                <fullName>2 - No</fullName>
+                <default>false</default>
+                <label>2 - No</label>
+            </value>
+            <value>
+                <fullName>3 - Do not know</fullName>
+                <default>false</default>
+                <label>3 - Do not know</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
