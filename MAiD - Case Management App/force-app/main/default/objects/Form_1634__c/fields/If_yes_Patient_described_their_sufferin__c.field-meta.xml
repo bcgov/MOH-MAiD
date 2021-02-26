@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_yes_Patient_described_their_sufferin__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If yes, Patient described their suffering. Select all that apply</inlineHelpText>
+    <label>If yes, select all that apply</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Loss of ability to engage in activities making life meaningful</fullName>
+                <default>false</default>
+                <label>Loss of ability to engage in activities making life meaningful</label>
+            </value>
+            <value>
+                <fullName>Loss of dignity</fullName>
+                <default>false</default>
+                <label>Loss of dignity</label>
+            </value>
+            <value>
+                <fullName>Isolation or loneliness</fullName>
+                <default>false</default>
+                <label>Isolation or loneliness</label>
+            </value>
+            <value>
+                <fullName>Loss of ability to perform activities of daily living</fullName>
+                <default>false</default>
+                <label>Loss of ability to perform activities of daily living</label>
+            </value>
+            <value>
+                <fullName>Loss of control of bodily functions</fullName>
+                <default>false</default>
+                <label>Loss of control of bodily functions</label>
+            </value>
+            <value>
+                <fullName>Perceived burden on family, friends or caregivers</fullName>
+                <default>false</default>
+                <label>Perceived burden on family, friends or caregivers</label>
+            </value>
+            <value>
+                <fullName>Inadequate pain control, or concern about it</fullName>
+                <default>false</default>
+                <label>Inadequate pain control, or concern about it</label>
+            </value>
+            <value>
+                <fullName>Inadequate control of other symptoms, or concern about it</fullName>
+                <default>false</default>
+                <label>Inadequate control of other symptoms, or concern about it</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
