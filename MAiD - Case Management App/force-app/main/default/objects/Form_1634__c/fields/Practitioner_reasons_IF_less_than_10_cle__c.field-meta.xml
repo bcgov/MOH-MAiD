@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Practitioner_reasons_IF_less_than_10_cle__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Where you considered a shorter period than 10 clear days appropriate in the circumstances, was it the patient’s death or loss of capacity to provide informed consent that was deemed imminent?</inlineHelpText>
+    <label>Reason IF less than 10 days:</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Patient&apos;s death</fullName>
+                <default>false</default>
+                <label>1 - Patient&apos;s death</label>
+            </value>
+            <value>
+                <fullName>2 - Patient&apos;s loss of capacity to provide informed consent</fullName>
+                <default>false</default>
+                <label>2 - Patient&apos;s loss of capacity to provide informed consent</label>
+            </value>
+            <value>
+                <fullName>3 - Both patient&apos;s death and loss of capacity</fullName>
+                <default>false</default>
+                <label>3 - Both patient&apos;s death and loss of capacity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
