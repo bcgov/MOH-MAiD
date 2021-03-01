@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assessed_the_patient_and_determined__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>I have assessed the patient in person and have determined:</inlineHelpText>
+    <label>Assessed the patient and determined</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - The patient does not have capability</fullName>
+                <default>false</default>
+                <label>1 - The patient does not have capability</label>
+            </value>
+            <value>
+                <fullName>2 - The patient has capability</fullName>
+                <default>false</default>
+                <label>2 - The patient has capability</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
