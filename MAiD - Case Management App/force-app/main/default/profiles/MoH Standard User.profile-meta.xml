@@ -82,15 +82,6 @@
         <allowEdit>false</allowEdit>
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>ApiAnomalyEventStore</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
         <object>AppAnalyticsQueryRequest</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -271,15 +262,6 @@
         <allowEdit>false</allowEdit>
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>CredentialStuffingEventStore</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
         <object>DataUseLegalBasis</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -451,15 +433,6 @@
         <allowEdit>false</allowEdit>
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>ReportAnomalyEventStore</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
         <object>Scorecard</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
@@ -479,15 +452,6 @@
         <allowRead>false</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
         <object>ScorecardMetric</object>
-        <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>false</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>false</allowEdit>
-        <allowRead>false</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>SessionHijackingEventStore</object>
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
