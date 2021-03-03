@@ -273,7 +273,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_yes_select_all_that_apply_4__c</field>
+                <field>Patient_desc_suffering_If_yes_select_all__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -299,7 +299,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_yes_select_all_that_apply_5__c</field>
+                <field>Profession_if_yes_select_all_that_apply__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

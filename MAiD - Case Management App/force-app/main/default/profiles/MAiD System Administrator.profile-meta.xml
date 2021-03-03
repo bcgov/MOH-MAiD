@@ -713,16 +713,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_yes_select_all_that_apply_4__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.If_yes_select_all_that_apply_5__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.If_yes_select_all_that_apply__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -814,6 +804,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Patient_consensented_to_assessment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Patient_desc_suffering_If_yes_select_all__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1009,6 +1004,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Prescription_indicates_medication_is_for__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Profession_if_yes_select_all_that_apply__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
