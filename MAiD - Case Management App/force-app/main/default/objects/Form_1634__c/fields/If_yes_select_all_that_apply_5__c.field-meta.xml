@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>If_yes_indicate_what_type_of_profession__c</fullName>
+    <fullName>If_yes_select_all_that_apply_5__c</fullName>
     <externalId>false</externalId>
-    <label>If yes, indicate what type of profession</label>
+    <label>If yes, select all that apply</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
-    <type>Picklist</type>
+    <type>MultiselectPicklist</type>
     <valueSet>
         <valueSetDefinition>
             <sorted>false</sorted>
@@ -31,14 +31,14 @@
                 <label>D - Primary care provide</label>
             </value>
             <value>
-                <fullName>E - Phychiatrist</fullName>
+                <fullName>E - Psychiatrist</fullName>
                 <default>false</default>
-                <label>E - Phychiatrist</label>
+                <label>E - Psychiatrist</label>
             </value>
             <value>
-                <fullName>F - Phychologist</fullName>
+                <fullName>F - Phycologist</fullName>
                 <default>false</default>
-                <label>F - Phychologist</label>
+                <label>F - Phycologist</label>
             </value>
             <value>
                 <fullName>G - Social Worker</fullName>
@@ -57,4 +57,5 @@
             </value>
         </valueSetDefinition>
     </valueSet>
+    <visibleLines>4</visibleLines>
 </CustomField>

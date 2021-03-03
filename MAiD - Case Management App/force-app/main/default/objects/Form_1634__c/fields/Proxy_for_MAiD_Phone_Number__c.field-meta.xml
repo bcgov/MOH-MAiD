@@ -3,10 +3,8 @@
     <fullName>Proxy_for_MAiD_Phone_Number__c</fullName>
     <externalId>false</externalId>
     <label>Proxy for MAiD Phone Number</label>
-    <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
-    <type>Text</type>
-    <unique>false</unique>
+    <type>Phone</type>
 </CustomField>

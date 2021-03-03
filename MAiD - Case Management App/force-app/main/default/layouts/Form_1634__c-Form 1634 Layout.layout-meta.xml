@@ -42,7 +42,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_health_consultation_for_a_reason__c</field>
+                <field>Consultation_Reason__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -126,7 +126,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_FacilitySit_specify__c</field>
+                <field>If_FacilitySite_specify_Facility_Unit__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -139,7 +139,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Safegaurds</label>
+        <label>Safeguards</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -196,7 +196,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Recommendation_to_seek_advice_on_life_in__c</field>
+                <field>Recommend_seeking_advice_on_insurance__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
@@ -273,7 +273,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_yes_Patient_described_their_sufferin__c</field>
+                <field>If_yes_select_all_that_apply_4__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -291,7 +291,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Consulted Professiona</label>
+        <label>Consulted Professional</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -299,7 +299,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_yes_indicate_what_type_of_profession__c</field>
+                <field>If_yes_select_all_that_apply_5__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -322,7 +322,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_yes_for_how_long__c</field>
+                <field>If_yes_for_how_long_1__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -349,7 +349,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_yes_for_how_long_1__c</field>
+                <field>If_yes_for_how_long__c</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -408,7 +408,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Safeguards death not reasonably forseeable:</label>
+        <label>Safeguards death not reasonably foreseeable:</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -561,7 +561,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_FacilitySite_specify_Facility_Unit__c</field>
+                <field>If_FacilitySit_specify__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -874,7 +874,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0i000000eTtE</masterLabel>
+        <masterLabel>00h1f000000ZgWM</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

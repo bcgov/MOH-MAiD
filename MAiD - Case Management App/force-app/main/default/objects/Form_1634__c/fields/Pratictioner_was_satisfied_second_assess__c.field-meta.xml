@@ -4,7 +4,7 @@
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
     <inlineHelpText>Pratictioner was satisfied second assessor was independent</inlineHelpText>
-    <label>Pratictioner satisfied second assessor</label>
+    <label>Practitioner satisfied second assessor</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
