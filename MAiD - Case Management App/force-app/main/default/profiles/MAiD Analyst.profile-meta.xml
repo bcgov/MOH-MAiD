@@ -378,6 +378,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Consultation_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Counselling_mental_health_and_other_sup__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -607,18 +612,13 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.If_the_patient_withdrew_request_what_we__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_transferred_was_it_due_to_facility_po__c</field>
+        <field>Form_1634__c.If_the_patient_withdrew_request_what_we__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_yes_Patient_described_their_sufferin__c</field>
+        <field>Form_1634__c.If_transferred_was_it_due_to_facility_po__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -648,11 +648,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_yes_indicate_what_type_of_profession__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.If_yes_select_all_that_apply_1__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -667,9 +662,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Form_1634__c.If_yes_underlying_cause_of_death__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -753,6 +748,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Patient_desc_suffering_If_yes_select_all__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Patient_eligible_for_health_services_in__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -779,11 +779,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Patient_has_serious_and_incurable_illnes__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.Patient_health_consultation_for_a_reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -953,6 +948,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Profession_if_yes_select_all_that_apply__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Proxy_Relationship_to_Patient__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1008,7 +1008,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Recommendation_to_seek_advice_on_life_in__c</field>
+        <field>Form_1634__c.Recommend_seeking_advice_on_insurance__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -3,7 +3,7 @@
     <fullName>If_Yes_is_patients_change_in_eligbilit__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <inlineHelpText>If Yes, was the patient’s change in eligbility due to the loss of capacity to make decisions with respect to their health?</inlineHelpText>
+    <inlineHelpText>If Yes, was the patient’s change in eligibility due to the loss of capacity to make decisions with respect to their health?</inlineHelpText>
     <label>If Yes, change due to loss of capacity</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
