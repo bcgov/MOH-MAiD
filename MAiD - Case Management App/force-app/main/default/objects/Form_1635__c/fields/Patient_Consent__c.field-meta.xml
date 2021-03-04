@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_Consent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>I confirm that on this/these dates, I met with the patient and informed them of the reason for this assessment, and I confirmed the patient’s consent to conduct an assessment to determine their capability to consent to medical assistance in dying</inlineHelpText>
+    <label>Patient Consent</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

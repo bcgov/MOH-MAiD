@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assessment_Interpreters_ID_Numeric_Only</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(REGEX(  Assessment_Interpreters_ID_Number__c , &quot;[0-9]{0,10}&quot;) )</errorConditionFormula>
+    <errorMessage>Assessment Interpreter&apos;s ID Number must be Numeric</errorMessage>
+</ValidationRule>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_the_patient_withdrew_request_what_we__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If the patient withdrew request, what were their reasons (select all that apply)</inlineHelpText>
+    <label>If Yes, select reasons that apply</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Palliative measures are sufficient</fullName>
+                <default>false</default>
+                <label>1 - Palliative measures are sufficient</label>
+            </value>
+            <value>
+                <fullName>2 - Family members do not support MAiD</fullName>
+                <default>false</default>
+                <label>2 - Family members do not support MAiD</label>
+            </value>
+            <value>
+                <fullName>3 - Changed their mind</fullName>
+                <default>false</default>
+                <label>3 - Changed their mind</label>
+            </value>
+            <value>
+                <fullName>4 - Other</fullName>
+                <default>false</default>
+                <label>4 - Other</label>
+            </value>
+            <value>
+                <fullName>5 - Do not know</fullName>
+                <default>false</default>
+                <label>5 - Do not know</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

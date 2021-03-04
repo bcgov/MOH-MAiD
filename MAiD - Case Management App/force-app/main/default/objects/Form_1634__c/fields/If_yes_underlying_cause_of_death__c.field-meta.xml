@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_yes_underlying_cause_of_death__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If yes, what is the underlying cause of death on the medical certificate of death?</inlineHelpText>
+    <label>If yes, underlying cause of death</label>
+    <length>255</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
