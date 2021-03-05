@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Who_did_you_receive_the_written_request__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>From whom did you receive the written request for MAiD that triggered the reporting requirement?</inlineHelpText>
+    <label>Who received written request for MAiD?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1- Patient directly</fullName>
+                <default>false</default>
+                <label>1- Patient directly</label>
+            </value>
+            <value>
+                <fullName>2 - Another practitioner</fullName>
+                <default>false</default>
+                <label>2 - Another practitioner</label>
+            </value>
+            <value>
+                <fullName>3 - Care coordination service</fullName>
+                <default>false</default>
+                <label>3 - Care coordination service</label>
+            </value>
+            <value>
+                <fullName>4 - Patient directly - other, specify</fullName>
+                <default>false</default>
+                <label>4 - Patient directly - other, specify</label>
+            </value>
+            <value>
+                <fullName>5 - Another third party specify</fullName>
+                <default>false</default>
+                <label>5 - Another third party specify</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
