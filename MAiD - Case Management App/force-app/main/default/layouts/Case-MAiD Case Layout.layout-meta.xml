@@ -250,6 +250,10 @@
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <relatedList>Form_1633__c.Case__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>NAME</fields>
         <relatedList>Form_1634__c.Case__c</relatedList>
     </relatedLists>
     <relatedLists>
