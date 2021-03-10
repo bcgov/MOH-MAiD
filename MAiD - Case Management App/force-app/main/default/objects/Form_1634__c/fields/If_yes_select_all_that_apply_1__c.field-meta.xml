@@ -11,7 +11,7 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>A - Cancer - lung and broncos</fullName>
+                <fullName>A - Cancer - lung and bronchus</fullName>
                 <default>false</default>
                 <label>A - Cancer - lung and bronchus</label>
             </value>
