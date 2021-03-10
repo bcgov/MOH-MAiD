@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Time_for_Dose_of_anti_emetic_haloperidol__c</fullName>
+    <externalId>false</externalId>
+    <label>Time for Dose of anti-emetic haloperidol</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Time</type>
+</CustomField>
