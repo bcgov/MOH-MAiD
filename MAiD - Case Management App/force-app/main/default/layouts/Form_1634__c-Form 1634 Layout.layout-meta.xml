@@ -100,11 +100,11 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Assessment_conducted__c</field>
+                <field>Assessment_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Assessment_Date__c</field>
+                <field>Assessment_conducted__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -622,12 +622,12 @@
                 <behavior>Edit</behavior>
                 <field>IF_Other_Consultant_Name__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>I_ensured_that_there_were_at_least_90_cl__c</field>
+                <field>Ensured_there_were_at_least_90_days__c</field>
             </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>The_patient_was_at_risk_of_losing_capaci__c</field>
@@ -874,7 +874,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1f000000ZgWM</masterLabel>
+        <masterLabel>00h1f000000Zsg4</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

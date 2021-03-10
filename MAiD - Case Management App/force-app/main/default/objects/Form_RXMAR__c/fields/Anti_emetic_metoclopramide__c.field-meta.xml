@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Planned_location_and_time_for_MAiD__c</fullName>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <fullName>Anti_emetic_metoclopramide__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Planned location and time for MAiD</label>
+    <label>Anti-emetic metoclopramide</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

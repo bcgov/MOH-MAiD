@@ -11,9 +11,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>A - Cancer - lung and broncus</fullName>
+                <fullName>A - Cancer - lung and broncos</fullName>
                 <default>false</default>
-                <label>A - Cancer - lung and broncus</label>
+                <label>A - Cancer - lung and bronchus</label>
             </value>
             <value>
                 <fullName>B - Cancer - breast</fullName>
@@ -51,9 +51,9 @@
                 <label>H - Cancer - other</label>
             </value>
             <value>
-                <fullName>I - Neurological condition - multiple scerosis</fullName>
+                <fullName>I - Neurological condition - multiple sclerosis</fullName>
                 <default>false</default>
-                <label>I - Neurological condition - multiple scerosis</label>
+                <label>I - Neurological condition - multiple sclerosis</label>
             </value>
             <value>
                 <fullName>J - Neurological condition - amyotrophic lateral sclerosis</fullName>
@@ -81,9 +81,9 @@
                 <label>N - Other organ failure</label>
             </value>
             <value>
-                <fullName>O - Multiple co-morbities</fullName>
+                <fullName>O - Multiple co-morbidities</fullName>
                 <default>false</default>
-                <label>O - Multiple co-morbities</label>
+                <label>Multiple co-morbidities</label>
             </value>
             <value>
                 <fullName>P - Other</fullName>
