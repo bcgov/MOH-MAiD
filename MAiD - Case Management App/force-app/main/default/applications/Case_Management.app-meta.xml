@@ -14,7 +14,7 @@
     <navType>Standard</navType>
     <tabs>standard-Home</tabs>
     <tabs>standard-Case</tabs>
-    <tabs>standard-Activity</tabs>
+    <tabs>standard-Task</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-Chatter</tabs>
     <uiType>Lightning</uiType>
