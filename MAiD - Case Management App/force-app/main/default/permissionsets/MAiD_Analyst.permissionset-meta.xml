@@ -2566,6 +2566,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_RXMAR__c.Lidocaine_sodium_chloride_flush__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_RXMAR__c.Medical_Information__c</field>
         <readable>true</readable>
     </fieldPermissions>
