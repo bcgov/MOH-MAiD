@@ -16,6 +16,8 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Task</tabs>
     <tabs>standard-Account</tabs>
+    <tabs>standard-Reports</tabs>
+    <tabs>standard-Dashboards</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Case_Management_UtilityBar</utilityBar>
 </CustomApplication>
