@@ -633,11 +633,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.I_ensured_that_there_were_at_least_90_cl__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.If_Cancer_Other_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>

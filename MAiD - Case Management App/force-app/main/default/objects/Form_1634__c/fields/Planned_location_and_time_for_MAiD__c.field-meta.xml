@@ -1,21 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Planned_location_and_time_for_MAiD__c</fullName>
+    <defaultValue>false</defaultValue>
     <externalId>false</externalId>
     <label>Planned location and time for MAiD</label>
-    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
-    <type>Picklist</type>
-    <valueSet>
-        <restricted>true</restricted>
-        <valueSetDefinition>
-            <sorted>false</sorted>
-            <value>
-                <fullName>Value1</fullName>
-                <default>false</default>
-                <label>Value1</label>
-            </value>
-        </valueSetDefinition>
-    </valueSet>
+    <type>Checkbox</type>
 </CustomField>

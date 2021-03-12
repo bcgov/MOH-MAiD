@@ -3,7 +3,7 @@
     <fullName>If_no_confirm__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>If no, confirm</label>
+    <label>If no, date of death not known</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>
