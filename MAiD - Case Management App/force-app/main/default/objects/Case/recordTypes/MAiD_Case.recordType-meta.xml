@@ -177,23 +177,7 @@
     <picklistValues>
         <picklist>Reason</picklist>
         <values>
-            <fullName>Complex functionality</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Existing problem</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Instructions not clear</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>New problem</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>User didn%27t attend training</fullName>
+            <fullName>Whom did you receive the 1632 form from%3F</fullName>
             <default>false</default>
         </values>
     </picklistValues>

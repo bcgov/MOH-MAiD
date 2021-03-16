@@ -189,10 +189,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Complex functionality</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Conclusion of eligibility</fullName>
             <default>false</default>
         </values>
@@ -217,15 +213,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Existing problem</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>In Person%2Fby Telemed</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Instructions not clear</fullName>
             <default>false</default>
         </values>
         <values>
@@ -238,10 +226,6 @@
         </values>
         <values>
             <fullName>Location of MAiD</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>New problem</fullName>
             <default>false</default>
         </values>
         <values>
@@ -310,10 +294,6 @@
         </values>
         <values>
             <fullName>Telemed Witness info</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>User didn%27t attend training</fullName>
             <default>false</default>
         </values>
         <values>
