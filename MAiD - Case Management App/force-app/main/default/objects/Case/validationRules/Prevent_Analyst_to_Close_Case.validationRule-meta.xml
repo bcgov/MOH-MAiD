@@ -5,6 +5,6 @@
     <errorConditionFormula>AND(
 ISCHANGED(Status),
 ISPICKVAL(Status, &quot;Closed&quot;),
-$Profile.Name =  &quot;MAiD Analyst&quot;)</errorConditionFormula>
+  $UserRole.Name = &quot;MAiD Analyst&quot;)</errorConditionFormula>
     <errorMessage>You do not have access to close this case.</errorMessage>
 </ValidationRule>
