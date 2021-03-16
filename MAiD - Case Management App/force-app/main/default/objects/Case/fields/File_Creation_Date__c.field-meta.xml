@@ -4,7 +4,7 @@
     <defaultValue>TODAY()</defaultValue>
     <externalId>false</externalId>
     <label>File Creation Date</label>
-    <required>true</required>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

@@ -3,7 +3,7 @@
     <fullName>Case_Type_Reported_Date__c</fullName>
     <externalId>false</externalId>
     <label>Case Type Reported Date</label>
-    <required>true</required>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

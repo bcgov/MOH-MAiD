@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Education_Provided</fullName>
+    <active>true</active>
+    <errorConditionFormula>Education_provided_to_practitioner__c = true &amp;&amp;    ISBLANK(If_yes_specify__c )</errorConditionFormula>
+    <errorMessage>If Education is provided to practitioner, please specify</errorMessage>
+</ValidationRule>
