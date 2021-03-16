@@ -5,5 +5,5 @@
     <description>MAiD Manager</description>
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>MAiD Manager</name>
-    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
 </Role>
