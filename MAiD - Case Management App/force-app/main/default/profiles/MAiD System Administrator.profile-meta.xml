@@ -948,11 +948,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Patient_informed_of_minimum_period_of_90__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Patient_is_capable_of_providing_consent__c</field>
         <readable>true</readable>
     </fieldPermissions>
