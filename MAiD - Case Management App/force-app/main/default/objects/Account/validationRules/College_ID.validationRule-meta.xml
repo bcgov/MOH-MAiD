@@ -3,7 +3,7 @@
     <fullName>College_ID</fullName>
     <active>true</active>
     <description>College_ID is a numeric field only, without the comma&apos;s.</description>
-    <errorConditionFormula>NOT(REGEX(College_ID__c, &quot;[0-9]{0,80}&quot;))</errorConditionFormula>
-    <errorDisplayField>College_ID__c</errorDisplayField>
+    <errorConditionFormula>NOT(REGEX(College_ID__pc, &quot;[0-9]{0,80}&quot;))</errorConditionFormula>
+    <errorDisplayField>College_ID__pc</errorDisplayField>
     <errorMessage>Only enter numbers for College ID.</errorMessage>
 </ValidationRule>

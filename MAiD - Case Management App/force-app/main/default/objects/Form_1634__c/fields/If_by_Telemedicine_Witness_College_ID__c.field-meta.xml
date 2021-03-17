@@ -3,7 +3,7 @@
     <fullName>If_by_Telemedicine_Witness_College_ID__c</fullName>
     <externalId>false</externalId>
     <label>If by Telemedicine, Witness College ID</label>
-    <length>10</length>
+    <length>20</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
