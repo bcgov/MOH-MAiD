@@ -776,11 +776,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Did_the_patient_self_administer_the_subs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Did_you_consult_with_other_health_care_p__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -847,11 +842,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.If_Neurological_condition_other_speci__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.If_Other_location_specify_1__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1041,11 +1031,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Location_of_Assessment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.MAiD_Administration_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1057,11 +1042,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.MAiD_Location_Type__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.On_receipt_of_assessment_patient_is__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1091,11 +1071,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Patient_capable_of_making_this_health_ca__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Patient_consensented_to_assessment__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1107,11 +1082,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Patient_eligible_for_health_services_in__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.Patient_gave_informed_consent_after_bein__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1176,11 +1146,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Patient_was_given_opportunity_to_withdra__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Patient_was_referred_for_assessment_of_c__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1202,6 +1167,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Patients_natural_death_become_reasonabl__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Advance_consent_sign_date_by_patient__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Advance_consent_sign_date_by_prescriber__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1281,17 +1256,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Practitioners_Administration_Signature__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Practitioners_Signature__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Pratictioner_was_satisfied_second_assess__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Did_the_patient_cause_their_death__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Did_the_patient_self_administer_the_subs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1367,6 +1347,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Recommend_seeking_advice_on_insurance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_No_practioner_administered_2nd_dose__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_Other_location_specify_1__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1561,6 +1551,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Is_there_waiver_of_final_consent_in_plac__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Location_of_Assessment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1641__c.Haloperidol_Quantity__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1577,6 +1577,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1641__c.Haloperidol_consistent_with_MAR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.MAiD_Prescriber_full_name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.MAiD_Prescriber_sign_self_administ__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.On_receipt_of_assessment_patient_is__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1606,6 +1621,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Patient_authorized_to_recieve_second_dos__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Patient_capable_of_making_this_health_ca__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1641__c.Lidocaine_consistent_with_MAR__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1622,6 +1647,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1641__c.Lorazepam__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Patient_full_name__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Patient_gave_informed_consent_after_bein__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1687,6 +1722,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1641__c.Ondansetron__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Patient_signature_self_administration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Patient_was_given_opportunity_to_withdra__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1782,6 +1827,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1641__c.Propofol_Strength__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Practitioner_will_be_present_initials_by__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Practitioners_Administration_Signature__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1922,6 +1977,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1642__c.Did_you_complete_an_eligibility_assessme__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.X2nd_dose_will_be_adminstered_after_min__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
