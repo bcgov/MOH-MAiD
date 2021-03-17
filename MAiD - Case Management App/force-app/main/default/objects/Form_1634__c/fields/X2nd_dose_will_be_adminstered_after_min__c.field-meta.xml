@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2nd_dose_will_be_adminstered_after_min__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The MAiD Prescriber will administer the second dose after  _________________ minutes</inlineHelpText>
+    <label>2nd dose will be adminstered after mins?</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
