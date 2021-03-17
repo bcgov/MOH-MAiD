@@ -24,6 +24,7 @@
     <tabs>standard-Case</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-Task</tabs>
+    <tabs>standard-Event</tabs>
     <tabs>standard-Feed</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Case_Management_UtilityBar</utilityBar>

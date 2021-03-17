@@ -8,17 +8,17 @@
     <custom>true</custom>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.College_ID__c</field>
+        <field>Account.College_ID__pc</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Specialty_Other__c</field>
+        <field>Account.Specialty_Other__pc</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Specialty__c</field>
+        <field>Account.Specialty__pc</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
