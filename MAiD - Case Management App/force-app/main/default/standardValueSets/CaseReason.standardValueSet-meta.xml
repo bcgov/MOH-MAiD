@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Whom did you receive the 1632 form from?</fullName>
+        <default>false</default>
+        <label>Whom did you receive the 1632 form from?</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Date of written request received</fullName>
+        <default>false</default>
+        <label>Date of written request received</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Prior patient knowledge/consultation</fullName>
+        <default>false</default>
+        <label>Prior patient knowledge/consultation</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Date of Assessment</fullName>
+        <default>false</default>
+        <label>Date of Assessment</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>In Person/by Telemed</fullName>
+        <default>false</default>
+        <label>In Person/by Telemed</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Location of Assessment</fullName>
+        <default>false</default>
+        <label>Location of Assessment</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Telemed Witness info</fullName>
+        <default>false</default>
+        <label>Telemed Witness info</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Interpreter info</fullName>
+        <default>false</default>
+        <label>Interpreter info</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pg. 1 safeguards are not met</fullName>
+        <default>false</default>
+        <label>Pg. 1 safeguards are not met</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pg. 2 patient informed safeguards</fullName>
+        <default>false</default>
+        <label>Pg. 2 patient informed safeguards</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pg. 3 NDNRF safeguards</fullName>
+        <default>false</default>
+        <label>Pg. 3 NDNRF safeguards</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Did not tick yes to ALL criteria</fullName>
+        <default>false</default>
+        <label>Did not tick yes to ALL criteria</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Capability/incapability for informed consent</fullName>
+        <default>false</default>
+        <label>Capability/incapability for informed consent</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Conclusion of eligibility</fullName>
+        <default>false</default>
+        <label>Conclusion of eligibility</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Signature/date</fullName>
+        <default>false</default>
+        <label>Signature/date</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Change in Eligibility section</fullName>
+        <default>false</default>
+        <label>Change in Eligibility section</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Reason for discontinuation</fullName>
+        <default>false</default>
+        <label>Reason for discontinuation</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pg. 4 MAiD planning safeguards</fullName>
+        <default>false</default>
+        <label>Pg. 4 MAiD planning safeguards</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pg. 5 Planning safeguards</fullName>
+        <default>false</default>
+        <label>Pg. 5 Planning safeguards</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pg. 5 Waiver of final consent safeguards</fullName>
+        <default>false</default>
+        <label>Pg. 5 Waiver of final consent safeguards</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Pg. 6 Administration safeguards</fullName>
+        <default>false</default>
+        <label>Pg. 6 Administration safeguards</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Consult with other health care professionals</fullName>
+        <default>false</default>
+        <label>Consult with other health care professionals</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Palliative care/access</fullName>
+        <default>false</default>
+        <label>Palliative care/access</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Disability support services/length</fullName>
+        <default>false</default>
+        <label>Disability support services/length</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Proxy Relationship/information</fullName>
+        <default>false</default>
+        <label>Proxy Relationship/information</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Signature/Verbal Consent</fullName>
+        <default>false</default>
+        <label>Patient Signature/Verbal Consent</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Location of MAiD</fullName>
+        <default>false</default>
+        <label>Location of MAiD</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient transfer for MAiD</fullName>
+        <default>false</default>
+        <label>Patient transfer for MAiD</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient information</fullName>
+        <default>false</default>
+        <label>Patient information</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Practitioner signature/initials</fullName>
+        <default>false</default>
+        <label>Practitioner signature/initials</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>All safeguard boxes incomplete</fullName>
+        <default>false</default>
+        <label>All safeguard boxes incomplete</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+</StandardValueSet>

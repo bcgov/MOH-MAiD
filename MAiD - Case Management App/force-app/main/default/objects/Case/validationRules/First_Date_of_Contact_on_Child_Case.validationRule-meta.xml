@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>First_Date_of_Contact_on_Child_Case</fullName>
+    <active>true</active>
+    <errorConditionFormula>(
+ISPICKVAL(Status, &quot;Emailed&quot;)  || ISPICKVAL(Status, &quot;Left Message&quot;)  || ISPICKVAL(Status, &quot;Emailed and Left Message&quot;)   || ISPICKVAL(Status, &quot;With Practitioner&quot;) || ISPICKVAL(Status, &quot;With Pharmacist&quot;) || ISPICKVAL(Status, &quot;HOLD&quot;) || ISPICKVAL(Status, &quot;Reconciled&quot;) ||ISPICKVAL(Status, &quot;Logged for Tracking&quot;)  
+)
+ &amp;&amp;    ISBLANK( First_Date_of_contact__c )</errorConditionFormula>
+    <errorMessage>First Date of contact is required</errorMessage>
+</ValidationRule>

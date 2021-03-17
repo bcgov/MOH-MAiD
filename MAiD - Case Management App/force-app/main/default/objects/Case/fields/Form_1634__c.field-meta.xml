@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>File_Creation_Date__c</fullName>
-    <defaultValue>TODAY()</defaultValue>
+    <fullName>Form_1634__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
     <externalId>false</externalId>
-    <label>File Creation Date</label>
+    <label>Form 1634</label>
+    <referenceTo>Form_1634__c</referenceTo>
+    <relationshipLabel>Error Log</relationshipLabel>
+    <relationshipName>Error</relationshipName>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Date</type>
+    <type>Lookup</type>
 </CustomField>

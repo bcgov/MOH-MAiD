@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>File_Creation_Date__c</fullName>
-    <defaultValue>TODAY()</defaultValue>
+    <fullName>Education_provided_to_practitioner__c</fullName>
+    <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>File Creation Date</label>
-    <required>false</required>
+    <label>Education provided to practitioner?</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Date</type>
+    <type>Checkbox</type>
 </CustomField>

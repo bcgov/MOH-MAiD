@@ -103,4 +103,58 @@
         <label>External complaint</label>
         <closed>false</closed>
     </standardValue>
+    <standardValue>
+        <fullName>Need to Follow up</fullName>
+        <default>false</default>
+        <label>Need to Follow up</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Emailed</fullName>
+        <default>false</default>
+        <label>Emailed</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Left Message</fullName>
+        <default>false</default>
+        <label>Left Message</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Emailed and Left Message</fullName>
+        <default>false</default>
+        <label>Emailed and Left Message</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>With Practitioner</fullName>
+        <default>false</default>
+        <label>With Practitioner</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>With Pharmacist</fullName>
+        <default>false</default>
+        <label>With Pharmacist</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>HOLD</fullName>
+        <default>false</default>
+        <label>HOLD</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Reconciled</fullName>
+        <default>false</default>
+        <label>Reconciled</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Logged for Tracking</fullName>
+        <default>false</default>
+        <label>Logged for Tracking</label>
+        <closed>false</closed>
+    </standardValue>
 </StandardValueSet>
