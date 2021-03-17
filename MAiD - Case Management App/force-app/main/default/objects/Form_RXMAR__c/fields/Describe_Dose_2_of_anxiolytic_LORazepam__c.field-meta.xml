@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Describe_Dose_2_of_anxiolytic_LORazepam__c</fullName>
+    <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>Describe Dose 2 of anxiolytic LORazepam</label>
     <length>255</length>

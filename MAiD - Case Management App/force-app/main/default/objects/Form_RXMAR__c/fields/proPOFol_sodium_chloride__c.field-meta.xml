@@ -3,7 +3,7 @@
     <fullName>proPOFol_sodium_chloride__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>ProPOFol sodium chloride flush</label>
+    <label>ProPOFol sodium chloride</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

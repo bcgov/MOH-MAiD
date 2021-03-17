@@ -3,7 +3,7 @@
     <fullName>Phenobarbital_sodium_chloride__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <label>Phenobarbital sodium chloride flush</label>
+    <label>Phenobarbital sodium chloride</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Date_when_filled_and_signed_IV_Protocol__c</fullName>
+    <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <inlineHelpText>Date when filled and signed the IV Protocol administered by Practitioner</inlineHelpText>
     <label>Date when filled and signed IV Protocol</label>

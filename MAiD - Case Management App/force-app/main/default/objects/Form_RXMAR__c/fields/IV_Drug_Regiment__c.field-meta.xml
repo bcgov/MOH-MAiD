@@ -13,14 +13,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>1 - Primary IV Kit x2</fullName>
+                <fullName>Value1</fullName>
                 <default>false</default>
-                <label>1 - Primary IV Kit x2</label>
-            </value>
-            <value>
-                <fullName>2 - Back-up IV Kit for Oral Regimen</fullName>
-                <default>false</default>
-                <label>2 - Back-up IV Kit for Oral Regimen</label>
+                <label>Value1</label>
             </value>
         </valueSetDefinition>
     </valueSet>

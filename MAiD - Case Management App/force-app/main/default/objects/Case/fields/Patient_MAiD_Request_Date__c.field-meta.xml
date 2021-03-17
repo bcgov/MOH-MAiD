@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_MAiD_Request_Date__c</fullName>
+    <complianceGroup>PII;PHI</complianceGroup>
+    <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>Patient MAiD Request Date</label>
     <required>false</required>
