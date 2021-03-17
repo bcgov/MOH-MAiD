@@ -20,8 +20,9 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Case Management</label>
     <navType>Standard</navType>
-    <tabs>standard-home</tabs>
+    <tabs>standard-Home</tabs>
     <tabs>standard-Case</tabs>
+    <tabs>standard-Task</tabs>
     <tabs>standard-Account</tabs>
     <tabs>standard-Task</tabs>
     <tabs>standard-Feed</tabs>

@@ -100,5 +100,12 @@
         <members>*</members>
         <name>PermissionSet</name>
     </types>
+         <members>*</members>
+         <name>Role</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>ListView</name>
+    </types>    
     <version>50.0</version>
 </Package>
