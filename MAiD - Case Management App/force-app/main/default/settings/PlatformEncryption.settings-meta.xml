@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlatformEncryptionSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <canEncryptManagedPackageFields>false</canEncryptManagedPackageFields>
+    <enableDeterministicEncryption>true</enableDeterministicEncryption>
+    <enableEncryptFieldHistory>true</enableEncryptFieldHistory>
+    <enableEncryptionSearchEnabled>true</enableEncryptionSearchEnabled>
+    <enableEventBusEncryption>true</enableEventBusEncryption>
+    <isMEKForEncryptionRequired>true</isMEKForEncryptionRequired>
+    <isUseHighAssuranceKeysRequired>false</isUseHighAssuranceKeysRequired>
+</PlatformEncryptionSettings>
