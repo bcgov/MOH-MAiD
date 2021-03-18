@@ -4220,6 +4220,10 @@
         <name>ViewAllUsers</name>
     </userPermissions>
     <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewEncryptedData</name>
+    </userPermissions>   
+    <userPermissions>
         <enabled>false</enabled>
         <name>ViewEventLogFiles</name>
     </userPermissions>
