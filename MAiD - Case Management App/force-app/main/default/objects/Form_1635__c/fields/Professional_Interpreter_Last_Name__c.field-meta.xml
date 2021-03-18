@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Professional_Interpreter_Last_Name__c</fullName>
+    <complianceGroup>PII;PHI</complianceGroup>
+    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>Professional Interpreter Last Name</label>
     <length>255</length>
