@@ -6,5 +6,5 @@
     <enableEncryptionSearchEnabled>true</enableEncryptionSearchEnabled>
     <enableEventBusEncryption>true</enableEventBusEncryption>
     <isMEKForEncryptionRequired>true</isMEKForEncryptionRequired>
-    <isUseHighAssuranceKeysRequired>false</isUseHighAssuranceKeysRequired>
+    <isUseHighAssuranceKeysRequired>true</isUseHighAssuranceKeysRequired>
 </PlatformEncryptionSettings>
