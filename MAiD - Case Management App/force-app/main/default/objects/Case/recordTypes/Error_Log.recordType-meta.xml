@@ -316,18 +316,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Discontinuation of Planning%3A Death Prior</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Discontinuation of Planning%3A Ineligible</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Discontinuation of Planning%3A Withdrawn Request</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Eligibility Criteria</fullName>
             <default>false</default>
         </values>
@@ -337,18 +325,6 @@
         </values>
         <values>
             <fullName>Forms missing page%28s%29</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MAiD Assessment of Eligibility</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MAiD Death</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MAiD Request</fullName>
             <default>false</default>
         </values>
         <values>
@@ -389,10 +365,6 @@
         </values>
         <values>
             <fullName>Transfer information incomplete</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Transfer of Request</fullName>
             <default>false</default>
         </values>
         <values>
