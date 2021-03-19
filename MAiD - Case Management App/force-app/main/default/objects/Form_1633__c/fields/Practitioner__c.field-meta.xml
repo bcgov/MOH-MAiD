@@ -8,7 +8,7 @@
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Forms 1633</relationshipLabel>
     <relationshipName>Forms_1633</relationshipName>
-    <required>false</required>
+    <required>true</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
