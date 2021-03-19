@@ -3,10 +3,6 @@
     <fullName>Error Log Support Process</fullName>
     <isActive>true</isActive>
     <values>
-        <fullName>Closed</fullName>
-        <default>false</default>
-    </values>
-    <values>
         <fullName>Emailed</fullName>
         <default>false</default>
     </values>
