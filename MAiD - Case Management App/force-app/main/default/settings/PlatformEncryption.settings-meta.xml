@@ -4,7 +4,6 @@
     <enableDeterministicEncryption>true</enableDeterministicEncryption>
     <enableEncryptFieldHistory>true</enableEncryptFieldHistory>
     <enableEncryptionSearchEnabled>true</enableEncryptionSearchEnabled>
-    <enableEventBusEncryption>true</enableEventBusEncryption>
     <isMEKForEncryptionRequired>true</isMEKForEncryptionRequired>
     <isUseHighAssuranceKeysRequired>false</isUseHighAssuranceKeysRequired>
 </PlatformEncryptionSettings>
