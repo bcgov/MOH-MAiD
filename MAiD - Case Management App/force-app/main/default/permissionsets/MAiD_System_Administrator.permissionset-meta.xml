@@ -606,11 +606,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1633__c.Practitioner__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1633__c.Practitioners_Signature_present__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4224,6 +4219,10 @@
         <enabled>false</enabled>
         <name>ViewAllUsers</name>
     </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
+        <name>ViewEncryptedData</name>
+    </userPermissions>   
     <userPermissions>
         <enabled>false</enabled>
         <name>ViewEventLogFiles</name>

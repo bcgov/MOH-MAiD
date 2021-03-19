@@ -2,6 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_patient_directly_other_specify__c</fullName>
     <externalId>false</externalId>
+    <complianceGroup>PII;PHI</complianceGroup>
+    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <label>If patient directly-other, specify</label>
     <length>255</length>
     <required>false</required>
