@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>PHN_Parent_Case__c</fullName>
+    <fullName>Parent_Case_Patient_Name__c</fullName>
     <externalId>false</externalId>
-    <formula>Parent.PHN__c</formula>
+    <formula>Parent.Patient_First_Name__c + &apos; &apos; + Parent.Patient_Last_Name__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>PHN</label>
+    <label>Patient Name</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
