@@ -471,7 +471,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.PHN_Child_case__c</field>
+        <field>Case.PHN_Parent_case__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
