@@ -17,11 +17,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>PHN_Child_case__c</field>
+                <field>Parent_Case_PHN__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
-                <field>Patient_Name__c</field>
+                <field>Parent_Case_Patient_Name__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
@@ -182,7 +182,6 @@
         <relatedList>RelatedActivityList</relatedList>
     </relatedLists>
     <relatedObjects>ContactId</relatedObjects>
-    <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>

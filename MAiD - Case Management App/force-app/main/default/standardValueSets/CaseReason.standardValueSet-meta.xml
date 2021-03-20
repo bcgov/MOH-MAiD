@@ -187,4 +187,64 @@
         <label>All safeguard boxes incomplete</label>
         <cssExposed>false</cssExposed>
     </standardValue>
+    <standardValue>
+        <fullName>Consistent with MAR</fullName>
+        <default>false</default>
+        <label>Consistent with MAR</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Dispensing date/time</fullName>
+        <default>false</default>
+        <label>Dispensing date/time</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Plan for Concluding MAiD</fullName>
+        <default>false</default>
+        <label>Plan for Concluding MAiD</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Prescription accountability</fullName>
+        <default>false</default>
+        <label>Prescription accountability</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Reason for transfer</fullName>
+        <default>false</default>
+        <label>Reason for transfer</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Return date/time</fullName>
+        <default>false</default>
+        <label>Return date/time</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Returned medications incomplete</fullName>
+        <default>false</default>
+        <label>Returned medications incomplete</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Signatures</fullName>
+        <default>false</default>
+        <label>Signatures</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Transfer Date</fullName>
+        <default>false</default>
+        <label>Transfer Date</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Was an eligibility assessment completed?|</fullName>
+        <default>false</default>
+        <label>Was an eligibility assessment completed?</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
 </StandardValueSet>

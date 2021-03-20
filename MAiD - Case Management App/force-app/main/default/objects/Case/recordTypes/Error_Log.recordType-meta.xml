@@ -189,6 +189,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Consistent with MAR</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Consult with other health care professionals</fullName>
             <default>false</default>
         </values>
@@ -206,6 +210,10 @@
         </values>
         <values>
             <fullName>Disability support services%2Flength</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dispensing date%2Ftime</fullName>
             <default>false</default>
         </values>
         <values>
@@ -269,7 +277,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Plan for Concluding MAiD</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Practitioner signature%2Finitials</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prescription accountability</fullName>
             <default>false</default>
         </values>
         <values>
@@ -285,11 +301,35 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Reason for transfer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Return date%2Ftime</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Returned medications incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Signature%2Fdate</fullName>
             <default>false</default>
         </values>
         <values>
+            <fullName>Signatures</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Telemed Witness info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transfer Date</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Was an eligibility assessment completed%3F%7C</fullName>
             <default>false</default>
         </values>
         <values>

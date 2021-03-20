@@ -149,7 +149,7 @@
         <fullName>Reconciled</fullName>
         <default>false</default>
         <label>Reconciled</label>
-        <closed>false</closed>
+        <closed>true</closed>
     </standardValue>
     <standardValue>
         <fullName>Logged for Tracking</fullName>
