@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_Last_Name__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
-    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>Patient Last Name</label>
     <length>255</length>
