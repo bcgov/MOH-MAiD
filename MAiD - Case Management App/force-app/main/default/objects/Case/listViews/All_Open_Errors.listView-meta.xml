@@ -6,7 +6,7 @@
     <columns>Practitioner__c</columns>
     <columns>CASES.STATUS</columns>
     <columns>CORE.USERS.ALIAS</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <filters>
         <field>CASES.RECORDTYPE</field>
         <operation>equals</operation>
