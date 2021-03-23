@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>File_Creation_Date__c</fullName>
     <defaultValue>TODAY()</defaultValue>
-    <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>File Creation Date</label>
     <required>false</required>
