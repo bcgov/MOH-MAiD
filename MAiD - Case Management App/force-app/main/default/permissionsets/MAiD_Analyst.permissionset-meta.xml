@@ -90,7 +90,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Case.Health_Canada_Reportable_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -222,11 +222,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.X1632__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.If_1645_Incomplete__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
