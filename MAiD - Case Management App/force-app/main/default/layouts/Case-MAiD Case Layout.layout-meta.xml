@@ -168,8 +168,6 @@
                 <behavior>Edit</behavior>
                 <field>RX_MAR_Date_Received__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>X1635__c</field>
