@@ -1,7 +1,7 @@
 {
   "orgName": "MAiD Dev",
   "edition": "Enterprise",
-  "features": ["PersonAccounts", "LightningServiceConsole", "ServiceCloud"],
+  "features": ["PersonAccounts", "LightningServiceConsole", "ServiceCloud","PlatformEncryption"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
