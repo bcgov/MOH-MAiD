@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_received_required_for_RXMAR</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNULL(  RX_MAR_Date_Received__c )  &amp;&amp;  
+(  
+ ISPICKVAL( RX_MAR__c , &quot;Yes&quot;)  ||  ISPICKVAL(RX_MAR__c , &quot;Incomplete&quot;)
+)</errorConditionFormula>
+    <errorMessage>RX/MAR Date Received is required</errorMessage>
+</ValidationRule>
