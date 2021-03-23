@@ -31,8 +31,7 @@
                 <field>Practitioner__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -52,8 +51,6 @@
                 <behavior>Edit</behavior>
                 <field>Date_written_request_received__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_patient_directly_other_specify__c</field>
@@ -63,7 +60,7 @@
                 <field>If_other_third_party_specify__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -79,8 +76,6 @@
                 <behavior>Edit</behavior>
                 <field>Assessment_Interpreter_First_Name__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Assessment_Interpreters_ID_Number__c</field>
@@ -90,7 +85,7 @@
                 <field>Assessment_Interpreter_date_of_service__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -118,8 +113,6 @@
                 <behavior>Edit</behavior>
                 <field>If_by_Telemedicine_Witness_College_ID__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Location_of_Assessment__c</field>
@@ -133,7 +126,7 @@
                 <field>If_Other_location_specify__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -157,8 +150,6 @@
                 <behavior>Edit</behavior>
                 <field>If_yes_signed_request_date__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Patients_request_was_signed_dated_and__c</field>
@@ -168,7 +159,7 @@
                 <field>Request_was_signed_and_dated_after_the_p__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -184,8 +175,6 @@
                 <behavior>Edit</behavior>
                 <field>Right_to_withdraw_their_request__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Potential_risks_and_expected_outcome__c</field>
@@ -195,7 +184,7 @@
                 <field>Recommend_seeking_advice_on_insurance__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -280,8 +269,7 @@
                 <field>Patients_natural_death_become_reasonabl__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -297,14 +285,12 @@
                 <behavior>Edit</behavior>
                 <field>Profession_if_yes_select_all_that_apply__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_Other_specify_2__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -320,14 +306,12 @@
                 <behavior>Edit</behavior>
                 <field>If_yes_for_how_long_1__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_no_was_palliative_care_accessible_to__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -347,14 +331,12 @@
                 <behavior>Edit</behavior>
                 <field>If_yes_for_how_long__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_no_were_services_accessible__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -383,8 +365,7 @@
                 <field>On_receipt_of_assessment_patient_is__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -397,8 +378,7 @@
                 <field>I_determine_that_the_patient__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -419,8 +399,7 @@
                 <field>Clear_days_waiting_period_start_date__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -441,8 +420,7 @@
                 <field>If_Yes_practitioner_became_aware_patien__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -459,8 +437,7 @@
                 <field>DateTime_Practitioner_signed__c</field>
             </layoutItems>
         </layoutColumns>
-        <layoutColumns/>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -508,8 +485,6 @@
                 <behavior>Edit</behavior>
                 <field>If_no_confirm__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Patient_lost_capabilty_to_consent__c</field>
@@ -519,7 +494,7 @@
                 <field>Death_occurred_prior_to_MAiD__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -575,8 +550,6 @@
                 <behavior>Edit</behavior>
                 <field>Days_from_Initial_request_if_less_than__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Patient_requested_the_following_options__c</field>
@@ -602,7 +575,7 @@
                 <field>Practitioner_reviewed_request_and_medica__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -626,8 +599,6 @@
                 <behavior>Edit</behavior>
                 <field>Ensured_there_were_at_least_90_days__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>The_patient_was_at_risk_of_losing_capaci__c</field>
@@ -637,7 +608,7 @@
                 <field>Assessor_and_Prescriber_in_agreement__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -653,14 +624,12 @@
                 <behavior>Edit</behavior>
                 <field>An_agreement_with_the_patient_to_waive_f__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_Yes_patient_consented__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -720,8 +689,6 @@
                 <behavior>Edit</behavior>
                 <field>Proxy_for_MAiD_Postal_Code__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Verbal_Consent_Notes__c</field>
@@ -743,7 +710,7 @@
                 <field>Interpreter_for_MAID_date_of_service__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -799,8 +766,6 @@
                 <behavior>Edit</behavior>
                 <field>Practitioner_Administration_sign_off_Dat__c</field>
             </layoutItems>
-        </layoutColumns>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Was_patient_transferred_for_MAiD__c</field>
@@ -822,7 +787,7 @@
                 <field>If_Yes_was_Prescriber_present__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>TwoColumnsLeftToRight</style>
+        <style>OneColumn</style>
     </layoutSections>
     <layoutSections>
         <customLabel>false</customLabel>
@@ -881,7 +846,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1f000000a1pY</masterLabel>
+        <masterLabel>00h1f000000ZgZQ</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
