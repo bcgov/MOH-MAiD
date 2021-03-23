@@ -373,7 +373,7 @@
     </relatedLists>
     <relatedLists>
         <fields>CASES.CASE_NUMBER</fields>
-        <fields>Patient_Name__c</fields>
+        <fields>Parent_Case_Patient_Name__c</fields>
         <fields>Impacted_Form__c</fields>
         <fields>CASES.STATUS</fields>
         <fields>OWNER_NAME</fields>
