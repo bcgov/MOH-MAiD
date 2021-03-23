@@ -13,7 +13,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>College_ID__c</field>
+                <field>College_ID__pc</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>

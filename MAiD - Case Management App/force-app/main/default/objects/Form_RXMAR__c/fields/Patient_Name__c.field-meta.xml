@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <fullName>Patient_Name__c</fullName>
+    <complianceGroup>PII;PHI</complianceGroup> 
     <externalId>false</externalId>
     <formula>Case__r.Patient_First_Name__c + &apos; &apos; + Case__r.Patient_Last_Name__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

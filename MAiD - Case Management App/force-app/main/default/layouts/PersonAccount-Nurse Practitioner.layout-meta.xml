@@ -16,7 +16,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>College_ID__c</field>
+                <field>College_ID__pc</field>
             </layoutItems>
         </layoutColumns>
         <layoutColumns>
@@ -63,7 +63,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Specialty_Other__c</field>
+                <field>Specialty_Other__pc</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>

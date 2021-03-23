@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Impacted_Form__c</fullName>
+    <externalId>false</externalId>
+    <label>Impacted Form</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>MAiD Reporting</fullName>
+                <default>false</default>
+                <label>MAiD Reporting</label>
+            </value>
+            <value>
+                <fullName>Discontinuation Reporting</fullName>
+                <default>false</default>
+                <label>Discontinuation Reporting</label>
+            </value>
+            <value>
+                <fullName>1641 Reporting</fullName>
+                <default>false</default>
+                <label>1641 Reporting</label>
+            </value>
+            <value>
+                <fullName>Transfer of Request Reporting</fullName>
+                <default>false</default>
+                <label>Transfer of Request Reporting</label>
+            </value>
+            <value>
+                <fullName>1633 Form</fullName>
+                <default>false</default>
+                <label>1633 Form</label>
+            </value>
+            <value>
+                <fullName>1634 Form</fullName>
+                <default>false</default>
+                <label>1634 Form</label>
+            </value>
+            <value>
+                <fullName>Rx/MAR Form</fullName>
+                <default>false</default>
+                <label>Rx/MAR Form</label>
+            </value>
+            <value>
+                <fullName>1641 Form</fullName>
+                <default>false</default>
+                <label>1641 Form</label>
+            </value>
+            <value>
+                <fullName>1642 Form</fullName>
+                <default>false</default>
+                <label>1642 Form</label>
+            </value>
+            <value>
+                <fullName>1635 Form</fullName>
+                <default>false</default>
+                <label>1635 Form</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

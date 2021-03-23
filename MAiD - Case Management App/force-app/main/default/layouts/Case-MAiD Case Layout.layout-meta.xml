@@ -158,6 +158,20 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>RX_MAR__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>If_RX_MAR_Incomplete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>RX_MAR_Date_Received__c</field>
+            </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>X1635__c</field>
             </layoutItems>
             <layoutItems>
@@ -191,6 +205,18 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>X1642_Date_Received__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>X1645__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>If_1645_Incomplete__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>X1645_Date_Received__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
