@@ -3830,7 +3830,7 @@
         <name>ContentWorkspaces</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>CreateCustomizeDashboards</name>
     </userPermissions>
     <userPermissions>
@@ -3838,11 +3838,11 @@
         <name>CreateCustomizeFilters</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>CreateCustomizeReports</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>CreateDashboardFolders</name>
     </userPermissions>
     <userPermissions>
@@ -3850,7 +3850,7 @@
         <name>CreateLtngTempFolder</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>CreateReportFolders</name>
     </userPermissions>
     <userPermissions>
@@ -3886,11 +3886,11 @@
         <name>EditHtmlTemplates</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>EditMyDashboards</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>EditMyReports</name>
     </userPermissions>
     <userPermissions>
@@ -3930,7 +3930,7 @@
         <name>EnableNotifications</name>
     </userPermissions>
     <userPermissions>
-        <enabled>true</enabled>
+        <enabled>false</enabled>
         <name>ExportReport</name>
     </userPermissions>
     <userPermissions>
@@ -4151,6 +4151,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>
+        <name>NewReportBuilder</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
         <name>SubscribeDashboardRolesGrps</name>
     </userPermissions>
     <userPermissions>
@@ -4172,6 +4176,10 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>SubscribeToLightningDashboards</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>false</enabled>
+        <name>RunReports</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

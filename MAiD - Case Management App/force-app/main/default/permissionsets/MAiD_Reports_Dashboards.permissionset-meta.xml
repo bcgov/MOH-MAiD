@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
-    <description>Giving users permissions to create and edit reports and dashboards</description>
+    <description>Giving MAiD users permissions to create and edit reports and dashboards</description>
     <hasActivationRequired>false</hasActivationRequired>
     <label>MAiD Reports and Dashboards</label>
     <tabSettings>
