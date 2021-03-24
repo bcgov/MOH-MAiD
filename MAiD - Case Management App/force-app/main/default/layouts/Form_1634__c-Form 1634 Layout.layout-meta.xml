@@ -614,7 +614,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Waiver of Final Consent</label>
+        <label>Patient is at Risk of Losing Capacity</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -622,7 +622,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Is_there_waiver_of_final_consent_in_plac__c</field>
+                <field>An_agreement_with_the_patient_to_waive_f__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -712,7 +712,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_authorized_to_recieve_second_dos__c</field>
+                <field>Patient_authorized_to_recieve_2nd_dose__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -724,7 +724,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Advance_consent_sign_date_by_patient__c</field>
+                <field>Advance_consent_signature_date_by_patien__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -849,6 +849,8 @@
                 <behavior>Edit</behavior>
                 <field>Supplementary_Information__c</field>
             </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Practitioners_Administration_Signature__c</field>
