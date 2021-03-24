@@ -26,6 +26,11 @@
                 <default>false</default>
                 <label>3 - Does not meet the criteria for MAiD</label>
             </value>
+            <value>
+                <fullName>4 - No determination made</fullName>
+                <default>false</default>
+                <label> 4 - No determination made</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
