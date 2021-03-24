@@ -1,13 +1,17 @@
 {
-  "packageDirectories": [
-    {
-      "path": "force-app",
-      "default": true,
-      "package": "MAiD - Case Management App",
-      "versionNumber": "0.1"
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true,
+            "package": "MAiD - Case Management App",
+            "versionName": "Version 1.1",
+            "versionNumber": "1.1.2.NEXT"
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "50.0",
+    "packageAliases": {
+        "MAiD - Case Management App": "0Ho5W000000001xSAA"
     }
-  ],
-  "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
-  "sourceApiVersion": "50.0"
 }
