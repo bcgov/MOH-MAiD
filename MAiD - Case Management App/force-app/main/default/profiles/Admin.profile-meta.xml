@@ -8,21 +8,6 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Account.College_ID__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Specialty_Other__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Specialty__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Case.AccountId</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -168,6 +153,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.If_1645_Incomplete__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.If_RX_MAR_Incomplete__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.If_X1634_Incomplete__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -243,11 +238,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.PHN_Child_case__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Case.PHN__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -255,6 +245,16 @@
         <editable>true</editable>
         <field>Case.ParentId</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Parent_Case_PHN__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Parent_Case_Patient_Name__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -274,11 +274,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.Patient_MAiD_Request_Date__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Patient_Name__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -319,6 +314,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.Province_or_Territory_that_issued_PHN__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.RX_MAR_Date_Received__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.RX_MAR__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -444,6 +449,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.X1642__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.X1645_Date_Received__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.X1645__c</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -633,11 +648,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1633__c.Practitioner__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1633__c.Practitioners_Signature_present__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -678,13 +688,18 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Advance_consent_sign_date_by_patient__c</field>
+        <field>Form_1634__c.Advance_consent_sign_date_by_prescriber__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Advance_consent_sign_date_by_prescriber__c</field>
+        <field>Form_1634__c.Advance_consent_signature_date_by_patien__c</field>
         <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1634__c.An_agreement_with_the_patient_to_waive_f__c</field>
+        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
@@ -1048,11 +1063,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.Is_there_waiver_of_final_consent_in_plac__c</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1634__c.Location_of_Assessment__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -1113,7 +1123,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Patient_authorized_to_recieve_second_dos__c</field>
+        <field>Form_1634__c.Patient_authorized_to_recieve_2nd_dose__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
