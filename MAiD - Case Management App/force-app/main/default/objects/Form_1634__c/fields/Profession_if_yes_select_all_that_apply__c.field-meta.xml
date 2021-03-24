@@ -36,9 +36,9 @@
                 <label>E - Psychiatrist</label>
             </value>
             <value>
-                <fullName>F - Phycologist</fullName>
+                <fullName>F - Psychologist</fullName>
                 <default>false</default>
-                <label>F - Phycologist</label>
+                <label>F - Psychologist</label>
             </value>
             <value>
                 <fullName>G - Social Worker</fullName>
