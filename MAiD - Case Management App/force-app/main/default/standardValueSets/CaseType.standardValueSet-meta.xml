@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>MAiD Death</fullName>
+        <default>false</default>
+        <label>MAiD Death</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discontinuation of Planning: Death Prior</fullName>
+        <default>false</default>
+        <label>Discontinuation of Planning: Death Prior</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discontinuation of Planning: Ineligible</fullName>
+        <default>false</default>
+        <label>Discontinuation of Planning: Ineligible</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discontinuation of Planning: Withdrawn Request</fullName>
+        <default>false</default>
+        <label>Discontinuation of Planning: Withdrawn Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transfer of Request</fullName>
+        <default>false</default>
+        <label>Transfer of Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MAiD Assessment of Eligibility</fullName>
+        <default>false</default>
+        <label>MAiD Assessment of Eligibility</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MAiD Request</fullName>
+        <default>false</default>
+        <label>MAiD Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Not reported by deadline</fullName>
+        <default>false</default>
+        <label>Not reported by deadline</label>
+    </standardValue>
+    <standardValue>
+        <fullName>All forms not submitted</fullName>
+        <default>false</default>
+        <label>All forms not submitted</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Forms missing page(s)</fullName>
+        <default>false</default>
+        <label>Forms missing page(s)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Fax Transmission Error</fullName>
+        <default>false</default>
+        <label>Fax Transmission Error</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Which part of the form was missed?</fullName>
+        <default>false</default>
+        <label>Which part of the form was missed?</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient info incomplete</fullName>
+        <default>false</default>
+        <label>Patient info incomplete</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Practitioner info incomplete</fullName>
+        <default>false</default>
+        <label>Practitioner info incomplete</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Receipt of Written Request</fullName>
+        <default>false</default>
+        <label>Receipt of Written Request</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Assessment info incomplete</fullName>
+        <default>false</default>
+        <label>Assessment info incomplete</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Safeguards (Assessments)</fullName>
+        <default>false</default>
+        <label>Safeguards (Assessments)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Eligibility Criteria</fullName>
+        <default>false</default>
+        <label>Eligibility Criteria</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Discontinuation of Planning</fullName>
+        <default>false</default>
+        <label>Discontinuation of Planning</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Patient Care info</fullName>
+        <default>false</default>
+        <label>Patient Care info</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Administration of MAiD</fullName>
+        <default>false</default>
+        <label>Administration of MAiD</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Safeguards (Rx/MAR)</fullName>
+        <default>false</default>
+        <label>Safeguards (Rx/MAR)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Safeguards (1641)</fullName>
+        <default>false</default>
+        <label>Safeguards (1641)</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Medication Dispensing</fullName>
+        <default>false</default>
+        <label>Medication Dispensing</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Transfer information incomplete</fullName>
+        <default>false</default>
+        <label>Transfer information incomplete</label>
+    </standardValue>
+</StandardValueSet>

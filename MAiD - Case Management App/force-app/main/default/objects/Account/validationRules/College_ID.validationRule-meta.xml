@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>College_ID</fullName>
+    <active>true</active>
+    <description>College_ID is a numeric field only, without the comma&apos;s.</description>
+    <errorConditionFormula>NOT(REGEX(College_ID__pc, &quot;[0-9]{0,80}&quot;))</errorConditionFormula>
+    <errorDisplayField>College_ID__pc</errorDisplayField>
+    <errorMessage>Only enter numbers for College ID.</errorMessage>
+</ValidationRule>

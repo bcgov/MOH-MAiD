@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IV_Drug_Regiment__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicate whether IV Drug Regime is:</inlineHelpText>
+    <label>IV Drug Regiment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Primary IV Kit x2</fullName>
+                <default>false</default>
+                <label>1 - Primary IV Kit x2</label>
+            </value>
+            <value>
+                <fullName>2 - Back-up IV Kit for Oral Regimen</fullName>
+                <default>false</default>
+                <label>2 - Back-up IV Kit for Oral Regimen</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

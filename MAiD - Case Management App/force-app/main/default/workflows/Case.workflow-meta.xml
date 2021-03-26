@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldUpdates>
+        <fullName>ChangePriorityToHigh</fullName>
+        <field>Priority</field>
+        <literalValue>High</literalValue>
+        <name>Changes the case priority to high.</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>PHN_Update</fullName>
+        <field>PHN__c</field>
+        <formula>Parent.PHN__c</formula>
+        <name>PHN Update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reportable_Date_field_update</fullName>
+        <field>Health_Canada_Reportable_Date__c</field>
+        <formula>IF( TODAY() &gt;= DATE(YEAR(TODAY()),1,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),3,31) , DATE(YEAR(TODAY()),3,31),
+
+IF(TODAY() &gt;= DATE(YEAR(TODAY()),4,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),6,30) , DATE(YEAR(TODAY()),6,30),
+
+IF(TODAY() &gt;= DATE(YEAR(TODAY()),7,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),9,30) , DATE(YEAR(TODAY()),9,30),
+
+IF(TODAY() &gt;= DATE(YEAR(TODAY()),10,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),12,31) , DATE(YEAR(TODAY()),12,31),
+
+null))))</formula>
+        <name>Reportable Date field update</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Formula</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reportable_date_blanks</fullName>
+        <field>Health_Canada_Reportable_Date__c</field>
+        <name>Reportable date blanks</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Null</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reporting_to_Health_Canada_is</fullName>
+        <field>Reportable_to_Health_Canada__c</field>
+        <literalValue>0</literalValue>
+        <name>Reporting to Health Canada is No</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Reporting_to_Health_Canada_is_Yes</fullName>
+        <field>Reportable_to_Health_Canada__c</field>
+        <literalValue>1</literalValue>
+        <name>Reporting to Health Canada is Yes</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>Reportable Date to end of current quarter</fullName>
+        <actions>
+            <name>Reportable_Date_field_update</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1</booleanFilter>
+        <criteriaItems>
+            <field>Case.Reportable_to_Health_Canada__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reportable Health Canada No blanks date</fullName>
+        <actions>
+            <name>Reportable_date_blanks</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Reportable_to_Health_Canada__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reportable to Health Canada Yes</fullName>
+        <actions>
+            <name>Reporting_to_Health_Canada_is_Yes</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Patient_MAiD_Request_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>11/1/2018</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>notEqual</operation>
+            <value>MAiD Assessment of Eligibility,MAiD Request</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reporting to Health Canada is No</fullName>
+        <actions>
+            <name>Reporting_to_Health_Canada_is</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>Case.Patient_MAiD_Request_Date__c</field>
+            <operation>lessThan</operation>
+            <value>11/1/2018</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>MAiD Assessment of Eligibility,MAiD Request</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+</Workflow>

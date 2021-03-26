@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Province_or_Territory_that_issued_PHN__c</fullName>
+    <defaultValue>&apos;59 - British Columbia&apos;</defaultValue>
+    <externalId>false</externalId>
+    <label>Province or Territory that issued PHN</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>10 - Newfoundland and Labrador</fullName>
+                <default>false</default>
+                <label>10 - Newfoundland and Labrador</label>
+            </value>
+            <value>
+                <fullName>11 - Prince Edward Island</fullName>
+                <default>false</default>
+                <label>11 - Prince Edward Island</label>
+            </value>
+            <value>
+                <fullName>12 - Nova Scotia</fullName>
+                <default>false</default>
+                <label>12 - Nova Scotia</label>
+            </value>
+            <value>
+                <fullName>13 - New Brunswick</fullName>
+                <default>false</default>
+                <label>13 - New Brunswick</label>
+            </value>
+            <value>
+                <fullName>24 - Quebec</fullName>
+                <default>false</default>
+                <label>24 - Quebec</label>
+            </value>
+            <value>
+                <fullName>35 - Ontario</fullName>
+                <default>false</default>
+                <label>35 - Ontario</label>
+            </value>
+            <value>
+                <fullName>46 - Manitoba</fullName>
+                <default>false</default>
+                <label>46 - Manitoba</label>
+            </value>
+            <value>
+                <fullName>47 - Saskatchewan</fullName>
+                <default>false</default>
+                <label>47 - Saskatchewan</label>
+            </value>
+            <value>
+                <fullName>48 - Alberta</fullName>
+                <default>false</default>
+                <label>48 - Alberta</label>
+            </value>
+            <value>
+                <fullName>59 - British Columbia</fullName>
+                <default>false</default>
+                <label>59 - British Columbia</label>
+            </value>
+            <value>
+                <fullName>60 - Yukon</fullName>
+                <default>false</default>
+                <label>60 - Yukon</label>
+            </value>
+            <value>
+                <fullName>61 - Northwest Territories</fullName>
+                <default>false</default>
+                <label>61 - Northwest Territories</label>
+            </value>
+            <value>
+                <fullName>62 - Nunavut</fullName>
+                <default>false</default>
+                <label>62 - Nunavut</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

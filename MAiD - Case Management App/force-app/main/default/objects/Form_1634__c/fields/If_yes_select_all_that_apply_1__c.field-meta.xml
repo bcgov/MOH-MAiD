@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_yes_select_all_that_apply_1__c</fullName>
+    <externalId>false</externalId>
+    <label>If yes, select all that apply</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A - Cancer - lung and bronchus</fullName>
+                <default>false</default>
+                <label>A - Cancer - lung and bronchus</label>
+            </value>
+            <value>
+                <fullName>B - Cancer - breast</fullName>
+                <default>false</default>
+                <label>B - Cancer - breast</label>
+            </value>
+            <value>
+                <fullName>C- Cancer - colorectal</fullName>
+                <default>false</default>
+                <label>C- Cancer - colorectal</label>
+            </value>
+            <value>
+                <fullName>D - Cancer - pancreas</fullName>
+                <default>false</default>
+                <label>D - Cancer - pancreas</label>
+            </value>
+            <value>
+                <fullName>E - Cancer - prostate</fullName>
+                <default>false</default>
+                <label>E - Cancer - prostate</label>
+            </value>
+            <value>
+                <fullName>F - Cancer - ovary</fullName>
+                <default>false</default>
+                <label>F - Cancer - ovary</label>
+            </value>
+            <value>
+                <fullName>G - Cancer - hematologic</fullName>
+                <default>false</default>
+                <label>G - Cancer - hematologic</label>
+            </value>
+            <value>
+                <fullName>H - Cancer - other</fullName>
+                <default>false</default>
+                <label>H - Cancer - other</label>
+            </value>
+            <value>
+                <fullName>I - Neurological condition - multiple sclerosis</fullName>
+                <default>false</default>
+                <label>I - Neurological condition - multiple sclerosis</label>
+            </value>
+            <value>
+                <fullName>J - Neurological condition - amyotrophic lateral sclerosis</fullName>
+                <default>false</default>
+                <label>J - Neurological condition - amyotrophic lateral sclerosis</label>
+            </value>
+            <value>
+                <fullName>K - Neurological condition - other</fullName>
+                <default>false</default>
+                <label>K - Neurological condition - other</label>
+            </value>
+            <value>
+                <fullName>L - Chronic respiratory disease</fullName>
+                <default>false</default>
+                <label>L - Chronic respiratory disease</label>
+            </value>
+            <value>
+                <fullName>M - Cardio-vascular condition</fullName>
+                <default>false</default>
+                <label>M - Cardio-vascular condition</label>
+            </value>
+            <value>
+                <fullName>N - Other organ failure</fullName>
+                <default>false</default>
+                <label>N - Other organ failure</label>
+            </value>
+            <value>
+                <fullName>O - Multiple co-morbidities</fullName>
+                <default>false</default>
+                <label>Multiple co-morbidities</label>
+            </value>
+            <value>
+                <fullName>P - Other</fullName>
+                <default>false</default>
+                <label>P - Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

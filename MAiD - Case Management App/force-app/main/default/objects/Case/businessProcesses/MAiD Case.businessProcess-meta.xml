@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MAiD Case</fullName>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Awaiting forms for CC review %2F checks</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>CC review %2F checks complete - pract%2E</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>CC review%2Fchecks - In progress</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>College Referral %2F hold</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Data Entry to Close</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>External complaint</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Final checks</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Follow-up needed for CC review%2Fchecks</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>MAiD Assessment</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>MAiD Request</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Patient Request</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Ready for 2nd Review</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Ready for CC review%2Fchecks</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Ready for Manager Review</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Transfer Parking lot</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>follow up</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

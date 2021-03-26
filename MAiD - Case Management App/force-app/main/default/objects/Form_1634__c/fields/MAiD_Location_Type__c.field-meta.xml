@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MAiD_Location_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>MAiD Location Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Hospital (exclude palliative care beds or units)</fullName>
+                <default>false</default>
+                <label>1 - Hospital (exclude palliative care beds or units)</label>
+            </value>
+            <value>
+                <fullName>2 - Palliative care facility (include hospital based palliative care beds/unit)</fullName>
+                <default>false</default>
+                <label>2 - Palliative care facility (include hospital based palliative care beds/unit)</label>
+            </value>
+            <value>
+                <fullName>3 - Residential care facility (including long term care facility, assisted living residence)</fullName>
+                <default>false</default>
+                <label>3 - Residential care facility (including long term care facility, assisted living residence)</label>
+            </value>
+            <value>
+                <fullName>4 - Private residence</fullName>
+                <default>false</default>
+                <label>4 - Private residence</label>
+            </value>
+            <value>
+                <fullName>5 - Other Specify</fullName>
+                <default>false</default>
+                <label>5 - Other Specify</label>
+            </value>
+            <value>
+                <fullName>6 - Hospice</fullName>
+                <default>false</default>
+                <label>6 - Hospice</label>
+            </value>
+            <value>
+                <fullName>7 - Medical Office or Clinic</fullName>
+                <default>false</default>
+                <label>7 - Medical Office or Clinic</label>
+            </value>
+            <value>
+                <fullName>8 - Ambulatory setting</fullName>
+                <default>false</default>
+                <label>8 - Ambulatory setting</label>
+            </value>
+            <value>
+                <fullName>9 - Community Care Facility</fullName>
+                <default>false</default>
+                <label>9 - Community Care Facility</label>
+            </value>
+            <value>
+                <fullName>10 - Assisted Living Residence</fullName>
+                <default>false</default>
+                <label>10 - Assisted Living Residence</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

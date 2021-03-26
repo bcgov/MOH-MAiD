@@ -1,0 +1,16 @@
+{
+  "orgName": "MAiD Dev",
+  "edition": "Enterprise",
+  "features": ["PersonAccounts", "LightningServiceConsole", "ServiceCloud","PlatformEncryption"],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    },
+    "nameSettings": {
+      "enableMiddleName": true
+    }
+  }
+}

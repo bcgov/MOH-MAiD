@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_gave_informed_consent_after_bein__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Patient gave informed consent to receive MAiD after having been informed of the means that were available to relieve their suffering, including palliative care?</inlineHelpText>
+    <label>Informed consent to relieve suffering?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Yes</fullName>
+                <default>false</default>
+                <label>1 - Yes</label>
+            </value>
+            <value>
+                <fullName>2 - No</fullName>
+                <default>false</default>
+                <label>2 - No</label>
+            </value>
+            <value>
+                <fullName>3 - Did not assess</fullName>
+                <default>false</default>
+                <label>3 - Did not assess</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
