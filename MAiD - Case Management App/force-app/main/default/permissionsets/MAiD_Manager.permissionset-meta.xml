@@ -125,34 +125,9 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Reason</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Case.If_1633_Incomplete__c</field>
         <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.SourceId</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.SuppliedCompany</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.SuppliedName</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.SuppliedPhone</field>
-        <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -313,11 +288,6 @@
         <editable>true</editable>
         <field>Case.X1633__c</field>
         <readable>true</readable>
-     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1632__c.Date_Written_Request_Received__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -338,7 +308,7 @@
         <editable>true</editable>
         <field>Case.X1635__c</field>
         <readable>true</readable>
-    </fieldPermissions>
+     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.X1641_Date_Received__c</field>
@@ -2648,6 +2618,18 @@
         <recordType>PersonAccount.Physician</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>PersonAccount.Nurse_Practitioner</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>PersonAccount.Pharmacist</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>PersonAccount.Physician</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
     <userPermissions>
         <enabled>true</enabled>
         <name>ActivitiesAccess</name>
@@ -2671,10 +2653,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>AssignTopics</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>BulkMacrosAllowed</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2758,10 +2736,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EnableNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>GiveRecognitionBadge</name>
     </userPermissions>
     <userPermissions>
@@ -2797,18 +2771,6 @@
         <name>SelectFilesFromSalesforce</name>
     </userPermissions>
     <userPermissions>
-        <enabled>false</enabled>
-        <name>SendAnnouncementEmails</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>SendCustomNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendSitRequests</name>
-    </userPermissions>
-    <userPermissions>
         <enabled>true</enabled>
         <name>SendSitRequests</name>
     </userPermissions>
@@ -2821,12 +2783,8 @@
         <name>SubmitMacrosAllowed</name>
     </userPermissions>
     <userPermissions>
-        <enabled>false</enabled>
-        <name>TraceXdsQueries</name>
-    </userPermissions>
-    <userPermissions>
         <enabled>true</enabled>
-        <name>TransactionalEmailSend</name>
+        <name>UseWebLink</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2835,18 +2793,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewEncryptedData</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>ViewEncryptedData</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>ViewEventLogFiles</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>ViewHealthCheck</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>

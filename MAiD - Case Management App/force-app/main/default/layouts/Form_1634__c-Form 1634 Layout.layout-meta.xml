@@ -734,6 +734,44 @@
                 <behavior>Edit</behavior>
                 <field>Advance_consent_sign_date_by_prescriber__c</field>
             </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Patient_full_name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MAiD_Prescriber_full_name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Practitioner_will_be_present_initials_by__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Patient_authorized_to_recieve_2nd_dose__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>X2nd_dose_will_be_adminstered_after_min__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Patient_signature_self_administration__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Advance_consent_signature_date_by_patien__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>MAiD_Prescriber_sign_self_administ__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Advance_consent_sign_date_by_prescriber__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Verbal_Consent_Notes__c</field>
@@ -808,6 +846,8 @@
                 <behavior>Edit</behavior>
                 <field>If_Yes_was_Prescriber_present__c</field>
             </layoutItems>
+        </layoutColumns>
+        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Did_the_patient_cause_their_death__c</field>
@@ -817,7 +857,7 @@
                 <field>If_No_practioner_administered_2nd_dose__c</field>
             </layoutItems>
         </layoutColumns>
-        <style>OneColumn</style>
+        <style>TwoColumnsLeftToRight</style>
     </layoutSections>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -917,7 +957,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1f000000ZgZQ</masterLabel>
+        <masterLabel>00h1f000000aPye</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

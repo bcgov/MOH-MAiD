@@ -135,26 +135,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.SourceId</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.SuppliedCompany</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.SuppliedName</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.SuppliedPhone</field>
-        <readable>false</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Case.If_RX_MAR_Incomplete__c</field>
         <readable>true</readable>
@@ -313,11 +293,6 @@
         <editable>true</editable>
         <field>Case.X1634_Date_Received__c</field>
         <readable>true</readable>
-     </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1632__c.Date_Written_Request_Received__c</field>
-        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -353,7 +328,7 @@
         <editable>true</editable>
         <field>Case.X1642__c</field>
         <readable>true</readable>
-    </fieldPermissions>
+     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.X1645_Date_Received__c</field>
@@ -2518,7 +2493,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Form_1632__c</object>
+        <object>Account</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -2527,7 +2502,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
-        <object>Form_1633__c</object>
+        <object>Case</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -2536,7 +2511,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Form_1634__c</object>
+        <object>Contact</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -2545,7 +2520,7 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Form_1635__c</object>
+        <object>Document</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
@@ -2554,30 +2529,12 @@
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>true</modifyAllRecords>
-        <object>Form_1641__c</object>
+        <object>Form_1632__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Form_1642__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>true</modifyAllRecords>
-        <object>Form_RXMAR__c</object>
-        <viewAllRecords>true</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>true</allowDelete>
+        <allowDelete>false</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
         <modifyAllRecords>false</modifyAllRecords>
@@ -2618,6 +2575,18 @@
     <recordTypeVisibilities>
         <recordType>Case.MAiD_Case</recordType>
         <visible>true</visible> 
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>PersonAccount.Nurse_Practitioner</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>PersonAccount.Pharmacist</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>PersonAccount.Physician</recordType>
+        <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <recordType>PersonAccount.Nurse_Practitioner</recordType>
@@ -2749,10 +2718,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>EnableNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
         <name>GiveRecognitionBadge</name>
     </userPermissions>
     <userPermissions>
@@ -2784,18 +2749,6 @@
         <name>SelectFilesFromSalesforce</name>
     </userPermissions>
     <userPermissions>
-        <enabled>false</enabled>
-        <name>SendAnnouncementEmails</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>SendCustomNotifications</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>true</enabled>
-        <name>SendSitRequests</name>
-    </userPermissions>
-    <userPermissions>
         <enabled>true</enabled>
         <name>SendSitRequests</name>
     </userPermissions>
@@ -2808,12 +2761,8 @@
         <name>SubmitMacrosAllowed</name>
     </userPermissions>
     <userPermissions>
-        <enabled>false</enabled>
-        <name>TraceXdsQueries</name>
-    </userPermissions>
-    <userPermissions>
         <enabled>true</enabled>
-        <name>TransactionalEmailSend</name>
+        <name>SubmitMacrosAllowed</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
@@ -2822,10 +2771,6 @@
     <userPermissions>
         <enabled>true</enabled>
         <name>ViewEncryptedData</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>ViewHealthCheck</name>
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
