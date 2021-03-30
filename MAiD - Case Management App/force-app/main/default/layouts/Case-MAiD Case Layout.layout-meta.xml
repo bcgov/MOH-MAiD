@@ -97,10 +97,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Reportable_to_Health_Canada__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Health_Canada_Reportable_Date__c</field>
             </layoutItems>
             <layoutItems>
@@ -110,6 +106,10 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Case_Type_Reported_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Reportable_to_Health_Canada_2__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
