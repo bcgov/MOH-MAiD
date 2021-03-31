@@ -73,7 +73,7 @@
     </applicationVisibilities>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.BusinessHoursId</field>
+        <field>Case.SuppliedEmail</field>
         <readable>false</readable>
     </fieldPermissions>
     <fieldPermissions>
