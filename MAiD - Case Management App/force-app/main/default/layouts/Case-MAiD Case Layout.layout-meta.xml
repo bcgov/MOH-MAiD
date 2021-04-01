@@ -55,8 +55,8 @@
                 <behavior>Edit</behavior>
                 <field>Practitioner_Name__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
+            <layoutItems>Read
+                <behavior>only</behavior>
                 <field>College_ID__c</field>
             </layoutItems>
             <layoutItems>
@@ -96,7 +96,7 @@
                 <field>Date_of_MAiD__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Reportable_to_Health_Canada__c</field>
             </layoutItems>
             <layoutItems>
