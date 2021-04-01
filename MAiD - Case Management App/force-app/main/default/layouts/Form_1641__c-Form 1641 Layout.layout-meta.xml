@@ -316,22 +316,7 @@
                 <behavior>Edit</behavior>
                 <field>Oral_Suspension_consistent_with_MAR__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Returning_Prescriber_Name__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>CPSID_BCCNM_Returning_Prescriber_Licen__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Prescriber_Returned__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Returning_Prescriber_s_Signature__c</field>
-            </layoutItems>
+            
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Lorazepam__c</field>
@@ -375,6 +360,22 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Compound_Suspension_consistent_with_MAR__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Returning_Prescriber_Name__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>CPSID_BCCNM_Returning_Prescriber_Licen__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Prescriber_Returned__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Returning_Prescriber_s_Signature__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
