@@ -362,6 +362,7 @@
                 <field>Compound_Suspension_consistent_with_MAR__c</field>
             </layoutItems>
             <layoutItems>
+
                 <behavior>Edit</behavior>
                 <field>Returning_Prescriber_Name__c</field>
             </layoutItems>
@@ -378,6 +379,7 @@
                 <field>Returning_Prescriber_s_Signature__c</field>
             </layoutItems>
             <layoutItems>
+                
                 <behavior>Edit</behavior>
                 <field>Receiving_Pharmacist__c</field>
             </layoutItems>
