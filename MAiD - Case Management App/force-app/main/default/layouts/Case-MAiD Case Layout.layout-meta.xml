@@ -96,6 +96,10 @@
                 <field>Date_of_MAiD__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>ReadOnly</behavior>
+                <field>Reportable_to_Health_Canada__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Health_Canada_Reportable_Date__c</field>
             </layoutItems>
