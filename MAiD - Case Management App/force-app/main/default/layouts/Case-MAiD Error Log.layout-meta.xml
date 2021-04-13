@@ -35,10 +35,7 @@
                 <behavior>Required</behavior>
                 <field>Practitioner__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Reportable_to_Health_Canada_2__c</field>
-            </layoutItems>
+
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
