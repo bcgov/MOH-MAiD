@@ -4,7 +4,7 @@
     <defaultValue>0</defaultValue>
     <externalId>false</externalId>
     <inlineHelpText>The MAiD Prescriber will administer the second dose after  _________________ minutes</inlineHelpText>
-    <label>2nd dose will be adminstered after mins?</label>
+    <label>2nd dose administered after__mins?</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
