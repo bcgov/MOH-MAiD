@@ -267,7 +267,6 @@
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
         </platformActionListItems>
-        
         <platformActionListItems>
             <actionName>FeedItem.TextPost</actionName>
             <actionType>QuickAction</actionType>
