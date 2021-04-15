@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Which_part_of_Form_1642_was_missed__c</fullName>
+    <externalId>false</externalId>
+    <label>Which part of Form 1642 was missed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Transfer information incomplete</fullName>
+                <default>false</default>
+                <label>Transfer information incomplete</label>
+            </value>
+            <value>
+                <fullName>Patient info incomplete</fullName>
+                <default>false</default>
+                <label>Patient info incomplete</label>
+            </value>
+            <value>
+                <fullName>Practitioner info incomplete</fullName>
+                <default>false</default>
+                <label>Practitioner info incomplete</label>
+            </value>
+            <value>
+                <fullName>Receipt of Written Request</fullName>
+                <default>false</default>
+                <label>Receipt of Written Request</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
