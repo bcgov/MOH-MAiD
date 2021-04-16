@@ -23,13 +23,13 @@
     <fieldUpdates>
         <fullName>Reportable_Date_field_update</fullName>
         <field>Health_Canada_Reportable_Date__c</field>
-        <formula>IF( TODAY() &gt;= DATE(YEAR(TODAY()),1,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),3,31) , DATE(YEAR(TODAY()),3,31),
+        <formula>IF( TODAY() &gt;= DATE(YEAR(TODAY()),1,1)   &amp;&amp;  TODAY() &lt;= DATE(YEAR(TODAY()),3,31) , DATE(YEAR(TODAY()),3,31),
 
-IF(TODAY() &gt;= DATE(YEAR(TODAY()),4,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),6,30) , DATE(YEAR(TODAY()),6,30),
+IF(TODAY() &gt;= DATE(YEAR(TODAY()),4,1)   &amp;&amp;  TODAY() &lt;= DATE(YEAR(TODAY()),6,30) , DATE(YEAR(TODAY()),6,30),
 
-IF(TODAY() &gt;= DATE(YEAR(TODAY()),7,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),9,30) , DATE(YEAR(TODAY()),9,30),
+IF(TODAY() &gt;= DATE(YEAR(TODAY()),7,1)  &amp;&amp; TODAY() &lt;= DATE(YEAR(TODAY()),9,30) , DATE(YEAR(TODAY()),9,30),
 
-IF(TODAY() &gt;= DATE(YEAR(TODAY()),10,1)  || TODAY() &lt;= DATE(YEAR(TODAY()),12,31) , DATE(YEAR(TODAY()),12,31),
+IF(TODAY() &gt;= DATE(YEAR(TODAY()),10,1)  &amp;&amp; TODAY() &lt;= DATE(YEAR(TODAY()),12,31) , DATE(YEAR(TODAY()),12,31),
 
 null))))</formula>
         <name>Reportable Date field update</name>

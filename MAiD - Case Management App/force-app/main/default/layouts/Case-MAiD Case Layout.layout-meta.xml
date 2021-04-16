@@ -111,6 +111,7 @@
                 <behavior>Required</behavior>
                 <field>Case_Type_Reported_Date__c</field>
             </layoutItems>
+
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
