@@ -319,6 +319,10 @@
         <fields>NAME</fields>
         <relatedList>Form_1642__c.Case__c</relatedList>
     </relatedLists>
+     <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Form_1645__c.Case__c</relatedList>
+    </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Form_RXMAR__c.Case__c</relatedList>
