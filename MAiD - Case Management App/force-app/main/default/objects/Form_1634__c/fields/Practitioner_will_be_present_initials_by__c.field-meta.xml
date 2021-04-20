@@ -4,7 +4,7 @@
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
     <inlineHelpText>The MAiD Prescriber will be present at the time the patient self administers the MAiD substance that will cause their death.</inlineHelpText>
-    <label>Practitioner be present initials by both</label>
+    <label>Practitioner presence initials by both</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

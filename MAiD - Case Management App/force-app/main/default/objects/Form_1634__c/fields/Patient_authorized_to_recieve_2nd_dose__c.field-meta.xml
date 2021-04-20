@@ -4,7 +4,7 @@
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
     <inlineHelpText>If,  after self-administering the first substance, the patient loses the capacity to provide consent to receive medical assistance in dying but does not pass away within a specified period, the requestor consents to the MAiD Prescriber administering a second substance to cause their death.</inlineHelpText>
-    <label>Patient authorized to recieve 2nd dose</label>
+    <label>Patient authorized to receive 2nd dose</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

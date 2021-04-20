@@ -111,6 +111,7 @@
                 <behavior>Required</behavior>
                 <field>Case_Type_Reported_Date__c</field>
             </layoutItems>
+
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -317,6 +318,10 @@
     <relatedLists>
         <fields>NAME</fields>
         <relatedList>Form_1642__c.Case__c</relatedList>
+    </relatedLists>
+     <relatedLists>
+        <fields>NAME</fields>
+        <relatedList>Form_1645__c.Case__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
