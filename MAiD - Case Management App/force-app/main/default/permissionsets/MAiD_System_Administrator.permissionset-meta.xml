@@ -2236,21 +2236,6 @@
     </fieldPermissions>
         <fieldPermissions>
         <editable>true</editable>
-        <field>Form_RXMAR__c.Describe_Dose_of_Bupivacaine__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_RXMAR__c.Bupivacaine_Sodium_Chloride_flush__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_RXMAR__c.Time_for_Dose_of_Bupivacaine__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_RXMAR__c.Initials_present_on_administered_drugs__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2310,7 +2295,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+      <editable>true</editable>
         <field>Form_RXMAR__c.Pharmacist_Initials_Present__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2469,6 +2454,21 @@
         <field>Form_RXMAR__c.Time_for_Dose_of_rocuronium__c</field>
         <readable>true</readable>
     </fieldPermissions>
+  <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_RXMAR__c.Describe_Dose_of_Bupivacaine__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_RXMAR__c.Bupivacaine_Sodium_Chloride_flush__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_RXMAR__c.Time_for_Dose_of_Bupivacaine__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_RXMAR__c.proDOfol_ordered__c</field>
@@ -2487,6 +2487,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Task.ActivityDate</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.Description</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Task.WhatId</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
