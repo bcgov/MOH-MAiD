@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missed_Issue_on_Form_1634__c</fullName>
+    <externalId>false</externalId>
+    <label>Missed Issue on Form 1634</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Which_part_of_Form_1634_was_missed__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Missed_Error_Log_Issue</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Patient info incomplete</controllingFieldValue>
+            <controllingFieldValue>Practitioner info incomplete</controllingFieldValue>
+            <valueName>N/A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Receipt of Written Request</controllingFieldValue>
+            <valueName>Whom did you receive the 1632 form from?</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Receipt of Written Request</controllingFieldValue>
+            <valueName>Date of written request received</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Receipt of Written Request</controllingFieldValue>
+            <valueName>Prior patient knowledge/consultation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Assessment info incomplete</controllingFieldValue>
+            <valueName>Date of Assessment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Assessment info incomplete</controllingFieldValue>
+            <valueName>In Person/by Telemed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Assessment info incomplete</controllingFieldValue>
+            <valueName>Location of Assessment</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Assessment info incomplete</controllingFieldValue>
+            <valueName>Telemed Witness info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Assessment info incomplete</controllingFieldValue>
+            <valueName>Interpreter info</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safeguards (Assessments)</controllingFieldValue>
+            <valueName>Pg. 1 safeguards are not met</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safeguards (Assessments)</controllingFieldValue>
+            <valueName>Pg. 2 patient informed safeguards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safeguards (Assessments)</controllingFieldValue>
+            <valueName>Pg. 3 NDNRF safeguards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safeguards (Assessments)</controllingFieldValue>
+            <valueName>Pg. 4 MAiD planning safeguards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safeguards (Assessments)</controllingFieldValue>
+            <valueName>Pg. 5 Planning safeguards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safeguards (Assessments)</controllingFieldValue>
+            <valueName>Pg. 5 Waiver of final consent safeguards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safeguards (Assessments)</controllingFieldValue>
+            <valueName>Pg. 6 Administration safeguards</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eligibility Criteria</controllingFieldValue>
+            <valueName>Did not tick yes to ALL criteria</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eligibility Criteria</controllingFieldValue>
+            <valueName>Capability/incapability for informed consent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eligibility Criteria</controllingFieldValue>
+            <valueName>Conclusion of eligibility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Eligibility Criteria</controllingFieldValue>
+            <controllingFieldValue>Administration of MAiD</controllingFieldValue>
+            <valueName>Signature/date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Discontinuation of Planning</controllingFieldValue>
+            <valueName>Change in Eligibility section</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Discontinuation of Planning</controllingFieldValue>
+            <valueName>Reason for discontinuation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Patient Care info</controllingFieldValue>
+            <valueName>Consult with other health care professionals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Patient Care info</controllingFieldValue>
+            <valueName>Palliative care/access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Patient Care info</controllingFieldValue>
+            <valueName>Disability support services/length</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administration of MAiD</controllingFieldValue>
+            <valueName>Proxy Relationship/information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administration of MAiD</controllingFieldValue>
+            <valueName>Patient Signature/Verbal Consent</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administration of MAiD</controllingFieldValue>
+            <valueName>Location of MAiD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Administration of MAiD</controllingFieldValue>
+            <valueName>Patient transfer for MAiD</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>
