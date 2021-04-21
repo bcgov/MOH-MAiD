@@ -2029,6 +2029,21 @@
         <field>Form_RXMAR__c.Anaesthetic_lidocaine__c</field>
         <readable>true</readable>
     </fieldPermissions>
+        <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_RXMAR__c.Describe_Dose_of_Bupivacaine__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_RXMAR__c.Bupivacaine_Sodium_Chloride_flush__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_RXMAR__c.Time_for_Dose_of_Bupivacaine__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_RXMAR__c.Anti_emetic_haloperidol_Dose_2__c</field>
