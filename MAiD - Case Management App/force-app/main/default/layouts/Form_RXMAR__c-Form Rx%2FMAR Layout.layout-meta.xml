@@ -368,6 +368,18 @@
                 <behavior>Edit</behavior>
                 <field>Rocuronium_sodium_chloride__c</field>
             </layoutItems>
+             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Describe_Dose_of_Bupivacaine__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Time_for_Dose_of_Bupivacaine__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Bupivacaine_Sodium_Chloride_flush__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
