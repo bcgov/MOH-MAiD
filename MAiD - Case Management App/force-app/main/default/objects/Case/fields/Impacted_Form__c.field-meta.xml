@@ -31,36 +31,6 @@
                 <default>false</default>
                 <label>Transfer of Request Reporting</label>
             </value>
-            <value>
-                <fullName>1633 Form</fullName>
-                <default>false</default>
-                <label>1633 Form</label>
-            </value>
-            <value>
-                <fullName>1634 Form</fullName>
-                <default>false</default>
-                <label>1634 Form</label>
-            </value>
-            <value>
-                <fullName>Rx/MAR Form</fullName>
-                <default>false</default>
-                <label>Rx/MAR Form</label>
-            </value>
-            <value>
-                <fullName>1641 Form</fullName>
-                <default>false</default>
-                <label>1641 Form</label>
-            </value>
-            <value>
-                <fullName>1642 Form</fullName>
-                <default>false</default>
-                <label>1642 Form</label>
-            </value>
-            <value>
-                <fullName>1635 Form</fullName>
-                <default>false</default>
-                <label>1635 Form</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
