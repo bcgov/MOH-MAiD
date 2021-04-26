@@ -38,11 +38,11 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Requestor_initialed_Safeguards__c</field>
+                <field>Requestor_Signature_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Requestor_Signature_Date__c</field>
+                <field>Requestor_initialed_Safeguards__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
