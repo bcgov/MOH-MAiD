@@ -2,9 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Requestor_initialed_Safeguards__c</fullName>
     <defaultValue>false</defaultValue>
-    <externalId>true</externalId>
+    <externalId>false</externalId>
     <label>Requestor initialed Safeguards</label>
-    <trackHistory>true</trackHistory>
-    <trackTrending>true</trackTrending>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
     <type>Checkbox</type>
 </CustomField>
