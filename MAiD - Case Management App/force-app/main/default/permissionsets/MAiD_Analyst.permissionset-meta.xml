@@ -1356,22 +1356,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Was_the_substance_self_administered__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Who_did_you_receive_the_written_request__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.X2nd_dose_will_be_adminstered_after_min__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.consulted_other_healthcare_professionals__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
