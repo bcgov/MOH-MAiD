@@ -3,12 +3,13 @@
     <fullName>Impacted_Form__c</fullName>
     <externalId>false</externalId>
     <label>Impacted Form</label>
-    <required>false</required>
+    <required>true</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -22,9 +23,9 @@
                 <label>Discontinuation Reporting</label>
             </value>
             <value>
-                <fullName>1641 Reporting</fullName>
+                <fullName>1641 Form Reporting</fullName>
                 <default>false</default>
-                <label>1641 Reporting</label>
+                <label>1641 Form Reporting</label>
             </value>
             <value>
                 <fullName>Transfer of Request Reporting</fullName>
