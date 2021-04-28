@@ -481,7 +481,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1632__c.Requestor_initialed_Safeguards__c</field>
+        <field>Form_1632__c.Requestor_initiated_Safeguards__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

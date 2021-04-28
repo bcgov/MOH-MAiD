@@ -45,7 +45,7 @@
         <label>Reporting Error</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Impacted_Form__c</field>
             </layoutItems>
             <layoutItems>
