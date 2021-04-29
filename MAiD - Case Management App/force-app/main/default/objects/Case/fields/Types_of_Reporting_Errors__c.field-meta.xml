@@ -9,7 +9,7 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <controllingField>Impacted_Form__c</controllingField>
+        <controllingField>Reporting_Errors__c</controllingField>
         <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
@@ -35,27 +35,27 @@
             </value>
         </valueSetDefinition>
         <valueSettings>
-            <controllingFieldValue>MAiD Reporting</controllingFieldValue>
+            <controllingFieldValue>1641 Form Reporting</controllingFieldValue>
             <controllingFieldValue>Discontinuation Reporting</controllingFieldValue>
-            <controllingFieldValue>1641 Reporting</controllingFieldValue>
+            <controllingFieldValue>MAiD Reporting</controllingFieldValue>
             <valueName>Not reported by deadline</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>MAiD Reporting</controllingFieldValue>
+            <controllingFieldValue>1641 Form Reporting</controllingFieldValue>
             <controllingFieldValue>Discontinuation Reporting</controllingFieldValue>
+            <controllingFieldValue>MAiD Reporting</controllingFieldValue>
+            <controllingFieldValue>Transfer of Request Reporting</controllingFieldValue>
+            <valueName>Fax Transmission Error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Discontinuation Reporting</controllingFieldValue>
+            <controllingFieldValue>MAiD Reporting</controllingFieldValue>
             <valueName>All forms not submitted</valueName>
         </valueSettings>
         <valueSettings>
-            <controllingFieldValue>MAiD Reporting</controllingFieldValue>
             <controllingFieldValue>Discontinuation Reporting</controllingFieldValue>
+            <controllingFieldValue>MAiD Reporting</controllingFieldValue>
             <valueName>Forms missing page(s)</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>MAiD Reporting</controllingFieldValue>
-            <controllingFieldValue>Discontinuation Reporting</controllingFieldValue>
-            <controllingFieldValue>1641 Reporting</controllingFieldValue>
-            <controllingFieldValue>Transfer of Request Reporting</controllingFieldValue>
-            <valueName>Fax Transmission Error</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>
