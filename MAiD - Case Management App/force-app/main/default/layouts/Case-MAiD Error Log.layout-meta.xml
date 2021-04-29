@@ -45,7 +45,7 @@
         <label>Reporting Error</label>
         <layoutColumns>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Impacted_Form__c</field>
             </layoutItems>
             <layoutItems>
@@ -105,14 +105,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Form_1633__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Which_part_of_form_1633_was_missed__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Missed_Issue_on_Form_1633__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
