@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_requires_disability_support_serv__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>Patient requires disability support services?</inlineHelpText>
+    <inlineHelpText>If yes, did the patient received disability  values should be 1-yes, 2-No , 3- Do not know</inlineHelpText>
     <label>Patient needs disability support service</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

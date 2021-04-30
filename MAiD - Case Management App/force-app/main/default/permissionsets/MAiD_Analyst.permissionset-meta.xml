@@ -666,6 +666,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Advance_consent_sign_date_by_patient__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Advance_consent_sign_date_by_prescriber__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -771,6 +776,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Did_the_patient_die_after_self_admin__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Did_the_patient_die_after_self_administ__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Ensured_MAiD_administered_as_specified__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -836,7 +851,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.If_No_Practitioner_administered_IV_as_p__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.If_No_practioner_administered_2nd_dose__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_No_practitioner_admin_IV_per_agree__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1011,6 +1036,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.If_yes_was_the_Prescriber_present__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Interpreter_for_MAID_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1096,12 +1126,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Patient_authorized_to_recieve_second_dos__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Patient_capable_of_making_this_health_ca__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Patient_consensented_to_assessment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Patient_consented_to_assessment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1426,12 +1466,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Was_the_substance_self_administered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Who_did_you_receive_the_written_request__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.X2nd_dose_will_be_adminstered_after_min__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.consulted_other_healthcare_professionals__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
