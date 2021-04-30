@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>If_Yes_was_Prescriber_present__c</fullName>
+    <fullName>consulted_other_healthcare_professionals__c</fullName>
     <externalId>false</externalId>
-    <inlineHelpText>If Yes, were you present when the patient self-administered the substance?</inlineHelpText>
-    <label>If Yes, was Prescriber present?</label>
+    <inlineHelpText>Did you consult with other health care professionals, such as a psychiatrist or the patient&apos;s primary care provider, or social workers to inform your assessment (do not include the mandatory written second assessment required by the Criminal Code)?</inlineHelpText>
+    <label>Consulted other healthcare professionals</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
