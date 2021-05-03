@@ -21,7 +21,7 @@
                 </componentInstanceProperties>
                 <componentInstanceProperties>
                     <name>numVisibleActions</name>
-                    <value>3</value>
+                    <value>4</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
             </componentInstance>
@@ -35,21 +35,13 @@
                 <componentName>force:detailPanel</componentName>
             </componentInstance>
         </itemInstances>
-        <name>main</name>
-        <type>Region</type>
+        <name>Facet-d6fc009b-1037-4f13-9079-22846cbb20a0</name>
+        <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Case.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>CombinedAttachments</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
                     <name>relatedListComponentOverride</name>
                     <value>NONE</value>
                 </componentInstanceProperties>
@@ -61,191 +53,85 @@
                     <name>showActionBar</name>
                     <value>true</value>
                 </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
+                <componentName>force:relatedListContainer</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-4a3e6840-625c-49b2-b6ec-58e08c5b097c</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>forceChatter:recordFeedContainer</componentName>
+            </componentInstance>
+        </itemInstances>
+        <name>Facet-5572fefe-8fc2-434c-8392-6f1af38f6606</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>body</name>
+                    <value>Facet-d6fc009b-1037-4f13-9079-22846cbb20a0</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>title</name>
+                    <value>Standard.Tab.detail</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:tab</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Case.Id</value>
+                    <name>active</name>
+                    <value>false</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>OpenActivities</value>
+                    <name>body</name>
+                    <value>Facet-4a3e6840-625c-49b2-b6ec-58e08c5b097c</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
+                    <name>title</name>
+                    <value>Standard.Tab.relatedLists</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
+                <componentName>flexipage:tab</componentName>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Case.Id</value>
+                    <name>body</name>
+                    <value>Facet-5572fefe-8fc2-434c-8392-6f1af38f6606</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Form_1632__r</value>
+                    <name>title</name>
+                    <value>Standard.Tab.activity</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
+                <componentName>flexipage:tab</componentName>
             </componentInstance>
         </itemInstances>
+        <name>Facet-a90f9bd1-3300-48df-9256-9b3ed024f4d3</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Case.Id</value>
+                    <name>tabs</name>
+                    <value>Facet-a90f9bd1-3300-48df-9256-9b3ed024f4d3</value>
                 </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Forms_1633__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
+                <componentName>flexipage:tabset</componentName>
             </componentInstance>
         </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Case.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Form_1634__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Case.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Form_1635__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Case.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Form_1641__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>parentFieldApiName</name>
-                    <value>Case.Id</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListApiName</name>
-                    <value>Forms_1642__r</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>relatedListComponentOverride</name>
-                    <value>NONE</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>rowsToDisplay</name>
-                    <value>10</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>showActionBar</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentName>force:relatedListSingleContainer</componentName>
-            </componentInstance>
-        </itemInstances>
-        <name>sidebar</name>
+        <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>MAiD Case Record Page</masterLabel>
+    <masterLabel>Case Record Page</masterLabel>
     <sobjectType>Case</sobjectType>
     <template>
-        <name>flexipage:recordHomeTemplateDesktop</name>
+        <name>flexipage:recordHomeSimpleViewTemplate</name>
         <properties>
             <name>enablePageActionConfig</name>
             <value>false</value>
