@@ -666,6 +666,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Advance_consent_sign_date_by_patient__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Advance_consent_sign_date_by_prescriber__c</field>
         <readable>true</readable>
     </fieldPermissions>
