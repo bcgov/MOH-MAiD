@@ -37,7 +37,7 @@
                 <field>Patient_Date_of_Birth__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>Practitioner__c</field>
             </layoutItems>
         </layoutColumns>

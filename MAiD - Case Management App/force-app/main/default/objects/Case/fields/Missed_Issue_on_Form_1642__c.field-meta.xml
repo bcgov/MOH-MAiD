@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Missed_Issue_on_Form_1642__c</fullName>
+    <externalId>false</externalId>
+    <label>Missed Issue on Form 1642</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Which_part_of_Form_1642_was_missed__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Missed_Error_Log_Issue</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
+            <valueName>Conclusion of eligibility</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
+            <valueName>Signature/date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
+            <valueName>Was an eligibility assessment completed?</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
+            <valueName>Reason for transfer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
+            <valueName>Transfer Date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Patient info incomplete</controllingFieldValue>
+            <controllingFieldValue>Practitioner info incomplete</controllingFieldValue>
+            <valueName>N/A</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Receipt of Written Request</controllingFieldValue>
+            <valueName>Whom did you receive the 1632 form from?</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Receipt of Written Request</controllingFieldValue>
+            <valueName>Date of written request received</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Receipt of Written Request</controllingFieldValue>
+            <valueName>Prior patient knowledge/consultation</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

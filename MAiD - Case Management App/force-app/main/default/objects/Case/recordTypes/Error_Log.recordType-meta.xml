@@ -43,49 +43,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Impacted_Form__c</picklist>
-        <values>
-            <fullName>1633 Form</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>1634 Form</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>1635 Form</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>1641 Form</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>1641 Reporting</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>1642 Form</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Discontinuation Reporting</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MAiD Reporting</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Rx%2FMAR Form</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Transfer of Request Reporting</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Origin</picklist>
         <values>
             <fullName>Email</fullName>

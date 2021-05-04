@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>If_yes_did_patient_received_disability__c</fullName>
+    <fullName>Which_part_of_Form_1641_was_missed__c</fullName>
     <externalId>false</externalId>
-    <label>If yes, did patient received disability</label>
+    <label>Which part of Form-1641 was missed</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
@@ -12,20 +13,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>1-Yes</fullName>
+                <fullName>Safeguards (1641)</fullName>
                 <default>false</default>
-                <label>1-Yes</label>
+                <label>Safeguards (1641)</label>
             </value>
             <value>
-                <fullName>2- No</fullName>
+                <fullName>Medication Dispensing</fullName>
                 <default>false</default>
-                <label>2- No</label>
-            </value>
-            <value>
-                <fullName>Value1</fullName>
-                <default>false</default>
-                <isActive>false</isActive>
-                <label>Value1</label>
+                <label>Medication Dispensing</label>
             </value>
         </valueSetDefinition>
     </valueSet>
