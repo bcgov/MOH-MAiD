@@ -171,6 +171,21 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>RX_MAR__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Reason</picklist>
         <values>
             <fullName>Whom did you receive the 1632 form from%3F</fullName>
@@ -196,11 +211,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>MAiD Death</fullName>
+            <fullName>MAiD Death Foreseeable</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>MAiD Request</fullName>
+            <fullName>MAiD Death Not Foreseeable</fullName>
             <default>false</default>
         </values>
         <values>
@@ -285,6 +300,21 @@
     </picklistValues>
     <picklistValues>
         <picklist>X1642__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1645__c</picklist>
         <values>
             <fullName>Incomplete</fullName>
             <default>false</default>
