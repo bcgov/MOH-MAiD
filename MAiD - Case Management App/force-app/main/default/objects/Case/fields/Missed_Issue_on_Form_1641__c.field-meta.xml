@@ -56,5 +56,9 @@
             <controllingFieldValue>Medication Dispensing</controllingFieldValue>
             <valueName>Return date/time</valueName>
         </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Patient info incomplete</controllingFieldValue>
+            <valueName>N/A</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>
