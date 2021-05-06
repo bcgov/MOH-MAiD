@@ -128,6 +128,21 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>RX_MAR__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Reason</picklist>
         <values>
             <fullName>All safeguard boxes incomplete</fullName>
@@ -446,6 +461,21 @@
     </picklistValues>
     <picklistValues>
         <picklist>X1642__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1645__c</picklist>
         <values>
             <fullName>Incomplete</fullName>
             <default>false</default>
