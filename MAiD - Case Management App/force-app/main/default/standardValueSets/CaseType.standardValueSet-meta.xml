@@ -2,14 +2,9 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>MAiD Death Foreseeable</fullName>
+        <fullName>MAiD Death</fullName>
         <default>false</default>
-        <label>MAiD Death Foreseeable</label>
-    </standardValue>
-    <standardValue>
-        <fullName>MAiD Death Not Foreseeable</fullName>
-        <default>false</default>
-        <label>MAiD Death Not Foreseeable</label>
+        <label>MAiD Death</label>
     </standardValue>
     <standardValue>
         <fullName>Discontinuation of Planning: Death Prior</fullName>
@@ -35,6 +30,11 @@
         <fullName>MAiD Assessment of Eligibility</fullName>
         <default>false</default>
         <label>MAiD Assessment of Eligibility</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MAiD Request</fullName>
+        <default>false</default>
+        <label>MAiD Request</label>
     </standardValue>
     <standardValue>
         <fullName>Not reported by deadline</fullName>
