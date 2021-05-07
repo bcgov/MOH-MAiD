@@ -831,6 +831,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Additional_Supplementary_Information__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Practitioners_Administration_Signature__c</field>
             </layoutItems>
             <layoutItems>
