@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Additional_Supplementary_Information__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
-    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>Additional Supplementary Information</label>
     <length>3000</length>
