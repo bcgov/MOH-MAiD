@@ -30,6 +30,10 @@
                 <behavior>Required</behavior>
                 <field>Practitioner__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Patient_authorized_to_recieve_second_dos__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
