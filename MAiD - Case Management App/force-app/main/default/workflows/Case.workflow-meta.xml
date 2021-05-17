@@ -111,7 +111,7 @@ null))))</formula>
         <criteriaItems>
             <field>Case.Type</field>
             <operation>notEqual</operation>
-            <value>MAiD Assessment of Eligibility,MAiD Request</value>
+            <value>MAiD Assessment of Eligibility</value>
         </criteriaItems>
         <triggerType>onAllChanges</triggerType>
     </rules>
@@ -131,7 +131,7 @@ null))))</formula>
         <criteriaItems>
             <field>Case.Type</field>
             <operation>equals</operation>
-            <value>MAiD Assessment of Eligibility,MAiD Request</value>
+            <value>MAiD Assessment of Eligibility</value>
         </criteriaItems>
         <triggerType>onAllChanges</triggerType>
     </rules>
