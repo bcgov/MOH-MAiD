@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_yes_did_patient_received_disability__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>If yes, did the patient received disability  values should be 1-yes, 2-No , 3- Do not know</inlineHelpText>
     <label>If yes, did patient received disability</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
@@ -22,11 +23,10 @@
                 <label>2- No</label>
             </value>
             <value>
-                <fullName>Value1</fullName>
+                <fullName>3 - Do not know</fullName>
                 <default>false</default>
-                <isActive>false</isActive>
-                <label>Value1</label>
+                <label>3 - Do not know</label>
             </value>
-        </valueSetDefinition>
+            </valueSetDefinition>
     </valueSet>
 </CustomField>

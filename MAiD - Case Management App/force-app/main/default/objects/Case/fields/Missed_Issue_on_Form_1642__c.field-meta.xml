@@ -22,16 +22,17 @@
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
+            <valueName>Transfer Date</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
             <valueName>Was an eligibility assessment completed?</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
             <valueName>Reason for transfer</valueName>
         </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
-            <valueName>Transfer Date</valueName>
-        </valueSettings>
+
         <valueSettings>
             <controllingFieldValue>Patient info incomplete</controllingFieldValue>
             <controllingFieldValue>Practitioner info incomplete</controllingFieldValue>
