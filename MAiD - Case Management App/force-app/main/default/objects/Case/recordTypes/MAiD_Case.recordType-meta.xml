@@ -1256,19 +1256,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>MAiD Death</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>MAiD Death Foreseeable</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>MAiD Death Not Foreseeable</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>MAiD Request</fullName>
             <default>false</default>
         </values>
         <values>

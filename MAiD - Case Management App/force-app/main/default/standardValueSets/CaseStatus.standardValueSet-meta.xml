@@ -10,13 +10,13 @@
     <standardValue>
         <fullName>Awaiting Forms</fullName>
         <default>false</default>
-        <label>follow up</label>
+        <label>Follow Up.</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>
         <fullName>Follow up required for CC Review/Checks</fullName>
         <default>false</default>
-        <label>College Referral / hold</label>
+        <label>College Referral / hold.</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>
@@ -28,19 +28,19 @@
     <standardValue>
         <fullName>CC Review/Checks in Progress</fullName>
         <default>false</default>
-        <label>Data Entry to Close</label>
+        <label>Data Entry to Close.</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>
         <fullName>Follow up Required to Close</fullName>
         <default>false</default>
-        <label>Final checks</label>
+        <label>Final checks.</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>
         <fullName>Ready for Manager Review</fullName>
         <default>false</default>
-        <label>External complaint</label>
+        <label>External Complaint.</label>
         <closed>false</closed>
     </standardValue>
     <standardValue>

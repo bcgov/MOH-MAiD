@@ -55,10 +55,6 @@
         <default>false</default>
     </values>
     <values>
-        <fullName>Ready for CC review%2Fchecks</fullName>
-        <default>false</default>
-    </values>
-    <values>
         <fullName>Ready for Manager Review</fullName>
         <default>false</default>
     </values>
