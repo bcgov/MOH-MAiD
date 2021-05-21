@@ -6,10 +6,7 @@
     <errorConditionFormula>IF(
 (ISPICKVAL( Type , &quot;MAiD Death Foreseeable&quot;)  ||  
 ISPICKVAL( Type , &quot;MAiD Death Not Foreseeable&quot;)) ,
- AND ( 
-ISNULL(Date_of_MAiD__c  ), 
-ISNULL( X1641_Date_Received__c ) 
-) , 
+  ISNULL(Date_of_MAiD__c  ) , 
 null
 )</errorConditionFormula>
     <errorMessage>Date of MAiD is required</errorMessage>

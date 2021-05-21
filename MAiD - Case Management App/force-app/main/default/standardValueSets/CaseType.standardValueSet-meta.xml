@@ -126,4 +126,14 @@
         <default>false</default>
         <label>Transfer information incomplete</label>
     </standardValue>
+    <standardValue>
+        <fullName>MAiD Death Foreseeable</fullName>
+        <default>false</default>
+        <label>MAiD Death Foreseeable</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MAiD Death Not Foreseeable</fullName>
+        <default>false</default>
+        <label>MAiD Death Not Foreseeable</label>
+    </standardValue>
 </StandardValueSet>
