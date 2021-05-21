@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_Yes_is_patients_change_in_eligbilit__c</fullName>
-    <defaultValue>false</defaultValue>
     <externalId>false</externalId>
     <inlineHelpText>If Yes, was the patient’s change in eligibility due to the loss of capacity to make decisions with respect to their health?</inlineHelpText>
     <label>If Yes, change due to loss of capacity</label>
+    <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
-    <type>Checkbox</type>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
 </CustomField>
