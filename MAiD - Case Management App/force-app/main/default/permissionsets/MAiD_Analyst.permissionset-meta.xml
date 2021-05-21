@@ -176,11 +176,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.If_Gender_Other_specify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Case.If_RX_MAR_Incomplete__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1182,6 +1177,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Patient_authorized_to_recieve_2nd_dose__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Patient_authorized_to_recieve_second_dos__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

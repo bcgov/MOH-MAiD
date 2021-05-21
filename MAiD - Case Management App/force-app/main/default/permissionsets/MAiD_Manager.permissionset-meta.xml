@@ -176,11 +176,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.If_Gender_Other_specify__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Case.If_RX_MAR_Incomplete__c</field>
         <readable>true</readable>
     </fieldPermissions>
