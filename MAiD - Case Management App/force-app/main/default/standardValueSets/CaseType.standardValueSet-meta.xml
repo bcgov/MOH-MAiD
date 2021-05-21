@@ -2,6 +2,16 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
+        <fullName>MAiD Death Foreseeable</fullName>
+        <default>false</default>
+        <label>MAiD Death Foreseeable</label>
+    </standardValue>
+    <standardValue>
+        <fullName>MAiD Death Not Foreseeable</fullName>
+        <default>false</default>
+        <label>MAiD Death Not Foreseeable</label>
+    </standardValue>
+    <standardValue>
         <fullName>Discontinuation of Planning: Death Prior</fullName>
         <default>false</default>
         <label>Discontinuation of Planning: Death Prior</label>
@@ -115,15 +125,5 @@
         <fullName>Transfer information incomplete</fullName>
         <default>false</default>
         <label>Transfer information incomplete</label>
-    </standardValue>
-    <standardValue>
-        <fullName>MAiD Death Foreseeable</fullName>
-        <default>false</default>
-        <label>MAiD Death Foreseeable</label>
-    </standardValue>
-    <standardValue>
-        <fullName>MAiD Death Not Foreseeable</fullName>
-        <default>false</default>
-        <label>MAiD Death Not Foreseeable</label>
     </standardValue>
 </StandardValueSet>
