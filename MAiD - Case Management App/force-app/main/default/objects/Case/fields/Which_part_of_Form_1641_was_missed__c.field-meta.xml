@@ -13,6 +13,11 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
+                <fullName>Patient info incomplete</fullName>
+                <default>false</default>
+                <label>Patient info incomplete</label>
+            </value>
+            <value>
                 <fullName>Safeguards (1641)</fullName>
                 <default>false</default>
                 <label>Safeguards (1641)</label>
