@@ -20,7 +20,11 @@
                 <default>false</default>
                 <label>2 - No</label>
             </value>
-
+            <value>
+                <fullName>3 - I Don’t know</fullName>
+                <default>false</default>
+                <label>3 - I Don’t know</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
