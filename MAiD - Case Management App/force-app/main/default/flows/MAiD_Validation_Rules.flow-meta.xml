@@ -12,8 +12,8 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rule_1_2_8_and_9</name>
-            <conditionLogic>(1 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND 18 AND (19 OR 20) AND (21 AND 22)) OR ( (2  OR 3 OR 4) AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND (19 OR 20) AND (21 AND 22)) OR (23 AND  ((14 AND 15) OR (16 AND 17)))</conditionLogic>
-            <conditions>
+            <conditionLogic>(1 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND 18 AND (19 OR 20) AND (21 AND 22)) OR ( (2  OR 3 OR 4) AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND (19 OR 20) AND (21 AND 22)) OR (23 AND  ((14 AND 15) OR (16 AND 17)))</conditionLogic>    
+         <conditions>
                 <leftValueReference>$Record.Case__r.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>

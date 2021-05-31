@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_of_MAiD_Rule</fullName>
+    <active>true</active>
+    <description>Field: &apos;Date of MAiD&apos; Rule: This date must be less or equal to today. If &apos;Type&apos; = MAiD Death (foreseeable and not foreseeable), then &apos;Type&apos; reported Date should be between &apos;Date of MAiD&apos; and today.</description>
+    <errorConditionFormula>Date_of_MAiD__c  &gt; TODAY()  || 
+(IF(
+(ISPICKVAL( Type , &quot;MAiD Death Foreseeable&quot;)  ||  
+ISPICKVAL( Type , &quot;MAiD Death Not Foreseeable&quot;)) ,
+(Case_Type_Reported_Date__c &gt; TODAY()  || Case_Type_Reported_Date__c &lt; Date_of_MAiD__c  ), 
+null
+))</errorConditionFormula>
+    <errorMessage>Case Type reported Date should be between Date of MAiD and today</errorMessage>
+</ValidationRule>

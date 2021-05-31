@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Type_Reported_Date_NO_Future</fullName>
+    <active>true</active>
+    <description>Field: &apos;Case Type Reported Date&apos; Rule: less than or equal to today</description>
+    <errorConditionFormula>Case_Type_Reported_Date__c  &gt;  TODAY()</errorConditionFormula>
+    <errorMessage>Case Type Reported Date doesn&apos;t allow future date</errorMessage>
+</ValidationRule>
