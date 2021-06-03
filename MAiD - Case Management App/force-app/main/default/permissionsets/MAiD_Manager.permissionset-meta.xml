@@ -775,11 +775,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.HIN_Q15_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.How_was_MAiD_administered__c</field>
         <readable>true</readable>
@@ -1446,22 +1441,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.SPC_Q05_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1634__c.SPC_Q10_Formula_Values__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.SPC_Q25_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.SPC_S10_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
