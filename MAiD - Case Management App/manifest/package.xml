@@ -125,11 +125,7 @@
     <types>
         <members>*</members>
         <name>ReportFolder</name>
-    </types>   
-    <types>
-        <members>*</members>
-        <name>Folder</name>
-    </types>     
+    </types>    
     <types>
         <members>Activities</members>
         <members>PlatformEncryption</members>
