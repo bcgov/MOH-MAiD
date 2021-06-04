@@ -2,13 +2,8 @@
 <ReportFolder xmlns="http://soap.sforce.com/2006/04/metadata">
     <folderShares>
         <accessLevel>Manage</accessLevel>
-        <sharedTo>herman.ovodov@gov.bc.ca.bcmohmaid.dev3</sharedTo>
-        <sharedToType>User</sharedToType>
-    </folderShares>
-    <folderShares>
-        <accessLevel>Manage</accessLevel>
-        <sharedTo>sol.combe@gov.bc.ca.bcmohmaid.dev3</sharedTo>
-        <sharedToType>User</sharedToType>
+        <sharedTo>AllInternalUsers</sharedTo>
+        <sharedToType>Organization</sharedToType>
     </folderShares>
     <name>MAiD Case Management Reports</name>
 </ReportFolder>

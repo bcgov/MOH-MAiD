@@ -18,10 +18,6 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Form_1634__c.HIN_Q06__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c.HIN_Q010_c_Formula__c</field>
     </columns>
     <columns>
@@ -40,9 +36,6 @@
     </columns>
     <columns>
         <field>Form_1634__c.SPC_S10_Formula__c</field>
-    </columns>
-    <columns>
-        <field>Form_1634__c.SPC_Q20_ID__c</field>
     </columns>
     <columns>
         <field>Form_1634__c.SPC_Q25_Formula_Text__c</field>
