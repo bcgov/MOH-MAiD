@@ -113,7 +113,15 @@
     <types>
         <members>*</members>
         <name>ListView</name>
-    </types>    
+    </types> 
+    <types>
+        <members>*</members>
+        <name>Report</name>
+    </types>  
+    <types> 
+        <members>*</members>
+        <name>ReportFolder</name>
+    </types>       
     <types>
         <members>Activities</members>
         <members>PlatformEncryption</members>
