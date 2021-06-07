@@ -840,13 +840,13 @@
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Null_Q70_Records</targetReference>
+                <targetReference>Update_Null_Q40_41_42_Records</targetReference>
             </connector>
             <label>IsNull</label>
         </rules>
@@ -911,8 +911,8 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Update_Null_Q70_Records</name>
-        <label>Update Null Q70 Records</label>
+        <name>Update_Null_Q40_41_42_Records</name>
+        <label>Update Null Q40 41 42 Records</label>
         <locationX>439</locationX>
         <locationY>374</locationY>
         <inputAssignments>

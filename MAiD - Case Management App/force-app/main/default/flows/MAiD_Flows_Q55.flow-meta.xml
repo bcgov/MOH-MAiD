@@ -525,13 +525,13 @@
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Patient_desc_suffering_If_yes_select_all__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Null_Q70_Records</targetReference>
+                <targetReference>Update_Null_Q55_Records</targetReference>
             </connector>
             <label>IsNull</label>
         </rules>
@@ -596,8 +596,8 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
-        <name>Update_Null_Q70_Records</name>
-        <label>Update Null Q70 Records</label>
+        <name>Update_Null_Q55_Records</name>
+        <label>Update Null Q55 Records</label>
         <locationX>439</locationX>
         <locationY>374</locationY>
         <inputAssignments>
@@ -673,7 +673,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <name>extractedValuesPicklist</name>
         <dataType>String</dataType>
@@ -690,6 +690,13 @@
     </variables>
     <variables>
         <name>rawMultiSelectPicklistValues</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>test1</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
