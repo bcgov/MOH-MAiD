@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>51.0</apiVersion>
+    <decisions>
+        <name>Case_with_Milestone</name>
+        <label>Case with Milestone</label>
+        <locationX>208</locationX>
+        <locationY>423</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Case_having_active_Milestone</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.EntitlementId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue/>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Milestone_Autocomplete</targetReference>
+            </connector>
+            <label>Case having active Milestone</label>
+        </rules>
+    </decisions>
+    <formulas>
+        <name>Now</name>
+        <dataType>DateTime</dataType>
+        <expression>now()</expression>
+    </formulas>
+    <formulas>
+        <name>Nowplus3</name>
+        <dataType>DateTime</dataType>
+        <expression>now() + 3</expression>
+    </formulas>
+    <interviewLabel>MAiD Entitlement Autocomplete {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>MAiD Entitlement Autocomplete</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Milestone_Autocomplete</name>
+        <label>Milestone Autocomplete</label>
+        <locationX>680</locationX>
+        <locationY>367</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>MilestoneTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>5550i00000001hVAAQ</stringValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>CompletionDate</field>
+            <value>
+                <elementReference>Now</elementReference>
+            </value>
+        </inputAssignments>
+        <object>CaseMilestone</object>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Case_with_Milestone</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

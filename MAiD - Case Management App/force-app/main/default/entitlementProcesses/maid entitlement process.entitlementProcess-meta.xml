@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitlementProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <SObjectType>Case</SObjectType>
+    <active>false</active>
+    <entryStartDateField>Case.CreatedDate</entryStartDateField>
+    <exitCriteriaFilterItems>
+        <field>Case.IsClosed</field>
+        <operation>equals</operation>
+        <value>true</value>
+    </exitCriteriaFilterItems>
+    <isVersionDefault>true</isVersionDefault>
+    <milestones>
+        <criteriaBooleanFilter>1 AND 2 AND (3 OR 4 OR 5 OR 6)</criteriaBooleanFilter>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>MAiD Death Foreseeable, MAiD Death Not Foreseeable</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Date_of_MAiD__c</field>
+            <operation>notEqual</operation>
+            <value/>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.X1632_Date_Received__c</field>
+            <operation>equals</operation>
+            <value/>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.X1633_Date_Received__c</field>
+            <operation>equals</operation>
+            <value/>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.X1634_Date_Received__c</field>
+            <operation>equals</operation>
+            <value/>
+        </milestoneCriteriaFilterItems>
+        <milestoneCriteriaFilterItems>
+            <field>Case.RX_MAR_Date_Received__c</field>
+            <operation>equals</operation>
+            <value/>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>All forms received for MAiD Death</milestoneName>
+        <minutesToComplete>5</minutesToComplete>
+        <successActions>
+            <name>Status_to_follow_up</name>
+            <type>FieldUpdate</type>
+        </successActions>
+        <useCriteriaStartTime>false</useCriteriaStartTime>
+    </milestones>
+    <name>MAiD Entitlement Process</name>
+    <versionMaster>5520i00000004RL</versionMaster>
+    <versionNumber>1</versionNumber>
+</EntitlementProcess>

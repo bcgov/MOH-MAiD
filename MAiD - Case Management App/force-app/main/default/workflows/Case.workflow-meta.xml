@@ -11,6 +11,26 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Follow_up_Status</fullName>
+        <field>Status</field>
+        <literalValue>Follow up required for CC Review/Checks</literalValue>
+        <name>Follow up Status</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Follow_up_required</fullName>
+        <field>Status</field>
+        <literalValue>Follow up required for CC Review/Checks</literalValue>
+        <name>Status changes to Follow up required</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>PHN_Update</fullName>
         <field>PHN__c</field>
         <formula>Parent.PHN__c</formula>
@@ -67,6 +87,66 @@ null))))</formula>
         <protected>false</protected>
         <reevaluateOnChange>true</reevaluateOnChange>
     </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Changes_to_Ready_for_CC_Review</fullName>
+        <field>Status</field>
+        <literalValue>Ready for CC Review/Checks</literalValue>
+        <name>Status Changes to Ready for CC Review</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_changes_to_Follow_up_required</fullName>
+        <field>Status</field>
+        <literalValue>Follow up required for CC Review/Checks</literalValue>
+        <name>Status changes to Follow up required</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_to_follow_up</fullName>
+        <field>Status</field>
+        <literalValue>Follow up required for CC Review/Checks</literalValue>
+        <name>Status to follow up</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <rules>
+        <fullName>MAiD Death All forms Recieved</fullName>
+        <actions>
+            <name>Status_Changes_to_Ready_for_CC_Review</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>MAiD Death Foreseeable,MAiD Death Not Foreseeable</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.X1632_Date_Received__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.X1633_Date_Received__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.X1634_Date_Received__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.RX_MAR_Date_Received__c</field>
+            <operation>notEqual</operation>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
     <rules>
         <fullName>Reportable Date to end of current quarter</fullName>
         <actions>
