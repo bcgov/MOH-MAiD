@@ -4,8 +4,8 @@
     <assignments>
         <name>Prevent_Save_sets_to_true</name>
         <label>Prevent Save sets to true</label>
-        <locationX>598</locationX>
-        <locationY>399</locationY>
+        <locationX>763</locationX>
+        <locationY>398</locationY>
         <assignmentItems>
             <assignToReference>$Record.Prevent_save_on_duplicate_PHN__c</assignToReference>
             <operator>Assign</operator>
@@ -17,17 +17,20 @@
     <decisions>
         <name>If_Get_Record_found_any_value</name>
         <label>If Get Record found any value</label>
-        <locationX>381</locationX>
-        <locationY>393</locationY>
+        <locationX>737</locationX>
+        <locationY>258</locationY>
+        <defaultConnector>
+            <targetReference>Compare_PHN</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>To_check_if_there_is_any_value_in_Get_Record</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Check_for_existing_open_case_with_same_PHN</leftValueReference>
-                <operator>IsNull</operator>
+                <leftValueReference>Compare_PHN.PHN__c</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <elementReference>PHN_var</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -38,6 +41,17 @@
     </decisions>
     <interviewLabel>check for existing open case with same PHN {!$Flow.CurrentDateTime}</interviewLabel>
     <label>check for existing open case with same PHN</label>
+    <loops>
+        <name>Compare_PHN</name>
+        <label>Compare PHN</label>
+        <locationX>393</locationX>
+        <locationY>292</locationY>
+        <collectionReference>phn_list</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>If_Get_Record_found_any_value</targetReference>
+        </nextValueConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -60,11 +74,11 @@
     <recordLookups>
         <name>Check_for_existing_open_case_with_same_PHN</name>
         <label>Check for existing open case with same PHN</label>
-        <locationX>118</locationX>
-        <locationY>382</locationY>
+        <locationX>184</locationX>
+        <locationY>463</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>If_Get_Record_found_any_value</targetReference>
+            <targetReference>Compare_PHN</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -75,18 +89,26 @@
             </value>
         </filters>
         <filters>
-            <field>PHN__c</field>
-            <operator>EqualTo</operator>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
             <value>
-                <elementReference>$Record.PHN__c</elementReference>
+                <stringValue>Closed</stringValue>
             </value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Type</elementReference>
+            </value>
+        </filters>
         <object>Case</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputReference>phn_list</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>PHN__c</queriedFields>
     </recordLookups>
     <start>
-        <locationX>50</locationX>
+        <locationX>51</locationX>
         <locationY>50</locationY>
         <connector>
             <targetReference>Check_for_existing_open_case_with_same_PHN</targetReference>
@@ -99,16 +121,27 @@
                 <stringValue>Closed</stringValue>
             </value>
         </filters>
-        <filters>
-            <field>PHN__c</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>phn_list</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>PHN_var</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$Record.PHN__c</elementReference>
+        </value>
+    </variables>
 </Flow>
