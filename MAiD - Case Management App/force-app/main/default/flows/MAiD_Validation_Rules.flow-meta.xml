@@ -4,16 +4,16 @@
     <decisions>
         <name>Legislation_Safeguards</name>
         <label>Legislation Safeguards</label>
-        <locationX>212</locationX>
+        <locationX>213</locationX>
         <locationY>336</locationY>
         <defaultConnector>
             <targetReference>Legislation_FAIL</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Rule_1_2_8_and_9</name>
-            <conditionLogic>(1 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND 18 AND (19 OR 20) AND (21 AND 22)) OR ( (2  OR 3 OR 4) AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND (19 OR 20) AND (21 AND 22)) OR (23 AND  ((14 AND 15) OR (16 AND 17)))</conditionLogic>    
-         <conditions>
+            <name>Rule_1_2_3_4_5_6_7_8_and_9</name>
+            <conditionLogic>(1 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND 18 AND (19 OR 20) AND (21 AND 22)) OR ( (2  OR 3 OR 4) AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND (19 OR 20) AND (21 AND 22)) AND (24 AND 25) AND (26 AND 27) AND (28 AND 29) AND (30 AND 31) AND (32 AND 33) OR (23 AND  ((14 AND 15) OR (16 AND 17)))</conditionLogic>
+            <conditions>
                 <leftValueReference>$Record.Case__r.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
@@ -174,10 +174,80 @@
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>H - Cancer - other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_Cancer_Other_specify__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_Neurological_condition_other_speci__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>K - Neurological condition - other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>M - Cardio-vascular condition</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_Cardio_vascular_condition_specify__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>O - Multiple co-morbidities</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_multiple_co_morbidities_specify__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>P - Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.If_other_specify__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Legislation_Safeguards_PASS</targetReference>
             </connector>
-            <label>Rule 1,2,8 and 9</label>
+            <label>Rule 1,2,3,4,5,6,7,8 and 9</label>
         </rules>
     </decisions>
     <interviewLabel>MAiD Validation Rules {!$Flow.CurrentDateTime}</interviewLabel>
