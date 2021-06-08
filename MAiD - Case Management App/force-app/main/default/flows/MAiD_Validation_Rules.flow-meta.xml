@@ -175,10 +175,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
-                <operator>Contains</operator>
+                <leftValueReference>isSelected_H_Cancer_other</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>H - Cancer - other</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -196,17 +196,17 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
-                <operator>Contains</operator>
+                <leftValueReference>is_Selected_K_Neurological_condition_other</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>K - Neurological condition - other</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
-                <operator>Contains</operator>
+                <leftValueReference>is_Selected_M_Cardio_vascular_condition</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>M - Cardio-vascular condition</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -217,10 +217,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
-                <operator>Contains</operator>
+                <leftValueReference>is_Selected_O_Multiple_comorbidities</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>O - Multiple co-morbidities</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -231,10 +231,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_yes_select_all_that_apply_1__c</leftValueReference>
-                <operator>Contains</operator>
+                <leftValueReference>is_Selected_P_Other</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>P - Other</stringValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -250,6 +250,31 @@
             <label>Rule 1,2,3,4,5,6,7,8 and 9</label>
         </rules>
     </decisions>
+    <formulas>
+        <name>is_Selected_K_Neurological_condition_other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;K - Neurological condition - other&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_M_Cardio_vascular_condition</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;M - Cardio-vascular condition&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_O_Multiple_comorbidities</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;O - Multiple co-morbidities&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_P_Other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;P - Other&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>isSelected_H_Cancer_other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;H - Cancer - other&apos;)</expression>
+    </formulas>
     <interviewLabel>MAiD Validation Rules {!$Flow.CurrentDateTime}</interviewLabel>
     <label>MAiD Validation Rules</label>
     <processMetadataValues>
