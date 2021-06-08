@@ -12,7 +12,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rule_1_2_3_4_5_6_7_8_and_9</name>
-            <conditionLogic>(1 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND 18 AND (19 OR 20) AND (21 AND 22)) OR ( (2  OR 3 OR 4) AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND (19 OR 20) AND (21 AND 22)) AND (24 AND 25) AND (26 AND 27) AND (28 AND 29) AND (30 AND 31) AND (32 AND 33) OR (23 AND  ((14 AND 15) OR (16 AND 17)))</conditionLogic>
+            <conditionLogic>(1 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND 18 AND (19 OR 20) AND (21 AND 22)) OR ( (2  OR 3 OR 4) AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND ((14 AND 15) OR (16 AND 17)) AND (19 OR 20) AND (21 AND 22)) AND (24 AND 25 AND (1 OR 2 OR 3 OR 4 OR 23)) AND (26 AND 27 AND (1 OR 2 OR 3 OR 4 OR 23)) AND (28 AND 29 AND (1 OR 2 OR 3 OR 4 OR 23)) AND (30 AND 31 AND (1 OR 2 OR 3 OR 4 OR 23)) AND (32 AND 33 AND (1 OR 2 OR 3 OR 4 OR 23)) OR (23 AND  ((14 AND 15) OR (16 AND 17)))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Case__r.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -175,7 +175,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>isSelected_H_Cancer_other</leftValueReference>
+                <leftValueReference>is_Selected_H_Cancer_other</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -251,6 +251,11 @@
         </rules>
     </decisions>
     <formulas>
+        <name>is_Selected_H_Cancer_other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;H - Cancer - other&apos;)</expression>
+    </formulas>
+    <formulas>
         <name>is_Selected_K_Neurological_condition_other</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;K - Neurological condition - other&apos;)</expression>
@@ -269,11 +274,6 @@
         <name>is_Selected_P_Other</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;P - Other&apos;)</expression>
-    </formulas>
-    <formulas>
-        <name>isSelected_H_Cancer_other</name>
-        <dataType>Boolean</dataType>
-        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;H - Cancer - other&apos;)</expression>
     </formulas>
     <interviewLabel>MAiD Validation Rules {!$Flow.CurrentDateTime}</interviewLabel>
     <label>MAiD Validation Rules</label>
@@ -348,5 +348,5 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>
