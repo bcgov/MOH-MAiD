@@ -1056,21 +1056,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Form_1634__c.ELG_S40D_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+=======
+>>>>>>> origin/dev
         <field>Form_1634__c.ELG_S40D__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Form_1634__c.ELG_S40F_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+=======
+>>>>>>> origin/dev
         <field>Form_1634__c.ELG_S40F__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1096,11 +1102,14 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+<<<<<<< HEAD
         <field>Form_1634__c.ELG_S42C_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+=======
+>>>>>>> origin/dev
         <field>Form_1634__c.ELG_S42C__c</field>
         <readable>true</readable>
     </fieldPermissions>

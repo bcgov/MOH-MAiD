@@ -113,22 +113,19 @@
     <types>
         <members>*</members>
         <name>ListView</name>
-    <types>
-        <members>*</members>
-        <name>ReportType</name>
-    </types>   
+    </types> 
     <types>
         <members>*</members>
         <name>Report</name>
-    </types>
-        <types>
+    </types>  
+    <types> 
         <members>*</members>
         <name>ReportFolder</name>
-    </types>   
+    </types>       
     <types>
         <members>*</members>
-        <name>Folder</name>
-    </types>     
+        <name>ReportFolder</name>
+    </types>    
     <types>
         <members>Activities</members>
         <members>PlatformEncryption</members>
