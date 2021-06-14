@@ -12,6 +12,11 @@
         <label>MAiD Death Not Foreseeable</label>
     </standardValue>
     <standardValue>
+        <fullName>MAiD Request</fullName>
+        <default>false</default>
+        <label>MAiD Request</label>
+    </standardValue>
+    <standardValue>
         <fullName>Discontinuation of Planning: Death Prior</fullName>
         <default>false</default>
         <label>Discontinuation of Planning: Death Prior</label>

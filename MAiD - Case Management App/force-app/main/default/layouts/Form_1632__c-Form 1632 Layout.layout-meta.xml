@@ -50,10 +50,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Proxy_Signature_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Proxy_Signed_Date_for_Request__c</field>
             </layoutItems>
             <layoutItems>

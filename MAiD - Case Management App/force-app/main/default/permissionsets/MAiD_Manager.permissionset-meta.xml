@@ -436,11 +436,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1632__c.Proxy_Signature_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1632__c.Proxy_Signed_Date_for_Request__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -742,16 +737,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Did_practitioner_complete_medical_certi__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.Did_the_patient_cause_their_death__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.Did_the_patient_self_administer_the_subs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1191,11 +1176,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_Other_location_specify_1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.If_Other_location_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1227,11 +1207,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.If_Yes_practitioner_became_aware_patien__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.If_Yes_was_Prescriber_present__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1517,11 +1492,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Patient_capable_of_making_this_health_ca__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.Patient_consensented_to_assessment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
