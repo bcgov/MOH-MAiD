@@ -14,6 +14,13 @@
         <field>Form_1634__c.SEX_Q05_Formula__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.ELG_Q60_Formula__c</field>
+    </columns>
+    <columns>
+=======
+>>>>>>> origin/dev
         <field>Form_1634__c.HIN_Q05_Formula__c</field>
     </columns>
     <columns>
@@ -142,7 +149,11 @@
         <field>Form_1634__c.ELG_Q41H__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD
+        <field>Form_1634__c.ELG_S41H_Formula__c</field>
+=======
         <field>Form_1634__c.ELG_S41H__c</field>
+>>>>>>> origin/dev
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -157,7 +168,11 @@
         <field>Form_1634__c.ELG_Q42C__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD
+        <field>Form_1634__c.ELG_S42C_Formula__c</field>
+=======
         <field>Form_1634__c.ELG_S42C__c</field>
+>>>>>>> origin/dev
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -167,8 +182,12 @@
         <field>Form_1634__c.ELG_Q40D__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD
+        <field>Form_1634__c.ELG_S40D_Formula__c</field>
+=======
         <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c.ELG_S40D__c</field>
+>>>>>>> origin/dev
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -179,7 +198,11 @@
         <field>Form_1634__c.ELG_Q40F__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD
+        <field>Form_1634__c.ELG_S40F_Formula__c</field>
+=======
         <field>Form_1634__c.ELG_S40F__c</field>
+>>>>>>> origin/dev
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -237,10 +260,13 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
+<<<<<<< HEAD
+=======
         <field>Form_1634__c.ELG_Q60_Formula__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
+>>>>>>> origin/dev
         <field>Form_1634__c.ELG_Q65_Formula__c</field>
     </columns>
     <columns>
@@ -276,6 +302,13 @@
         <field>Form_1634__c.ELG_Q70H__c</field>
     </columns>
     <columns>
+<<<<<<< HEAD
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.ELG_Q70I__c</field>
+    </columns>
+    <columns>
+=======
+>>>>>>> origin/dev
         <field>Form_1634__c.ELG_S70I_Formula__c</field>
     </columns>
     <columns>
