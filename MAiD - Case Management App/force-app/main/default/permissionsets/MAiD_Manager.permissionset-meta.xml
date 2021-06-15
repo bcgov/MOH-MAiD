@@ -1051,17 +1051,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.ELG_S25F__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1634__c.ELG_S40D_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.ELG_S40D__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1071,17 +1061,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.ELG_S40F__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1634__c.ELG_S40G_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.ELG_S40G__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1091,17 +1071,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.ELG_S41H__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1634__c.ELG_S42C_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.ELG_S42C__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1917,11 +1887,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Form_1634__c.SUP_Q05__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.SUP_Q10__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
