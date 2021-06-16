@@ -888,7 +888,7 @@
             <targetReference>Decision_Q40_41_42_All_Fields</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Update_Record_Q55</targetReference>
+            <targetReference>Update_Record_Q40_41_42</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -1014,8 +1014,8 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Record_Q55</name>
-        <label>Update Record Q55</label>
+        <name>Update_Record_Q40_41_42</name>
+        <label>Update Record Q40_41_42</label>
         <locationX>788</locationX>
         <locationY>362</locationY>
         <inputReference>updateRecord</inputReference>
