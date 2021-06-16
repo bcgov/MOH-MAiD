@@ -12,7 +12,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rule_10_14</name>
-            <conditionLogic>((1 OR 2) AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND ((13 AND 14) OR (13 AND 15 AND 16)) AND 23 AND 24 AND 25 AND 26 ) OR (1 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND ((13 AND 14) OR (13 AND 15 AND 16)) AND 23 AND 24 AND 25 AND 26 AND 15 AND 17 AND 18 AND 19 AND 20 AND 21 AND 22)</conditionLogic>
+            <conditionLogic>(2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND ( ((13 AND 14) OR (13 AND 15 AND 16)) OR (23 AND 24  AND 25 AND 26) OR (27 AND 24 AND 25 AND 28 AND 29 AND 30 AND 31 AND 32 AND 33 AND 34)) )  OR  (1 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND ( ((13 AND 14) OR (13 AND 15 AND 16)) OR (23 AND 24  AND 25 AND 26) OR (27 AND 24 AND 25 AND 28 AND 29 AND 30 AND 31 AND 32 AND 33 AND 34) ) AND 15 AND 17 AND 18 AND 19 AND 20 AND 21 AND 22)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Case__r.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -193,6 +193,62 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.How_was_MAiD_administered__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Oral and IV</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Did_the_patient_die_after_self_administ__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Patient_authorized_to_recieve_2nd_dose__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.X2nd_dose_will_be_adminstered_after_min__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Practitioner_will_be_present_initials_by__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Patient_signature_self_administration__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.MAiD_Prescriber_sign_self_administ__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Advance_consent_signature_date_by_patien__c</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.MAiD_Administration_Date__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>

@@ -1081,11 +1081,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Patient_consensented_to_assessment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Patient_desc_suffering_If_yes_select_all__c</field>
         <readable>true</readable>
     </fieldPermissions>
