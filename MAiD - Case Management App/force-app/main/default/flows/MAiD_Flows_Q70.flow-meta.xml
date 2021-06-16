@@ -648,6 +648,12 @@
                 <numberValue>2.0</numberValue>
             </value>
         </inputAssignments>
+        <inputAssignments>
+            <field>ELG_Q70I__c</field>
+            <value>
+                <numberValue>2.0</numberValue>
+            </value>
+        </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
