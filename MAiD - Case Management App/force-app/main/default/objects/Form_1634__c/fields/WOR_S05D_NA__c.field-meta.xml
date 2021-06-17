@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>SUP_Q05_Formula__c</fullName>
+    <fullName>WOR_S05D_NA__c</fullName>
     <externalId>false</externalId>
-    <formula>Supplementary_Information__c</formula>
+    <formula>&quot;TBD&quot;</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>SUP_Q05 - Formula</label>
+    <label>WOR_S05D - NA</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>
