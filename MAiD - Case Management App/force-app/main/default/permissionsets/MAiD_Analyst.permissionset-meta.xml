@@ -2851,6 +2851,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_RXMAR__c.Bupivacaine_Sodium_Chloride_flush__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_RXMAR__c.Bupivacaine_ordered__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2922,6 +2927,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_RXMAR__c.Describe_Dose_2_of_proPOFol__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_RXMAR__c.Describe_Dose_of_Bupivacaine__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3187,6 +3197,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_RXMAR__c.Time_for_Dose_2_of_proPOFol__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_RXMAR__c.Time_for_Dose_of_Bupivacaine__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
