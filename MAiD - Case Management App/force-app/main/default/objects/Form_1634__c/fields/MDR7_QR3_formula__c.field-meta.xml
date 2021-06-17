@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MDR7_QR3_formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>case( I_determine_that_the_patient__c ,
+&quot;1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable&quot;,1,
+&quot;2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable&quot;,1,
+&quot;3 - Does not meet the criteria for MAiD&quot;,2,
+&quot;4- NO determination made&quot;,0,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>MDR7_QR3 - Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
