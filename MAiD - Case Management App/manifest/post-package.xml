@@ -5,7 +5,11 @@
         <members>CaseStatus</members>
         <members>CaseType</members>
         <members>TaskSubject</members>
-        <name>StandardValueSet</name>        
+        <name>StandardValueSet</name> 
     </types>
+     <types>
+        <members>Missed_Error_Log_Issue</members>
+        <name>GlobalValueSet</name> 
+    </types>   
     <version>50.0</version>
 </Package>

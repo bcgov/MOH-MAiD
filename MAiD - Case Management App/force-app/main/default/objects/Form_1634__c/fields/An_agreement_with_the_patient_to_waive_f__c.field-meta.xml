@@ -3,8 +3,8 @@
     <fullName>An_agreement_with_the_patient_to_waive_f__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <inlineHelpText>The patient and I have a written agreement in place to waive final consent and the agreement was made prior to the day on which MAiD was provided.</inlineHelpText>
-    <label>Agreement to waive final consent</label>
+    <inlineHelpText>The patient and I have a written agreement in place to waive final consent (HLTH 1645 Waiver of Final Consent) and the agreement was made prior to the day  the patient lost capacity to consent to receive medical assistance in dying.</inlineHelpText>
+    <label>Is waiver of final consent in place?</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

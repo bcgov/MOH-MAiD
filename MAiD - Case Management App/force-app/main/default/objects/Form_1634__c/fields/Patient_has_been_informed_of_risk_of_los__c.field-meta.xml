@@ -3,7 +3,7 @@
     <fullName>Patient_has_been_informed_of_risk_of_los__c</fullName>
     <defaultValue>false</defaultValue>
     <externalId>false</externalId>
-    <inlineHelpText>I have informed the patient they are at risk of losing capacity to consent to receive medical assistance in dying.</inlineHelpText>
+    <inlineHelpText>The patient met all eligibility criteria and safeguards, and I have informed the patient they are at risk of losing capacity to consent to receive medical assistance in dying.</inlineHelpText>
     <label>Informed of risk of lost capacity</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>

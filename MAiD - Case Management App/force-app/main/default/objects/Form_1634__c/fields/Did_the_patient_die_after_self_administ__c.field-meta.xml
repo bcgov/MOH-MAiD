@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Did_the_patient_die_after_self_administ__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Did the patient die after self-administration?</inlineHelpText>
+    <label>Did the patient die after self-admin?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 - Yes</fullName>
+                <default>false</default>
+                <label>1 - Yes</label>
+            </value>
+            <value>
+                <fullName>2 - No</fullName>
+                <default>false</default>
+                <label>2 - No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -9,9 +9,9 @@ package.xml
 **profilePasswordPolicies
 **profileSessionSettings
 **settings
-**standardValueSet
+#**standardValueSet
 
-MoH Standard User.profile
+#MoH Standard User.profile
 
 # LWC configuration files
 **/jsconfig.json
