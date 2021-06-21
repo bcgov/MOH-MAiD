@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PHA_Q25_Ref__c</fullName>
+    <description>Reference field calls on 1634 (Cross Object Formula) for 1641</description>
+    <externalId>false</externalId>
+    <formula>TEXT( Form_1634__r.Request_Province_was_received__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PHA_Q25 - Ref</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
