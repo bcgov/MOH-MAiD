@@ -201,10 +201,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>is_Selected_Any_Eligibility</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>$Record.If_yes_select_all_that_apply__c</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -744,11 +744,6 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <formulas>
-        <name>is_Selected_Any_Eligibility</name>
-        <dataType>Boolean</dataType>
-        <expression>Includes({!$Record.If_yes_select_all_that_apply__c},&apos;Consultation with patient;Knowledge of patient from prior consultations or treatment for reasons other than MAiD;Consultation with other health or social service professionals;Consultation with family members or friends;Reviewed medical records;Other&apos;)</expression>
-    </formulas>
     <formulas>
         <name>is_Selected_H_Cancer_other</name>
         <dataType>Boolean</dataType>
