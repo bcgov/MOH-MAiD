@@ -226,11 +226,23 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Legislation_and_Critical_Feedback_Msg__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Federal_Safeguards__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Federal_Feedback_Msg__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Provincial_Safeguards__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Provincial_Feedback_Msg__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
