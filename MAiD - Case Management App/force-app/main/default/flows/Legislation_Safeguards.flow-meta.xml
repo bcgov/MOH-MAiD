@@ -1,13 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>51.0</apiVersion>
+    <assignments>
+        <name>Rule_1_Message_Assignment</name>
+        <label>Rule 1 Message Assignment</label>
+        <locationX>336</locationX>
+        <locationY>646</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_1_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_2_Message_Assignment</name>
+        <label>Rule 2 Message Assignment</label>
+        <locationX>366</locationX>
+        <locationY>533</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_2_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_3_Message_Assignment</name>
+        <label>Rule 3 Message Assignment</label>
+        <locationX>482</locationX>
+        <locationY>347</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_3_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_4_Message_Assignment</name>
+        <label>Rule 4 Message Assignment</label>
+        <locationX>644</locationX>
+        <locationY>410</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_4_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_5_Message_Assignment</name>
+        <label>Rule 5 Message Assignment</label>
+        <locationX>751</locationX>
+        <locationY>342</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_5_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_6_Message_Assignment</name>
+        <label>Rule 6 Message Assignment</label>
+        <locationX>960</locationX>
+        <locationY>456</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_6_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_7_Message_Assignment</name>
+        <label>Rule 7 Message Assignment</label>
+        <locationX>1079</locationX>
+        <locationY>581</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_7_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_8_Message_Assignment</name>
+        <label>Rule 8 Message Assignment</label>
+        <locationX>1459</locationX>
+        <locationY>471</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_8_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_9_Message_Assignment</name>
+        <label>Rule 9 Message Assignment</label>
+        <locationX>852</locationX>
+        <locationY>707</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_9_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>Rule_1_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 1 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_2_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 2 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_3_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 3 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_4_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 4 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_5_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 5 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_6_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 6 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_7_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 7 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_8_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 8 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_9_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 9 Validation Fail</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Rule_1</name>
         <label>Rule 1</label>
-        <locationX>88</locationX>
+        <locationX>90</locationX>
         <locationY>501</locationY>
         <defaultConnector>
-            <targetReference>Legislation_FAIL</targetReference>
+            <targetReference>Rule_1_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 1 Fails</defaultConnectorLabel>
         <rules>
@@ -142,12 +349,52 @@
     <decisions>
         <name>Rule_2</name>
         <label>Rule 2</label>
-        <locationX>227</locationX>
-        <locationY>385</locationY>
+        <locationX>351</locationX>
+        <locationY>303</locationY>
         <defaultConnector>
-            <targetReference>Legislation_FAIL</targetReference>
+            <targetReference>Rule_2_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 2 Fails</defaultConnectorLabel>
+        <rules>
+            <name>Rule_2_Not_Applicable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Rule 2 Not Applicable</label>
+        </rules>
         <rules>
             <name>Rule_2_Success</name>
             <conditionLogic>(1 or 2 or 3 or 4 or 5) and ((6 and 7) or 8)</conditionLogic>
@@ -219,17 +466,52 @@
         <locationX>486</locationX>
         <locationY>99</locationY>
         <defaultConnector>
-            <targetReference>Legislation_FAIL</targetReference>
+            <targetReference>Rule_3_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 3 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_3_Not_Applicable</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_H_Cancer_other</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -298,20 +580,55 @@
     <decisions>
         <name>Rule_4</name>
         <label>Rule 4</label>
-        <locationX>573</locationX>
-        <locationY>379</locationY>
+        <locationX>587</locationX>
+        <locationY>201</locationY>
         <defaultConnector>
-            <targetReference>Legislation_FAIL</targetReference>
+            <targetReference>Rule_4_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 4 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_4_Not_Applicable</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_K_Neurological_condition_other</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -380,20 +697,55 @@
     <decisions>
         <name>Rule_5</name>
         <label>Rule 5</label>
-        <locationX>775</locationX>
-        <locationY>303</locationY>
+        <locationX>805</locationX>
+        <locationY>191</locationY>
         <defaultConnector>
-            <targetReference>Legislation_FAIL</targetReference>
+            <targetReference>Rule_5_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 5 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_5_Not_Applicable</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_M_Cardio_vascular_condition</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -462,20 +814,55 @@
     <decisions>
         <name>Rule_6</name>
         <label>Rule 6</label>
-        <locationX>943</locationX>
-        <locationY>209</locationY>
+        <locationX>974</locationX>
+        <locationY>203</locationY>
         <defaultConnector>
-            <targetReference>Legislation_FAIL</targetReference>
+            <targetReference>Rule_6_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 6 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_6_Not_Applicable</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_O_Multiple_comorbidities</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -544,20 +931,55 @@
     <decisions>
         <name>Rule_7</name>
         <label>Rule 7</label>
-        <locationX>1125</locationX>
-        <locationY>109</locationY>
+        <locationX>1137</locationX>
+        <locationY>31</locationY>
         <defaultConnector>
-            <targetReference>Legislation_FAIL</targetReference>
+            <targetReference>Rule_7_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 7 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_7_Not_Applicable</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_P_Other</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -567,7 +989,7 @@
         </rules>
         <rules>
             <name>Rule_7_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and 7)</conditionLogic>
+            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and (7 AND 8))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Case__r.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -611,7 +1033,14 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_other_specify__c</leftValueReference>
+                <leftValueReference>$Record.Other_specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue/>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Other_specify__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -626,10 +1055,10 @@
     <decisions>
         <name>Rule_8</name>
         <label>Rule 8</label>
-        <locationX>1189</locationX>
-        <locationY>481</locationY>
+        <locationX>1455</locationX>
+        <locationY>230</locationY>
         <defaultConnector>
-            <targetReference>Legislation_FAIL</targetReference>
+            <targetReference>Rule_8_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 8 Fails</defaultConnectorLabel>
         <rules>
@@ -649,7 +1078,7 @@
         </rules>
         <rules>
             <name>Rule_8_Success</name>
-            <conditionLogic>(1 AND 2)</conditionLogic>
+            <conditionLogic>(1 AND (2 AND (3 AND 4)))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Case__r.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -658,10 +1087,24 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.I_determine_that_the_patient__c</leftValueReference>
+                <leftValueReference>is_Selected_1_Does_Meet_Criteria_Eligibility</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.I_determine_that_the_patient__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.I_determine_that_the_patient__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue/>
                 </rightValue>
             </conditions>
             <connector>
@@ -673,12 +1116,45 @@
     <decisions>
         <name>Rule_9</name>
         <label>Rule 9</label>
-        <locationX>1034</locationX>
-        <locationY>706</locationY>
+        <locationX>1035</locationX>
+        <locationY>707</locationY>
         <defaultConnector>
-            <targetReference>Legislation_FAIL</targetReference>
+            <targetReference>Rule_9_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 9 Fails</defaultConnectorLabel>
+        <rules>
+            <name>Rule_9_Not_Applicable</name>
+            <conditionLogic>1 AND 2 AND 3 AND 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Rule 9 Not Applicable</label>
+        </rules>
         <rules>
             <name>Rule_9_Success</name>
             <conditionLogic>(1 or 2 or 3 or 4) and ((5 or 6) Or (7 and 8))</conditionLogic>
@@ -745,6 +1221,11 @@
         </rules>
     </decisions>
     <formulas>
+        <name>is_Selected_1_Does_Meet_Criteria_Eligibility</name>
+        <dataType>Boolean</dataType>
+        <expression>ISPICKVAL({!$Record.I_determine_that_the_patient__c},&apos;1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable&apos;)</expression>
+    </formulas>
+    <formulas>
         <name>is_Selected_H_Cancer_other</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;H - Cancer - other&apos;)</expression>
@@ -773,6 +1254,11 @@
         <name>is_Selected_P_Other</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;P - Other&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_P_Other_Test</name>
+        <dataType>String</dataType>
+        <expression>IF(Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;P - Other&apos;),&apos;Yes&apos;,&apos;No&apos;)</expression>
     </formulas>
     <interviewLabel>Legislation Safeguards {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Legislation Safeguards</label>
@@ -809,6 +1295,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Legislation_and_Critical_Feedback_Msg__c</field>
+            <value>
+                <elementReference>$Flow.CurrentStage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Legislation_and_Critical_Safeguards__c</field>
             <value>
                 <stringValue>FAIL</stringValue>
@@ -819,8 +1311,8 @@
     <recordUpdates>
         <name>Legislation_Safeguards_PASS</name>
         <label>Legislation PASS</label>
-        <locationX>1422</locationX>
-        <locationY>577</locationY>
+        <locationX>1530</locationX>
+        <locationY>717</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -830,6 +1322,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Legislation_and_Critical_Feedback_Msg__c</field>
+            <value>
+                <stringValue/>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Legislation_and_Critical_Safeguards__c</field>
             <value>
                 <stringValue>PASS</stringValue>
@@ -838,7 +1336,7 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
+        <locationX>30</locationX>
         <locationY>50</locationY>
         <connector>
             <targetReference>Rule_1</targetReference>
