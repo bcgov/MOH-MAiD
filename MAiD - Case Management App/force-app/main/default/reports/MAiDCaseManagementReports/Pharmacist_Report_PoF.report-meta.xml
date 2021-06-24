@@ -52,7 +52,7 @@
     <columns>
         <field>Form_1641__c.SUP_Q10_NA__c</field>
     </columns>
-    <description>Pharmacist_Report_PoF</description>
+    <description>Pharmacist Report for Health Canada</description>
     <format>Tabular</format>
     <name>Pharmacist Report</name>
     <params>
