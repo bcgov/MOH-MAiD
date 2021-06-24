@@ -83,7 +83,7 @@
             <value>
                 <fullName>O - Multiple co-morbidities</fullName>
                 <default>false</default>
-                <label>Multiple co-morbidities</label>
+                <label>O - Multiple co-morbidities</label>
             </value>
             <value>
                 <fullName>P - Other</fullName>
