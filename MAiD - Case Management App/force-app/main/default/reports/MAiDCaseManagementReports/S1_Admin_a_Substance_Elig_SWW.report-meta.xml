@@ -375,6 +375,7 @@
     <columns>
         <field>Form_1634__c.SUP_Q10_Formula__c</field>
     </columns>
+    <description>S1 - Admin a Substance Report</description>
     <format>Tabular</format>
     <name>S1 - Admin a Substance</name>
     <params>
