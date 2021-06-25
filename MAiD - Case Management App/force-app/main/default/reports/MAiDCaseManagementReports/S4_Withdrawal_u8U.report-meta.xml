@@ -349,7 +349,7 @@
     <columns>
         <field>Form_1634__c.SUP_Q10_Formula__c</field>
     </columns>
-    <description>S4 Withdrawal Report</description>
+    <description>S4 - Withdrawal</description>
     <format>Tabular</format>
     <name>S4 - Withdrawal</name>
     <params>
