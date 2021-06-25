@@ -327,7 +327,7 @@
     <columns>
         <field>Form_1634__c.SUP_Q10_Formula__c</field>
     </columns>
-    <description>S5 - Found Ineligible for MAiD</description>
+    <description>S5 - Found Ineligible for MAiD Report</description>
     <format>Tabular</format>
     <name>S5 - Found Ineligible for MAiD</name>
     <params>
