@@ -3,7 +3,7 @@
     <fullName>Practitioner_College_ID__c</fullName>
     <description>Practitioner &amp; College ID</description>
     <externalId>false</externalId>
-    <formula>Practitioner_Name__r.FirstName + &quot; &quot; +  Practitioner_Name__r.LastName    + &quot; - &quot; +  College_ID__c</formula>
+    <formula>Practitioner_Name__r.FirstName + &quot; &quot; +  Practitioner_Name__r.LastName   + &quot; - &quot; + Practitioner_Name__r.College_ID__pc</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Practitioner &amp; College ID</label>
     <required>false</required>
