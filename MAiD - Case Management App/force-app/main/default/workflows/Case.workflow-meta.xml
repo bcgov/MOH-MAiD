@@ -23,9 +23,9 @@
     <fieldUpdates>
         <fullName>Reportable_Date_field_update</fullName>
         <field>Health_Canada_Reportable_Date__c</field>
-        <formula>IF(  Case_Type_Reported_Date__c  &gt;= DATE(YEAR(TODAY()),1,1)   &amp;&amp;  Case_Type_Reported_Date__c &lt;= DATE(YEAR(TODAY()),3,31) , DATE(YEAR(Case_Type_Reported_Date__c),3,31),
+        <formula>IF(  Case_Type_Reported_Date__c  &gt;= DATE(YEAR(Case_Type_Reported_Date__c),1,1)   &amp;&amp;  Case_Type_Reported_Date__c &lt;= DATE(YEAR(Case_Type_Reported_Date__c),3,31) , DATE(YEAR(Case_Type_Reported_Date__c),3,31),
 
-IF(Case_Type_Reported_Date__c &gt;= DATE(YEAR(TODAY()),4,1)   &amp;&amp;  Case_Type_Reported_Date__c &lt;= DATE(YEAR(TODAY()),6,30) , DATE(YEAR(Case_Type_Reported_Date__c),6,30),
+IF(Case_Type_Reported_Date__c &gt;= DATE(YEAR(Case_Type_Reported_Date__c),4,1)   &amp;&amp;  Case_Type_Reported_Date__c &lt;= DATE(YEAR(Case_Type_Reported_Date__c),6,30) , DATE(YEAR(Case_Type_Reported_Date__c),6,30),
 
 IF(Case_Type_Reported_Date__c &gt;= DATE(YEAR(Case_Type_Reported_Date__c),7,1)  &amp;&amp; Case_Type_Reported_Date__c &lt;= DATE(YEAR(Case_Type_Reported_Date__c),9,30) , DATE(YEAR(Case_Type_Reported_Date__c),9,30),
 
