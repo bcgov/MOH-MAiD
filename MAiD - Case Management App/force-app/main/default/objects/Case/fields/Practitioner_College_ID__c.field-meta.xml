@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Practitioner_College_ID__c</fullName>
+    <description>Practitioner &amp; College ID</description>
+    <externalId>false</externalId>
+    <formula>Practitioner_Name__r.FirstName + &quot; &quot; +  Practitioner_Name__r.LastName    + &quot; - &quot; +  College_ID__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Practitioner &amp; College ID</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
