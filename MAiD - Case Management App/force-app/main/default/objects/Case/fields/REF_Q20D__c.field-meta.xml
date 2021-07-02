@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>Form_1642__r.Due_to_patient_s_request__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>REF_Q20D</label>
+    <label>REF_Q20D - Ref</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

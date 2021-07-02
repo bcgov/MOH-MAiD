@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_yes_for_how_long__c</fullName>
     <externalId>false</externalId>
-    <label>If yes, for how long?</label>
+    <label>If yes, for how long? - (DS)</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
@@ -16,9 +16,9 @@
                 <label>1 - Less than 6 months</label>
             </value>
             <value>
-                <fullName>2 - 6 months to less than 1 year</fullName>
+                <fullName>2 - 2 - 6 months to less than 1 year</fullName>
                 <default>false</default>
-                <label>2 - 6 months to less than 1 year</label>
+                <label>2 - 2 - 6 months to less than 1 year</label>
             </value>
             <value>
                 <fullName>3 - 1 year to less than 2 years</fullName>

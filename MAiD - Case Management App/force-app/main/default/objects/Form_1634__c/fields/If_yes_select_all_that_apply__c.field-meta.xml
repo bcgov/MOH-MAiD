@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_yes_select_all_that_apply__c</fullName>
     <externalId>false</externalId>
-    <label>If yes, select all that apply</label>
+    <label>If yes, select all that apply (EC1)</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
