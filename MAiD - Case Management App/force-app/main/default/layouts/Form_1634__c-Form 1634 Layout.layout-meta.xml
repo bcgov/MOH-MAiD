@@ -148,7 +148,7 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_consented_to_assessment__c</field>
+                <field>Patient_consensented_to_assessment__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
