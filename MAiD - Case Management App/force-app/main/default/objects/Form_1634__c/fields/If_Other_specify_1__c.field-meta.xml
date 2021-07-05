@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_Other_specify_1__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
+    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <description>Eligibility Criteria Section</description>
     <externalId>false</externalId>
     <label>If Other, specify (EC3)</label>
