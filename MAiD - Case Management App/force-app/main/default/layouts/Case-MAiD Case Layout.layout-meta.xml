@@ -258,6 +258,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Mandatory_Data_Feedback_Message__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Education_provided_on_case__c</field>
             </layoutItems>
             <layoutItems>
