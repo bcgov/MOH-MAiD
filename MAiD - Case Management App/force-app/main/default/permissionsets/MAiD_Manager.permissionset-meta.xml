@@ -220,11 +220,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Mandatory_Data_Feedback_Message__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Notes_to_Manager__c</field>
         <readable>true</readable>
@@ -2746,12 +2741,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1645__c.Patient_Name__c</field>
+        <field>Form_1645__c.Final_waiver_of_consent_date_signed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1645__c.Final_waiver_of_consent_date_signed__c</field>
+        <field>Form_1645__c.Patient_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3348,10 +3343,10 @@
     </objectPermissions>
     <objectPermissions>
         <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
+        <allowDelete>true</allowDelete>
         <allowEdit>true</allowEdit>
         <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
+        <modifyAllRecords>true</modifyAllRecords>
         <object>Form_1633__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
