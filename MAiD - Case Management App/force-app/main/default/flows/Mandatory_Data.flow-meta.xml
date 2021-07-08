@@ -4,8 +4,8 @@
     <assignments>
         <name>AssignNewFailListDetails</name>
         <label>AssignNewFailListDetails</label>
-        <locationX>917</locationX>
-        <locationY>1099</locationY>
+        <locationX>1079</locationX>
+        <locationY>1101</locationY>
         <assignmentItems>
             <assignToReference>ListFailMandatory</assignToReference>
             <operator>Add</operator>
@@ -18,10 +18,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>AssignNewNullListDetails</name>
+        <label>AssignNewNullListDetails</label>
+        <locationX>327</locationX>
+        <locationY>921</locationY>
+        <assignmentItems>
+            <assignToReference>UpdateNullList</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>ListCaseDetail</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateMandatoryNull</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>AssignNewPassListDetail</name>
         <label>AssignNewPassListDetail</label>
-        <locationX>1995</locationX>
-        <locationY>1083</locationY>
+        <locationX>2375</locationX>
+        <locationY>271</locationY>
         <assignmentItems>
             <assignToReference>NewPassListDetails</assignToReference>
             <operator>Add</operator>
@@ -43,22 +59,6 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>CheckforNone</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Mandatory_Fail</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
-        <name>Invalid_Case_Type_Feedback_Assignment</name>
-        <label>Invalid Case Type Feedback Assignment</label>
-        <locationX>1087</locationX>
-        <locationY>668</locationY>
-        <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>InvalidCaseType</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -146,10 +146,10 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Rule_32_Message_Assignment</name>
+        <name>Rule_32_Message_Ass</name>
         <label>Rule 32 Message Assignment</label>
-        <locationX>1599</locationX>
-        <locationY>895</locationY>
+        <locationX>1579</locationX>
+        <locationY>862</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -164,8 +164,8 @@
     <assignments>
         <name>Rule_33_Message_Assignment</name>
         <label>Rule 33 Message Assignment</label>
-        <locationX>2003</locationX>
-        <locationY>929</locationY>
+        <locationX>1996</locationX>
+        <locationY>1049</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -217,10 +217,23 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Update_Mandatory_Null</name>
+        <label>Update Mandatory Null</label>
+        <locationX>445</locationX>
+        <locationY>817</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>AssignNewNullListDetails</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>UpdateMandatoryPass</name>
         <label>Update Mandatory Pass</label>
-        <locationX>1677</locationX>
-        <locationY>1079</locationY>
+        <locationX>2239</locationX>
+        <locationY>274</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
             <operator>Assign</operator>
@@ -312,10 +325,10 @@
     <decisions>
         <name>Check_Case_Type</name>
         <label>Check_Case_Type</label>
-        <locationX>876</locationX>
-        <locationY>671</locationY>
+        <locationX>683</locationX>
+        <locationY>768</locationY>
         <defaultConnector>
-            <targetReference>Invalid_Case_Type_Feedback_Assignment</targetReference>
+            <targetReference>Update_Mandatory_Null</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Invalid Case Type</defaultConnectorLabel>
         <rules>
@@ -357,7 +370,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_46</targetReference>
+                <targetReference>Check_None</targetReference>
             </connector>
             <label>Case Type Multiple values</label>
         </rules>
@@ -365,10 +378,10 @@
     <decisions>
         <name>Check_None</name>
         <label>Check None</label>
-        <locationX>754</locationX>
-        <locationY>809</locationY>
+        <locationX>922</locationX>
+        <locationY>588</locationY>
         <defaultConnector>
-            <targetReference>Check_Case_Type</targetReference>
+            <targetReference>Rule_46</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Non-Null Values</defaultConnectorLabel>
         <rules>
@@ -746,10 +759,10 @@
     <decisions>
         <name>Rule_32</name>
         <label>Rule 32</label>
-        <locationX>1898</locationX>
-        <locationY>837</locationY>
+        <locationX>1876</locationX>
+        <locationY>860</locationY>
         <defaultConnector>
-            <targetReference>Rule_32_Message_Assignment</targetReference>
+            <targetReference>Rule_32_Message_Ass</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 32 Fail</defaultConnectorLabel>
         <rules>
@@ -820,8 +833,8 @@
     <decisions>
         <name>Rule_33</name>
         <label>Rule 33</label>
-        <locationX>2136</locationX>
-        <locationY>838</locationY>
+        <locationX>2106</locationX>
+        <locationY>852</locationY>
         <defaultConnector>
             <targetReference>Rule_33_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1092,7 +1105,7 @@
         <locationY>498</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_None</targetReference>
+            <targetReference>Check_Case_Type</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1124,6 +1137,26 @@
             <field>Date_written_request_received__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Death_occured_prior_to_MAiD</assignToReference>
+            <field>Death_occurred_prior_to_MAiD__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Completed_Medical_Certificate_of_Death</assignToReference>
+            <field>Did_practitioner_complete_medical_certi__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_I_determine_Patient</assignToReference>
+            <field>I_determine_that_the_patient__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_date_of_death_unkown</assignToReference>
+            <field>If_no_confirm__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_If_no_date_of_death</assignToReference>
+            <field>If_no_date_of_death__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_If_no_was_palliative_care_accessible</assignToReference>
             <field>If_no_was_palliative_care_accessible_to__c</field>
         </outputAssignments>
@@ -1144,12 +1177,24 @@
             <field>If_transferred_was_it_due_to_facility_po__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_If_yes_case_of_death_Specify</assignToReference>
+            <field>If_yes_cause_of_death_Specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_If_Yes_Date_Of_Death</assignToReference>
+            <field>If_yes_date_of_death__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_If_yes_did_patient_received_disability</assignToReference>
             <field>If_yes_did_patient_received_disability__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_If_yes_for_how_long_1</assignToReference>
             <field>If_yes_for_how_long_1__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_If_yes_underlying_case_of_death</assignToReference>
+            <field>If_yes_underlying_cause_of_death__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_LocationOfAssessment</assignToReference>
@@ -1219,16 +1264,23 @@
     <recordUpdates>
         <name>UpdateMandatory_Fail</name>
         <label>UpdateMandatory Fail</label>
-        <locationX>777</locationX>
-        <locationY>1101</locationY>
+        <locationX>948</locationX>
+        <locationY>1102</locationY>
         <inputReference>ListFailMandatory</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>UpdateMandatory_Pass</name>
         <label>UpdateMandatory Pass</label>
-        <locationX>2142</locationX>
-        <locationY>1083</locationY>
+        <locationX>2541</locationX>
+        <locationY>270</locationY>
         <inputReference>NewPassListDetails</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateMandatoryNull</name>
+        <label>UpdateMandatoryNull</label>
+        <locationX>321</locationX>
+        <locationY>1065</locationY>
+        <inputReference>UpdateNullList</inputReference>
     </recordUpdates>
     <start>
         <locationX>650</locationX>
@@ -1296,8 +1348,22 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Completed_Medical_Certificate_of_Death</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_ConsultedOtherHealthcareProfessionals</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_date_of_death_unkown</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -1311,6 +1377,27 @@
     </variables>
     <variables>
         <name>Var1634_Datesecondassessorsignedassessment</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Death_occured_prior_to_MAiD</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_I_determine_Patient</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_If_no_date_of_death</name>
         <dataType>Date</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -1352,6 +1439,20 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_If_yes_case_of_death_Specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_If_Yes_Date_Of_Death</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_If_yes_did_patient_received_disability</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1360,6 +1461,13 @@
     </variables>
     <variables>
         <name>Var1634_If_yes_for_how_long_1</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_If_yes_underlying_case_of_death</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
