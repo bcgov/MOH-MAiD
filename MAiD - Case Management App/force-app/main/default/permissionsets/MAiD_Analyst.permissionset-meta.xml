@@ -215,6 +215,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Mandatory_Data_Feedback_Message__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Mandatory_Data__c</field>
         <readable>true</readable>
@@ -2976,12 +2981,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1645__c.Patient_Name__c</field>
+        <field>Form_1645__c.Final_waiver_of_consent_date_signed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1645__c.Final_waiver_of_consent_date_signed__c</field>
+        <field>Form_1645__c.Patient_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
