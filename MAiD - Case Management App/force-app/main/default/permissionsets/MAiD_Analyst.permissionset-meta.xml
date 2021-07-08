@@ -220,6 +220,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Mandatory_Data_Feedback_Message__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Missed_Issue_on_Form_1633__c</field>
         <readable>true</readable>
