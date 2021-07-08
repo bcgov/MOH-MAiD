@@ -128,7 +128,7 @@
         <name>main</name>
         <type>Region</type>
     </flexiPageRegions>
-    <masterLabel>Case Record Page</masterLabel>
+    <masterLabel>MAID - Case Record Page</masterLabel>
     <sobjectType>Case</sobjectType>
     <template>
         <name>flexipage:recordHomeSimpleViewTemplate</name>
