@@ -50,22 +50,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Check_None_Feedback_Assignment</name>
-        <label>Check None Feedback Assignment</label>
-        <locationX>1016</locationX>
-        <locationY>810</locationY>
-        <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>CheckforNone</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>Update_Mandatory_Fail</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>Rule_20_Message_Assignment</name>
         <label>Rule 20 Message Assignment</label>
         <locationX>1160</locationX>
@@ -225,6 +209,13 @@
             <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
             <operator>Assign</operator>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Applicable</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>AssignNewNullListDetails</targetReference>
         </connector>
@@ -239,6 +230,13 @@
             <operator>Assign</operator>
             <value>
                 <stringValue>PASS</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>All Rules Passed</stringValue>
             </value>
         </assignmentItems>
         <connector>
@@ -325,8 +323,8 @@
     <decisions>
         <name>Check_Case_Type</name>
         <label>Check_Case_Type</label>
-        <locationX>683</locationX>
-        <locationY>768</locationY>
+        <locationX>863</locationX>
+        <locationY>879</locationY>
         <defaultConnector>
             <targetReference>Update_Mandatory_Null</targetReference>
         </defaultConnector>
@@ -370,71 +368,9 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Check_None</targetReference>
+                <targetReference>Rule_46</targetReference>
             </connector>
             <label>Case Type Multiple values</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Check_None</name>
-        <label>Check None</label>
-        <locationX>922</locationX>
-        <locationY>588</locationY>
-        <defaultConnector>
-            <targetReference>Rule_46</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Non-Null Values</defaultConnectorLabel>
-        <rules>
-            <name>Check_for_None</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Var1634_Assessment_Conducted</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_AssessmentDate</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_ConsultedOtherHealthcareProfessionals</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_DateofWrittenrequestreceived</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Datesecondassessorsignedassessment</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_LocationOfAssessment</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_PriorPatientConsultation</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Secondassessorwasaphysicianornurse</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Who_did_you_receive_the_written_request</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <connector>
-                <targetReference>Check_None_Feedback_Assignment</targetReference>
-            </connector>
-            <label>Check for None</label>
         </rules>
     </decisions>
     <decisions>
