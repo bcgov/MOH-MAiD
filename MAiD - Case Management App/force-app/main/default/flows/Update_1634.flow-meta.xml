@@ -38,7 +38,13 @@
         <inputAssignments>
             <field>Federal_Safeguards__c</field>
             <value>
-                <stringValue>PASS</stringValue>
+                <stringValue/>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Provincial_Safeguards__c</field>
+            <value>
+                <stringValue/>
             </value>
         </inputAssignments>
         <object>Case</object>
