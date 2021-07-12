@@ -42,6 +42,18 @@
             </value>
         </inputAssignments>
         <inputAssignments>
+            <field>Legislation_and_Critical_Safeguards__c</field>
+            <value>
+                <stringValue/>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Mandatory_Data__c</field>
+            <value>
+                <stringValue/>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Provincial_Safeguards__c</field>
             <value>
                 <stringValue/>
