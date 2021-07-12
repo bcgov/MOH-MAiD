@@ -710,7 +710,7 @@
         <defaultConnectorLabel>Rule 32 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_32_Pass</name>
-            <conditionLogic>(((1 AND 2) OR (1 AND 2 AND (3 AND 4))) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
+            <conditionLogic>(((1 AND 2 AND 9) OR (1 AND 2 AND (3 AND 4))) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_MAiDLocationAdress</leftValueReference>
                 <operator>IsNull</operator>
@@ -765,6 +765,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_MAiD_Location_Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>5 - Other Specify</stringValue>
                 </rightValue>
             </conditions>
             <connector>
