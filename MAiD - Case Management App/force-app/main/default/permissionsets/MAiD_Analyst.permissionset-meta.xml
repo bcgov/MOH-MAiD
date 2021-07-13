@@ -356,6 +356,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.Provincial_Safeguards_Feedback__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.REF_20B__c</field>
         <readable>true</readable>
     </fieldPermissions>
