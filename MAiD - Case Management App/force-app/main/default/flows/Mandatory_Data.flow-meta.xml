@@ -603,7 +603,7 @@
         <defaultConnectorLabel>Rule 25 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_25_Pass</name>
-            <conditionLogic>(1 AND 2) OR (3 AND 4) OR 5</conditionLogic>
+            <conditionLogic>(1 AND 2) OR (3 AND 4) OR 5 OR 6</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
                 <operator>EqualTo</operator>
@@ -635,6 +635,13 @@
             <conditions>
                 <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Do not know</stringValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Rule_26</targetReference>
@@ -703,7 +710,7 @@
         <defaultConnectorLabel>Rule 32 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_32_Pass</name>
-            <conditionLogic>(((1 AND 2) OR (1 AND 2 AND (3 OR 4))) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
+            <conditionLogic>(((1 AND 2 AND 9) OR (1 AND 2 AND (3 AND 4))) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_MAiDLocationAdress</leftValueReference>
                 <operator>IsNull</operator>
@@ -760,6 +767,13 @@
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_MAiD_Location_Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>5 - Other Specify</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_33</targetReference>
             </connector>
@@ -777,7 +791,7 @@
         <defaultConnectorLabel>Rule 33 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_33_Pass</name>
-            <conditionLogic>(((1 OR 7) AND 2 AND 6) OR ((1 OR 7) AND 2 AND 5 AND 3)) OR (4 AND 8)</conditionLogic>
+            <conditionLogic>(((1 OR 7) AND 2 AND 6) OR ((1 OR 7) AND 2 AND 5 AND 3)) OR (4 AND 8) OR 9</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -832,6 +846,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Was_patient_transferred_for_MAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Do not know</stringValue>
                 </rightValue>
             </conditions>
             <connector>
