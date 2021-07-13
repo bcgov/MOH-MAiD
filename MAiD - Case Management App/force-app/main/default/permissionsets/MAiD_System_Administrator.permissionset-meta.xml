@@ -2500,6 +2500,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1634__c.SLF_S30_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Form_1641__c.Ondansetron_Strength__c</field>
         <readable>true</readable>
