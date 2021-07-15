@@ -4,8 +4,8 @@
     <assignments>
         <name>AssignNewFailListDetails</name>
         <label>AssignNewFailListDetails</label>
-        <locationX>1079</locationX>
-        <locationY>1101</locationY>
+        <locationX>1129</locationX>
+        <locationY>1270</locationY>
         <assignmentItems>
             <assignToReference>ListFailMandatory</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>AssignNewNullListDetails</name>
         <label>AssignNewNullListDetails</label>
-        <locationX>327</locationX>
-        <locationY>921</locationY>
+        <locationX>518</locationX>
+        <locationY>598</locationY>
         <assignmentItems>
             <assignToReference>UpdateNullList</assignToReference>
             <operator>Add</operator>
@@ -130,7 +130,7 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Rule_32_Message_Ass</name>
+        <name>Rule_32_Message_Assignment</name>
         <label>Rule 32 Message Assignment</label>
         <locationX>1579</locationX>
         <locationY>862</locationY>
@@ -148,8 +148,8 @@
     <assignments>
         <name>Rule_33_Message_Assignment</name>
         <label>Rule 33 Message Assignment</label>
-        <locationX>1996</locationX>
-        <locationY>1049</locationY>
+        <locationX>2008</locationX>
+        <locationY>1016</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -178,10 +178,154 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_44_Message_Assignment</name>
+        <label>Rule 44 Message Assignment</label>
+        <locationX>2249</locationX>
+        <locationY>827</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule44Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_45_Message_Assignment</name>
+        <label>Rule 45 Message Assignment</label>
+        <locationX>2356</locationX>
+        <locationY>918</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule45Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_48_Message_Assignment</name>
+        <label>Rule 48 Message Assignment</label>
+        <locationX>2435</locationX>
+        <locationY>1116</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule48Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_50_Message_Assignment</name>
+        <label>Rule 50 Message Assignment</label>
+        <locationX>2713</locationX>
+        <locationY>616</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule50Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_51_Message_Assignment</name>
+        <label>Rule 51 Message Assignment</label>
+        <locationX>1151</locationX>
+        <locationY>862</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule51Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_52_Message_Assignment</name>
+        <label>Rule 52 Message Assignment</label>
+        <locationX>799</locationX>
+        <locationY>950</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule52Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_53_Message_Assignment</name>
+        <label>Rule 53 Message Assignment</label>
+        <locationX>635</locationX>
+        <locationY>955</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule53Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_54_Message_Assignment</name>
+        <label>Rule 54 Message Assignment</label>
+        <locationX>474</locationX>
+        <locationY>953</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule54_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_55_Message_Assignment</name>
+        <label>Rule 55 Message Assignment</label>
+        <locationX>273</locationX>
+        <locationY>952</locationY>
+        <assignmentItems>
+            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule55_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Update_Mandatory_Fail</name>
         <label>Update Mandatory Fail</label>
-        <locationX>1255</locationX>
-        <locationY>1101</locationY>
+        <locationX>1254</locationX>
+        <locationY>1099</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
             <operator>Assign</operator>
@@ -203,8 +347,8 @@
     <assignments>
         <name>Update_Mandatory_Null</name>
         <label>Update Mandatory Null</label>
-        <locationX>445</locationX>
-        <locationY>817</locationY>
+        <locationX>650</locationX>
+        <locationY>597</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
             <operator>Assign</operator>
@@ -243,20 +387,6 @@
             <targetReference>AssignNewPassListDetail</targetReference>
         </connector>
     </assignments>
-    <constants>
-        <name>CheckforNone</name>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>All Mandatory values are null</stringValue>
-        </value>
-    </constants>
-    <constants>
-        <name>InvalidCaseType</name>
-        <dataType>String</dataType>
-        <value>
-            <stringValue>Invalid Case Type</stringValue>
-        </value>
-    </constants>
     <constants>
         <name>Rule20Message</name>
         <dataType>String</dataType>
@@ -314,17 +444,80 @@
         </value>
     </constants>
     <constants>
+        <name>Rule44Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 44 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule45Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 45 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
         <name>Rule46Message</name>
         <dataType>String</dataType>
         <value>
             <stringValue>Rule 46 Validation Failed</stringValue>
         </value>
     </constants>
+    <constants>
+        <name>Rule48Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 48 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule50Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 50 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule51Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 51 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule52Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 52 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule53Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 53 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule54_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 54 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule55_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 55 Validation Failed</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Check_Case_Type</name>
         <label>Check_Case_Type</label>
-        <locationX>863</locationX>
-        <locationY>879</locationY>
+        <locationX>923</locationX>
+        <locationY>598</locationY>
         <defaultConnector>
             <targetReference>Update_Mandatory_Null</targetReference>
         </defaultConnector>
@@ -372,12 +565,27 @@
             </connector>
             <label>Case Type Multiple values</label>
         </rules>
+        <rules>
+            <name>Case_Type_Transfer_of_Request</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer of Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_51</targetReference>
+            </connector>
+            <label>Case Type Transfer of Request</label>
+        </rules>
     </decisions>
     <decisions>
         <name>Rule24</name>
         <label>Rule 24</label>
-        <locationX>1643</locationX>
-        <locationY>477</locationY>
+        <locationX>1775</locationX>
+        <locationY>499</locationY>
         <defaultConnector>
             <targetReference>Rule_24_Message_Assignment</targetReference>
         </defaultConnector>
@@ -702,10 +910,10 @@
     <decisions>
         <name>Rule_32</name>
         <label>Rule 32</label>
-        <locationX>1876</locationX>
-        <locationY>860</locationY>
+        <locationX>1796</locationX>
+        <locationY>856</locationY>
         <defaultConnector>
-            <targetReference>Rule_32_Message_Ass</targetReference>
+            <targetReference>Rule_32_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 32 Fail</defaultConnectorLabel>
         <rules>
@@ -783,8 +991,8 @@
     <decisions>
         <name>Rule_33</name>
         <label>Rule 33</label>
-        <locationX>2106</locationX>
-        <locationY>852</locationY>
+        <locationX>2061</locationX>
+        <locationY>773</locationY>
         <defaultConnector>
             <targetReference>Rule_33_Message_Assignment</targetReference>
         </defaultConnector>
@@ -856,7 +1064,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateMandatoryPass</targetReference>
+                <targetReference>Rule_44</targetReference>
             </connector>
             <label>Rule 33 Pass</label>
         </rules>
@@ -964,10 +1172,143 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Rule_44</name>
+        <label>Rule 44</label>
+        <locationX>2265</locationX>
+        <locationY>687</locationY>
+        <defaultConnector>
+            <targetReference>Rule_44_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 44 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_44_Pass</name>
+            <conditionLogic>7 OR( (1 AND 2 AND 6) OR (1 AND 3 AND 6) OR (4 AND 5))</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Death_occured_prior_to_MAiD</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_45</targetReference>
+            </connector>
+            <label>Rule 44 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_45</name>
+        <label>Rule 45</label>
+        <locationX>2464</locationX>
+        <locationY>798</locationY>
+        <defaultConnector>
+            <targetReference>Rule_45_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 45 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_45_Pass</name>
+            <conditionLogic>(((1 AND 2 AND 3 AND 4) OR (7 AND (5 OR 6))) AND 8) OR 9</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Completedmedicalcertofdeath</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Date_Of_Death</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_yes_underlying_case_of_death</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_yes_case_of_death_Specify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_no_date_of_death</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_date_of_death_unkown</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Completed_Medical_Certificate_of_Death</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_48</targetReference>
+            </connector>
+            <label>Rule 45 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Rule_46</name>
         <label>Rule 46</label>
-        <locationX>911</locationX>
-        <locationY>281</locationY>
+        <locationX>932</locationX>
+        <locationY>265</locationY>
         <defaultConnector>
             <targetReference>Rule_20</targetReference>
         </defaultConnector>
@@ -1029,9 +1370,373 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateMandatoryPass</targetReference>
+                <targetReference>Rule_44</targetReference>
             </connector>
             <label>Rule 46 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_48</name>
+        <label>Rule 48</label>
+        <locationX>2579</locationX>
+        <locationY>992</locationY>
+        <defaultConnector>
+            <targetReference>Rule_48_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 48 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_48_Pass</name>
+            <conditionLogic>(7 AND (1 AND ( (2 AND 4 AND 5) OR (2 AND 6) OR 3 ) ) )  OR 8</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Does not meet the criteria for MAiD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Pract_prev_determine_patient_eligible</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Pract_prev_determine_patient_eligible</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_change_due_to_loss_of_capacity</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Practitioner_became_aware</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_change_due_to_loss_of_capacity</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_50</targetReference>
+            </connector>
+            <label>Rule 48 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_50</name>
+        <label>Rule 50</label>
+        <locationX>2559</locationX>
+        <locationY>620</locationY>
+        <defaultConnector>
+            <targetReference>Rule_50_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 50 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_50_Pass</name>
+            <conditionLogic>((1 AND 2 AND ((3 AND 4 AND 5) OR (3 AND 7))) OR 6) OR 8</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_Withdrew_Request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4 - Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_other_specify_3_Pt_Withdreq_req</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_Withdrew_Request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>4 - Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateMandatoryPass</targetReference>
+            </connector>
+            <label>Rule 50 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_51</name>
+        <label>Rule 51</label>
+        <locationX>926</locationX>
+        <locationY>785</locationY>
+        <defaultConnector>
+            <targetReference>Rule_51_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 51 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_51_Pass</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1642_Transfer_of_request</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Practitioner</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Date_Written_Request_received</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_From_whom_you_receive_written_request</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_date_of_transfer_of_request_or_care</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Date_Practitioner_Signed_Form</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_52</targetReference>
+            </connector>
+            <label>Rule 51 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_52</name>
+        <label>Rule 52</label>
+        <locationX>718</locationX>
+        <locationY>765</locationY>
+        <defaultConnector>
+            <targetReference>Rule_52_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 52 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_52_Pass</name>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1642_From_whom_you_receive_written_request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4 - Another third party</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_If_other_thrid_party_specify</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_From_whom_you_receive_written_request</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>4 - Another third party</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_53</targetReference>
+            </connector>
+            <label>Rule 52 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_53</name>
+        <label>Rule 53</label>
+        <locationX>550</locationX>
+        <locationY>725</locationY>
+        <defaultConnector>
+            <targetReference>Rule_53_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 53 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_53_Pass</name>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1642_From_whom_you_receive_written_request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 - Patient directly - other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_if_patient_directly_other_specify</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_From_whom_you_receive_written_request</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>5 - Patient directly - other</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_54</targetReference>
+            </connector>
+            <label>Rule 53 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_54</name>
+        <label>Rule 54</label>
+        <locationX>380</locationX>
+        <locationY>794</locationY>
+        <defaultConnector>
+            <targetReference>Rule_54_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 54 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_54_Pass</name>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1642_None_of_above</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Ifyes_specify</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_None_of_above</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_55</targetReference>
+            </connector>
+            <label>Rule 54 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_55</name>
+        <label>Rule 55</label>
+        <locationX>196</locationX>
+        <locationY>737</locationY>
+        <defaultConnector>
+            <targetReference>Rule_55_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 55 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_55_Pass</name>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1642_Transfer_of_request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_If_other_specify</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Transfer_of_request</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Other</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateMandatoryPass</targetReference>
+            </connector>
+            <label>Rule 55 Pass</label>
         </rules>
     </decisions>
     <interviewLabel>Mandatory Data {!$Flow.CurrentDateTime}</interviewLabel>
@@ -1056,13 +1761,120 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <name>Get1634</name>
-        <label>Get1634</label>
-        <locationX>776</locationX>
-        <locationY>498</locationY>
+        <name>Form_1642</name>
+        <label>Form 1642</label>
+        <locationX>774</locationX>
+        <locationY>510</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_Case_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ListCaseDetail.Id</elementReference>
+            </value>
+        </filters>
+        <object>Form_1642__c</object>
+        <outputAssignments>
+            <assignToReference>Var1642_Contrary_to_your_conscience_beliefs</assignToReference>
+            <field>Contrary_to_your_conscience_or_beliefs__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Date_Practitioner_Signed_Form</assignToReference>
+            <field>Date_Practitioner_Signed_Form__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Date_Written_Request_received</assignToReference>
+            <field>Date_Written_Request_Received__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_date_of_transfer_of_request_or_care</assignToReference>
+            <field>Date_of_transfer_of_request_or_care__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Did_you_complete_an_eligibility_assessme</assignToReference>
+            <field>Did_you_complete_an_eligibility_assessme__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Due_to_patient_request</assignToReference>
+            <field>Due_to_patient_s_request__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Due_to_policies_on_MAiD_facility</assignToReference>
+            <field>Due_to_policies_on_MAID_of_a_facility__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Facility_will_not_permit_MAiD_assessment</assignToReference>
+            <field>Facility_not_permit_MAiD_assessment__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_FacilitywillnotpermitMAiDprovision</assignToReference>
+            <field>Facility_will_not_permit_MAiD_provision__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_From_whom_you_receive_written_request</assignToReference>
+            <field>From_whom_you_receive_written_request__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_If_other_specify</assignToReference>
+            <field>If_Other_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_If_other_thrid_party_specify</assignToReference>
+            <field>If_other_third_party_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_if_patient_directly_other_specify</assignToReference>
+            <field>If_patient_directly_other_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Ifyes_specify</assignToReference>
+            <field>If_yes_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_If_yes_was_the_patient_eligible</assignToReference>
+            <field>If_yes_was_the_patient_eligible__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Lack_relevant_expertise_to_assess_MAiD</assignToReference>
+            <field>Lack_relevant_expertise_to_assess_MAiD__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Lack_of_relevant_expertise_provide_MAiD</assignToReference>
+            <field>Lack_relevant_expertise_to_provide_MAiD__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_None_of_above</assignToReference>
+            <field>None_of_the_above__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Practitioner</assignToReference>
+            <field>Practitioner__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Prior_patient_consultation</assignToReference>
+            <field>Prior_patient_consultation__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Signature_of_practitioner</assignToReference>
+            <field>Signature_of_Practitioner__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1642_Transfer_of_request</assignToReference>
+            <field>Transferred_the_request_to__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
+        <name>Get1634</name>
+        <label>Get1634</label>
+        <locationX>776</locationX>
+        <locationY>391</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Form_1642</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1106,6 +1918,14 @@
             <field>I_determine_that_the_patient__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_If_Yes_change_due_to_loss_of_capacity</assignToReference>
+            <field>If_Yes_is_patients_change_in_eligbilit__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_If_Yes_Practitioner_became_aware</assignToReference>
+            <field>If_Yes_practitioner_became_aware_patien__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_date_of_death_unkown</assignToReference>
             <field>If_no_confirm__c</field>
         </outputAssignments>
@@ -1122,12 +1942,20 @@
             <field>If_no_were_services_accessible__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_If_other_specify_3_Pt_Withdreq_req</assignToReference>
+            <field>If_other_specify_3__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_If_other_specify_4</assignToReference>
             <field>If_other_specify_4__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_If_patient_directly_other_specify</assignToReference>
             <field>If_patient_directly_other_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</assignToReference>
+            <field>If_the_patient_withdrew_request_what_we__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_If_transferred_was_it_due_to_facility</assignToReference>
@@ -1174,6 +2002,14 @@
             <field>Patient_requires_disability_support_serv__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Patient_Withdrew_Request</assignToReference>
+            <field>Patient_withdrew_request__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Pract_prev_determine_patient_eligible</assignToReference>
+            <field>Practitioner_previously_determined_patie__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Secondassessorwasaphysicianornurse</assignToReference>
             <field>Second_assessor_was_a_physcian_or_nurse__c</field>
         </outputAssignments>
@@ -1197,8 +2033,8 @@
     <recordLookups>
         <name>GetCaseDetail</name>
         <label>GetCaseDetail</label>
-        <locationX>784</locationX>
-        <locationY>325</locationY>
+        <locationX>776</locationX>
+        <locationY>273</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1634</targetReference>
@@ -1221,8 +2057,8 @@
     <recordUpdates>
         <name>UpdateMandatory_Fail</name>
         <label>UpdateMandatory Fail</label>
-        <locationX>948</locationX>
-        <locationY>1102</locationY>
+        <locationX>1004</locationX>
+        <locationY>1267</locationY>
         <inputReference>ListFailMandatory</inputReference>
     </recordUpdates>
     <recordUpdates>
@@ -1235,8 +2071,8 @@
     <recordUpdates>
         <name>UpdateMandatoryNull</name>
         <label>UpdateMandatoryNull</label>
-        <locationX>321</locationX>
-        <locationY>1065</locationY>
+        <locationX>363</locationX>
+        <locationY>598</locationY>
         <inputReference>UpdateNullList</inputReference>
     </recordUpdates>
     <start>
@@ -1312,6 +2148,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Completedmedicalcertofdeath</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_ConsultedOtherHealthcareProfessionals</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1375,6 +2218,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_If_other_specify_3_Pt_Withdreq_req</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_If_other_specify_4</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1403,6 +2253,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_If_Yes_change_due_to_loss_of_capacity</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_If_Yes_Date_Of_Death</name>
         <dataType>Date</dataType>
         <isCollection>false</isCollection>
@@ -1418,6 +2275,20 @@
     </variables>
     <variables>
         <name>Var1634_If_yes_for_how_long_1</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_If_Yes_Practitioner_became_aware</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -1459,6 +2330,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Patient_Withdrew_Request</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Patientneedsdisabilitysupportservice</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1467,6 +2345,13 @@
     </variables>
     <variables>
         <name>Var1634_Patientreceivedpalliativecare</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Pract_prev_determine_patient_eligible</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -1502,6 +2387,167 @@
     </variables>
     <variables>
         <name>Var1634_Who_did_you_receive_the_written_request</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Contrary_to_your_conscience_beliefs</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_date_of_transfer_of_request_or_care</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Date_Practitioner_Signed_Form</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Date_Written_Request_received</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Did_you_complete_an_eligibility_assessme</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Due_to_patient_request</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Due_to_policies_on_MAiD_facility</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Facility_will_not_permit_MAiD_assessment</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_FacilitywillnotpermitMAiDprovision</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_From_whom_you_receive_written_request</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_If_other_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_If_other_thrid_party_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_if_patient_directly_other_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_If_yes_was_the_patient_eligible</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Ifyes_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Lack_of_relevant_expertise_provide_MAiD</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Lack_relevant_expertise_to_assess_MAiD</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_None_of_above</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Practitioner</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Prior_patient_consultation</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Signature_of_practitioner</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Transfer_of_request</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1642_Transferred_the_request_to</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
