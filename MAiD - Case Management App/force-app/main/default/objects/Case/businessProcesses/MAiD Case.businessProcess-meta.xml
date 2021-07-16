@@ -19,6 +19,10 @@
         <default>false</default>
     </values>
     <values>
+        <fullName>College Referral/HOLD</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Follow up Required to Close</fullName>
         <default>false</default>
     </values>
