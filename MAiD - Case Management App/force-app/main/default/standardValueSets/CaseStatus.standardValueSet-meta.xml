@@ -97,4 +97,10 @@
         <label>Logged for Tracking</label>
         <closed>false</closed>
     </standardValue>
+    <standardValue>
+        <fullName>College Referral/HOLD</fullName>
+        <default>false</default>
+        <label>College Referral/HOLD</label>
+        <closed>false</closed>
+    </standardValue>
 </StandardValueSet>
