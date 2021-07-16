@@ -1182,7 +1182,7 @@
         <defaultConnectorLabel>Rule 44 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_44_Pass</name>
-            <conditionLogic>7 OR( (1 AND 2 AND 6) OR (1 AND 3 AND 6) OR (4 AND 5))</conditionLogic>
+            <conditionLogic>5 OR ( (1 AND 2 AND 4) OR (1 AND 3 AND 4))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1205,24 +1205,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>Var1634_Death_occured_prior_to_MAiD</leftValueReference>
-                <operator>IsNull</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1249,9 +1235,9 @@
         <defaultConnectorLabel>Rule 45 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_45_Pass</name>
-            <conditionLogic>(((1 AND 2 AND 3 AND 4) OR (7 AND (5 OR 6))) AND 8) OR 9</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 4) OR ((5 OR 6) AND 7) AND 8) OR 9</conditionLogic>
             <conditions>
-                <leftValueReference>Var1634_Completedmedicalcertofdeath</leftValueReference>
+                <leftValueReference>Var1634_Completed_Medical_Certificate_of_Death</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1259,23 +1245,38 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_Yes_Date_Of_Death</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_yes_underlying_case_of_death</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_yes_case_of_death_Specify</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_no_date_of_death</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_date_of_death_unkown</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Completed_Medical_Certificate_of_Death</leftValueReference>
