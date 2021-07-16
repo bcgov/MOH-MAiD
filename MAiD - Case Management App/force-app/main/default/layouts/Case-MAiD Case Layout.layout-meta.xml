@@ -246,6 +246,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Provincial_Safeguards_Feedback__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Provincial_Feedback_Msg__c</field>
             </layoutItems>
             <layoutItems>

@@ -37,6 +37,9 @@
         </filters>
         <inputAssignments>
             <field>Federal_Safeguards__c</field>
+            <value>
+                <stringValue/>
+            </value>
         </inputAssignments>
         <object>Case</object>
     </recordUpdates>

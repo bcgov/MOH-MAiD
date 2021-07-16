@@ -38,7 +38,7 @@
         <inputAssignments>
             <field>Federal_Safeguards__c</field>
             <value>
-                <stringValue>PASS</stringValue>
+                <stringValue/>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -50,7 +50,7 @@
             <targetReference>Update_Case</targetReference>
         </connector>
         <object>Form_RXMAR__c</object>
-        <recordTriggerType>Create</recordTriggerType>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
-    <interviewLabel>Update1633 {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Update1633</label>
+    <interviewLabel>Update 1633 {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update 1633</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -38,7 +38,7 @@
         <inputAssignments>
             <field>Federal_Safeguards__c</field>
             <value>
-                <stringValue>PASS</stringValue>
+                <stringValue/>
             </value>
         </inputAssignments>
         <object>Case</object>
