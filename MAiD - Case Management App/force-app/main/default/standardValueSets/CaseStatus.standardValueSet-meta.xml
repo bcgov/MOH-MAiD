@@ -38,6 +38,12 @@
         <closed>false</closed>
     </standardValue>
     <standardValue>
+        <fullName>College Referral/HOLD</fullName>
+        <default>false</default>
+        <label>College Referral/HOLD</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
         <fullName>Ready for Manager Review</fullName>
         <default>false</default>
         <label>Ready for Manager Review</label>
@@ -95,12 +101,6 @@
         <fullName>Logged for Tracking</fullName>
         <default>false</default>
         <label>Logged for Tracking</label>
-        <closed>false</closed>
-    </standardValue>
-    <standardValue>
-        <fullName>College Referral/HOLD</fullName>
-        <default>false</default>
-        <label>College Referral/HOLD</label>
         <closed>false</closed>
     </standardValue>
 </StandardValueSet>
