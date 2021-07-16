@@ -4,7 +4,7 @@
     <assignments>
         <name>AssignFailList</name>
         <label>AssignFailList</label>
-        <locationX>2441</locationX>
+        <locationX>2975</locationX>
         <locationY>1633</locationY>
         <assignmentItems>
             <assignToReference>UpdateFalList</assignToReference>
@@ -20,7 +20,7 @@
     <assignments>
         <name>AssignNullList</name>
         <label>AssignNullList</label>
-        <locationX>2876</locationX>
+        <locationX>3410</locationX>
         <locationY>789</locationY>
         <assignmentItems>
             <assignToReference>UpdateNullList</assignToReference>
@@ -36,7 +36,7 @@
     <assignments>
         <name>AssignPASSList</name>
         <label>AssignPASSList</label>
-        <locationX>1531</locationX>
+        <locationX>2065</locationX>
         <locationY>3248</locationY>
         <assignmentItems>
             <assignToReference>UpdatePassList</assignToReference>
@@ -52,7 +52,7 @@
     <assignments>
         <name>Rule22ErrorMsg</name>
         <label>Rule22ErrorMsg</label>
-        <locationX>2511</locationX>
+        <locationX>3045</locationX>
         <locationY>671</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -68,7 +68,7 @@
     <assignments>
         <name>Rule23ErrorMsg</name>
         <label>Rule23ErrorMsg</label>
-        <locationX>1942</locationX>
+        <locationX>2476</locationX>
         <locationY>717</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -84,7 +84,7 @@
     <assignments>
         <name>Rule23ErrorMsg_1</name>
         <label>Rule23ErrorMsg-1</label>
-        <locationX>2051</locationX>
+        <locationX>2585</locationX>
         <locationY>570</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -100,7 +100,7 @@
     <assignments>
         <name>Rule27ErrorMsg</name>
         <label>Rule27ErrorMsg</label>
-        <locationX>1700</locationX>
+        <locationX>2234</locationX>
         <locationY>784</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -116,7 +116,7 @@
     <assignments>
         <name>Rule28ErrorMsg</name>
         <label>Rule28ErrorMsg</label>
-        <locationX>1079</locationX>
+        <locationX>1613</locationX>
         <locationY>862</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -132,7 +132,7 @@
     <assignments>
         <name>Rule29ErrorMsg_0</name>
         <label>Rule29ErrorMsg</label>
-        <locationX>982</locationX>
+        <locationX>1516</locationX>
         <locationY>1002</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -148,7 +148,7 @@
     <assignments>
         <name>Rule30ErrorMsg</name>
         <label>Rule30ErrorMsg</label>
-        <locationX>862</locationX>
+        <locationX>1396</locationX>
         <locationY>1123</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -164,7 +164,7 @@
     <assignments>
         <name>Rule31ErrorMsg</name>
         <label>Rule31ErrorMsg</label>
-        <locationX>728</locationX>
+        <locationX>1262</locationX>
         <locationY>1283</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -178,9 +178,25 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule34ErrorMsg</name>
+        <label>Rule34ErrorMsg</label>
+        <locationX>961</locationX>
+        <locationY>1692</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var34ErrMsg</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateProvincialFail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule35ErrorMsg</name>
         <label>Rule35ErrorMsg</label>
-        <locationX>1739</locationX>
+        <locationX>2273</locationX>
         <locationY>1600</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -196,7 +212,7 @@
     <assignments>
         <name>Rule43ErrorMsg</name>
         <label>Rule43ErrorMsg</label>
-        <locationX>597</locationX>
+        <locationX>1131</locationX>
         <locationY>1428</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
@@ -212,7 +228,7 @@
     <assignments>
         <name>UpdateProviencialNull</name>
         <label>UpdateProviencialNull</label>
-        <locationX>2870</locationX>
+        <locationX>3404</locationX>
         <locationY>521</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards__c</assignToReference>
@@ -232,7 +248,7 @@
     <assignments>
         <name>UpdateProvincialFail</name>
         <label>UpdateProvincialFail</label>
-        <locationX>2238</locationX>
+        <locationX>2772</locationX>
         <locationY>1333</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards__c</assignToReference>
@@ -248,7 +264,7 @@
     <assignments>
         <name>UpdateProvincialPASS</name>
         <label>UpdateProvincialPASS</label>
-        <locationX>1660</locationX>
+        <locationX>2194</locationX>
         <locationY>3080</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards__c</assignToReference>
@@ -292,6 +308,9 @@
     <constants>
         <name>Var28Msg</name>
         <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 28 is failed</stringValue>
+        </value>
     </constants>
     <constants>
         <name>Var29Msg</name>
@@ -331,7 +350,7 @@
     <decisions>
         <name>CaseType</name>
         <label>CaseType</label>
-        <locationX>2147</locationX>
+        <locationX>2681</locationX>
         <locationY>105</locationY>
         <defaultConnector>
             <targetReference>UpdateProviencialNull</targetReference>
@@ -384,7 +403,7 @@
     <decisions>
         <name>Check_None</name>
         <label>Check-None</label>
-        <locationX>1948</locationX>
+        <locationX>2482</locationX>
         <locationY>194</locationY>
         <defaultConnector>
             <targetReference>Checkrule_22</targetReference>
@@ -513,6 +532,74 @@
                 <leftValueReference>Var1634_VerbalConsentNotes</leftValueReference>
                 <operator>EqualTo</operator>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1641_DispensingPharmacist</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Wherewasthesubstancedispensed</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_IfOtherspecify</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_DispensedDateTime</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_DispensingPharmacist_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_ReceivingPrescriber_Name</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_CPSIDBCCNM_Prescriber_License</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_ReceivedDate_Time</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Prescriber_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Returning_Prescriber_Name</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_CPSID_BCCNM_Returning_Prescriber_Licen</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Prescriber_Returned</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Returning_PrescriberSignature</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Receiving_Pharmacist</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_CPBC_Receiving_Pharmacist_License</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Pharmacist_Returned_Date_Time</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Receiving_Pharmacist_s_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>UpdateProviencialNull</targetReference>
             </connector>
@@ -523,7 +610,7 @@
         <name>CheckCaseType35Rule</name>
         <label>CheckCaseType35Rule</label>
         <locationX>50</locationX>
-        <locationY>1900</locationY>
+        <locationY>1510</locationY>
         <defaultConnector>
             <targetReference>UpdateProvincialPASS</targetReference>
         </defaultConnector>
@@ -546,7 +633,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>CheckRule35_1</targetReference>
+                <targetReference>CheckRule34_1</targetReference>
             </connector>
             <label>CaseTypeCheck-35Rule=yes</label>
         </rules>
@@ -554,7 +641,7 @@
     <decisions>
         <name>CheckMandatory_Location_Assesment</name>
         <label>CheckMandatory-Location Assesment</label>
-        <locationX>1088</locationX>
+        <locationX>1622</locationX>
         <locationY>463</locationY>
         <defaultConnector>
             <targetReference>Rule23ErrorMsg</targetReference>
@@ -576,7 +663,7 @@
     <decisions>
         <name>CheckMandatory_Location_Assesment_0</name>
         <label>CheckMandatory-Location Assesment</label>
-        <locationX>1688</locationX>
+        <locationX>2222</locationX>
         <locationY>547</locationY>
         <defaultConnector>
             <targetReference>Rule23ErrorMsg_1</targetReference>
@@ -605,7 +692,7 @@
     <decisions>
         <name>CheckRule27</name>
         <label>CheckRule27</label>
-        <locationX>971</locationX>
+        <locationX>1505</locationX>
         <locationY>682</locationY>
         <defaultConnector>
             <targetReference>Rule27ErrorMsg</targetReference>
@@ -708,7 +795,7 @@
     <decisions>
         <name>CheckRule28</name>
         <label>CheckRule28</label>
-        <locationX>783</locationX>
+        <locationX>1317</locationX>
         <locationY>839</locationY>
         <defaultConnector>
             <targetReference>Rule28ErrorMsg</targetReference>
@@ -793,7 +880,7 @@
     <decisions>
         <name>CheckRule29</name>
         <label>CheckRule29</label>
-        <locationX>654</locationX>
+        <locationX>1188</locationX>
         <locationY>999</locationY>
         <defaultConnector>
             <targetReference>Rule29ErrorMsg_0</targetReference>
@@ -867,7 +954,7 @@
     <decisions>
         <name>CheckRule30</name>
         <label>CheckRule30</label>
-        <locationX>551</locationX>
+        <locationX>1085</locationX>
         <locationY>1112</locationY>
         <defaultConnector>
             <targetReference>Rule30ErrorMsg</targetReference>
@@ -952,7 +1039,7 @@
     <decisions>
         <name>CheckRule31</name>
         <label>CheckRule31</label>
-        <locationX>423</locationX>
+        <locationX>957</locationX>
         <locationY>1275</locationY>
         <defaultConnector>
             <targetReference>Rule31ErrorMsg</targetReference>
@@ -1007,9 +1094,206 @@
         </rules>
     </decisions>
     <decisions>
+        <name>CheckRule34_1</name>
+        <label>CheckRule34-1</label>
+        <locationX>246</locationX>
+        <locationY>1838</locationY>
+        <defaultConnector>
+            <targetReference>CheckRule34_3</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule34_1_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1641_IfOtherspecify</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Other</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule34_2</targetReference>
+            </connector>
+            <label>CheckRule34-1=Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule34_2</name>
+        <label>CheckRule34-2</label>
+        <locationX>732</locationX>
+        <locationY>1946</locationY>
+        <defaultConnector>
+            <targetReference>Rule34ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule34_2_yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1641_DispensingPharmacist</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_IfOtherspecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Wherewasthesubstancedispensed</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_DispensedDateTime</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_DispensingPharmacist_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_ReceivingPrescriber_Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_CPSIDBCCNM_Prescriber_License</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_ReceivedDate_Time</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Prescriber_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule34_4_Final</targetReference>
+            </connector>
+            <label>CheckRule34-2=yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule34_3</name>
+        <label>CheckRule34-3</label>
+        <locationX>71</locationX>
+        <locationY>1962</locationY>
+        <defaultConnector>
+            <targetReference>Rule34ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule34_3_yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1641_DispensingPharmacist</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Wherewasthesubstancedispensed</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_DispensedDateTime</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_DispensingPharmacist_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_ReceivingPrescriber_Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_CPSIDBCCNM_Prescriber_License</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_ReceivedDate_Time</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Prescriber_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule34_4_Final</targetReference>
+            </connector>
+            <label>CheckRule34-3=yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule34_4_Final</name>
+        <label>CheckRule34-4-Final</label>
+        <locationX>270</locationX>
+        <locationY>2248</locationY>
+        <defaultConnector>
+            <targetReference>Rule34ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule34_4_Final_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1641_Returning_Prescriber_Name</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_CPSID_BCCNM_Returning_Prescriber_Licen</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Prescriber_Returned</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Returning_PrescriberSignature</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Receiving_Pharmacist</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_CPBC_Receiving_Pharmacist_License</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Pharmacist_Returned_Date_Time</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Receiving_Pharmacist_s_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule35_1</targetReference>
+            </connector>
+            <label>CheckRule34-4-Final=Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>CheckRule35_1</name>
         <label>CheckRule35-1</label>
-        <locationX>547</locationX>
+        <locationX>1081</locationX>
         <locationY>1582</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1017,7 +1301,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_1_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_Midazolam</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1030,7 +1314,7 @@
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
-                <leftValueReference>Var1641_MetoclopramideStrength</leftValueReference>
+                <leftValueReference>Var1641_MidazolamStrength</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
@@ -1045,8 +1329,22 @@
                 <operator>EqualTo</operator>
             </conditions>
             <conditions>
-                <leftValueReference>Var1641_MetoclopramideStrength</leftValueReference>
+                <leftValueReference>Var1641_MidazolamStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Midazolam_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Midazolam_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_2</targetReference>
@@ -1057,7 +1355,7 @@
     <decisions>
         <name>CheckRule35_10</name>
         <label>CheckRule35-10</label>
-        <locationX>2026</locationX>
+        <locationX>2560</locationX>
         <locationY>2837</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1065,7 +1363,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_10_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_Lorazepam</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1095,6 +1393,20 @@
             <conditions>
                 <leftValueReference>Var1641_LorazepamStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Lorazepam_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Lorazepam_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_11</targetReference>
@@ -1105,7 +1417,7 @@
     <decisions>
         <name>CheckRule35_11</name>
         <label>CheckRule35-11</label>
-        <locationX>2327</locationX>
+        <locationX>2861</locationX>
         <locationY>2903</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1113,7 +1425,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_11_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_Ondansetron</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1143,6 +1455,20 @@
             <conditions>
                 <leftValueReference>Var1641_OndansetronStrength1</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Ondansetron_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Ondansetron_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>UpdateProvincialPASS</targetReference>
@@ -1153,7 +1479,7 @@
     <decisions>
         <name>CheckRule35_2</name>
         <label>CheckRule35-2</label>
-        <locationX>649</locationX>
+        <locationX>1183</locationX>
         <locationY>1796</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1161,7 +1487,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_2_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_PhenobarbitalSoduim</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1191,6 +1517,20 @@
             <conditions>
                 <leftValueReference>Var1641_PhenobarbitalSoduimStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Phenobarbital_Soduim_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Phenobarbital_Soduim_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_3</targetReference>
@@ -1201,7 +1541,7 @@
     <decisions>
         <name>CheckRule35_3</name>
         <label>CheckRule35-3</label>
-        <locationX>933</locationX>
+        <locationX>1467</locationX>
         <locationY>1933</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1209,7 +1549,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_3_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_RocuroniumBromide</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1239,6 +1579,20 @@
             <conditions>
                 <leftValueReference>Var1641_RocuroniumBromideStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Rocuronium_Bromide_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Rocuronium_Bromide_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_4</targetReference>
@@ -1249,7 +1603,7 @@
     <decisions>
         <name>CheckRule35_4</name>
         <label>CheckRule35-4</label>
-        <locationX>1056</locationX>
+        <locationX>1590</locationX>
         <locationY>2153</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1257,7 +1611,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_4_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_Lidocaine</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1287,6 +1641,20 @@
             <conditions>
                 <leftValueReference>Var1641_LidocaineStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Lidocaine_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Lidocaine_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_5</targetReference>
@@ -1297,7 +1665,7 @@
     <decisions>
         <name>CheckRule35_5</name>
         <label>CheckRule35-5</label>
-        <locationX>1221</locationX>
+        <locationX>1755</locationX>
         <locationY>2265</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1305,7 +1673,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_5_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_Propofol</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1335,6 +1703,20 @@
             <conditions>
                 <leftValueReference>Var1641_PropofolStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Propofol_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Propofol_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_6</targetReference>
@@ -1345,7 +1727,7 @@
     <decisions>
         <name>CheckRule35_6</name>
         <label>CheckRule35-6</label>
-        <locationX>1390</locationX>
+        <locationX>1924</locationX>
         <locationY>2447</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1353,7 +1735,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_6_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_Bupivacaine</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1383,6 +1765,20 @@
             <conditions>
                 <leftValueReference>Var1641_BupivacaineStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Bupivacaine_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Bupivacaine_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_7</targetReference>
@@ -1393,7 +1789,7 @@
     <decisions>
         <name>CheckRule35_7</name>
         <label>CheckRule35-7</label>
-        <locationX>1570</locationX>
+        <locationX>2104</locationX>
         <locationY>2464</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1401,7 +1797,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_7_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_SodiumChloride</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1431,6 +1827,20 @@
             <conditions>
                 <leftValueReference>Var1641_SodiumChlorideStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sodium_Chloride_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sodium_Chloride_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_8</targetReference>
@@ -1441,7 +1851,7 @@
     <decisions>
         <name>CheckRule35_8</name>
         <label>CheckRule35-8</label>
-        <locationX>1704</locationX>
+        <locationX>2238</locationX>
         <locationY>2601</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1449,7 +1859,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_8_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_Haloperidol</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1479,6 +1889,20 @@
             <conditions>
                 <leftValueReference>Var1641_HaloperidolStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Haloperidol_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Haloperidol_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_9</targetReference>
@@ -1489,7 +1913,7 @@
     <decisions>
         <name>CheckRule35_9</name>
         <label>CheckRule35-9</label>
-        <locationX>1946</locationX>
+        <locationX>2480</locationX>
         <locationY>2627</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
@@ -1497,7 +1921,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule35_9_yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 7) OR ( 4 AND 5 AND 6 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_Metoclopramide</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1527,6 +1951,20 @@
             <conditions>
                 <leftValueReference>Var1641_MetoclopramideStrength</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Metoclopramide_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Metoclopramide_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule35_10</targetReference>
@@ -1537,7 +1975,7 @@
     <decisions>
         <name>CheckRule43</name>
         <label>CheckRule43</label>
-        <locationX>262</locationX>
+        <locationX>796</locationX>
         <locationY>1419</locationY>
         <defaultConnector>
             <targetReference>Rule43ErrorMsg</targetReference>
@@ -1594,7 +2032,7 @@
     <decisions>
         <name>Checkrule_22</name>
         <label>Checkrule-22</label>
-        <locationX>1672</locationX>
+        <locationX>2206</locationX>
         <locationY>310</locationY>
         <defaultConnector>
             <targetReference>Rule22ErrorMsg</targetReference>
@@ -1620,7 +2058,7 @@
     <decisions>
         <name>CheckRule_23</name>
         <label>CheckRule-23</label>
-        <locationX>1314</locationX>
+        <locationX>1848</locationX>
         <locationY>364</locationY>
         <defaultConnector>
             <targetReference>CheckMandatory_Location_Assesment_0</targetReference>
@@ -1642,6 +2080,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
+    <description>1.2</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
@@ -1666,7 +2105,7 @@
     <recordLookups>
         <name>Get1634</name>
         <label>Get1634</label>
-        <locationX>1172</locationX>
+        <locationX>1706</locationX>
         <locationY>111</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1801,7 +2240,7 @@
     <recordLookups>
         <name>Get1641</name>
         <label>Get1641</label>
-        <locationX>1432</locationX>
+        <locationX>1966</locationX>
         <locationY>50</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1829,6 +2268,38 @@
             <field>Bupivacaine__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1641_Bupivacaine_consistent_with_MAR</assignToReference>
+            <field>Bupivacaine_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_CPBC_Receiving_Pharmacist_License</assignToReference>
+            <field>CPBC_Receiving_Pharmacist_License__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_CPSIDBCCNM_Prescriber_License</assignToReference>
+            <field>CPSID_BCCNM_Prescriber_License__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_CPSID_BCCNM_Returning_Prescriber_Licen</assignToReference>
+            <field>CPSID_BCCNM_Returning_Prescriber_Licen__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Compound_Suspension_consistent_with_MAR</assignToReference>
+            <field>Compound_Suspension_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_DispensedDateTime</assignToReference>
+            <field>Dispensed_Date_Time__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_DispensingPharmacist</assignToReference>
+            <field>Dispensing_Pharmacist__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_DispensingPharmacist_Signature</assignToReference>
+            <field>Dispensing_Pharmacist_s_Signature__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1641_HaloperidolQuantity</assignToReference>
             <field>Haloperidol_Quantity__c</field>
         </outputAssignments>
@@ -1839,6 +2310,14 @@
         <outputAssignments>
             <assignToReference>Var1641_Haloperidol</assignToReference>
             <field>Haloperidol__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Haloperidol_consistent_with_MAR</assignToReference>
+            <field>Haloperidol_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_IfOtherspecify</assignToReference>
+            <field>If_Other_specify__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_LidocaineQuantity</assignToReference>
@@ -1853,6 +2332,10 @@
             <field>Lidocaine__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1641_Lidocaine_consistent_with_MAR</assignToReference>
+            <field>Lidocaine_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1641_LorazepamQuantity</assignToReference>
             <field>Lorazepam_Quantity__c</field>
         </outputAssignments>
@@ -1863,6 +2346,10 @@
         <outputAssignments>
             <assignToReference>Var1641_Lorazepam</assignToReference>
             <field>Lorazepam__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Lorazepam_consistent_with_MAR</assignToReference>
+            <field>Lorazepam_consistent_with_MAR__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_MetoclopramideQuantity</assignToReference>
@@ -1877,6 +2364,10 @@
             <field>Metoclopramide__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1641_Metoclopramide_consistent_with_MAR</assignToReference>
+            <field>Metoclopramide_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1641_MidazolamQuantity</assignToReference>
             <field>Midazolam_Quantity__c</field>
         </outputAssignments>
@@ -1887,6 +2378,10 @@
         <outputAssignments>
             <assignToReference>Var1641_Midazolam</assignToReference>
             <field>Midazolam__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Midazolam_consistent_with_MAR</assignToReference>
+            <field>Midazolam_consistent_with_MAR__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_OndansetronQuantity</assignToReference>
@@ -1901,6 +2396,18 @@
             <field>Ondansetron__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1641_Ondansetron_consistent_with_MAR</assignToReference>
+            <field>Ondansetron_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Oral_Suspension_consistent_with_MAR</assignToReference>
+            <field>Oral_Suspension_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Pharmacist_Returned_Date_Time</assignToReference>
+            <field>Pharmacist_Returned_Date_Time__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1641_PhenobarbitalSoduimQuantity</assignToReference>
             <field>Phenobarbital_Soduim_Quantity__c</field>
         </outputAssignments>
@@ -1911,6 +2418,18 @@
         <outputAssignments>
             <assignToReference>Var1641_PhenobarbitalSoduim</assignToReference>
             <field>Phenobarbital_Soduim__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Phenobarbital_Soduim_consistent_with_MAR</assignToReference>
+            <field>Phenobarbital_Soduim_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Prescriber_Returned</assignToReference>
+            <field>Prescriber_Returned__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Prescriber_Signature</assignToReference>
+            <field>Prescriber_s_Signature__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_Propofol_Quantity</assignToReference>
@@ -1925,6 +2444,34 @@
             <field>Propofol__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1641_Propofol_consistent_with_MAR</assignToReference>
+            <field>Propofol_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_ReceivedDate_Time</assignToReference>
+            <field>Received_Date_Time__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Receiving_Pharmacist</assignToReference>
+            <field>Receiving_Pharmacist__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Receiving_Pharmacist_s_Signature</assignToReference>
+            <field>Receiving_Pharmacist_s_Signature__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_ReceivingPrescriber_Name</assignToReference>
+            <field>Receiving_Prescriber_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Returning_Prescriber_Name</assignToReference>
+            <field>Returning_Prescriber_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Returning_PrescriberSignature</assignToReference>
+            <field>Returning_Prescriber_s_Signature__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1641_RocuroniumBromideQuantity</assignToReference>
             <field>Rocuronium_Bromide_Quantity__c</field>
         </outputAssignments>
@@ -1935,6 +2482,10 @@
         <outputAssignments>
             <assignToReference>Var1641_RocuroniumBromide</assignToReference>
             <field>Rocuronium_Bromide__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Rocuronium_Bromide_consistent_with_MAR</assignToReference>
+            <field>Rocuronium_Bromide_consistent_with_MAR__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_SodiumChlorideQuantity</assignToReference>
@@ -1948,11 +2499,19 @@
             <assignToReference>Var1641_SodiumChloride</assignToReference>
             <field>Sodium_Chloride__c</field>
         </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Sodium_Chloride_consistent_with_MAR</assignToReference>
+            <field>Sodium_Chloride_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Wherewasthesubstancedispensed</assignToReference>
+            <field>Where_was_the_substance_dispensed__c</field>
+        </outputAssignments>
     </recordLookups>
     <recordLookups>
         <name>GetCaseDetail</name>
         <label>GetCaseDetail</label>
-        <locationX>756</locationX>
+        <locationX>1290</locationX>
         <locationY>143</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1975,26 +2534,26 @@
     <recordUpdates>
         <name>Update_FAIL</name>
         <label>Update-FAIL</label>
-        <locationX>2542</locationX>
+        <locationX>3076</locationX>
         <locationY>1869</locationY>
         <inputReference>UpdateFalList</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_PASS</name>
         <label>Update-PASS</label>
-        <locationX>1257</locationX>
+        <locationX>1791</locationX>
         <locationY>3286</locationY>
         <inputReference>UpdatePassList</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>UpdateNull_ProvincialSafeguards</name>
         <label>UpdateNull-ProvincialSafeguards</label>
-        <locationX>2917</locationX>
+        <locationX>3451</locationX>
         <locationY>1010</locationY>
         <inputReference>UpdateNullList</inputReference>
     </recordUpdates>
     <start>
-        <locationX>35</locationX>
+        <locationX>569</locationX>
         <locationY>254</locationY>
         <connector>
             <targetReference>GetCaseDetail</targetReference>
@@ -2261,6 +2820,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Bupivacaine_consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_BupivacaineQuantity</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2275,7 +2841,63 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Compound_Suspension_consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_CPBC_Receiving_Pharmacist_License</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_CPSID_BCCNM_Returning_Prescriber_Licen</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_CPSIDBCCNM_Prescriber_License</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_DispensedDateTime</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_DispensingPharmacist</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_DispensingPharmacist_Signature</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_Haloperidol</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Haloperidol_consistent_with_MAR</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -2296,7 +2918,21 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_IfOtherspecify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_Lidocaine</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Lidocaine_consistent_with_MAR</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -2324,6 +2960,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Lorazepam_consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_LorazepamQuantity</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2339,6 +2982,13 @@
     </variables>
     <variables>
         <name>Var1641_Metoclopramide</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Metoclopramide_consistent_with_MAR</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -2366,6 +3016,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Midazolam_consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_MidazolamQuantity</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2387,6 +3044,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Ondansetron_consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_OndansetronQuantity</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2396,6 +3060,27 @@
     <variables>
         <name>Var1641_OndansetronStrength1</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Oral_Suspension_consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Pharmacist_Returned_Date_Time</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Phenobarbital_Soduim_consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2422,7 +3107,28 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Prescriber_Returned</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Prescriber_Signature</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_Propofol</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Propofol_consistent_with_MAR</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -2438,6 +3144,55 @@
     <variables>
         <name>Var1641_PropofolStrength</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_ReceivedDate_Time</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Receiving_Pharmacist</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Receiving_Pharmacist_s_Signature</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_ReceivingPrescriber_Name</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Returning_Prescriber_Name</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Returning_PrescriberSignature</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Rocuronium_Bromide_consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2464,6 +3219,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Sodium_Chloride_consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_SodiumChloride</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -2483,6 +3245,23 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Wherewasthesubstancedispensed</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var34ErrMsg</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Rule 34 is Failed</stringValue>
+        </value>
     </variables>
     <variables>
         <name>Varbool</name>
