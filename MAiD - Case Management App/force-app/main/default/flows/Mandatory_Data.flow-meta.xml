@@ -2,6 +2,22 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
     <assignments>
+        <name>Add_Extracted_Value_to_List</name>
+        <label>Add Extracted Value to List</label>
+        <locationX>3109</locationX>
+        <locationY>910</locationY>
+        <assignmentItems>
+            <assignToReference>extractedValuesPicklist</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>formulaOnePicklistValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Extracted_Picklist_Values</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>AssignNewFailListDetails</name>
         <label>AssignNewFailListDetails</label>
         <locationX>1129</locationX>
@@ -47,6 +63,38 @@
         </assignmentItems>
         <connector>
             <targetReference>UpdateMandatory_Pass</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Extracted_Picklist_Values</name>
+        <label>Extracted Picklist Values</label>
+        <locationX>3266</locationX>
+        <locationY>910</locationY>
+        <assignmentItems>
+            <assignToReference>formattedPicklistValues</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>removeOnePicklistValue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>All_Values_Parsed</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>FormatPicklistValues</name>
+        <label>FormatPicklistValues</label>
+        <locationX>2905</locationX>
+        <locationY>1157</locationY>
+        <assignmentItems>
+            <assignToReference>formattedPicklistValues</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FormatedAddSemicolon</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>All_Values_Parsed</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -228,8 +276,8 @@
     <assignments>
         <name>Rule_50_Message_Assignment</name>
         <label>Rule 50 Message Assignment</label>
-        <locationX>2713</locationX>
-        <locationY>616</locationY>
+        <locationX>2880</locationX>
+        <locationY>654</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -244,8 +292,8 @@
     <assignments>
         <name>Rule_51_Message_Assignment</name>
         <label>Rule 51 Message Assignment</label>
-        <locationX>1151</locationX>
-        <locationY>862</locationY>
+        <locationX>1089</locationX>
+        <locationY>861</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -367,8 +415,8 @@
     <assignments>
         <name>UpdateMandatoryPass</name>
         <label>Update Mandatory Pass</label>
-        <locationX>2239</locationX>
-        <locationY>274</locationY>
+        <locationX>2376</locationX>
+        <locationY>419</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
             <operator>Assign</operator>
@@ -514,6 +562,31 @@
         </value>
     </constants>
     <decisions>
+        <name>All_Values_Parsed</name>
+        <label>All Values Parsed</label>
+        <locationX>3065</locationX>
+        <locationY>1159</locationY>
+        <defaultConnector>
+            <targetReference>Add_Extracted_Value_to_List</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>formattedPicklistValues</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AddLoop</targetReference>
+            </connector>
+            <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_Case_Type</name>
         <label>Check_Case_Type</label>
         <locationX>923</locationX>
@@ -579,6 +652,106 @@
                 <targetReference>Rule_51</targetReference>
             </connector>
             <label>Case Type Transfer of Request</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_if_Rule_50_Multiselect_list_is_empty</name>
+        <label>Check if Rule 50 Multiselect list is empty</label>
+        <locationX>2685</locationX>
+        <locationY>1155</locationY>
+        <defaultConnector>
+            <targetReference>Rule_50</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Is Null</defaultConnectorLabel>
+        <rules>
+            <name>Is_not_Null</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_Withdrew_Request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>FormatPicklistValues</targetReference>
+            </connector>
+            <label>Is not Null</label>
+        </rules>
+        <rules>
+            <name>Case_Type_Mis_Match</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_Withdrew_Request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateMandatoryPass</targetReference>
+            </connector>
+            <label>Case Type Mis-Match</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>If_Others_is_not_selected</name>
+        <label>If Others is not selected</label>
+        <locationX>3304</locationX>
+        <locationY>596</locationY>
+        <defaultConnector>
+            <targetReference>Rule_50_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 50 is Fail</defaultConnectorLabel>
+        <rules>
+            <name>No_Others_option</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_Withdrew_Request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateMandatoryPass</targetReference>
+            </connector>
+            <label>No Others option</label>
         </rules>
     </decisions>
     <decisions>
@@ -1182,7 +1355,7 @@
         <defaultConnectorLabel>Rule 44 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_44_Pass</name>
-            <conditionLogic>5 OR ( (1 AND 2 AND 4) OR (1 AND 3 AND 4))</conditionLogic>
+            <conditionLogic>5 OR (1 AND (2 OR 3) AND 4)</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1227,8 +1400,8 @@
     <decisions>
         <name>Rule_45</name>
         <label>Rule 45</label>
-        <locationX>2464</locationX>
-        <locationY>798</locationY>
+        <locationX>2430</locationX>
+        <locationY>723</locationY>
         <defaultConnector>
             <targetReference>Rule_45_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1275,7 +1448,7 @@
                 <leftValueReference>Var1634_date_of_death_unkown</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1387,7 +1560,7 @@
         <defaultConnectorLabel>Rule 48 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_48_Pass</name>
-            <conditionLogic>(7 AND (1 AND ( (2 AND 4 AND 5) OR (2 AND 6) OR 3 ) ) )  OR 8</conditionLogic>
+            <conditionLogic>(7 AND (1 AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 ) ) )  OR 8 OR (7 AND 10)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1418,16 +1591,13 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_Yes_Practitioner_became_aware</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
+                <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_Yes_change_due_to_loss_of_capacity</leftValueReference>
-                <operator>IsNull</operator>
+                <operator>Contains</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>No</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1444,8 +1614,22 @@
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Practitioner_became_aware</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Does not meet the criteria for MAiD</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Rule_50</targetReference>
+                <targetReference>Check_if_Rule_50_Multiselect_list_is_empty</targetReference>
             </connector>
             <label>Rule 48 Pass</label>
         </rules>
@@ -1453,15 +1637,15 @@
     <decisions>
         <name>Rule_50</name>
         <label>Rule 50</label>
-        <locationX>2559</locationX>
-        <locationY>620</locationY>
+        <locationX>2796</locationX>
+        <locationY>865</locationY>
         <defaultConnector>
             <targetReference>Rule_50_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 50 Fail</defaultConnectorLabel>
         <rules>
-            <name>Rule_50_Pass</name>
-            <conditionLogic>((1 AND 2 AND ((3 AND 4 AND 5) OR (3 AND 7))) OR 6) OR 8</conditionLogic>
+            <name>Rule_50_is_Failing</name>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1485,7 +1669,47 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>4 - Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_other_specify_3_Pt_Withdreq_req</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_50_Message_Assignment</targetReference>
+            </connector>
+            <label>Rule 50 is Failing</label>
+        </rules>
+        <rules>
+            <name>Rule_50_Pass</name>
+            <conditionLogic>(1 AND ((2 AND 3 AND 4 AND 5) OR 6)) OR 7</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_Withdrew_Request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>Contains</operator>
                 <rightValue>
                     <stringValue>4 - Other</stringValue>
                 </rightValue>
@@ -1505,13 +1729,6 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>4 - Other</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
@@ -1522,6 +1739,46 @@
                 <targetReference>UpdateMandatoryPass</targetReference>
             </connector>
             <label>Rule 50 Pass</label>
+        </rules>
+        <rules>
+            <name>Rule_50_Multi_Select_Check</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_Withdrew_Request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>4 - Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>AddLoop</targetReference>
+            </connector>
+            <label>Rule 50_ Multi Select Check</label>
         </rules>
     </decisions>
     <decisions>
@@ -1535,7 +1792,7 @@
         <defaultConnectorLabel>Rule 51 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_51_Pass</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 17 AND (8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15)) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 16 AND 18 AND 19 AND 20 AND 21 AND 22 AND 23 AND 24 AND 25)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1642_Transfer_of_request</leftValueReference>
                 <operator>IsNull</operator>
@@ -1574,6 +1831,139 @@
             <conditions>
                 <leftValueReference>Var1642_Date_Practitioner_Signed_Form</leftValueReference>
                 <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Signature_of_practitioner</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Did_you_complete_an_eligibility_assessme</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Due_to_policies_on_MAiD_facility</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Facility_will_not_permit_MAiD_assessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_FacilitywillnotpermitMAiDprovision</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Contrary_to_your_conscience_beliefs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Lack_of_relevant_expertise_provide_MAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Lack_relevant_expertise_to_assess_MAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Due_to_patient_request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_None_of_above</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_None_of_above</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Did_you_complete_an_eligibility_assessme</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Due_to_policies_on_MAiD_facility</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Facility_will_not_permit_MAiD_assessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_FacilitywillnotpermitMAiDprovision</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Contrary_to_your_conscience_beliefs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Lack_of_relevant_expertise_provide_MAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Due_to_patient_request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Lack_relevant_expertise_to_assess_MAiD</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
@@ -1740,8 +2130,46 @@
             <label>Rule 55 Pass</label>
         </rules>
     </decisions>
+    <formulas>
+        <name>FormatedAddSemicolon</name>
+        <dataType>String</dataType>
+        <expression>{!Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew} + &quot;;&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>formulaOnePicklistValue</name>
+        <dataType>String</dataType>
+        <expression>TRIM( 
+     LEFT(
+              {!formattedPicklistValues} , 
+              FIND(
+                     &quot;;&quot;,{!formattedPicklistValues}
+             ) - 1
+       ) 
+ )</expression>
+    </formulas>
+    <formulas>
+        <name>removeOnePicklistValue</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+     SUBSTITUTE({!formattedPicklistValues},  {!formulaOnePicklistValue}+&quot;;&quot;, &quot;&quot;)
+ )</expression>
+    </formulas>
     <interviewLabel>Mandatory Data {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Mandatory Data</label>
+    <loops>
+        <name>AddLoop</name>
+        <label>AddLoop</label>
+        <locationX>2986</locationX>
+        <locationY>890</locationY>
+        <collectionReference>extractedValuesPicklist</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Rule_50</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>If_Others_is_not_selected</targetReference>
+        </noMoreValuesConnector>
+    </loops>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -2087,6 +2515,20 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>extractedValuesPicklist</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>formattedPicklistValues</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>ListCaseDetail</name>
         <dataType>SObject</dataType>
@@ -2542,13 +2984,6 @@
     </variables>
     <variables>
         <name>Var1642_Transfer_of_request</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>Var1642_Transferred_the_request_to</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
