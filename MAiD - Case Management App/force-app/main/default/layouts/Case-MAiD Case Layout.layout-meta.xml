@@ -97,6 +97,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Status_Feedback_Msg__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Health_Authority__c</field>
             </layoutItems>
             <layoutItems>
