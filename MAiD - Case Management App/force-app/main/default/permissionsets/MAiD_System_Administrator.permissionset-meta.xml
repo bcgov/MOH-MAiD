@@ -311,11 +311,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Case.Provincial_Feedback_Msg__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Case.Provincial_Safeguards__c</field>
         <readable>true</readable>
     </fieldPermissions>
