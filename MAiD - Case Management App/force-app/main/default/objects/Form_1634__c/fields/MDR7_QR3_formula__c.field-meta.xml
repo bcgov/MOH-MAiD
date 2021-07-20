@@ -8,7 +8,7 @@
 &quot;3 - Does not meet the criteria for MAiD&quot;,2,
 &quot;4- NO determination made&quot;,0,0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>MDR7_QR3 - Formula</label>
+    <label>MDR7_Q03 - Formula</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
