@@ -458,15 +458,24 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Patientwasgivenopportunitytowithdra</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Patientwasgivenopportunitytowithdra</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_PractitionerAdministrationsignoffDat1</leftValueReference>
@@ -474,23 +483,38 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Practitionerplannedforpotentialissue</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Practitionerreviewedrequestandmedica</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_PractitionersAdministrationSignature</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_PractitionersSignature</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Prescriptionindicatesmedicationisfor</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_ProxyRelationshiptoPatient</leftValueReference>
@@ -498,7 +522,10 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_ProxySignedforMAiD</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_ProxyforMAiDCity</leftValueReference>
@@ -550,7 +577,10 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_DispensingPharmacist_Signature</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_ReceivingPrescriber_Name</leftValueReference>
@@ -566,7 +596,10 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_Prescriber_Signature</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_Returning_Prescriber_Name</leftValueReference>
@@ -582,7 +615,10 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_Returning_PrescriberSignature</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_Receiving_Pharmacist</leftValueReference>
@@ -598,12 +634,40 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_Receiving_Pharmacist_s_Signature</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>UpdateProviencialNull</targetReference>
             </connector>
             <label>CheckAllDatefield-blank</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Proxy_Signed_for_MAiD</name>
+        <label>Check-Proxy Signed for MAiD</label>
+        <locationX>621</locationX>
+        <locationY>904</locationY>
+        <defaultConnector>
+            <targetReference>CheckRule31</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Check_Proxy_Signed_for_MAiD_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_ProxySignedforMAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule30</targetReference>
+            </connector>
+            <label>Check-Proxy Signed for MAiD=Yes</label>
         </rules>
     </decisions>
     <decisions>
@@ -690,10 +754,35 @@
         </rules>
     </decisions>
     <decisions>
+        <name>CheckRule23_Home_Option</name>
+        <label>CheckRule23- Home Option</label>
+        <locationX>1478</locationX>
+        <locationY>223</locationY>
+        <defaultConnector>
+            <targetReference>CheckRule_23</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule23_Home_Option_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_LocationofAssessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Home</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule27</targetReference>
+            </connector>
+            <label>CheckRule23- Home Option= Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>CheckRule27</name>
         <label>CheckRule27</label>
-        <locationX>1505</locationX>
-        <locationY>682</locationY>
+        <locationX>1487</locationX>
+        <locationY>623</locationY>
         <defaultConnector>
             <targetReference>Rule27ErrorMsg</targetReference>
         </defaultConnector>
@@ -795,15 +884,15 @@
     <decisions>
         <name>CheckRule28</name>
         <label>CheckRule28</label>
-        <locationX>1317</locationX>
-        <locationY>839</locationY>
+        <locationX>1278</locationX>
+        <locationY>791</locationY>
         <defaultConnector>
             <targetReference>Rule28ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule28_yes</name>
-            <conditionLogic>(1 AND 2 AND (3 OR 4) AND ( 5 OR 6 OR 7)) OR ( 8 AND 9 AND 10)</conditionLogic>
+            <conditionLogic>(1 AND (2 OR 3 OR 4) AND ( 5 OR 6 OR 7)) OR ( 8 AND 9 AND 10)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientwasgivenopportunitytowithdra</leftValueReference>
                 <operator>EqualTo</operator>
@@ -880,8 +969,8 @@
     <decisions>
         <name>CheckRule29</name>
         <label>CheckRule29</label>
-        <locationX>1188</locationX>
-        <locationY>999</locationY>
+        <locationX>1152</locationX>
+        <locationY>948</locationY>
         <defaultConnector>
             <targetReference>Rule29ErrorMsg_0</targetReference>
         </defaultConnector>
@@ -946,7 +1035,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>CheckRule30</targetReference>
+                <targetReference>Check_Proxy_Signed_for_MAiD</targetReference>
             </connector>
             <label>CheckRule29=yes</label>
         </rules>
@@ -954,8 +1043,8 @@
     <decisions>
         <name>CheckRule30</name>
         <label>CheckRule30</label>
-        <locationX>1085</locationX>
-        <locationY>1112</locationY>
+        <locationX>934</locationX>
+        <locationY>1051</locationY>
         <defaultConnector>
             <targetReference>Rule30ErrorMsg</targetReference>
         </defaultConnector>
@@ -1039,8 +1128,8 @@
     <decisions>
         <name>CheckRule31</name>
         <label>CheckRule31</label>
-        <locationX>957</locationX>
-        <locationY>1275</locationY>
+        <locationX>749</locationX>
+        <locationY>1219</locationY>
         <defaultConnector>
             <targetReference>Rule31ErrorMsg</targetReference>
         </defaultConnector>
@@ -1975,8 +2064,8 @@
     <decisions>
         <name>CheckRule43</name>
         <label>CheckRule43</label>
-        <locationX>796</locationX>
-        <locationY>1419</locationY>
+        <locationX>683</locationX>
+        <locationY>1381</locationY>
         <defaultConnector>
             <targetReference>Rule43ErrorMsg</targetReference>
         </defaultConnector>
@@ -2050,7 +2139,7 @@
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
-                <targetReference>CheckRule_23</targetReference>
+                <targetReference>CheckRule23_Home_Option</targetReference>
             </connector>
             <label>Checkrule-22=yes</label>
         </rules>
@@ -2080,7 +2169,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>1.2</description>
+    <description>1.4</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
