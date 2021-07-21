@@ -4,8 +4,8 @@
     <assignments>
         <name>AssignNewFailListDetail</name>
         <label>AssignNewFailListDetail</label>
-        <locationX>1460</locationX>
-        <locationY>880</locationY>
+        <locationX>2267</locationX>
+        <locationY>1525</locationY>
         <assignmentItems>
             <assignToReference>ListFailFedral</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>AssignNewNullListDetail</name>
         <label>AssignNewNullListDetail</label>
-        <locationX>1781</locationX>
-        <locationY>422</locationY>
+        <locationX>2393</locationX>
+        <locationY>403</locationY>
         <assignmentItems>
             <assignToReference>UpdateNullList</assignToReference>
             <operator>Add</operator>
@@ -36,8 +36,8 @@
     <assignments>
         <name>AssignNewPASSListDetail</name>
         <label>AssignNewPASSListDetail</label>
-        <locationX>1082</locationX>
-        <locationY>1213</locationY>
+        <locationX>1877</locationX>
+        <locationY>2056</locationY>
         <assignmentItems>
             <assignToReference>ListFedralPASS</assignToReference>
             <operator>Add</operator>
@@ -50,10 +50,202 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule10ErrorMsg</name>
+        <label>Rule10ErrorMsg</label>
+        <locationX>1366</locationX>
+        <locationY>686</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var10Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule11_13_14_ErrorMsg</name>
+        <label>Rule11-13-14-ErrorMsg</label>
+        <locationX>1537</locationX>
+        <locationY>784</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>VarRule111314</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule12ErrorMsg</name>
+        <label>Rule12ErrorMsg</label>
+        <locationX>984</locationX>
+        <locationY>1054</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var12Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule15ErrorMsg</name>
+        <label>Rule15ErrorMsg</label>
+        <locationX>2201</locationX>
+        <locationY>697</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var15Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule16ErrorMsg</name>
+        <label>Rule16ErrorMsg</label>
+        <locationX>2067</locationX>
+        <locationY>706</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var16Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule17ErrorMsg</name>
+        <label>Rule17ErrorMsg</label>
+        <locationX>1881</locationX>
+        <locationY>799</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var17Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule18ErrorMsg</name>
+        <label>Rule18ErrorMsg</label>
+        <locationX>1644</locationX>
+        <locationY>637</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var18Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule19ErrorMsg</name>
+        <label>Rule19ErrorMsg</label>
+        <locationX>1666</locationX>
+        <locationY>1151</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var19Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule37ErrorMsg</name>
+        <label>Rule37ErrorMsg</label>
+        <locationX>1074</locationX>
+        <locationY>1608</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var37Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule38ErrorMsg</name>
+        <label>Rule38ErrorMsg</label>
+        <locationX>748</locationX>
+        <locationY>1662</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var38Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule39ErrorMsg</name>
+        <label>Rule39ErrorMsg</label>
+        <locationX>1302</locationX>
+        <locationY>1703</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var39Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule41ErrorMsg</name>
+        <label>Rule41ErrorMsg</label>
+        <locationX>1498</locationX>
+        <locationY>1807</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var41Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>UpdateFedralFAIL</name>
         <label>UpdateFedralFAIL</label>
-        <locationX>1547</locationX>
-        <locationY>686</locationY>
+        <locationX>2127</locationX>
+        <locationY>1345</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Federal_Safeguards__c</assignToReference>
             <operator>Assign</operator>
@@ -68,11 +260,18 @@
     <assignments>
         <name>UpdateFedralNull</name>
         <label>UpdateFedralNull</label>
-        <locationX>1895</locationX>
-        <locationY>269</locationY>
+        <locationX>2540</locationX>
+        <locationY>174</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Federal_Safeguards__c</assignToReference>
             <operator>Assign</operator>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Not Applicable</stringValue>
+            </value>
         </assignmentItems>
         <connector>
             <targetReference>AssignNewNullListDetail</targetReference>
@@ -81,8 +280,8 @@
     <assignments>
         <name>UpdateFedralPASS</name>
         <label>UpdateFedralPASS</label>
-        <locationX>649</locationX>
-        <locationY>1275</locationY>
+        <locationX>1602</locationX>
+        <locationY>2110</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Federal_Safeguards__c</assignToReference>
             <operator>Assign</operator>
@@ -90,15 +289,110 @@
                 <stringValue>PASS</stringValue>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>All Rules Passed</stringValue>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>AssignNewPASSListDetail</targetReference>
         </connector>
     </assignments>
+    <constants>
+        <name>Var10Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 10 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var11_13_14_Err</name>
+        <dataType>String</dataType>
+    </constants>
+    <constants>
+        <name>Var12Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 12 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var15Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 15 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var16Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 16 is failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var17Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 17 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var18Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 18 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var19Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 19 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var37Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 37 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var38Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 38 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var39Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 39 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var41Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 41 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>VarRule111314</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Failed: Rule 11 / Rule 13 /Rule 14</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>Check17_MAiD_Death_Forseeable_or_Nor</name>
         <label>Check17- MAiD Death Forseeable or Nor</label>
-        <locationX>1031</locationX>
-        <locationY>235</locationY>
+        <locationX>1580</locationX>
+        <locationY>399</locationY>
         <defaultConnector>
             <targetReference>CheckRule18</targetReference>
         </defaultConnector>
@@ -122,10 +416,10 @@
     <decisions>
         <name>Check19_MAiD_Death_Forseeable_or_Nor</name>
         <label>Check19- MAiD Death Forseeable or Nor</label>
-        <locationX>317</locationX>
-        <locationY>1082</locationY>
+        <locationX>650</locationX>
+        <locationY>1237</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralPASS</targetReference>
+            <targetReference>CheckRule37</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -147,10 +441,10 @@
     <decisions>
         <name>Check_PatientLostCapability_True</name>
         <label>Check-PatientLostCapability=True</label>
-        <locationX>559</locationX>
-        <locationY>1035</locationY>
+        <locationX>1016</locationX>
+        <locationY>1186</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralPASS</targetReference>
+            <targetReference>CheckRule37</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -170,17 +464,49 @@
         </rules>
     </decisions>
     <decisions>
+        <name>CheckCaseType</name>
+        <label>CheckCaseType</label>
+        <locationX>782</locationX>
+        <locationY>509</locationY>
+        <defaultConnector>
+            <targetReference>Rule_12_skip</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckCaseType_Yes</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule11</targetReference>
+            </connector>
+            <label>CheckCaseType=Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>CheckCondition</name>
         <label>CheckCondition</label>
-        <locationX>1567</locationX>
-        <locationY>252</locationY>
+        <locationX>2154</locationX>
+        <locationY>321</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralFAIL</targetReference>
+            <targetReference>Rule15ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rule_15_yes</name>
-            <conditionLogic>(1 OR 2) AND (3 OR 4)</conditionLogic>
+            <conditionLogic>((1 OR 2) AND (3 OR 4)) OR (5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1632_ProxySignDate</leftValueReference>
                 <operator>EqualTo</operator>
@@ -209,6 +535,20 @@
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>CheckRule16</targetReference>
             </connector>
@@ -218,8 +558,8 @@
     <decisions>
         <name>Checkfor_None</name>
         <label>Checkfor-None</label>
-        <locationX>1706</locationX>
-        <locationY>106</locationY>
+        <locationX>2204</locationX>
+        <locationY>62</locationY>
         <defaultConnector>
             <targetReference>CheckCondition</targetReference>
         </defaultConnector>
@@ -434,6 +774,48 @@
                     <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ideterminethatthepatient</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Discussedmeansofalleviatingsuffering</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Counsellingmentalhealthandothersup</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Cleardayswaitingperiodstartdate</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Expertiseinconditionwasprovided</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_ExpertiseConsultantWas</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_The_patientwasatriskoflosingcapacity</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_AssessorAnd_PrescriberinAgreement</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ensuredtherewereatleast_90_days</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>UpdateFedralNull</targetReference>
             </connector>
@@ -443,15 +825,15 @@
     <decisions>
         <name>CheckRule10</name>
         <label>CheckRule10</label>
-        <locationX>705</locationX>
-        <locationY>536</locationY>
+        <locationX>1020</locationX>
+        <locationY>639</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralFAIL</targetReference>
+            <targetReference>Rule10ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule10_yes</name>
-            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND (11 OR 12)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND (11 OR 12)) OR (13 AND 14)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientconsentedtoassessment</leftValueReference>
                 <operator>EqualTo</operator>
@@ -533,8 +915,22 @@
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>CheckRule11</targetReference>
+                <targetReference>CheckCaseType</targetReference>
             </connector>
             <label>CheckRule10=yes</label>
         </rules>
@@ -542,10 +938,10 @@
     <decisions>
         <name>CheckRule11</name>
         <label>CheckRule11,13 &amp; 14</label>
-        <locationX>277</locationX>
-        <locationY>583</locationY>
+        <locationX>805</locationX>
+        <locationY>773</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralFAIL</targetReference>
+            <targetReference>Rule11_13_14_ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -777,10 +1173,10 @@
     <decisions>
         <name>CheckRule12</name>
         <label>CheckRule12</label>
-        <locationX>50</locationX>
-        <locationY>902</locationY>
+        <locationX>311</locationX>
+        <locationY>1062</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralFAIL</targetReference>
+            <targetReference>Rule12ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -873,15 +1269,15 @@
     <decisions>
         <name>CheckRule16</name>
         <label>CheckRule16</label>
-        <locationX>1370</locationX>
-        <locationY>293</locationY>
+        <locationX>1919</locationX>
+        <locationY>369</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralFAIL</targetReference>
+            <targetReference>Rule16ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule16_yes</name>
-            <conditionLogic>1 AND (2 OR 3) AND (4 OR 5)</conditionLogic>
+            <conditionLogic>(1 AND (2 OR 3) AND (4 OR 5)) OR ( 6 AND 7)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1632_witnessinitialSafegurad</leftValueReference>
                 <operator>EqualTo</operator>
@@ -917,6 +1313,20 @@
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Check17_MAiD_Death_Forseeable_or_Nor</targetReference>
             </connector>
@@ -926,15 +1336,15 @@
     <decisions>
         <name>CheckRule17</name>
         <label>CheckRule17</label>
-        <locationX>1165</locationX>
-        <locationY>412</locationY>
+        <locationX>1809</locationX>
+        <locationY>570</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralFAIL</targetReference>
+            <targetReference>Rule17ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule17_yes</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_AllEligibilitycriteria</leftValueReference>
                 <operator>EqualTo</operator>
@@ -956,6 +1366,13 @@
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>CheckRule18</targetReference>
             </connector>
@@ -965,15 +1382,15 @@
     <decisions>
         <name>CheckRule18</name>
         <label>CheckRule18</label>
-        <locationX>961</locationX>
-        <locationY>460</locationY>
+        <locationX>1180</locationX>
+        <locationY>518</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralFAIL</targetReference>
+            <targetReference>Rule18ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule18_yes</name>
-            <conditionLogic>1 AND 2 AND ( 3 OR 4)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND ( 3 OR 4)) OR (5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_RecPreScriber</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1002,6 +1419,20 @@
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>CheckRule10</targetReference>
             </connector>
@@ -1011,10 +1442,10 @@
     <decisions>
         <name>CheckRule19_0</name>
         <label>CheckRule19</label>
-        <locationX>1025</locationX>
-        <locationY>938</locationY>
+        <locationX>1550</locationX>
+        <locationY>959</locationY>
         <defaultConnector>
-            <targetReference>UpdateFedralFAIL</targetReference>
+            <targetReference>Rule19ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1049,16 +1480,367 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateFedralPASS</targetReference>
+                <targetReference>CheckRule37</targetReference>
             </connector>
             <label>CheckRule19=yes</label>
         </rules>
     </decisions>
     <decisions>
+        <name>CheckRule37</name>
+        <label>CheckRule37</label>
+        <locationX>748</locationX>
+        <locationY>1498</locationY>
+        <defaultConnector>
+            <targetReference>Rule37ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule37_yes</name>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5) OR 6</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Ideterminethatthepatient</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Discussedmeansofalleviatingsuffering</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Counsellingmentalhealthandothersup</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Cleardayswaitingperiodstartdate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule38_1</targetReference>
+            </connector>
+            <label>CheckRule37=yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule38_1</name>
+        <label>CheckRule38-1</label>
+        <locationX>404</locationX>
+        <locationY>1549</locationY>
+        <defaultConnector>
+            <targetReference>Rule38ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule38_1_Yes</name>
+            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Expertiseinconditionwasprovided</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_ExpertiseConsultantWas</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule38_3</targetReference>
+            </connector>
+            <label>CheckRule38-1=Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule38_2</name>
+        <label>CheckRule38-2</label>
+        <locationX>162</locationX>
+        <locationY>1891</locationY>
+        <defaultConnector>
+            <targetReference>Rule38ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule38_2_Yes</name>
+            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>VarNumberofDays</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <numberValue>91.0</numberValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ensuredtherewereatleast_90_days</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule39</targetReference>
+            </connector>
+            <label>CheckRule38-2=Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule38_3</name>
+        <label>CheckRule38-3</label>
+        <locationX>206</locationX>
+        <locationY>1723</locationY>
+        <defaultConnector>
+            <targetReference>Rule38ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule38_3_Yes</name>
+            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_The_patientwasatriskoflosingcapacity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_AssessorAnd_PrescriberinAgreement</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule38_2</targetReference>
+            </connector>
+            <label>CheckRule38-3=Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule39</name>
+        <label>CheckRule39</label>
+        <locationX>543</locationX>
+        <locationY>2033</locationY>
+        <defaultConnector>
+            <targetReference>Rule39ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule39_yes</name>
+            <conditionLogic>(1 AND 2 AND 3 ) OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1633_AllEligibilitycriteria</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Ideterminethatthepatient</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule41</targetReference>
+            </connector>
+            <label>CheckRule39=yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule41</name>
+        <label>CheckRule41</label>
+        <locationX>951</locationX>
+        <locationY>2134</locationY>
+        <defaultConnector>
+            <targetReference>Rule41ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule41_yes</name>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND ( 9 OR 10 OR 11)) OR ( 12 AND 13 AND  14)</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Patientconsentedtoassessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Practitionerisnotbeneficiary</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientrequestMAiDinwritingsigned</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_ReqSignDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Requestwassignedanddatedafterthe_p</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Theirmedicaldiagnosisandprognosis</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Righttowithdrawtheirreques</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Potentialriskandexpected</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateFedralPASS</targetReference>
+            </connector>
+            <label>CheckRule41=yes</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Rule_12_skip</name>
         <label>Rule 12 skip MAiD Death Not foreseeable</label>
-        <locationX>80</locationX>
-        <locationY>664</locationY>
+        <locationX>471</locationX>
+        <locationY>710</locationY>
         <defaultConnector>
             <targetReference>Check19_MAiD_Death_Forseeable_or_Nor</targetReference>
         </defaultConnector>
@@ -1079,6 +1861,13 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
+    <description>1.6- Final</description>
+    <formulas>
+        <name>VarNumberofDays</name>
+        <dataType>Number</dataType>
+        <expression>{!Var1634_MAiDAdministrationDate} - {!Var1634_Cleardayswaitingperiodstartdate}</expression>
+        <scale>0</scale>
+    </formulas>
     <interviewLabel>Federal Safeguards {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Federal Safeguards</label>
     <processMetadataValues>
@@ -1103,8 +1892,8 @@
     <recordLookups>
         <name>Get1632</name>
         <label>Get1632</label>
-        <locationX>736</locationX>
-        <locationY>269</locationY>
+        <locationX>1233</locationX>
+        <locationY>91</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1634</targetReference>
@@ -1138,8 +1927,8 @@
     <recordLookups>
         <name>Get1633</name>
         <label>Get1633</label>
-        <locationX>938</locationX>
-        <locationY>97</locationY>
+        <locationX>1520</locationX>
+        <locationY>83</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1641</targetReference>
@@ -1165,8 +1954,8 @@
     <recordLookups>
         <name>Get1634</name>
         <label>Get1634</label>
-        <locationX>843</locationX>
-        <locationY>172</locationY>
+        <locationX>1380</locationX>
+        <locationY>319</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1633</targetReference>
@@ -1189,6 +1978,18 @@
             <field>An_agreement_with_the_patient_to_waive_f__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_AssessorAnd_PrescriberinAgreement</assignToReference>
+            <field>Assessor_and_Prescriber_in_agreement__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Cleardayswaitingperiodstartdate</assignToReference>
+            <field>Clear_days_waiting_period_start_date__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Counsellingmentalhealthandothersup</assignToReference>
+            <field>Counselling_mental_health_and_other_sup__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Didthepatientdieafterselfadmin</assignToReference>
             <field>Did_the_patient_die_after_self_admin__c</field>
         </outputAssignments>
@@ -1201,8 +2002,20 @@
             <field>Ensured_patient_did_not_show_refusal__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Ensuredtherewereatleast_90_days</assignToReference>
+            <field>Ensured_there_were_at_least_90_days__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_ExpertiseConsultantWas</assignToReference>
+            <field>Expertise_consultant_was__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_HowwasMaidAdmin</assignToReference>
             <field>How_was_MAiD_administered__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Ideterminethatthepatient</assignToReference>
+            <field>I_determine_that_the_patient__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_IfYespatientconsented</assignToReference>
@@ -1235,6 +2048,10 @@
         <outputAssignments>
             <assignToReference>Var1634_Patienthasbeeninformedofriskoflos</assignToReference>
             <field>Patient_has_been_informed_of_risk_of_los__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Discussedmeansofalleviatingsuffering</assignToReference>
+            <field>Patient_has_discussed_and_considered_mea__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientlostcapabilitytoconsent</assignToReference>
@@ -1277,6 +2094,10 @@
             <field>Pratictioner_was_satisfied_second_assess__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Expertiseinconditionwasprovided</assignToReference>
+            <field>Prescriber_ensured_expertise_in_patient__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Receivedsecondassessmentindicating</assignToReference>
             <field>Received_a_second_assessment_indicating__c</field>
         </outputAssignments>
@@ -1287,6 +2108,10 @@
         <outputAssignments>
             <assignToReference>Var1634_Righttowithdrawtheirreques</assignToReference>
             <field>Right_to_withdraw_their_request__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_The_patientwasatriskoflosingcapacity</assignToReference>
+            <field>The_patient_was_at_risk_of_losing_capaci__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Theirmedicaldiagnosisandprognosis</assignToReference>
@@ -1304,8 +2129,8 @@
     <recordLookups>
         <name>Get1641</name>
         <label>Get1641</label>
-        <locationX>1063</locationX>
-        <locationY>95</locationY>
+        <locationX>1623</locationX>
+        <locationY>256</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Form_Rx_MAR</targetReference>
@@ -1327,8 +2152,8 @@
     <recordLookups>
         <name>Get1645</name>
         <label>Get1645</label>
-        <locationX>1332</locationX>
-        <locationY>95</locationY>
+        <locationX>1910</locationX>
+        <locationY>223</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Checkfor_None</targetReference>
@@ -1358,8 +2183,8 @@
     <recordLookups>
         <name>Get_Form_Rx_MAR</name>
         <label>Get Form Rx/MAR</label>
-        <locationX>1195</locationX>
-        <locationY>95</locationY>
+        <locationX>1785</locationX>
+        <locationY>83</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1645</targetReference>
@@ -1381,8 +2206,8 @@
     <recordLookups>
         <name>GetCaseDetail_0</name>
         <label>GetCaseDetail</label>
-        <locationX>522</locationX>
-        <locationY>335</locationY>
+        <locationX>1111</locationX>
+        <locationY>377</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1632</targetReference>
@@ -1405,26 +2230,26 @@
     <recordUpdates>
         <name>Updatefedal</name>
         <label>Updatefedal</label>
-        <locationX>1288</locationX>
-        <locationY>1139</locationY>
+        <locationX>2085</locationX>
+        <locationY>2060</locationY>
         <inputReference>ListFedralPASS</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Updatefedal_0</name>
         <label>Updatefedal</label>
-        <locationX>1759</locationX>
-        <locationY>836</locationY>
+        <locationX>2488</locationX>
+        <locationY>1519</locationY>
         <inputReference>ListFailFedral</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>UpdatefedalNull</name>
         <label>UpdatefedalNull</label>
-        <locationX>1915</locationX>
-        <locationY>616</locationY>
+        <locationX>2476</locationX>
+        <locationY>626</locationY>
         <inputReference>UpdateNullList</inputReference>
     </recordUpdates>
     <start>
-        <locationX>439</locationX>
+        <locationX>411</locationX>
         <locationY>50</locationY>
         <connector>
             <targetReference>GetCaseDetail_0</targetReference>
@@ -1531,8 +2356,36 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_AssessorAnd_PrescriberinAgreement</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Cleardayswaitingperiodstartdate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Counsellingmentalhealthandothersup</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Didthepatientdieafterselfadmin</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Discussedmeansofalleviatingsuffering</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -1552,6 +2405,27 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Ensuredtherewereatleast_90_days</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_ExpertiseConsultantWas</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Expertiseinconditionwasprovided</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_HowwasMaidAdmin</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1561,6 +2435,13 @@
     <variables>
         <name>Var1634_HowwasMaidAdministered</name>
         <dataType>Picklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Ideterminethatthepatient</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -1714,6 +2595,13 @@
     </variables>
     <variables>
         <name>Var1634_Righttowithdrawtheirreques</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_The_patientwasatriskoflosingcapacity</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
