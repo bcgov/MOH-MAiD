@@ -2,10 +2,26 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
     <assignments>
+        <name>Rule_1_In_Scope</name>
+        <label>Rule 1 In Scope</label>
+        <locationX>397</locationX>
+        <locationY>229</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_2</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_1_Message_Assignment</name>
         <label>Rule 1 Message Assignment</label>
         <locationX>379</locationX>
-        <locationY>462</locationY>
+        <locationY>608</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -18,10 +34,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_2_In_Scope</name>
+        <label>Rule 2 In Scope</label>
+        <locationX>736</locationX>
+        <locationY>50</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_3</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_2_Message_Assignment</name>
         <label>Rule 2 Message Assignment</label>
         <locationX>518</locationX>
-        <locationY>388</locationY>
+        <locationY>534</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -34,10 +66,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_36_In_Scope</name>
+        <label>Rule 36 In Scope</label>
+        <locationX>2087</locationX>
+        <locationY>792</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_40</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_36_Message_Assignment</name>
         <label>Rule 36 Message Assignment</label>
-        <locationX>1724</locationX>
-        <locationY>1008</locationY>
+        <locationX>1721</locationX>
+        <locationY>1412</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -50,10 +98,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_3_In_Scope</name>
+        <label>Rule 3 In Scope</label>
+        <locationX>1154</locationX>
+        <locationY>60</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_4</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_3_Message_Assignment</name>
         <label>Rule 3 Message Assignment</label>
         <locationX>726</locationX>
-        <locationY>317</locationY>
+        <locationY>463</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -66,10 +130,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_40_In_Scope</name>
+        <label>Rule 40 In Scope</label>
+        <locationX>1682</locationX>
+        <locationY>853</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_47</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_40_Message_Assignment</name>
         <label>Rule 40 Message Assignment</label>
-        <locationX>1563</locationX>
-        <locationY>557</locationY>
+        <locationX>1570</locationX>
+        <locationY>627</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -82,10 +162,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_47_In_Scope</name>
+        <label>Rule 47 In Scope</label>
+        <locationX>1348</locationX>
+        <locationY>784</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_49</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_47_Message_Assignment</name>
         <label>Rule 47 Message Assignment</label>
         <locationX>1075</locationX>
-        <locationY>641</locationY>
+        <locationY>787</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -101,7 +197,7 @@
         <name>Rule_49_Message_Assignment</name>
         <label>Rule 49 Message Assignment</label>
         <locationX>838</locationX>
-        <locationY>928</locationY>
+        <locationY>1074</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -114,10 +210,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_4_In_Scope</name>
+        <label>Rule 4 In Scope</label>
+        <locationX>1571</locationX>
+        <locationY>67</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_5</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_4_Message_Assignment</name>
         <label>Rule 4 Message Assignment</label>
         <locationX>847</locationX>
-        <locationY>283</locationY>
+        <locationY>429</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -130,10 +242,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_5_In_Scope</name>
+        <label>Rule 5 In Scope</label>
+        <locationX>2095</locationX>
+        <locationY>68</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_6</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_5_Message_Assignment</name>
         <label>Rule 5 Message Assignment</label>
         <locationX>968</locationX>
-        <locationY>331</locationY>
+        <locationY>477</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -146,10 +274,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_6_In_Scope</name>
+        <label>Rule 6 In Scope</label>
+        <locationX>2227</locationX>
+        <locationY>437</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_7</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_6_Message_Assignment</name>
         <label>Rule 6 Message Assignment</label>
         <locationX>1123</locationX>
-        <locationY>409</locationY>
+        <locationY>555</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -162,10 +306,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_7_In_Scope</name>
+        <label>Rule 7 In Scope</label>
+        <locationX>2358</locationX>
+        <locationY>627</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_8</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_7_Message_Assignment</name>
         <label>Rule 7 Message Assignment</label>
         <locationX>1339</locationX>
-        <locationY>287</locationY>
+        <locationY>433</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -178,10 +338,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_8_In_Scope</name>
+        <label>Rule 8 In Scope</label>
+        <locationX>2394</locationX>
+        <locationY>753</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_9</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_8_Message_Assignment</name>
         <label>Rule 8 Message Assignment</label>
         <locationX>1811</locationX>
-        <locationY>470</locationY>
+        <locationY>590</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -194,10 +370,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_9_In_Scope</name>
+        <label>Rule 9 In Scope</label>
+        <locationX>2276</locationX>
+        <locationY>1124</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_36</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_9_Message_Assignment</name>
         <label>Rule 9 Message Assignment</label>
-        <locationX>837</locationX>
-        <locationY>1258</locationY>
+        <locationX>549</locationX>
+        <locationY>1549</locationY>
         <assignmentItems>
             <assignToReference>$Flow.CurrentStage</assignToReference>
             <operator>Assign</operator>
@@ -209,6 +401,20 @@
             <targetReference>Legislation_FAIL</targetReference>
         </connector>
     </assignments>
+    <constants>
+        <name>Not_Applicable_SetMessage</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Not Applicable</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Not_Applicable_SetNull</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue/>
+        </value>
+    </constants>
     <constants>
         <name>PASS_All_Rules</name>
         <dataType>String</dataType>
@@ -308,10 +514,35 @@
         </value>
     </constants>
     <decisions>
+        <name>Not_Applicable_In_Flow</name>
+        <label>Not Applicable In Flow</label>
+        <locationX>1308</locationX>
+        <locationY>1303</locationY>
+        <defaultConnector>
+            <targetReference>Legislation_PASS</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not All Rules (Not Applicable)</defaultConnectorLabel>
+        <rules>
+            <name>Check_Not_Applicable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>is_Not_Applicable</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Legislation_Not_Applicable</targetReference>
+            </connector>
+            <label>Check Not Applicable</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Rule_1</name>
         <label>Rule 1</label>
         <locationX>372</locationX>
-        <locationY>279</locationY>
+        <locationY>425</locationY>
         <defaultConnector>
             <targetReference>Rule_1_Message_Assignment</targetReference>
         </defaultConnector>
@@ -440,7 +671,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_2</targetReference>
+                <targetReference>Rule_1_In_Scope</targetReference>
             </connector>
             <label>Rule 1 Success</label>
         </rules>
@@ -449,7 +680,7 @@
         <name>Rule_2</name>
         <label>Rule 2</label>
         <locationX>571</locationX>
-        <locationY>122</locationY>
+        <locationY>268</locationY>
         <defaultConnector>
             <targetReference>Rule_2_Message_Assignment</targetReference>
         </defaultConnector>
@@ -578,7 +809,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_3</targetReference>
+                <targetReference>Rule_2_In_Scope</targetReference>
             </connector>
             <label>Rule 2 Success</label>
         </rules>
@@ -587,7 +818,7 @@
         <name>Rule_3</name>
         <label>Rule 3</label>
         <locationX>883</locationX>
-        <locationY>50</locationY>
+        <locationY>196</locationY>
         <defaultConnector>
             <targetReference>Rule_3_Message_Assignment</targetReference>
         </defaultConnector>
@@ -695,7 +926,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_4</targetReference>
+                <targetReference>Rule_3_In_Scope</targetReference>
             </connector>
             <label>Rule 3 Success</label>
         </rules>
@@ -703,8 +934,8 @@
     <decisions>
         <name>Rule_36</name>
         <label>Rule 36</label>
-        <locationX>1931</locationX>
-        <locationY>920</locationY>
+        <locationX>1954</locationX>
+        <locationY>1091</locationY>
         <defaultConnector>
             <targetReference>Rule_36_Message_Assignment</targetReference>
         </defaultConnector>
@@ -756,7 +987,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_40</targetReference>
+                <targetReference>Rule_36_In_Scope</targetReference>
             </connector>
             <label>Rule 36 Success</label>
         </rules>
@@ -765,7 +996,7 @@
         <name>Rule_4</name>
         <label>Rule 4</label>
         <locationX>1167</locationX>
-        <locationY>73</locationY>
+        <locationY>219</locationY>
         <defaultConnector>
             <targetReference>Rule_4_Message_Assignment</targetReference>
         </defaultConnector>
@@ -873,7 +1104,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_5</targetReference>
+                <targetReference>Rule_4_In_Scope</targetReference>
             </connector>
             <label>Rule 4 Success</label>
         </rules>
@@ -881,8 +1112,8 @@
     <decisions>
         <name>Rule_40</name>
         <label>Rule 40</label>
-        <locationX>1740</locationX>
-        <locationY>641</locationY>
+        <locationX>1883</locationX>
+        <locationY>786</locationY>
         <defaultConnector>
             <targetReference>Rule_40_Message_Assignment</targetReference>
         </defaultConnector>
@@ -955,7 +1186,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_47</targetReference>
+                <targetReference>Rule_40_In_Scope</targetReference>
             </connector>
             <label>Rule 40 Success</label>
         </rules>
@@ -963,7 +1194,7 @@
     <decisions>
         <name>Rule_47</name>
         <label>Rule 47</label>
-        <locationX>1573</locationX>
+        <locationX>1494</locationX>
         <locationY>731</locationY>
         <defaultConnector>
             <targetReference>Rule_47_Message_Assignment</targetReference>
@@ -1254,7 +1485,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_49</targetReference>
+                <targetReference>Rule_47_In_Scope</targetReference>
             </connector>
             <label>Rule 47 Success</label>
         </rules>
@@ -1262,8 +1493,8 @@
     <decisions>
         <name>Rule_49</name>
         <label>Rule 49</label>
-        <locationX>1310</locationX>
-        <locationY>907</locationY>
+        <locationX>1354</locationX>
+        <locationY>1052</locationY>
         <defaultConnector>
             <targetReference>Rule_49_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1286,7 +1517,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Legislation_PASS</targetReference>
+                <targetReference>Not_Applicable_In_Flow</targetReference>
             </connector>
             <label>Rule 49 Not Applicable</label>
         </rules>
@@ -1351,8 +1582,8 @@
     <decisions>
         <name>Rule_5</name>
         <label>Rule 5</label>
-        <locationX>1574</locationX>
-        <locationY>75</locationY>
+        <locationX>1559</locationX>
+        <locationY>241</locationY>
         <defaultConnector>
             <targetReference>Rule_5_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1460,7 +1691,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_6</targetReference>
+                <targetReference>Rule_5_In_Scope</targetReference>
             </connector>
             <label>Rule 5 Success</label>
         </rules>
@@ -1469,7 +1700,7 @@
         <name>Rule_6</name>
         <label>Rule 6</label>
         <locationX>2079</locationX>
-        <locationY>100</locationY>
+        <locationY>246</locationY>
         <defaultConnector>
             <targetReference>Rule_6_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1577,7 +1808,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_7</targetReference>
+                <targetReference>Rule_6_In_Scope</targetReference>
             </connector>
             <label>Rule 6 Success</label>
         </rules>
@@ -1586,7 +1817,7 @@
         <name>Rule_7</name>
         <label>Rule 7</label>
         <locationX>2088</locationX>
-        <locationY>408</locationY>
+        <locationY>554</locationY>
         <defaultConnector>
             <targetReference>Rule_7_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1701,7 +1932,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_8</targetReference>
+                <targetReference>Rule_7_In_Scope</targetReference>
             </connector>
             <label>Rule 7 Success</label>
         </rules>
@@ -1709,8 +1940,8 @@
     <decisions>
         <name>Rule_8</name>
         <label>Rule 8</label>
-        <locationX>2091</locationX>
-        <locationY>608</locationY>
+        <locationX>2182</locationX>
+        <locationY>754</locationY>
         <defaultConnector>
             <targetReference>Rule_8_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1762,7 +1993,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_9</targetReference>
+                <targetReference>Rule_8_In_Scope</targetReference>
             </connector>
             <label>Rule 8 Success</label>
         </rules>
@@ -1771,7 +2002,7 @@
         <name>Rule_9</name>
         <label>Rule 9</label>
         <locationX>2282</locationX>
-        <locationY>820</locationY>
+        <locationY>966</locationY>
         <defaultConnector>
             <targetReference>Rule_9_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1879,7 +2110,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_36</targetReference>
+                <targetReference>Rule_9_In_Scope</targetReference>
             </connector>
             <label>Rule 9 Success</label>
         </rules>
@@ -1949,7 +2180,7 @@
         <name>Get_Form_1634</name>
         <label>Get Form 1634</label>
         <locationX>184</locationX>
-        <locationY>445</locationY>
+        <locationY>591</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Rule_1</targetReference>
@@ -1977,7 +2208,7 @@
         <name>Legislation_FAIL</name>
         <label>Legislation FAIL</label>
         <locationX>724</locationX>
-        <locationY>828</locationY>
+        <locationY>974</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -2001,10 +2232,37 @@
         <object>Case</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Legislation_Not_Applicable</name>
+        <label>Legislation Not Applicable</label>
+        <locationX>990</locationX>
+        <locationY>1359</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Legislation_and_Critical_Feedback_Msg__c</field>
+            <value>
+                <elementReference>Not_Applicable_SetMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Legislation_and_Critical_Safeguards__c</field>
+            <value>
+                <elementReference>Not_Applicable_SetNull</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Legislation_PASS</name>
         <label>Legislation PASS</label>
-        <locationX>1002</locationX>
-        <locationY>1069</locationY>
+        <locationX>984</locationX>
+        <locationY>1170</locationY>
         <filterLogic>1</filterLogic>
         <filters>
             <field>Id</field>
@@ -2028,8 +2286,8 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
-        <locationY>54</locationY>
+        <locationX>56</locationX>
+        <locationY>133</locationY>
         <connector>
             <targetReference>Get_Form_1634</targetReference>
         </connector>
@@ -2038,4 +2296,14 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>is_Not_Applicable</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
 </Flow>
