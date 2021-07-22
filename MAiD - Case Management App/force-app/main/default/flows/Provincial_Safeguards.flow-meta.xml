@@ -1270,8 +1270,8 @@
     <decisions>
         <name>CheckRule34_3</name>
         <label>CheckRule34-3</label>
-        <locationX>71</locationX>
-        <locationY>1962</locationY>
+        <locationX>10</locationX>
+        <locationY>1946</locationY>
         <defaultConnector>
             <targetReference>Rule34ErrorMsg</targetReference>
         </defaultConnector>
@@ -1560,9 +1560,117 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateProvincialPASS</targetReference>
+                <targetReference>CheckRule35_12</targetReference>
             </connector>
             <label>CheckRule35-11=yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule35_12</name>
+        <label>CheckRule35-12</label>
+        <locationX>2923</locationX>
+        <locationY>3033</locationY>
+        <defaultConnector>
+            <targetReference>Rule35ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule35_12_yes_0</name>
+            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1641_Phenobarbital_Oral_Suspension</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Oral_Suspension_Quantity</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Oral_Suspension_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Phenobarbital_Oral_Suspension</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Oral_Suspension_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Oral_Suspension_Quantity</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule35_13</targetReference>
+            </connector>
+            <label>CheckRule35-12=yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule35_13</name>
+        <label>CheckRule35-13</label>
+        <locationX>3116</locationX>
+        <locationY>3166</locationY>
+        <defaultConnector>
+            <targetReference>Rule35ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule35_13_yes</name>
+            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1641_Secobarbital_compound_suspension</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Compound_Suspension_Quantity</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Compound_Suspension_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Secobarbital_compound_suspension</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Compound_Suspension_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Compound_Suspension_Quantity</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>UpdateProvincialPASS</targetReference>
+            </connector>
+            <label>CheckRule35-13=yes</label>
         </rules>
     </decisions>
     <decisions>
@@ -2129,7 +2237,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Checkrule_22_yes</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_AssessmentInterpretersIDNumber</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -2137,6 +2245,10 @@
             <conditions>
                 <leftValueReference>Var1634_AssessmentInterpreterdateofservice</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_AssessmentInterpreterdateofservice</leftValueReference>
+                <operator>EqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>CheckRule23_Home_Option</targetReference>
@@ -2169,7 +2281,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>1.4</description>
+    <description>1.5</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
@@ -2373,6 +2485,10 @@
             <field>CPSID_BCCNM_Returning_Prescriber_Licen__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1641_Compound_Suspension_Quantity</assignToReference>
+            <field>Compound_Suspension_Quantity__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1641_Compound_Suspension_consistent_with_MAR</assignToReference>
             <field>Compound_Suspension_consistent_with_MAR__c</field>
         </outputAssignments>
@@ -2489,12 +2605,20 @@
             <field>Ondansetron_consistent_with_MAR__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1641_Oral_Suspension_Quantity</assignToReference>
+            <field>Oral_Suspension_Quantity__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1641_Oral_Suspension_consistent_with_MAR</assignToReference>
             <field>Oral_Suspension_consistent_with_MAR__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_Pharmacist_Returned_Date_Time</assignToReference>
             <field>Pharmacist_Returned_Date_Time__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Phenobarbital_Oral_Suspension</assignToReference>
+            <field>Phenobarbital_Oral_Suspension__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_PhenobarbitalSoduimQuantity</assignToReference>
@@ -2575,6 +2699,10 @@
         <outputAssignments>
             <assignToReference>Var1641_Rocuronium_Bromide_consistent_with_MAR</assignToReference>
             <field>Rocuronium_Bromide_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Secobarbital_compound_suspension</assignToReference>
+            <field>Secobarbital_compound_suspension__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_SodiumChlorideQuantity</assignToReference>
@@ -2937,6 +3065,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Compound_Suspension_Quantity</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_CPBC_Receiving_Pharmacist_License</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -3161,8 +3296,22 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Oral_Suspension_Quantity</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_Pharmacist_Returned_Date_Time</name>
         <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Phenobarbital_Oral_Suspension</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -3303,6 +3452,13 @@
     <variables>
         <name>Var1641_RocuroniumBromideStrength</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Secobarbital_compound_suspension</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
