@@ -639,6 +639,48 @@
                     <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Procedures_for_unused_medication</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Instructions_to_complete_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_Backup_Kit</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_BackUp_Kit_Consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_Oral_Kit_Consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_SealedOralKit</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>UpdateProviencialNull</targetReference>
             </connector>
@@ -977,7 +1019,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule29_yes</name>
-            <conditionLogic>((1 OR 2) AND ( 3 OR 4) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
+            <conditionLogic>(((1 AND 3) OR (2 AND 4 ) OR 9) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1033,6 +1075,10 @@
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_VerbalConsentNotes</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Check_Proxy_Signed_for_MAiD</targetReference>
@@ -1270,8 +1316,8 @@
     <decisions>
         <name>CheckRule34_3</name>
         <label>CheckRule34-3</label>
-        <locationX>71</locationX>
-        <locationY>1962</locationY>
+        <locationX>10</locationX>
+        <locationY>1946</locationY>
         <defaultConnector>
             <targetReference>Rule34ErrorMsg</targetReference>
         </defaultConnector>
@@ -1312,6 +1358,48 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_Prescriber_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Procedures_for_unused_medication</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Instructions_to_complete_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_Backup_Kit</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_BackUp_Kit_Consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_Oral_Kit_Consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_SealedOralKit</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Varbool</elementReference>
@@ -1560,9 +1648,117 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateProvincialPASS</targetReference>
+                <targetReference>CheckRule35_12</targetReference>
             </connector>
             <label>CheckRule35-11=yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule35_12</name>
+        <label>CheckRule35-12</label>
+        <locationX>2923</locationX>
+        <locationY>3033</locationY>
+        <defaultConnector>
+            <targetReference>Rule35ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule35_12_yes_0</name>
+            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1641_Phenobarbital_Oral_Suspension</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Oral_Suspension_Quantity</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Oral_Suspension_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Phenobarbital_Oral_Suspension</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Oral_Suspension_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Oral_Suspension_Quantity</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule35_13</targetReference>
+            </connector>
+            <label>CheckRule35-12=yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>CheckRule35_13</name>
+        <label>CheckRule35-13</label>
+        <locationX>3116</locationX>
+        <locationY>3166</locationY>
+        <defaultConnector>
+            <targetReference>Rule35ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule35_13_yes</name>
+            <conditionLogic>(1 AND 2 AND 3) OR ( 4 AND 5 AND 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1641_Secobarbital_compound_suspension</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Compound_Suspension_Quantity</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Compound_Suspension_consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Secobarbital_compound_suspension</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Compound_Suspension_consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Compound_Suspension_Quantity</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>UpdateProvincialPASS</targetReference>
+            </connector>
+            <label>CheckRule35-13=yes</label>
         </rules>
     </decisions>
     <decisions>
@@ -2129,7 +2325,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Checkrule_22_yes</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_AssessmentInterpretersIDNumber</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -2137,6 +2333,10 @@
             <conditions>
                 <leftValueReference>Var1634_AssessmentInterpreterdateofservice</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_AssessmentInterpreterdateofservice</leftValueReference>
+                <operator>EqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>CheckRule23_Home_Option</targetReference>
@@ -2169,7 +2369,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>1.4</description>
+    <description>1.7 Final</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
@@ -2373,6 +2573,10 @@
             <field>CPSID_BCCNM_Returning_Prescriber_Licen__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1641_Compound_Suspension_Quantity</assignToReference>
+            <field>Compound_Suspension_Quantity__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1641_Compound_Suspension_consistent_with_MAR</assignToReference>
             <field>Compound_Suspension_consistent_with_MAR__c</field>
         </outputAssignments>
@@ -2407,6 +2611,10 @@
         <outputAssignments>
             <assignToReference>Var1641_IfOtherspecify</assignToReference>
             <field>If_Other_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Instructions_to_complete_MAR</assignToReference>
+            <field>Instructions_to_complete_MAR__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_LidocaineQuantity</assignToReference>
@@ -2489,12 +2697,20 @@
             <field>Ondansetron_consistent_with_MAR__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1641_Oral_Suspension_Quantity</assignToReference>
+            <field>Oral_Suspension_Quantity__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1641_Oral_Suspension_consistent_with_MAR</assignToReference>
             <field>Oral_Suspension_consistent_with_MAR__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_Pharmacist_Returned_Date_Time</assignToReference>
             <field>Pharmacist_Returned_Date_Time__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Phenobarbital_Oral_Suspension</assignToReference>
+            <field>Phenobarbital_Oral_Suspension__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_PhenobarbitalSoduimQuantity</assignToReference>
@@ -2519,6 +2735,10 @@
         <outputAssignments>
             <assignToReference>Var1641_Prescriber_Signature</assignToReference>
             <field>Prescriber_s_Signature__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Procedures_for_unused_medication</assignToReference>
+            <field>Procedures_for_unused_medication__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_Propofol_Quantity</assignToReference>
@@ -2575,6 +2795,26 @@
         <outputAssignments>
             <assignToReference>Var1641_Rocuronium_Bromide_consistent_with_MAR</assignToReference>
             <field>Rocuronium_Bromide_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Sealed_IV_Backup_Kit</assignToReference>
+            <field>Sealed_IV_Back_Up_Kit__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Sealed_IV_BackUp_Kit_Consistent_with_MAR</assignToReference>
+            <field>Sealed_IV_Back_Up_Kit_consistent_with_MA__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_SealedOralKit</assignToReference>
+            <field>Sealed_Oral_Kit__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Sealed_Oral_Kit_Consistent_with_MAR</assignToReference>
+            <field>Sealed_Oral_Kit_consistent_with_MAR__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1641_Secobarbital_compound_suspension</assignToReference>
+            <field>Secobarbital_compound_suspension__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1641_SodiumChlorideQuantity</assignToReference>
@@ -2937,6 +3177,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Compound_Suspension_Quantity</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_CPBC_Receiving_Pharmacist_License</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -3009,6 +3256,13 @@
     <variables>
         <name>Var1641_IfOtherspecify</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Instructions_to_complete_MAR</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -3161,8 +3415,22 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1641_Oral_Suspension_Quantity</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1641_Pharmacist_Returned_Date_Time</name>
         <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Phenobarbital_Oral_Suspension</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -3204,6 +3472,13 @@
     </variables>
     <variables>
         <name>Var1641_Prescriber_Signature</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Procedures_for_unused_medication</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -3303,6 +3578,41 @@
     <variables>
         <name>Var1641_RocuroniumBromideStrength</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Sealed_IV_Backup_Kit</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Sealed_IV_BackUp_Kit_Consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Sealed_Oral_Kit_Consistent_with_MAR</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_SealedOralKit</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1641_Secobarbital_compound_suspension</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
