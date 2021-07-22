@@ -65,11 +65,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Federal_Feedback_Msg__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Case.Federal_Safeguards_Feedback__c</field>
         <readable>true</readable>
@@ -317,11 +312,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Province_or_Territory_that_issued_PHN__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Provincial_Feedback_Msg__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
