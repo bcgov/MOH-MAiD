@@ -1019,7 +1019,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule29_yes</name>
-            <conditionLogic>(((1 AND 3) OR (2 AND 4 ) OR 9) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
+            <conditionLogic>(((1 AND 3 AND 10) OR (2 AND 4 AND 11) OR 9) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1078,6 +1078,14 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_VerbalConsentNotes</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
@@ -1302,6 +1310,48 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_Prescriber_Signature</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Procedures_for_unused_medication</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Instructions_to_complete_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_Backup_Kit</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_BackUp_Kit_Consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_Oral_Kit_Consistent_with_MAR</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_SealedOralKit</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Varbool</elementReference>
@@ -2369,7 +2419,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>1.7 Final</description>
+    <description>1.8 Final - Adding extra Mandatory fields 34-2</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
