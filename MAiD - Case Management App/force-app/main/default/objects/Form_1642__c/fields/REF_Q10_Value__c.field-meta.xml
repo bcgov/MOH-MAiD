@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>REQ_Q05_Formula__c</fullName>
+    <fullName>REF_Q10_Value__c</fullName>
     <externalId>false</externalId>
-    <formula>CASE(  Who_did_you_receive_the_written_request__c  ,
-&quot;1- Patient directly&quot;,1,
-&quot;2 - Another practitioner&quot;,2,
-&quot;3 - Care coordination service&quot;,3,
-&quot;4 - Another third party&quot;,1,
-&quot;5 - Patient directly - other&quot;,4,0)</formula>
+    <formula>IF( Did_you_complete_an_eligibility_assessme__c =true,1,2)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>REQ_Q05 - Formula</label>
+    <label>REF_Q10 - Value</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Number</type>
     <unique>false</unique>

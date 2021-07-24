@@ -66,7 +66,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.Federal_Safeguards_Feedback__c</field>
+        <field>Case.Federal_Feedback_Msg__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -315,13 +315,58 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Provincial_Feedback_Msg__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Provincial_Safeguards_Feedback__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Provincial_Safeguards__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.Provincial_Safeguards_Feedback__c</field>
+        <field>Case.REF_Q05_42_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.REF_Q05_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.REF_Q10__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.REF_Q10_value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.REF_Q15_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.REQ_Q05_42_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.REQ_Q10_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.REQ_S05_formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1931,7 +1976,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.REQ_S05_Formula__c</field>
+        <field>Form_1634__c.REQ_S05_Formula_x__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2106,11 +2151,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.WOR_Q05D_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1634__c.WOR_Q05D__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2122,11 +2162,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Form_1634__c.WOR_Q10_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.WOR_S05D_NA__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2802,6 +2837,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1642__c.Prior_patient_consultation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1642__c.REF_Q10_Value__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1642__c.REQ_Q05_42_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
