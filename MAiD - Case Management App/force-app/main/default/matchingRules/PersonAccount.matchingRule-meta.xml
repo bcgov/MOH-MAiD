@@ -21,11 +21,6 @@
         <label>Match College ID -</label>
         <matchingRuleItems>
             <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>College_ID__c</fieldName>
-            <matchingMethod>Exact</matchingMethod>
-        </matchingRuleItems>
-        <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
             <fieldName>College_ID__pc</fieldName>
             <matchingMethod>Exact</matchingMethod>
         </matchingRuleItems>
@@ -33,13 +28,8 @@
     </matchingRules>
     <matchingRules>
         <fullName>Match_College_ID_1</fullName>
-        <booleanFilter>(1 OR 2)</booleanFilter>
+        <booleanFilter>1</booleanFilter>
         <label>Match College ID -</label>
-        <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>College_ID__c</fieldName>
-            <matchingMethod>Exact</matchingMethod>
-        </matchingRuleItems>
         <matchingRuleItems>
             <blankValueBehavior>NullNotAllowed</blankValueBehavior>
             <fieldName>College_ID__pc</fieldName>
@@ -55,6 +45,6 @@
             <fieldName>College_ID__pc</fieldName>
             <matchingMethod>Exact</matchingMethod>
         </matchingRuleItems>
-        <ruleStatus>Inactive</ruleStatus>
+        <ruleStatus>Active</ruleStatus>
     </matchingRules>
 </MatchingRules>
