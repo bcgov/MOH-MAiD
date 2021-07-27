@@ -1112,11 +1112,8 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_IfYeswasPrescriberpresent</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
+                <leftValueReference>Var1634_IfYeswasPrescripresent</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Didthepatientdieafterselfadmin</leftValueReference>
@@ -1162,11 +1159,8 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_IfYeswasPrescriberpresent</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
+                <leftValueReference>Var1634_IfYeswasPrescripresent</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Didthepatientdieafterselfadmin</leftValueReference>
@@ -1528,6 +1522,10 @@
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Finalwaiverofconsentdatesigned</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>CheckRule37</targetReference>
@@ -1893,8 +1891,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>1.9- Correction 10 &amp; 41 Rule
-Added  Var1634_Patients_request_was_signed_dated</description>
+    <description>1.10- Correction Rule 11 13 14 19</description>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
@@ -2024,7 +2021,7 @@ Added  Var1634_Patients_request_was_signed_dated</description>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Didthepatientdieafterselfadmin</assignToReference>
-            <field>Did_the_patient_die_after_self_admin__c</field>
+            <field>Did_the_patient_die_after_self_administ__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_EnsuredMAiDadministeredasspecified</assignToReference>
@@ -2055,12 +2052,12 @@ Added  Var1634_Patients_request_was_signed_dated</description>
             <field>If_Yes_patient_consented__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>Var1634_IfYeswasPrescripresent</assignToReference>
-            <field>If_Yes_was_Prescriber_present__c</field>
-        </outputAssignments>
-        <outputAssignments>
             <assignToReference>Var1634_ReqSignDate</assignToReference>
             <field>If_yes_signed_request_date__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_IfYeswasPrescripresent</assignToReference>
+            <field>If_yes_was_the_Prescriber_present__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_MAiDAdministrationDate</assignToReference>
