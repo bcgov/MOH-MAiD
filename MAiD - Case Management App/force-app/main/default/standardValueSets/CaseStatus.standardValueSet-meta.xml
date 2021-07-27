@@ -2,12 +2,6 @@
 <StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
     <sorted>false</sorted>
     <standardValue>
-        <fullName>Closed</fullName>
-        <default>false</default>
-        <label>Closed</label>
-        <closed>true</closed>
-    </standardValue>
-    <standardValue>
         <fullName>Awaiting Forms</fullName>
         <default>false</default>
         <label>Awaiting Forms</label>
@@ -48,6 +42,12 @@
         <default>false</default>
         <label>Ready for Manager Review</label>
         <closed>false</closed>
+    </standardValue>
+    <standardValue>
+        <fullName>Closed</fullName>
+        <default>false</default>
+        <label>Closed</label>
+        <closed>true</closed>
     </standardValue>
     <standardValue>
         <fullName>Need to Follow up</fullName>
