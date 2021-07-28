@@ -2073,7 +2073,7 @@
         </rules>
         <rules>
             <name>Rule_9_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4) and ((5 or 6) AND ((7 and 8) Or 9)) and (5 And 11) and (6 And 10)</conditionLogic>
+            <conditionLogic>(1 or 2 or 3 or 4) and ((7 And 8) Or 9) and ((5 And 11) Or (6 And 10) Or (12 And 13))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2147,6 +2147,20 @@
             <conditions>
                 <leftValueReference>Get_Form_1634.On_receipt_of_assessment_patient_is__c</leftValueReference>
                 <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - Is not capable of providing informed consent</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_is_capable_of_providing_consent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - I have reasons to be concerned</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.On_receipt_of_assessment_patient_is__c</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>2 - Is not capable of providing informed consent</stringValue>
                 </rightValue>
