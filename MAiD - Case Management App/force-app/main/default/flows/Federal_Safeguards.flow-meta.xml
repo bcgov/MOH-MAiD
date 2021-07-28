@@ -940,7 +940,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1632_RequestSigDate</leftValueReference>
+                <leftValueReference>Var1634_ReqSignDate</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
@@ -1946,7 +1946,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>1.12- Correction Rule 38 Num of days &gt; 91</description>
+    <description>1.13- Correction Rule 10 Fix in ReqDate 1634 form</description>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
