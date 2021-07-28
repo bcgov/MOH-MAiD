@@ -505,6 +505,51 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
+            <name>Rule_15_Fail</name>
+            <conditionLogic>(6 OR 7) AND ((1 AND 2) OR (3 AND 4 AND 5))</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1632_ProxySignDate</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_RequestSigDate</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_ProxySignDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_RequestSigDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_ProxySignDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1632_RequestSigDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule15ErrorMsg</targetReference>
+            </connector>
+            <label>Rule 15 Fail</label>
+        </rules>
+        <rules>
             <name>Rule_15_yes</name>
             <conditionLogic>((1 OR 2) AND (3 OR 4)) OR (5 AND 6)</conditionLogic>
             <conditions>
@@ -1113,7 +1158,10 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_IfYeswasPrescripresent</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Didthepatientdieafterselfadmin</leftValueReference>
@@ -1160,7 +1208,10 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_IfYeswasPrescripresent</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Didthepatientdieafterselfadmin</leftValueReference>
@@ -1393,7 +1444,7 @@
                 <leftValueReference>Var1633_AllEligibilitycriteria</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Varbool</elementReference>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1651,10 +1702,10 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule38_2_Yes</name>
-            <conditionLogic>((1 AND 2 ) OR (5 AND 6) AND 3) OR 4</conditionLogic>
+            <conditionLogic>(((1 AND 2 AND 7) OR (5 AND 6)) AND 3) OR 4</conditionLogic>
             <conditions>
                 <leftValueReference>VarNumberofDays</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
+                <operator>GreaterThan</operator>
                 <rightValue>
                     <numberValue>91.0</numberValue>
                 </rightValue>
@@ -1693,6 +1744,10 @@
                 <rightValue>
                     <elementReference>Varbool</elementReference>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_MAiDAdministrationDate</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>CheckRule39</targetReference>
@@ -1891,7 +1946,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>1.10- Correction Rule 11 13 14 19</description>
+    <description>1.12- Correction Rule 38 Num of days &gt; 91</description>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
@@ -1939,7 +1994,7 @@
         <object>Form_1632__c</object>
         <outputAssignments>
             <assignToReference>Var1632_ProxySignDate</assignToReference>
-            <field>Proxy_Signature_Date__c</field>
+            <field>Proxy_Signed_Date_for_Request__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1632_RequestSigDate</assignToReference>
