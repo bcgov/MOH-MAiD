@@ -1217,7 +1217,7 @@
         </rules>
         <rules>
             <name>Rule_47_Success</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9) AND ((13 And ((10 And 11 And 12 )) Or (15 And 12) Or (14))) And ((19 And ((16 And 21 And 18)) Or (17 And 18) Or  (20)))  And ((19 And ((22 And 24 And 18)) Or (23 And 18) Or (20))) And ((19 And ((25 And 27 And 18)) Or (26 And 18) Or (20))) And ((19 And ((28 And 30 And 18)) Or (29 And 18) Or (20))) And ((19 And ((31 And 33 And 18)) Or (32 And 18) Or (20))) And ((34 And 36 And 38) Or (37 And 35))</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9) AND ((13 And ((10 And 11 And 12 )) Or (15 And 12) Or (14))) And ((19 And ((16 And 21 And 18)) Or (17 And 18) Or  (20)))  And ((19 And ((22 And 24 And 18)) Or (23 And 18) Or (20))) And ((19 And ((25 And 27 And 18)) Or (26 And 18) Or (20))) And ((19 And ((28 And 30 And 18)) Or (29 And 18) Or (20))) And ((19 And ((31 And 33 And 18)) Or (32 And 18) Or (20))) And ((34 And 36 And 38) Or (37 And 35) Or (36 And 35))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1523,7 +1523,7 @@
         </rules>
         <rules>
             <name>Rule_49_Success</name>
-            <conditionLogic>(1 or 2) and (3) AND ((4 AND 5 AND 7) Or (6))</conditionLogic>
+            <conditionLogic>(1 or 2) and (3) AND ((4 AND 5 AND 7) Or (6)) AND (10 And 8) AND (11 And 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1571,6 +1571,34 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue/>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.On_receipt_of_assessment_patient_is__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - Is not capable of providing informed consent</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.On_receipt_of_assessment_patient_is__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Is capable of providing informed consent</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_is_capable_of_providing_consent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1- I have no concerns</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_is_capable_of_providing_consent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - I have reasons to be concerned</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2045,7 +2073,7 @@
         </rules>
         <rules>
             <name>Rule_9_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4) and ((5 or 6) AND ((7 and 8) Or 9))</conditionLogic>
+            <conditionLogic>(1 or 2 or 3 or 4) and ((7 And 8) Or 9) and ((5 And 11) Or (6 And 10) Or (12 And 13))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2107,6 +2135,34 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_is_capable_of_providing_consent__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - I have reasons to be concerned</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.On_receipt_of_assessment_patient_is__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - Is not capable of providing informed consent</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_is_capable_of_providing_consent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - I have reasons to be concerned</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.On_receipt_of_assessment_patient_is__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - Is not capable of providing informed consent</stringValue>
                 </rightValue>
             </conditions>
             <connector>
