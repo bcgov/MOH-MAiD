@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_of_MAiD_Required_Rule</fullName>
+    <active>true</active>
+    <description>If &apos;Type&apos; = MAiD Death, then &apos;Date of MAiD&apos; should be required</description>
+    <errorConditionFormula>IF(
+(ISPICKVAL( Type , &quot;MAiD Death Foreseeable&quot;) ||
+ISPICKVAL( Type , &quot;MAiD Death Not Foreseeable&quot;)) ,
+AND (
+ISNULL(Date_of_MAiD__c ),
+OR(ISNULL( X1641_Date_Received__c ),NOT(ISNULL( X1641_Date_Received__c ))),
+IF((ISNULL(Date_of_MAiD__c ) &amp;&amp; ISNULL( X1641_Date_Received__c )), TRUE,
+OR(NOT( ISNULL( X1632_Date_Received__c )), NOT(ISNULL( X1633_Date_Received__c )), NOT(ISNULL( X1634_Date_Received__c )), NOT(ISNULL( X1635_Date_Received__c )), NOT(ISNULL( X1642_Date_Received__c )), NOT(ISNULL( X1645_Date_Received__c )))
+)
+)
+,
+null
+)</errorConditionFormula>
+    <errorMessage>Date of MAiD is required</errorMessage>
+</ValidationRule>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ELG_Q120_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(  If_Yes_is_patients_change_in_eligbilit__c  ,
+&quot;Yes&quot;,1,
+&quot;No&quot;,2,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ELG_Q120 - Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

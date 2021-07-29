@@ -20,7 +20,6 @@
                 <default>false</default>
                 <label>2 - No</label>
             </value>
-
         </valueSetDefinition>
     </valueSet>
 </CustomField>
