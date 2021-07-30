@@ -1950,7 +1950,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>1.14- Fixe Rule 14 Provincial Safeguards</description>
+    <description>1.14- Fixed Rule 14 Federal Safeguards</description>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
