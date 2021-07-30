@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <constants>
+        <name>Msg_Status_Fail</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Status Failed to Update</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Msg_Status_Success</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Status Succeeded to Update</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Check_Step_01</name>
+        <label>Check Step 01</label>
+        <locationX>210</locationX>
+        <locationY>283</locationY>
+        <defaultConnector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Fails Meeting Criteria 01</defaultConnectorLabel>
+        <rules>
+            <name>Not_Applicable</name>
+            <conditionLogic>(1 AND 2) Or 3 Or 4 Or 5 Or 6 Or 7</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Id</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting Forms</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up required for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_02</targetReference>
+            </connector>
+            <label>Not Applicable</label>
+        </rules>
+        <rules>
+            <name>Successfully_Meets_Criteria_1</name>
+            <conditionLogic>(((5 And (1 Or 4)) And (2 And 3) And (7 Or 8))) Or 6</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_02</targetReference>
+            </connector>
+            <label>Success Meeting Criteria 1</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Step_02</name>
+        <label>Check Step 02</label>
+        <locationX>657</locationX>
+        <locationY>756</locationY>
+        <defaultConnector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Fail Meeting Criteria 02</defaultConnectorLabel>
+        <rules>
+            <name>Not_Applicable_step_02</name>
+            <conditionLogic>1 AND (2 Or 3 Or 4 Or 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting Forms</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up required for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_03</targetReference>
+            </connector>
+            <label>Not Applicable Step 02</label>
+        </rules>
+        <rules>
+            <name>Success_Step_02</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_03</targetReference>
+            </connector>
+            <label>Success Step 02</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Step_03</name>
+        <label>Check Step 03</label>
+        <locationX>637</locationX>
+        <locationY>345</locationY>
+        <defaultConnector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Fail Meeting Criteria 03</defaultConnectorLabel>
+        <rules>
+            <name>Not_Applicable_Step_3</name>
+            <conditionLogic>1 Or 2 Or 3 Or 4</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting Forms</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up required for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_field_when_Not_applicable</targetReference>
+            </connector>
+            <label>Not Applicable Step 03</label>
+        </rules>
+        <rules>
+            <name>Success_Step_03</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Success_Update_Status_Message</targetReference>
+            </connector>
+            <label>Success Step 03</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Status Change-CC Review Checks In Progress {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Status Change-CC Review Checks In Progress</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Fails_Update_to_Previous_Status</name>
+        <label>Fails Update to Previous Status</label>
+        <locationX>238</locationX>
+        <locationY>578</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>Msg_Status_Fail</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Success_Update_Status_Message</name>
+        <label>Success Update Status Message</label>
+        <locationX>930</locationX>
+        <locationY>654</locationY>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>Msg_Status_Success</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_field_when_Not_applicable</name>
+        <label>Update field when Not applicable</label>
+        <locationX>799</locationX>
+        <locationY>94</locationY>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <stringValue/>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>50</locationY>
+        <connector>
+            <targetReference>Check_Step_01</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
