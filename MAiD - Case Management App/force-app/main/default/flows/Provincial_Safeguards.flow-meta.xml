@@ -1018,29 +1018,49 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Check_Rule29_Fail</name>
-            <conditionLogic>((1 AND 2) OR (3 AND 4 AND 5) OR 8) AND (6 OR 7)</conditionLogic>
+            <name>Check_Rule29_Pass</name>
+            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7) AND (8 OR 9)) OR (10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_ProxySignedforMAiD</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_ProxySignedforMAiD</leftValueReference>
-                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <elementReference>Var1634_PatientSignedforMAiDAdministration</elementReference>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
+                <leftValueReference>Var1634_ProxySignedforMAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_MAiDAdministrationDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_MAiDAdministrationDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_DateSignedbyProxyforMAID</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_ProxySignedforMAiD</leftValueReference>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
@@ -1058,10 +1078,23 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_VerbalConsentNotes</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
             </conditions>
-            <label>Check Rule29=Fail</label>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Proxy_Signed_for_MAiD</targetReference>
+            </connector>
+            <label>Check Rule29 = Pass</label>
         </rules>
         <rules>
             <name>CheckRule29_yes</name>
@@ -2465,7 +2498,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>1.9 Final - Fixed 34, 29,35 Provincial Safeguards</description>
+    <description>1.10 Final - Fixed Rule 29 Provincial Safeguards</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
