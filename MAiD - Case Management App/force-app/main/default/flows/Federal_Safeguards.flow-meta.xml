@@ -1177,7 +1177,7 @@
         </rules>
         <rules>
             <name>Rule_14</name>
-            <conditionLogic>(1 OR 2) AND (3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12)</conditionLogic>
+            <conditionLogic>(1 OR 2) AND (3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13)</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1258,6 +1258,10 @@
                 <rightValue>
                     <elementReference>Var1634_MAiDAdministrationDate</elementReference>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Advanceconsentsignaturedatebypatien</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_12_skip</targetReference>
@@ -1950,7 +1954,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>1.14- Fixed Rule 14 Federal Safeguards</description>
+    <description>1.14- Fixe Rule 14 Provincial Safeguards</description>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
