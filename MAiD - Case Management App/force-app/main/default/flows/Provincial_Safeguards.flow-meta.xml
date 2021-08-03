@@ -1024,14 +1024,14 @@
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_ProxySignedforMAiD</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1098,7 +1098,7 @@
         </rules>
         <rules>
             <name>CheckRule29_yes</name>
-            <conditionLogic>(((1 AND 3 AND 10) OR (2 AND 4 AND 11) OR 9) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
+            <conditionLogic>(((1 AND 3 AND 10) OR (2 AND 4 AND 11) OR 9) AND 12 AND 13 AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1166,6 +1166,20 @@
             <conditions>
                 <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_ProxySignedforMAiD</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_PatientDateforMAiDAdministration</elementReference>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Check_Proxy_Signed_for_MAiD</targetReference>
@@ -2498,7 +2512,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>1.10 Final - Fixed Rule 29 Provincial Safeguards</description>
+    <description>1.11 Final - Fixed Rule 29 Provincial Safeguards</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
