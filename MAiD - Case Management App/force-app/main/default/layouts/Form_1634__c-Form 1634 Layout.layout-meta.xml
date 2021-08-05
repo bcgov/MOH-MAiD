@@ -823,10 +823,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Supplementary_Information__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Additional_Supplementary_Information__c</field>
             </layoutItems>
             <layoutItems>
