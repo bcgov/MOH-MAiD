@@ -2781,6 +2781,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1641__c.Supplementary_Information__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1642__c.Contrary_to_your_conscience_or_beliefs__c</field>
         <readable>true</readable>
     </fieldPermissions>
