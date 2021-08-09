@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dis_Death_Prior_Status</fullName>
+    <active>true</active>
+    <description>Discontinuation of Planning: Death Prior Status</description>
+    <errorConditionFormula>AND(ISPICKVAL(Type,&quot;Discontinuation of Planning: Death Prior&quot;), NOT(ISPICKVAL(Status,&quot;Awaiting Forms&quot;)), NOT(ISPICKVAL(Status,&quot;Follow up required for CC Review/Checks&quot;)),NOT(ISPICKVAL(X1632__c,&quot;Yes&quot;)))</errorConditionFormula>
+    <errorMessage>Not all forms have been received (Form 1632), status can only be set to Awaiting Forms or Follow up required for CC Review/Checks</errorMessage>
+</ValidationRule>
