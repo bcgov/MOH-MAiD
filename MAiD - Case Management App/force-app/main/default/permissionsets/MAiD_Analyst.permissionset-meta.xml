@@ -10,6 +10,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.SPC_Q05_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.SPC_S10_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Specialty_Other__pc</field>
         <readable>true</readable>
@@ -345,13 +355,13 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Provincial_Safeguards__c</field>
+        <editable>false</editable>
+        <field>Case.Provincial_Safeguards_Feedback__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Provincial_Safeguards_Feedback__c</field>
+        <editable>true</editable>
+        <field>Case.Provincial_Safeguards__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -421,6 +431,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.SPC_Q05_PCFormula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.SPC_Q20_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -433,7 +448,7 @@
         <editable>false</editable>
         <field>Case.Status_Feedback_Msg__c</field>
         <readable>true</readable>
-    </fieldPermissions>    
+    </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Type</field>
@@ -547,6 +562,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.College_ID__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Contact.SPC_Q05_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2232,6 +2252,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Second_assessor_was_a_physcian_or_nurse__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Supplementary_Information__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

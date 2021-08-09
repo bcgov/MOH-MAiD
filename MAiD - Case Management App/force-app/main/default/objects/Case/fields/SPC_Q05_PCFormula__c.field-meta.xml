@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>SPC_Q05__c</fullName>
+    <fullName>SPC_Q05_PCFormula__c</fullName>
     <externalId>false</externalId>
-    <label>SPC_Q05</label>
-    <precision>2</precision>
+    <formula>Practitioner_Name__r.PersonContact.SPC_Q05_Number__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SPC_Q05 - PCFormula</label>
+    <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
-    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Number</type>
     <unique>false</unique>
