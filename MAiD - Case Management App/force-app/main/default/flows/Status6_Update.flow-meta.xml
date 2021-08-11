@@ -203,7 +203,7 @@
             <targetReference>GetCaseDetail</targetReference>
         </connector>
         <object>Case</object>
-        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <recordTriggerType>Update</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
