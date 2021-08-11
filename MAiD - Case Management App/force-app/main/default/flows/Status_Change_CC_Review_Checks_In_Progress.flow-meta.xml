@@ -18,8 +18,8 @@
     <decisions>
         <name>Check_Step_01</name>
         <label>Check Step 01</label>
-        <locationX>210</locationX>
-        <locationY>283</locationY>
+        <locationX>104</locationX>
+        <locationY>517</locationY>
         <defaultConnector>
             <targetReference>Fails_Update_to_Previous_Status</targetReference>
         </defaultConnector>
@@ -162,7 +162,7 @@
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                    <stringValue>Transfer of Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -200,10 +200,38 @@
         </rules>
         <rules>
             <name>Success_Step_02</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 and 3) AND 2 AND 4 AND 5</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer of Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Error_Logs</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Tasks</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
@@ -296,11 +324,81 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Error_Logs</name>
+        <label>Get Error Logs</label>
+        <locationX>116</locationX>
+        <locationY>263</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Tasks</targetReference>
+        </connector>
+        <filterLogic>1 AND 2 AND (3 And 4)</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Reconciled</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Logged for Tracking</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Tasks</name>
+        <label>Get Tasks</label>
+        <locationX>288</locationX>
+        <locationY>266</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Step_01</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>WhatId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Completed</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Task</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <recordUpdates>
         <name>Fails_Update_to_Previous_Status</name>
         <label>Fails Update to Previous Status</label>
-        <locationX>238</locationX>
-        <locationY>578</locationY>
+        <locationX>182</locationX>
+        <locationY>698</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
@@ -331,8 +429,8 @@
     <recordUpdates>
         <name>Update_field_when_Not_applicable</name>
         <label>Update field when Not applicable</label>
-        <locationX>799</locationX>
-        <locationY>94</locationY>
+        <locationX>646</locationX>
+        <locationY>80</locationY>
         <inputAssignments>
             <field>Status_Feedback_Msg__c</field>
             <value>
@@ -342,14 +440,34 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>51</locationX>
+        <locationY>30</locationY>
         <connector>
-            <targetReference>Check_Step_01</targetReference>
+            <targetReference>Get_Error_Logs</targetReference>
         </connector>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>is_ErrorLog_Ready</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>is_Tasks_Ready</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
 </Flow>
