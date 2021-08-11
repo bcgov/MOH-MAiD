@@ -1,13 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>Assign_Case_New_Status</name>
+        <label>Assign Case New Status</label>
+        <locationX>808</locationX>
+        <locationY>164</locationY>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Status_Feedback_Msg__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Status Succeeded to Update</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Record_Pass</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Keep_Case_Status_Untouched</name>
+        <label>Keep Case Status Untouched</label>
+        <locationX>828</locationX>
+        <locationY>372</locationY>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Status_Feedback_Msg__c</assignToReference>
+            <operator>Assign</operator>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Not_Applicable_Scenario</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Update_Fail_Scenario</name>
+        <label>Update Fail Scenario</label>
+        <locationX>616</locationX>
+        <locationY>400</locationY>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.Status_Feedback_Msg__c</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Status_Feedback_Msg__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Status Update Failed. Manager access required to reopen a closed case.</stringValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Case_Record_Fail</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <name>Check_requirements</name>
         <label>Check requirements</label>
-        <locationX>579</locationX>
-        <locationY>240</locationY>
+        <locationX>581</locationX>
+        <locationY>241</locationY>
         <defaultConnector>
-            <targetReference>Failure_to_Update_Status</targetReference>
+            <targetReference>Update_Fail_Scenario</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -70,9 +150,24 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_Closed_Case_Status</targetReference>
+                <targetReference>Assign_Case_New_Status</targetReference>
             </connector>
             <label>Validate Requirements=Yes</label>
+        </rules>
+        <rules>
+            <name>Not_Applicable_Scenario</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Keep_Case_Status_Untouched</targetReference>
+            </connector>
+            <label>Not Applicable Scenario</label>
         </rules>
     </decisions>
     <description>Status &amp; update and allowing only Managers to change case status after Closing a Case</description>
@@ -126,42 +221,25 @@
         <queriedFields>Legislation_and_Critical_Safeguards__c</queriedFields>
     </recordLookups>
     <recordUpdates>
-        <name>Failure_to_Update_Status</name>
-        <label>Failure to Update Status</label>
-        <locationX>593</locationX>
-        <locationY>430</locationY>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <elementReference>$Record__Prior.Status</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status_Feedback_Msg__c</field>
-            <value>
-                <stringValue>Insufficient Profile rights to update closed case. Only Manager can update it,</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
+        <name>Update_Case_Not_Applicable_Scenario</name>
+        <label>Update Case Not Applicable Scenario</label>
+        <locationX>849</locationX>
+        <locationY>543</locationY>
+        <inputReference>updateCaseRecord</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Closed_Case_Status</name>
-        <label>Update Closed Case Status</label>
-        <locationX>861</locationX>
-        <locationY>250</locationY>
-        <inputAssignments>
-            <field>Status</field>
-            <value>
-                <elementReference>$Record.Status</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>Status_Feedback_Msg__c</field>
-            <value>
-                <stringValue>Status Succeeded to Update</stringValue>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
+        <name>Update_Case_Record_Fail</name>
+        <label>Update Case Record Fail</label>
+        <locationX>623</locationX>
+        <locationY>542</locationY>
+        <inputReference>updateCaseRecord</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Case_Record_Pass</name>
+        <label>Update Case Record Pass</label>
+        <locationX>1042</locationX>
+        <locationY>177</locationY>
+        <inputReference>updateCaseRecord</inputReference>
     </recordUpdates>
     <start>
         <locationX>51</locationX>
@@ -171,7 +249,7 @@
         </connector>
         <object>Case</object>
         <recordTriggerType>Update</recordTriggerType>
-        <triggerType>RecordBeforeSave</triggerType>
+        <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
     <variables>
@@ -188,6 +266,14 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>updateCaseRecord</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
     </variables>
     <variables>
         <name>VarGetCaseDetail</name>
