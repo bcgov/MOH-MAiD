@@ -38,43 +38,7 @@
         <inputAssignments>
             <field>Mandatory_Data__c</field>
             <value>
-                <stringValue/>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>REF_Q05_42_Formula__c</field>
-            <value>
-                <elementReference>$Record.Date_of_transfer_of_request_or_care__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>REF_Q10_value__c</field>
-            <value>
-                <elementReference>$Record.REF_Q10_Value__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>REF_Q15_Value__c</field>
-            <value>
-                <elementReference>$Record.REF_Q10_Value__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>REQ_Q05_42_Formula__c</field>
-            <value>
-                <elementReference>$Record.REQ_Q05_42_Formula__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>REQ_Q10_Formula__c</field>
-            <value>
-                <elementReference>$Record.Date_Written_Request_Received__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>REQ_S05_formula__c</field>
-            <value>
-                <elementReference>$Record.If_other_third_party_specify__c</elementReference>
+                <stringValue></stringValue>
             </value>
         </inputAssignments>
         <object>Case</object>
