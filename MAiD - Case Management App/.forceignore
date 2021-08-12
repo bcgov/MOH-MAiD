@@ -9,7 +9,7 @@ package.xml
 **profilePasswordPolicies
 **profileSessionSettings
 **settings
-#**standardValueSet
+**standardValueSet
 
 #MoH Standard User.profile
 
