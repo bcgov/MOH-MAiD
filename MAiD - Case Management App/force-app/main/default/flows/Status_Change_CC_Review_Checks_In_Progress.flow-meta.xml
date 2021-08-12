@@ -16,8 +16,8 @@
         </value>
     </constants>
     <decisions>
-        <name>Check_Step_01</name>
-        <label>Check Step 01</label>
+        <name>Check_Step_01_Forseeable</name>
+        <label>Check Step 01 (Forseeable)</label>
         <locationX>104</locationX>
         <locationY>517</locationY>
         <defaultConnector>
@@ -25,7 +25,7 @@
         </defaultConnector>
         <defaultConnectorLabel>Fails Meeting Criteria 01</defaultConnectorLabel>
         <rules>
-            <name>Not_Applicable</name>
+            <name>Not_Applicable_Step_01</name>
             <conditionLogic>(1 AND 2) Or 3 Or 4 Or 5 Or 6 Or 7</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
@@ -77,12 +77,12 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Check_Step_02</targetReference>
+                <targetReference>Check_Step_02_Transfer</targetReference>
             </connector>
-            <label>Not Applicable</label>
+            <label>Not Applicable Step 01</label>
         </rules>
         <rules>
-            <name>Successfully_Meets_Criteria_1</name>
+            <name>Successfully_Step_01</name>
             <conditionLogic>(((5 And (1 Or 4)) And (2 And 3) And (7 Or 8))) Or 6</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
@@ -141,23 +141,23 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Check_Step_02</targetReference>
+                <targetReference>Check_Step_02_Transfer</targetReference>
             </connector>
-            <label>Success Meeting Criteria 1</label>
+            <label>Success Step 01</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Check_Step_02</name>
-        <label>Check Step 02</label>
-        <locationX>657</locationX>
-        <locationY>756</locationY>
+        <name>Check_Step_02_Transfer</name>
+        <label>Check Step 02 (Transfer)</label>
+        <locationX>649</locationX>
+        <locationY>615</locationY>
         <defaultConnector>
             <targetReference>Fails_Update_to_Previous_Status</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Fail Meeting Criteria 02</defaultConnectorLabel>
         <rules>
             <name>Not_Applicable_step_02</name>
-            <conditionLogic>1 AND (2 Or 3 Or 4 Or 5)</conditionLogic>
+            <conditionLogic>1 AND ((2 And 3 And 4) And 5)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -167,40 +167,40 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Awaiting Forms</stringValue>
+                    <stringValue>Follow up Required to Close</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Follow up required for CC Review/Checks</stringValue>
+                    <stringValue>Closed</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Ready for CC Review/Checks</stringValue>
+                    <stringValue>Ready for Manager Review</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>CC Review/Checks in Progress</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Check_Step_03</targetReference>
+                <targetReference>Check_Step_03_Not_Forseeable</targetReference>
             </connector>
             <label>Not Applicable Step 02</label>
         </rules>
         <rules>
             <name>Success_Step_02</name>
-            <conditionLogic>(1 and 3) AND 2 AND 4 AND 5</conditionLogic>
+            <conditionLogic>(1 and 3) AND 2 And ((6 And 4 And 5 And 11) Or (8 And (9 Or 10 Or 12)) Or (7 And (1 And 3)))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -223,28 +223,77 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Error_Logs</leftValueReference>
+                <leftValueReference>Error_Log_List</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Tasks</leftValueReference>
+                <leftValueReference>Task_List</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FAIL</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Check_Step_03</targetReference>
+                <targetReference>Check_Step_03_Not_Forseeable</targetReference>
             </connector>
             <label>Success Step 02</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Check_Step_03</name>
-        <label>Check Step 03</label>
+        <name>Check_Step_03_Not_Forseeable</name>
+        <label>Check Step 03 (Not Forseeable)</label>
         <locationX>637</locationX>
         <locationY>345</locationY>
         <defaultConnector>
@@ -252,7 +301,7 @@
         </defaultConnector>
         <defaultConnectorLabel>Fail Meeting Criteria 03</defaultConnectorLabel>
         <rules>
-            <name>Not_Applicable_Step_3</name>
+            <name>Not_Applicable_Step_03</name>
             <conditionLogic>1 Or 2 Or 3 Or 4</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
@@ -283,13 +332,13 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Update_field_when_Not_applicable</targetReference>
+                <targetReference>Check_Step_04_Death_Prior</targetReference>
             </connector>
             <label>Not Applicable Step 03</label>
         </rules>
         <rules>
             <name>Success_Step_03</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 Or ((2 AND 3) And (4 Or 5))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -297,10 +346,298 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_04_Death_Prior</targetReference>
+            </connector>
+            <label>Success Step 03</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Step_04_Death_Prior</name>
+        <label>Check Step 04 (Death Prior)</label>
+        <locationX>887</locationX>
+        <locationY>528</locationY>
+        <defaultConnector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Fails Meeting Criteria 04</defaultConnectorLabel>
+        <rules>
+            <name>Not_Applicable_Step_04</name>
+            <conditionLogic>1 AND 2</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_05_Ineligible</targetReference>
+            </connector>
+            <label>Not Applicable Step 04</label>
+        </rules>
+        <rules>
+            <name>Success_Step_04</name>
+            <conditionLogic>1 AND ((3 AND 4 AND 5 AND 6 And 7 And 8) Or 2)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_05_Ineligible</targetReference>
+            </connector>
+            <label>Success Step 04</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Step_05_Ineligible</name>
+        <label>Check Step 05 (Ineligible)</label>
+        <locationX>993</locationX>
+        <locationY>874</locationY>
+        <defaultConnector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Fail Meeting Criteria 05</defaultConnectorLabel>
+        <rules>
+            <name>Not_Applicable_Step_05</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_06_Withdrawn</targetReference>
+            </connector>
+            <label>Not Applicable Step 05</label>
+        </rules>
+        <rules>
+            <name>Success_Step_05</name>
+            <conditionLogic>1 Or (2 AND 3 AND 4 AND 5 AND 6 AND 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_06_Withdrawn</targetReference>
+            </connector>
+            <label>Success Step 05</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Step_06_Withdrawn</name>
+        <label>Check Step 06 (Withdrawn)</label>
+        <locationX>1280</locationX>
+        <locationY>732</locationY>
+        <defaultConnector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Fail Meeting Criteria 06</defaultConnectorLabel>
+        <rules>
+            <name>Not_Applicable_Step_06</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_field_when_Not_applicable</targetReference>
+            </connector>
+            <label>Not Applicable Step 06</label>
+        </rules>
+        <rules>
+            <name>Success_Step_06</name>
+            <conditionLogic>1 Or (2 AND 3 AND 4 AND 5 AND 6 AND 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Success_Update_Status_Message</targetReference>
             </connector>
-            <label>Success Step 03</label>
+            <label>Success Step 06</label>
         </rules>
     </decisions>
     <interviewLabel>Status Change-CC Review Checks In Progress {!$Flow.CurrentDateTime}</interviewLabel>
@@ -329,7 +666,7 @@
         <label>Get Error Logs</label>
         <locationX>116</locationX>
         <locationY>263</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Tasks</targetReference>
         </connector>
@@ -362,18 +699,18 @@
                 <stringValue>Logged for Tracking</stringValue>
             </value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Case</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputReference>Error_Log_List</outputReference>
+        <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Tasks</name>
         <label>Get Tasks</label>
         <locationX>288</locationX>
         <locationY>266</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_Step_01</targetReference>
+            <targetReference>Check_Step_01_Forseeable</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -390,15 +727,15 @@
                 <stringValue>Completed</stringValue>
             </value>
         </filters>
-        <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Task</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
+        <outputReference>Task_List</outputReference>
+        <queriedFields>Id</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Fails_Update_to_Previous_Status</name>
         <label>Fails Update to Previous Status</label>
-        <locationX>182</locationX>
-        <locationY>698</locationY>
+        <locationX>209</locationX>
+        <locationY>820</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
@@ -416,8 +753,8 @@
     <recordUpdates>
         <name>Success_Update_Status_Message</name>
         <label>Success Update Status Message</label>
-        <locationX>930</locationX>
-        <locationY>654</locationY>
+        <locationX>1395</locationX>
+        <locationY>529</locationY>
         <inputAssignments>
             <field>Status_Feedback_Msg__c</field>
             <value>
@@ -429,12 +766,12 @@
     <recordUpdates>
         <name>Update_field_when_Not_applicable</name>
         <label>Update field when Not applicable</label>
-        <locationX>646</locationX>
-        <locationY>80</locationY>
+        <locationX>1051</locationX>
+        <locationY>383</locationY>
         <inputAssignments>
             <field>Status_Feedback_Msg__c</field>
             <value>
-                <stringValue/>
+                <stringValue></stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -450,6 +787,14 @@
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>Error_Log_List</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
     <variables>
         <name>is_ErrorLog_Ready</name>
         <dataType>Boolean</dataType>
@@ -469,5 +814,13 @@
         <value>
             <booleanValue>true</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <name>Task_List</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
     </variables>
 </Flow>
