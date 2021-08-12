@@ -2806,12 +2806,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1641__c.Supplementary_Information__c</field>
+        <field>Form_1641__c.Where_was_the_substance_dispensed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1641__c.Where_was_the_substance_dispensed__c</field>
+        <field>Form_1641__c.Supplementary_Information__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
