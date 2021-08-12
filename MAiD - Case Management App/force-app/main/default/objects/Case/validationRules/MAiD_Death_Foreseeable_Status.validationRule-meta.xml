@@ -3,6 +3,6 @@
     <fullName>MAiD_Death_Foreseeable_Status</fullName>
     <active>true</active>
     <description>MAiD Death Foreseeable Status</description>
-    <errorConditionFormula>AND(ISPICKVAL(Type,&quot;MAiD Death Foreseeable&quot;), NOT(ISPICKVAL(Status,&quot;Awaiting Forms&quot;)), NOT(ISPICKVAL(Status,&quot;Follow up required for CC Review/Checks&quot;)),NOT(ISPICKVAL(X1632__c,&quot;Yes&quot;)), NOT(ISPICKVAL(X1633__c,&quot;Yes&quot;)), NOT(ISPICKVAL(X1634__c,&quot;Yes&quot;)),  NOT(ISPICKVAL(RX_MAR__c,&quot;Yes&quot;)))</errorConditionFormula>
+    <errorConditionFormula>AND(ISPICKVAL(Type,&quot;MAiD Death Foreseeable&quot;), NOT(ISPICKVAL(Status,&quot;Awaiting Forms&quot;)), NOT(ISPICKVAL(Status,&quot;Follow up required for CC Review/Checks&quot;)),OR(NOT(ISPICKVAL(X1632__c,&quot;Yes&quot;)), NOT(ISPICKVAL(X1633__c,&quot;Yes&quot;)), NOT(ISPICKVAL(X1634__c,&quot;Yes&quot;)),  NOT(ISPICKVAL(RX_MAR__c,&quot;Yes&quot;))))</errorConditionFormula>
     <errorMessage>Not all forms have been received (Form 1632, Form 1633, Form 1634, RX/MAR), status can only be set to Awaiting Forms or Follow up required for CC Review/Checks</errorMessage>
 </ValidationRule>
