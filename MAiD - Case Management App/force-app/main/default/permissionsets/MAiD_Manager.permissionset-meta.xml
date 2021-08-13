@@ -10,16 +10,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.SPC_Q05_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.SPC_S10_Text__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Specialty_Other__pc</field>
         <readable>true</readable>
@@ -361,11 +351,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.SPC_Q05_PCFormula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Case.Status_Feedback_Msg__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -447,11 +432,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Contact.College_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Contact.SPC_Q05_Number__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2091,11 +2071,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Supplementary_Information__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.The_patient_was_at_risk_of_losing_capaci__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2835,7 +2810,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Form_1645__c.Final_waiver_of_consent_date_signed__c</field>
         <readable>true</readable>
     </fieldPermissions>
