@@ -113,7 +113,7 @@
         <name>TasksFailureMessage</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>There are open task on this case.</stringValue>
+            <stringValue>There are open task on this case or mandatory case conditions not satisfying.</stringValue>
         </value>
     </constants>
     <constants>
@@ -884,6 +884,28 @@
             </connector>
             <label>Case Type 6</label>
         </rules>
+        <rules>
+            <name>Check_Revert_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Revert_Status</targetReference>
+            </connector>
+            <label>Check Revert</label>
+        </rules>
     </decisions>
     <decisions>
         <name>Empty_child_check_Case</name>
@@ -1616,7 +1638,7 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>update to status MRR feedback message</description>
+    <description>update to Task Status Feedback Message</description>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
