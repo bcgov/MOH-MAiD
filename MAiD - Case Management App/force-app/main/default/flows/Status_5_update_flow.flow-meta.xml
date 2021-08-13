@@ -5,7 +5,7 @@
         <name>Case_Requirements_failure</name>
         <label>Case Requirements failure</label>
         <locationX>1196</locationX>
-        <locationY>1035</locationY>
+        <locationY>1180</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
             <operator>Assign</operator>
@@ -18,10 +18,26 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Insufficient_Privileges</name>
+        <label>Insufficient Privileges</label>
+        <locationX>677</locationX>
+        <locationY>1028</locationY>
+        <assignmentItems>
+            <assignToReference>TaskMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>PrivilegeIssue</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Fail_Status_Update</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Manager_Review_Needed_for_Empty_Case_Childs</name>
         <label>Manager Review Needed for Empty Case Childs</label>
         <locationX>1257</locationX>
-        <locationY>745</locationY>
+        <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
             <operator>Assign</operator>
@@ -37,7 +53,7 @@
         <name>Related_Case_Check_Failure</name>
         <label>Related Case Check Failure</label>
         <locationX>1102</locationX>
-        <locationY>454</locationY>
+        <locationY>599</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
             <operator>Assign</operator>
@@ -53,7 +69,7 @@
         <name>Tasks_Check_Fail</name>
         <label>Tasks Check Fail</label>
         <locationX>1090</locationX>
-        <locationY>182</locationY>
+        <locationY>327</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
             <operator>Assign</operator>
@@ -87,6 +103,13 @@
         </value>
     </constants>
     <constants>
+        <name>PrivilegeIssue</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>There are unreconciled issues for Manager Review</stringValue>
+        </value>
+    </constants>
+    <constants>
         <name>TasksFailureMessage</name>
         <dataType>String</dataType>
         <value>
@@ -101,10 +124,32 @@
         </value>
     </constants>
     <decisions>
+        <name>check_case_status</name>
+        <label>check case status</label>
+        <locationX>456</locationX>
+        <locationY>50</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>case_status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_for_Null_Tasks</targetReference>
+            </connector>
+            <label>case status</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_for_Null_Related_Case_Records</name>
         <label>Check for Null Related Case Records</label>
         <locationX>574</locationX>
-        <locationY>705</locationY>
+        <locationY>850</locationY>
         <defaultConnector>
             <targetReference>ToBeCaseStatus_MRR_Check</targetReference>
         </defaultConnector>
@@ -129,7 +174,7 @@
         <name>Check_for_Null_Tasks</name>
         <label>Check for Null Tasks</label>
         <locationX>564</locationX>
-        <locationY>228</locationY>
+        <locationY>373</locationY>
         <defaultConnector>
             <targetReference>GetTaskRecords</targetReference>
         </defaultConnector>
@@ -153,8 +198,8 @@
     <decisions>
         <name>Check_requirements_for_Related_Cases</name>
         <label>Check requirements for Related Cases</label>
-        <locationX>873</locationX>
-        <locationY>452</locationY>
+        <locationX>919</locationX>
+        <locationY>492</locationY>
         <defaultConnector>
             <targetReference>Related_Case_Check_Failure</targetReference>
         </defaultConnector>
@@ -541,7 +586,7 @@
         <name>Check_requirements_for_Tasks</name>
         <label>Check requirements for Tasks</label>
         <locationX>912</locationX>
-        <locationY>181</locationY>
+        <locationY>326</locationY>
         <defaultConnector>
             <targetReference>Tasks_Check_Fail</targetReference>
         </defaultConnector>
@@ -844,14 +889,14 @@
         <name>Empty_child_check_Case</name>
         <label>Empty child check Case</label>
         <locationX>945</locationX>
-        <locationY>699</locationY>
+        <locationY>844</locationY>
         <defaultConnector>
             <targetReference>Manager_Review_Needed_for_Empty_Case_Childs</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Case Status Update Fail</defaultConnectorLabel>
         <rules>
             <name>Is_Case_eligible_move_ahead</name>
-            <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10 AND 11 AND 12) or (6 AND 7 AND 9 AND 10)</conditionLogic>
+            <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10 AND 13) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13) or (6 AND 7 AND 9 AND 10 AND 13)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -934,6 +979,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1044,12 +1096,88 @@
             </connector>
             <label>MRR-Is Case eligible move ahead</label>
         </rules>
+        <rules>
+            <name>check_for_revert_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Revert_Status</targetReference>
+            </connector>
+            <label>check for revert</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Insufficient_Privilege_s</name>
+        <label>Insufficient Privilege&apos;s</label>
+        <locationX>663</locationX>
+        <locationY>696</locationY>
+        <defaultConnector>
+            <targetReference>Insufficient_Privileges</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Privileges_issue</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Related_Case_Records</targetReference>
+            </connector>
+            <label>Privileges issue</label>
+        </rules>
+        <rules>
+            <name>check_revert</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Revert_Status</targetReference>
+            </connector>
+            <label>check revert</label>
+        </rules>
     </decisions>
     <decisions>
         <name>MRR_Requirements_for_Related_Case</name>
         <label>MRR Requirements for Related Case</label>
         <locationX>942</locationX>
-        <locationY>1039</locationY>
+        <locationY>1184</locationY>
         <defaultConnector>
             <targetReference>Case_Requirements_failure</targetReference>
         </defaultConnector>
@@ -1459,10 +1587,10 @@
     <decisions>
         <name>ToBeCaseStatus_MRR_Check</name>
         <label>ToBeCaseStatus MRR Check</label>
-        <locationX>796</locationX>
-        <locationY>601</locationY>
+        <locationX>862</locationX>
+        <locationY>753</locationY>
         <defaultConnector>
-            <targetReference>Get_Related_Case_Records</targetReference>
+            <targetReference>Insufficient_Privilege_s</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>ClosedStatus</defaultConnectorLabel>
         <rules>
@@ -1488,14 +1616,14 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Implemented complete flow for Status 5 update</description>
+    <description>update to status revert</description>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
         <name>Get_Related_Case_Records</name>
         <label>Get Related Case Records</label>
-        <locationX>682</locationX>
-        <locationY>482</locationY>
+        <locationX>782</locationX>
+        <locationY>576</locationY>
         <collectionReference>GetRelatedCaseRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1509,7 +1637,7 @@
         <name>Get_Related_Case_Records_MRR</name>
         <label>Get Related Case Records MRR</label>
         <locationX>798</locationX>
-        <locationY>902</locationY>
+        <locationY>1047</locationY>
         <collectionReference>GetRelatedCaseRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1523,7 +1651,7 @@
         <name>GetTaskRecords</name>
         <label>GetTaskRecords</label>
         <locationX>704</locationX>
-        <locationY>91</locationY>
+        <locationY>236</locationY>
         <collectionReference>TasksRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1556,10 +1684,10 @@
         <name>Get_Related_Case</name>
         <label>Get Related Case</label>
         <locationX>472</locationX>
-        <locationY>319</locationY>
+        <locationY>464</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_for_Null_Tasks</targetReference>
+            <targetReference>check_case_status</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1579,7 +1707,7 @@
         <name>Get_Task</name>
         <label>Get Task</label>
         <locationX>337</locationX>
-        <locationY>319</locationY>
+        <locationY>464</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Related_Case</targetReference>
@@ -1600,7 +1728,7 @@
         <name>GetCaseDetail</name>
         <label>GetCaseDetail</label>
         <locationX>175</locationX>
-        <locationY>321</locationY>
+        <locationY>466</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Task</targetReference>
@@ -1629,7 +1757,7 @@
         <name>Fail_Status_Update</name>
         <label>Fail Status Update</label>
         <locationX>1451</locationX>
-        <locationY>225</locationY>
+        <locationY>370</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
@@ -1648,7 +1776,7 @@
         <name>Pass_Case_Status</name>
         <label>Pass Case Status</label>
         <locationX>1371</locationX>
-        <locationY>613</locationY>
+        <locationY>758</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
@@ -1663,9 +1791,28 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Revert_Status</name>
+        <label>Revert Status</label>
+        <locationX>1161</locationX>
+        <locationY>469</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <stringValue/>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
         <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationY>195</locationY>
         <connector>
             <targetReference>GetCaseDetail</targetReference>
         </connector>
