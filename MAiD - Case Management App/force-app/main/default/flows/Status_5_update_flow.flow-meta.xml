@@ -99,7 +99,7 @@
         <name>ManagerClosure</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>This case requires a manager to close</stringValue>
+            <stringValue>Enter details for Manager Review</stringValue>
         </value>
     </constants>
     <constants>
@@ -1616,7 +1616,7 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>update to status revert</description>
+    <description>update to status MRR feedback message</description>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
