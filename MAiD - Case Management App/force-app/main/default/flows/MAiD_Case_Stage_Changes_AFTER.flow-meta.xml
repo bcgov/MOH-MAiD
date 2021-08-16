@@ -46,13 +46,6 @@
                     <stringValue>Yes</stringValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.X1641__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Yes</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>Complete_All_Milestones</targetReference>
             </connector>
