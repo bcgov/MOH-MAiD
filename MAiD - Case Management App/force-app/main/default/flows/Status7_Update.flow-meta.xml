@@ -82,6 +82,28 @@
         </connector>
     </assignments>
     <decisions>
+        <name>Case_Status_Not_Applicable</name>
+        <label>Case Status Not Applicable</label>
+        <locationX>434</locationX>
+        <locationY>141</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Case_Status_Applicable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_requirements</targetReference>
+            </connector>
+            <label>Case Status Applicable</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_requirements</name>
         <label>Check requirements</label>
         <locationX>581</locationX>
@@ -199,7 +221,7 @@
         <locationY>349</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_requirements</targetReference>
+            <targetReference>Case_Status_Not_Applicable</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
