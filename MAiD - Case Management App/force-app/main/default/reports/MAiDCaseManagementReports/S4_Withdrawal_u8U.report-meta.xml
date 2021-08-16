@@ -333,6 +333,9 @@
         <field>Form_1634__c.WOR_Q05D_Formula__c</field>
     </columns>
     <columns>
+        <field>Form_1634__c.WOR_S05D_NA__c</field>
+    </columns>
+    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c.WOR_Q05E__c</field>
     </columns>
