@@ -2180,11 +2180,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.WOR_S05D_NA__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Was_a_1635_form_completed__c</field>
         <readable>true</readable>
