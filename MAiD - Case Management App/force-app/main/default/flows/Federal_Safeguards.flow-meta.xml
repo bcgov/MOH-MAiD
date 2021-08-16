@@ -498,12 +498,57 @@
     <decisions>
         <name>CheckCondition</name>
         <label>CheckCondition</label>
-        <locationX>2154</locationX>
-        <locationY>321</locationY>
+        <locationX>2090</locationX>
+        <locationY>283</locationY>
         <defaultConnector>
             <targetReference>Rule15ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Rule_15_Fail</name>
+            <conditionLogic>(6 OR 7) AND ((1 AND 2) OR (3 AND 4 AND 5))</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1632_ProxySignDate</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_RequestSigDate</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_ProxySignDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_RequestSigDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_ProxySignDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1632_RequestSigDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule15ErrorMsg</targetReference>
+            </connector>
+            <label>Rule 15 Fail</label>
+        </rules>
         <rules>
             <name>Rule_15_yes</name>
             <conditionLogic>((1 OR 2) AND (3 OR 4)) OR (5 AND 6)</conditionLogic>
@@ -558,10 +603,10 @@
     <decisions>
         <name>Checkfor_None</name>
         <label>Checkfor-None</label>
-        <locationX>2204</locationX>
-        <locationY>62</locationY>
+        <locationX>2200</locationX>
+        <locationY>63</locationY>
         <defaultConnector>
-            <targetReference>CheckCondition</targetReference>
+            <targetReference>CheckForCaseType</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -816,6 +861,13 @@
                 <leftValueReference>Var1634_Ensuredtherewereatleast_90_days</leftValueReference>
                 <operator>EqualTo</operator>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patients_request_was_signed_dated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>UpdateFedralNull</targetReference>
             </connector>
@@ -823,17 +875,49 @@
         </rules>
     </decisions>
     <decisions>
+        <name>CheckForCaseType</name>
+        <label>CheckForCaseType</label>
+        <locationX>2273</locationX>
+        <locationY>254</locationY>
+        <defaultConnector>
+            <targetReference>UpdateFedralNull</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckCaseType_1</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer of Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Assessment of Eligibility</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckCondition</targetReference>
+            </connector>
+            <label>CheckCaseType</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>CheckRule10</name>
         <label>CheckRule10</label>
-        <locationX>1020</locationX>
-        <locationY>639</locationY>
+        <locationX>1065</locationX>
+        <locationY>638</locationY>
         <defaultConnector>
             <targetReference>Rule10ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule10_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND (11 OR 12)) OR (13 AND 14)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 15 AND 16 AND (11 OR 12)) OR (13 AND 14)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientconsentedtoassessment</leftValueReference>
                 <operator>EqualTo</operator>
@@ -856,7 +940,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1632_RequestSigDate</leftValueReference>
+                <leftValueReference>Var1634_ReqSignDate</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
@@ -927,6 +1011,17 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_ReqSignDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patients_request_was_signed_dated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -1062,10 +1157,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_IfYeswasPrescriberpresent</leftValueReference>
+                <leftValueReference>Var1634_IfYeswasPrescripresent</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Varbool</elementReference>
+                    <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1082,7 +1177,7 @@
         </rules>
         <rules>
             <name>Rule_14</name>
-            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12</conditionLogic>
+            <conditionLogic>(1 OR 2) AND (3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13)</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1099,30 +1194,30 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_HowwasMaidAdmin</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>Contains</operator>
                 <rightValue>
                     <stringValue>3 - Oral and IV</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Wasthesubstanceselfadministered</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>Contains</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_IfYeswasPrescriberpresent</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>Var1634_IfYeswasPrescripresent</leftValueReference>
+                <operator>Contains</operator>
                 <rightValue>
-                    <elementReference>Varbool</elementReference>
+                    <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Didthepatientdieafterselfadmin</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>Contains</operator>
                 <rightValue>
-                    <stringValue>2 - No	</stringValue>
+                    <stringValue>2 - No</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1163,6 +1258,10 @@
                 <rightValue>
                     <elementReference>Var1634_MAiDAdministrationDate</elementReference>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Advanceconsentsignaturedatebypatien</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_12_skip</targetReference>
@@ -1277,7 +1376,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule16_yes</name>
-            <conditionLogic>(1 AND (2 OR 3) AND (4 OR 5)) OR ( 6 AND 7)</conditionLogic>
+            <conditionLogic>(1 AND 8 AND (2 OR 3) AND (4 OR 5)) OR ( 6 AND 7)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1632_witnessinitialSafegurad</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1327,6 +1426,10 @@
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1632_WitnessSignDate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>Check17_MAiD_Death_Forseeable_or_Nor</targetReference>
             </connector>
@@ -1349,7 +1452,7 @@
                 <leftValueReference>Var1633_AllEligibilitycriteria</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>Varbool</elementReference>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1479,6 +1582,10 @@
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Finalwaiverofconsentdatesigned</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>CheckRule37</targetReference>
             </connector>
@@ -1496,7 +1603,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule37_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5) OR 6</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5) OR 6 OR 7</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Ideterminethatthepatient</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1534,6 +1641,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ideterminethatthepatient</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1580,7 +1694,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>CheckRule38_3</targetReference>
+                <targetReference>CheckRule38_2</targetReference>
             </connector>
             <label>CheckRule38-1=Yes</label>
         </rules>
@@ -1588,18 +1702,18 @@
     <decisions>
         <name>CheckRule38_2</name>
         <label>CheckRule38-2</label>
-        <locationX>162</locationX>
-        <locationY>1891</locationY>
+        <locationX>170</locationX>
+        <locationY>1777</locationY>
         <defaultConnector>
             <targetReference>Rule38ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule38_2_Yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
+            <conditionLogic>(((1 AND 2 AND 7) OR (5 AND 6)) AND 3) OR 4</conditionLogic>
             <conditions>
                 <leftValueReference>VarNumberofDays</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
+                <operator>GreaterThan</operator>
                 <rightValue>
                     <numberValue>91.0</numberValue>
                 </rightValue>
@@ -1625,24 +1739,6 @@
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
-            <connector>
-                <targetReference>CheckRule39</targetReference>
-            </connector>
-            <label>CheckRule38-2=Yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>CheckRule38_3</name>
-        <label>CheckRule38-3</label>
-        <locationX>206</locationX>
-        <locationY>1723</locationY>
-        <defaultConnector>
-            <targetReference>Rule38ErrorMsg</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>CheckRule38_3_Yes</name>
-            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_The_patientwasatriskoflosingcapacity</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1658,30 +1754,20 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>MAiD Death Not Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <leftValueReference>Var1634_MAiDAdministrationDate</leftValueReference>
                 <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>MAiD Death Not Foreseeable</stringValue>
-                </rightValue>
             </conditions>
             <connector>
-                <targetReference>CheckRule38_2</targetReference>
+                <targetReference>CheckRule39</targetReference>
             </connector>
-            <label>CheckRule38-3=Yes</label>
+            <label>CheckRule38-2=Yes</label>
         </rules>
     </decisions>
     <decisions>
         <name>CheckRule39</name>
         <label>CheckRule39</label>
-        <locationX>543</locationX>
-        <locationY>2033</locationY>
+        <locationX>533</locationX>
+        <locationY>1905</locationY>
         <defaultConnector>
             <targetReference>Rule39ErrorMsg</targetReference>
         </defaultConnector>
@@ -1734,7 +1820,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule41_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND ( 9 OR 10 OR 11)) OR ( 12 AND 13 AND  14)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 15 AND ( 9 OR 10 OR 11)) OR ( 12 AND 13 AND  14)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientconsentedtoassessment</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1830,6 +1916,13 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patients_request_was_signed_dated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>UpdateFedralPASS</targetReference>
             </connector>
@@ -1861,7 +1954,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>1.6- Final</description>
+    <description>1.14- Fixe Rule 14 Provincial Safeguards</description>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
@@ -1909,7 +2002,7 @@
         <object>Form_1632__c</object>
         <outputAssignments>
             <assignToReference>Var1632_ProxySignDate</assignToReference>
-            <field>Proxy_Signature_Date__c</field>
+            <field>Proxy_Signed_Date_for_Request__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1632_RequestSigDate</assignToReference>
@@ -1955,7 +2048,7 @@
         <name>Get1634</name>
         <label>Get1634</label>
         <locationX>1380</locationX>
-        <locationY>319</locationY>
+        <locationY>318</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1633</targetReference>
@@ -1991,7 +2084,7 @@
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Didthepatientdieafterselfadmin</assignToReference>
-            <field>Did_the_patient_die_after_self_admin__c</field>
+            <field>Did_the_patient_die_after_self_administ__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_EnsuredMAiDadministeredasspecified</assignToReference>
@@ -2022,12 +2115,12 @@
             <field>If_Yes_patient_consented__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>Var1634_IfYeswasPrescripresent</assignToReference>
-            <field>If_Yes_was_Prescriber_present__c</field>
-        </outputAssignments>
-        <outputAssignments>
             <assignToReference>Var1634_ReqSignDate</assignToReference>
             <field>If_yes_signed_request_date__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_IfYeswasPrescripresent</assignToReference>
+            <field>If_yes_was_the_Prescriber_present__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_MAiDAdministrationDate</assignToReference>
@@ -2043,7 +2136,7 @@
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientconsentedtoassessment</assignToReference>
-            <field>Patient_consensented_to_assessment__c</field>
+            <field>Patient_consented_to_assessment__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patienthasbeeninformedofriskoflos</assignToReference>
@@ -2072,6 +2165,10 @@
         <outputAssignments>
             <assignToReference>Var1634_PatientrequestMAiDinwritingsigned</assignToReference>
             <field>Patients_request_for_MAiD_was_in_writin__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Patients_request_was_signed_dated</assignToReference>
+            <field>Patients_request_was_signed_dated_and__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Potentialriskandexpected</assignToReference>
@@ -2511,6 +2608,13 @@
     </variables>
     <variables>
         <name>Var1634_PatientrequestMAiDinwritingsigned</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Patients_request_was_signed_dated</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>

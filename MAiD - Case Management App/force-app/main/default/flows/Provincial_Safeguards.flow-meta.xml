@@ -1018,8 +1018,87 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
+            <name>Check_Rule29_Pass</name>
+            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7) AND (8 OR 9)) OR (10 AND 11)</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_ProxySignedforMAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_MAiDAdministrationDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_MAiDAdministrationDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_DateSignedbyProxyforMAID</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Proxy_Signed_for_MAiD</targetReference>
+            </connector>
+            <label>Check Rule29 = Pass</label>
+        </rules>
+        <rules>
             <name>CheckRule29_yes</name>
-            <conditionLogic>(((1 AND 3 AND 10) OR (2 AND 4 AND 11) OR 9) AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
+            <conditionLogic>(((1 AND 3 AND 10) OR (2 AND 4 AND 11) OR 9) AND 12 AND 13 AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1087,6 +1166,20 @@
             <conditions>
                 <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_ProxySignedforMAiD</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_PatientDateforMAiDAdministration</elementReference>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Check_Proxy_Signed_for_MAiD</targetReference>
@@ -1249,8 +1342,8 @@
             <name>CheckRule34_1_Yes</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>Var1641_IfOtherspecify</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>Var1641_Wherewasthesubstancedispensed</leftValueReference>
+                <operator>Contains</operator>
                 <rightValue>
                     <stringValue>3 - Other</stringValue>
                 </rightValue>
@@ -1803,7 +1896,7 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_Compound_Suspension_Quantity</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>UpdateProvincialPASS</targetReference>
@@ -2419,7 +2512,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>1.8 Final - Adding extra Mandatory fields 34-2</description>
+    <description>1.11 Final - Fixed Rule 29 Provincial Safeguards</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>

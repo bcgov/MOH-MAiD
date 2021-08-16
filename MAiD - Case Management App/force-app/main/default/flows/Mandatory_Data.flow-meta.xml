@@ -18,6 +18,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Add_Extracted_Value_to_List_Rule_24</name>
+        <label>Add Extracted Value to List Rule 24</label>
+        <locationX>2116</locationX>
+        <locationY>302</locationY>
+        <assignmentItems>
+            <assignToReference>extractedPicklist_Rule24</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>formulaOnePicklistValueRule24</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Extracted_Picklist_Values_Rule_24</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>AssignNewFailListDetails</name>
         <label>AssignNewFailListDetails</label>
         <locationX>1129</locationX>
@@ -82,6 +98,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Extracted_Picklist_Values_Rule_24</name>
+        <label>Extracted Picklist Values Rule 24</label>
+        <locationX>2026</locationX>
+        <locationY>186</locationY>
+        <assignmentItems>
+            <assignToReference>FormattedPicklistValues_Rule24</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>removeOnePicklistValue_Rule24</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>All_Values_Parsed_Rule_24</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>FormatPicklistValues</name>
         <label>FormatPicklistValues</label>
         <locationX>2905</locationX>
@@ -98,12 +130,28 @@
         </connector>
     </assignments>
     <assignments>
+        <name>FormatPicklistValues_Rule24</name>
+        <label>FormatPicklistValues_Rule24</label>
+        <locationX>1683</locationX>
+        <locationY>354</locationY>
+        <assignmentItems>
+            <assignToReference>FormattedPicklistValues_Rule24</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>FormatedAddSemicolon_Rule24</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>All_Values_Parsed_Rule_24</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_20_Message_Assignment</name>
         <label>Rule 20 Message Assignment</label>
         <locationX>1160</locationX>
         <locationY>491</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule20Message</elementReference>
@@ -119,7 +167,7 @@
         <locationX>1384</locationX>
         <locationY>493</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule21Message</elementReference>
@@ -135,7 +183,7 @@
         <locationX>1501</locationX>
         <locationY>500</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule24Message</elementReference>
@@ -151,7 +199,7 @@
         <locationX>1447</locationX>
         <locationY>656</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule25Message</elementReference>
@@ -167,7 +215,7 @@
         <locationX>1732</locationX>
         <locationY>742</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule26Message</elementReference>
@@ -183,7 +231,7 @@
         <locationX>1579</locationX>
         <locationY>862</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule32Message</elementReference>
@@ -199,7 +247,7 @@
         <locationX>2008</locationX>
         <locationY>1016</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule33Message</elementReference>
@@ -215,7 +263,7 @@
         <locationX>1266</locationX>
         <locationY>493</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule42Message</elementReference>
@@ -231,7 +279,7 @@
         <locationX>2249</locationX>
         <locationY>827</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule44Message</elementReference>
@@ -247,7 +295,7 @@
         <locationX>2356</locationX>
         <locationY>918</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule45Message</elementReference>
@@ -263,7 +311,7 @@
         <locationX>2435</locationX>
         <locationY>1116</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule48Message</elementReference>
@@ -279,7 +327,7 @@
         <locationX>2880</locationX>
         <locationY>654</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule50Message</elementReference>
@@ -295,7 +343,7 @@
         <locationX>1089</locationX>
         <locationY>861</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule51Message</elementReference>
@@ -311,7 +359,7 @@
         <locationX>799</locationX>
         <locationY>950</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule52Message</elementReference>
@@ -327,7 +375,7 @@
         <locationX>635</locationX>
         <locationY>955</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule53Message</elementReference>
@@ -343,7 +391,7 @@
         <locationX>474</locationX>
         <locationY>953</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule54_Message</elementReference>
@@ -359,10 +407,26 @@
         <locationX>273</locationX>
         <locationY>952</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule55_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_56_Message_Assignment</name>
+        <label>Rule 56 Message Assignment</label>
+        <locationX>2436</locationX>
+        <locationY>595</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule56Message</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -379,13 +443,6 @@
             <operator>Assign</operator>
             <value>
                 <stringValue>FAIL</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>$Flow.CurrentStage</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -561,6 +618,13 @@
             <stringValue>Rule 55 Validation Failed</stringValue>
         </value>
     </constants>
+    <constants>
+        <name>Rule56Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 56 Validation Failed</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>All_Values_Parsed</name>
         <label>All Values Parsed</label>
@@ -584,6 +648,31 @@
                 <targetReference>AddLoop</targetReference>
             </connector>
             <label>Yes</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>All_Values_Parsed_Rule_24</name>
+        <label>All Values Parsed Rule 24</label>
+        <locationX>1822</locationX>
+        <locationY>262</locationY>
+        <defaultConnector>
+            <targetReference>Add_Extracted_Value_to_List_Rule_24</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Rule 24</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Rule_24</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>FormattedPicklistValues_Rule24</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AddLoop_Rule_24</targetReference>
+            </connector>
+            <label>Yes Rule 24</label>
         </rules>
     </decisions>
     <decisions>
@@ -710,7 +799,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateMandatoryPass</targetReference>
+                <targetReference>Rule_56</targetReference>
             </connector>
             <label>Case Type Mis-Match</label>
         </rules>
@@ -749,7 +838,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateMandatoryPass</targetReference>
+                <targetReference>Rule_56</targetReference>
             </connector>
             <label>No Others option</label>
         </rules>
@@ -757,15 +846,15 @@
     <decisions>
         <name>Rule24</name>
         <label>Rule 24</label>
-        <locationX>1775</locationX>
-        <locationY>499</locationY>
+        <locationX>1730</locationX>
+        <locationY>510</locationY>
         <defaultConnector>
             <targetReference>Rule_24_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 24 Fail</defaultConnectorLabel>
         <rules>
-            <name>Rule_24_Pass</name>
-            <conditionLogic>(1 AND 2) OR (3 AND 4) OR 5</conditionLogic>
+            <name>Rule_24_Failing_Criteria</name>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_ConsultedOtherHealthcareProfessionals</leftValueReference>
                 <operator>EqualTo</operator>
@@ -774,11 +863,34 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_If_yes_for_how_long_1</leftValueReference>
-                <operator>IsNull</operator>
+                <leftValueReference>Var1634_Profession_if_yes_select_all_that_apply</leftValueReference>
+                <operator>Contains</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>I - Other</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Others_specify_CP</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_24_Message_Assignment</targetReference>
+            </connector>
+            <label>Rule 24 Failing Criteria</label>
+        </rules>
+        <rules>
+            <name>Rule_24_Pass</name>
+            <conditionLogic>(1 AND 2) OR (3 AND 5 AND 6) OR 4</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_ConsultedOtherHealthcareProfessionals</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Profession_if_yes_select_all_that_apply</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_ConsultedOtherHealthcareProfessionals</leftValueReference>
@@ -788,23 +900,40 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_If_no_was_palliative_care_accessible</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>Var1634_ConsultedOtherHealthcareProfessionals</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Profession_if_yes_select_all_that_apply</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Others_specify_CP</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>Rule_25</targetReference>
             </connector>
             <label>Rule 24 Pass</label>
+        </rules>
+        <rules>
+            <name>Rule_24_Return_to_Loop</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>AddLoop_Rule_24</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Profession_if_yes_select_all_that_apply</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>AddLoop_Rule_24</targetReference>
+            </connector>
+            <label>Rule 24 Return to Loop</label>
         </rules>
     </decisions>
     <decisions>
@@ -968,7 +1097,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule24</targetReference>
+                <targetReference>FormatPicklistValues_Rule24</targetReference>
             </connector>
             <label>Rule 21 Pass</label>
         </rules>
@@ -1041,26 +1170,33 @@
         <defaultConnectorLabel>Rule 26 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_26_Pass</name>
-            <conditionLogic>(1 AND 2) OR (3 AND 4) OR 5</conditionLogic>
+            <conditionLogic>(1 AND 3 AND 4 AND 9) OR (1 AND 2 AND 5 AND 8) OR (1 AND 10 AND 8 AND 9) OR (6 AND 7 AND 8 AND 9)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>Contains</operator>
                 <rightValue>
-                    <stringValue>1 - Yes</stringValue>
+                    <stringValue>Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_yes_did_patient_received_disability</leftValueReference>
-                <operator>IsNull</operator>
+                <operator>Contains</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>No</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>Var1634_If_yes_did_patient_received_disability</leftValueReference>
+                <operator>Contains</operator>
                 <rightValue>
-                    <stringValue>2 - No</stringValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_yes_for_how_long</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1072,7 +1208,29 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_yes_did_patient_received_disability</leftValueReference>
                 <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_yes_for_how_long</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_no_were_services_accessible</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_yes_did_patient_received_disability</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Do not know</stringValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Rule_32</targetReference>
@@ -1750,7 +1908,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateMandatoryPass</targetReference>
+                <targetReference>Rule_56</targetReference>
             </connector>
             <label>Rule 50 Pass</label>
         </rules>
@@ -2144,10 +2302,69 @@
             <label>Rule 55 Pass</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Rule_56</name>
+        <label>Rule 56</label>
+        <locationX>2652</locationX>
+        <locationY>544</locationY>
+        <defaultConnector>
+            <targetReference>Rule_56_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 56 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_56_Pass</name>
+            <conditionLogic>(1 AND 2 AND (3 OR 4)) OR 5</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_Withdrew_Request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateMandatoryPass</targetReference>
+            </connector>
+            <label>Rule 56 Pass</label>
+        </rules>
+    </decisions>
+    <description>Fixing Rule 24, 26 and 56</description>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
         <expression>{!Var1634_If_Yes_Select_Reasons_That_Apply_Pt_Withdrew} + &quot;;&quot;</expression>
+    </formulas>
+    <formulas>
+        <name>FormatedAddSemicolon_Rule24</name>
+        <dataType>String</dataType>
+        <expression>{!Var1634_Profession_if_yes_select_all_that_apply} + &quot;;&quot;</expression>
     </formulas>
     <formulas>
         <name>formulaOnePicklistValue</name>
@@ -2162,10 +2379,29 @@
  )</expression>
     </formulas>
     <formulas>
+        <name>formulaOnePicklistValueRule24</name>
+        <dataType>String</dataType>
+        <expression>TRIM( 
+     LEFT(
+              {!FormattedPicklistValues_Rule24} , 
+              FIND(
+                     &quot;;&quot;,{!FormattedPicklistValues_Rule24}
+             ) - 1
+       ) 
+ )</expression>
+    </formulas>
+    <formulas>
         <name>removeOnePicklistValue</name>
         <dataType>String</dataType>
         <expression>TRIM(
      SUBSTITUTE({!formattedPicklistValues},  {!formulaOnePicklistValue}+&quot;;&quot;, &quot;&quot;)
+ )</expression>
+    </formulas>
+    <formulas>
+        <name>removeOnePicklistValue_Rule24</name>
+        <dataType>String</dataType>
+        <expression>TRIM(
+     SUBSTITUTE({!FormattedPicklistValues_Rule24},  {!formulaOnePicklistValueRule24}+&quot;;&quot;, &quot;&quot;)
  )</expression>
     </formulas>
     <interviewLabel>Mandatory Data {!$Flow.CurrentDateTime}</interviewLabel>
@@ -2182,6 +2418,20 @@
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>If_Others_is_not_selected</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>AddLoop_Rule_24</name>
+        <label>AddLoop Rule 24</label>
+        <locationX>1989</locationX>
+        <locationY>532</locationY>
+        <collectionReference>extractedPicklist_Rule24</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Rule24</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Rule24</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -2361,6 +2611,10 @@
             <field>I_determine_that_the_patient__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_If_Others_specify_CP</assignToReference>
+            <field>If_Other_specify_2__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_If_Yes_change_due_to_loss_of_capacity</assignToReference>
             <field>If_Yes_is_patients_change_in_eligbilit__c</field>
         </outputAssignments>
@@ -2421,6 +2675,10 @@
             <field>If_yes_for_how_long_1__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_If_yes_for_how_long</assignToReference>
+            <field>If_yes_for_how_long__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_If_yes_underlying_case_of_death</assignToReference>
             <field>If_yes_underlying_cause_of_death__c</field>
         </outputAssignments>
@@ -2455,6 +2713,10 @@
         <outputAssignments>
             <assignToReference>Var1634_Pract_prev_determine_patient_eligible</assignToReference>
             <field>Practitioner_previously_determined_patie__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Profession_if_yes_select_all_that_apply</assignToReference>
+            <field>Profession_if_yes_select_all_that_apply__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Secondassessorwasaphysicianornurse</assignToReference>
@@ -2534,6 +2796,13 @@
     </start>
     <status>Active</status>
     <variables>
+        <name>extractedPicklist_Rule24</name>
+        <dataType>String</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>extractedValuesPicklist</name>
         <dataType>String</dataType>
         <isCollection>true</isCollection>
@@ -2542,6 +2811,13 @@
     </variables>
     <variables>
         <name>formattedPicklistValues</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>FormattedPicklistValues_Rule24</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -2693,6 +2969,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_If_Others_specify_CP</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_If_patient_directly_other_specify</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2729,6 +3012,13 @@
     </variables>
     <variables>
         <name>Var1634_If_yes_did_patient_received_disability</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_If_yes_for_how_long</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -2834,6 +3124,13 @@
     </variables>
     <variables>
         <name>Var1634_Proceduresforunusedmedication</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Profession_if_yes_select_all_that_apply</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
