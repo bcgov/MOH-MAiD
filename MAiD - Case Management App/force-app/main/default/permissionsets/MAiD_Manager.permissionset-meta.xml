@@ -376,11 +376,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.REQ_Q05_42_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Case.REQ_Q10_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
