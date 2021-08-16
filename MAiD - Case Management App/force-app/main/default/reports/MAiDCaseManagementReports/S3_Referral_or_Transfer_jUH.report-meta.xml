@@ -14,6 +14,10 @@
         <field>Form_1634__c.SEX_Q05_Formula__c</field>
     </columns>
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.ELG_Q60_Formula__c</field>
+    </columns>
+    <columns>
         <field>Form_1634__c.HIN_Q05_Formula__c</field>
     </columns>
     <columns>
@@ -33,7 +37,7 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Form_1634__c.SPC_Q05_Formula__c</field>
+        <field>Case.SPC_Q05_PCFormula__c</field>
     </columns>
     <columns>
         <field>Form_1634__c.SPC_Q10_Formula_Values__c</field>
@@ -48,24 +52,24 @@
         <field>Form_1634__c.SPC_Q25_Formula__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
-        <field>Form_1634__c.REQ_Q05_Formula__c</field>
+        <field>Case.REQ_Q05_42_Formula__c</field>
     </columns>
     <columns>
-        <field>Form_1634__c.REQ_Q10_Formula__c</field>
+        <field>Case.REQ_S05_formula__c</field>
     </columns>
     <columns>
-        <field>Form_1634__c.REQ_S05_Formula__c</field>
+        <field>Case.REQ_Q10_Formula__c</field>
     </columns>
     <columns>
-        <field>Form_1634__c.REF_Q05_Formula__c</field>
-    </columns>
-    <columns>
-        <field>Form_1634__c.REF_Q10_Formula__c</field>
+        <field>Case.REF_Q05_42_Formula__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
-        <field>Form_1634__c.REF_Q15_Formula__c</field>
+        <field>Case.REF_Q10_value__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Case.REF_Q15_Value__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -93,7 +97,7 @@
     <columns>
         <field>Form_1634__c.SUP_Q10_Formula__c</field>
     </columns>
-    <description>S3 - Referral or transfer Report</description>
+    <description>S3 - Referral or transfer Report - S3_Referral_or_Transfer_jUH</description>
     <filter>
         <criteriaItems>
             <column>RECORDTYPE</column>
@@ -104,7 +108,7 @@
         </criteriaItems>
     </filter>
     <format>Tabular</format>
-    <name>S3 - Referral or transfer</name>
+    <name>S3 - Referral or Transfer</name>
     <params>
         <name>units</name>
         <value>h</value>
