@@ -157,7 +157,7 @@
         <defaultConnectorLabel>Fail Meeting Criteria 02</defaultConnectorLabel>
         <rules>
             <name>Not_Applicable_step_02</name>
-            <conditionLogic>1 AND ((2 And 3 And 4) And 5)</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -302,7 +302,7 @@
         <defaultConnectorLabel>Fail Meeting Criteria 03</defaultConnectorLabel>
         <rules>
             <name>Not_Applicable_Step_03</name>
-            <conditionLogic>1 Or 2 Or 3 Or 4</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -640,6 +640,29 @@
             <label>Success Step 06</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Is_previous_Status_CC_Review_Check</name>
+        <label>Is previous Status CC Review Check</label>
+        <locationX>446</locationX>
+        <locationY>263</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_CC_Review_Check_in_Progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Step_01_Forseeable</targetReference>
+            </connector>
+            <label>Is CC Review Check in Progress</label>
+        </rules>
+    </decisions>
+    <description>Added flow entry point</description>
     <interviewLabel>Status Change-CC Review Checks In Progress {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status Change-CC Review Checks In Progress</label>
     <processMetadataValues>
@@ -710,7 +733,7 @@
         <locationY>266</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_Step_01_Forseeable</targetReference>
+            <targetReference>Is_previous_Status_CC_Review_Check</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -756,6 +779,12 @@
         <locationX>1395</locationX>
         <locationY>529</locationY>
         <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Status_Feedback_Msg__c</field>
             <value>
                 <elementReference>Msg_Status_Success</elementReference>
@@ -771,7 +800,7 @@
         <inputAssignments>
             <field>Status_Feedback_Msg__c</field>
             <value>
-                <stringValue></stringValue>
+                <stringValue>Status4 Not Applicable</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
