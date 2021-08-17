@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>Case_Type_Failures</name>
+        <label>Case Type Failures</label>
+        <locationX>314</locationX>
+        <locationY>671</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Msg_Status_Fail</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Closed_Case_Access_Issue</name>
+        <label>Closed Case Access Issue</label>
+        <locationX>763</locationX>
+        <locationY>754</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Closed_Case_Failure</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Manager_Access_Issue</name>
+        <label>Manager Access Issue</label>
+        <locationX>532</locationX>
+        <locationY>734</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Manager_Failure</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>Closed_Case_Failure</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>There are unreconciled issues for Manager Review</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Manager_Failure</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Enter details for Manager Review</stringValue>
+        </value>
+    </constants>
     <constants>
         <name>Msg_Status_Fail</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>Status Failed to Update</stringValue>
+            <stringValue>There are unreconciled error logs / open task / mandatory details required for Case Status update.</stringValue>
         </value>
     </constants>
     <constants>
@@ -21,7 +83,7 @@
         <locationX>104</locationX>
         <locationY>517</locationY>
         <defaultConnector>
-            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+            <targetReference>Case_Type_Failures</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Fails Meeting Criteria 01</defaultConnectorLabel>
         <rules>
@@ -128,10 +190,10 @@
     <decisions>
         <name>Check_Step_02_Transfer</name>
         <label>Check Step 02 (Transfer)</label>
-        <locationX>649</locationX>
-        <locationY>615</locationY>
+        <locationX>604</locationX>
+        <locationY>582</locationY>
         <defaultConnector>
-            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+            <targetReference>Case_Type_Failures</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Fail Meeting Criteria 02</defaultConnectorLabel>
         <rules>
@@ -266,10 +328,10 @@
     <decisions>
         <name>Check_Step_03_Not_Forseeable</name>
         <label>Check Step 03 (Not Forseeable)</label>
-        <locationX>637</locationX>
-        <locationY>345</locationY>
+        <locationX>669</locationX>
+        <locationY>372</locationY>
         <defaultConnector>
-            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+            <targetReference>Case_Type_Failures</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Fail Meeting Criteria 03</defaultConnectorLabel>
         <rules>
@@ -379,7 +441,7 @@
         <locationX>887</locationX>
         <locationY>528</locationY>
         <defaultConnector>
-            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+            <targetReference>Case_Type_Failures</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Fails Meeting Criteria 04</defaultConnectorLabel>
         <rules>
@@ -489,7 +551,7 @@
         <locationX>993</locationX>
         <locationY>874</locationY>
         <defaultConnector>
-            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+            <targetReference>Case_Type_Failures</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Fail Meeting Criteria 05</defaultConnectorLabel>
         <rules>
@@ -599,7 +661,7 @@
         <locationX>1322</locationX>
         <locationY>1012</locationY>
         <defaultConnector>
-            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+            <targetReference>Case_Type_Failures</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Fail Meeting Criteria 06</defaultConnectorLabel>
         <rules>
@@ -730,7 +792,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Fails_Update_to_Previous_Status</targetReference>
+                <targetReference>Manager_Access_Issue</targetReference>
             </connector>
             <label>Manager Review False</label>
         </rules>
@@ -752,7 +814,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Fails_Update_to_Previous_Status</targetReference>
+                <targetReference>Closed_Case_Access_Issue</targetReference>
             </connector>
             <label>Closed Check Fail</label>
         </rules>
@@ -824,7 +886,7 @@
             <label>Is CC Review Check in Progress</label>
         </rules>
     </decisions>
-    <description>Fixed Manager Review Criteria</description>
+    <description>Fixed Exit Criteria Messages</description>
     <interviewLabel>Status Change-CC Review Checks In Progress {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status Change-CC Review Checks In Progress</label>
     <processMetadataValues>
@@ -930,7 +992,7 @@
         <inputAssignments>
             <field>Status_Feedback_Msg__c</field>
             <value>
-                <elementReference>Msg_Status_Fail</elementReference>
+                <elementReference>FailScenarioMessage</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -985,6 +1047,13 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>FailScenarioMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>is_ErrorLog_Ready</name>
