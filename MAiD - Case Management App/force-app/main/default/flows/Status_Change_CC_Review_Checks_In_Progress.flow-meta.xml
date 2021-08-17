@@ -26,7 +26,7 @@
         <defaultConnectorLabel>Fails Meeting Criteria 01</defaultConnectorLabel>
         <rules>
             <name>Not_Applicable_Step_01</name>
-            <conditionLogic>(1 AND 2) Or 3 Or 4 Or 5 Or 6 Or 7</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3 AND 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -35,45 +35,24 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
+                <leftValueReference>$Record.Status</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                    <stringValue>Follow up Required to Close</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record__Prior.Id</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <leftValueReference>$Record.Status</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>CC Review/Checks in Progress</stringValue>
+                    <stringValue>Closed</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Awaiting Forms</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Follow up required for CC Review/Checks</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>CC Review/Checks in Progress</stringValue>
+                    <stringValue>Ready for Manager Review</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -83,7 +62,7 @@
         </rules>
         <rules>
             <name>Successfully_Step_01</name>
-            <conditionLogic>(((5 And (1 Or 4)) And (2 And 3) And (7 Or 8))) Or 6</conditionLogic>
+            <conditionLogic>6 AND 7 AND 8 AND (5 OR ((2 AND 3) AND (1 OR 4)))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -113,13 +92,6 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record__Prior.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>CC Review/Checks in Progress</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
@@ -134,10 +106,17 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
-                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -157,7 +136,7 @@
         <defaultConnectorLabel>Fail Meeting Criteria 02</defaultConnectorLabel>
         <rules>
             <name>Not_Applicable_step_02</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3 AND 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -184,13 +163,6 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Ready for Manager Review</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record__Prior.Status</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>CC Review/Checks in Progress</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -302,33 +274,33 @@
         <defaultConnectorLabel>Fail Meeting Criteria 03</defaultConnectorLabel>
         <rules>
             <name>Not_Applicable_Step_03</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3) OR 4</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Awaiting Forms</stringValue>
+                    <stringValue>Follow up Required to Close</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Follow up required for CC Review/Checks</stringValue>
+                    <stringValue>Closed</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Ready for CC Review/Checks</stringValue>
+                    <stringValue>Ready for Manager Review</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>CC Review/Checks in Progress</stringValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -338,7 +310,7 @@
         </rules>
         <rules>
             <name>Success_Step_03</name>
-            <conditionLogic>1 Or ((2 AND 3) And (4 Or 5))</conditionLogic>
+            <conditionLogic>6 AND 7 AND 8 AND (1 OR ((2 AND 3) AND (4 OR 5)))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -374,6 +346,27 @@
                     <stringValue>Closed</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Check_Step_04_Death_Prior</targetReference>
             </connector>
@@ -391,19 +384,33 @@
         <defaultConnectorLabel>Fails Meeting Criteria 04</defaultConnectorLabel>
         <rules>
             <name>Not_Applicable_Step_04</name>
-            <conditionLogic>1 AND 2</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
+            <conditionLogic>1 OR (2 AND 3 AND 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -413,7 +420,7 @@
         </rules>
         <rules>
             <name>Success_Step_04</name>
-            <conditionLogic>1 AND ((3 AND 4 AND 5 AND 6 And 7 And 8) Or 2)</conditionLogic>
+            <conditionLogic>7 AND 8 AND 1 AND ((3 AND 4 AND 5 AND 6) OR 2)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -487,12 +494,33 @@
         <defaultConnectorLabel>Fail Meeting Criteria 05</defaultConnectorLabel>
         <rules>
             <name>Not_Applicable_Step_05</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3 AND 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -502,7 +530,7 @@
         </rules>
         <rules>
             <name>Success_Step_05</name>
-            <conditionLogic>1 Or (2 AND 3 AND 4 AND 5 AND 6 AND 7)</conditionLogic>
+            <conditionLogic>6 AND 7 AND 8 AND (1 OR (2 AND 3 AND 4 AND 5))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -550,6 +578,13 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -569,7 +604,7 @@
         <defaultConnectorLabel>Fail Meeting Criteria 06</defaultConnectorLabel>
         <rules>
             <name>Not_Applicable_Step_06</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3 AND 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -577,14 +612,35 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Update_field_when_Not_applicable</targetReference>
+                <targetReference>Success_Update_Status_Message</targetReference>
             </connector>
             <label>Not Applicable Step 06</label>
         </rules>
         <rules>
             <name>Success_Step_06</name>
-            <conditionLogic>1 Or (2 AND 3 AND 4 AND 5 AND 6 AND 7)</conditionLogic>
+            <conditionLogic>(1 OR (2 AND 3 AND 4 AND 5)) AND 6 AND 7 AND 8</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -634,6 +690,13 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Success_Update_Status_Message</targetReference>
             </connector>
@@ -643,17 +706,62 @@
     <decisions>
         <name>Is_previous_Status_CC_Review_Check</name>
         <label>Is previous Status CC Review Check</label>
-        <locationX>446</locationX>
+        <locationX>443</locationX>
         <locationY>263</locationY>
+        <defaultConnector>
+            <targetReference>Update_field_when_Not_applicable</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_CC_Review_Check_in_Progress</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record__Prior.Status</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer of Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -662,7 +770,7 @@
             <label>Is CC Review Check in Progress</label>
         </rules>
     </decisions>
-    <description>Added flow entry point</description>
+    <description>Fixed all decision item conditions</description>
     <interviewLabel>Status Change-CC Review Checks In Progress {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status Change-CC Review Checks In Progress</label>
     <processMetadataValues>
@@ -693,7 +801,7 @@
         <connector>
             <targetReference>Get_Tasks</targetReference>
         </connector>
-        <filterLogic>1 AND 2 AND (3 And 4)</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>ParentId</field>
             <operator>IsNull</operator>
@@ -795,12 +903,12 @@
     <recordUpdates>
         <name>Update_field_when_Not_applicable</name>
         <label>Update field when Not applicable</label>
-        <locationX>1051</locationX>
-        <locationY>383</locationY>
+        <locationX>827</locationX>
+        <locationY>201</locationY>
         <inputAssignments>
             <field>Status_Feedback_Msg__c</field>
             <value>
-                <stringValue>Status4 Not Applicable</stringValue>
+                <stringValue/>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
