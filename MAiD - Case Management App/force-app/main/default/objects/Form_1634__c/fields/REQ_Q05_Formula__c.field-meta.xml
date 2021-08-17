@@ -6,8 +6,8 @@
 &quot;1- Patient directly&quot;,1,
 &quot;2 - Another practitioner&quot;,2,
 &quot;3 - Care coordination service&quot;,3,
-&quot;4 - Patient directly - other, specify&quot;,4,
-&quot;5 - Another third party specify&quot;,5,0)</formula>
+&quot;4 - Patient directly - other, specify&quot;,1,
+&quot;5 - Another third party specify&quot;,4,0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>REQ_Q05 - Formula</label>
     <precision>18</precision>
