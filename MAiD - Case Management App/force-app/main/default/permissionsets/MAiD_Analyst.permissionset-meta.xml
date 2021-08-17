@@ -451,6 +451,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.SPC_Q05_PCFormula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.SPC_Q20_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2251,17 +2256,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.SUP_Q05__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-       <editable>true</editable>
-        <field>Form_1634__c.Second_assessor_was_a_physcian_or_nurse__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1634__c.SUP_Q10_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Second_assessor_was_a_physcian_or_nurse__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
