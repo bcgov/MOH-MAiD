@@ -596,8 +596,8 @@
     <decisions>
         <name>Check_Step_06_Withdrawn</name>
         <label>Check Step 06 (Withdrawn)</label>
-        <locationX>1280</locationX>
-        <locationY>732</locationY>
+        <locationX>1322</locationX>
+        <locationY>1012</locationY>
         <defaultConnector>
             <targetReference>Fails_Update_to_Previous_Status</targetReference>
         </defaultConnector>
@@ -634,7 +634,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Success_Update_Status_Message</targetReference>
+                <targetReference>Is_it_for_Manager_Review</targetReference>
             </connector>
             <label>Not Applicable Step 06</label>
         </rules>
@@ -698,9 +698,63 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Success_Update_Status_Message</targetReference>
+                <targetReference>Is_it_for_Manager_Review</targetReference>
             </connector>
             <label>Success Step 06</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Is_it_for_Manager_Review</name>
+        <label>Is it for Manager Review</label>
+        <locationX>1218</locationX>
+        <locationY>706</locationY>
+        <defaultConnector>
+            <targetReference>Success_Update_Status_Message</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Manager_Review_False</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fails_Update_to_Previous_Status</targetReference>
+            </connector>
+            <label>Manager Review False</label>
+        </rules>
+        <rules>
+            <name>Closed_Check_Fail</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Fails_Update_to_Previous_Status</targetReference>
+            </connector>
+            <label>Closed Check Fail</label>
         </rules>
     </decisions>
     <decisions>
@@ -770,7 +824,7 @@
             <label>Is CC Review Check in Progress</label>
         </rules>
     </decisions>
-    <description>Fixed all decision item conditions</description>
+    <description>Fixed Manager Review Criteria</description>
     <interviewLabel>Status Change-CC Review Checks In Progress {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status Change-CC Review Checks In Progress</label>
     <processMetadataValues>
