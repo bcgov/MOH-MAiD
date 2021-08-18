@@ -71,9 +71,24 @@
         <connector>
             <targetReference>Get_Entitlement_ID</targetReference>
         </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>EntitlementId</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>SlaStartDate</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
 </Flow>

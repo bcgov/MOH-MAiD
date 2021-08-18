@@ -264,6 +264,13 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>CompletionDate</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <inputAssignments>
             <field>CompletionDate</field>
         </inputAssignments>
@@ -283,6 +290,13 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>CompletionDate</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
         <inputAssignments>
             <field>CompletionDate</field>
         </inputAssignments>
@@ -291,14 +305,21 @@
     <recordUpdates>
         <name>Complete_All_Milestones</name>
         <label>Complete All Milestones</label>
-        <locationX>957</locationX>
-        <locationY>401</locationY>
+        <locationX>896</locationX>
+        <locationY>395</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>CaseId</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>CompletionDate</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <inputAssignments>
