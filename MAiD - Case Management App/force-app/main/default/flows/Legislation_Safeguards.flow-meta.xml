@@ -795,7 +795,7 @@
         </rules>
         <rules>
             <name>Rule_2_Success_0</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((10 AND (6 AND 8 AND 7) OR 9) OR 11) AND ((12 AND 14) OR 13)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((10 AND (6 AND 8 AND 7) OR 9) OR 11) AND ((12 AND 14) OR 13) AND 15 AND 16</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -889,6 +889,20 @@
             </conditions>
             <conditions>
                 <leftValueReference>Get_Form_1634.Patient_desc_suffering_If_yes_select_all__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_yes_select_all_that_apply__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_yes_select_all_that_apply_1__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -1993,7 +2007,7 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <description>Fixed Rule 2 multiple select issue</description>
+    <description>Fixed Rule 2 multiple select issue (all multi-select picklist)</description>
     <formulas>
         <name>is_If_other_specify</name>
         <dataType>Boolean</dataType>
