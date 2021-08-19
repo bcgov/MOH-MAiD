@@ -42,10 +42,53 @@
                     <stringValue>MAiD Manager</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Check_requirements</targetReference>
             </connector>
             <label>MaiD Manager check</label>
+        </rules>
+        <rules>
+            <name>Revert_Case_Status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>MAiD Manager</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Revert_Case_Record</targetReference>
+            </connector>
+            <label>Revert Case Status</label>
         </rules>
     </decisions>
     <decisions>
@@ -136,7 +179,7 @@
             <label>Validate Requirements=Yes</label>
         </rules>
     </decisions>
-    <description>1.4 Fixed the Status 6 update scenarios</description>
+    <description>1.4 Fixed the Status 6 message and scenarios</description>
     <interviewLabel>Status6 Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status6 Update</label>
     <processMetadataValues>
@@ -225,6 +268,25 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Revert_Case_Record</name>
+        <label>Revert Case Record</label>
+        <locationX>986</locationX>
+        <locationY>35</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <stringValue>Status Succeeded to Update</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Status_Feedback_Msg</name>
         <label>Status Feedback Msg</label>
         <locationX>631</locationX>
@@ -238,7 +300,7 @@
         <inputAssignments>
             <field>Status_Feedback_Msg__c</field>
             <value>
-                <stringValue>There are unreconciled error or open task on this case. These must be completed before sending to manager review.</stringValue>
+                <stringValue>Manager Review Details Required to Close the Case</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
