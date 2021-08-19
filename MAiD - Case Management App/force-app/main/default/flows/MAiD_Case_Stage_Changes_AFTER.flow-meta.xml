@@ -273,6 +273,9 @@
         </filters>
         <inputAssignments>
             <field>CompletionDate</field>
+            <value>
+                <elementReference>$System.OriginDateTime</elementReference>
+            </value>
         </inputAssignments>
         <object>CaseMilestone</object>
     </recordUpdates>
@@ -299,6 +302,9 @@
         </filters>
         <inputAssignments>
             <field>CompletionDate</field>
+            <value>
+                <elementReference>$System.OriginDateTime</elementReference>
+            </value>
         </inputAssignments>
         <object>CaseMilestone</object>
     </recordUpdates>
