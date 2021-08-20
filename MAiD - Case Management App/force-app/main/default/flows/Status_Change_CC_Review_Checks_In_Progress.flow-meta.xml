@@ -67,7 +67,7 @@
         <name>Msg_Status_Fail</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>There are unreconciled error logs / open task / mandatory details required for Case Status update.</stringValue>
+            <stringValue>There are no unreconciled error logs / open task / mandatory details. Move Case to Close</stringValue>
         </value>
     </constants>
     <constants>
@@ -482,7 +482,7 @@
         </rules>
         <rules>
             <name>Success_Step_04_01</name>
-            <conditionLogic>7 AND 8 AND 9 AND 1 AND ((3 AND 4 AND 5 AND 6) OR (2 AND 10))</conditionLogic>
+            <conditionLogic>7 AND 8 AND 1 AND ((3 AND 4 AND 5 AND 6 AND 9 ) OR (2 AND 10 AND 11))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -549,6 +549,13 @@
             <conditions>
                 <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Check_Step_05_Ineligible</targetReference>
@@ -682,7 +689,7 @@
         </rules>
         <rules>
             <name>Success_Step_05_01</name>
-            <conditionLogic>6 AND 7 AND 8 AND 10 AND ((1 AND 9) OR (2 AND 3 AND 4 AND 5))</conditionLogic>
+            <conditionLogic>6 AND 7 AND 8 AND ((1 AND 9 AND 11) OR (2 AND 3 AND 4 AND 5 AND 10))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -748,6 +755,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -838,8 +852,8 @@
     <decisions>
         <name>Check_Step_06_Withdrawn</name>
         <label>Check Step 06 (Withdrawn)</label>
-        <locationX>1322</locationX>
-        <locationY>1012</locationY>
+        <locationX>1440</locationX>
+        <locationY>773</locationY>
         <defaultConnector>
             <targetReference>Case_Type_Failures</targetReference>
         </defaultConnector>
@@ -876,13 +890,13 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Is_it_for_Manager_Review</targetReference>
+                <targetReference>Success_Update_Status_Message</targetReference>
             </connector>
             <label>Not Applicable Step 06</label>
         </rules>
         <rules>
             <name>Success_Step_06_01</name>
-            <conditionLogic>((1 AND 9) OR (2 AND 3 AND 4 AND 5)) AND 6 AND 7 AND 8 AND 10</conditionLogic>
+            <conditionLogic>((1 AND 9 AND 11) OR (2 AND 3 AND 4 AND 5 AND 10)) AND 6 AND 7 AND 8</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -950,8 +964,15 @@
                     <stringValue>Closed</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Is_it_for_Manager_Review</targetReference>
+                <targetReference>Success_Update_Status_Message</targetReference>
             </connector>
             <label>Success Step 06 01</label>
         </rules>
@@ -1008,7 +1029,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Is_it_for_Manager_Review</targetReference>
+                <targetReference>Success_Update_Status_Message</targetReference>
             </connector>
             <label>Success Step 06 02</label>
         </rules>
@@ -1030,7 +1051,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Is_it_for_Manager_Review</targetReference>
+                <targetReference>Success_Update_Status_Message</targetReference>
             </connector>
             <label>Success Step 06 03</label>
         </rules>
@@ -1038,10 +1059,10 @@
     <decisions>
         <name>Is_it_for_Manager_Review</name>
         <label>Is it for Manager Review</label>
-        <locationX>1218</locationX>
-        <locationY>706</locationY>
+        <locationX>279</locationX>
+        <locationY>428</locationY>
         <defaultConnector>
-            <targetReference>Success_Update_Status_Message</targetReference>
+            <targetReference>Check_Step_01_Forseeable</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -1094,9 +1115,6 @@
         <label>Is previous Status CC Review Check</label>
         <locationX>506</locationX>
         <locationY>276</locationY>
-        <defaultConnector>
-            <targetReference>Update_field_when_Not_applicable</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_CC_Review_Check_in_Progress</name>
@@ -1151,12 +1169,12 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Check_Step_01_Forseeable</targetReference>
+                <targetReference>Is_it_for_Manager_Review</targetReference>
             </connector>
             <label>Is CC Review Check in Progress</label>
         </rules>
     </decisions>
-    <description>Fixed Transfer of req, Discontinuation Statuses</description>
+    <description>Updated Ready for Manager Review Criteria</description>
     <interviewLabel>Status Change-CC Review Checks In Progress {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status Change-CC Review Checks In Progress</label>
     <processMetadataValues>
