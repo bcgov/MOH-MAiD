@@ -38,7 +38,7 @@
         <inputAssignments>
             <field>Mandatory_Data__c</field>
             <value>
-                <stringValue/>
+                <stringValue></stringValue>
             </value>
         </inputAssignments>
         <object>Case</object>

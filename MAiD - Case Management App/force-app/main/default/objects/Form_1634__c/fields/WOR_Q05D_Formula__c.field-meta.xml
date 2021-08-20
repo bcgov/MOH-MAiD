@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>If_other_specify_3__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>WOR_Q05D - Formula</label>
+    <label>WOR_S05D - Formula</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
     <type>Text</type>

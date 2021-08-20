@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>SPC_Q05__c</fullName>
+    <fullName>REF_Q05_Formula__c</fullName>
+    <description>Date of Transfer</description>
     <externalId>false</externalId>
-    <label>SPC_Q05</label>
-    <precision>2</precision>
+    <label>REF_Q05 - Formula</label>
     <required>false</required>
-    <scale>0</scale>
     <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
-    <unique>false</unique>
+    <type>Date</type>
 </CustomField>

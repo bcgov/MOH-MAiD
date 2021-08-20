@@ -1283,7 +1283,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule31_yes</name>
-            <conditionLogic>(1 AND 2 AND ( 3 OR 4)) OR (5 AND 6)</conditionLogic>
+            <conditionLogic>(((1 AND 2) OR 7) AND ( 3 OR 4)) OR (5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_InterpreterforMAIDID</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -1322,6 +1322,10 @@
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_InterpreterforMAIDID</leftValueReference>
+                <operator>EqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>CheckRule43</targetReference>
@@ -1436,20 +1440,6 @@
                     <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>Var1641_Sealed_Oral_Kit_Consistent_with_MAR</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1641_SealedOralKit</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>CheckRule34_4_Final</targetReference>
             </connector>
@@ -1529,20 +1519,6 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1641_Sealed_IV_BackUp_Kit_Consistent_with_MAR</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1641_Sealed_Oral_Kit_Consistent_with_MAR</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1641_SealedOralKit</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Varbool</elementReference>
@@ -2512,7 +2488,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>1.11 Final - Fixed Rule 29 Provincial Safeguards</description>
+    <description>1.11 Final - Fixed Rule 34 Provincial Safeguards</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
