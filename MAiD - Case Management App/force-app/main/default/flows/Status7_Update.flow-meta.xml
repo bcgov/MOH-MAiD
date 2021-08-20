@@ -60,7 +60,7 @@
             <assignToReference>updateCaseRecord.Status</assignToReference>
             <operator>Assign</operator>
             <value>
-                <elementReference>$Record__Prior.Status_Feedback_Msg__c</elementReference>
+                <elementReference>$Record__Prior.Status</elementReference>
             </value>
         </assignmentItems>
         <assignmentItems>
@@ -192,7 +192,7 @@
             <label>Not Applicable Scenario</label>
         </rules>
     </decisions>
-    <description>Status &amp; update and allowing only Managers to change case status after Closing a Case</description>
+    <description>Fixed Fail Scenario of Status 7</description>
     <interviewLabel>Status7 Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status7 Update</label>
     <processMetadataValues>
