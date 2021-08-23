@@ -2,13 +2,8 @@
 <MatchingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <matchingRules>
         <fullName>Block_Duplicate_IDs</fullName>
-        <booleanFilter>(1 OR 2)</booleanFilter>
+        <booleanFilter>1</booleanFilter>
         <label>Block Duplicate IDs</label>
-        <matchingRuleItems>
-            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
-            <fieldName>College_ID__c</fieldName>
-            <matchingMethod>Exact</matchingMethod>
-        </matchingRuleItems>
         <matchingRuleItems>
             <blankValueBehavior>NullNotAllowed</blankValueBehavior>
             <fieldName>College_ID__pc</fieldName>
