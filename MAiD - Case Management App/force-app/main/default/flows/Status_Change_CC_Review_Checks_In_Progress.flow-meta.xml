@@ -2,6 +2,22 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
     <assignments>
+        <name>Case_Close_Criteria_Fail</name>
+        <label>Case Close Criteria Fail</label>
+        <locationX>578</locationX>
+        <locationY>882</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Closed_Status_Failure</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Case_Type_Failures</name>
         <label>Case Type Failures</label>
         <locationX>314</locationX>
@@ -57,6 +73,13 @@
         </value>
     </constants>
     <constants>
+        <name>Closed_Status_Failure</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>There are  unreconciled error logs / open task / mandatory details.</stringValue>
+        </value>
+    </constants>
+    <constants>
         <name>Manager_Failure</name>
         <dataType>String</dataType>
         <value>
@@ -83,7 +106,7 @@
         <locationX>104</locationX>
         <locationY>517</locationY>
         <defaultConnector>
-            <targetReference>Case_Type_Failures</targetReference>
+            <targetReference>Case_Close_Criteria_Fail</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Fails Meeting Criteria 01</defaultConnectorLabel>
         <rules>
@@ -325,7 +348,7 @@
             <label>Success Step 02</label>
         </rules>
         <rules>
-            <name>Failing_Criteria_for_Manager_Review_2</name>
+            <name>Failing_Criteria_for_Manager_Review_02</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
@@ -341,16 +364,59 @@
             <connector>
                 <targetReference>Manager_Access_Issue</targetReference>
             </connector>
-            <label>Failing Criteria for Manager Review</label>
+            <label>Failing Criteria for Manager Review 02</label>
+        </rules>
+        <rules>
+            <name>Failing_Criteria_for_Closed_Status_02</name>
+            <conditionLogic>1 AND 5 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Close_Criteria_Fail</targetReference>
+            </connector>
+            <label>Failing Criteria for Closed Status 02</label>
         </rules>
     </decisions>
     <decisions>
         <name>Check_Step_03_Not_Forseeable</name>
         <label>Check Step 03 (Not Forseeable)</label>
-        <locationX>669</locationX>
-        <locationY>372</locationY>
+        <locationX>677</locationX>
+        <locationY>384</locationY>
         <defaultConnector>
-            <targetReference>Case_Type_Failures</targetReference>
+            <targetReference>Case_Close_Criteria_Fail</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Fail Meeting Criteria 03</defaultConnectorLabel>
         <rules>
@@ -661,7 +727,7 @@
             <label>Success Step 04 03</label>
         </rules>
         <rules>
-            <name>Failing_Criteria_Manager_Review</name>
+            <name>Failing_Criteria_Manager_Review_04</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
@@ -677,7 +743,71 @@
             <connector>
                 <targetReference>Manager_Access_Issue</targetReference>
             </connector>
-            <label>Failing Criteria Manager Review</label>
+            <label>Failing Criteria Manager Review 04</label>
+        </rules>
+        <rules>
+            <name>Failing_Criteria_for_Closed_Status_04</name>
+            <conditionLogic>1 AND 8 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FAIL</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Close_Criteria_Fail</targetReference>
+            </connector>
+            <label>Failing Criteria for Closed Status 04</label>
         </rules>
     </decisions>
     <decisions>
@@ -887,7 +1017,7 @@
             <label>Success Step 05 03</label>
         </rules>
         <rules>
-            <name>Failing_Criteria_for_Manager_Review</name>
+            <name>Failing_Criteria_for_Manager_Review_05</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
@@ -903,7 +1033,71 @@
             <connector>
                 <targetReference>Manager_Access_Issue</targetReference>
             </connector>
-            <label>Failing Criteria for Manager Review</label>
+            <label>Failing Criteria for Manager Review 05</label>
+        </rules>
+        <rules>
+            <name>Failing_Critieria_for_Close_Status_05</name>
+            <conditionLogic>1 AND 8 AND (2 OR 3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Close_Criteria_Fail</targetReference>
+            </connector>
+            <label>Failing Critieria for Close Status 05</label>
         </rules>
     </decisions>
     <decisions>
@@ -1113,7 +1307,7 @@
             <label>Success Step 06 03</label>
         </rules>
         <rules>
-            <name>Failing_Criteria_for_Manager_Review_1</name>
+            <name>Failing_Criteria_for_Manager_Review_06</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
@@ -1129,7 +1323,71 @@
             <connector>
                 <targetReference>Manager_Access_Issue</targetReference>
             </connector>
-            <label>Failing Criteria for Manager Review</label>
+            <label>Failing Criteria for Manager Review 06</label>
+        </rules>
+        <rules>
+            <name>Failing_Criteria_for_Closed_Status_06</name>
+            <conditionLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Error_Log_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Task_List</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Close_Criteria_Fail</targetReference>
+            </connector>
+            <label>Failing Criteria for Closed Status 06</label>
         </rules>
     </decisions>
     <decisions>
@@ -1250,7 +1508,7 @@
             <label>Is CC Review Check in Progress</label>
         </rules>
     </decisions>
-    <description>Updated Error Log Entry Criteria Conditions</description>
+    <description>Fixed exit point for Case = Closed All case types</description>
     <interviewLabel>Status Change-CC Review Checks In Progress {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status Change-CC Review Checks In Progress</label>
     <processMetadataValues>
