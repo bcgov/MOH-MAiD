@@ -4,8 +4,8 @@
     <assignments>
         <name>Case_Death_Foreseeable_Criteria_Failure</name>
         <label>Case Death Foreseeable Criteria Failure</label>
-        <locationX>1510</locationX>
-        <locationY>160</locationY>
+        <locationX>1490</locationX>
+        <locationY>114</locationY>
         <assignmentItems>
             <assignToReference>FailScenarioMessage</assignToReference>
             <operator>Assign</operator>
@@ -190,6 +190,63 @@
                 <targetReference>Success_Update_Status_Message</targetReference>
             </connector>
             <label>Success_Step_01</label>
+        </rules>
+        <rules>
+            <name>For_Close_No_Criteria_Fail</name>
+            <conditionLogic>(7 AND 1) AND (5 OR 6) AND (4 OR (2 AND 3))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Type_Failures</targetReference>
+            </connector>
+            <label>For_Close_No_Criteria_Fail</label>
         </rules>
     </decisions>
     <decisions>
@@ -474,7 +531,7 @@
             <label>Error on Manager Review</label>
         </rules>
     </decisions>
-    <description>Fixed Ready for Manager Review Deficiency</description>
+    <description>Fixed exit point for Closed Status</description>
     <interviewLabel>Status 4 update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 4 update</label>
     <processMetadataValues>
