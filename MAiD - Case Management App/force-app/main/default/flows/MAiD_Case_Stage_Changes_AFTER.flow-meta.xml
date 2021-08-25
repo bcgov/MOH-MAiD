@@ -1,12 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
+    <assignments>
+        <description>AssignNewMilestoneDateTime</description>
+        <name>AssignNewMilestoneDateTime</name>
+        <label>AssignNewMilestoneDateTime</label>
+        <locationX>681</locationX>
+        <locationY>514</locationY>
+        <assignmentItems>
+            <assignToReference>MilestoneCurrentDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.SlaStartDate</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Case_Type</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Setting current date time for Milestones</description>
+        <name>Set_Current_DateTime</name>
+        <label>Set Current DateTime</label>
+        <locationX>416</locationX>
+        <locationY>348</locationY>
+        <assignmentItems>
+            <assignToReference>MilestoneCurrentDate</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$System.OriginDateTime</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>SLAStartDateValidation</targetReference>
+        </connector>
+    </assignments>
     <decisions>
         <description>Select Case Type</description>
         <name>Case_Type</name>
         <label>Case Type</label>
-        <locationX>461</locationX>
-        <locationY>396</locationY>
+        <locationX>794</locationX>
+        <locationY>345</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Death_Foreseeable</name>
@@ -47,7 +81,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Complete_All_Milestones</targetReference>
+                <targetReference>MAiD_Death_Not_Foreseeable_3_Days</targetReference>
             </connector>
             <label>Death Foreseeable</label>
         </rules>
@@ -159,8 +193,8 @@
         <description>MAiD Death Not Foreseeable 3 Days</description>
         <name>MAiD_Death_Not_Foreseeable_3_Days</name>
         <label>MAiD Death Not Foreseeable 3 Days</label>
-        <locationX>467</locationX>
-        <locationY>52</locationY>
+        <locationX>787</locationX>
+        <locationY>48</locationY>
         <defaultConnector>
             <targetReference>MAiD_Death_Not_Foreseeable_6_Days</targetReference>
         </defaultConnector>
@@ -206,7 +240,7 @@
         <description>MAiD Death Not Foreseeable 6 Days</description>
         <name>MAiD_Death_Not_Foreseeable_6_Days</name>
         <label>MAiD Death Not Foreseeable 6 Days</label>
-        <locationX>810</locationX>
+        <locationX>1135</locationX>
         <locationY>63</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -223,6 +257,32 @@
                 <targetReference>Complete_6_Day_Milestone</targetReference>
             </connector>
             <label>6 Day Mileseone</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>SLA Start Date Validation</description>
+        <name>SLAStartDateValidation</name>
+        <label>SLAStartDateValidation</label>
+        <locationX>542</locationX>
+        <locationY>348</locationY>
+        <defaultConnector>
+            <targetReference>Case_Type</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Assign_New_DateTime</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>MilestoneCurrentDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.SlaStartDate</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignNewMilestoneDateTime</targetReference>
+            </connector>
+            <label>Assign New DateTime</label>
         </rules>
     </decisions>
     <description>MAiD Case Stage Changes AFTER for Milestone Closure</description>
@@ -251,7 +311,7 @@
         <description>Complete 3 Day Milestone Only</description>
         <name>Complete_3_Day_MilestoneOnly</name>
         <label>Complete 3 Day Milestone Only</label>
-        <locationX>675</locationX>
+        <locationX>1000</locationX>
         <locationY>141</locationY>
         <connector>
             <targetReference>MAiD_Death_Not_Foreseeable_6_Days</targetReference>
@@ -271,10 +331,17 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>TargetResponseInMins</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>4320.0</numberValue>
+            </value>
+        </filters>
         <inputAssignments>
             <field>CompletionDate</field>
             <value>
-                <elementReference>$System.OriginDateTime</elementReference>
+                <elementReference>MilestoneCurrentDate</elementReference>
             </value>
         </inputAssignments>
         <object>CaseMilestone</object>
@@ -283,7 +350,7 @@
         <description>Complete 6 Day Milestone Only</description>
         <name>Complete_6_Day_Milestone</name>
         <label>Complete 6 Day Milestone Only</label>
-        <locationX>1023</locationX>
+        <locationX>1348</locationX>
         <locationY>50</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -300,10 +367,17 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>TargetResponseInMins</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>8640.0</numberValue>
+            </value>
+        </filters>
         <inputAssignments>
             <field>CompletionDate</field>
             <value>
-                <elementReference>$System.OriginDateTime</elementReference>
+                <elementReference>MilestoneCurrentDate</elementReference>
             </value>
         </inputAssignments>
         <object>CaseMilestone</object>
@@ -311,7 +385,7 @@
     <recordUpdates>
         <name>Complete_All_Milestones</name>
         <label>Complete All Milestones</label>
-        <locationX>896</locationX>
+        <locationX>1221</locationX>
         <locationY>395</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -328,19 +402,26 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>TargetResponseInMins</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>43200.0</numberValue>
+            </value>
+        </filters>
         <inputAssignments>
             <field>CompletionDate</field>
             <value>
-                <elementReference>$System.OriginDateTime</elementReference>
+                <elementReference>MilestoneCurrentDate</elementReference>
             </value>
         </inputAssignments>
         <object>CaseMilestone</object>
     </recordUpdates>
     <start>
         <locationX>50</locationX>
-        <locationY>270</locationY>
+        <locationY>274</locationY>
         <connector>
-            <targetReference>Case_Type</targetReference>
+            <targetReference>Set_Current_DateTime</targetReference>
         </connector>
         <filterLogic>1 OR 2 OR 3 OR 4 OR 5 OR 6</filterLogic>
         <filters>
@@ -390,4 +471,14 @@
         <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>MilestoneCurrentDate</name>
+        <dataType>DateTime</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <elementReference>$System.OriginDateTime</elementReference>
+        </value>
+    </variables>
 </Flow>
