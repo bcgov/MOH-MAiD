@@ -1545,7 +1545,7 @@
     <decisions>
         <name>CheckRule19_0</name>
         <label>CheckRule19</label>
-        <locationX>1550</locationX>
+        <locationX>1552</locationX>
         <locationY>959</locationY>
         <defaultConnector>
             <targetReference>Rule19ErrorMsg</targetReference>
@@ -1570,7 +1570,7 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1645_Finalwaiverofconsentdatesigned</leftValueReference>
-                <operator>LessThanOrEqualTo</operator>
+                <operator>LessThan</operator>
                 <rightValue>
                     <elementReference>Var1634_MAiDAdministrationDate</elementReference>
                 </rightValue>
