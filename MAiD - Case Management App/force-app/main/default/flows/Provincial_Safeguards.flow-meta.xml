@@ -831,7 +831,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule27_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND (8 OR 9 OR 10))  OR (11 AND 12 AND 13)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND (8 OR 9))  OR (10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PractitionersSignature</leftValueReference>
                 <operator>EqualTo</operator>
@@ -891,13 +891,6 @@
             </conditions>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
@@ -908,13 +901,6 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -934,7 +920,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule28_yes</name>
-            <conditionLogic>(1 AND (2 OR 3 OR 4) AND ( 5 OR 6 OR 7)) OR ( 8 AND 9 AND 10)</conditionLogic>
+            <conditionLogic>(1 AND (2 OR 3 OR 4) AND ( 5 OR 6)) OR ( 7 AND 8 )</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientwasgivenopportunitytowithdra</leftValueReference>
                 <operator>EqualTo</operator>
@@ -976,13 +962,6 @@
             </conditions>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
@@ -993,13 +972,6 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <connector>
