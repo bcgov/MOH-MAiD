@@ -136,7 +136,7 @@
         <defaultConnectorLabel>Fails Meeting Criteria 01</defaultConnectorLabel>
         <rules>
             <name>Success_Step_01</name>
-            <conditionLogic>7 AND 1 AND (5 OR 6) AND (4 OR (2 AND 3))</conditionLogic>
+            <conditionLogic>(7 AND 1) AND (5 OR 6) AND (4 OR (2 AND 3))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -348,8 +348,8 @@
     <decisions>
         <name>Is_previous_Status_CC_Review_Check</name>
         <label>Is previous Status CC Review Check</label>
-        <locationX>855</locationX>
-        <locationY>378</locationY>
+        <locationX>808</locationX>
+        <locationY>209</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_CC_Review_Check_in_Progress</name>
@@ -423,21 +423,6 @@
             <label>Is CC Review Check in Progress</label>
         </rules>
         <rules>
-            <name>No_Ready_for_Manager_Review</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Ready for Manager Review</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Case_Type_Failures</targetReference>
-            </connector>
-            <label>No Ready for Manager Review</label>
-        </rules>
-        <rules>
             <name>Revert_Case</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
@@ -466,8 +451,30 @@
             </connector>
             <label>Revert Case</label>
         </rules>
+        <rules>
+            <name>Error_on_Manager_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Type_Failures</targetReference>
+            </connector>
+            <label>Error on Manager Review</label>
+        </rules>
     </decisions>
-    <description>Developed Status 4 based on new updates</description>
+    <description>Fixed Ready for Manager Review Deficiency</description>
     <interviewLabel>Status 4 update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 4 update</label>
     <processMetadataValues>
