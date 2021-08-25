@@ -1206,7 +1206,7 @@
         <defaultConnectorLabel>Error Log Check Failed</defaultConnectorLabel>
         <rules>
             <name>Case_Type_1_0_0</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 6) AND (4 OR 5) AND (7 OR 8)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1267,7 +1267,7 @@
         </rules>
         <rules>
             <name>Case_Type_2_0_0</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 6) AND (4 OR 5) AND (7 OR 8)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1328,7 +1328,7 @@
         </rules>
         <rules>
             <name>Case_Type_3_0_0</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 6 AND 9 AND 10) AND (4 OR 5) AND (7 OR 8)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 9 AND 10) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1403,7 +1403,7 @@
         </rules>
         <rules>
             <name>Case_Type_4_0_0</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 6 AND 9 AND 10) AND (4 OR 5) AND (7 OR 8)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 9 AND 10) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1478,7 +1478,7 @@
         </rules>
         <rules>
             <name>Case_Type_5_0_0</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 6 AND 9 AND 10) AND (4 OR 5) AND (7 OR 8)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 9 AND 10) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1553,7 +1553,7 @@
         </rules>
         <rules>
             <name>Case_Type_6_0_0</name>
-            <conditionLogic>(1 AND 2 AND 5) AND (3 OR 4) AND (6 OR 7)</conditionLogic>
+            <conditionLogic>((1 AND 2) AND (3 OR 4)) OR ((6 OR 7) AND 5)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1638,7 +1638,7 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>update to Task Status Feedback Message</description>
+    <description>Fix to deficiency over Manager Override Review</description>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
