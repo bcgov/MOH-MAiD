@@ -36,7 +36,7 @@
         <milestoneCriteriaFilterItems>
             <field>Case.Type</field>
             <operation>equals</operation>
-            <value>MAiD Death Not Foreseeable</value>
+            <value>MAiD Death Foreseeable, MAiD Death Not Foreseeable</value>
         </milestoneCriteriaFilterItems>
         <milestoneName>MAiD All Forms Received 6 Days</milestoneName>
         <minutesToComplete>8640</minutesToComplete>
@@ -78,5 +78,5 @@
     </milestones>
     <name>MAiD Entitlement Process</name>
     <versionMaster>5524g00000001dT</versionMaster>
-    <versionNumber>1</versionNumber>
+    <versionNumber>3</versionNumber>
 </EntitlementProcess>
