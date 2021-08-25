@@ -191,6 +191,63 @@
             </connector>
             <label>Success_Step_01</label>
         </rules>
+        <rules>
+            <name>For_Close_No_Criteria_Fail</name>
+            <conditionLogic>(7 AND 1) AND (5 OR 6) AND (4 OR (2 AND 3))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>PASS</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Type_Failures</targetReference>
+            </connector>
+            <label>For_Close_No_Criteria_Fail</label>
+        </rules>
     </decisions>
     <decisions>
         <name>Choose_Case_Type</name>
@@ -348,8 +405,8 @@
     <decisions>
         <name>Is_previous_Status_CC_Review_Check</name>
         <label>Is previous Status CC Review Check</label>
-        <locationX>808</locationX>
-        <locationY>209</locationY>
+        <locationX>855</locationX>
+        <locationY>378</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_CC_Review_Check_in_Progress</name>
@@ -423,6 +480,21 @@
             <label>Is CC Review Check in Progress</label>
         </rules>
         <rules>
+            <name>No_Ready_for_Manager_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Type_Failures</targetReference>
+            </connector>
+            <label>No Ready for Manager Review</label>
+        </rules>
+        <rules>
             <name>Revert_Case</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
@@ -451,30 +523,8 @@
             </connector>
             <label>Revert Case</label>
         </rules>
-        <rules>
-            <name>Error_on_Manager_Review</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record__Prior.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>CC Review/Checks in Progress</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Status</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Ready for Manager Review</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Case_Type_Failures</targetReference>
-            </connector>
-            <label>Error on Manager Review</label>
-        </rules>
     </decisions>
-    <description>Fixed Ready for Manager Review Deficiency</description>
+    <description>Added an exit point for Closed Status</description>
     <interviewLabel>Status 4 update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 4 update</label>
     <processMetadataValues>
