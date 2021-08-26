@@ -1059,7 +1059,7 @@
         </rules>
         <rules>
             <name>MRR_Is_Case_eligible_move_ahead</name>
-            <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10 AND 11 AND 12) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND 14) OR (6 AND 7 AND 8 AND 9 AND 10 AND 12)</conditionLogic>
+            <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10) OR (6 AND 7 AND 8 AND 9 AND 10)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1103,7 +1103,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>ManagerReadyForReviewStatus</leftValueReference>
+                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1126,34 +1126,6 @@
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Notes_to_Manager__c</leftValueReference>
                 <operator>NotEqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Pass_Case_Status</targetReference>
@@ -1561,7 +1533,7 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Stabilize Status 5</description>
+    <description>Stabilize Status 5 - Empty Child Record Scenario Fix</description>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
