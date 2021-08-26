@@ -1248,26 +1248,12 @@
         <defaultConnectorLabel>Error Log Check Failed</defaultConnectorLabel>
         <rules>
             <name>Case_Type_1_0_0</name>
-            <conditionLogic>((1 AND 2 AND 3) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1309,26 +1295,12 @@
         </rules>
         <rules>
             <name>Case_Type_2_0_0</name>
-            <conditionLogic>((1 AND 2 AND 3) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1370,26 +1342,12 @@
         </rules>
         <rules>
             <name>Case_Type_3_0_0</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 9 AND 10) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1422,20 +1380,6 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1445,26 +1389,12 @@
         </rules>
         <rules>
             <name>Case_Type_4_0_0</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 9 AND 10) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1497,20 +1427,6 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1520,26 +1436,12 @@
         </rules>
         <rules>
             <name>Case_Type_5_0_0</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 9 AND 10) AND (4 OR 5)) OR ((7 OR 8) AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1574,20 +1476,6 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
                 <targetReference>Get_Related_Case_Records_MRR</targetReference>
             </connector>
@@ -1595,19 +1483,12 @@
         </rules>
         <rules>
             <name>Case_Type_6_0_0</name>
-            <conditionLogic>((1 AND 2) AND (3 OR 4)) OR ((6 OR 7) AND 5)</conditionLogic>
+            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Transfer of Request</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1680,7 +1561,7 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Fixed Tasks Criteria&apos;s for Manager Override Request</description>
+    <description>Stabilize Status 5</description>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
