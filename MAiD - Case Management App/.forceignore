@@ -11,6 +11,7 @@ package.xml
 **settings
 #**standardValueSet
 #**matchingRule
+#**entitlementProcess
 
 #MoH Standard User.profile
 
