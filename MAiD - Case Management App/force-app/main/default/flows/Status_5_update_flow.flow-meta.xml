@@ -2,9 +2,25 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>52.0</apiVersion>
     <assignments>
+        <name>AssignCheckToEducationOnCase</name>
+        <label>AssignCheckToEducationOnCase</label>
+        <locationX>638</locationX>
+        <locationY>160</locationY>
+        <assignmentItems>
+            <assignToReference>SelectionValue</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Education_Selection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Case_Requirements_failure</name>
         <label>Case Requirements failure</label>
-        <locationX>1196</locationX>
+        <locationX>1595</locationX>
         <locationY>1180</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
@@ -18,9 +34,41 @@
         </connector>
     </assignments>
     <assignments>
+        <name>DeselectEducationOnCase</name>
+        <label>DeselectEducationOnCase</label>
+        <locationX>625</locationX>
+        <locationY>446</locationY>
+        <assignmentItems>
+            <assignToReference>SelectionValue</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Education_Selection</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>ImplementCounter</name>
+        <label>ImplementCounter</label>
+        <locationX>451</locationX>
+        <locationY>361</locationY>
+        <assignmentItems>
+            <assignToReference>EducationCheckCounter</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <numberValue>1.0</numberValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Related_Cases_Loop</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Insufficient_Privileges</name>
         <label>Insufficient Privileges</label>
-        <locationX>677</locationX>
+        <locationX>1076</locationX>
         <locationY>1028</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
@@ -36,7 +84,7 @@
     <assignments>
         <name>Manager_Review_Needed_for_Empty_Case_Childs</name>
         <label>Manager Review Needed for Empty Case Childs</label>
-        <locationX>1257</locationX>
+        <locationX>1656</locationX>
         <locationY>890</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
@@ -52,7 +100,7 @@
     <assignments>
         <name>Related_Case_Check_Failure</name>
         <label>Related Case Check Failure</label>
-        <locationX>1102</locationX>
+        <locationX>1501</locationX>
         <locationY>599</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
@@ -68,7 +116,7 @@
     <assignments>
         <name>Tasks_Check_Fail</name>
         <label>Tasks Check Fail</label>
-        <locationX>1090</locationX>
+        <locationX>1489</locationX>
         <locationY>327</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
@@ -99,7 +147,7 @@
         <name>ManagerClosure</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>Enter details for Manager Review</stringValue>
+            <stringValue>Enter required details for Manager Review / Error Logs not in reconciled or Logged for Tracking state</stringValue>
         </value>
     </constants>
     <constants>
@@ -126,7 +174,7 @@
     <decisions>
         <name>check_case_status</name>
         <label>check case status</label>
-        <locationX>456</locationX>
+        <locationX>855</locationX>
         <locationY>50</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -146,9 +194,34 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Check_Education_Practitioner</name>
+        <label>Check Education Practitioner</label>
+        <locationX>237</locationX>
+        <locationY>370</locationY>
+        <defaultConnector>
+            <targetReference>Related_Cases_Loop</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>IsChecked</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Related_Cases_Loop.Education_provided_to_practitioner__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ImplementCounter</targetReference>
+            </connector>
+            <label>IsChecked</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_for_Null_Related_Case_Records</name>
         <label>Check for Null Related Case Records</label>
-        <locationX>574</locationX>
+        <locationX>973</locationX>
         <locationY>850</locationY>
         <defaultConnector>
             <targetReference>ToBeCaseStatus_MRR_Check</targetReference>
@@ -173,7 +246,7 @@
     <decisions>
         <name>Check_for_Null_Tasks</name>
         <label>Check for Null Tasks</label>
-        <locationX>564</locationX>
+        <locationX>963</locationX>
         <locationY>373</locationY>
         <defaultConnector>
             <targetReference>GetTaskRecords</targetReference>
@@ -198,7 +271,7 @@
     <decisions>
         <name>Check_requirements_for_Related_Cases</name>
         <label>Check requirements for Related Cases</label>
-        <locationX>919</locationX>
+        <locationX>1318</locationX>
         <locationY>492</locationY>
         <defaultConnector>
             <targetReference>Related_Case_Check_Failure</targetReference>
@@ -208,21 +281,21 @@
             <name>Case_Type_1_0</name>
             <conditionLogic>(1 AND 2 AND 3 AND 6 AND 7) AND (4 OR 5)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -265,21 +338,21 @@
             <name>Case_Type_2_0</name>
             <conditionLogic>(1 AND 2 AND 3 AND 6 AND 7) AND (4 OR 5)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -322,21 +395,21 @@
             <name>Case_Type_3_0</name>
             <conditionLogic>(1 AND 2 AND 3 AND 6 AND 7 AND 8 AND 9) AND (4 OR 5)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -371,14 +444,14 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -393,21 +466,21 @@
             <name>Case_Type_4_0</name>
             <conditionLogic>(1 AND 2 AND 3 AND 6 AND 7 AND 8 AND 9) AND (4 OR 5)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -442,14 +515,14 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -464,21 +537,21 @@
             <name>Case_Type_5_0</name>
             <conditionLogic>(1 AND 2 AND 3 AND 6 AND 7 AND 8 AND 9) AND (4 OR 5)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -513,14 +586,14 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -535,14 +608,14 @@
             <name>Case_Type_6_0</name>
             <conditionLogic>(1 AND 2 AND 5 AND 6) AND (3 OR 4)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Transfer of Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -585,8 +658,8 @@
     <decisions>
         <name>Check_requirements_for_Tasks</name>
         <label>Check requirements for Tasks</label>
-        <locationX>912</locationX>
-        <locationY>326</locationY>
+        <locationX>1301</locationX>
+        <locationY>315</locationY>
         <defaultConnector>
             <targetReference>Tasks_Check_Fail</targetReference>
         </defaultConnector>
@@ -595,21 +668,21 @@
             <name>Case_Type_1</name>
             <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3) OR 6)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -630,7 +703,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -645,21 +718,21 @@
             <name>Case_Type_2</name>
             <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3) OR 6)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -680,7 +753,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -695,21 +768,21 @@
             <name>Case_Type_3</name>
             <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3 AND 6 AND 7) OR 8)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -730,21 +803,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -759,21 +832,21 @@
             <name>Case_Type_4</name>
             <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3 AND 6 AND 7) OR 8)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -794,21 +867,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -823,21 +896,21 @@
             <name>Case_Type_5</name>
             <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3 AND 6 AND 7) OR 8)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -858,21 +931,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -887,14 +960,14 @@
             <name>Case_Type_6</name>
             <conditionLogic>(1 AND 3 AND 4) AND (2 OR 5)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Transfer of Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -915,7 +988,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -952,7 +1025,7 @@
     <decisions>
         <name>Empty_child_check_Case</name>
         <label>Empty child check Case</label>
-        <locationX>945</locationX>
+        <locationX>1344</locationX>
         <locationY>844</locationY>
         <defaultConnector>
             <targetReference>Manager_Review_Needed_for_Empty_Case_Childs</targetReference>
@@ -962,56 +1035,56 @@
             <name>Is_Case_eligible_move_ahead</name>
             <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10 AND 13) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13) or (6 AND 7 AND 9 AND 10 AND 13)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Transfer of Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Mandatory_Data__c</leftValueReference>
+                <leftValueReference>$Record.Mandatory_Data__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Provincial_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Provincial_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
@@ -1032,21 +1105,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Federal_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Legislation_and_Critical_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Legislation_and_Critical_Safeguards__c</leftValueReference>
+                <leftValueReference>$Record.Federal_Safeguards__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>PASS</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -1061,49 +1134,49 @@
             <name>MRR_Is_Case_eligible_move_ahead</name>
             <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10) OR (6 AND 7 AND 8 AND 9 AND 10)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Transfer of Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1124,8 +1197,11 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Notes_to_Manager__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Pass_Case_Status</targetReference>
@@ -1158,7 +1234,7 @@
     <decisions>
         <name>Insufficient_Privilege_s</name>
         <label>Insufficient Privilege&apos;s</label>
-        <locationX>663</locationX>
+        <locationX>1062</locationX>
         <locationY>696</locationY>
         <defaultConnector>
             <targetReference>Insufficient_Privileges</targetReference>
@@ -1210,9 +1286,59 @@
         </rules>
     </decisions>
     <decisions>
+        <name>IsCounterEmpty</name>
+        <label>IsCounterEmpty</label>
+        <locationX>434</locationX>
+        <locationY>162</locationY>
+        <defaultConnector>
+            <targetReference>DeselectEducationOnCase</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckValueofCounter</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>EducationCheckCounter</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AssignCheckToEducationOnCase</targetReference>
+            </connector>
+            <label>CheckValueofCounter</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>IsListEmpty</name>
+        <label>IsListEmpty</label>
+        <locationX>175</locationX>
+        <locationY>56</locationY>
+        <defaultConnector>
+            <targetReference>Related_Cases_Loop</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Error Log Not Empty</defaultConnectorLabel>
+        <rules>
+            <name>ErrorLogEmpty</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>GetRelatedCaseRecords</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>check_case_status</targetReference>
+            </connector>
+            <label>ErrorLogEmpty</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>MRR_Requirements_for_Related_Case</name>
         <label>MRR Requirements for Related Case</label>
-        <locationX>942</locationX>
+        <locationX>1341</locationX>
         <locationY>1184</locationY>
         <defaultConnector>
             <targetReference>Case_Requirements_failure</targetReference>
@@ -1220,9 +1346,9 @@
         <defaultConnectorLabel>Error Log Check Failed</defaultConnectorLabel>
         <rules>
             <name>Case_Type_1_0_0</name>
-            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
+            <conditionLogic>((5 AND 4) OR 6) AND (2 OR 3) AND (1)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
@@ -1243,18 +1369,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Notes_to_Manager__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Related_Case_Records_MRR.Education_provided_to_practitioner__c</leftValueReference>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1267,9 +1396,9 @@
         </rules>
         <rules>
             <name>Case_Type_2_0_0</name>
-            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
+            <conditionLogic>((5 AND 4) OR 6) AND (2 OR 3) AND (1)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
@@ -1290,18 +1419,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Notes_to_Manager__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Related_Case_Records_MRR.Education_provided_to_practitioner__c</leftValueReference>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1314,9 +1446,9 @@
         </rules>
         <rules>
             <name>Case_Type_3_0_0</name>
-            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
+            <conditionLogic>((5 AND 4) OR 6) AND (2 OR 3) AND (1)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
@@ -1337,18 +1469,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Notes_to_Manager__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Related_Case_Records_MRR.Education_provided_to_practitioner__c</leftValueReference>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1361,9 +1496,9 @@
         </rules>
         <rules>
             <name>Case_Type_4_0_0</name>
-            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
+            <conditionLogic>((5 AND 4) OR 6) AND (2 OR 3) AND (1)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
@@ -1384,18 +1519,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Notes_to_Manager__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Related_Case_Records_MRR.Education_provided_to_practitioner__c</leftValueReference>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1408,9 +1546,9 @@
         </rules>
         <rules>
             <name>Case_Type_5_0_0</name>
-            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
+            <conditionLogic>((5 AND 4) OR 6) AND (2 OR 3) AND (1)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
@@ -1431,18 +1569,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Notes_to_Manager__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Related_Case_Records_MRR.Education_provided_to_practitioner__c</leftValueReference>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1455,9 +1596,9 @@
         </rules>
         <rules>
             <name>Case_Type_6_0_0</name>
-            <conditionLogic>(1 AND 4) AND (2 OR 3) AND (5 OR 6)</conditionLogic>
+            <conditionLogic>((5 AND 4) OR 6) AND (2 OR 3) AND (1)</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Transfer of Request</stringValue>
@@ -1478,18 +1619,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Notes_to_Manager__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Get_Related_Case_Records_MRR.Education_provided_to_practitioner__c</leftValueReference>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1504,7 +1648,7 @@
     <decisions>
         <name>ToBeCaseStatus_MRR_Check</name>
         <label>ToBeCaseStatus MRR Check</label>
-        <locationX>862</locationX>
+        <locationX>1261</locationX>
         <locationY>753</locationY>
         <defaultConnector>
             <targetReference>Insufficient_Privilege_s</targetReference>
@@ -1533,13 +1677,13 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Stabilize Status 5 - Empty Child Record Scenario Fix</description>
+    <description>Updated exit message at related case records</description>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
         <name>Get_Related_Case_Records</name>
         <label>Get Related Case Records</label>
-        <locationX>782</locationX>
+        <locationX>1181</locationX>
         <locationY>576</locationY>
         <collectionReference>GetRelatedCaseRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1553,7 +1697,7 @@
     <loops>
         <name>Get_Related_Case_Records_MRR</name>
         <label>Get Related Case Records MRR</label>
-        <locationX>798</locationX>
+        <locationX>1197</locationX>
         <locationY>1047</locationY>
         <collectionReference>GetRelatedCaseRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1567,7 +1711,7 @@
     <loops>
         <name>GetTaskRecords</name>
         <label>GetTaskRecords</label>
-        <locationX>704</locationX>
+        <locationX>1103</locationX>
         <locationY>236</locationY>
         <collectionReference>TasksRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
@@ -1576,6 +1720,20 @@
         </nextValueConnector>
         <noMoreValuesConnector>
             <targetReference>Check_for_Null_Related_Case_Records</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <loops>
+        <name>Related_Cases_Loop</name>
+        <label>Related Cases Loop</label>
+        <locationX>238</locationX>
+        <locationY>196</locationY>
+        <collectionReference>GetRelatedCaseRecords</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Check_Education_Practitioner</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>IsCounterEmpty</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -1600,11 +1758,11 @@
     <recordLookups>
         <name>Get_Related_Case</name>
         <label>Get Related Case</label>
-        <locationX>472</locationX>
-        <locationY>464</locationY>
+        <locationX>80</locationX>
+        <locationY>172</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>check_case_status</targetReference>
+            <targetReference>IsListEmpty</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -1623,8 +1781,8 @@
     <recordLookups>
         <name>Get_Task</name>
         <label>Get Task</label>
-        <locationX>337</locationX>
-        <locationY>464</locationY>
+        <locationX>81</locationX>
+        <locationY>338</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Related_Case</targetReference>
@@ -1644,8 +1802,8 @@
     <recordLookups>
         <name>GetCaseDetail</name>
         <label>GetCaseDetail</label>
-        <locationX>175</locationX>
-        <locationY>466</locationY>
+        <locationX>83</locationX>
+        <locationY>485</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Task</targetReference>
@@ -1673,7 +1831,7 @@
     <recordUpdates>
         <name>Fail_Status_Update</name>
         <label>Fail Status Update</label>
-        <locationX>1451</locationX>
+        <locationX>1850</locationX>
         <locationY>370</locationY>
         <inputAssignments>
             <field>Status</field>
@@ -1692,7 +1850,7 @@
     <recordUpdates>
         <name>Pass_Case_Status</name>
         <label>Pass Case Status</label>
-        <locationX>1371</locationX>
+        <locationX>1770</locationX>
         <locationY>758</locationY>
         <inputAssignments>
             <field>Status</field>
@@ -1711,7 +1869,7 @@
     <recordUpdates>
         <name>Revert_Status</name>
         <label>Revert Status</label>
-        <locationX>1161</locationX>
+        <locationX>1560</locationX>
         <locationY>469</locationY>
         <inputAssignments>
             <field>Status</field>
@@ -1727,9 +1885,25 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Education_Selection</name>
+        <label>Update Education Selection</label>
+        <locationX>741</locationX>
+        <locationY>296</locationY>
+        <connector>
+            <targetReference>check_case_status</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Education_provided_on_case__c</field>
+            <value>
+                <elementReference>SelectionValue</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <start>
         <locationX>50</locationX>
-        <locationY>195</locationY>
+        <locationY>617</locationY>
         <connector>
             <targetReference>GetCaseDetail</targetReference>
         </connector>
@@ -1738,6 +1912,17 @@
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>EducationCheckCounter</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
     <variables>
         <name>GetRelatedCaseRecords</name>
         <dataType>SObject</dataType>
@@ -1764,6 +1949,13 @@
     <variables>
         <name>RC_ErrorLogStatus</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SelectionValue</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
