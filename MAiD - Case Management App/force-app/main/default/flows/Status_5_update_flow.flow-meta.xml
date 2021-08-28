@@ -666,7 +666,7 @@
         <defaultConnectorLabel>Tasks Failed</defaultConnectorLabel>
         <rules>
             <name>Case_Type_1</name>
-            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3) OR 6)</conditionLogic>
+            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3) OR 6 OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -709,6 +709,13 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>GetTaskRecords</targetReference>
             </connector>
@@ -716,7 +723,7 @@
         </rules>
         <rules>
             <name>Case_Type_2</name>
-            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3) OR 6)</conditionLogic>
+            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3) OR 6 OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -759,6 +766,13 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>GetTaskRecords</targetReference>
             </connector>
@@ -766,7 +780,7 @@
         </rules>
         <rules>
             <name>Case_Type_3</name>
-            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3 AND 6 AND 7) OR 8)</conditionLogic>
+            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3 AND 6 AND 7) OR 8 OR 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -823,6 +837,13 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>GetTaskRecords</targetReference>
             </connector>
@@ -830,7 +851,7 @@
         </rules>
         <rules>
             <name>Case_Type_4</name>
-            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3 AND 6 AND 7) OR 8)</conditionLogic>
+            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3 AND 6 AND 7) OR 8 OR 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -887,6 +908,13 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>GetTaskRecords</targetReference>
             </connector>
@@ -894,7 +922,7 @@
         </rules>
         <rules>
             <name>Case_Type_5</name>
-            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3 AND 6 AND 7) OR 8)</conditionLogic>
+            <conditionLogic>1 AND 4 AND 5 AND ((2 AND 3 AND 6 AND 7) OR 8 OR 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -951,6 +979,13 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>GetTaskRecords</targetReference>
             </connector>
@@ -958,7 +993,7 @@
         </rules>
         <rules>
             <name>Case_Type_6</name>
-            <conditionLogic>(1 AND 3 AND 4) AND (2 OR 5)</conditionLogic>
+            <conditionLogic>(1 AND 3 AND 4) AND (2 OR 5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -989,6 +1024,13 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1033,7 +1075,7 @@
         <defaultConnectorLabel>Case Status Update Fail</defaultConnectorLabel>
         <rules>
             <name>Is_Case_eligible_move_ahead</name>
-            <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10 AND 13) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13) or (6 AND 7 AND 9 AND 10 AND 13)</conditionLogic>
+            <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10 AND 13 AND 14) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10 AND 11 AND 12 AND 13 AND 14) OR (6 AND 7 AND 9 AND 10 AND 13 AND 14)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1125,6 +1167,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Pass_Case_Status</targetReference>
             </connector>
@@ -1132,7 +1181,7 @@
         </rules>
         <rules>
             <name>MRR_Is_Case_eligible_move_ahead</name>
-            <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10) OR (6 AND 7 AND 8 AND 9 AND 10)</conditionLogic>
+            <conditionLogic>((1 OR 2) AND 7 AND 8 AND 9 AND 10 AND 11) OR ((3 OR 4 OR 5) AND 7 AND 8 AND 9 AND 10 AND 11) OR (6 AND 7 AND 8 AND 9 AND 10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1203,6 +1252,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Pass_Case_Status</targetReference>
             </connector>
@@ -1244,7 +1300,7 @@
             <name>Privileges_issue</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>VarGetCaseDetail.Manager_Override_Requested__c</leftValueReference>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -1255,6 +1311,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1677,7 +1740,7 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Updated exit message at related case records</description>
+    <description>Updates related to Education check over Tasks and Related Cases</description>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
