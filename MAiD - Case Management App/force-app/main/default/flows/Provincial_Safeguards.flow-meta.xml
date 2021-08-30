@@ -920,7 +920,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule28_yes</name>
-            <conditionLogic>(1 AND (2 OR 3 OR 4) AND ( 5 OR 6)) OR ( 7 AND 8 )</conditionLogic>
+            <conditionLogic>(1 AND (2 OR 3 OR 4) AND ( 5 OR 6)) OR ( 7 AND 8 ) Or (9)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientwasgivenopportunitytowithdra</leftValueReference>
                 <operator>EqualTo</operator>
@@ -972,6 +972,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patientwasgivenopportunitytowithdra</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
