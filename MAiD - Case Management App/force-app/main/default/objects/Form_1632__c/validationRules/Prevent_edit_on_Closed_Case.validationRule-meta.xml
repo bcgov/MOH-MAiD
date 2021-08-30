@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_edit_on_Closed_Case</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL( Case__r.Status , &apos;Closed&apos;)</errorConditionFormula>
+    <errorMessage>Cannot update as Case is Closed</errorMessage>
+</ValidationRule>
