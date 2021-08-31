@@ -4,7 +4,7 @@
     <assignments>
         <name>Rule_1_In_Scope</name>
         <label>Rule 1 In Scope</label>
-        <locationX>396</locationX>
+        <locationX>496</locationX>
         <locationY>219</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -20,10 +20,10 @@
     <assignments>
         <name>Rule_1_Message_Assignment</name>
         <label>Rule 1 Message Assignment</label>
-        <locationX>379</locationX>
+        <locationX>479</locationX>
         <locationY>608</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_1_Message</elementReference>
@@ -36,7 +36,7 @@
     <assignments>
         <name>Rule_2_In_Scope</name>
         <label>Rule 2 In Scope</label>
-        <locationX>736</locationX>
+        <locationX>836</locationX>
         <locationY>50</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -52,10 +52,10 @@
     <assignments>
         <name>Rule_2_Message_Assignment</name>
         <label>Rule 2 Message Assignment</label>
-        <locationX>591</locationX>
+        <locationX>691</locationX>
         <locationY>518</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_2_Message</elementReference>
@@ -68,7 +68,7 @@
     <assignments>
         <name>Rule_36_In_Scope</name>
         <label>Rule 36 In Scope</label>
-        <locationX>2087</locationX>
+        <locationX>2187</locationX>
         <locationY>792</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -84,10 +84,10 @@
     <assignments>
         <name>Rule_36_Message_Assignment</name>
         <label>Rule 36 Message Assignment</label>
-        <locationX>1721</locationX>
+        <locationX>1821</locationX>
         <locationY>1412</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_36_Message</elementReference>
@@ -100,7 +100,7 @@
     <assignments>
         <name>Rule_3_In_Scope</name>
         <label>Rule 3 In Scope</label>
-        <locationX>1154</locationX>
+        <locationX>1254</locationX>
         <locationY>60</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -116,10 +116,10 @@
     <assignments>
         <name>Rule_3_Message_Assignment</name>
         <label>Rule 3 Message Assignment</label>
-        <locationX>726</locationX>
+        <locationX>826</locationX>
         <locationY>463</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_3_Message</elementReference>
@@ -132,7 +132,7 @@
     <assignments>
         <name>Rule_40_In_Scope</name>
         <label>Rule 40 In Scope</label>
-        <locationX>1682</locationX>
+        <locationX>1782</locationX>
         <locationY>853</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -148,10 +148,10 @@
     <assignments>
         <name>Rule_40_Message_Assignment</name>
         <label>Rule 40 Message Assignment</label>
-        <locationX>1570</locationX>
+        <locationX>1670</locationX>
         <locationY>627</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_40_Message</elementReference>
@@ -164,7 +164,7 @@
     <assignments>
         <name>Rule_47_In_Scope</name>
         <label>Rule 47 In Scope</label>
-        <locationX>1328</locationX>
+        <locationX>1428</locationX>
         <locationY>905</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -180,10 +180,10 @@
     <assignments>
         <name>Rule_47_Message_Assignment</name>
         <label>Rule 47 Message Assignment</label>
-        <locationX>1075</locationX>
+        <locationX>1175</locationX>
         <locationY>787</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_47_Message</elementReference>
@@ -196,10 +196,10 @@
     <assignments>
         <name>Rule_49_Message_Assignment</name>
         <label>Rule 49 Message Assignment</label>
-        <locationX>838</locationX>
+        <locationX>938</locationX>
         <locationY>1074</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_49_Message</elementReference>
@@ -212,7 +212,7 @@
     <assignments>
         <name>Rule_4_In_Scope</name>
         <label>Rule 4 In Scope</label>
-        <locationX>1571</locationX>
+        <locationX>1671</locationX>
         <locationY>67</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -228,10 +228,10 @@
     <assignments>
         <name>Rule_4_Message_Assignment</name>
         <label>Rule 4 Message Assignment</label>
-        <locationX>849</locationX>
+        <locationX>949</locationX>
         <locationY>447</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_4_Message</elementReference>
@@ -244,7 +244,7 @@
     <assignments>
         <name>Rule_5_In_Scope</name>
         <label>Rule 5 In Scope</label>
-        <locationX>2095</locationX>
+        <locationX>2195</locationX>
         <locationY>68</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -260,10 +260,10 @@
     <assignments>
         <name>Rule_5_Message_Assignment</name>
         <label>Rule 5 Message Assignment</label>
-        <locationX>968</locationX>
+        <locationX>1068</locationX>
         <locationY>477</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_5_Message</elementReference>
@@ -276,7 +276,7 @@
     <assignments>
         <name>Rule_6_In_Scope</name>
         <label>Rule 6 In Scope</label>
-        <locationX>2227</locationX>
+        <locationX>2327</locationX>
         <locationY>437</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -292,10 +292,10 @@
     <assignments>
         <name>Rule_6_Message_Assignment</name>
         <label>Rule 6 Message Assignment</label>
-        <locationX>1123</locationX>
+        <locationX>1223</locationX>
         <locationY>555</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_6_Message</elementReference>
@@ -308,7 +308,7 @@
     <assignments>
         <name>Rule_7_In_Scope</name>
         <label>Rule 7 In Scope</label>
-        <locationX>2358</locationX>
+        <locationX>2458</locationX>
         <locationY>627</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -324,10 +324,10 @@
     <assignments>
         <name>Rule_7_Message_Assignment</name>
         <label>Rule 7 Message Assignment</label>
-        <locationX>1339</locationX>
+        <locationX>1439</locationX>
         <locationY>433</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_7_Message</elementReference>
@@ -340,7 +340,7 @@
     <assignments>
         <name>Rule_8_In_Scope</name>
         <label>Rule 8 In Scope</label>
-        <locationX>2394</locationX>
+        <locationX>2494</locationX>
         <locationY>753</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -356,10 +356,10 @@
     <assignments>
         <name>Rule_8_Message_Assignment</name>
         <label>Rule 8 Message Assignment</label>
-        <locationX>1811</locationX>
+        <locationX>1911</locationX>
         <locationY>590</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_8_Message</elementReference>
@@ -372,7 +372,7 @@
     <assignments>
         <name>Rule_9_In_Scope</name>
         <label>Rule 9 In Scope</label>
-        <locationX>2276</locationX>
+        <locationX>2376</locationX>
         <locationY>1124</locationY>
         <assignmentItems>
             <assignToReference>is_Not_Applicable</assignToReference>
@@ -388,10 +388,10 @@
     <assignments>
         <name>Rule_9_Message_Assignment</name>
         <label>Rule 9 Message Assignment</label>
-        <locationX>549</locationX>
+        <locationX>649</locationX>
         <locationY>1549</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_9_Message</elementReference>
@@ -516,7 +516,7 @@
     <decisions>
         <name>Not_Applicable_In_Flow</name>
         <label>Not Applicable In Flow</label>
-        <locationX>1308</locationX>
+        <locationX>1408</locationX>
         <locationY>1303</locationY>
         <defaultConnector>
             <targetReference>Legislation_PASS</targetReference>
@@ -541,7 +541,7 @@
     <decisions>
         <name>Rule_1</name>
         <label>Rule 1</label>
-        <locationX>372</locationX>
+        <locationX>472</locationX>
         <locationY>426</locationY>
         <defaultConnector>
             <targetReference>Rule_1_Message_Assignment</targetReference>
@@ -585,7 +585,7 @@
         </rules>
         <rules>
             <name>Rule_1_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4) and (5 and 6 and 7 and 8 and 9 and 10 and 11 and 12)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4) AND (5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -679,7 +679,7 @@
     <decisions>
         <name>Rule_2_0</name>
         <label>Rule 2</label>
-        <locationX>575</locationX>
+        <locationX>675</locationX>
         <locationY>260</locationY>
         <defaultConnector>
             <targetReference>Rule_2_Message_Assignment</targetReference>
@@ -917,8 +917,8 @@
     <decisions>
         <name>Rule_3</name>
         <label>Rule 3</label>
-        <locationX>883</locationX>
-        <locationY>196</locationY>
+        <locationX>938</locationX>
+        <locationY>208</locationY>
         <defaultConnector>
             <targetReference>Rule_3_Message_Assignment</targetReference>
         </defaultConnector>
@@ -975,7 +975,7 @@
         </rules>
         <rules>
             <name>Rule_3_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1034,7 +1034,7 @@
     <decisions>
         <name>Rule_36</name>
         <label>Rule 36</label>
-        <locationX>1954</locationX>
+        <locationX>2054</locationX>
         <locationY>1091</locationY>
         <defaultConnector>
             <targetReference>Rule_36_Message_Assignment</targetReference>
@@ -1095,7 +1095,7 @@
     <decisions>
         <name>Rule_4</name>
         <label>Rule 4</label>
-        <locationX>1167</locationX>
+        <locationX>1267</locationX>
         <locationY>219</locationY>
         <defaultConnector>
             <targetReference>Rule_4_Message_Assignment</targetReference>
@@ -1153,7 +1153,7 @@
         </rules>
         <rules>
             <name>Rule_4_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1212,7 +1212,7 @@
     <decisions>
         <name>Rule_40</name>
         <label>Rule 40</label>
-        <locationX>1883</locationX>
+        <locationX>1983</locationX>
         <locationY>786</locationY>
         <defaultConnector>
             <targetReference>Rule_40_Message_Assignment</targetReference>
@@ -1242,7 +1242,7 @@
         </rules>
         <rules>
             <name>Rule_40_Success</name>
-            <conditionLogic>(1 OR 5) AND (2 Or 6) AND (3 AND 4)</conditionLogic>
+            <conditionLogic>(1 OR 5) AND (2 OR 6) AND (3 AND 4)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1294,7 +1294,7 @@
     <decisions>
         <name>Rule_47_0</name>
         <label>Rule 47</label>
-        <locationX>1552</locationX>
+        <locationX>1652</locationX>
         <locationY>825</locationY>
         <defaultConnector>
             <targetReference>Rule_47_Message_Assignment</targetReference>
@@ -1380,7 +1380,7 @@
     <decisions>
         <name>Rule_49</name>
         <label>Rule 49</label>
-        <locationX>1354</locationX>
+        <locationX>1454</locationX>
         <locationY>1052</locationY>
         <defaultConnector>
             <targetReference>Rule_49_Message_Assignment</targetReference>
@@ -1460,7 +1460,7 @@
     <decisions>
         <name>Rule_5</name>
         <label>Rule 5</label>
-        <locationX>1559</locationX>
+        <locationX>1659</locationX>
         <locationY>241</locationY>
         <defaultConnector>
             <targetReference>Rule_5_Message_Assignment</targetReference>
@@ -1518,7 +1518,7 @@
         </rules>
         <rules>
             <name>Rule_5_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1577,7 +1577,7 @@
     <decisions>
         <name>Rule_6</name>
         <label>Rule 6</label>
-        <locationX>2079</locationX>
+        <locationX>2179</locationX>
         <locationY>246</locationY>
         <defaultConnector>
             <targetReference>Rule_6_Message_Assignment</targetReference>
@@ -1635,7 +1635,7 @@
         </rules>
         <rules>
             <name>Rule_6_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1694,7 +1694,7 @@
     <decisions>
         <name>Rule_7</name>
         <label>Rule 7</label>
-        <locationX>2088</locationX>
+        <locationX>2188</locationX>
         <locationY>554</locationY>
         <defaultConnector>
             <targetReference>Rule_7_Message_Assignment</targetReference>
@@ -1752,7 +1752,7 @@
         </rules>
         <rules>
             <name>Rule_7_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and (7 AND 8))</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND (7 AND 8))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1818,7 +1818,7 @@
     <decisions>
         <name>Rule_8</name>
         <label>Rule 8</label>
-        <locationX>2182</locationX>
+        <locationX>2282</locationX>
         <locationY>754</locationY>
         <defaultConnector>
             <targetReference>Rule_8_Message_Assignment</targetReference>
@@ -1879,7 +1879,7 @@
     <decisions>
         <name>Rule_9</name>
         <label>Rule 9</label>
-        <locationX>2282</locationX>
+        <locationX>2382</locationX>
         <locationY>966</locationY>
         <defaultConnector>
             <targetReference>Rule_9_Message_Assignment</targetReference>
@@ -2007,7 +2007,7 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <description>Fixed Rule 2 multiple select issue (all multi-select picklist)</description>
+    <description>Fixed Legislative safeguard exit points and made all conditions uniform</description>
     <formulas>
         <name>is_If_other_specify</name>
         <dataType>Boolean</dataType>
@@ -2075,10 +2075,34 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
+        <name>Get_Case_Record</name>
+        <label>Get Case Record</label>
+        <locationX>174</locationX>
+        <locationY>462</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Form_1634</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>ListCaseDetail</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Legislation_and_Critical_Safeguards__c</queriedFields>
+        <queriedFields>Legislation_and_Critical_Feedback_Msg__c</queriedFields>
+        <queriedFields>Type</queriedFields>
+    </recordLookups>
+    <recordLookups>
         <name>Get_Form_1634</name>
         <label>Get Form 1634</label>
-        <locationX>184</locationX>
-        <locationY>591</locationY>
+        <locationX>304</locationX>
+        <locationY>461</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Rule_1</targetReference>
@@ -2088,14 +2112,7 @@
             <field>Case__c</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>IsDeleted</field>
-            <operator>EqualTo</operator>
-            <value>
-                <booleanValue>false</booleanValue>
+                <elementReference>ListCaseDetail.Id</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -2105,7 +2122,7 @@
     <recordUpdates>
         <name>Legislation_FAIL</name>
         <label>Legislation FAIL</label>
-        <locationX>724</locationX>
+        <locationX>824</locationX>
         <locationY>974</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2118,7 +2135,7 @@
         <inputAssignments>
             <field>Legislation_and_Critical_Feedback_Msg__c</field>
             <value>
-                <elementReference>$Flow.CurrentStage</elementReference>
+                <elementReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -2132,7 +2149,7 @@
     <recordUpdates>
         <name>Legislation_Not_Applicable</name>
         <label>Legislation Not Applicable</label>
-        <locationX>990</locationX>
+        <locationX>1090</locationX>
         <locationY>1359</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2159,9 +2176,9 @@
     <recordUpdates>
         <name>Legislation_PASS</name>
         <label>Legislation PASS</label>
-        <locationX>984</locationX>
+        <locationX>1084</locationX>
         <locationY>1170</locationY>
-        <filterLogic>1</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
@@ -2184,10 +2201,10 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>56</locationX>
-        <locationY>133</locationY>
+        <locationX>50</locationX>
+        <locationY>124</locationY>
         <connector>
-            <targetReference>Get_Form_1634</targetReference>
+            <targetReference>Get_Case_Record</targetReference>
         </connector>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
@@ -2203,5 +2220,13 @@
         <value>
             <booleanValue>true</booleanValue>
         </value>
+    </variables>
+    <variables>
+        <name>ListCaseDetail</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
     </variables>
 </Flow>
