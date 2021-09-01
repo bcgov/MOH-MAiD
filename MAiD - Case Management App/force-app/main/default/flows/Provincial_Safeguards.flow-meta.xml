@@ -1165,6 +1165,28 @@
             </connector>
             <label>CheckRule29=yes</label>
         </rules>
+        <rules>
+            <name>ByPass_Rule_29</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_ProxySignedforMAiD</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Proxy_Signed_for_MAiD</targetReference>
+            </connector>
+            <label>ByPass Rule 29</label>
+        </rules>
     </decisions>
     <decisions>
         <name>CheckRule30</name>
@@ -2467,7 +2489,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>1.11 Final - Fixed Rule 34 Provincial Safeguards</description>
+    <description>Fix on Rule 29 PS</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
