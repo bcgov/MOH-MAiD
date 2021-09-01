@@ -1989,7 +1989,7 @@
             </conditions>
             <conditions>
                 <leftValueReference>Get_Form_1634.Patient_is_capable_of_providing_consent__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>2 - I have reasons to be concerned</stringValue>
                 </rightValue>
@@ -2007,7 +2007,7 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <description>Fixed Legislative safeguard exit points and made all conditions uniform</description>
+    <description>Fix on Rule 9</description>
     <formulas>
         <name>is_If_other_specify</name>
         <dataType>Boolean</dataType>
