@@ -411,22 +411,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.REQ_Q10_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Case.REQ_Q05_42_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.SPC_Q05_PCFormula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.SPC_Q05_PCFormula__c</field>
+        <field>Case.REQ_Q10_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -462,6 +452,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Reporting_Errors__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.SPC_Q05_PCFormula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1486,16 +1481,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Their_medical_diagnosis_and_prognosis__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.Request_was_signed_and_dated_after_the_p__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.If_Yes_is_patients_change_in_eligbilit__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2171,6 +2156,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Request_was_signed_and_dated_after_the_p__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Right_to_withdraw_their_request__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2287,6 +2277,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.The_patient_was_at_risk_of_losing_capaci__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Their_medical_diagnosis_and_prognosis__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
