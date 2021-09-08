@@ -17,8 +17,8 @@
     <assignments>
         <name>Skip_for_Error_Log_save</name>
         <label>Skip for Error Log save</label>
-        <locationX>972</locationX>
-        <locationY>252</locationY>
+        <locationX>554</locationX>
+        <locationY>138</locationY>
         <assignmentItems>
             <assignToReference>$Record.Prevent_save_on_duplicate_PHN__c</assignToReference>
             <operator>Assign</operator>
@@ -47,7 +47,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Compare_PHN.ParentId</leftValueReference>
+                <leftValueReference>$Record.ParentId</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -60,7 +60,7 @@
         </rules>
         <rules>
             <name>To_check_if_there_is_any_value_in_Get_Record</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 4) OR (1 AND 2 AND 3 AND 5)</conditionLogic>
             <conditions>
                 <leftValueReference>Compare_PHN.PHN__c</leftValueReference>
                 <operator>EqualTo</operator>
@@ -69,10 +69,31 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Compare_PHN.ParentId</leftValueReference>
+                <leftValueReference>$Record.ParentId</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.PHN__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.PHN__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.PHN__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.PHN__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -81,7 +102,7 @@
             <label>To check if there is any value in Get Record</label>
         </rules>
     </decisions>
-    <description>Update over duplicate PHN Issue</description>
+    <description>Update in condition of duplicate PHN Issue</description>
     <interviewLabel>check for existing open case with same PHN {!$Flow.CurrentDateTime}</interviewLabel>
     <label>check for existing open case with same PHN</label>
     <loops>
@@ -95,7 +116,7 @@
             <targetReference>If_Get_Record_found_any_value</targetReference>
         </nextValueConnector>
         <noMoreValuesConnector>
-            <targetReference>Prevent_Save_sets_to_true</targetReference>
+            <targetReference>Skip_for_Error_Log_save</targetReference>
         </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
@@ -139,13 +160,6 @@
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Closed</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Type</field>
-            <operator>EqualTo</operator>
-            <value>
-                <elementReference>$Record.Type</elementReference>
             </value>
         </filters>
         <object>Case</object>
