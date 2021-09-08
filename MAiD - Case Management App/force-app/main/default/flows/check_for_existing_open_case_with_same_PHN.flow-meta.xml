@@ -68,13 +68,20 @@
                     <elementReference>PHN_var</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Compare_PHN.ParentId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Prevent_Save_sets_to_true</targetReference>
             </connector>
             <label>To check if there is any value in Get Record</label>
         </rules>
     </decisions>
-    <description>Fixed Error Log duplicate PHN issue</description>
+    <description>Update over duplicate PHN Issue</description>
     <interviewLabel>check for existing open case with same PHN {!$Flow.CurrentDateTime}</interviewLabel>
     <label>check for existing open case with same PHN</label>
     <loops>
@@ -87,6 +94,9 @@
         <nextValueConnector>
             <targetReference>If_Get_Record_found_any_value</targetReference>
         </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Prevent_Save_sets_to_true</targetReference>
+        </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
         <name>BuilderType</name>
