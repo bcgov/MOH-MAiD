@@ -13,8 +13,8 @@ package.xml
 **matchingRule
 **duplicateRule
 **entitlementProcess
-**permissionset
-**recordTypes
+#**permissionset
+#**recordTypes
 
 #MoH Standard User.profile
 
