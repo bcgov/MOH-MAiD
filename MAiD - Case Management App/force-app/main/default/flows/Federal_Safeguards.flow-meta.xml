@@ -1702,8 +1702,8 @@
     <decisions>
         <name>CheckRule38_2</name>
         <label>CheckRule38-2</label>
-        <locationX>170</locationX>
-        <locationY>1777</locationY>
+        <locationX>169</locationX>
+        <locationY>1776</locationY>
         <defaultConnector>
             <targetReference>Rule38ErrorMsg</targetReference>
         </defaultConnector>
@@ -1713,7 +1713,7 @@
             <conditionLogic>(((1 AND 2 AND 7) OR (5 AND 6)) AND 3) OR 4</conditionLogic>
             <conditions>
                 <leftValueReference>VarNumberofDays</leftValueReference>
-                <operator>GreaterThan</operator>
+                <operator>GreaterThanOrEqualTo</operator>
                 <rightValue>
                     <numberValue>91.0</numberValue>
                 </rightValue>
@@ -1954,7 +1954,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>1.14- Fixe Rule 14 Provincial Safeguards</description>
+    <description>1.15- Fixed Rule 38 Federal Safeguards Greater than or Equal to 91</description>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
