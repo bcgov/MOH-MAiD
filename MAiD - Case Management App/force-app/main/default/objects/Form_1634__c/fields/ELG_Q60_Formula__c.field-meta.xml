@@ -6,7 +6,7 @@
 &quot;1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable&quot;,1,
 &quot;2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable&quot;,2,
 &quot;3 - Does not meet the criteria for MAiD&quot;,0,
-&quot;4- NO determination made&quot;,0,2)</formula>
+&quot;4- NO determination made&quot;,0,0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>ELG_Q60 - Formula</label>
     <precision>18</precision>
