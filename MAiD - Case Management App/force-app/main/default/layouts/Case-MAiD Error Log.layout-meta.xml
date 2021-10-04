@@ -54,10 +54,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Reason</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Additional_Notes__c</field>
             </layoutItems>
             <layoutItems>
