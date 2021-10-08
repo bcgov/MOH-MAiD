@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>AF_Case_Status_Update_Fail</name>
+        <label>AF Case Status Update Fail</label>
+        <locationX>874</locationX>
+        <locationY>116</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Msg_Status_Fail_AF</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Fails_Update_to_Previous_Status</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Case_Status_Update_Follow_Up_Error</name>
+        <label>Case Status Update Follow Up Error</label>
+        <locationX>996</locationX>
+        <locationY>484</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Msg_Fail_FollowUp</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Status_Follow_CC_Review</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Case_Status_Update_Success</name>
+        <label>Case Status Update Success</label>
+        <locationX>1158</locationX>
+        <locationY>319</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Msg_Status_Success</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Success_Update_Status_Message</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>College_Hold_Error</name>
+        <label>College Hold Error</label>
+        <locationX>761</locationX>
+        <locationY>548</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Holdstatusfail</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_College_Referral_Hold</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Ready_for_CC_Review_Error_1</name>
+        <label>Ready for CC Review Error</label>
+        <locationX>888</locationX>
+        <locationY>629</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Msg_Ready_CC_Review_Error</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Error_Ready_for_CC_Review</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <name>Holdstatusfail</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Status update failed. Case cannot move to Closed or Ready for Manager Review status.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Msg_Fail_FollowUp</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Status update failed. Case can be moved to status Ready for CC Review Checks.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Msg_Ready_CC_Review_Error</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Status update failed. Case can be moved to status Follow up CC Review Checks.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Msg_Status_Fail_AF</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Status update failed. Case can only be moved to status Follow up CC Review Checks.</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Msg_Status_Success</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Status Succeeded to Update</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <name>Is_Satisfying_Status_Conditions</name>
+        <label>Is Satisfying Status Conditions</label>
+        <locationX>861</locationX>
+        <locationY>361</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Is_Awaiting_Forms</name>
+            <conditionLogic>1 AND (8 OR 9) AND (2 OR 3 OR 4 OR 5 OR 6 OR 7)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting Forms</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer of Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up required for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>College Referral/HOLD</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Status_Update_Success</targetReference>
+            </connector>
+            <label>Is Awaiting Forms</label>
+        </rules>
+        <rules>
+            <name>AF_Error_on_Manager_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting Forms</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AF_Case_Status_Update_Fail</targetReference>
+            </connector>
+            <label>AF Error on Manager Review</label>
+        </rules>
+        <rules>
+            <name>AF_Error_in_Closed_or_further_move</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting Forms</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>AF_Case_Status_Update_Fail</targetReference>
+            </connector>
+            <label>AF Error in Closed or further move</label>
+        </rules>
+        <rules>
+            <name>Is_Follow_up_required_for_CC_Review_Checks</name>
+            <conditionLogic>1 AND (2 OR 9) AND (3 OR 4 OR 5 OR 6 OR 7 OR 8)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up required for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer of Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>College Referral/HOLD</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Status_Update_Success</targetReference>
+            </connector>
+            <label>Is Follow up required for CC Review/Checks</label>
+        </rules>
+        <rules>
+            <name>is_College_Referal_Hold</name>
+            <conditionLogic>1 AND (2 AND 3) AND (4 OR 5 OR 6 OR 7 OR 8 OR 9)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>College Referral/HOLD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer of Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Status_Update_Success</targetReference>
+            </connector>
+            <label>is College Referal Hold</label>
+        </rules>
+        <rules>
+            <name>FollowUp_Error</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up required for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Status_Update_Follow_Up_Error</targetReference>
+            </connector>
+            <label>FollowUp Error</label>
+        </rules>
+        <rules>
+            <name>College_Referral_Hold_Error</name>
+            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>College Referral/HOLD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>College_Hold_Error</targetReference>
+            </connector>
+            <label>College Referral Hold Error</label>
+        </rules>
+        <rules>
+            <name>Ready_for_CC_Review_Checks</name>
+            <conditionLogic>1 AND (2 AND 3 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Status_Update_Success</targetReference>
+            </connector>
+            <label>Ready for CC Review Checks</label>
+        </rules>
+        <rules>
+            <name>Ready_for_CC_Review_Error</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ready_for_CC_Review_Error_1</targetReference>
+            </connector>
+            <label>Ready for CC Review Error</label>
+        </rules>
+    </decisions>
+    <description>Updated error messages of case status move</description>
+    <interviewLabel>Status update prevention {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Status update prevention</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Fails_Update_to_Previous_Status</name>
+        <label>Fails Update to Previous Status</label>
+        <locationX>1001</locationX>
+        <locationY>117</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>FailScenarioMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Success_Update_Status_Message</name>
+        <label>Success Update Status Message</label>
+        <locationX>1345</locationX>
+        <locationY>351</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>Msg_Status_Success</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_College_Referral_Hold</name>
+        <label>Update College Referral Hold</label>
+        <locationX>717</locationX>
+        <locationY>668</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>FailScenarioMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Error_Ready_for_CC_Review</name>
+        <label>Update Error Ready for CC Review</label>
+        <locationX>1049</locationX>
+        <locationY>619</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>FailScenarioMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Status_Follow_CC_Review</name>
+        <label>Update Status Follow CC Review</label>
+        <locationX>1156</locationX>
+        <locationY>483</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>FailScenarioMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>414</locationX>
+        <locationY>344</locationY>
+        <connector>
+            <targetReference>Is_Satisfying_Status_Conditions</targetReference>
+        </connector>
+        <object>Case</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>Error_Log_List</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>FailScenarioMessage</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>is_ErrorLog_Ready</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>is_Tasks_Ready</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>Task_List</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Task</objectType>
+    </variables>
+    <variables>
+        <name>Var1634_I_determine_patient</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+</Flow>
