@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>case (If_yes_for_how_long__c ,
 &quot;1 - Less than 6 months&quot;,1,
-&quot;2 - 2 - 6 months to less than 1 year&quot;,2,
+&quot;2 - 6 months to less than 1 year&quot;,2,
 &quot;3 - 1 year to less than 2 years&quot;,3,
 &quot;4 - 2 years or more&quot;,4,
 &quot;5 - Do not know&quot;,5,0)</formula>
