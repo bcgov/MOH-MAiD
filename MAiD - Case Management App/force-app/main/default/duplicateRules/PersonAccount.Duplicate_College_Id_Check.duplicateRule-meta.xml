@@ -13,5 +13,5 @@
     <isActive>true</isActive>
     <masterLabel>Duplicate College Id Check</masterLabel>
     <securityOption>BypassSharingRules</securityOption>
-    <sortOrder>2</sortOrder>
+    <sortOrder>1</sortOrder>
 </DuplicateRule>
