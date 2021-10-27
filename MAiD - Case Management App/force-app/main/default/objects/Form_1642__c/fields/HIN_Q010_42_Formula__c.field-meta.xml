@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HIN_Q010_42_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Case__r.Province_or_Territory_that_issued_PHN__c ,
+&quot;59 - British Columbia&quot;,59,
+&quot;10 - Newfoundland and Labrador&quot;,10,
+&quot;11 - Prince Edward Island&quot;,11,
+&quot;12 - Nova Scotia&quot;,12,
+&quot;13 - New Brunswick&quot;,13,
+&quot;24 - Quebec&quot;,24,
+&quot;35 - Ontario&quot;,35,
+&quot;46 - Manitoba&quot;,46,
+&quot;47 - Saskatchewan&quot;,47,
+&quot;48 - Alberta&quot;,48,
+&quot;60 - Yukon&quot;,60,
+&quot;61 - Northwest Territories&quot;,61,
+&quot;62 - Nunavut&quot;,62,59)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>HIN_Q010 - 42 - Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

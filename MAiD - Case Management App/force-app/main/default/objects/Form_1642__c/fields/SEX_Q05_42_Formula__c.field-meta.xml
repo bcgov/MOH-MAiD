@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SEX_Q05_42_Formula__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Case__r.Gender__c ,
+&quot;1 - Male&quot;,1,
+&quot;2 - Female&quot;,2,
+&quot;3 - Other&quot;,3,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SEX_Q05-42-Formula</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
