@@ -65,10 +65,11 @@
         <field>Form_1642__c.REQ_Q10_42_Formula__c</field>
     </columns>
     <columns>
-        <field>FK_$Case.REF_Q05_42_Formula__c</field>
+        <field>Form_1642__c.REF_Q05_42_Formula__c</field>
     </columns>
     <columns>
-        <field>Form_1642__c.REF_Q10_42_Formula__c</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1642__c.REF_Q10_Value__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -101,7 +102,8 @@
         <field>Form_1642__c.SUP_Q10_42__c</field>
     </columns>
     <format>Tabular</format>
-    <name>S3 - Referral or Transfer v1</name>
+    <name>S3 - Referral or Transfer - Updated</name>
+    <description>S3 - Referral or transfer Report </description>
     <params>
         <name>co</name>
         <value>1</value>

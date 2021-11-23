@@ -4,7 +4,7 @@
     <externalId>false</externalId>
     <formula>IF( Did_you_complete_an_eligibility_assessme__c =true,1,2)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>REF_Q10 - Value</label>
+    <label>REF_Q10 - 42 - Formula</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
