@@ -341,7 +341,7 @@
         <field>Form_1634__c.WOR_Q10_Formula__c</field>
     </columns>
     <columns>
-        <field>Form_1634__c.SUP_Q05_Formula__c</field>
+        <field>Form_1634__c.SUP_Q05__c</field>
     </columns>
     <columns>
         <field>Form_1634__c.SUP_Q10_Formula__c</field>

@@ -101,9 +101,9 @@
     <columns>
         <field>Form_1642__c.SUP_Q10_42__c</field>
     </columns>
+    <description>Updated Referral Transfer Request Report from Form 1642</description>
     <format>Tabular</format>
-    <name>S3 - Referral or Transfer - Updated</name>
-    <description>S3 - Referral or transfer Report </description>
+    <name>S3 - Referral or Transfer</name>
     <params>
         <name>co</name>
         <value>1</value>
