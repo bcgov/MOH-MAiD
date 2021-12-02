@@ -23,6 +23,23 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordUpdates>
+        <description>Update Reports Field</description>
+        <name>Update_SUP_Q05</name>
+        <label>Update SUP_Q05</label>
+        <locationX>144</locationX>
+        <locationY>330</locationY>
+        <connector>
+            <targetReference>UpdateCase</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>SUP_Q05__c</field>
+            <value>
+                <elementReference>$Record.Additional_Supplementary_Information__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>UpdateCase</name>
         <label>UpdateCase</label>
         <locationX>525</locationX>
@@ -38,25 +55,25 @@
         <inputAssignments>
             <field>Federal_Safeguards__c</field>
             <value>
-                <stringValue/>
+                <stringValue></stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Legislation_and_Critical_Safeguards__c</field>
             <value>
-                <stringValue/>
+                <stringValue></stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Mandatory_Data__c</field>
             <value>
-                <stringValue/>
+                <stringValue></stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>Provincial_Safeguards__c</field>
             <value>
-                <stringValue/>
+                <stringValue></stringValue>
             </value>
         </inputAssignments>
         <object>Case</object>
@@ -65,7 +82,7 @@
         <locationX>50</locationX>
         <locationY>50</locationY>
         <connector>
-            <targetReference>UpdateCase</targetReference>
+            <targetReference>Update_SUP_Q05</targetReference>
         </connector>
         <object>Form_1634__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
