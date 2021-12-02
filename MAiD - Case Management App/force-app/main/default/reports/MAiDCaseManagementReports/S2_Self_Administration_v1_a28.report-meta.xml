@@ -406,6 +406,9 @@
     <columns>
         <field>Form_1634__c.SUP_Q10_Formula__c</field>
     </columns>
+    <columns>
+        <field>Form_1634__c.SUP_Q05__c</field>
+    </columns>
     <description>S2 - Self Administration Report</description>
     <format>Tabular</format>
     <name>S2 - Self Administration</name>
