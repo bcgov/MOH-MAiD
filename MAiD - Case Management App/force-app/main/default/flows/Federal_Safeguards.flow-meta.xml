@@ -2132,7 +2132,7 @@
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientauthorizedtorecieve2nddose</assignToReference>
-            <field>Patient_authorized_to_recieve_2nd_dose__c</field>
+            <field>Patient_authorized_to_recieve_second_dos__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientconsentedtoassessment</assignToReference>

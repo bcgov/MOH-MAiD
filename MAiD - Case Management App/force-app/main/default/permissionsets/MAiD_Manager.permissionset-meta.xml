@@ -1686,7 +1686,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Patient_authorized_to_recieve_2nd_dose__c</field>
+        <field>Form_1634__c.Patient_authorized_to_recieve_second_dos__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
