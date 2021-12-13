@@ -911,16 +911,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Did_the_patient_cause_their_death__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.Did_the_patient_self_administer_the_subs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Did_you_consult_with_other_health_care_p__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1356,11 +1346,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_Other_location_specify_1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.If_Other_location_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1686,7 +1671,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Patient_authorized_to_recieve_2nd_dose__c</field>
+        <field>Form_1634__c.Patient_authorized_to_recieve_second_dos__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2141,7 +2126,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.SUP_Q05_Formula__c</field>
+        <field>Form_1634__c.SUP_Q05__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2212,6 +2197,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Was_patient_transferred_for_MAiD__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Was_the_substance_self_administered__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2912,6 +2902,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1642__c.Prior_patient_consultation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1642__c.REF_Q05_42_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

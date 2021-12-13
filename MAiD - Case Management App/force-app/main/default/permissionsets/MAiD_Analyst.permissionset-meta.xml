@@ -861,11 +861,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Advance_consent_sign_date_by_patient__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Advance_consent_sign_date_by_prescriber__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1001,22 +996,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Did_the_patient_cause_their_death__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Did_the_patient_die_after_self_admin__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Did_the_patient_die_after_self_administ__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.Did_the_patient_self_administer_the_subs__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1456,16 +1441,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_No_practitioner_admin_IV_per_agree__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.If_Other_location_specify_1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.If_Other_location_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1792,11 +1767,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Patient_at_least_18_years_of_age__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.Patient_authorized_to_recieve_2nd_dose__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2252,11 +2222,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Form_1634__c.SPC_S10_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.SUP_Q05_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3046,6 +3011,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Form_1642__c.REF_Q05_42_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Form_1642__c.REF_Q10_42_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3087,6 +3057,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Form_1642__c.REQ_Q05_42_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1642__c.REQ_Q10_42_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
