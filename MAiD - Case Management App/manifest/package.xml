@@ -17,9 +17,7 @@
         <name>Flow</name>
     </types>
     <types>
-        <members>Account.recordTypeName</members>
-        <members>PersonAccount.recordTypeName</members>
-        <members>Case.recordTypeName</members>
+        <members>*</members>
         <name>RecordType</name>
     </types>
     <types>
