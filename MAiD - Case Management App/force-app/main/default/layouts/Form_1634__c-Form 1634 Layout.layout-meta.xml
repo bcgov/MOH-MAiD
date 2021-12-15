@@ -32,10 +32,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_authorized_to_recieve_second_dos__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>X1633_Form_entered__c</field>
             </layoutItems>
         </layoutColumns>
@@ -688,7 +684,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_authorized_to_recieve_2nd_dose__c</field>
+                <field>Patient_authorized_to_recieve_second_dos__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -924,7 +920,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1f000000ZgZQ</masterLabel>
+        <masterLabel>00h5W000000Mvtl</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
