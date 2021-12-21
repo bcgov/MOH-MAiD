@@ -3376,11 +3376,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_RXMAR__c.Initials_present_on_administered_drugs__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_RXMAR__c.Lidocaine_being_ordered__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -3432,11 +3427,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_RXMAR__c.Patient_information_is_complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_RXMAR__c.Pharmacist_Initials_Present__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

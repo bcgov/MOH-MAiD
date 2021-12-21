@@ -49,10 +49,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Pharmacist_Initials_Present__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Safeguards_signed_by_prescriber__c</field>
             </layoutItems>
             <layoutItems>
@@ -221,10 +217,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Initials_present_on_administered_drugs__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Patient_information_is_complete__c</field>
             </layoutItems>
             <layoutItems>
@@ -368,7 +360,7 @@
                 <behavior>Edit</behavior>
                 <field>Rocuronium_sodium_chloride__c</field>
             </layoutItems>
-             <layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Describe_Dose_of_Bupivacaine__c</field>
             </layoutItems>
@@ -570,7 +562,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1f000000a1Zz</masterLabel>
+        <masterLabel>00h5W000000Mvtp</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
