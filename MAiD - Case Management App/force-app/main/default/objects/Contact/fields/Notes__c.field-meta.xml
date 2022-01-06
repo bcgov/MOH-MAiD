@@ -4,7 +4,7 @@
     <encryptionScheme>ProbabilisticEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>Notes</label>
-    <length>32768</length>
+    <length>3000</length>
     <trackFeedHistory>false</trackFeedHistory>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>
