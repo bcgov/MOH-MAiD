@@ -6,16 +6,6 @@
     <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Dispensing Pharmacist</label>
-    <lookupFilter>
-        <active>true</active>
-        <booleanFilter>1</booleanFilter>
-        <filterItems>
-            <field>Account.RecordTypeId</field>
-            <operation>notEqual</operation>
-            <value>Nurse Practitioner, Physician</value>
-        </filterItems>
-        <isOptional>false</isOptional>
-    </lookupFilter>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Form 1641</relationshipLabel>
     <relationshipName>Form_1641</relationshipName>
