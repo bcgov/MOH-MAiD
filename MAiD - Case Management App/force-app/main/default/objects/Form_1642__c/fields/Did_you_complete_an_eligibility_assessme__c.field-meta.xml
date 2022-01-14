@@ -2,9 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Did_you_complete_an_eligibility_assessme__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Did you complete an eligibility assessment prior to transfer of request or care?</inlineHelpText>
-    <label>Did you complete an eligibility assessme</label>
+    <label>Did complete an eligibility assessment</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

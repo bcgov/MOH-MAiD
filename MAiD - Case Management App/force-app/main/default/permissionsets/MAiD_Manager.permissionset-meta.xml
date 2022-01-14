@@ -2776,6 +2776,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1642__c.Did_complete_an_eligibility_assessment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1642__c.Did_you_complete_an_eligibility_assessme__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2882,6 +2887,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1642__c.Practitioner__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1642__c.Prior_patient_consultation_1__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -2015,10 +2015,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1642_Did_you_complete_an_eligibility_assessme</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>Var1642_Did_complete_an_eligibility_assessment</leftValueReference>
+                <operator>Contains</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2085,10 +2085,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1642_Did_you_complete_an_eligibility_assessme</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>Var1642_Did_complete_an_eligibility_assessment</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2355,7 +2355,7 @@
             <label>Rule 56 Pass</label>
         </rules>
     </decisions>
-    <description>Fixing Rule 24, 26 and 56</description>
+    <description>Update to 1642 Prior Patient Consultation and Did complete eligibility Assessment</description>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
@@ -2488,8 +2488,8 @@
             <field>Date_of_transfer_of_request_or_care__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>Var1642_Did_you_complete_an_eligibility_assessme</assignToReference>
-            <field>Did_you_complete_an_eligibility_assessme__c</field>
+            <assignToReference>Var1642_Did_complete_an_eligibility_assessment</assignToReference>
+            <field>Did_complete_an_eligibility_assessment__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1642_Due_to_patient_request</assignToReference>
@@ -3186,8 +3186,8 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>Var1642_Did_you_complete_an_eligibility_assessme</name>
-        <dataType>Boolean</dataType>
+        <name>Var1642_Did_complete_an_eligibility_assessment</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -3292,7 +3292,7 @@
     </variables>
     <variables>
         <name>Var1642_Prior_patient_consultation</name>
-        <dataType>Boolean</dataType>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
