@@ -2,6 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Fax</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
+    <description>Fax</description>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
+    <inlineHelpText>Fax</inlineHelpText>
     <trackFeedHistory>false</trackFeedHistory>
 </CustomField>
