@@ -2886,11 +2886,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1642__c.Did_you_complete_an_eligibility_assessme__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1642__c.Due_to_patient_s_request__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2997,11 +2992,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1642__c.Prior_patient_consultation_1__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1642__c.Prior_patient_consultation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
