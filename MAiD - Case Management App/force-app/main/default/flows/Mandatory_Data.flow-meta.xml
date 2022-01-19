@@ -2549,7 +2549,7 @@
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1642_Prior_patient_consultation</assignToReference>
-            <field>Prior_patient_consultation__c</field>
+            <field>Prior_patient_consultation_1__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1642_Signature_of_practitioner</assignToReference>
@@ -2743,7 +2743,7 @@
         <name>GetCaseDetail</name>
         <label>GetCaseDetail</label>
         <locationX>776</locationX>
-        <locationY>273</locationY>
+        <locationY>305</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1634</targetReference>
