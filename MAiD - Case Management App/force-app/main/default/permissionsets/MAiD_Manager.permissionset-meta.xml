@@ -2776,7 +2776,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1642__c.Did_you_complete_an_eligibility_assessme__c</field>
+        <field>Form_1642__c.Did_complete_an_eligibility_assessment__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2886,7 +2886,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1642__c.Prior_patient_consultation__c</field>
+        <field>Form_1642__c.Prior_patient_consultation_1__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
