@@ -20,6 +20,10 @@
                 <field>PHN__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Warning_Message_If_Any__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Patient_Last_Name__c</field>
             </layoutItems>
