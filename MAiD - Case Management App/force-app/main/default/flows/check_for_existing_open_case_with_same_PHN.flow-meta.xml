@@ -237,7 +237,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>MAiDCaseRecordTypeID</name>
         <dataType>String</dataType>

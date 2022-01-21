@@ -470,6 +470,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Warning_Message_If_Any__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Which_part_of_Form_1634_was_missed__c</field>
         <readable>true</readable>
