@@ -70,7 +70,7 @@
     </types>
     <types>
         <members>duplicate_notification_builder</members>
-        <name>CustomNotificationType</name>
+        <name>CustomNotificationType</name> 
     </types>
     <types>
         <members>*</members>
