@@ -69,7 +69,7 @@
         <name>ContentAsset</name>
     </types>
     <types>
-        <members>*</members>
+        <members>duplicate_notification_builder</members>
         <name>NotificationType</name>
     </types>
     <types>
