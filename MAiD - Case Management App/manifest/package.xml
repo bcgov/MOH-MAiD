@@ -70,6 +70,10 @@
     </types>
     <types>
         <members>*</members>
+        <name>CustomNotification</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>StandardValueSet</name>
     </types>
     <types>
