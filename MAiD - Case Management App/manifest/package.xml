@@ -70,7 +70,7 @@
     </types>
     <types>
         <members>*</members>
-        <name>CustomNotification</name>
+        <name>NotificationType</name>
     </types>
     <types>
         <members>*</members>
