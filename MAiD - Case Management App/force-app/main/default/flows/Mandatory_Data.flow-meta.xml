@@ -1964,7 +1964,7 @@
         <defaultConnectorLabel>Rule 51 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_51_Pass</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 17 AND (8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15)) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 16 AND 18 AND 19 AND 20 AND 21 AND 22 AND 23 AND 24 AND 25)</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 26 AND ((17 AND 8 AND (9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15)) OR (16 AND 18 AND 19 AND 20 AND 21 AND 22 AND 23 AND 24 AND 25))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1642_Transfer_of_request</leftValueReference>
                 <operator>IsNull</operator>
@@ -2086,9 +2086,9 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1642_Did_complete_an_eligibility_assessment</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>Contains</operator>
                 <rightValue>
-                    <stringValue>Yes</stringValue>
+                    <stringValue>No</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2136,6 +2136,13 @@
             <conditions>
                 <leftValueReference>Var1642_Lack_relevant_expertise_to_assess_MAiD</leftValueReference>
                 <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Prior_patient_consultation</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
@@ -2355,7 +2362,7 @@
             <label>Rule 56 Pass</label>
         </rules>
     </decisions>
-    <description>Update to 1642 Prior Patient Consultation and Did complete eligibility Assessment</description>
+    <description>Update to Rule 51 after destructive changes in Form 1642</description>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
