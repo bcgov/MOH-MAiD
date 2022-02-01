@@ -3,15 +3,15 @@
 #
 
 package.xml
-**appMenu
+appMenus
 **appSwitcher
 **objectTranslations
 **profilePasswordPolicies
 **profileSessionSettings
-**settings
-**standardValueSet
+settings
+standardValueSets
 #**matchingRule
-#**duplicateRule
+duplicateRules
 **entitlementProcess
 #**permissionset
 #**recordTypes
