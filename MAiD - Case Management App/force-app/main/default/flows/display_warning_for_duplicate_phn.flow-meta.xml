@@ -4,8 +4,8 @@
     <assignments>
         <name>assign_value_to_existing_PHN</name>
         <label>assign value to existing PHN</label>
-        <locationX>176</locationX>
-        <locationY>311</locationY>
+        <locationX>524</locationX>
+        <locationY>45</locationY>
         <assignmentItems>
             <assignToReference>ExistingPHN</assignToReference>
             <operator>Assign</operator>
@@ -20,8 +20,8 @@
     <decisions>
         <name>check_if_the_collection_has_existing_PHN</name>
         <label>check if the collection has existing PHN</label>
-        <locationX>396</locationX>
-        <locationY>791</locationY>
+        <locationX>957</locationX>
+        <locationY>459</locationY>
         <defaultConnector>
             <targetReference>loop_through_all_phn</targetReference>
         </defaultConnector>
@@ -48,8 +48,8 @@
     <loops>
         <name>loop_through_all_phn</name>
         <label>loop through all phn</label>
-        <locationX>176</locationX>
-        <locationY>671</locationY>
+        <locationX>806</locationX>
+        <locationY>261</locationY>
         <collectionReference>all_PHN_values</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -68,7 +68,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -81,8 +81,8 @@
     <recordLookups>
         <name>get_record_type</name>
         <label>get record type</label>
-        <locationX>176</locationX>
-        <locationY>431</locationY>
+        <locationX>663</locationX>
+        <locationY>78</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>get_records_of_phn</targetReference>
@@ -104,18 +104,53 @@
     <recordLookups>
         <name>get_records_of_phn</name>
         <label>get records of phn</label>
-        <locationX>176</locationX>
-        <locationY>551</locationY>
+        <locationX>806</locationX>
+        <locationY>95</locationY>
         <assignNullValuesIfNoRecordsFound>true</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>loop_through_all_phn</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>(1 AND 2) OR (3 AND 4) OR (5 AND 6)</filterLogic>
         <filters>
             <field>Type</field>
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record.Type</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Type</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <elementReference>$Record.Type</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
             </value>
         </filters>
         <object>Case</object>
@@ -126,8 +161,8 @@
     <recordUpdates>
         <name>update_warning_message</name>
         <label>update warning message</label>
-        <locationX>264</locationX>
-        <locationY>911</locationY>
+        <locationX>1151</locationX>
+        <locationY>530</locationY>
         <inputAssignments>
             <field>Warning_Message_If_Any__c</field>
             <value>
@@ -139,8 +174,8 @@
     <recordUpdates>
         <name>update_warning_message_to_empty</name>
         <label>update warning message to empty</label>
-        <locationX>176</locationX>
-        <locationY>1343</locationY>
+        <locationX>586</locationX>
+        <locationY>526</locationY>
         <inputAssignments>
             <field>Warning_Message_If_Any__c</field>
             <value>
@@ -150,8 +185,8 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
+        <locationX>121</locationX>
+        <locationY>70</locationY>
         <connector>
             <targetReference>assign_value_to_existing_PHN</targetReference>
         </connector>
