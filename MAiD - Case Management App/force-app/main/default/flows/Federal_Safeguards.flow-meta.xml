@@ -226,22 +226,6 @@
         </connector>
     </assignments>
     <assignments>
-        <name>Rule41ErrorMsg</name>
-        <label>Rule41ErrorMsg</label>
-        <locationX>1498</locationX>
-        <locationY>1807</locationY>
-        <assignmentItems>
-            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Var41Err</elementReference>
-            </value>
-        </assignmentItems>
-        <connector>
-            <targetReference>UpdateFedralFAIL</targetReference>
-        </connector>
-    </assignments>
-    <assignments>
         <name>UpdateFedralFAIL</name>
         <label>UpdateFedralFAIL</label>
         <locationX>2127</locationX>
@@ -1804,129 +1788,9 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>CheckRule41</targetReference>
-            </connector>
-            <label>CheckRule39=yes</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>CheckRule41</name>
-        <label>CheckRule41</label>
-        <locationX>951</locationX>
-        <locationY>2134</locationY>
-        <defaultConnector>
-            <targetReference>Rule41ErrorMsg</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>CheckRule41_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 15 AND ( 9 OR 10 OR 11)) OR ( 12 AND 13 AND  14)</conditionLogic>
-            <conditions>
-                <leftValueReference>Var1634_Patientconsentedtoassessment</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Practitionerisnotbeneficiary</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_PatientrequestMAiDinwritingsigned</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_ReqSignDate</leftValueReference>
-                <operator>NotEqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Requestwassignedanddatedafterthe_p</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Theirmedicaldiagnosisandprognosis</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Righttowithdrawtheirreques</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Potentialriskandexpected</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Patients_request_was_signed_dated</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <connector>
                 <targetReference>UpdateFedralPASS</targetReference>
             </connector>
-            <label>CheckRule41=yes</label>
+            <label>CheckRule39=yes</label>
         </rules>
     </decisions>
     <decisions>
@@ -1954,7 +1818,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>1.15- Fixed Rule 38 Federal Safeguards Greater than or Equal to 91</description>
+    <description>Removed Rule 41.</description>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
@@ -2132,7 +1996,7 @@
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientauthorizedtorecieve2nddose</assignToReference>
-            <field>Patient_authorized_to_recieve_second_dos__c</field>
+            <field>Patient_authorized_to_recieve_2nd_dose__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientconsentedtoassessment</assignToReference>
