@@ -391,11 +391,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Case.Record_ID_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Case.Record_ID_Ref__c</field>
         <readable>true</readable>
     </fieldPermissions>
