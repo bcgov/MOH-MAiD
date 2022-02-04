@@ -2051,11 +2051,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.REF_Q15_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1634__c.REF_Q20A_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2956,7 +2951,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1642__c.If_yes_was_the_patient_eligible__c</field>
+        <field>Form_1642__c.If_yes_was_the_patient_eligible_1__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -2362,7 +2362,7 @@
             <label>Rule 56 Pass</label>
         </rules>
     </decisions>
-    <description>Update to Rule 51 after destructive changes in Form 1642</description>
+    <description>Updated reference of If yes, was the patient eligible</description>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
@@ -2536,7 +2536,7 @@
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1642_If_yes_was_the_patient_eligible</assignToReference>
-            <field>If_yes_was_the_patient_eligible__c</field>
+            <field>If_yes_was_the_patient_eligible_1__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1642_Lack_relevant_expertise_to_assess_MAiD</assignToReference>
@@ -3257,7 +3257,7 @@
     </variables>
     <variables>
         <name>Var1642_If_yes_was_the_patient_eligible</name>
-        <dataType>Boolean</dataType>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
