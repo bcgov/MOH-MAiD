@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>REF_Q15__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>Form_1642__r.If_yes_was_the_patient_eligible__c</formula>
+    <formula>CASE( Form_1642__r.If_yes_was_the_patient_eligible_1__c,
+&quot;Yes&quot;,1,
+&quot;No&quot;,2,0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>REF_Q15</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
-    <type>Checkbox</type>
+    <type>Number</type>
+    <unique>false</unique>
 </CustomField>
