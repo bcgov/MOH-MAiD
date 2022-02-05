@@ -1964,7 +1964,7 @@
         <defaultConnectorLabel>Rule 51 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_51_Pass</name>
-            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 26 AND ((17 AND 8 AND (9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15)) OR (16 AND 18 AND 19 AND 20 AND 21 AND 22 AND 23 AND 24 AND 25))</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 26 AND ((17 AND 8 AND 27 AND (9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15)) OR (16 AND 18 AND 19 AND 20 AND 21 AND 22 AND 23 AND 24 AND 25))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1642_Transfer_of_request</leftValueReference>
                 <operator>IsNull</operator>
@@ -2147,6 +2147,13 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1642_If_yes_was_the_patient_eligible</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_52</targetReference>
             </connector>
@@ -2195,8 +2202,8 @@
     <decisions>
         <name>Rule_53</name>
         <label>Rule 53</label>
-        <locationX>550</locationX>
-        <locationY>725</locationY>
+        <locationX>569</locationX>
+        <locationY>781</locationY>
         <defaultConnector>
             <targetReference>Rule_53_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2234,7 +2241,7 @@
     <decisions>
         <name>Rule_54</name>
         <label>Rule 54</label>
-        <locationX>380</locationX>
+        <locationX>381</locationX>
         <locationY>794</locationY>
         <defaultConnector>
             <targetReference>Rule_54_Message_Assignment</targetReference>
