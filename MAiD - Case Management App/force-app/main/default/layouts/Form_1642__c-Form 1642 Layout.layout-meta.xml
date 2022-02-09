@@ -79,7 +79,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_yes_was_the_patient_eligible__c</field>
+                <field>If_yes_was_the_patient_eligible_1__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
