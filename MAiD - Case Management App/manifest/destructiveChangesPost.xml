@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>Form_1642__c.REF_Q10_42_Formula__c</members>
-        <members>Case.REF_Q05_Formula__c</members>
-        <members>Case.REF_Q05_42_Formula__c</members>
-        <members>Case.REF_Q15_Value__c</members>
-        <members>Case.Record_ID_Formula__c</members>
         <members>Form_1642__c.If_yes_was_the_patient_eligible__c</members>
         <members>Form_1634__c.REF_Q15_Formula__c</members>
         <name>CustomField</name>
