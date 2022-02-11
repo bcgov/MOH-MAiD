@@ -5,7 +5,7 @@
         <name>Add_Extracted_Value_to_List</name>
         <label>Add Extracted Value to List</label>
         <locationX>3109</locationX>
-        <locationY>910</locationY>
+        <locationY>1055</locationY>
         <assignmentItems>
             <assignToReference>extractedValuesPicklist</assignToReference>
             <operator>Add</operator>
@@ -21,7 +21,7 @@
         <name>Add_Extracted_Value_to_List_Rule_24</name>
         <label>Add Extracted Value to List Rule 24</label>
         <locationX>2116</locationX>
-        <locationY>302</locationY>
+        <locationY>447</locationY>
         <assignmentItems>
             <assignToReference>extractedPicklist_Rule24</assignToReference>
             <operator>Add</operator>
@@ -37,7 +37,7 @@
         <name>AssignNewFailListDetails</name>
         <label>AssignNewFailListDetails</label>
         <locationX>1129</locationX>
-        <locationY>1270</locationY>
+        <locationY>1415</locationY>
         <assignmentItems>
             <assignToReference>ListFailMandatory</assignToReference>
             <operator>Add</operator>
@@ -52,8 +52,8 @@
     <assignments>
         <name>AssignNewNullListDetails</name>
         <label>AssignNewNullListDetails</label>
-        <locationX>518</locationX>
-        <locationY>598</locationY>
+        <locationX>345</locationX>
+        <locationY>677</locationY>
         <assignmentItems>
             <assignToReference>UpdateNullList</assignToReference>
             <operator>Add</operator>
@@ -69,7 +69,7 @@
         <name>AssignNewPassListDetail</name>
         <label>AssignNewPassListDetail</label>
         <locationX>2375</locationX>
-        <locationY>271</locationY>
+        <locationY>416</locationY>
         <assignmentItems>
             <assignToReference>NewPassListDetails</assignToReference>
             <operator>Add</operator>
@@ -85,7 +85,7 @@
         <name>Extracted_Picklist_Values</name>
         <label>Extracted Picklist Values</label>
         <locationX>3266</locationX>
-        <locationY>910</locationY>
+        <locationY>1055</locationY>
         <assignmentItems>
             <assignToReference>formattedPicklistValues</assignToReference>
             <operator>Assign</operator>
@@ -101,7 +101,7 @@
         <name>Extracted_Picklist_Values_Rule_24</name>
         <label>Extracted Picklist Values Rule 24</label>
         <locationX>2026</locationX>
-        <locationY>186</locationY>
+        <locationY>331</locationY>
         <assignmentItems>
             <assignToReference>FormattedPicklistValues_Rule24</assignToReference>
             <operator>Assign</operator>
@@ -117,7 +117,7 @@
         <name>FormatPicklistValues</name>
         <label>FormatPicklistValues</label>
         <locationX>2905</locationX>
-        <locationY>1157</locationY>
+        <locationY>1302</locationY>
         <assignmentItems>
             <assignToReference>formattedPicklistValues</assignToReference>
             <operator>Assign</operator>
@@ -133,7 +133,7 @@
         <name>FormatPicklistValues_Rule24</name>
         <label>FormatPicklistValues_Rule24</label>
         <locationX>1683</locationX>
-        <locationY>354</locationY>
+        <locationY>499</locationY>
         <assignmentItems>
             <assignToReference>FormattedPicklistValues_Rule24</assignToReference>
             <operator>Assign</operator>
@@ -148,8 +148,8 @@
     <assignments>
         <name>Rule_20_Message_Assignment</name>
         <label>Rule 20 Message Assignment</label>
-        <locationX>1160</locationX>
-        <locationY>491</locationY>
+        <locationX>1309</locationX>
+        <locationY>382</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -165,7 +165,7 @@
         <name>Rule_21_Message_Assignment</name>
         <label>Rule 21 Message Assignment</label>
         <locationX>1384</locationX>
-        <locationY>493</locationY>
+        <locationY>638</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -181,7 +181,7 @@
         <name>Rule_24_Message_Assignment</name>
         <label>Rule 24 Message Assignment</label>
         <locationX>1501</locationX>
-        <locationY>500</locationY>
+        <locationY>645</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -197,7 +197,7 @@
         <name>Rule_25_Message_Assignment</name>
         <label>Rule 25 Message Assignment</label>
         <locationX>1447</locationX>
-        <locationY>656</locationY>
+        <locationY>801</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -213,7 +213,7 @@
         <name>Rule_26_Message_Assignment</name>
         <label>Rule 26 Message Assignment</label>
         <locationX>1732</locationX>
-        <locationY>742</locationY>
+        <locationY>887</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -229,7 +229,7 @@
         <name>Rule_32_Message_Assignment</name>
         <label>Rule 32 Message Assignment</label>
         <locationX>1579</locationX>
-        <locationY>862</locationY>
+        <locationY>1007</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -245,7 +245,7 @@
         <name>Rule_33_Message_Assignment</name>
         <label>Rule 33 Message Assignment</label>
         <locationX>2008</locationX>
-        <locationY>1016</locationY>
+        <locationY>1161</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -261,7 +261,7 @@
         <name>Rule_42_Message_Assignment</name>
         <label>Rule 42 Message Assignment</label>
         <locationX>1266</locationX>
-        <locationY>493</locationY>
+        <locationY>638</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -277,7 +277,7 @@
         <name>Rule_44_Message_Assignment</name>
         <label>Rule 44 Message Assignment</label>
         <locationX>2249</locationX>
-        <locationY>827</locationY>
+        <locationY>972</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -293,7 +293,7 @@
         <name>Rule_45_Message_Assignment</name>
         <label>Rule 45 Message Assignment</label>
         <locationX>2356</locationX>
-        <locationY>918</locationY>
+        <locationY>1063</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -309,7 +309,7 @@
         <name>Rule_48_Message_Assignment</name>
         <label>Rule 48 Message Assignment</label>
         <locationX>2435</locationX>
-        <locationY>1116</locationY>
+        <locationY>1261</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -325,7 +325,7 @@
         <name>Rule_50_Message_Assignment</name>
         <label>Rule 50 Message Assignment</label>
         <locationX>2880</locationX>
-        <locationY>654</locationY>
+        <locationY>799</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -341,7 +341,7 @@
         <name>Rule_51_Message_Assignment</name>
         <label>Rule 51 Message Assignment</label>
         <locationX>1089</locationX>
-        <locationY>861</locationY>
+        <locationY>1006</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -357,7 +357,7 @@
         <name>Rule_52_Message_Assignment</name>
         <label>Rule 52 Message Assignment</label>
         <locationX>799</locationX>
-        <locationY>950</locationY>
+        <locationY>1095</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -373,7 +373,7 @@
         <name>Rule_53_Message_Assignment</name>
         <label>Rule 53 Message Assignment</label>
         <locationX>635</locationX>
-        <locationY>955</locationY>
+        <locationY>1100</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -389,7 +389,7 @@
         <name>Rule_54_Message_Assignment</name>
         <label>Rule 54 Message Assignment</label>
         <locationX>474</locationX>
-        <locationY>953</locationY>
+        <locationY>1098</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -405,7 +405,7 @@
         <name>Rule_55_Message_Assignment</name>
         <label>Rule 55 Message Assignment</label>
         <locationX>273</locationX>
-        <locationY>952</locationY>
+        <locationY>1097</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -421,7 +421,7 @@
         <name>Rule_56_Message_Assignment</name>
         <label>Rule 56 Message Assignment</label>
         <locationX>2436</locationX>
-        <locationY>595</locationY>
+        <locationY>740</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -434,10 +434,42 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_57_Message_Assignment</name>
+        <label>Rule 57 Message Assignment</label>
+        <locationX>1015</locationX>
+        <locationY>767</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule57Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_58_Message_Assignment</name>
+        <label>Rule 58 Message Assignment</label>
+        <locationX>1107</locationX>
+        <locationY>660</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule58Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Update_Mandatory_Fail</name>
         <label>Update Mandatory Fail</label>
-        <locationX>1254</locationX>
-        <locationY>1099</locationY>
+        <locationX>1253</locationX>
+        <locationY>1244</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
             <operator>Assign</operator>
@@ -452,8 +484,8 @@
     <assignments>
         <name>Update_Mandatory_Null</name>
         <label>Update Mandatory Null</label>
-        <locationX>650</locationX>
-        <locationY>597</locationY>
+        <locationX>465</locationX>
+        <locationY>678</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
             <operator>Assign</operator>
@@ -473,7 +505,7 @@
         <name>UpdateMandatoryPass</name>
         <label>Update Mandatory Pass</label>
         <locationX>2376</locationX>
-        <locationY>419</locationY>
+        <locationY>564</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
             <operator>Assign</operator>
@@ -625,11 +657,25 @@
             <stringValue>Rule 56 Validation Failed</stringValue>
         </value>
     </constants>
+    <constants>
+        <name>Rule57Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 57 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule58Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 58 Validation Failed</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>All_Values_Parsed</name>
         <label>All Values Parsed</label>
         <locationX>3065</locationX>
-        <locationY>1159</locationY>
+        <locationY>1304</locationY>
         <defaultConnector>
             <targetReference>Add_Extracted_Value_to_List</targetReference>
         </defaultConnector>
@@ -654,7 +700,7 @@
         <name>All_Values_Parsed_Rule_24</name>
         <label>All Values Parsed Rule 24</label>
         <locationX>1822</locationX>
-        <locationY>262</locationY>
+        <locationY>407</locationY>
         <defaultConnector>
             <targetReference>Add_Extracted_Value_to_List_Rule_24</targetReference>
         </defaultConnector>
@@ -678,8 +724,8 @@
     <decisions>
         <name>Check_Case_Type</name>
         <label>Check_Case_Type</label>
-        <locationX>923</locationX>
-        <locationY>598</locationY>
+        <locationX>652</locationX>
+        <locationY>687</locationY>
         <defaultConnector>
             <targetReference>Update_Mandatory_Null</targetReference>
         </defaultConnector>
@@ -723,7 +769,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_46</targetReference>
+                <targetReference>Rule_57</targetReference>
             </connector>
             <label>Case Type Multiple values</label>
         </rules>
@@ -747,7 +793,7 @@
         <name>Check_if_Rule_50_Multiselect_list_is_empty</name>
         <label>Check if Rule 50 Multiselect list is empty</label>
         <locationX>2685</locationX>
-        <locationY>1155</locationY>
+        <locationY>1300</locationY>
         <defaultConnector>
             <targetReference>Rule_50</targetReference>
         </defaultConnector>
@@ -808,7 +854,7 @@
         <name>If_Others_is_not_selected</name>
         <label>If Others is not selected</label>
         <locationX>3304</locationX>
-        <locationY>596</locationY>
+        <locationY>741</locationY>
         <defaultConnector>
             <targetReference>Rule_50_Message_Assignment</targetReference>
         </defaultConnector>
@@ -847,7 +893,7 @@
         <name>Rule24</name>
         <label>Rule 24</label>
         <locationX>1730</locationX>
-        <locationY>510</locationY>
+        <locationY>655</locationY>
         <defaultConnector>
             <targetReference>Rule_24_Message_Assignment</targetReference>
         </defaultConnector>
@@ -939,8 +985,8 @@
     <decisions>
         <name>Rule_20</name>
         <label>Rule 20</label>
-        <locationX>997</locationX>
-        <locationY>487</locationY>
+        <locationX>1215</locationX>
+        <locationY>308</locationY>
         <defaultConnector>
             <targetReference>Rule_20_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1063,7 +1109,7 @@
         <name>Rule_21</name>
         <label>Rule 21</label>
         <locationX>1382</locationX>
-        <locationY>348</locationY>
+        <locationY>493</locationY>
         <defaultConnector>
             <targetReference>Rule_21_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1106,7 +1152,7 @@
         <name>Rule_25</name>
         <label>Rule 25</label>
         <locationX>1596</locationX>
-        <locationY>670</locationY>
+        <locationY>815</locationY>
         <defaultConnector>
             <targetReference>Rule_25_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1163,7 +1209,7 @@
         <name>Rule_26</name>
         <label>Rule 26</label>
         <locationX>1887</locationX>
-        <locationY>673</locationY>
+        <locationY>818</locationY>
         <defaultConnector>
             <targetReference>Rule_26_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1242,7 +1288,7 @@
         <name>Rule_32</name>
         <label>Rule 32</label>
         <locationX>1796</locationX>
-        <locationY>856</locationY>
+        <locationY>1001</locationY>
         <defaultConnector>
             <targetReference>Rule_32_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1323,7 +1369,7 @@
         <name>Rule_33</name>
         <label>Rule 33</label>
         <locationX>2061</locationX>
-        <locationY>773</locationY>
+        <locationY>918</locationY>
         <defaultConnector>
             <targetReference>Rule_33_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1404,7 +1450,7 @@
         <name>Rule_42</name>
         <label>Rule 42</label>
         <locationX>1203</locationX>
-        <locationY>344</locationY>
+        <locationY>489</locationY>
         <defaultConnector>
             <targetReference>Rule_42_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1506,7 +1552,7 @@
         <name>Rule_44</name>
         <label>Rule 44</label>
         <locationX>2265</locationX>
-        <locationY>687</locationY>
+        <locationY>832</locationY>
         <defaultConnector>
             <targetReference>Rule_44_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1559,7 +1605,7 @@
         <name>Rule_45</name>
         <label>Rule 45</label>
         <locationX>2430</locationX>
-        <locationY>723</locationY>
+        <locationY>868</locationY>
         <defaultConnector>
             <targetReference>Rule_45_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1639,8 +1685,8 @@
     <decisions>
         <name>Rule_46</name>
         <label>Rule 46</label>
-        <locationX>932</locationX>
-        <locationY>265</locationY>
+        <locationX>1069</locationX>
+        <locationY>313</locationY>
         <defaultConnector>
             <targetReference>Rule_20</targetReference>
         </defaultConnector>
@@ -1711,7 +1757,7 @@
         <name>Rule_48</name>
         <label>Rule 48</label>
         <locationX>2579</locationX>
-        <locationY>992</locationY>
+        <locationY>1137</locationY>
         <defaultConnector>
             <targetReference>Rule_48_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1810,7 +1856,7 @@
         <name>Rule_50</name>
         <label>Rule 50</label>
         <locationX>2796</locationX>
-        <locationY>865</locationY>
+        <locationY>1010</locationY>
         <defaultConnector>
             <targetReference>Rule_50_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1956,8 +2002,8 @@
     <decisions>
         <name>Rule_51</name>
         <label>Rule 51</label>
-        <locationX>926</locationX>
-        <locationY>785</locationY>
+        <locationX>923</locationX>
+        <locationY>919</locationY>
         <defaultConnector>
             <targetReference>Rule_51_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2164,7 +2210,7 @@
         <name>Rule_52</name>
         <label>Rule 52</label>
         <locationX>718</locationX>
-        <locationY>765</locationY>
+        <locationY>910</locationY>
         <defaultConnector>
             <targetReference>Rule_52_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2203,7 +2249,7 @@
         <name>Rule_53</name>
         <label>Rule 53</label>
         <locationX>569</locationX>
-        <locationY>781</locationY>
+        <locationY>926</locationY>
         <defaultConnector>
             <targetReference>Rule_53_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2242,7 +2288,7 @@
         <name>Rule_54</name>
         <label>Rule 54</label>
         <locationX>381</locationX>
-        <locationY>794</locationY>
+        <locationY>939</locationY>
         <defaultConnector>
             <targetReference>Rule_54_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2281,7 +2327,7 @@
         <name>Rule_55</name>
         <label>Rule 55</label>
         <locationX>196</locationX>
-        <locationY>737</locationY>
+        <locationY>882</locationY>
         <defaultConnector>
             <targetReference>Rule_55_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2320,7 +2366,7 @@
         <name>Rule_56</name>
         <label>Rule 56</label>
         <locationX>2652</locationX>
-        <locationY>544</locationY>
+        <locationY>689</locationY>
         <defaultConnector>
             <targetReference>Rule_56_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2369,7 +2415,213 @@
             <label>Rule 56 Pass</label>
         </rules>
     </decisions>
-    <description>Updated reference of If yes, was the patient eligible</description>
+    <decisions>
+        <name>Rule_57</name>
+        <label>Rule 57</label>
+        <locationX>890</locationX>
+        <locationY>683</locationY>
+        <defaultConnector>
+            <targetReference>Rule_57_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 57 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_57_Skipped</name>
+            <conditionLogic>(1 OR 2) AND (3 OR 4 OR 5)</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1633_Assessor_did_not_receive_1632</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Is1633Checked</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_58</targetReference>
+            </connector>
+            <label>Rule 57 Skipped</label>
+        </rules>
+        <rules>
+            <name>Rule_57_Pass</name>
+            <conditionLogic>1 AND 2 AND 3 AND ((4 AND 6) OR (5 AND 7))</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1633_Consultation_Reason</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Date_Written_Request_Received</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Who_did_you_receive_the_request_from</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Who_did_you_receive_the_request_from</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4 - Patient directly - other, specify</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Who_did_you_receive_the_request_from</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>5 - Another third party specify</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_If_patient_directly_other_specify</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_If_other_third_party_specify</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_58</targetReference>
+            </connector>
+            <label>Rule 57 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_58</name>
+        <label>Rule 58</label>
+        <locationX>1048</locationX>
+        <locationY>513</locationY>
+        <defaultConnector>
+            <targetReference>Rule_58_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 58 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_58_Skipped</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Is1633Checked</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_46</targetReference>
+            </connector>
+            <label>Rule 58 Skipped</label>
+        </rules>
+        <rules>
+            <name>Rule_58_Pass</name>
+            <conditionLogic>1 AND 2 AND ((3 AND 4) OR (5 AND 6))</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1633_Assessment_Date</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Assessment_conducted</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Location_of_Assessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_If_Other_location_specify</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Location_of_Assessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - Facility - Site</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_If_Facility_Site_specify</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_46</targetReference>
+            </connector>
+            <label>Rule 58 Pass</label>
+        </rules>
+    </decisions>
+    <description>Implemented Form 1633 bound Mandatory Data Rules</description>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
@@ -2424,7 +2676,7 @@
         <name>AddLoop</name>
         <label>AddLoop</label>
         <locationX>2986</locationX>
-        <locationY>890</locationY>
+        <locationY>1035</locationY>
         <collectionReference>extractedValuesPicklist</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -2438,7 +2690,7 @@
         <name>AddLoop_Rule_24</name>
         <label>AddLoop Rule 24</label>
         <locationX>1989</locationX>
-        <locationY>532</locationY>
+        <locationY>677</locationY>
         <collectionReference>extractedPicklist_Rule24</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -2470,11 +2722,11 @@
     <recordLookups>
         <name>Form_1642</name>
         <label>Form 1642</label>
-        <locationX>774</locationX>
-        <locationY>510</locationY>
+        <locationX>592</locationX>
+        <locationY>541</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Check_Case_Type</targetReference>
+            <targetReference>Get_Form_1633</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -2577,8 +2829,8 @@
     <recordLookups>
         <name>Get1634</name>
         <label>Get1634</label>
-        <locationX>776</locationX>
-        <locationY>391</locationY>
+        <locationX>591</locationX>
+        <locationY>395</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Form_1642</targetReference>
@@ -2754,10 +3006,81 @@
         </outputAssignments>
     </recordLookups>
     <recordLookups>
+        <name>Get_Form_1633</name>
+        <label>Get Form 1633</label>
+        <locationX>733</locationX>
+        <locationY>543</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_Case_Type</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>Form_1633__c</object>
+        <outputAssignments>
+            <assignToReference>Var1633_Assessment_Date</assignToReference>
+            <field>Assessment_Date__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_Assessment_conducted</assignToReference>
+            <field>Assessment_conducted__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_Assessor_did_not_receive_1632</assignToReference>
+            <field>Assessor_did_not_receive_1632__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_Consultation_Reason</assignToReference>
+            <field>Consultation_Reason__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_Date_Written_Request_Received</assignToReference>
+            <field>Date_Written_Request_Received__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_If_Facility_Site_specify</assignToReference>
+            <field>If_FacilitySit_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_If_Other_location_specify</assignToReference>
+            <field>If_Other_location_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_If_other_third_party_specify</assignToReference>
+            <field>If_other_third_party_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_If_patient_directly_other_specify</assignToReference>
+            <field>If_patient_directly_other_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_Location_of_Assessment</assignToReference>
+            <field>Location_of_Assessment__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_Professional_Interpreter_First_Name</assignToReference>
+            <field>Professional_Interpreter_First_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_Professional_Interpreter_Last_Name</assignToReference>
+            <field>Professional_Interpreter_Last_Name__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_Who_did_you_receive_the_request_from</assignToReference>
+            <field>Who_did_you_receive_the_written_request__c</field>
+        </outputAssignments>
+    </recordLookups>
+    <recordLookups>
         <name>GetCaseDetail</name>
         <label>GetCaseDetail</label>
-        <locationX>776</locationX>
-        <locationY>305</locationY>
+        <locationX>448</locationX>
+        <locationY>394</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1634</targetReference>
@@ -2781,26 +3104,26 @@
         <name>UpdateMandatory_Fail</name>
         <label>UpdateMandatory Fail</label>
         <locationX>1004</locationX>
-        <locationY>1267</locationY>
+        <locationY>1412</locationY>
         <inputReference>ListFailMandatory</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>UpdateMandatory_Pass</name>
         <label>UpdateMandatory Pass</label>
         <locationX>2541</locationX>
-        <locationY>270</locationY>
+        <locationY>415</locationY>
         <inputReference>NewPassListDetails</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>UpdateMandatoryNull</name>
         <label>UpdateMandatoryNull</label>
-        <locationX>363</locationX>
-        <locationY>598</locationY>
+        <locationX>194</locationX>
+        <locationY>677</locationY>
         <inputReference>UpdateNullList</inputReference>
     </recordUpdates>
     <start>
-        <locationX>650</locationX>
-        <locationY>48</locationY>
+        <locationX>329</locationX>
+        <locationY>50</locationY>
         <connector>
             <targetReference>GetCaseDetail</targetReference>
         </connector>
@@ -2876,6 +3199,104 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Case</objectType>
+    </variables>
+    <variables>
+        <name>Var1633_Assessment_conducted</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_Assessment_Date</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_Assessor_did_not_receive_1632</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_Consultation_Reason</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_Date_Written_Request_Received</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_If_by_Telemedicine_Name_of_Witness</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_If_Facility_Site_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_If_Other_location_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_If_other_third_party_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_If_patient_directly_other_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_Location_of_Assessment</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_Professional_Interpreter_First_Name</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_Professional_Interpreter_Last_Name</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_Who_did_you_receive_the_request_from</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
     </variables>
     <variables>
         <name>Var1634_Assessment_Conducted</name>
