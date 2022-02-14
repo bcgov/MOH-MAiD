@@ -606,6 +606,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1633__c.Assessor_did_not_receive_1632__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1633__c.Consultation_Reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
