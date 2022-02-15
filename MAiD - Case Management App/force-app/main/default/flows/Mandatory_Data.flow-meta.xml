@@ -455,7 +455,7 @@
         <locationX>1107</locationX>
         <locationY>660</locationY>
         <assignmentItems>
-            <assignToReference>ListCaseDetail.Mandatory_Data__c</assignToReference>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule58Message</elementReference>
@@ -2419,7 +2419,7 @@
         <name>Rule_57</name>
         <label>Rule 57</label>
         <locationX>890</locationX>
-        <locationY>683</locationY>
+        <locationY>682</locationY>
         <defaultConnector>
             <targetReference>Rule_57_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2429,9 +2429,9 @@
             <conditionLogic>(1 OR 2) AND (3 OR 4 OR 5)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Assessor_did_not_receive_1632</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>Contains</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <stringValue>1- Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2469,7 +2469,7 @@
         </rules>
         <rules>
             <name>Rule_57_Pass</name>
-            <conditionLogic>1 AND 2 AND 3 AND ((4 AND 6) OR (5 AND 7))</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND ((4 AND 6) OR (5 AND 7) OR (8 AND 9))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Consultation_Reason</leftValueReference>
                 <operator>IsNull</operator>
@@ -2517,6 +2517,20 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Who_did_you_receive_the_request_from</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>4 - Patient directly - other, specify</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Who_did_you_receive_the_request_from</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>5 - Another third party specify</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2572,7 +2586,7 @@
         </rules>
         <rules>
             <name>Rule_58_Pass</name>
-            <conditionLogic>1 AND 2 AND ((3 AND 4) OR (5 AND 6))</conditionLogic>
+            <conditionLogic>1 AND 2 AND ((3 AND 4) OR (5 AND 6) OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Assessment_Date</leftValueReference>
                 <operator>IsNull</operator>
@@ -2584,7 +2598,7 @@
                 <leftValueReference>Var1633_Assessment_conducted</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2613,6 +2627,13 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Location_of_Assessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Home</stringValue>
                 </rightValue>
             </conditions>
             <connector>
