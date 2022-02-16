@@ -2002,15 +2002,15 @@
     <decisions>
         <name>Rule_51</name>
         <label>Rule 51</label>
-        <locationX>923</locationX>
-        <locationY>919</locationY>
+        <locationX>922</locationX>
+        <locationY>921</locationY>
         <defaultConnector>
             <targetReference>Rule_51_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 51 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_51_Pass</name>
-            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 26 AND ((17 AND 8 AND 27 AND (9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15)) OR (16 AND 18 AND 19 AND 20 AND 21 AND 22 AND 23 AND 24 AND 25))</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 20 AND (9 OR 10 OR 11 OR 12 OR 13 OR 14 OR 15 OR 16) AND ((17 AND 18) OR 19)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1642_Transfer_of_request</leftValueReference>
                 <operator>IsNull</operator>
@@ -2062,139 +2062,90 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1642_Did_complete_an_eligibility_assessment</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>Yes</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Due_to_policies_on_MAiD_facility</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Facility_will_not_permit_MAiD_assessment</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_FacilitywillnotpermitMAiDprovision</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Contrary_to_your_conscience_beliefs</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Lack_of_relevant_expertise_provide_MAiD</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Lack_relevant_expertise_to_assess_MAiD</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Due_to_patient_request</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_None_of_above</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_None_of_above</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Did_complete_an_eligibility_assessment</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>No</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Due_to_policies_on_MAiD_facility</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Facility_will_not_permit_MAiD_assessment</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_FacilitywillnotpermitMAiDprovision</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Contrary_to_your_conscience_beliefs</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Lack_of_relevant_expertise_provide_MAiD</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Due_to_patient_request</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Lack_relevant_expertise_to_assess_MAiD</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1642_Prior_patient_consultation</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
+                <leftValueReference>Var1642_Due_to_policies_on_MAiD_facility</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Facility_will_not_permit_MAiD_assessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_FacilitywillnotpermitMAiDprovision</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Contrary_to_your_conscience_beliefs</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Lack_of_relevant_expertise_provide_MAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Lack_relevant_expertise_to_assess_MAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Due_to_patient_request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_None_of_above</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Did_complete_an_eligibility_assessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
                 <leftValueReference>Var1642_If_yes_was_the_patient_eligible</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Did_complete_an_eligibility_assessment</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1642_Prior_patient_consultation</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -2642,7 +2593,7 @@
             <label>Rule 58 Pass</label>
         </rules>
     </decisions>
-    <description>Implemented Form 1633 bound Mandatory Data Rules</description>
+    <description>Rule 51 updates</description>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
