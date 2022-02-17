@@ -2,9 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_FacilitySit_specify__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
+    <deprecated>false</deprecated>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
-    <label>If Facility/Site, specify</label>
+    <label>If Facility/Site, specify_X</label>
     <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
