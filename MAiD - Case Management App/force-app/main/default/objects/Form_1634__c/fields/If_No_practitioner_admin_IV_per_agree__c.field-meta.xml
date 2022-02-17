@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>If_Yes_was_Prescriber_present__c</fullName>
+    <fullName>If_No_practitioner_admin_IV_per_agree__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <inlineHelpText>If Yes, were you present when the patient self-administered the substance?</inlineHelpText>
-    <label>If Yes, was Prescriber present?_X</label>
+    <label>If No, practitioner admin IV per agree_X</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

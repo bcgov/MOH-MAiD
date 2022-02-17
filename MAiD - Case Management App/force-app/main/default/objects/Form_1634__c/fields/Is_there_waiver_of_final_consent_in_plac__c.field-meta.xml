@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_there_waiver_of_final_consent_in_plac__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>The patient and I have a written agreement in place to waive final consent (HLTH 1645 Waiver of Final Consent) and the agreement was made prior to the day  the patient lost capacity to consent to receive medical assistance in dying.</inlineHelpText>
+    <label>Is waiver of final consent in place?_X</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

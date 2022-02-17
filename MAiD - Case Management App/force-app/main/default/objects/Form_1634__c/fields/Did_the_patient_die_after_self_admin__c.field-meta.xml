@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>If_Yes_was_Prescriber_present__c</fullName>
+    <fullName>Did_the_patient_die_after_self_admin__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <inlineHelpText>If Yes, were you present when the patient self-administered the substance?</inlineHelpText>
-    <label>If Yes, was Prescriber present?_X</label>
+    <inlineHelpText>Did the patient die after self-administration?</inlineHelpText>
+    <label>Did the patient die after self-admin?_X</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
+        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>

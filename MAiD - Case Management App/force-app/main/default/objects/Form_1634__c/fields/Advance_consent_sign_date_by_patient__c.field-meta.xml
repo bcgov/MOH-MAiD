@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ELG_S40G__c</fullName>
+    <fullName>Advance_consent_sign_date_by_patient__c</fullName>
+    <deprecated>false</deprecated>
+    <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
-    <label>ELG_S40G</label>
-    <precision>2</precision>
+    <label>Advance consent sign date by patient_X</label>
     <required>false</required>
-    <scale>0</scale>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
-    <unique>false</unique>
+    <type>Date</type>
 </CustomField>
