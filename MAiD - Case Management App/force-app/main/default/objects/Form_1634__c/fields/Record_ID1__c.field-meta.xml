@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_ID1__c</fullName>
+    <externalId>false</externalId>
+    <formula>&apos;Q&apos;+TEXT(CEILING( MONTH (DATEVALUE( Case__r.CreatedDate )  ) / 3 )) + RIGHT(TEXT(YEAR(DATEVALUE(Case__r.CreatedDate ))), 2) + IF( AND(  ISPICKVAL(How_was_MAiD_administered__c , &quot;1 - IV&quot;), OR( ISPICKVAL(Case__r.Type, &quot;MAiD death not foreseeable&quot;) ,ISPICKVAL(Case__r.Type, &quot;MAiD death foreseeable&quot;)) ) ,&quot;S1&quot;,IF(AND(OR(ISPICKVAL(How_was_MAiD_administered__c , &quot;2 - Oral&quot;),ISPICKVAL(How_was_MAiD_administered__c , &quot;3 - Oral and IV&quot;)),OR( ISPICKVAL(Case__r.Type, &quot;MAiD death not foreseeable&quot;) ,ISPICKVAL(Case__r.Type, &quot;MAiD death foreseeable&quot;))),&quot;S2&quot;,IF(ISPICKVAL(Case__r.Type, &quot;Transfer of Request&quot;),&quot;S3&quot;,IF(ISPICKVAL(Case__r.Type, &quot;Discontinuation of Planning: Withdrawn Request&quot;),&quot;S4&quot;,IF(ISPICKVAL(Case__r.Type, &quot;Discontinuation of Planning: Ineligible&quot;),&quot;S5&quot;,IF(ISPICKVAL(Case__r.Type, &quot;Discontinuation of Planning: Death Prior&quot;),&quot;S6&quot;,&quot;&quot;))))))
++ &apos;-&apos; + Case__r.PHN__c</formula>
+    <label>Record_ID1</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
