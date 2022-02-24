@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SLF_Q26_NA__c</fullName>
+    <deprecated>false</deprecated>
     <description>TBD Field</description>
+    <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>SLF_Q26 - NA</label>
     <length>255</length>

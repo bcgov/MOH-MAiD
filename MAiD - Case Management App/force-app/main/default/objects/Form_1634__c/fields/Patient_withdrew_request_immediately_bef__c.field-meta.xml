@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_withdrew_request_immediately_bef__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Patient withdrew request immediately before MAiD?</inlineHelpText>
     <label>Patient withdrew request before MAiD?</label>

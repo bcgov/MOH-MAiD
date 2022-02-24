@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_the_patient_withdrew_request_what_we__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If the patient withdrew request, what were their reasons (select all that apply)</inlineHelpText>
     <label>If Yes, select reasons that apply</label>

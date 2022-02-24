@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Did_practitioner_complete_medical_certi__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Death occurred prior to MAiD and Practitioner completed the medical certificate of death?</inlineHelpText>
     <label>Completed medical cert. of death?</label>

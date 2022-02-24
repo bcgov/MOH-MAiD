@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>All_eligibility_criteria_has_been_met__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>All eligibility criteria has been met?</label>
     <trackHistory>false</trackHistory>

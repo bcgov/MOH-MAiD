@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Prescriber_ensured_expertise_in_patient__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Either I or the other assessor who determined eligibility (i.e. the prescriber) has expertise in the condition that causes the patient’s suffering, or a practitioner or nurse practitioner with expertise was consulted and the results have been shared with both assessors determining eligibility.</inlineHelpText>
     <label>Expertise in condition was provided</label>

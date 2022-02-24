@@ -3,6 +3,7 @@
     <fullName>Referring_Practitioner__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
     <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Referring Practitioner</label>
     <referenceTo>Account</referenceTo>

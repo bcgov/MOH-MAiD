@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_was_given_opportunity_to_withdra__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Immediately before providing MAiD, I gave the patient an opportunity to withdraw their request and ensured that the patient gave express consent to receive MAiD.</inlineHelpText>
     <label>Opportunity to withdraw request?</label>

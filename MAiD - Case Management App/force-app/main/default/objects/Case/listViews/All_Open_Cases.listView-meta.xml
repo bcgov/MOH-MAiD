@@ -2,7 +2,7 @@
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>All_Open_Cases</fullName>
     <columns>CASES.CASE_NUMBER</columns>
-    <columns>Patient_First_Name__c</columns>
+    <columns>CASES.TYPE</columns>
     <columns>Patient_Last_Name__c</columns>
     <columns>Practitioner_Name__c</columns>
     <columns>CASES.STATUS</columns>
@@ -17,6 +17,11 @@
         <field>CASES.RECORDTYPE</field>
         <operation>equals</operation>
         <value>Case.MAiD_Case</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Awaiting Forms,Ready for Manager Review</value>
     </filters>
     <label>All Open Cases</label>
 </ListView>

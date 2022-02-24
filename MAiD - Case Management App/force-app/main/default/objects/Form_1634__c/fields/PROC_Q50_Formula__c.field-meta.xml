@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PROC_Q50_Formula__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>IF( Pratictioner_was_satisfied_second_assess__c=true,1,2)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

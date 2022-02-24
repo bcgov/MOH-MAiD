@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_transferred_was_it_due_to_facility_po__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If the patient had to be transferred to this location, was transfer due to an originating facility&apos;s policy regarding MAiD provision?</inlineHelpText>
     <label>If transferred, due to facility policy?</label>

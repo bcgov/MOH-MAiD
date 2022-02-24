@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Was_a_1635_form_completed__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Was a 1635 Consultant&apos;s Assessment of Patient&apos;s Informed Consent Decision Capability Form completed by another practitioner?</inlineHelpText>
     <label>Was a 1635 form completed</label>

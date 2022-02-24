@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SLF_Q15_Formula__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>Case( Was_the_substance_self_administered__c ,
 &quot;1 - Yes&quot;,1,

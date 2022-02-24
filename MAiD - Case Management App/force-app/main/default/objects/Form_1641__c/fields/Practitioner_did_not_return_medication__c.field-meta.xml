@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Practitioner_did_not_return_medication__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Practitioner did not return the medications by the pharmacist&apos;s reporting deadline</inlineHelpText>
     <label>Practitioner did not return medication?</label>

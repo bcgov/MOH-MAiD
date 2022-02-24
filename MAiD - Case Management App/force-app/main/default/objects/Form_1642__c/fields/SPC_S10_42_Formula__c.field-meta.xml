@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SPC_S10_42_Formula__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>Case__r.Practitioner_Name__r.Specialty_Other__pc</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

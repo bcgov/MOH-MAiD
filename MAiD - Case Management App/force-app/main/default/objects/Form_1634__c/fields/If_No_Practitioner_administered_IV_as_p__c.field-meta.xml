@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_No_Practitioner_administered_IV_as_p__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If No, Practitioner administered IV as per agreement</inlineHelpText>
     <label>If No, practitioner admin IV per agree</label>

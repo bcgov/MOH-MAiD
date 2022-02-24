@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_lost_capabilty_to_consent__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Patient&apos;s capability deteriorated (no longer capable of providing informed consent)</inlineHelpText>
     <label>Patient lost capability to consent</label>

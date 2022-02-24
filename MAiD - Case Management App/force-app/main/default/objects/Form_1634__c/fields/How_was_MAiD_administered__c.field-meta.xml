@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>How_was_MAiD_administered__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>How was MAiD administered?</label>
     <required>false</required>

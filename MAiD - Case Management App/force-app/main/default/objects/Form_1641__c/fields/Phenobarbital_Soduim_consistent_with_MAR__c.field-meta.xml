@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Phenobarbital_Soduim_consistent_with_MAR__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Phenobarbital Soduim consistent with MAR</label>
     <trackHistory>false</trackHistory>

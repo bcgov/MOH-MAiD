@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_Signed_for_MAiD_Administration__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Patient Signed for MAiD Administration</label>
     <trackFeedHistory>false</trackFeedHistory>

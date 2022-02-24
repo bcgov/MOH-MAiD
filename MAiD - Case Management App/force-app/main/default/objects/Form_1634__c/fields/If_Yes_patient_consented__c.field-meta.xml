@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_Yes_patient_consented__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>IF yes, did the patient consent to you administering the substance to cause their death on or before the specified day if they lost their capacity to consent to receiving medical assistance in dying?</inlineHelpText>
     <label>If Yes, patient consented</label>

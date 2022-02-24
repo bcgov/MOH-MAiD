@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Practitioner_is_not_a_beneficiary__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>I do not know or believe that I am a beneficiary under the will of the patient requesting medical assistance in dying or a recipient, in any other way, of a financial or other material benefit resulting from the patient’s death, other than the standard compensation for their services relating to the request.</inlineHelpText>
     <label>Practitioner is not a beneficiary</label>

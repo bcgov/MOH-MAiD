@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Ensured_MAiD_administered_as_specified__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>I ensured the substance was administered to the patient in accordance with the terms of the arrangement</inlineHelpText>
     <label>Ensured MAiD administered as specified</label>

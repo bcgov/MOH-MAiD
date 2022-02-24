@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_yes_cause_of_death_Specify__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
+    <deprecated>false</deprecated>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <inlineHelpText>If yes, is the immediate cause of death on the medical certificate of death (Specify)</inlineHelpText>

@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_FacilitySite_specify_Facility_Unit__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
+    <deprecated>false</deprecated>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>If Facility/Site,specify Facility &amp; Unit</label>

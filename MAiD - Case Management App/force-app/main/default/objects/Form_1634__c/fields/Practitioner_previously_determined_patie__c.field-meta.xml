@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Practitioner_previously_determined_patie__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If, in your opinion, the patient is NOT eligible, had you previously determined that the patient was eligible for MAiD?</inlineHelpText>
     <label>Pract. prev determine patient eligibile</label>

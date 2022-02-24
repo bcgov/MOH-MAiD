@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PHA_Q15_Formula__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>CASE( Case__r.Province_or_Territory_that_issued_PHN__c ,
 &quot;59 - British Columbia&quot;,59,

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_in_an_advanced_state_of_irrevers__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Patient in an advanced state of irreversible decline?</inlineHelpText>
     <label>Advanced state of irreversible decline?</label>

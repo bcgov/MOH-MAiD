@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_has_serious_and_incurable_illnes__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Patient has serious and incurable illness, disease or disability?</inlineHelpText>
     <label>Patient has serious &amp; incurable illness?</label>

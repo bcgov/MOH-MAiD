@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Verbal_Consent_Notes__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
+    <deprecated>false</deprecated>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <inlineHelpText>If consent was provided via verbal or other means, and in the absence of a proxy, provide details on the steps taken to obtain consent</inlineHelpText>

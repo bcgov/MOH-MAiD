@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_no_was_palliative_care_accessible_to__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If no, was palliative care accessible to the patient?</inlineHelpText>
     <label>If no, was palliative care accessible?</label>

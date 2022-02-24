@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Dispensing_Pharmacist_s_Signature__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Dispensing Pharmacist&apos;s Signature</label>
     <trackHistory>false</trackHistory>

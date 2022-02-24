@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Due_to_policies_on_MAID_of_a_facility__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Due to policies on MAID of a hospital, residential care facility or palliative care facility where the patient is located</inlineHelpText>
     <label>Due to policies on MAID of a facility</label>

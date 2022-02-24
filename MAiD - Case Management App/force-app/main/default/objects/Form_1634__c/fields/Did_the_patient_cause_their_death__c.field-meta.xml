@@ -5,7 +5,7 @@
     <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Did the patient die after self administering the first substance?</inlineHelpText>
-    <label>Did the patient cause their death?_X</label>
+    <label>Did the patient cause their death?</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

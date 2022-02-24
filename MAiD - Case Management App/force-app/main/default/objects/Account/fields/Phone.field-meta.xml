@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone</fullName>
+    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
+    <inlineHelpText>Phone numbers are a great way to call people on phones.  Phones are what we call our pocket computers even though we use them for games, selfies, and facebook.</inlineHelpText>
+    <trackFeedHistory>false</trackFeedHistory>
+</CustomField>

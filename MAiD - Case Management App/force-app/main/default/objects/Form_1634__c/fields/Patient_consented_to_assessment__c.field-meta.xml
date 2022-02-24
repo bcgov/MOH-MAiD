@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_consented_to_assessment__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Patient personally known to me proof of identity, consented to this assessment</inlineHelpText>
     <label>Patient consented to assessment</label>

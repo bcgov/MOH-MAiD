@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ELG_Q120_Formula__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>CASE(  If_Yes_is_patients_change_in_eligbilit__c  ,
 &quot;Yes&quot;,1,

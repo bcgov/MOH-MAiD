@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_lost_capacity_to_consent_1__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>The patient lost capacity to consent to receiving MAiD and the waiver of final consent waiver is included with the forms</inlineHelpText>
     <label>Patient lost capacity to consent</label>

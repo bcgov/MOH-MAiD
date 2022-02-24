@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Request_was_signed_and_dated_after_the_p__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>I ensured that the request was signed and dated after the patient was informed by a practitioner that the patient had a grievous and irremediable medical condition</inlineHelpText>
     <label>Request signed after patient informed</label>

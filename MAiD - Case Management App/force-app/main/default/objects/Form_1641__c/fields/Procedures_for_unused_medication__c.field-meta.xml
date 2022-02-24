@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Procedures_for_unused_medication__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Procedures have been established for the return of any unused and partially used medication(s) within 72 hours</inlineHelpText>
     <label>Procedures for unused medication</label>

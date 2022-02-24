@@ -3,5 +3,5 @@
     <fullName>Name</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
-    <trackFeedHistory>false</trackFeedHistory>
+    <trackFeedHistory>true</trackFeedHistory>
 </CustomField>

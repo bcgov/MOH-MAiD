@@ -2,7 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PHN__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
-    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>    
+    <deprecated>false</deprecated>
+    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>PHN</label>
     <length>10</length>

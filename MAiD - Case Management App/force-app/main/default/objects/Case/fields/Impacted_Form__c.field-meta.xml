@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Impacted_Form__c</fullName>
+    <deprecated>false</deprecated>
     <description>Field to be replaced, do not fill in only use this field to attain form information on error log.</description>
     <externalId>false</externalId>
     <inlineHelpText>Field to be replaced, do not fill in only use this field to attain form information on error log.</inlineHelpText>

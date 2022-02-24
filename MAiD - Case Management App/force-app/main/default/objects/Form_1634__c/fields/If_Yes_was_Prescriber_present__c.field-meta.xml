@@ -4,7 +4,7 @@
     <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If Yes, were you present when the patient self-administered the substance?</inlineHelpText>
-    <label>If Yes, was Prescriber present?_X</label>
+    <label>If Yes, was Prescriber present?</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>

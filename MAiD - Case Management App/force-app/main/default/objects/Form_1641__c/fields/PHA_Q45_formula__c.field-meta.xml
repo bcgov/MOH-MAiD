@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PHA_Q45_formula__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>CASE(Where_was_the_substance_dispensed__c, &quot;1 - Hospital&quot;, 1, &quot;2 - Community Pharmacy&quot;, 2,&quot;3 - Other&quot;,3, 1)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

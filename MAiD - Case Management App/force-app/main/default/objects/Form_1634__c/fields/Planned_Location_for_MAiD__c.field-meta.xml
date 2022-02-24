@@ -3,7 +3,7 @@
     <fullName>Planned_Location_for_MAiD__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <label>Planned Location for MAiD_X</label>
+    <label>Planned Location for MAiD</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>

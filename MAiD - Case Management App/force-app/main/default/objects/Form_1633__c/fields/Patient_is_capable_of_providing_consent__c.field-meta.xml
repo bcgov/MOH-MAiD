@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_is_capable_of_providing_consent__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>I have no reason to believe the patient is incapable of providing informed consent to medical assistance in dying.</inlineHelpText>
     <label>Patient is capable of providing consent</label>

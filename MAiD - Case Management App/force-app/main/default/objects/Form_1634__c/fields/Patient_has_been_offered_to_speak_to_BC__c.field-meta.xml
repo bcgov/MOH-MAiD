@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_has_been_offered_to_speak_to_BC__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Patient has been offered to speak to BC Transplant</inlineHelpText>
     <label>Communication with BC Transplant</label>

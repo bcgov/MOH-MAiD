@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Practitioner_planned_for_potential_issue__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>I have planned for potential issues (failure of oral route to achieve effect, issues with initiation of intravenous access, etc.)</inlineHelpText>
     <label>Practitioner planned for potential issue</label>

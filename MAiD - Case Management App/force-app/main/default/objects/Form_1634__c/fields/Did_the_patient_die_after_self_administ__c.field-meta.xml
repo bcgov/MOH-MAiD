@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Did_the_patient_die_after_self_administ__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Did the patient die after self-administration?</inlineHelpText>
     <label>Did the patient die after self-admin?</label>

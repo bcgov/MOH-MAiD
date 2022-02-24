@@ -5,7 +5,7 @@
     <deprecated>false</deprecated>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
-    <label>If Facility/Site, specify_X</label>
+    <label>If Facility/Site, specify</label>
     <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

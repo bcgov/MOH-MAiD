@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ActivitiesSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowUsersToRelateMultipleContactsToTasksAndEvents>true</allowUsersToRelateMultipleContactsToTasksAndEvents>
     <autoRelateEventAttendees>false</autoRelateEventAttendees>
-    <enableActivityReminders>false</enableActivityReminders>
-    <enableClickCreateEvents>false</enableClickCreateEvents>
+    <enableActivityReminders>true</enableActivityReminders>
+    <enableClickCreateEvents>true</enableClickCreateEvents>
     <enableDragAndDropScheduling>true</enableDragAndDropScheduling>
     <enableEmailTracking>true</enableEmailTracking>
+    <enableFlowTaskNotifsViaApex>false</enableFlowTaskNotifsViaApex>
     <enableGroupTasks>true</enableGroupTasks>
     <enableHideChildEventsPreference>false</enableHideChildEventsPreference>
-    <enableListViewScheduling>false</enableListViewScheduling>
+    <enableListViewScheduling>true</enableListViewScheduling>
     <enableLogNote>false</enableLogNote>
     <enableMLSingleClientProfile>false</enableMLSingleClientProfile>
     <enableMultidayEvents>true</enableMultidayEvents>

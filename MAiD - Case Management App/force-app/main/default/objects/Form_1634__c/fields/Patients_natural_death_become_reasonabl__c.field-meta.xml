@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patients_natural_death_become_reasonabl__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Has the patient&apos;s natural death become reasonably foreseeable, taking into account all of their medical circumstances?</inlineHelpText>
     <label>Natural death become foreseeable</label>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_requested_the_following_options__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>I have discussed with the patient the following options for administration and the patient has requested:</inlineHelpText>
     <label>Patient requested the following options</label>

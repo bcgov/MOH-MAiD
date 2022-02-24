@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Phenobarbital_Oral_Suspension__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Phenobarbital + chloral hydrate + morphine sulphate oral suspension</inlineHelpText>
     <label>Phenobarbital Oral Suspension</label>

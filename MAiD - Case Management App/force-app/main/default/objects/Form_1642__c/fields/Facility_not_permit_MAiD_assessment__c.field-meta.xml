@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Facility_not_permit_MAiD_assessment__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>The facility would not permit MAiD assessment on site</inlineHelpText>
     <label>Facility not permit MAiD assessment</label>

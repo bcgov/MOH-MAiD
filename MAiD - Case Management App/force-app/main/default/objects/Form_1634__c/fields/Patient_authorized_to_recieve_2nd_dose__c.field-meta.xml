@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_authorized_to_recieve_2nd_dose__c</fullName>
+    <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <inlineHelpText>If,  after self-administering the first substance, the patient loses the capacity to provide consent to receive medical assistance in dying but does not pass away within a specified period, the requestor consents to the MAiD Prescriber administering a second substance to cause their death.</inlineHelpText>
+    <label>Patient authorized to receive 2nd dose</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

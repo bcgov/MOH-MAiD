@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_No_practioner_administered_2nd_dose__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If No, I administered the second substance to cause the patient&apos;s death in accordance with the terms within the advanced consent.</inlineHelpText>
     <label>If No, administered 2nd dose</label>

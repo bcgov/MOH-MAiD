@@ -3,6 +3,7 @@
     <fullName>Practitioner__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
     <deleteConstraint>Restrict</deleteConstraint>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Practitioner</label>
     <referenceTo>Account</referenceTo>

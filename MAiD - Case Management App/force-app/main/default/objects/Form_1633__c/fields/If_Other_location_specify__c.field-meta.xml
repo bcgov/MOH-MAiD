@@ -2,7 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_Other_location_specify__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
-    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>    
+    <deprecated>false</deprecated>
+    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>If Other location, specify</label>
     <length>255</length>

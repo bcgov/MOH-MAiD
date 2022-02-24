@@ -3,9 +3,7 @@
     <fullName>SPC_Q25_42_Formula__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>CASE(  Prior_patient_consultation_1__c ,
-&quot;Yes&quot;,1,
-&quot;No&quot;,2,0)</formula>
+    <formula>IF( Prior_patient_consultation__c , 1, 2)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>SPC_Q25 - 42 - Formula</label>
     <precision>18</precision>

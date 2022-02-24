@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Practitioner_ensured_10_clear_days__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>I ensured that there were at least 10 clear days between the day on which the request was signed by or on behalf of the patient and the day on which MAiD was provided.</inlineHelpText>
     <label>Practitioner ensured 10 clear days</label>

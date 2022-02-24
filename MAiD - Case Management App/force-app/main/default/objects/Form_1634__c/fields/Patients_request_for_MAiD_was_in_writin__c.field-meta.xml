@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patients_request_for_MAiD_was_in_writin__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>I ensured that the patient’s request for medical assistance in dying was made in writing and signed and dated by the patient or by another person permitted to do so on their behalf.</inlineHelpText>
     <label>Patient’s request MAiD in writing/signed</label>

@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Counselling_mental_health_and_other_sup__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>&quot;I ensured counselling, mental health supports, disability supports, community services and palliative care has been offered consultation with relevant
 professionals, as available and applicable.&quot;</inlineHelpText>

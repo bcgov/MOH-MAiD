@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Facility_will_not_permit_MAiD_provision__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>The facility would not permit MAiD provision on site</inlineHelpText>
     <label>Facility will not permit MAiD provision</label>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>I_determine_that_the_patient__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>I determine that the patient:</label>
     <required>false</required>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>MDR5_Q03_Formula__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>CASE( I_determine_that_the_patient__c , &quot;1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable&quot;, 1, &quot;2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable&quot;, 1, &quot;3 - Does not meet the criteria for MAiD&quot;,2, &quot;4- NO determination made&quot;, 2, 0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

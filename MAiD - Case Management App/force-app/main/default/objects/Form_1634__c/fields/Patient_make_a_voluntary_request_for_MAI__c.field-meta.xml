@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_make_a_voluntary_request_for_MAI__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Patient make a voluntary request for MAID that, in particular, was not made as a result of external pressure?</inlineHelpText>
     <label>Patient make voluntary request for MAiD?</label>

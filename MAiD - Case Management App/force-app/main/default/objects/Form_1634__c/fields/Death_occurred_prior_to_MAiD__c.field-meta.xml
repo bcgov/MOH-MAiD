@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Death_occurred_prior_to_MAiD__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Death occurred prior to MAiD</label>
     <trackFeedHistory>false</trackFeedHistory>

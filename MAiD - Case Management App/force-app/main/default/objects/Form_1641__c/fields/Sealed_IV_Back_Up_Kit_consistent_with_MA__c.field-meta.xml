@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Sealed_IV_Back_Up_Kit_consistent_with_MA__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Sealed IV BackUpKit consistent with MAR?</label>
     <trackHistory>false</trackHistory>

@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Prescription_indicates_medication_is_for__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>I have indicated on the prescription or order that the medication is for medical assistance in dying.</inlineHelpText>
     <label>Prescription indicates it is for MAiD</label>

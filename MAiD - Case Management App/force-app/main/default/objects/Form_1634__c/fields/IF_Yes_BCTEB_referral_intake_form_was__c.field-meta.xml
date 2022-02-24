@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>IF_Yes_BCTEB_referral_intake_form_was__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>IF Yes, BCT/EB referral intake form was submitted</inlineHelpText>
     <label>IF Yes, BCT/EB referral intake submitted</label>

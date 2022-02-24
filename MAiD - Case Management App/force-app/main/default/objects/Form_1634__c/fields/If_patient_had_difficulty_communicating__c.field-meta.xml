@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_patient_had_difficulty_communicating__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>If the patient had difficulty communicating, I took all the necessary measures to provide a reliable means by which the patient could have understood the information that was provided to them and communicated their decision.</inlineHelpText>
     <label>Measures for difficulties communicating</label>
