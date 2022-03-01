@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <types> 
-        <members>Account.AccountSource</members> 
-        <name>CustomField</name> 
-    </types> 
     <types>
         <members>*</members>
         <name>WorkflowRule</name>
@@ -20,14 +16,8 @@
         <members>*</members>
         <name>Flow</name>
     </types>
-    <types> 
-        <members>LeadSource</members> 
-        <name>StandardValueSet</name> 
-    </types> 
     <types>
-        <members>Account.recordTypeName</members>
-        <members>PersonAccount.recordTypeName</members>
-        <members>Case.recordTypeName</members>
+        <members>*</members>
         <name>RecordType</name>
     </types>
     <types>
@@ -79,6 +69,10 @@
         <name>ContentAsset</name>
     </types>
     <types>
+        <members>duplicate_notification_builder</members>
+        <name>CustomNotificationType</name> 
+    </types>
+    <types>
         <members>*</members>
         <name>StandardValueSet</name>
     </types>
@@ -113,23 +107,27 @@
     <types>
         <members>*</members>
         <name>ListView</name>
-    </types> 
+    </types>
+    <types>
+        <members>*</members>
+        <name>ReportFolder</name>
+    </types>  
     <types>
         <members>*</members>
         <name>Report</name>
-    </types>  
-    <types> 
-        <members>*</members>
-        <name>ReportFolder</name>
-    </types>       
+    </types>
     <types>
         <members>*</members>
-        <name>ReportFolder</name>
-    </types>    
+        <name>EntitlementProcess</name>
+    </types> 
+    <types>
+        <members>*</members>
+        <name>MilestoneType</name>
+    </types>                  
     <types>
         <members>Activities</members>
         <members>PlatformEncryption</members>
         <name>Settings</name>
     </types>    
-    <version>50.0</version>
+    <version>52.0</version>
 </Package>

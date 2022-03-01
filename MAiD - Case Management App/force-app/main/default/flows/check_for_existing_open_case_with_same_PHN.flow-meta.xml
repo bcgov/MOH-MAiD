@@ -4,8 +4,8 @@
     <assignments>
         <name>Prevent_Save_sets_to_true</name>
         <label>Prevent Save sets to true</label>
-        <locationX>763</locationX>
-        <locationY>398</locationY>
+        <locationX>844</locationX>
+        <locationY>481</locationY>
         <assignmentItems>
             <assignToReference>$Record.Prevent_save_on_duplicate_PHN__c</assignToReference>
             <operator>Assign</operator>
@@ -14,17 +14,30 @@
             </value>
         </assignmentItems>
     </assignments>
+    <assignments>
+        <name>Skip_for_Error_Log_save</name>
+        <label>Skip for Error Log save</label>
+        <locationX>636</locationX>
+        <locationY>138</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Prevent_save_on_duplicate_PHN__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+    </assignments>
     <decisions>
         <name>If_Get_Record_found_any_value</name>
         <label>If Get Record found any value</label>
-        <locationX>737</locationX>
+        <locationX>820</locationX>
         <locationY>258</locationY>
         <defaultConnector>
             <targetReference>Compare_PHN</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>To_check_if_there_is_any_value_in_Get_Record</name>
+            <name>Skip_for_Error_Log</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>Compare_PHN.PHN__c</leftValueReference>
@@ -33,24 +46,92 @@
                     <elementReference>PHN_var</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.ParentId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>MAiDCaseRecordTypeID</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Skip_for_Error_Log_save</targetReference>
+            </connector>
+            <label>Skip for Error Log</label>
+        </rules>
+        <rules>
+            <name>To_check_if_there_is_any_value_in_Get_Record</name>
+            <conditionLogic>(1 AND 2 AND 4 AND 6) OR (1 AND 2 AND 3 AND 5 AND 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>Compare_PHN.PHN__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>PHN_var</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ParentId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.PHN__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.PHN__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.PHN__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.PHN__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.RecordTypeId</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>MAiDCaseRecordTypeID</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Prevent_Save_sets_to_true</targetReference>
             </connector>
             <label>To check if there is any value in Get Record</label>
         </rules>
     </decisions>
+    <description>Update in entry criteria of get records</description>
     <interviewLabel>check for existing open case with same PHN {!$Flow.CurrentDateTime}</interviewLabel>
     <label>check for existing open case with same PHN</label>
     <loops>
         <name>Compare_PHN</name>
         <label>Compare PHN</label>
-        <locationX>393</locationX>
+        <locationX>475</locationX>
         <locationY>292</locationY>
         <collectionReference>phn_list</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
             <targetReference>If_Get_Record_found_any_value</targetReference>
         </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Skip_for_Error_Log_save</targetReference>
+        </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -74,8 +155,8 @@
     <recordLookups>
         <name>Check_for_existing_open_case_with_same_PHN</name>
         <label>Check for existing open case with same PHN</label>
-        <locationX>184</locationX>
-        <locationY>463</locationY>
+        <locationX>319</locationX>
+        <locationY>334</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Compare_PHN</targetReference>
@@ -102,16 +183,47 @@
                 <elementReference>$Record.Type</elementReference>
             </value>
         </filters>
+        <filters>
+            <field>RecordTypeId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>MAiDCaseRecordTypeID</elementReference>
+            </value>
+        </filters>
         <object>Case</object>
         <outputReference>phn_list</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>PHN__c</queriedFields>
+        <queriedFields>ParentId</queriedFields>
     </recordLookups>
-    <start>
-        <locationX>51</locationX>
-        <locationY>50</locationY>
+    <recordLookups>
+        <name>RecordType</name>
+        <label>RecordType</label>
+        <locationX>176</locationX>
+        <locationY>334</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Check_for_existing_open_case_with_same_PHN</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>MAiD_Case</stringValue>
+            </value>
+        </filters>
+        <object>RecordType</object>
+        <outputAssignments>
+            <assignToReference>MAiDCaseRecordTypeID</assignToReference>
+            <field>Id</field>
+        </outputAssignments>
+    </recordLookups>
+    <start>
+        <locationX>50</locationX>
+        <locationY>43</locationY>
+        <connector>
+            <targetReference>RecordType</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -126,6 +238,13 @@
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>MAiDCaseRecordTypeID</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
     <variables>
         <name>phn_list</name>
         <dataType>SObject</dataType>

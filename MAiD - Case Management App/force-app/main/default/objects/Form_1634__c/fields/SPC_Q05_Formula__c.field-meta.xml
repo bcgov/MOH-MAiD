@@ -2,10 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SPC_Q05_Formula__c</fullName>
     <externalId>false</externalId>
-    <formula>CASE(Practitioner_Type__c, 
-&quot;Physician&quot;,1,
-&quot;Nurse Practitioner&quot;,2,
-&quot;Pharmacist&quot;,3,1)</formula>
+    <formula>Practitioner__r.PersonContact.SPC_Q05_Number__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>SPC_Q05 - Formula</label>
     <precision>18</precision>

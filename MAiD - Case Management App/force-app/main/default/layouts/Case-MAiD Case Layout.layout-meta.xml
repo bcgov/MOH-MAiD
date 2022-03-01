@@ -20,6 +20,10 @@
                 <field>PHN__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Warning_Message_If_Any__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Patient_Last_Name__c</field>
             </layoutItems>
@@ -94,6 +98,10 @@
             <layoutItems>
                 <behavior>Required</behavior>
                 <field>Status</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Status_Feedback_Msg__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -238,7 +246,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Federal_Feedback_Msg__c</field>
+                <field>Federal_Safeguards_Feedback__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -246,7 +254,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Provincial_Feedback_Msg__c</field>
+                <field>Provincial_Safeguards_Feedback__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -255,6 +263,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Mandatory_Data__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Mandatory_Data_Feedback_Message__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

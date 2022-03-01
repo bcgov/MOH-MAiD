@@ -44,18 +44,9 @@
                 <behavior>Edit</behavior>
                 <field>PersonEmail</field>
             </layoutItems>
-        </layoutColumns>
-        <style>OneColumn</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>Specialty</label>
-        <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Specialty_Other__pc</field>
+                <field>Notes__pc</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -116,7 +107,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1f000000Z4y9</masterLabel>
+        <masterLabel>00h5W000000Mvts</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

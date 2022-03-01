@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EntitlementProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <SObjectType>Case</SObjectType>
+    <active>true</active>
+    <description>MAiD Entitlement Process representing timelines for receipt of forms depending on case type</description>
+    <entryStartDateField>Case.SlaStartDate</entryStartDateField>
+    <exitCriteriaFilterItems>
+        <field>Case.IsClosed</field>
+        <operation>equals</operation>
+        <value>true</value>
+    </exitCriteriaFilterItems>
+    <isVersionDefault>true</isVersionDefault>
+    <milestones>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>MAiD Death Foreseeable, MAiD Death Not Foreseeable</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>MAiD All Forms Received 3 Days</milestoneName>
+        <minutesToComplete>4320</minutesToComplete>
+        <successActions>
+            <name>All_Forms_Received</name>
+            <type>FieldUpdate</type>
+        </successActions>
+        <timeTriggers>
+            <actions>
+                <name>Not_All_Forms_Received</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Minutes</workflowTimeTriggerUnit>
+        </timeTriggers>
+        <useCriteriaStartTime>false</useCriteriaStartTime>
+    </milestones>
+    <milestones>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>MAiD Death Foreseeable, MAiD Death Not Foreseeable</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>MAiD All Forms Received 6 Days</milestoneName>
+        <minutesToComplete>8640</minutesToComplete>
+        <successActions>
+            <name>All_Forms_Received_1641</name>
+            <type>FieldUpdate</type>
+        </successActions>
+        <timeTriggers>
+            <actions>
+                <name>Not_All_Forms_Received_1641</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Minutes</workflowTimeTriggerUnit>
+        </timeTriggers>
+        <useCriteriaStartTime>false</useCriteriaStartTime>
+    </milestones>
+    <milestones>
+        <milestoneCriteriaFilterItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Discontinuation of Planning: Death Prior, Discontinuation of Planning: Ineligible, Discontinuation of Planning: Withdrawn Request, Transfer of Request</value>
+        </milestoneCriteriaFilterItems>
+        <milestoneName>MAiD All Forms Received 30 Days</milestoneName>
+        <minutesToComplete>43200</minutesToComplete>
+        <successActions>
+            <name>All_Forms_Received</name>
+            <type>FieldUpdate</type>
+        </successActions>
+        <timeTriggers>
+            <actions>
+                <name>Not_All_Forms_Received</name>
+                <type>FieldUpdate</type>
+            </actions>
+            <timeLength>0</timeLength>
+            <workflowTimeTriggerUnit>Minutes</workflowTimeTriggerUnit>
+        </timeTriggers>
+        <useCriteriaStartTime>false</useCriteriaStartTime>
+    </milestones>
+    <name>MAiD Entitlement Process</name>
+    <versionMaster>5524g00000001dT</versionMaster>
+    <versionNumber>3</versionNumber>
+</EntitlementProcess>

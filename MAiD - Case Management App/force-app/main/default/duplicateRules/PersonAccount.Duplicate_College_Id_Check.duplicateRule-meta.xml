@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DuplicateRule xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <actionOnInsert>Allow</actionOnInsert>
-    <actionOnUpdate>Allow</actionOnUpdate>
+    <actionOnInsert>Block</actionOnInsert>
+    <actionOnUpdate>Block</actionOnUpdate>
     <alertText>You cannot save this Practitioner record because a Practitioner record with this College ID already exists. To save, use a different College ID.</alertText>
     <description xsi:nil="true"/>
     <duplicateRuleFilter xsi:nil="true"/>
@@ -12,8 +12,6 @@
     </duplicateRuleMatchRules>
     <isActive>true</isActive>
     <masterLabel>Duplicate College Id Check</masterLabel>
-    <operationsOnInsert>Alert</operationsOnInsert>
-    <operationsOnUpdate>Alert</operationsOnUpdate>
     <securityOption>BypassSharingRules</securityOption>
-    <sortOrder>2</sortOrder>
+    <sortOrder>1</sortOrder>
 </DuplicateRule>

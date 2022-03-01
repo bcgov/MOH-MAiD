@@ -32,10 +32,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_authorized_to_recieve_second_dos__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>X1633_Form_entered__c</field>
             </layoutItems>
         </layoutColumns>
@@ -619,10 +615,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Proxy_for_MAiD_Signature__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Proxy_Signed_for_MAiD__c</field>
             </layoutItems>
             <layoutItems>
@@ -661,6 +653,10 @@
                 <behavior>Edit</behavior>
                 <field>Proxy_for_MAiD_Postal_Code__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Verbal_Consent_Notes__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -684,7 +680,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_authorized_to_recieve_2nd_dose__c</field>
+                <field>Patient_authorized_to_recieve_second_dos__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -705,10 +701,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Advance_consent_sign_date_by_prescriber__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Verbal_Consent_Notes__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -765,18 +757,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Was_the_substance_self_administered__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>If_yes_was_the_Prescriber_present__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Did_the_patient_die_after_self_administ__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>If_No_Practitioner_administered_IV_as_p__c</field>
             </layoutItems>
         </layoutColumns>
@@ -790,15 +770,15 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_Yes_was_Prescriber_present__c</field>
+                <field>Was_the_substance_self_administered__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_No_practitioner_admin_IV_per_agree__c</field>
+                <field>If_yes_was_the_Prescriber_present__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Did_the_patient_cause_their_death__c</field>
+                <field>Did_the_patient_die_after_self_administ__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -832,10 +812,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Ensured_MAiD_administered_as_specified__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Supplementary_Information__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -891,19 +867,14 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>ChangeOwnerOne</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>NewTask</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>2</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>LogACall</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>3</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>NewEvent</actionName>
@@ -916,9 +887,14 @@
             <sortOrder>5</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>0</sortOrder>
+            <actionName>NewTask</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>2</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>LogACall</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>3</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
@@ -940,7 +916,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h0i000000iDZp</masterLabel>
+        <masterLabel>00h5W000000Mvtl</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

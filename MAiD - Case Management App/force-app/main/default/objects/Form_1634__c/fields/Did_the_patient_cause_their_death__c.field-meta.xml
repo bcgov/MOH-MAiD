@@ -2,9 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Did_the_patient_cause_their_death__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Did the patient die after self administering the first substance?</inlineHelpText>
-    <label>Did the patient cause their death?</label>
+    <label>Did the patient cause their death?_X</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

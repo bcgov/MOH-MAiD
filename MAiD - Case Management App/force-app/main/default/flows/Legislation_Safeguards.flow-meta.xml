@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>51.0</apiVersion>
+    <apiVersion>52.0</apiVersion>
+    <assignments>
+        <name>Rule_1_In_Scope</name>
+        <label>Rule 1 In Scope</label>
+        <locationX>496</locationX>
+        <locationY>219</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_2_0</targetReference>
+        </connector>
+    </assignments>
     <assignments>
         <name>Rule_1_Message_Assignment</name>
         <label>Rule 1 Message Assignment</label>
-        <locationX>336</locationX>
-        <locationY>646</locationY>
+        <locationX>479</locationX>
+        <locationY>608</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_1_Message</elementReference>
@@ -18,12 +34,28 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_2_In_Scope</name>
+        <label>Rule 2 In Scope</label>
+        <locationX>836</locationX>
+        <locationY>50</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_3</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_2_Message_Assignment</name>
         <label>Rule 2 Message Assignment</label>
-        <locationX>366</locationX>
-        <locationY>533</locationY>
+        <locationX>691</locationX>
+        <locationY>518</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_2_Message</elementReference>
@@ -34,12 +66,60 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_36_In_Scope</name>
+        <label>Rule 36 In Scope</label>
+        <locationX>2187</locationX>
+        <locationY>792</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_40</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_36_Message_Assignment</name>
+        <label>Rule 36 Message Assignment</label>
+        <locationX>1821</locationX>
+        <locationY>1412</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_36_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_3_In_Scope</name>
+        <label>Rule 3 In Scope</label>
+        <locationX>1254</locationX>
+        <locationY>60</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_4</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_3_Message_Assignment</name>
         <label>Rule 3 Message Assignment</label>
-        <locationX>482</locationX>
-        <locationY>347</locationY>
+        <locationX>826</locationX>
+        <locationY>463</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_3_Message</elementReference>
@@ -50,12 +130,108 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_40_In_Scope</name>
+        <label>Rule 40 In Scope</label>
+        <locationX>1782</locationX>
+        <locationY>853</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_47_0</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_40_Message_Assignment</name>
+        <label>Rule 40 Message Assignment</label>
+        <locationX>1670</locationX>
+        <locationY>627</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_40_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_47_In_Scope</name>
+        <label>Rule 47 In Scope</label>
+        <locationX>1428</locationX>
+        <locationY>905</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_49</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_47_Message_Assignment</name>
+        <label>Rule 47 Message Assignment</label>
+        <locationX>1175</locationX>
+        <locationY>787</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_47_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_49_Message_Assignment</name>
+        <label>Rule 49 Message Assignment</label>
+        <locationX>938</locationX>
+        <locationY>1074</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule_49_Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Legislation_FAIL</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_4_In_Scope</name>
+        <label>Rule 4 In Scope</label>
+        <locationX>1671</locationX>
+        <locationY>67</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_5</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_4_Message_Assignment</name>
         <label>Rule 4 Message Assignment</label>
-        <locationX>644</locationX>
-        <locationY>410</locationY>
+        <locationX>949</locationX>
+        <locationY>447</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_4_Message</elementReference>
@@ -66,12 +242,28 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_5_In_Scope</name>
+        <label>Rule 5 In Scope</label>
+        <locationX>2195</locationX>
+        <locationY>68</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_6</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_5_Message_Assignment</name>
         <label>Rule 5 Message Assignment</label>
-        <locationX>751</locationX>
-        <locationY>342</locationY>
+        <locationX>1068</locationX>
+        <locationY>477</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_5_Message</elementReference>
@@ -82,12 +274,28 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_6_In_Scope</name>
+        <label>Rule 6 In Scope</label>
+        <locationX>2327</locationX>
+        <locationY>437</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_7</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_6_Message_Assignment</name>
         <label>Rule 6 Message Assignment</label>
-        <locationX>960</locationX>
-        <locationY>456</locationY>
+        <locationX>1223</locationX>
+        <locationY>555</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_6_Message</elementReference>
@@ -98,12 +306,28 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_7_In_Scope</name>
+        <label>Rule 7 In Scope</label>
+        <locationX>2458</locationX>
+        <locationY>627</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_8</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_7_Message_Assignment</name>
         <label>Rule 7 Message Assignment</label>
-        <locationX>1079</locationX>
-        <locationY>581</locationY>
+        <locationX>1439</locationX>
+        <locationY>433</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_7_Message</elementReference>
@@ -114,12 +338,28 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_8_In_Scope</name>
+        <label>Rule 8 In Scope</label>
+        <locationX>2494</locationX>
+        <locationY>753</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_9</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_8_Message_Assignment</name>
         <label>Rule 8 Message Assignment</label>
-        <locationX>1459</locationX>
-        <locationY>471</locationY>
+        <locationX>1911</locationX>
+        <locationY>590</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_8_Message</elementReference>
@@ -130,12 +370,28 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_9_In_Scope</name>
+        <label>Rule 9 In Scope</label>
+        <locationX>2376</locationX>
+        <locationY>1124</locationY>
+        <assignmentItems>
+            <assignToReference>is_Not_Applicable</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Rule_36</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_9_Message_Assignment</name>
         <label>Rule 9 Message Assignment</label>
-        <locationX>852</locationX>
-        <locationY>707</locationY>
+        <locationX>649</locationX>
+        <locationY>1549</locationY>
         <assignmentItems>
-            <assignToReference>$Flow.CurrentStage</assignToReference>
+            <assignToReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule_9_Message</elementReference>
@@ -145,6 +401,27 @@
             <targetReference>Legislation_FAIL</targetReference>
         </connector>
     </assignments>
+    <constants>
+        <name>Not_Applicable_SetMessage</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Not Applicable</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Not_Applicable_SetNull</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue/>
+        </value>
+    </constants>
+    <constants>
+        <name>PASS_All_Rules</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>All Legislation and Critical Safeguard Rules Pass</stringValue>
+        </value>
+    </constants>
     <constants>
         <name>Rule_1_Message</name>
         <dataType>String</dataType>
@@ -160,10 +437,38 @@
         </value>
     </constants>
     <constants>
+        <name>Rule_36_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 36 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
         <name>Rule_3_Message</name>
         <dataType>String</dataType>
         <value>
             <stringValue>Rule 3 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_40_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 40 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_47_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 47 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule_49_Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 49 Validation Fail</stringValue>
         </value>
     </constants>
     <constants>
@@ -209,225 +514,318 @@
         </value>
     </constants>
     <decisions>
+        <name>Not_Applicable_In_Flow</name>
+        <label>Not Applicable In Flow</label>
+        <locationX>1408</locationX>
+        <locationY>1303</locationY>
+        <defaultConnector>
+            <targetReference>Legislation_PASS</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Not All Rules (Not Applicable)</defaultConnectorLabel>
+        <rules>
+            <name>Check_Not_Applicable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>is_Not_Applicable</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Legislation_Not_Applicable</targetReference>
+            </connector>
+            <label>Check Not Applicable</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Rule_1</name>
         <label>Rule 1</label>
-        <locationX>90</locationX>
-        <locationY>501</locationY>
+        <locationX>472</locationX>
+        <locationY>426</locationY>
         <defaultConnector>
             <targetReference>Rule_1_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 1 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_1_Not_Applicable</name>
-            <conditionLogic>1 AND 2 AND 3 AND 4</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4)</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_2</targetReference>
+                <targetReference>Rule_2_0</targetReference>
             </connector>
             <label>Rule 1 Not Applicable</label>
         </rules>
         <rules>
             <name>Rule_1_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4) and (5 and 6 and 7 and 8 and 9 and 10 and 11 and 12)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4) AND (5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 12)</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patient_eligible_for_health_services_in__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patient_eligible_for_health_services_in__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patient_at_least_18_years_of_age__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patient_at_least_18_years_of_age__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patient_capable_of_making_this_health_ca__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patient_capable_of_making_this_health_ca__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patient_make_a_voluntary_request_for_MAI__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patient_gave_informed_consent_after_bein__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patient_gave_informed_consent_after_bein__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patient_has_serious_and_incurable_illnes__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patient_has_serious_and_incurable_illnes__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patient_in_an_advanced_state_of_irrevers__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patient_in_an_advanced_state_of_irrevers__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patients_illness_disease_or_disability__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patients_illness_disease_or_disability__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patient_make_a_voluntary_request_for_MAI__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_2</targetReference>
+                <targetReference>Rule_1_In_Scope</targetReference>
             </connector>
             <label>Rule 1 Success</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Rule_2</name>
+        <name>Rule_2_0</name>
         <label>Rule 2</label>
-        <locationX>351</locationX>
-        <locationY>303</locationY>
+        <locationX>675</locationX>
+        <locationY>260</locationY>
         <defaultConnector>
             <targetReference>Rule_2_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 2 Fails</defaultConnectorLabel>
         <rules>
-            <name>Rule_2_Not_Applicable</name>
+            <name>Rule_2_Not_Applicable_0</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>Rule_3</targetReference>
+            </connector>
             <label>Rule 2 Not Applicable</label>
         </rules>
         <rules>
-            <name>Rule_2_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and ((6 and 7) or 8)</conditionLogic>
+            <name>Rule_2_Failure</name>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((6 AND 7) OR (8 AND 9))</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>is_Selected_Other_Eligibility</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_other_specify__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_If_other_specify</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_Other_specify_1__c</leftValueReference>
+                <operator>EqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_2_Message_Assignment</targetReference>
+            </connector>
+            <label>Rule 2 Failure</label>
+        </rules>
+        <rules>
+            <name>Rule_2_Success_0</name>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((10 AND (6 AND 8 AND 7) OR 9) OR 11) AND ((12 AND 14) OR 13) AND 15 AND 16</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
@@ -441,21 +839,77 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_other_specify__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.If_other_specify__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_yes_select_all_that_apply__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.If_yes_select_all_that_apply__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Other_Eligibility</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_make_a_voluntary_request_for_MAI__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_make_a_voluntary_request_for_MAI__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patients_illness_disease_or_disability__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patients_illness_disease_or_disability__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_desc_suffering_If_yes_select_all__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_yes_select_all_that_apply__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_yes_select_all_that_apply_1__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_3</targetReference>
+                <targetReference>Rule_2_In_Scope</targetReference>
             </connector>
             <label>Rule 2 Success</label>
         </rules>
@@ -463,8 +917,8 @@
     <decisions>
         <name>Rule_3</name>
         <label>Rule 3</label>
-        <locationX>486</locationX>
-        <locationY>99</locationY>
+        <locationX>938</locationX>
+        <locationY>208</locationY>
         <defaultConnector>
             <targetReference>Rule_3_Message_Assignment</targetReference>
         </defaultConnector>
@@ -480,35 +934,35 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
@@ -521,37 +975,37 @@
         </rules>
         <rules>
             <name>Rule_3_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
@@ -565,23 +1019,84 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_Cancer_Other_specify__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.If_Cancer_Other_specify__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_4</targetReference>
+                <targetReference>Rule_3_In_Scope</targetReference>
             </connector>
             <label>Rule 3 Success</label>
         </rules>
     </decisions>
     <decisions>
+        <name>Rule_36</name>
+        <label>Rule 36</label>
+        <locationX>2054</locationX>
+        <locationY>1091</locationY>
+        <defaultConnector>
+            <targetReference>Rule_36_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 36 Fails</defaultConnectorLabel>
+        <rules>
+            <name>Rule_36_Not_Applicable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_40</targetReference>
+            </connector>
+            <label>Rule 36 Not Applicable</label>
+        </rules>
+        <rules>
+            <name>Rule_36_Success</name>
+            <conditionLogic>(1 AND (2 AND 3 AND 4))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue/>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_36_In_Scope</targetReference>
+            </connector>
+            <label>Rule 36 Success</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Rule_4</name>
         <label>Rule 4</label>
-        <locationX>587</locationX>
-        <locationY>201</locationY>
+        <locationX>1267</locationX>
+        <locationY>219</locationY>
         <defaultConnector>
             <targetReference>Rule_4_Message_Assignment</targetReference>
         </defaultConnector>
@@ -597,35 +1112,35 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
@@ -638,37 +1153,37 @@
         </rules>
         <rules>
             <name>Rule_4_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
@@ -682,23 +1197,271 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_Neurological_condition_other_speci__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.If_Neurological_condition_other_speci__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_5</targetReference>
+                <targetReference>Rule_4_In_Scope</targetReference>
             </connector>
             <label>Rule 4 Success</label>
         </rules>
     </decisions>
     <decisions>
+        <name>Rule_40</name>
+        <label>Rule 40</label>
+        <locationX>1983</locationX>
+        <locationY>786</locationY>
+        <defaultConnector>
+            <targetReference>Rule_40_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 40 Fails</defaultConnectorLabel>
+        <rules>
+            <name>Rule_40_Not_Applicable</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_47_0</targetReference>
+            </connector>
+            <label>Rule 40 Not Applicable</label>
+        </rules>
+        <rules>
+            <name>Rule_40_Success</name>
+            <conditionLogic>(1 OR 5) AND (2 OR 6) AND (3 AND 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_1_Does_Meet_Criteria_Eligibility</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue/>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_40_In_Scope</targetReference>
+            </connector>
+            <label>Rule 40 Success</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_47_0</name>
+        <label>Rule 47</label>
+        <locationX>1652</locationX>
+        <locationY>825</locationY>
+        <defaultConnector>
+            <targetReference>Rule_47_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 47 Fails</defaultConnectorLabel>
+        <rules>
+            <name>Rule_47_Not_Applicable_0</name>
+            <conditionLogic>1 OR (2 AND 3)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Does not meet the criteria for MAiD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_49</targetReference>
+            </connector>
+            <label>Rule 47 Not Applicable</label>
+        </rules>
+        <rules>
+            <name>Rule_47_Success_0</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_eligible_for_health_services_in__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_at_least_18_years_of_age__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_capable_of_making_this_health_ca__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_gave_informed_consent_after_bein__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_has_serious_and_incurable_illnes__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_in_an_advanced_state_of_irrevers__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patients_illness_disease_or_disability__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_make_a_voluntary_request_for_MAI__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_47_In_Scope</targetReference>
+            </connector>
+            <label>Rule 47 Success</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_49</name>
+        <label>Rule 49</label>
+        <locationX>1454</locationX>
+        <locationY>1052</locationY>
+        <defaultConnector>
+            <targetReference>Rule_49_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 49 Fails</defaultConnectorLabel>
+        <rules>
+            <name>Rule_49_Not_Applicable</name>
+            <conditionLogic>1 AND 2</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Not_Applicable_In_Flow</targetReference>
+            </connector>
+            <label>Rule 49 Not Applicable</label>
+        </rules>
+        <rules>
+            <name>Rule_49_Success</name>
+            <conditionLogic>(1 OR 2) AND 3 AND ((4 AND 5 AND 7) OR 6)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_is_capable_of_providing_consent__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_was_referred_for_assessment_of_c__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_Yes_name_of_assessing_practitioner__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_was_referred_for_assessment_of_c__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.On_receipt_of_assessment_patient_is__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Legislation_PASS</targetReference>
+            </connector>
+            <label>Rule 49 Success</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Rule_5</name>
         <label>Rule 5</label>
-        <locationX>805</locationX>
-        <locationY>191</locationY>
+        <locationX>1659</locationX>
+        <locationY>241</locationY>
         <defaultConnector>
             <targetReference>Rule_5_Message_Assignment</targetReference>
         </defaultConnector>
@@ -714,35 +1477,35 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
@@ -755,37 +1518,37 @@
         </rules>
         <rules>
             <name>Rule_5_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
@@ -799,14 +1562,14 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_Cardio_vascular_condition_specify__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.If_Cardio_vascular_condition_specify__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_6</targetReference>
+                <targetReference>Rule_5_In_Scope</targetReference>
             </connector>
             <label>Rule 5 Success</label>
         </rules>
@@ -814,8 +1577,8 @@
     <decisions>
         <name>Rule_6</name>
         <label>Rule 6</label>
-        <locationX>974</locationX>
-        <locationY>203</locationY>
+        <locationX>2179</locationX>
+        <locationY>246</locationY>
         <defaultConnector>
             <targetReference>Rule_6_Message_Assignment</targetReference>
         </defaultConnector>
@@ -831,35 +1594,35 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
@@ -872,37 +1635,37 @@
         </rules>
         <rules>
             <name>Rule_6_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
@@ -916,14 +1679,14 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_multiple_co_morbidities_specify__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.If_multiple_co_morbidities_specify__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_7</targetReference>
+                <targetReference>Rule_6_In_Scope</targetReference>
             </connector>
             <label>Rule 6 Success</label>
         </rules>
@@ -931,8 +1694,8 @@
     <decisions>
         <name>Rule_7</name>
         <label>Rule 7</label>
-        <locationX>1137</locationX>
-        <locationY>31</locationY>
+        <locationX>2188</locationX>
+        <locationY>554</locationY>
         <defaultConnector>
             <targetReference>Rule_7_Message_Assignment</targetReference>
         </defaultConnector>
@@ -948,35 +1711,35 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
@@ -989,37 +1752,37 @@
         </rules>
         <rules>
             <name>Rule_7_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4 or 5) and (6 and (7 AND 8))</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND (7 AND 8))</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Ineligible</stringValue>
@@ -1033,21 +1796,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Other_specify__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Other_specify__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue/>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Other_specify__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Other_specify__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_8</targetReference>
+                <targetReference>Rule_7_In_Scope</targetReference>
             </connector>
             <label>Rule 7 Success</label>
         </rules>
@@ -1055,8 +1818,8 @@
     <decisions>
         <name>Rule_8</name>
         <label>Rule 8</label>
-        <locationX>1455</locationX>
-        <locationY>230</locationY>
+        <locationX>2282</locationX>
+        <locationY>754</locationY>
         <defaultConnector>
             <targetReference>Rule_8_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1065,7 +1828,7 @@
             <name>Rule_8_Not_Applicable</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
@@ -1080,7 +1843,7 @@
             <name>Rule_8_Success</name>
             <conditionLogic>(1 AND (2 AND (3 AND 4)))</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
@@ -1094,21 +1857,21 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.I_determine_that_the_patient__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.I_determine_that_the_patient__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue/>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_9</targetReference>
+                <targetReference>Rule_8_In_Scope</targetReference>
             </connector>
             <label>Rule 8 Success</label>
         </rules>
@@ -1116,8 +1879,8 @@
     <decisions>
         <name>Rule_9</name>
         <label>Rule 9</label>
-        <locationX>1035</locationX>
-        <locationY>707</locationY>
+        <locationX>2382</locationX>
+        <locationY>966</locationY>
         <defaultConnector>
             <targetReference>Rule_9_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1126,139 +1889,169 @@
             <name>Rule_9_Not_Applicable</name>
             <conditionLogic>1 AND 2 AND 3 AND 4</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>Rule_36</targetReference>
+            </connector>
             <label>Rule 9 Not Applicable</label>
         </rules>
         <rules>
             <name>Rule_9_Success</name>
-            <conditionLogic>(1 or 2 or 3 or 4) and ((5 or 6) Or (7 and 8))</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4) AND ((7 AND 8) OR 9) AND ((5 AND 11) OR (6 AND 10))</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Case__r.Type</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patient_is_capable_of_providing_consent__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patient_is_capable_of_providing_consent__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1- I have no concerns</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.On_receipt_of_assessment_patient_is__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.On_receipt_of_assessment_patient_is__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Is capable of providing informed consent</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Patient_was_referred_for_assessment_of_c__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.Patient_was_referred_for_assessment_of_c__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.If_Yes_name_of_assessing_practitioner__c</leftValueReference>
+                <leftValueReference>Get_Form_1634.If_Yes_name_of_assessing_practitioner__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_was_referred_for_assessment_of_c__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_is_capable_of_providing_consent__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - I have reasons to be concerned</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.On_receipt_of_assessment_patient_is__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - Is not capable of providing informed consent</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Legislation_Safeguards_PASS</targetReference>
+                <targetReference>Rule_9_In_Scope</targetReference>
             </connector>
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
+    <description>Fix on Rule 9</description>
+    <formulas>
+        <name>is_If_other_specify</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.Patient_desc_suffering_If_yes_select_all__c},&apos;Other&apos;)</expression>
+    </formulas>
     <formulas>
         <name>is_Selected_1_Does_Meet_Criteria_Eligibility</name>
         <dataType>Boolean</dataType>
-        <expression>ISPICKVAL({!$Record.I_determine_that_the_patient__c},&apos;1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable&apos;)</expression>
+        <expression>ISPICKVAL({!Get_Form_1634.I_determine_that_the_patient__c},&apos;1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_H_Cancer_other</name>
         <dataType>Boolean</dataType>
-        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;H - Cancer - other&apos;)</expression>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;H - Cancer - other&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_K_Neurological_condition_other</name>
         <dataType>Boolean</dataType>
-        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;K - Neurological condition - other&apos;)</expression>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;K - Neurological condition - other&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_M_Cardio_vascular_condition</name>
         <dataType>Boolean</dataType>
-        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;M - Cardio-vascular condition&apos;)</expression>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;M - Cardio-vascular condition&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_O_Multiple_comorbidities</name>
         <dataType>Boolean</dataType>
-        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;O - Multiple co-morbidities&apos;)</expression>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;O - Multiple co-morbidities&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_Other_Eligibility</name>
         <dataType>Boolean</dataType>
-        <expression>Includes({!$Record.If_yes_select_all_that_apply__c},&apos;Other&apos;)</expression>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply__c},&apos;Other&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_P_Other</name>
         <dataType>Boolean</dataType>
-        <expression>Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;P - Other&apos;)</expression>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;P - Other&apos;)</expression>
     </formulas>
     <formulas>
-        <name>is_Selected_P_Other_Test</name>
-        <dataType>String</dataType>
-        <expression>IF(Includes({!$Record.If_yes_select_all_that_apply_1__c},&apos;P - Other&apos;),&apos;Yes&apos;,&apos;No&apos;)</expression>
+        <name>is_Selected_Patients_Describe_Suffering_Eligibility</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.Patient_desc_suffering_If_yes_select_all__c},&apos;Other&apos;)</expression>
     </formulas>
     <interviewLabel>Legislation Safeguards {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Legislation Safeguards</label>
@@ -1281,23 +2074,68 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
-    <recordUpdates>
-        <name>Legislation_FAIL</name>
-        <label>Legislation FAIL</label>
-        <locationX>644</locationX>
-        <locationY>700</locationY>
+    <recordLookups>
+        <name>Get_Case_Record</name>
+        <label>Get Case Record</label>
+        <locationX>174</locationX>
+        <locationY>462</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Get_Form_1634</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.Case__c</elementReference>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <object>Case</object>
+        <outputReference>ListCaseDetail</outputReference>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Legislation_and_Critical_Safeguards__c</queriedFields>
+        <queriedFields>Legislation_and_Critical_Feedback_Msg__c</queriedFields>
+        <queriedFields>Type</queriedFields>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Form_1634</name>
+        <label>Get Form 1634</label>
+        <locationX>304</locationX>
+        <locationY>461</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Rule_1</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ListCaseDetail.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Form_1634__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Legislation_FAIL</name>
+        <label>Legislation FAIL</label>
+        <locationX>824</locationX>
+        <locationY>974</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
             <field>Legislation_and_Critical_Feedback_Msg__c</field>
             <value>
-                <elementReference>$Flow.CurrentStage</elementReference>
+                <elementReference>ListCaseDetail.Legislation_and_Critical_Feedback_Msg__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1309,22 +2147,49 @@
         <object>Case</object>
     </recordUpdates>
     <recordUpdates>
-        <name>Legislation_Safeguards_PASS</name>
-        <label>Legislation PASS</label>
-        <locationX>1530</locationX>
-        <locationY>717</locationY>
+        <name>Legislation_Not_Applicable</name>
+        <label>Legislation Not Applicable</label>
+        <locationX>1090</locationX>
+        <locationY>1359</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.Case__c</elementReference>
+                <elementReference>$Record.Id</elementReference>
             </value>
         </filters>
         <inputAssignments>
             <field>Legislation_and_Critical_Feedback_Msg__c</field>
             <value>
-                <stringValue/>
+                <elementReference>Not_Applicable_SetMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Legislation_and_Critical_Safeguards__c</field>
+            <value>
+                <elementReference>Not_Applicable_SetNull</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Legislation_PASS</name>
+        <label>Legislation PASS</label>
+        <locationX>1084</locationX>
+        <locationY>1170</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Legislation_and_Critical_Feedback_Msg__c</field>
+            <value>
+                <elementReference>PASS_All_Rules</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -1336,14 +2201,32 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>30</locationX>
-        <locationY>50</locationY>
+        <locationX>50</locationX>
+        <locationY>124</locationY>
         <connector>
-            <targetReference>Rule_1</targetReference>
+            <targetReference>Get_Case_Record</targetReference>
         </connector>
-        <object>Form_1634__c</object>
+        <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Inactive</status>
+    <status>Active</status>
+    <variables>
+        <name>is_Not_Applicable</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <booleanValue>true</booleanValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ListCaseDetail</name>
+        <dataType>SObject</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Case</objectType>
+    </variables>
 </Flow>

@@ -9,7 +9,12 @@ package.xml
 **profilePasswordPolicies
 **profileSessionSettings
 **settings
-#**standardValueSet
+**standardValueSet
+#**matchingRule
+#**duplicateRule
+**entitlementProcess
+#**permissionset
+#**recordTypes
 
 #MoH Standard User.profile
 

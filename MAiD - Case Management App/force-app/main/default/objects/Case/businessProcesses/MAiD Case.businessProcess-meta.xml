@@ -23,6 +23,10 @@
         <default>false</default>
     </values>
     <values>
+        <fullName>College Referral/HOLD</fullName>
+        <default>false</default>
+    </values>
+    <values>
         <fullName>Ready for Manager Review</fullName>
         <default>false</default>
     </values>

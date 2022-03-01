@@ -44,6 +44,10 @@
                 <behavior>Edit</behavior>
                 <field>PersonEmail</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Notes__pc</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -114,13 +118,29 @@
             </layoutItem>
         </relatedContentItems>
     </relatedContent>
+    <relatedLists>
+        <fields>CASES.CASE_NUMBER</fields>
+        <fields>Education_provided_on_case__c</fields>
+        <fields>CASES.TYPE</fields>
+        <fields>If_yes_specify__c</fields>
+        <fields>Education_provided_to_practitioner__c</fields>
+        <relatedList>Case.Practitioner_Name__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <fields>CASES.CASE_NUMBER</fields>
+        <fields>Education_provided_on_case__c</fields>
+        <fields>CASES.TYPE</fields>
+        <fields>If_yes_specify__c</fields>
+        <fields>Education_provided_to_practitioner__c</fields>
+        <relatedList>Case.Practitioner__c</relatedList>
+    </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>
     <showHighlightsPanel>false</showHighlightsPanel>
     <showInteractionLogPanel>false</showInteractionLogPanel>
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>false</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1f000000Z4yB</masterLabel>
+        <masterLabel>00h5W000000Mvtu</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>
