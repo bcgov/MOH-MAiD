@@ -151,7 +151,7 @@
         <locationX>1739</locationX>
         <locationY>1244</locationY>
         <assignmentItems>
-            <assignToReference>ListCaseDetail.Provincial_Safeguards_for_1633__c</assignToReference>
+            <assignToReference>ListCaseDetail.Provincial_Safeguards__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>FAIL</stringValue>
@@ -167,7 +167,7 @@
         <locationX>237</locationX>
         <locationY>1428</locationY>
         <assignmentItems>
-            <assignToReference>ListCaseDetail.Provincial_Safeguards_for_1633__c</assignToReference>
+            <assignToReference>ListCaseDetail.Provincial_Safeguards__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <stringValue>PASS</stringValue>
