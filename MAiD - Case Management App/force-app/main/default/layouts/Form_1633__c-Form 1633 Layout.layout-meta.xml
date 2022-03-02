@@ -104,6 +104,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Assessment_Interpreter_ID__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Assessment_conducted__c</field>
             </layoutItems>
             <layoutItems>

@@ -315,6 +315,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Provincial_Safeguard_Feedback_for_1633__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Case.Provincial_Safeguards_Feedback__c</field>
         <readable>true</readable>
@@ -327,6 +332,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.REF_20B__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.REF_Q05_42_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.REF_Q05_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -592,6 +607,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1633__c.Assessment_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1633__c.Assessment_Interpreter_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3217,6 +3237,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_RXMAR__c.Dose_2_of_phenobarbital__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_RXMAR__c.Dose_of_Bupivacaine__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

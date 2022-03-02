@@ -250,6 +250,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Provincial_Safeguard_Feedback_for_1633__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Provincial_Safeguards__c</field>
             </layoutItems>
             <layoutItems>
