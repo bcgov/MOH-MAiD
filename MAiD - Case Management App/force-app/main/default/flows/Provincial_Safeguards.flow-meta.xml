@@ -267,13 +267,6 @@
         <locationX>2194</locationX>
         <locationY>3080</locationY>
         <assignmentItems>
-            <assignToReference>ListCaseDetail.Provincial_Safeguards__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>PASS</stringValue>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
             <value>
@@ -2703,8 +2696,8 @@
     <recordUpdates>
         <name>Update_PASS</name>
         <label>Update-PASS</label>
-        <locationX>1791</locationX>
-        <locationY>3286</locationY>
+        <locationX>1932</locationX>
+        <locationY>3320</locationY>
         <inputReference>UpdatePassList</inputReference>
     </recordUpdates>
     <recordUpdates>
