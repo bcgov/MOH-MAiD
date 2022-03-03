@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Canada_Reportable_Date_validation</fullName>
+    <active>true</active>
+    <description>Validating the reportable to health canada when 1642 is &quot;Yes&quot; and Type = &quot;Transfer of Request&quot;</description>
+    <errorConditionFormula>ISPICKVAL(  X1642__c  ,&quot;YES&quot; ) &amp;&amp; ISPICKVAL( Type ,&quot;Transfer of Request&quot; ) &amp;&amp; NOT( Reportable_to_Health_Canada__c )</errorConditionFormula>
+    <errorMessage>Please Check the Reportable to Health Canada</errorMessage>
+</ValidationRule>
