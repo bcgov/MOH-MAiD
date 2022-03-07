@@ -20,8 +20,8 @@
     <assignments>
         <name>ErrorMessage59</name>
         <label>ErrorMessage59</label>
-        <locationX>1701</locationX>
-        <locationY>410</locationY>
+        <locationX>1744</locationX>
+        <locationY>488</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguard_Feedback_for_1633__c</assignToReference>
             <operator>Assign</operator>
@@ -273,7 +273,7 @@
         </rules>
         <rules>
             <name>rule_60_check_0</name>
-            <conditionLogic>((1 OR 2) AND 3 AND 4)</conditionLogic>
+            <conditionLogic>(1 OR (2 AND 3 AND 4))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Patient_Consent</leftValueReference>
                 <operator>EqualTo</operator>
@@ -545,8 +545,8 @@
     <decisions>
         <name>Check_case_type_for_59_rule</name>
         <label>Check case type for 59 rule</label>
-        <locationX>1291</locationX>
-        <locationY>198</locationY>
+        <locationX>1180</locationX>
+        <locationY>218</locationY>
         <defaultConnector>
             <targetReference>X1633_field_check_on_1634</targetReference>
         </defaultConnector>
@@ -590,7 +590,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>rule_59_yes</targetReference>
+                <targetReference>exception_criteria_for_59</targetReference>
             </connector>
             <label>check case type for 59</label>
         </rules>
@@ -674,6 +674,52 @@
         </rules>
     </decisions>
     <decisions>
+        <name>exception_criteria_for_59</name>
+        <label>exception criteria for 59</label>
+        <locationX>1450</locationX>
+        <locationY>290</locationY>
+        <defaultConnector>
+            <targetReference>rule_59_yes</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>check_if_1633_recieved</name>
+            <conditionLogic>(1 AND (2 OR 3 OR 4))</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>X1633_field_check_on_1634</targetReference>
+            </connector>
+            <label>check if 1633 recieved</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>rule</name>
         <label>rule 63 check</label>
         <locationX>689</locationX>
@@ -748,8 +794,8 @@
     <decisions>
         <name>rule_59_yes</name>
         <label>rule 59 yes</label>
-        <locationX>1500</locationX>
-        <locationY>279</locationY>
+        <locationX>1558</locationX>
+        <locationY>414</locationY>
         <defaultConnector>
             <targetReference>ErrorMessage59</targetReference>
         </defaultConnector>
@@ -758,15 +804,15 @@
             <name>check_rule_59</name>
             <conditionLogic>(1 AND 2) OR 3</conditionLogic>
             <conditions>
-                <leftValueReference>Var1633_AssessmentDate</leftValueReference>
+                <leftValueReference>Var1633_Professional_Interpreter_Service_Date</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
-                <leftValueReference>Var1633_Assessment_Interpreter</leftValueReference>
+                <leftValueReference>Var1633_Professional_Interpreter_s_ID_Number</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
-                <leftValueReference>Var1633_AssessmentDate</leftValueReference>
+                <leftValueReference>Var1633_Professional_Interpreter_Service_Date</leftValueReference>
                 <operator>EqualTo</operator>
             </conditions>
             <connector>
@@ -1108,8 +1154,8 @@
     <decisions>
         <name>X1633_field_check_on_1634</name>
         <label>1633 field check on 1634</label>
-        <locationX>1268</locationX>
-        <locationY>418</locationY>
+        <locationX>1093</locationX>
+        <locationY>422</locationY>
         <defaultConnector>
             <targetReference>check_case_type_for_rule_60</targetReference>
         </defaultConnector>
@@ -1470,6 +1516,14 @@
             <field>Prescriber_ensured_expertise_in_patient__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1633_Professional_Interpreter_Service_Date</assignToReference>
+            <field>Professional_Interpreter_Service_Date__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1633_Professional_Interpreter_s_ID_Number</assignToReference>
+            <field>Professional_Interpreter_s_ID_Number__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1633_Referred_Assessment</assignToReference>
             <field>Referred_for_assessment_of_capability__c</field>
         </outputAssignments>
@@ -1633,6 +1687,20 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1633_Professional_Interpreter_s_ID_Number</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1633_Professional_Interpreter_Service_Date</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1633_Referred_Assessment</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1655,6 +1723,13 @@
     </variables>
     <variables>
         <name>Var_pharmacist_safeguard</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_Professional_Interpreter_s_ID_Number</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
