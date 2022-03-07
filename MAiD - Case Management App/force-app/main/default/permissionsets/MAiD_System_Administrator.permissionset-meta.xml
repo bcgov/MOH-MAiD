@@ -1396,7 +1396,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_by_Telemedicine_Name_of_Witness__c</field>
+            <field>Form_1634__c.If_by_Telemedicine_Name_of_Witness__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2002,6 +2002,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Recommend_seeking_advice_on_insurance__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1634__c.Record_ID1__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
