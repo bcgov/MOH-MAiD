@@ -2555,7 +2555,7 @@
         <name>Skip_Rule_57_58</name>
         <label>Skip Rule 57 58</label>
         <locationX>875</locationX>
-        <locationY>314</locationY>
+        <locationY>315</locationY>
         <defaultConnector>
             <targetReference>Rule_57</targetReference>
         </defaultConnector>
@@ -2597,7 +2597,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Update to Rule 57 and 58</description>
+    <description>Updating Skip Rule 57 &amp; 58</description>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
@@ -3075,6 +3075,7 @@
         <queriedFields>Type</queriedFields>
         <queriedFields>Mandatory_Data__c</queriedFields>
         <queriedFields>Mandatory_Data_Feedback_Message__c</queriedFields>
+        <queriedFields>X1633__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>UpdateMandatory_Fail</name>
