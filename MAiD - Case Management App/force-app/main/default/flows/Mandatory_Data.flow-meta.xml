@@ -769,7 +769,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Skip_Rule_57_58</targetReference>
+                <targetReference>Rule_57</targetReference>
             </connector>
             <label>Case Type Multiple values</label>
         </rules>
@@ -2370,7 +2370,7 @@
         <name>Rule_57</name>
         <label>Rule 57</label>
         <locationX>890</locationX>
-        <locationY>682</locationY>
+        <locationY>684</locationY>
         <defaultConnector>
             <targetReference>Rule_57_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2472,15 +2472,15 @@
     <decisions>
         <name>Rule_58</name>
         <label>Rule 58</label>
-        <locationX>1048</locationX>
-        <locationY>513</locationY>
+        <locationX>1052</locationX>
+        <locationY>515</locationY>
         <defaultConnector>
             <targetReference>Rule_58_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 58 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_58_Skipped</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Is1633Checked</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2549,52 +2549,6 @@
                 <targetReference>Rule_46</targetReference>
             </connector>
             <label>Rule 58 Pass</label>
-        </rules>
-    </decisions>
-    <decisions>
-        <name>Skip_Rule_57_58</name>
-        <label>Skip Rule 57 58</label>
-        <locationX>875</locationX>
-        <locationY>314</locationY>
-        <defaultConnector>
-            <targetReference>Rule_57</targetReference>
-        </defaultConnector>
-        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>Skip_Rule</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
-            <conditions>
-                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>No</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Rule_46</targetReference>
-            </connector>
-            <label>Skip Rule</label>
         </rules>
     </decisions>
     <description>Update to Rule 57 and 58</description>
