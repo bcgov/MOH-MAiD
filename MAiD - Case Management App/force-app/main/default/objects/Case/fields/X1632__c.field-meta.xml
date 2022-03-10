@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>X1632__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>1632</label>
     <required>false</required>
@@ -25,6 +26,11 @@
                 <fullName>Incomplete</fullName>
                 <default>false</default>
                 <label>Incomplete</label>
+            </value>
+            <value>
+                <fullName>No 1632 Completed</fullName>
+                <default>false</default>
+                <label>No 1632 Completed</label>
             </value>
         </valueSetDefinition>
     </valueSet>
