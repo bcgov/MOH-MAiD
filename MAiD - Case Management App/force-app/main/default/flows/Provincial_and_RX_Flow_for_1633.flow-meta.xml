@@ -864,7 +864,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>X65_rule_check</name>
-            <conditionLogic>((1 AND 2) OR 3) AND ((4 AND 5) OR 6) AND((7 AND 8) OR 9) AND((10 AND 11) OR 12) AND((13 AND 14) OR 15) AND((16 AND 17) OR 18) AND((19 AND 20) OR 21) AND((22 AND 23) OR 24) AND((25 AND 26) OR 27) AND((28 AND 29) OR 30) AND((31 AND 32) OR 33) AND((34 AND 35) OR 36) AND((37 AND 38) OR 39) AND (40 OR 41) AND (42 OR 43) AND ((44 AND 45) OR 46)</conditionLogic>
+            <conditionLogic>((1 AND 2) OR 3) AND ((4 AND 5) OR 6) AND((7 AND 8) OR 9) AND((10 AND 11) OR 12) AND((13 AND 14) OR 15) AND((16 AND 17) OR 18) AND((19 AND 20) OR 21) AND((22 AND 23) OR 24) AND((25 AND 26) OR 27) AND((28 AND 29) OR 30) AND((31 AND 32) OR 33) AND((34 AND 35) OR 36) AND((37 AND 38) OR 39) AND (40 OR 41) AND (42 OR 43) AND ((44 AND 45) OR 46) AND ((47 AND 48) OR 49)</conditionLogic>
             <conditions>
                 <leftValueReference>VArRX_Anxyolitic_midazolam_Dose_1</leftValueReference>
                 <operator>EqualTo</operator>
@@ -938,7 +938,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>VarRX_Describe_Dose_2_of_proPOFol</leftValueReference>
+                <leftValueReference>VarRX_Dose_2_of_Coma_inducing_agent_proPOFol</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
@@ -1145,6 +1145,24 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Varrx_Anti_emetic_haloperidol_Dose_2</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>VarRX_Describe_Dose_2_of_haloperidol</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Varrx_Anti_emetic_haloperidol_Dose_2</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>updateProvincialPass</targetReference>
             </connector>
@@ -1282,6 +1300,10 @@
             <field>Anaesthetic_lidocaine__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Varrx_Anti_emetic_haloperidol_Dose_2</assignToReference>
+            <field>Anti_emetic_haloperidol_Dose_2__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>VArRX_Anti_emetic_haloperidol</assignToReference>
             <field>Anti_emetic_haloperidol__c</field>
         </outputAssignments>
@@ -1340,6 +1362,10 @@
         <outputAssignments>
             <assignToReference>VarRX_Describe_Dose_2_of_anxiolytic_midazolam</assignToReference>
             <field>Describe_Dose_2_of_anxiolytic_midazolam__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>VarRX_Describe_Dose_2_of_haloperidol</assignToReference>
+            <field>Describe_Dose_2_of_haloperidol__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>VarRX_Describe_Dose_2_of_phenobarbital_1</assignToReference>
@@ -1778,6 +1804,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Varrx_Anti_emetic_haloperidol_Dose_2</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>VarRX_Anti_emetic_metoclopramide</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -1877,6 +1910,13 @@
     </variables>
     <variables>
         <name>VarRX_Describe_Dose_2_of_anxiolytic_midazolam</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>VarRX_Describe_Dose_2_of_haloperidol</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
