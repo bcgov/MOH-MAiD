@@ -503,6 +503,13 @@
                     <stringValue>Ready for Manager Review</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Success_Update_Status_Message</targetReference>
             </connector>
@@ -531,7 +538,7 @@
             <label>Error on Manager Review</label>
         </rules>
     </decisions>
-    <description>Fixed exit point for Closed Status</description>
+    <description>Fixed revert case entry point</description>
     <interviewLabel>Status 4 update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 4 update</label>
     <processMetadataValues>
