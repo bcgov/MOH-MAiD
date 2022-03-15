@@ -146,7 +146,7 @@ null))))</formula>
             <name>Reporting_to_Health_Canada_is_Yes</name>
             <type>FieldUpdate</type>
         </actions>
-        <active>true</active>
+        <active>false</active>
         <criteriaItems>
             <field>Case.Patient_MAiD_Request_Date__c</field>
             <operation>greaterOrEqual</operation>
@@ -156,6 +156,41 @@ null))))</formula>
             <field>Case.Type</field>
             <operation>notEqual</operation>
             <value>MAiD Assessment of Eligibility,MAiD Request</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reportable to Health Canada Yes V1</fullName>
+        <actions>
+            <name>Reporting_to_Health_Canada_is_Yes</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>true</active>
+        <booleanFilter>(1 AND 2) OR (3 AND 4 AND 5)</booleanFilter>
+        <criteriaItems>
+            <field>Case.Patient_MAiD_Request_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>11/1/2018</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>notEqual</operation>
+            <value>MAiD Assessment of Eligibility,MAiD Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Transfer of Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.X1642__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Reportable_to_Health_Canada__c</field>
+            <operation>equals</operation>
+            <value>False</value>
         </criteriaItems>
         <triggerType>onAllChanges</triggerType>
     </rules>
