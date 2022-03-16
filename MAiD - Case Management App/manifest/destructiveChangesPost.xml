@@ -4,5 +4,4 @@
         <members>Case.Health_Canada_Reportable_Date_validation</members>
         <name>ValidationRule</name>
     </types> 
-
 </Package>
