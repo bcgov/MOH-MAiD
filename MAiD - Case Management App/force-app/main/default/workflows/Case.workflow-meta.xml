@@ -33,6 +33,16 @@
         <reevaluateOnChange>false</reevaluateOnChange>
     </fieldUpdates>
     <fieldUpdates>
+        <fullName>Make_Health_Reportable_Date_Yes</fullName>
+        <field>Reportable_to_Health_Canada__c</field>
+        <literalValue>1</literalValue>
+        <name>Make Health Reportable Date Yes</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
         <fullName>Not_All_Forms_Received</fullName>
         <description>Not All Forms Received</description>
         <field>Status_Feedback_Msg__c</field>
@@ -141,6 +151,25 @@ null))))</formula>
         <triggerType>onCreateOrTriggeringUpdate</triggerType>
     </rules>
     <rules>
+        <fullName>Reportable to Health Canada  Mandatory</fullName>
+        <actions>
+            <name>Make_Health_Reportable_Date_Yes</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Case.Patient_MAiD_Request_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>11/1/2018</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>equals</operation>
+            <value>Transfer of Request</value>
+        </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
         <fullName>Reportable to Health Canada Yes</fullName>
         <actions>
             <name>Reporting_to_Health_Canada_is_Yes</name>
@@ -166,7 +195,7 @@ null))))</formula>
             <type>FieldUpdate</type>
         </actions>
         <active>true</active>
-        <booleanFilter>(1 AND 2) OR (3 AND 4 AND 5)</booleanFilter>
+        <booleanFilter>(1 AND 2) OR (3 AND 4)</booleanFilter>
         <criteriaItems>
             <field>Case.Patient_MAiD_Request_Date__c</field>
             <operation>greaterOrEqual</operation>
@@ -187,10 +216,31 @@ null))))</formula>
             <operation>equals</operation>
             <value>Yes</value>
         </criteriaItems>
+        <triggerType>onAllChanges</triggerType>
+    </rules>
+    <rules>
+        <fullName>Reportable to Health Canada Yes V2</fullName>
+        <active>false</active>
+        <booleanFilter>(1 AND 2) OR (3 AND 4)</booleanFilter>
         <criteriaItems>
-            <field>Case.Reportable_to_Health_Canada__c</field>
+            <field>Case.Patient_MAiD_Request_Date__c</field>
+            <operation>greaterOrEqual</operation>
+            <value>11/1/2018</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
+            <operation>notEqual</operation>
+            <value>MAiD Assessment of Eligibility,MAiD Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.Type</field>
             <operation>equals</operation>
-            <value>False</value>
+            <value>Transfer of Request</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Case.X1642__c</field>
+            <operation>equals</operation>
+            <value>Yes</value>
         </criteriaItems>
         <triggerType>onAllChanges</triggerType>
     </rules>
