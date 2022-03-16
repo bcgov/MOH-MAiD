@@ -27,11 +27,6 @@
                 <default>false</default>
                 <label>Incomplete</label>
             </value>
-            <value>
-                <fullName>No 1632 Completed</fullName>
-                <default>false</default>
-                <label>No 1632 Completed</label>
-            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
