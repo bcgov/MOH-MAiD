@@ -482,8 +482,8 @@
     <decisions>
         <name>CheckCondition</name>
         <label>CheckCondition</label>
-        <locationX>2090</locationX>
-        <locationY>283</locationY>
+        <locationX>2134</locationX>
+        <locationY>336</locationY>
         <defaultConnector>
             <targetReference>Rule15ErrorMsg</targetReference>
         </defaultConnector>
@@ -1537,7 +1537,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule19_yes_0</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>((1 AND 2) OR (3 AND 4) AND 5 AND 6 AND 7)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1645_PatientSafeguardsCompleted</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1546,15 +1546,29 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1645_PractitionerSafeguardsCompleted</leftValueReference>
+                <leftValueReference>Var1645_Patient_Signed_and_Dated</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1645_Finalwaiverofconsentdatesigned</leftValueReference>
-                <operator>LessThan</operator>
+                <leftValueReference>Var1645_Proxy_Completed_Safeguards</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Proxy_Signed_and_Dated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Agreed_date_of_MAiD</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
                 <rightValue>
                     <elementReference>Var1634_MAiDAdministrationDate</elementReference>
                 </rightValue>
@@ -1567,7 +1581,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1645_Finalwaiverofconsentdatesigned</leftValueReference>
+                <leftValueReference>Var1645_Agreed_date_of_MAiD</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
@@ -2129,6 +2143,10 @@
         </filters>
         <object>Form_1645__c</object>
         <outputAssignments>
+            <assignToReference>Var1645_Agreed_date_of_MAiD</assignToReference>
+            <field>Agreed_date_of_MAiD__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1645_Finalwaiverofconsentdatesigned</assignToReference>
             <field>Final_waiver_of_consent_date_signed__c</field>
         </outputAssignments>
@@ -2137,8 +2155,20 @@
             <field>Patient_Safeguards_Completed__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1645_Patient_Signed_and_Dated</assignToReference>
+            <field>Patient_Signed_and_Dated__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1645_PractitionerSafeguardsCompleted</assignToReference>
             <field>Practitioner_Safeguards_Completed__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1645_Proxy_Completed_Safeguards</assignToReference>
+            <field>Proxy_Completed_Safeguards__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1645_Proxy_Signed_and_Dated</assignToReference>
+            <field>Proxy_Signed_and_Dated__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -2605,8 +2635,22 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1645_Agreed_date_of_MAiD</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1645_Finalwaiverofconsentdatesigned</name>
         <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1645_Patient_Signed_and_Dated</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2620,6 +2664,20 @@
     </variables>
     <variables>
         <name>Var1645_PractitionerSafeguardsCompleted</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1645_Proxy_Completed_Safeguards</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1645_Proxy_Signed_and_Dated</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
