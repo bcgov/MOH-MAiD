@@ -4,8 +4,8 @@
     <assignments>
         <name>Assign_Case_New_Status</name>
         <label>Assign Case New Status</label>
-        <locationX>808</locationX>
-        <locationY>164</locationY>
+        <locationX>906</locationX>
+        <locationY>162</locationY>
         <assignmentItems>
             <assignToReference>updateCaseRecord.Status</assignToReference>
             <operator>Assign</operator>
@@ -25,6 +25,13 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Case_re_open_date__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.LastModifiedDate</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -49,6 +56,36 @@
         </assignmentItems>
         <connector>
             <targetReference>Update_Case_Not_Applicable_Scenario</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Reason_for_reopening_Case_Fail</name>
+        <label>Reason for reopening Case Fail</label>
+        <locationX>899</locationX>
+        <locationY>30</locationY>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Status_Feedback_Msg__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Reason for re-opening required</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Id</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>updateCaseRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Reason_for_reopening_required</targetReference>
         </connector>
     </assignments>
     <assignments>
@@ -172,7 +209,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Assign_Case_New_Status</targetReference>
+                <targetReference>Reason_for_reopening_case</targetReference>
             </connector>
             <label>Validate Requirements=Yes</label>
         </rules>
@@ -192,7 +229,36 @@
             <label>Not Applicable Scenario</label>
         </rules>
     </decisions>
-    <description>Fixed Fail Scenario of Status 7</description>
+    <decisions>
+        <name>Reason_for_reopening_case</name>
+        <label>Reason for reopening case</label>
+        <locationX>599</locationX>
+        <locationY>24</locationY>
+        <defaultConnector>
+            <targetReference>Reason_for_reopening_Case_Fail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Reason_for_reopening_pass</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Reason_for_re_opening_case__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Reason_for_re_opening_case__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record__Prior.Reason_for_re_opening_case__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Assign_Case_New_Status</targetReference>
+            </connector>
+            <label>Reason for reopening pass</label>
+        </rules>
+    </decisions>
+    <description>Added reason for reopening check</description>
     <interviewLabel>Status7 Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status7 Update</label>
     <processMetadataValues>
@@ -218,7 +284,7 @@
         <name>GetCaseDetail</name>
         <label>GetCaseDetail</label>
         <locationX>311</locationX>
-        <locationY>349</locationY>
+        <locationY>350</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Case_Status_Not_Applicable</targetReference>
@@ -241,7 +307,15 @@
         <queriedFields>Federal_Safeguards__c</queriedFields>
         <queriedFields>Provincial_Safeguards__c</queriedFields>
         <queriedFields>Legislation_and_Critical_Safeguards__c</queriedFields>
+        <queriedFields>Reason_for_re_opening_case__c</queriedFields>
     </recordLookups>
+    <recordUpdates>
+        <name>Reason_for_reopening_required</name>
+        <label>Reason for reopening required</label>
+        <locationX>1093</locationX>
+        <locationY>16</locationY>
+        <inputReference>updateCaseRecord</inputReference>
+    </recordUpdates>
     <recordUpdates>
         <name>Update_Case_Not_Applicable_Scenario</name>
         <label>Update Case Not Applicable Scenario</label>
@@ -259,8 +333,8 @@
     <recordUpdates>
         <name>Update_Case_Record_Pass</name>
         <label>Update Case Record Pass</label>
-        <locationX>1042</locationX>
-        <locationY>177</locationY>
+        <locationX>1069</locationX>
+        <locationY>233</locationY>
         <inputReference>updateCaseRecord</inputReference>
     </recordUpdates>
     <start>
@@ -281,6 +355,16 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <objectType>Form_1632__c</objectType>
+    </variables>
+    <variables>
+        <name>NonBlankValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue> </stringValue>
+        </value>
     </variables>
     <variables>
         <name>Task_Status</name>
