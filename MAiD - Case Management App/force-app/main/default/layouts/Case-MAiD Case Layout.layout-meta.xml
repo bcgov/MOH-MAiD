@@ -105,6 +105,14 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Reason_for_re_opening_case__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Case_re_open_date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Health_Authority__c</field>
             </layoutItems>
             <layoutItems>
@@ -250,11 +258,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Provincial_Safeguard_Feedback_for_1633__c</field>
+                <field>Provincial_Safeguards__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Provincial_Safeguards__c</field>
+                <field>Provincial_Safeguard_Feedback_for_1633__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -407,7 +415,7 @@
     <showRunAssignmentRulesCheckbox>false</showRunAssignmentRulesCheckbox>
     <showSubmitAndAttachButton>true</showSubmitAndAttachButton>
     <summaryLayout>
-        <masterLabel>00h1f000000bjaL</masterLabel>
+        <masterLabel>00h5W000000Mvtq</masterLabel>
         <sizeX>4</sizeX>
         <sizeY>0</sizeY>
         <summaryLayoutStyle>Default</summaryLayoutStyle>

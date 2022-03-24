@@ -36,6 +36,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.Case_re_open_date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.ClosedDate</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -387,6 +392,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.RX_MAR__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Reason_for_re_opening_case__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1396,7 +1406,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-            <field>Form_1634__c.If_by_Telemedicine_Name_of_Witness__c</field>
+        <field>Form_1634__c.If_by_Telemedicine_Name_of_Witness__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
