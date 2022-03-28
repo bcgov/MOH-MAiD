@@ -51,6 +51,10 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Agreed_date_of_MAiD__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Final_waiver_of_consent_date_signed__c</field>
             </layoutItems>
             <layoutItems>
