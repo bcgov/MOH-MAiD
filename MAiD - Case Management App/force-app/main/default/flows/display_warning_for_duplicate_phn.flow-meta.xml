@@ -174,7 +174,7 @@
         <connector>
             <targetReference>loop_through_all_phn</targetReference>
         </connector>
-        <filterLogic>(1 OR 2) AND 3</filterLogic>
+        <filterLogic>(((1 OR 2) AND 3) OR (4 AND 5))</filterLogic>
         <filters>
             <field>Type</field>
             <operator>EqualTo</operator>
@@ -192,6 +192,20 @@
         <filters>
             <field>Status</field>
             <operator>EqualTo</operator>
+            <value>
+                <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>MAiD Assessment of Eligibility</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Closed</stringValue>
             </value>
