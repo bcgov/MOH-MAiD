@@ -1,11 +1,12 @@
+
 {
     "packageDirectories": [
         {
             "path": "force-app",
             "default": true,
             "package": "MAiD - Case Management App",
-            "versionName": "Version 1.9.0",
-            "versionNumber": "1.9.0.NEXT"
+            "versionName": "Version 1.9.1",
+            "versionNumber": "1.9.1.NEXT"
         }
     ],
     "namespace": "",
