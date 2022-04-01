@@ -1567,10 +1567,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1645_Agreed_date_of_MAiD</leftValueReference>
+                <leftValueReference>Var1634_MAiDAdministrationDate</leftValueReference>
                 <operator>LessThanOrEqualTo</operator>
                 <rightValue>
-                    <elementReference>Var1634_MAiDAdministrationDate</elementReference>
+                    <elementReference>Var1645_Agreed_date_of_MAiD</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1832,7 +1832,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>Removed Rule 41.</description>
+    <description>Adjusted rule 19 for making MAiD Admin date less than from Agreed Date of MAiD.</description>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
