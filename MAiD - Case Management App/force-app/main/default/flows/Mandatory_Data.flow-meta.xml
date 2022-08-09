@@ -1559,26 +1559,12 @@
         <defaultConnectorLabel>Rule 44 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_44_Pass</name>
-            <conditionLogic>5 OR (1 AND (2 OR 3) AND 4)</conditionLogic>
+            <conditionLogic>((1 OR 3) AND 2) OR 4 OR 5 OR 6 OR 7</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1590,9 +1576,37 @@
             </conditions>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer of Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2324,7 +2338,7 @@
         <defaultConnectorLabel>Rule 56 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_56_Pass</name>
-            <conditionLogic>(1 AND 2 AND (3 OR 4)) OR 5</conditionLogic>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2337,20 +2351,6 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2639,7 +2639,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Updating Skip Rule 57 &amp; 58</description>
+    <description>Updating Skip Rule 44 &amp; 56</description>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
