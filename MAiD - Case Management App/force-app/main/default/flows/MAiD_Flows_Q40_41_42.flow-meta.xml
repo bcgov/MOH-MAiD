@@ -514,7 +514,7 @@
         <locationX>1157</locationX>
         <locationY>1113</locationY>
         <assignmentItems>
-            <assignToReference>updateRecord.ELG_Q42A__c</assignToReference>
+            <assignToReference>updateRecord.ELG_Q42B__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <numberValue>1.0</numberValue>
@@ -851,6 +851,7 @@
             <label>IsNull</label>
         </rules>
     </decisions>
+    <description>Updated ELG_Q42 assignment reference</description>
     <formulas>
         <name>formatedAddSemicolon</name>
         <dataType>String</dataType>
