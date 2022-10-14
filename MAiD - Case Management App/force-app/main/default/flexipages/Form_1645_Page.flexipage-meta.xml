@@ -24,6 +24,7 @@
                     <value>3</value>
                 </componentInstanceProperties>
                 <componentName>force:highlightsPanel</componentName>
+                <identifier>force_highlightsPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>header</name>
@@ -33,6 +34,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>force:detailPanel</componentName>
+                <identifier>force_detailPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-6fdaf150-f5ac-4c91-90a4-ef973510f89d</name>
@@ -54,6 +56,7 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentName>force:relatedListContainer</componentName>
+                <identifier>force_relatedListContainer</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-2ddf5d3b-096a-4a4e-bb36-82ecaed63ba2</name>
@@ -63,6 +66,7 @@
         <itemInstances>
             <componentInstance>
                 <componentName>runtime_sales_activities:activityPanel</componentName>
+                <identifier>runtime_sales_activities_activityPanel</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-c07123ab-ab34-41e7-9d81-a09fb714f7f4</name>
@@ -80,6 +84,7 @@
                     <value>Standard.Tab.detail</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab1</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -97,6 +102,7 @@
                     <value>Standard.Tab.relatedLists</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab2</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -110,6 +116,7 @@
                     <value>Standard.Tab.activity</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tab</componentName>
+                <identifier>flexipage_tab3</identifier>
             </componentInstance>
         </itemInstances>
         <name>Facet-7b4752f6-2a5d-4dee-afcc-808b81b0e8d3</name>
@@ -123,6 +130,7 @@
                     <value>Facet-7b4752f6-2a5d-4dee-afcc-808b81b0e8d3</value>
                 </componentInstanceProperties>
                 <componentName>flexipage:tabset</componentName>
+                <identifier>flexipage_tabset</identifier>
             </componentInstance>
         </itemInstances>
         <name>main</name>
