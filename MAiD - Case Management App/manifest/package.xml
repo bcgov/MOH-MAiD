@@ -135,5 +135,5 @@
         <members>PlatformEncryption</members>
         <name>Settings</name>
     </types>    
-    <version>53.0</version>
+    <version>56.0</version>
 </Package>
