@@ -1,3 +1,4 @@
 {
-  "target-dev-hub": "admin.user@gov.bc.ca.bcmohmaid"
+  "target-dev-hub": "admin.user@gov.bc.ca.bcmohmaid",
+  "org-api-version": "56.0"
 }
