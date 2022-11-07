@@ -86,10 +86,6 @@
     </types>
     <types>
         <members>*</members>
-        <name>StandardValueSet</name>
-    </types>
-    <types>
-        <members>*</members>
         <name>CustomApplication</name>
     </types>
     <types>
