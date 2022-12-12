@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Racial_Ethinic_or_Cultural_Group__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Person affiliates with which racial, ethnic or cultural group (choose all that apply)</inlineHelpText>
+    <label>Racial, Ethinic or Cultural Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Black</fullName>
+                <default>false</default>
+                <label>Black</label>
+            </value>
+            <value>
+                <fullName>East Asian</fullName>
+                <default>false</default>
+                <label>East Asian</label>
+            </value>
+            <value>
+                <fullName>Latin American</fullName>
+                <default>false</default>
+                <label>Latin American</label>
+            </value>
+            <value>
+                <fullName>Middle Eastern</fullName>
+                <default>false</default>
+                <label>Middle Eastern</label>
+            </value>
+            <value>
+                <fullName>South-east Asian</fullName>
+                <default>false</default>
+                <label>South-east Asian</label>
+            </value>
+            <value>
+                <fullName>South Asian</fullName>
+                <default>false</default>
+                <label>South Asian</label>
+            </value>
+            <value>
+                <fullName>White</fullName>
+                <default>false</default>
+                <label>White</label>
+            </value>
+            <value>
+                <fullName>Other race</fullName>
+                <default>false</default>
+                <label>Other race</label>
+            </value>
+            <value>
+                <fullName>Does not know</fullName>
+                <default>false</default>
+                <label>Does not know</label>
+            </value>
+            <value>
+                <fullName>Do not consent</fullName>
+                <default>false</default>
+                <label>Do not consent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>10</visibleLines>
+</CustomField>
