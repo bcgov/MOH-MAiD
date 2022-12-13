@@ -36,17 +36,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Federal_Safeguards__c</picklist>
-        <values>
-            <fullName>FAIL</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>PASS</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Gender__c</picklist>
         <values>
             <fullName>1 - Male</fullName>
@@ -240,17 +229,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Legislation_and_Critical_Safeguards__c</picklist>
-        <values>
-            <fullName>FAIL</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>PASS</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Length_of_Disability__c</picklist>
         <values>
             <fullName>Do not consent</fullName>
@@ -266,17 +244,6 @@
         </values>
         <values>
             <fullName>Years</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Mandatory_Data__c</picklist>
-        <values>
-            <fullName>FAIL</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>PASS</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -1399,17 +1366,6 @@
         </values>
         <values>
             <fullName>62 - Nunavut</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Provincial_Safeguards__c</picklist>
-        <values>
-            <fullName>FAIL</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>PASS</fullName>
             <default>false</default>
         </values>
     </picklistValues>
