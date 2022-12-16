@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Services_offered_or_discussed__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicate how and on what basis the assessing practitioners formed the opinion that the person has given serious consideration to the means to relieve their suffering. (select all that apply)</inlineHelpText>
+    <label>Services offered or discussed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pharmacological</fullName>
+                <default>false</default>
+                <label>Pharmacological</label>
+            </value>
+            <value>
+                <fullName>Non-pharmacological</fullName>
+                <default>false</default>
+                <label>Non-pharmacological</label>
+            </value>
+            <value>
+                <fullName>Counselling</fullName>
+                <default>false</default>
+                <label>Counselling</label>
+            </value>
+            <value>
+                <fullName>Mental health support</fullName>
+                <default>false</default>
+                <label>Mental health support</label>
+            </value>
+            <value>
+                <fullName>Disability support</fullName>
+                <default>false</default>
+                <label>Disability support</label>
+            </value>
+            <value>
+                <fullName>Community services-income</fullName>
+                <default>false</default>
+                <label>Community services-income</label>
+            </value>
+            <value>
+                <fullName>Community Services-housing</fullName>
+                <default>false</default>
+                <label>Community Services-housing</label>
+            </value>
+            <value>
+                <fullName>Community services-other</fullName>
+                <default>false</default>
+                <label>Community services-other</label>
+            </value>
+            <value>
+                <fullName>Health Care services including Palliative care</fullName>
+                <default>false</default>
+                <label>Health Care services including Palliative care</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
