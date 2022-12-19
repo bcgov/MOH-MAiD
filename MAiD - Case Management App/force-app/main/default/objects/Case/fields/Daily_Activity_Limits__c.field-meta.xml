@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Daily_Activity_Limits__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If Yes, person&apos;s opinion on disability limits daily activity</inlineHelpText>
+    <label>Daily Activity Limits</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Never</fullName>
+                <default>false</default>
+                <label>Never</label>
+            </value>
+            <value>
+                <fullName>Rarely</fullName>
+                <default>false</default>
+                <label>Rarely</label>
+            </value>
+            <value>
+                <fullName>Sometimes</fullName>
+                <default>false</default>
+                <label>Sometimes</label>
+            </value>
+            <value>
+                <fullName>Often</fullName>
+                <default>false</default>
+                <label>Often</label>
+            </value>
+            <value>
+                <fullName>Always</fullName>
+                <default>false</default>
+                <label>Always</label>
+            </value>
+            <value>
+                <fullName>Do not know</fullName>
+                <default>false</default>
+                <label>Do not know</label>
+            </value>
+            <value>
+                <fullName>Do not consent</fullName>
+                <default>false</default>
+                <label>Do not consent</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

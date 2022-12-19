@@ -5,6 +5,37 @@
     <businessProcess>MAiD Case</businessProcess>
     <label>MAiD Case</label>
     <picklistValues>
+        <picklist>Daily_Activity_Limits__c</picklist>
+        <values>
+            <fullName>Always</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Never</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Often</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rarely</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sometimes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Gender__c</picklist>
         <values>
             <fullName>1 - Male</fullName>
@@ -39,6 +70,118 @@
         </values>
         <values>
             <fullName>Vancouver Island Health Authority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Identify_as_Indigenious__c</picklist>
+        <values>
+            <fullName>Do not consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>If_Private_Residence_Living_arrangement__c</picklist>
+        <values>
+            <fullName>Lives alone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lives with family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lives with non-relatives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lives with relatives</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other living Arrangement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>If_yes_Indigenious_heritage__c</picklist>
+        <values>
+            <fullName>First Nations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inuk%2FInuik</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Métis</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>If_yes_types_of_disabilites__c</picklist>
+        <values>
+            <fullName>Developmental</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dexterity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Flexibility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hearing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Learning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Memory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mental health related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other long term condition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pain-related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seeing</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -82,6 +225,25 @@
         </values>
         <values>
             <fullName>Transfer of Request Reporting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Length_of_Disability__c</picklist>
+        <values>
+            <fullName>Do not consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Years</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -1112,6 +1274,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Older_MAiD_Forms_to_2021__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Origin</picklist>
         <values>
             <fullName>Email</fullName>
@@ -1212,6 +1385,49 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Racial_Ethinic_or_Cultural_Group__c</picklist>
+        <values>
+            <fullName>Black</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Does not know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>East Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Latin American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Eastern</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other race</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South-east Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Reason</picklist>
         <values>
             <fullName>Whom did you receive the 1632 form from%3F</fullName>
@@ -1234,6 +1450,40 @@
         </values>
         <values>
             <fullName>Transfer of Request Reporting</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Requestor_disability_opinion__c</picklist>
+        <values>
+            <fullName>Do not consent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Do not know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sex_at_Birth__c</picklist>
+        <values>
+            <fullName>1 - Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 -  Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Other</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -1264,6 +1514,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Preliminary Assessment</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Transfer of Request</fullName>
             <default>false</default>
         </values>
@@ -1284,6 +1538,37 @@
         </values>
         <values>
             <fullName>Not reported by deadline</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Usual_Place_of_Residence__c</picklist>
+        <values>
+            <fullName>Correctional facility%2FPrison</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hospital</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Palliative care facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private residence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Residential care facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shelter%2FGroup Home</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -1418,6 +1703,21 @@
         </values>
         <values>
             <fullName>Safeguards %28Assessments%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1630__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>

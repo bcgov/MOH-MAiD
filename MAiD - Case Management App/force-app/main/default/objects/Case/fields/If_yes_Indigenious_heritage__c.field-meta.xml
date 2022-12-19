@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_yes_Indigenious_heritage__c</fullName>
+    <externalId>false</externalId>
+    <label>If, yes Indigenious heritage</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First Nations</fullName>
+                <default>false</default>
+                <label>First Nations</label>
+            </value>
+            <value>
+                <fullName>Métis</fullName>
+                <default>false</default>
+                <label>Métis</label>
+            </value>
+            <value>
+                <fullName>Inuk/Inuik</fullName>
+                <default>false</default>
+                <label>Inuk/Inuik</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
