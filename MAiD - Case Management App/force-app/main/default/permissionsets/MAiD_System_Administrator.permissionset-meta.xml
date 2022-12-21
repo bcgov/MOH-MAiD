@@ -3156,6 +3156,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1645__c.Verbal_Consent__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_RXMAR__c.Administered_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
