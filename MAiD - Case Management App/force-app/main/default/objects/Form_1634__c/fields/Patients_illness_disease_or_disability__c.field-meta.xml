@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patients_illness_disease_or_disability__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <inlineHelpText>Does the patient&apos;s illness, disease or disability, or their state of decline cause them enduring physical or psychological suffering that is intolerable to them and can not be relieved under conditions that they considered acceptable?</inlineHelpText>
     <label>Illness causes intolerable suffering?</label>
