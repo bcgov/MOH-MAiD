@@ -24,3 +24,22 @@ entitlementProcesses
 
 # LWC Jest
 **/__tests__/**
+
+# Lookup Filter which can be ignored (ERRORS)
+force-app\main\default\appMenus\AppSwitcher.appMenu-meta.xml
+force-app\main\default\objects\Case\fields\Practitioner__c.field-meta.xml
+force-app\main\default\objects\Case\fields\Practitioner_Name__c.field-meta.xml
+force-app\main\default\objects\Contact\fields\College_ID__c.field-meta.xml
+force-app\main\default\objects\Form_1633__c\fields\Practitioner__c.field-meta.xml
+force-app\main\default\objects\Form_1634__c\fields\Practitioner__c.field-meta.xml
+force-app\main\default\objects\Form_1634__c\fields\SUP_Q05__c.field-meta.xml
+force-app\main\default\objects\Form_1635__c\fields\Consultant_Practitioner__c.field-meta.xml
+force-app\main\default\objects\Form_1635__c\fields\Referring_Practitioner__c.field-meta.xml
+force-app\main\default\objects\Form_1641__c\fields\Dispensing_Pharmacist__c.field-meta.xml
+force-app\main\default\objects\Form_1641__c\fields\Receiving_Pharmacist__c.field-meta.xml
+force-app\main\default\objects\Form_1641__c\fields\Receiving_Prescriber_Name__c.field-meta.xml
+force-app\main\default\objects\Form_1641__c\fields\Returning_Prescriber_Name__c.field-meta.xml
+force-app\main\default\objects\Form_1642__c\fields\Practitioner__c.field-meta.xml
+force-app\main\default\objects\Form_1645__c\fields\Practitioner__c.field-meta.xml
+force-app\main\default\objects\Form_RXMAR__c\fields\Administering_Prescriber_Full_Name__c.field-meta.xml
+force-app\main\default\objects\Form_RXMAR__c\fields\Prescribing_Practitioner__c.field-meta.xml
