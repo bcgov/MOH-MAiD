@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Profession_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Profession Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Registered Nurse (RN)</fullName>
+                <default>false</default>
+                <label>Registered Nurse (RN)</label>
+            </value>
+            <value>
+                <fullName>Registered Psychiatric Nurse (RPN)</fullName>
+                <default>false</default>
+                <label>Registered Psychiatric Nurse (RPN)</label>
+            </value>
+            <value>
+                <fullName>Licensed Practical Nurse  (LPN)</fullName>
+                <default>false</default>
+                <label>Licensed Practical Nurse (LPN)</label>
+            </value>
+            <value>
+                <fullName>Social Worker</fullName>
+                <default>false</default>
+                <label>Social Worker</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Pharmacist Technician</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Pharmacist Technician</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
