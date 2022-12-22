@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reasons_for_serious_consideration__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Indicate how and on what basis the assessing practitioners formed the opinion that the person has given serious consideration to the means to relieve their suffering (choose all that apply):</inlineHelpText>
+    <label>Reasons for serious consideration</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consultation with the person</fullName>
+                <default>false</default>
+                <label>Consultation with the person</label>
+            </value>
+            <value>
+                <fullName>Consultation with family/friends</fullName>
+                <default>false</default>
+                <label>Consultation with family/friends</label>
+            </value>
+            <value>
+                <fullName>Consultation with professional care/medical providers</fullName>
+                <default>false</default>
+                <label>Consultation with professional care/medical providers</label>
+            </value>
+            <value>
+                <fullName>Accepted/attempted multiple treatments for the condition</fullName>
+                <default>false</default>
+                <label>Accepted/attempted multiple treatments for the condition</label>
+            </value>
+            <value>
+                <fullName>Previous knowledge of the person</fullName>
+                <default>false</default>
+                <label>Previous knowledge of the person</label>
+            </value>
+            <value>
+                <fullName>Receptive to discussion on means to relieve suffering</fullName>
+                <default>false</default>
+                <label>Receptive to discussion on means to relieve suffering</label>
+            </value>
+            <value>
+                <fullName>Review of medical records</fullName>
+                <default>false</default>
+                <label>Review of medical records</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>
