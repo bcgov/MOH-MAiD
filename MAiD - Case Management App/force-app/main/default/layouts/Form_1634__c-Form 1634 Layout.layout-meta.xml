@@ -463,11 +463,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_withdrew_request_immediately_bef__c</field>
+                <field>Death_occurred_prior_to_MAiD__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Death_occurred_prior_to_MAiD__c</field>
+                <field>Patient_withdrew_request_immediately_bef__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
