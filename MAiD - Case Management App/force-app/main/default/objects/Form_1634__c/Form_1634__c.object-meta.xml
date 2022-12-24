@@ -152,7 +152,7 @@
     <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
-    <externalSharingModel>Private</externalSharingModel>
+    <externalSharingModel>ControlledByParent</externalSharingModel>
     <label>Form 1634</label>
     <nameField>
         <displayFormat>1634-{000}</displayFormat>
@@ -172,6 +172,6 @@
         <searchResultsAdditionalFields>Assessment_Interpreter_date_of_service__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Assessment_conducted__c</searchResultsAdditionalFields>
     </searchLayouts>
-    <sharingModel>Private</sharingModel>
+    <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>
