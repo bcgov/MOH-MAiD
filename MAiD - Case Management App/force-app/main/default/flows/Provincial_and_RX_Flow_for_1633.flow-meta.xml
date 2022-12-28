@@ -1173,7 +1173,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_if_1633_is_ticked_on_1634</name>
-            <conditionLogic>1 AND (2 OR 3)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
             <conditions>
                 <leftValueReference>check_if_1633_is_ticked</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1195,13 +1195,21 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>check_case_type_62</targetReference>
             </connector>
             <label>Check if 1633 is ticked on 1634</label>
         </rules>
     </decisions>
-    <description>Check on Rule 65</description>
+    <description>1633 field check condition is updated..!</description>
+    <environments>Default</environments>
     <interviewLabel>Provincial and RX Flow for 1633 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial and RX Flow for 1633</label>
     <processMetadataValues>
