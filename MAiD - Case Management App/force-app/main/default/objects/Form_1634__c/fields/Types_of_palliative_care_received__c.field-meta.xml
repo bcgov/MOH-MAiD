@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Types_of_palliative_care_received__c</fullName>
+    <externalId>false</externalId>
+    <label>Types of palliative care received</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Pain/symptom management</fullName>
+                <default>false</default>
+                <label>Pain/symptom management</label>
+            </value>
+            <value>
+                <fullName>Personal support services</fullName>
+                <default>false</default>
+                <label>Personal support services</label>
+            </value>
+            <value>
+                <fullName>Volunteer supports</fullName>
+                <default>false</default>
+                <label>Volunteer supports</label>
+            </value>
+            <value>
+                <fullName>Psychosocial care and/or counselling</fullName>
+                <default>false</default>
+                <label>Psychosocial care and/or counselling</label>
+            </value>
+            <value>
+                <fullName>Spiritual care and/or counselling</fullName>
+                <default>false</default>
+                <label>Spiritual care and/or counselling</label>
+            </value>
+            <value>
+                <fullName>Palliative chemotherapy</fullName>
+                <default>false</default>
+                <label>Palliative chemotherapy</label>
+            </value>
+            <value>
+                <fullName>Palliative radiation therapy</fullName>
+                <default>false</default>
+                <label>Palliative radiation therapy</label>
+            </value>
+            <value>
+                <fullName>Physiotherapy</fullName>
+                <default>false</default>
+                <label>Physiotherapy</label>
+            </value>
+            <value>
+                <fullName>Occupational therapy</fullName>
+                <default>false</default>
+                <label>Occupational therapy</label>
+            </value>
+            <value>
+                <fullName>Do not know</fullName>
+                <default>false</default>
+                <label>Do not know</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

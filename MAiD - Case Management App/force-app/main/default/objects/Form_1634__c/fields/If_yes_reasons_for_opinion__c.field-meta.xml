@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_yes_reasons_for_opinion__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If yes, what reasons led the practitioner or preliminary assessor to this opinion? (select all that apply):</inlineHelpText>
+    <label>If yes, reasons for opinion</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Unable to do most or all (ADLs) and/or (IADLs) or marked decrease in ability to do these activities</fullName>
+                <default>false</default>
+                <label>Unable to do most or all (ADLs) and/or (IADLs) or marked decrease in ability to do these activities</label>
+            </value>
+            <value>
+                <fullName>Reduced or minimal oral intake or difficulty swallowing</fullName>
+                <default>false</default>
+                <label>Reduced or minimal oral intake or difficulty swallowing</label>
+            </value>
+            <value>
+                <fullName>Dependent on life sustaining treatments</fullName>
+                <default>false</default>
+                <label>Dependent on life sustaining treatments</label>
+            </value>
+            <value>
+                <fullName>Significant dependence on aid(s) for interaction, memory and/or mobility, or advanced</fullName>
+                <default>false</default>
+                <label>Significant dependence on aid(s) for interaction, memory and/or mobility, or advanced</label>
+            </value>
+            <value>
+                <fullName>Significant shortness of breath or marked increase</fullName>
+                <default>false</default>
+                <label>Significant shortness of breath or marked increase</label>
+            </value>
+            <value>
+                <fullName>Persistent significant fatigue/weakness or marked increase</fullName>
+                <default>false</default>
+                <label>Persistent significant fatigue/weakness or marked increase</label>
+            </value>
+            <value>
+                <fullName>Cachexia or marked change in weight and/or muscle mass</fullName>
+                <default>false</default>
+                <label>Cachexia or marked change in weight and/or muscle mass</label>
+            </value>
+            <value>
+                <fullName>Persistent, significant, and escalating chronic pain</fullName>
+                <default>false</default>
+                <label>Persistent, significant, and escalating chronic pain</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Underlying_reason_s_of_death__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If known, what was the underlying reason(s) that led to the person dying of a natural death, before receiving MAID? (choose all that apply):</inlineHelpText>
+    <label>Underlying reason(s) of death</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Referred or requested MAID too late</fullName>
+                <default>false</default>
+                <label>Referred or requested MAID too late</label>
+            </value>
+            <value>
+                <fullName>Died before both assessments were completed</fullName>
+                <default>false</default>
+                <label>Died before both assessments were completed</label>
+            </value>
+            <value>
+                <fullName>Found eligible but died before scheduled MAID provision</fullName>
+                <default>false</default>
+                <label>Found eligible but died before scheduled MAID provision</label>
+            </value>
+            <value>
+                <fullName>Never chose a date for MAID provision</fullName>
+                <default>false</default>
+                <label>Never chose a date for MAID provision</label>
+            </value>
+            <value>
+                <fullName>No assessor/provider available/willing</fullName>
+                <default>false</default>
+                <label>No assessor/provider available/willing</label>
+            </value>
+            <value>
+                <fullName>Operational issues</fullName>
+                <default>false</default>
+                <label>Operational issues</label>
+            </value>
+            <value>
+                <fullName>Loss of capacity to consent without a waiver of final consent being completed</fullName>
+                <default>false</default>
+                <label>Loss of capacity to consent without a waiver of final consent being completed</label>
+            </value>
+            <value>
+                <fullName>Lack of pharmacy willing to provide MAID medications</fullName>
+                <default>false</default>
+                <label>Lack of pharmacy willing to provide MAID medications</label>
+            </value>
+            <value>
+                <fullName>Other reason</fullName>
+                <default>false</default>
+                <label>Other reason</label>
+            </value>
+            <value>
+                <fullName>Do not know</fullName>
+                <default>false</default>
+                <label>Do not know</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

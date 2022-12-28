@@ -10,6 +10,21 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Other_Profession_Specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Profession_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Province_of_Practice__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Account.Specialty_Other__pc</field>
         <readable>true</readable>
@@ -1105,6 +1120,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Disability_support_services_received__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Form_1634__c.ELG_Q05_Formula__c</field>
         <readable>true</readable>
@@ -1461,6 +1481,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Expert_consultant_specialty__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Expertise_consultant_was__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1536,7 +1561,27 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.If_No_why_not_voluntary__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_Organ_Failure_other_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.If_Other_location_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_Other_reason_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_Other_service_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1547,6 +1592,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.If_Other_specify_2__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_Prior_Request_outcome__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_Respiratory_other_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1582,6 +1637,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.If_by_Telemedicine_Witness_Profession__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_known_reasons_for_withdrawal__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1631,6 +1691,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.If_other_type_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.If_patient_directly_other_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1676,6 +1741,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.If_yes_indicate_services_means__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.If_yes_reasons_for_opinion__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.If_yes_select_all_that_apply_1__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1701,6 +1776,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Indicate_safeguard_not_met__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Interpreter_for_MAID_ID__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1720,8 +1800,23 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1634__c.Length_of_assessment_period__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Length_of_medical_condition__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Location_of_Assessment__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Location_of_Palliative_care__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1766,12 +1861,62 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Mental_Disorder_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.NON_RFND_safeguard_completed_date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Name_of_facility_if_due_to_MAiD_policy__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.On_receipt_of_assessment_patient_is__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Other_Condition_Co_morbidity_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Other_Outcome_Specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Other_natural_death_reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Other_opinion_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Other_reason_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Other_services_means_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Other_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Other_supports_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1896,6 +2041,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Patient_had_difficulty_communicating__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Patient_has_been_informed_of_risk_of_los__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1941,12 +2091,22 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Patient_no_longer_eligible__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Patient_received_palliative_care__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Patient_requested_the_following_options__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Patient_required_palliative_care__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2026,6 +2186,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Practitioner_opinion_for_consideration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Practitioner_planned_for_potential_issue__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2072,6 +2237,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Prescription_indicates_medication_is_for__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Prior_Request_for_MAiD__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2172,6 +2342,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Form_1634__c.REQ_S05_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Reasons_for_serious_consideration__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Reasons_for_transfer__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2306,12 +2486,32 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Services_offered_or_discussed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Specify_other_transfer_reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.The_patient_was_at_risk_of_losing_capaci__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Their_medical_diagnosis_and_prognosis__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Types_of_palliative_care_received__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Underlying_reason_s_of_death__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2372,6 +2572,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Who_did_you_receive_the_written_request__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Written_or_verbal_request_date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -3890,6 +4095,10 @@
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <recordType>PersonAccount.Nurse_Practitioner</recordType>
+        <visible>true</visible>
+    </recordTypeVisibilities>
+    <recordTypeVisibilities>
+        <recordType>PersonAccount.Other_Health_Care_Professionals</recordType>
         <visible>true</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
