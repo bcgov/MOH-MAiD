@@ -572,8 +572,6 @@
                 <behavior>Edit</behavior>
                 <field>Prescriber_ensured_expertise_in_patient__c</field>
             </layoutItems>
-<<<<<<< HEAD
-=======
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Expertise_consultant_was__c</field>
@@ -647,7 +645,6 @@
                 <behavior>Edit</behavior>
                 <field>An_agreement_with_the_patient_to_waive_f__c</field>
             </layoutItems>
->>>>>>> 0563f61223c975cedf420961300e7e48fecb24f5
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -1023,14 +1020,6 @@
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
         </platformActionListItems>
-<<<<<<< HEAD
-        <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>5</sortOrder>
-        </platformActionListItems>
-=======
->>>>>>> 0563f61223c975cedf420961300e7e48fecb24f5
     </platformActionList>
     <relatedLists>
         <relatedList>RelatedNoteList</relatedList>
