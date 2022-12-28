@@ -513,10 +513,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Death_occurred_prior_to_MAiD__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>If_yes_date_of_death__c</field>
             </layoutItems>
             <layoutItems>
