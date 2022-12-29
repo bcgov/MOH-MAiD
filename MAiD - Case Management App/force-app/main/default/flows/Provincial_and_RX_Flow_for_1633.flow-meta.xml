@@ -1209,7 +1209,6 @@
         </rules>
     </decisions>
     <description>1633 field check condition is updated..!</description>
-    <environments>Default</environments>
     <interviewLabel>Provincial and RX Flow for 1633 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial and RX Flow for 1633</label>
     <processMetadataValues>
