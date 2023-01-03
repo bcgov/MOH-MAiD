@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_yes_date_of_death__c</fullName>
-    <encryptionScheme>ProbabilisticEncryption</encryptionScheme>
+    <deprecated>false</deprecated>
+    <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
+    <inlineHelpText>Date of Death on MCOD</inlineHelpText>
     <label>If yes, date of death</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
