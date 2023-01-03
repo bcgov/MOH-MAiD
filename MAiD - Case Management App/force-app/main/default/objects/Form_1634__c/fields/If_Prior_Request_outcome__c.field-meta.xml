@@ -23,14 +23,25 @@
                 <label>Assessed and found eligible but person withdrew request</label>
             </value>
             <value>
-                <fullName>Assessed and found eligible but considerable time elapsed since the assessment                                                                                                 Request not actioned</fullName>
+                <fullName>Assessed and found eligible but considerable time elapsed since the assessment</fullName>
                 <default>false</default>
-                <label>Assessed and found eligible but considerable time elapsed since the assessment                                                                                                 Request not actioned</label>
+                <label>Assessed and found eligible but considerable time elapsed since the assessment</label>
+            </value>
+            <value>
+                <fullName>Request not actioned</fullName>
+                <default>false</default>
+                <label>Request not actioned</label>
             </value>
             <value>
                 <fullName>Other-specify:</fullName>
                 <default>false</default>
                 <label>Other-specify:</label>
+            </value>
+            <value>
+                <fullName>Assessed and found eligible but considerable time elapsed since the assessment                                                                                                 Request not actioned</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Assessed and found eligible but considerable time elapsed since the assessment                                                                                                 Request not actioned</label>
             </value>
         </valueSetDefinition>
     </valueSet>
