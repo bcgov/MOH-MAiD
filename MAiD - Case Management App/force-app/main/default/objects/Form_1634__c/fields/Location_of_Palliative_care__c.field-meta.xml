@@ -28,14 +28,9 @@
                 <label>Hospital-based (palliative care unit)</label>
             </value>
             <value>
-                <fullName>Hospital-based outpatient or med.</fullName>
+                <fullName>Hospital-based outpatient or med. clinic/ambulatory service</fullName>
                 <default>false</default>
-                <label>Hospital-based outpatient or med.</label>
-            </value>
-            <value>
-                <fullName>Clinic/ambulatory service</fullName>
-                <default>false</default>
-                <label>Clinic/ambulatory service</label>
+                <label>Hospital-based outpatient or med. clinic/ambulatory service</label>
             </value>
             <value>
                 <fullName>Long term care facility</fullName>

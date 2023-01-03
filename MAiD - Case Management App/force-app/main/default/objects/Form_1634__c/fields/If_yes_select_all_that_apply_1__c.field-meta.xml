@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_yes_select_all_that_apply_1__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>If yes, select all that apply</label>
     <required>false</required>
@@ -10,6 +11,151 @@
     <valueSet>
         <valueSetDefinition>
             <sorted>false</sorted>
+            <value>
+                <fullName>Autoimmune condition</fullName>
+                <default>false</default>
+                <label>Autoimmune condition</label>
+            </value>
+            <value>
+                <fullName>Cancer - Breast</fullName>
+                <default>false</default>
+                <label>Cancer - Breast</label>
+            </value>
+            <value>
+                <fullName>Cancer - Colorectal</fullName>
+                <default>false</default>
+                <label>Cancer - Colorectal</label>
+            </value>
+            <value>
+                <fullName>Cancer - Hematologic</fullName>
+                <default>false</default>
+                <label>Cancer - Hematologic</label>
+            </value>
+            <value>
+                <fullName>Cancer - Lung</fullName>
+                <default>false</default>
+                <label>Cancer - Lung</label>
+            </value>
+            <value>
+                <fullName>Cancer - Ovary</fullName>
+                <default>false</default>
+                <label>Cancer - Ovary</label>
+            </value>
+            <value>
+                <fullName>Cancer - Pancreatic</fullName>
+                <default>false</default>
+                <label>Cancer - Pancreatic</label>
+            </value>
+            <value>
+                <fullName>Cancer - Prostate</fullName>
+                <default>false</default>
+                <label>Cancer - Prostate</label>
+            </value>
+            <value>
+                <fullName>Cancer - Other</fullName>
+                <default>false</default>
+                <label>Cancer - Other</label>
+            </value>
+            <value>
+                <fullName>Cardio-vascular condition - Atrial Fibrillation</fullName>
+                <default>false</default>
+                <label>Cardio-vascular condition - Atrial Fibrillation</label>
+            </value>
+            <value>
+                <fullName>Cardio-vascular condition - Congestive Heart Failure</fullName>
+                <default>false</default>
+                <label>Cardio-vascular condition - Congestive Heart Failure</label>
+            </value>
+            <value>
+                <fullName>Cardio-vascular condition - Vasculopathy</fullName>
+                <default>false</default>
+                <label>Cardio-vascular condition - Vasculopathy</label>
+            </value>
+            <value>
+                <fullName>Cardio-vascular condition - Other</fullName>
+                <default>false</default>
+                <label>Cardio-vascular condition - Other</label>
+            </value>
+            <value>
+                <fullName>Chronic pain</fullName>
+                <default>false</default>
+                <label>Chronic pain</label>
+            </value>
+            <value>
+                <fullName>Diabetes</fullName>
+                <default>false</default>
+                <label>Diabetes</label>
+            </value>
+            <value>
+                <fullName>Frailty</fullName>
+                <default>false</default>
+                <label>Frailty</label>
+            </value>
+            <value>
+                <fullName>Mental Disorder</fullName>
+                <default>false</default>
+                <label>Mental Disorder</label>
+            </value>
+            <value>
+                <fullName>Neurological condition - (ALS)</fullName>
+                <default>false</default>
+                <label>Neurological condition - (ALS)</label>
+            </value>
+            <value>
+                <fullName>Neurological condition - Dementia</fullName>
+                <default>false</default>
+                <label>Neurological condition - Dementia</label>
+            </value>
+            <value>
+                <fullName>Neurological condition - (M.S)</fullName>
+                <default>false</default>
+                <label>Neurological condition - (M.S)</label>
+            </value>
+            <value>
+                <fullName>Neurological condition - Parkinson&apos;s Disease</fullName>
+                <default>false</default>
+                <label>Neurological condition - Parkinson&apos;s Disease</label>
+            </value>
+            <value>
+                <fullName>Neurological condition - Other</fullName>
+                <default>false</default>
+                <label>Neurological condition - Other</label>
+            </value>
+            <value>
+                <fullName>Organ Failure - Kidney</fullName>
+                <default>false</default>
+                <label>Organ Failure - Kidney</label>
+            </value>
+            <value>
+                <fullName>Organ Failure - Liver</fullName>
+                <default>false</default>
+                <label>Organ Failure - Liver</label>
+            </value>
+            <value>
+                <fullName>Organ Failure - Other</fullName>
+                <default>false</default>
+                <label>Organ Failure - Other</label>
+            </value>
+            <value>
+                <fullName>Respiratory Disease - (C.O.P.D)</fullName>
+                <default>false</default>
+                <label>Respiratory Disease - (C.O.P.D)</label>
+            </value>
+            <value>
+                <fullName>Respiratory Disease - Pulmonary Fibrosis</fullName>
+                <default>false</default>
+                <label>Respiratory Disease - Pulmonary Fibrosis</label>
+            </value>
+            <value>
+                <fullName>Respiratory Disease - Other</fullName>
+                <default>false</default>
+                <label>Respiratory Disease - Other</label>
+            </value>
+            <value>
+                <fullName>Other Condition / Co-morbidity</fullName>
+                <default>false</default>
+                <label>Other Condition / Co-morbidity</label>
+            </value>
             <value>
                 <fullName>A - Cancer - lung and bronchus</fullName>
                 <default>false</default>

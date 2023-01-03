@@ -489,6 +489,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Specify_other_withdrawal_reason__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>If_the_patient_withdrew_request_what_we__c</field>
             </layoutItems>
             <layoutItems>
@@ -498,26 +502,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Death_occurred_prior_to_MAiD__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Patient_withdrew_request_immediately_bef__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Patient_no_longer_eligible__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Indicate_safeguard_not_met__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>If_yes_date_of_death__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>If_no_confirm__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -533,6 +517,18 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>If_yes_date_of_death__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>If_no_date_of_death__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>If_no_confirm__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Underlying_reason_s_of_death__c</field>
             </layoutItems>
             <layoutItems>
@@ -541,15 +537,15 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Practitioner_opinion_for_consideration__c</field>
+                <field>Patient_withdrew_request_immediately_bef__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Other_opinion_specify__c</field>
+                <field>Patient_no_longer_eligible__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_no_date_of_death__c</field>
+                <field>Indicate_safeguard_not_met__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -579,6 +575,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Expert_consultant_specialty__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Specify_expert_specialty_if_Other__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -987,11 +987,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>5</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
@@ -1015,6 +1010,11 @@
             <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>5</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>

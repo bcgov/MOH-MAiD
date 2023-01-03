@@ -2416,7 +2416,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Specify_expert_specialty_if_Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Specify_other_transfer_reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Specify_other_withdrawal_reason__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
