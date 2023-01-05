@@ -849,10 +849,6 @@
                 <behavior>Edit</behavior>
                 <field>How_was_MAiD_administered__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>If_No_Practitioner_administered_IV_as_p__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
