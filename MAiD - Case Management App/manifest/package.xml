@@ -26,6 +26,18 @@
     </types>
     <types>
         <members>*</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>BusinessProcess</name>
+    </types>    
+    <types>
+        <members>*</members>
+        <name>CompactLayout</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>Layout</name>
     </types>
     <types>
@@ -71,10 +83,6 @@
     <types>
         <members>duplicate_notification_builder</members>
         <name>CustomNotificationType</name> 
-    </types>
-    <types>
-        <members>*</members>
-        <name>StandardValueSet</name>
     </types>
     <types>
         <members>*</members>
