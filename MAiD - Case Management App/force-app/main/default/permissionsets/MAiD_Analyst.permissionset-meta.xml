@@ -741,6 +741,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1632__c.Consent_to_contact_for_organ_donor_info__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1632__c.Date_Written_Request_Received__c</field>
         <readable>true</readable>
     </fieldPermissions>
