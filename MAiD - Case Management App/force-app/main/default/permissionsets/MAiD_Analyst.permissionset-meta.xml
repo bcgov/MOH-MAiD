@@ -2171,6 +2171,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Potential_BCCS_Review__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Potential_risks_and_expected_outcome__c</field>
         <readable>true</readable>
     </fieldPermissions>
