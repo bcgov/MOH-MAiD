@@ -97,14 +97,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Case_re_open_date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Health_Canada_Reportable_Date__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Priority</field>
             </layoutItems>
         </layoutColumns>
@@ -199,6 +191,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Case_re_open_date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Reason_for_re_opening_case__c</field>
             </layoutItems>
             <layoutItems>
@@ -212,6 +208,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Reportable_to_Health_Canada__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Health_Canada_Reportable_Date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Required</behavior>
