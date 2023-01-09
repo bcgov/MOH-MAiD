@@ -371,6 +371,14 @@
                 <field>Education_provided_on_case__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>BCCS_Manager_Review_Required__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Include_in_BCCS_Report__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Notes_to_Manager__c</field>
             </layoutItems>
