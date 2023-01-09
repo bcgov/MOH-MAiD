@@ -3,8 +3,8 @@
     <fullName>If_No_why_not_voluntary__c</fullName>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
-    <inlineHelpText>If, No specify why opinion is request was not voluntary?</inlineHelpText>
-    <label>If, No why not voluntary?</label>
+    <inlineHelpText>If No, specify why opinion is request was not voluntary?</inlineHelpText>
+    <label>If No, why not voluntary?</label>
     <length>3000</length>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
