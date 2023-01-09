@@ -41,6 +41,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.BCCS_Manager_Review_Required__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.Case_Type_Reported_Date_ChildCase__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -257,6 +262,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Impacted_Form__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.Include_in_BCCS_Report__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
