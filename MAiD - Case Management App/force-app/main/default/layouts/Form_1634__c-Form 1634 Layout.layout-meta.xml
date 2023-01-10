@@ -645,6 +645,10 @@
                 <behavior>Edit</behavior>
                 <field>An_agreement_with_the_patient_to_waive_f__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>If_Yes_patient_consented__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
