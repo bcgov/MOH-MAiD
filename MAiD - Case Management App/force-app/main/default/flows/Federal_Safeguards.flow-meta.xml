@@ -1537,7 +1537,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule19_yes_0</name>
-            <conditionLogic>(((1 AND 2) OR (3 AND 4) OR 8) AND (9 AND 10) AND 11 AND 5 AND 6 AND 7 AND 12)</conditionLogic>
+            <conditionLogic>(((1 AND 2) OR (3 AND 4) OR 8) AND 9 AND 10 AND 11 AND 5 AND 6 AND 7 AND 12)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1645_PatientSafeguardsCompleted</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1864,7 +1864,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>Rule 19 is updating : Requested by Lara (5 Jan 2023)</description>
+    <description>Rule 19 is updating : Requested by Lara (5 Jan 2023) - 1.1</description>
     <environments>Default</environments>
     <formulas>
         <name>VarNumberofDays</name>
