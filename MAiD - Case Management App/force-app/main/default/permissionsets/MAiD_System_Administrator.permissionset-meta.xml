@@ -40,11 +40,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.BCCS_Manager_Review_Required__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>false</editable>
         <field>Case.Case_Type_Reported_Date_ChildCase__c</field>
         <readable>true</readable>
@@ -67,11 +62,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.College_ID__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Daily_Activity_Limits__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -267,11 +257,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Impacted_Form__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Include_in_BCCS_Report__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -677,11 +662,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Event.WhoId</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1632__c.Consent_to_contact_for_organ_donor_info__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2111,11 +2091,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.Potential_BCCS_Review__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.Potential_risks_and_expected_outcome__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2552,6 +2527,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.X1633_Form_entered__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.X1634_Old_form__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
