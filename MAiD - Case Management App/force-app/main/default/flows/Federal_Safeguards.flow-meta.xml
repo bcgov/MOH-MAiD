@@ -1537,7 +1537,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule19_yes_0</name>
-            <conditionLogic>((1 AND 2) OR (3 AND 4) AND 5 AND 6 AND 7)</conditionLogic>
+            <conditionLogic>(((1 AND 2) OR (3 AND 4) OR 8) AND 9 AND 10 AND 11 AND 5 AND 6 AND 7 AND 12)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1645_PatientSafeguardsCompleted</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1582,6 +1582,38 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1645_Agreed_date_of_MAiD</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Verbal_Consent</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_PractitionerSafeguardsCompleted</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Practitioner_Signed_and_Dated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Finalwaiverofconsentdatesigned</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>Var1634_MAiDAdministrationDate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Finalwaiverofconsentdatesigned</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
@@ -1832,7 +1864,8 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>Adjusted rule 19 for making MAiD Admin date less than from Agreed Date of MAiD.</description>
+    <description>Rule 19 is updating : Requested by Lara (5 Jan 2023) - 1.1</description>
+    <environments>Default</environments>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
@@ -2163,12 +2196,20 @@
             <field>Practitioner_Safeguards_Completed__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1645_Practitioner_Signed_and_Dated</assignToReference>
+            <field>Practitioner_Signed_and_Dated__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1645_Proxy_Completed_Safeguards</assignToReference>
             <field>Proxy_Completed_Safeguards__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1645_Proxy_Signed_and_Dated</assignToReference>
             <field>Proxy_Signed_and_Dated__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1645_Verbal_Consent</assignToReference>
+            <field>Verbal_Consent__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -2663,6 +2704,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1645_Practitioner_Signed_and_Dated</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1645_PractitionerSafeguardsCompleted</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -2678,6 +2726,13 @@
     </variables>
     <variables>
         <name>Var1645_Proxy_Signed_and_Dated</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1645_Verbal_Consent</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
