@@ -44,15 +44,15 @@
                 <field>Sex_at_Birth__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>If_Sex_Other_specify__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>Gender__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Required</behavior>
+                <behavior>Edit</behavior>
                 <field>If_Gender_Other_specify__c</field>
             </layoutItems>
             <layoutItems>
