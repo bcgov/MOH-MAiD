@@ -2626,6 +2626,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.X1634_Old_form__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.X2nd_dose_will_be_adminstered_after_min__c</field>
         <readable>true</readable>
     </fieldPermissions>
