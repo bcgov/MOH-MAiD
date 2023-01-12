@@ -3,6 +3,7 @@
     <fullName>If_Other_Race_Specify__c</fullName>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
+    <inlineHelpText>Enter other race specified on the form in this box</inlineHelpText>
     <label>If Other Race, Specify:</label>
     <length>255</length>
     <required>false</required>
