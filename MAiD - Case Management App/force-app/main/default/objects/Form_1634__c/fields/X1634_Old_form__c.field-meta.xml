@@ -4,6 +4,7 @@
     <defaultValue>false</defaultValue>
     <description>Field created to create exceptions to validation rules for older forms that do not contain data elements</description>
     <externalId>false</externalId>
+    <inlineHelpText>Tick this box if the 1634 Assessment was completed prior to January 1,2023 on the old 1634 form version(prior to 2023 reporting regulation change.)</inlineHelpText>
     <label>1634 Old form</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
