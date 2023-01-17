@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Sex_at_Birth__c</fullName>
+    <fullName>Include_in_BCCS_Report__c</fullName>
+    <description>Developed for BC Corner Review new report</description>
     <externalId>false</externalId>
-    <label>Sex at Birth</label>
+    <inlineHelpText>After reviewing case for coroner reporting criteria indicate in this field if the case information should be included in the BC Corners Service Report</inlineHelpText>
+    <label>Include in BCCS Report?</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
@@ -12,19 +14,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>1 - Male</fullName>
+                <fullName>Yes</fullName>
                 <default>false</default>
-                <label>1 - Male</label>
+                <label>Yes</label>
             </value>
             <value>
-                <fullName>2 -  Female</fullName>
+                <fullName>No</fullName>
                 <default>false</default>
-                <label>2 -  Female</label>
-            </value>
-            <value>
-                <fullName>3 - Other</fullName>
-                <default>false</default>
-                <label>3 - Other</label>
+                <label>No</label>
             </value>
         </valueSetDefinition>
     </valueSet>
