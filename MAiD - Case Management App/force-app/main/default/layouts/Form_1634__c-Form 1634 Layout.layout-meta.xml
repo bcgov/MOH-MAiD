@@ -38,6 +38,10 @@
                 <behavior>Edit</behavior>
                 <field>X1633_Form_entered__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>X1634_Old_form__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
