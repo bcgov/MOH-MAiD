@@ -211,6 +211,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.If_Other_Preferred_Gender_Specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.If_Other_Race_Specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -222,11 +227,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.If_RX_MAR_Incomplete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.If_Sex_Other_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -416,6 +416,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Preferred_Gender__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Prevent_save_on_duplicate_PHN__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -537,11 +542,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.SPC_S10__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Case.Sex_at_Birth__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
