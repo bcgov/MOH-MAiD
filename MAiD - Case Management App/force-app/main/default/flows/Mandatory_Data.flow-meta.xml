@@ -276,8 +276,8 @@
     <assignments>
         <name>Rule_44_Message_Assignment</name>
         <label>Rule 44 Message Assignment</label>
-        <locationX>2249</locationX>
-        <locationY>972</locationY>
+        <locationX>2254</locationX>
+        <locationY>1022</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -292,8 +292,8 @@
     <assignments>
         <name>Rule_45_Message_Assignment</name>
         <label>Rule 45 Message Assignment</label>
-        <locationX>2356</locationX>
-        <locationY>1063</locationY>
+        <locationX>2372</locationX>
+        <locationY>1121</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -324,8 +324,8 @@
     <assignments>
         <name>Rule_50_Message_Assignment</name>
         <label>Rule 50 Message Assignment</label>
-        <locationX>2880</locationX>
-        <locationY>799</locationY>
+        <locationX>2915</locationX>
+        <locationY>792</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -420,8 +420,8 @@
     <assignments>
         <name>Rule_56_Message_Assignment</name>
         <label>Rule 56 Message Assignment</label>
-        <locationX>2436</locationX>
-        <locationY>740</locationY>
+        <locationX>2390</locationX>
+        <locationY>715</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -1551,15 +1551,15 @@
     <decisions>
         <name>Rule_44</name>
         <label>Rule 44</label>
-        <locationX>2265</locationX>
-        <locationY>832</locationY>
+        <locationX>2245</locationX>
+        <locationY>874</locationY>
         <defaultConnector>
             <targetReference>Rule_44_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 44 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_44_Pass</name>
-            <conditionLogic>(1 AND 2) OR 3 OR 4 OR 5 OR 6</conditionLogic>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1576,30 +1576,9 @@
             </conditions>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>MAiD Death Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>MAiD Death Not Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Transfer of Request</stringValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2632,7 +2611,8 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Updating Skip Rule 44 &amp; 56</description>
+    <description>Updating Rule 44 : For Only Allow in Death Prior Case Type not for other Case Type : Requested by Lara (12 Jan 2023)</description>
+    <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
