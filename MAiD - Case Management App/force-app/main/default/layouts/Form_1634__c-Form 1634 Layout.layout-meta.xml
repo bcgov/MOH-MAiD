@@ -38,10 +38,6 @@
                 <behavior>Edit</behavior>
                 <field>X1633_Form_entered__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>X1634_Old_form__c</field>
-            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -239,6 +235,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_other_specify__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Patient_withdrew_request_immediately_bef__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -542,10 +542,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Other_natural_death_reason__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Patient_withdrew_request_immediately_bef__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
