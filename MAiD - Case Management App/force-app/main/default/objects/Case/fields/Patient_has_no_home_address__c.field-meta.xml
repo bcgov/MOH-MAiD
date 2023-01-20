@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Patient_has_no_home_address__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This field was created to identify individuals with no address or postal code</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Only tick this box if the patient is identified as not having a home address, therefore, no postal code</inlineHelpText>
+    <label>Patient has no home address</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
