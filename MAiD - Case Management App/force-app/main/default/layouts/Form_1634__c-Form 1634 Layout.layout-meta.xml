@@ -38,6 +38,10 @@
                 <behavior>Edit</behavior>
                 <field>X1633_Form_entered__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>X1634_Old_form__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
@@ -235,6 +239,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_other_specify__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Patient_withdrew_request_immediately_bef__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -541,10 +549,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_withdrew_request_immediately_bef__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Patient_no_longer_eligible__c</field>
             </layoutItems>
             <layoutItems>
@@ -644,6 +648,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>An_agreement_with_the_patient_to_waive_f__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>If_Yes_patient_consented__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
@@ -987,6 +995,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>5</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
@@ -1010,11 +1023,6 @@
             <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>FeedItem.TextPost</actionName>
-            <actionType>QuickAction</actionType>
-            <sortOrder>5</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>
