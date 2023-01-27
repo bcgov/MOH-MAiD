@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>IND_Q05C__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(INCLUDES(If_yes_Indigenious_heritage__c,&quot;Métis&quot;),1,IF(ISBLANK(If_yes_Indigenious_heritage__c),0,2))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>IND_Q05C</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
