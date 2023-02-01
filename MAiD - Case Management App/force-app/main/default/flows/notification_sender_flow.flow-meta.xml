@@ -38,7 +38,7 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <apiVersion>54.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>assignment_of_recipients</name>
         <label>assignment of recipients</label>
