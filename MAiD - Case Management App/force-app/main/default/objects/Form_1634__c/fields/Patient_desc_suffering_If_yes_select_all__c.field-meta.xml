@@ -52,9 +52,9 @@
                 <label>Inadequate control of other symptoms, or concern about it</label>
             </value>
             <value>
-                <fullName>Emotional distress/anxiety/fear/suffering</fullName>
+                <fullName>Emotional distress/anxiety/fear/existential suffering</fullName>
                 <default>false</default>
-                <label>Emotional distress/anxiety/fear/suffering</label>
+                <label>Emotional distress/anxiety/fear/existential suffering</label>
             </value>
             <value>
                 <fullName>Loss of Independence</fullName>
