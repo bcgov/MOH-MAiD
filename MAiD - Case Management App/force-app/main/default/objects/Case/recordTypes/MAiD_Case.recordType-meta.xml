@@ -1533,6 +1533,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Do not know</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Hospital</fullName>
             <default>false</default>
         </values>
