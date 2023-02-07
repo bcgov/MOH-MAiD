@@ -47,6 +47,11 @@
                 <default>false</default>
                 <label>Other</label>
             </value>
+            <value>
+                <fullName>Do not know</fullName>
+                <default>false</default>
+                <label>Do not know</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
