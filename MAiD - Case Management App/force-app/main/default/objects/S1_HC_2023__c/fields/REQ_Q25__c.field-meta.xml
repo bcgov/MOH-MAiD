@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>REQ_Q25__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( Text(Form_1634__r.If_Prior_Request_outcome__c )==&apos;Assessed and found ineligible&apos;, 1,
+IF( Text(Form_1634__r.If_Prior_Request_outcome__c )==&apos;Assessed and found eligible but person withdrew request&apos;,2,
+If(Text(Form_1634__r.If_Prior_Request_outcome__c )==&apos;Assessed and found eligible but considerable time elaspsed since the assessment&apos;,3,
+If(Text(Form_1634__r.If_Prior_Request_outcome__c )==&apos;Request not actioned&apos;,4,
+If(Text(Form_1634__r.If_Prior_Request_outcome__c )==&apos;Other-specify:&apos;,5,0)))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>REQ_Q25</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
