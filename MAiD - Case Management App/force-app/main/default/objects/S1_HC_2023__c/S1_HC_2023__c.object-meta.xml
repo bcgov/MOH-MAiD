@@ -153,13 +153,13 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>S1 HC 2023</label>
+    <label>S1 HC 2023 Report Template</label>
     <nameField>
-        <displayFormat>S1-{00000}</displayFormat>
+        <displayFormat>S1-HC2023-{00000}</displayFormat>
         <label>S1 HC 2023</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>S1 HC 2023</pluralLabel>
+    <pluralLabel>S1 HC 2023 Report Templates</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>

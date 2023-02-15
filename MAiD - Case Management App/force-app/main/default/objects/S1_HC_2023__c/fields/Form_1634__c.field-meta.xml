@@ -4,9 +4,8 @@
     <externalId>false</externalId>
     <label>Form 1634</label>
     <referenceTo>Form_1634__c</referenceTo>
-    <relationshipLabel>S1 HC 2023</relationshipLabel>
     <relationshipName>S1_HC_2023</relationshipName>
-    <relationshipOrder>1</relationshipOrder>
+    <relationshipOrder>0</relationshipOrder>
     <reparentableMasterDetail>false</reparentableMasterDetail>
     <trackTrending>false</trackTrending>
     <type>MasterDetail</type>

@@ -5,7 +5,7 @@
     <formula>IF( 
     ISNULL ( Form_1634__r.If_yes_select_all_that_apply_1__c ), 0,
     IF(
-        INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Neurological condition - Parkinson's Disease&quot; ), 1,2
+        INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Neurological condition - Parkinson&apos;s Disease&quot; ), 1,2
     )
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
