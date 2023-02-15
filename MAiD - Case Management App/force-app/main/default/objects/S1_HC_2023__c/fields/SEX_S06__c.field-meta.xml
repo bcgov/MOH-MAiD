@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SEX_S06__c</fullName>
     <externalId>false</externalId>
-    <formula>Case__r.If_Other_Preferred_Gender_Specify__c</formula>
+    <formula>Form_1634__r.Case__r.If_Other_Preferred_Gender_Specify__c</formula>
     <label>SEX_S06</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

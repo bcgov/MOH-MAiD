@@ -3,8 +3,8 @@
     <fullName>DIS_S10K__c</fullName>
     <externalId>false</externalId>
     <formula>IF( 
-    NOT(ISNULL(Case__r.Other_long_term_condition_specify__c)),
-    Case__r.Other_long_term_condition_specify__c, &quot;N/A&quot;
+    NOT(ISNULL(Form_1634__r.Case__r.Other_long_term_condition_specify__c)),
+    Form_1634__r.Case__r.Other_long_term_condition_specify__c, &quot;N/A&quot;
 )</formula>
     <label>DIS_S10K</label>
     <required>false</required>

@@ -3,9 +3,9 @@
     <fullName>DIS_Q10B__c</fullName>
     <externalId>false</externalId>
     <formula>IF(
-    ISNULL ( Case__r.If_yes_types_of_disabilites__c ), 0,
+    ISNULL ( Form_1634__r.Case__r.If_yes_types_of_disabilites__c ), 0,
     IF(
-        INCLUDES ( Case__r.If_yes_types_of_disabilites__c, &quot;Hearing&quot; ), 1,2
+        INCLUDES ( Form_1634__r.Case__r.If_yes_types_of_disabilites__c, &quot;Hearing&quot; ), 1,2
     )
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

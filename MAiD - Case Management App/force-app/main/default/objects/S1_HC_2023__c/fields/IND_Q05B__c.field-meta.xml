@@ -3,8 +3,8 @@
     <fullName>IND_Q05B__c</fullName>
     <externalId>false</externalId>
     <formula>IF(
-    INCLUDES( Case__r.If_yes_Indigenious_heritage__c ,&quot;First Nations&quot;),1,
-    IF(ISBLANK(Case__r.If_yes_Indigenious_heritage__c),0,2)
+    INCLUDES( Form_1634__r.Case__r.If_yes_Indigenious_heritage__c ,&quot;First Nations&quot;),1,
+    IF(ISBLANK(Form_1634__r.Case__r.If_yes_Indigenious_heritage__c),0,2)
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>IND_Q05B</label>

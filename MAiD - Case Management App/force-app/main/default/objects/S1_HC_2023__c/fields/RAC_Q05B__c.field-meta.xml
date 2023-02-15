@@ -2,8 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>RAC_Q05B__c</fullName>
     <externalId>false</externalId>
-    <formula>IF ( ISNULL ( Case__r.Racial_Ethinic_or_Cultural_Group__c ), 0,
-IF ( INCLUDES ( Case__r.Racial_Ethinic_or_Cultural_Group__c, &quot;White&quot; ), 1,2))</formula>
+    <formula>IF ( ISNULL ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c ), 0,
+IF ( INCLUDES ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c, &quot;White&quot; ), 1,2))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>RAC_Q05B</label>
     <precision>18</precision>

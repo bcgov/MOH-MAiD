@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>DIS_Q20__c</fullName>
     <externalId>false</externalId>
-    <formula>CASE( Case__r.Daily_Activity_Limits__c ,
+    <formula>CASE( Form_1634__r.Case__r.Daily_Activity_Limits__c ,
 &quot;Never&quot;,1,
 &quot;Rarely&quot;,2,
 &quot;Sometimes&quot;,3,

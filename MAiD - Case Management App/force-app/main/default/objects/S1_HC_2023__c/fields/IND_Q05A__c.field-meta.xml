@@ -3,7 +3,7 @@
     <fullName>IND_Q05A__c</fullName>
     <externalId>false</externalId>
     <formula>CASE( 
-    Case__r.Identify_as_Indigenious__c,
+    Form_1634__r.Case__r.Identify_as_Indigenious__c,
     &quot;Yes&quot;,1,
     &quot;No&quot;,2,0
 )</formula>

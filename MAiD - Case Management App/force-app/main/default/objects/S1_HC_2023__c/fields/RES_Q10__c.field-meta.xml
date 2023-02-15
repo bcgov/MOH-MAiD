@@ -3,7 +3,7 @@
     <fullName>RES_Q10__c</fullName>
     <externalId>false</externalId>
     <formula>CASE( 
-    Case__r.If_Private_Residence_Living_arrangement__c,
+    Form_1634__r.Case__r.If_Private_Residence_Living_arrangement__c,
     &quot;Lives with family&quot;,1,
     &quot;Lives alone&quot;,2,
     &quot;Lives with relatives&quot;,3,

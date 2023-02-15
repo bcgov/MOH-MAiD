@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>RES_Q05__c</fullName>
     <externalId>false</externalId>
-    <formula>CASE( Case__r.Usual_Place_of_Residence__c ,
+    <formula>CASE( Form_1634__r.Case__r.Usual_Place_of_Residence__c ,
 &quot;Hospital&quot;,1,
 &quot;Palliative care facility&quot;,2,
 &quot;Residential care facility&quot;,3,

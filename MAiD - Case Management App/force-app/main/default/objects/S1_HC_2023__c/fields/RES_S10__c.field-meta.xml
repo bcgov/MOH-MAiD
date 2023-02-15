@@ -3,8 +3,8 @@
     <fullName>RES_S10__c</fullName>
     <externalId>false</externalId>
     <formula>IF(
-    NOT(ISNULL(Case__r.If_Other_Living_Arrangement_Specify__c)), 
-    Case__r.If_Other_Living_Arrangement_Specify__c, &quot;N/A&quot;
+    NOT(ISNULL(Form_1634__r.Case__r.If_Other_Living_Arrangement_Specify__c)), 
+    Form_1634__r.Case__r.If_Other_Living_Arrangement_Specify__c, &quot;N/A&quot;
 )</formula>
     <label>RES_S10</label>
     <required>false</required>

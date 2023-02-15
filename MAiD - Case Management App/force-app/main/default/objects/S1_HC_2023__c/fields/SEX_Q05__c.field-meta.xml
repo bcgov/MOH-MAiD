@@ -3,7 +3,7 @@
     <fullName>SEX_Q05__c</fullName>
     <externalId>false</externalId>
     <formula>CASE( 
-    Case__r.Sex_at_Birth__c ,
+    Form_1634__r.Case__r.Sex_at_Birth__c ,
     &quot;1 - Male&quot;,1,
     &quot;2 - Female&quot;,2,
     &quot;3 - Other&quot;,3,0
