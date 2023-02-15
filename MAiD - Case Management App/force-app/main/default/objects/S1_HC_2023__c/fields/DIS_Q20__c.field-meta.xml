@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ELG_Q51A__c</fullName>
+    <fullName>DIS_Q20__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( 
-    ISNULL ( Form_1634__r.Patient_desc_suffering_If_yes_select_all__c ), 0,
-    IF ( 
-        INCLUDES( Form_1634__r.Patient_desc_suffering_If_yes_select_all__c, &quot;Loss of ability to engage in activities making life meaningful&quot; ),
-        1,2
-    )
-)</formula>
+    <formula>CASE( Case__r.Daily_Activity_Limits__c ,
+&quot;Never&quot;,1,
+&quot;Rarely&quot;,2,
+&quot;Sometimes&quot;,3,
+&quot;Often&quot;,4,
+&quot;Always&quot;,5,
+&quot;Do not know&quot;,6,
+&quot;Do not consent&quot;,7,0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>ELG_Q51A</label>
+    <label>DIS_Q20</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>

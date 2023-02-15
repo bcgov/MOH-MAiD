@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>ELG_Q51A__c</fullName>
+    <fullName>ADM_Q15__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( 
-    ISNULL ( Form_1634__r.Patient_desc_suffering_If_yes_select_all__c ), 0,
-    IF ( 
-        INCLUDES( Form_1634__r.Patient_desc_suffering_If_yes_select_all__c, &quot;Loss of ability to engage in activities making life meaningful&quot; ),
-        1,2
-    )
+    <formula>CASE( 
+    Form_1634__r.Was_patient_transferred_for_MAiD__c ,
+    &quot;1 - Yes&quot;,1,
+    &quot;2 - No&quot;,2,
+    &quot;3 - Do not know&quot;,3,0
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
-    <label>ELG_Q51A</label>
+    <label>ADM_Q15</label>
     <precision>18</precision>
     <required>false</required>
     <scale>0</scale>
