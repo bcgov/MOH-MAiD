@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ADM_Q30__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISBLANK( TEXT(Form_1634__r.Did_the_patient_die_after_self_administ__c) ), &quot;N/A&quot;,
+    IF( 
+        ISPICKVAL ( Form_1634__r.Did_the_patient_die_after_self_administ__c, &quot;1 - Yes&quot; ), &quot;1&quot;,&quot;N/A&quot;
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ADM_Q30</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
