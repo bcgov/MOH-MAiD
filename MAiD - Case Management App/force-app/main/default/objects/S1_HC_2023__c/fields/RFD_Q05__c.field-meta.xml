@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RFD_Q05__c</fullName>
+    <externalId>false</externalId>
+    <formula>Case( Form_1634__r.I_determine_that_the_patient__c,
+&quot;1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable&quot;,1,
+&quot;2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable&quot;,2,
+&quot;3 - Does not meet the criteria for MAiD&quot;,0,
+&quot;4- NO determination made&quot;,0,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RFD_Q05</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

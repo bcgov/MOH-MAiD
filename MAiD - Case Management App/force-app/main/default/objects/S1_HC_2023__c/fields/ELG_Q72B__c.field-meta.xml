@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ELG_Q72B__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+    ISNULL ( Form_1634__r.Profession_if_yes_select_all_that_apply__c ), 0,
+    IF ( 
+        INCLUDES( Form_1634__r.Profession_if_yes_select_all_that_apply__c, &quot;D - Primary care provide&quot; ),
+        1,2
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ELG_Q72B</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
