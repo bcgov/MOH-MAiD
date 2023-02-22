@@ -4881,17 +4881,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>S1_HC_2023__c.SEX_Q05__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>S1_HC_2023__c.SEX_Q06__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.SEX_S05__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
