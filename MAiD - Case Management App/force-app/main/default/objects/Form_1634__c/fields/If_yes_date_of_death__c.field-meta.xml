@@ -5,7 +5,7 @@
     <encryptionScheme>ProbabilisticEncryption</encryptionScheme>
     <externalId>false</externalId>
     <inlineHelpText>Date of Death on MCOD</inlineHelpText>
-    <label>If yes, date of death</label>
+    <label>Date of death</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
