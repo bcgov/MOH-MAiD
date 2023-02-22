@@ -298,14 +298,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_multiple_co_morbidities_specify__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Other_specify__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Patient_in_an_advanced_state_of_irrevers__c</field>
             </layoutItems>
             <layoutItems>
@@ -505,7 +497,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_the_patient_withdrew_request_what_we__c</field>
+                <field>Withdrawal_means_to_relieve_suffering__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Other_relief_means_specify__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -530,10 +526,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_yes_date_of_death__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>If_no_date_of_death__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -995,11 +987,6 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
-                <actionName>FeedItem.TextPost</actionName>
-                <actionType>QuickAction</actionType>
-                <sortOrder>5</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
             <actionName>Edit</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>0</sortOrder>
@@ -1023,6 +1010,11 @@
             <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>4</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.TextPost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>5</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>

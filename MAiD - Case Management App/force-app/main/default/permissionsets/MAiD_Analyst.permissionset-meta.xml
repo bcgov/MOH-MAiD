@@ -1936,6 +1936,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Form_1634__c.Other_relief_means_specify__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Form_1634__c.Other_services_means_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2617,6 +2622,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Form_1634__c.Who_did_you_receive_the_written_request__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Form_1634__c.Withdrawal_means_to_relieve_suffering__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

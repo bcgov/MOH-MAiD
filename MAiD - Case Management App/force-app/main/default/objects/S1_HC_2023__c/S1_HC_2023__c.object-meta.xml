@@ -143,6 +143,7 @@
     <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>Custom_Compact_Layout</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
+    <description>This object was created to house the extra set of fields required to support the new Regulations for S1 Admin Substance report.</description>
     <enableActivities>true</enableActivities>
     <enableBulkApi>true</enableBulkApi>
     <enableFeeds>false</enableFeeds>
@@ -153,13 +154,13 @@
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <externalSharingModel>ControlledByParent</externalSharingModel>
-    <label>S1 HC 2023 Report Template</label>
+    <label>HC2023 Reporting Fields</label>
     <nameField>
         <displayFormat>S1-HC2023-{00000}</displayFormat>
         <label>S1 HC 2023</label>
         <type>AutoNumber</type>
     </nameField>
-    <pluralLabel>S1 HC 2023 Report Templates</pluralLabel>
+    <pluralLabel>HC2023 Reporting Fields</pluralLabel>
     <searchLayouts></searchLayouts>
     <sharingModel>ControlledByParent</sharingModel>
     <visibility>Public</visibility>
