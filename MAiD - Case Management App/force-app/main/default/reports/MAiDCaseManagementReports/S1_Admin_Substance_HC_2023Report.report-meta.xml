@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$SPC_Q05_Formula__c</field>
+    </columns>
+    <columns>
         <field>Form_1634__c$Case__c</field>
     </columns>
     <columns>
@@ -287,6 +291,10 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c.S1_HC_2023__r$PROC_Q185A__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$PROC_Q185B__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -776,6 +784,9 @@
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c.S1_HC_2023__r$ELG_Q47D__c</field>
+    </columns>
+    <columns>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_Q47F__c</field>
     </columns>
     <columns>
         <field>Form_1634__c.S1_HC_2023__r$ELG_S47E__c</field>

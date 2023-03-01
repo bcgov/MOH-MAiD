@@ -4211,6 +4211,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>S1_HC_2023__c.ELG_Q47F__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>S1_HC_2023__c.ELG_Q48A__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4512,6 +4517,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>S1_HC_2023__c.IND_Q05F__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.MDR1_Q05__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4871,7 +4881,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>S1_HC_2023__c.SEX_Q05__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>S1_HC_2023__c.SEX_Q06__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.SEX_S05__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
