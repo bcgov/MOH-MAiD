@@ -242,10 +242,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Patient_withdrew_request_immediately_bef__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>If_No_why_not_voluntary__c</field>
             </layoutItems>
             <layoutItems>
@@ -506,6 +502,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_other_specify_3__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Patient_withdrew_request_immediately_bef__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
