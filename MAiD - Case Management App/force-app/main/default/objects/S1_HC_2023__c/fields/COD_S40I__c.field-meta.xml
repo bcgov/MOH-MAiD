@@ -3,7 +3,6 @@
     <fullName>COD_S40I__c</fullName>
     <externalId>false</externalId>
     <formula>Form_1634__r.Other_natural_death_reason__c</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>COD_S40I</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
