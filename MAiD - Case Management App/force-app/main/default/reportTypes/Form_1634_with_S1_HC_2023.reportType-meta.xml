@@ -2942,6 +2942,61 @@
             <field>ADM_Q20A__c</field>
             <table>Form_1634__c.S1_HC_2023__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40A__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40B__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40C__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40D__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40H__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_S40I__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40E__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40F__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40G__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40J__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>COD_Q40I__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
         <masterLabel>HC2023 Reporting Fields</masterLabel>
     </sections>
 </ReportType>
