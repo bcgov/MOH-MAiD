@@ -7,6 +7,9 @@
         <field>Form_1634__c$Case__c.Owner</field>
     </columns>
     <columns>
+        <field>Form_1634__c$Record_ID__c</field>
+    </columns>
+    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c.S1_HC_2023__r$RFD_Q05__c</field>
     </columns>
@@ -434,7 +437,22 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_Q47C__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_Q47D__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c.S1_HC_2023__r$ELG_Q47E__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_Q47F__c</field>
+    </columns>
+    <columns>
+        <field>Form_1634__c$Other_Condition_Co_morbidity_specify__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -964,6 +982,14 @@
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$SLF_Q11__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$SLF_S11__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c$SLF_Q15_Formula__c</field>
     </columns>
     <columns>
@@ -984,10 +1010,18 @@
         <field>Form_1634__c$SLF_S30_Formula__c</field>
     </columns>
     <columns>
-        <field>Form_1634__c$SLF_Q41_NA__c</field>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$SLF_Q45__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$SLF_Q50__c</field>
     </columns>
     <columns>
         <field>Form_1634__c$SLF_Q40_Formula__c</field>
+    </columns>
+    <columns>
+        <field>Form_1634__c$SLF_Q41_NA__c</field>
     </columns>
     <columns>
         <field>Form_1634__c$SUP_Q10_Formula__c</field>
