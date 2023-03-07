@@ -32,7 +32,6 @@
             <controllingFieldValue>Transfer information incomplete</controllingFieldValue>
             <valueName>Reason for transfer</valueName>
         </valueSettings>
-
         <valueSettings>
             <controllingFieldValue>Patient info incomplete</controllingFieldValue>
             <controllingFieldValue>Practitioner info incomplete</controllingFieldValue>
