@@ -537,7 +537,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule27_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND (8 OR 9))  OR (10 AND 11)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 12 AND (8 OR 9))  OR (10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PractitionersSignature</leftValueReference>
                 <operator>EqualTo</operator>
@@ -608,6 +608,10 @@
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Potential_BCCS_Review</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>CheckRule28</targetReference>
@@ -2330,6 +2334,10 @@
             <field>Patient_was_given_opportunity_to_withdra__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Potential_BCCS_Review</assignToReference>
+            <field>Potential_BCCS_Review__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_PractitionerAdministrationsignoffDat1</assignToReference>
             <field>Practitioner_Administration_sign_off_Dat__c</field>
         </outputAssignments>
@@ -2886,6 +2894,13 @@
     <variables>
         <name>Var1634_Patientwasgivenopportunitytowithdra</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Potential_BCCS_Review</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
