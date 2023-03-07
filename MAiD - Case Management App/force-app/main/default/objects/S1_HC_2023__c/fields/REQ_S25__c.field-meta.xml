@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>REQ_S25__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISNULL(Form_1634__r.Other_Outcome_Specify__c)) , Form_1634__r.Other_Outcome_Specify__c, &quot;N/A&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>REQ_S25</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Usual_Place_of_Residence__c</fullName>
+    <externalId>false</externalId>
+    <label>Usual Place of Residence</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Hospital</fullName>
+                <default>false</default>
+                <label>Hospital</label>
+            </value>
+            <value>
+                <fullName>Palliative care facility</fullName>
+                <default>false</default>
+                <label>Palliative care facility</label>
+            </value>
+            <value>
+                <fullName>Residential care facility</fullName>
+                <default>false</default>
+                <label>Residential care facility</label>
+            </value>
+            <value>
+                <fullName>Private residence</fullName>
+                <default>false</default>
+                <label>Private residence</label>
+            </value>
+            <value>
+                <fullName>Correctional facility/Prison</fullName>
+                <default>false</default>
+                <label>Correctional facility/Prison</label>
+            </value>
+            <value>
+                <fullName>Shelter/Group Home</fullName>
+                <default>false</default>
+                <label>Shelter/Group Home</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Do not know</fullName>
+                <default>false</default>
+                <label>Do not know</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

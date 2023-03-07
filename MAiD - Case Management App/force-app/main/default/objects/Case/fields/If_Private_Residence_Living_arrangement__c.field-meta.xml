@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Private_Residence_Living_arrangement__c</fullName>
+    <externalId>false</externalId>
+    <label>If Private Residence, Living arrangement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lives with family</fullName>
+                <default>false</default>
+                <label>Lives with family</label>
+            </value>
+            <value>
+                <fullName>Lives alone</fullName>
+                <default>false</default>
+                <label>Lives alone</label>
+            </value>
+            <value>
+                <fullName>Lives with relatives</fullName>
+                <default>false</default>
+                <label>Lives with relatives</label>
+            </value>
+            <value>
+                <fullName>Lives with non-relatives</fullName>
+                <default>false</default>
+                <label>Lives with non-relatives</label>
+            </value>
+            <value>
+                <fullName>Other living Arrangement</fullName>
+                <default>false</default>
+                <label>Other living Arrangement</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

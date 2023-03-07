@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>Add_Extracted_Value_to_List</name>
         <label>Add Extracted Value to List</label>
@@ -276,8 +276,8 @@
     <assignments>
         <name>Rule_44_Message_Assignment</name>
         <label>Rule 44 Message Assignment</label>
-        <locationX>2249</locationX>
-        <locationY>972</locationY>
+        <locationX>2254</locationX>
+        <locationY>1022</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -292,8 +292,8 @@
     <assignments>
         <name>Rule_45_Message_Assignment</name>
         <label>Rule 45 Message Assignment</label>
-        <locationX>2356</locationX>
-        <locationY>1063</locationY>
+        <locationX>2109</locationX>
+        <locationY>1348</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -308,8 +308,8 @@
     <assignments>
         <name>Rule_48_Message_Assignment</name>
         <label>Rule 48 Message Assignment</label>
-        <locationX>2435</locationX>
-        <locationY>1261</locationY>
+        <locationX>2280</locationX>
+        <locationY>1451</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -324,8 +324,8 @@
     <assignments>
         <name>Rule_50_Message_Assignment</name>
         <label>Rule 50 Message Assignment</label>
-        <locationX>2880</locationX>
-        <locationY>799</locationY>
+        <locationX>2915</locationX>
+        <locationY>792</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -420,8 +420,8 @@
     <assignments>
         <name>Rule_56_Message_Assignment</name>
         <label>Rule 56 Message Assignment</label>
-        <locationX>2436</locationX>
-        <locationY>740</locationY>
+        <locationX>2390</locationX>
+        <locationY>715</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -436,8 +436,8 @@
     <assignments>
         <name>Rule_57_Message_Assignment</name>
         <label>Rule 57 Message Assignment</label>
-        <locationX>1015</locationX>
-        <locationY>767</locationY>
+        <locationX>1043</locationX>
+        <locationY>763</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -769,7 +769,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_57</targetReference>
+                <targetReference>Skip_Rule_57_58</targetReference>
             </connector>
             <label>Case Type Multiple values</label>
         </rules>
@@ -1449,8 +1449,8 @@
     <decisions>
         <name>Rule_42</name>
         <label>Rule 42</label>
-        <locationX>1203</locationX>
-        <locationY>489</locationY>
+        <locationX>1220</locationX>
+        <locationY>526</locationY>
         <defaultConnector>
             <targetReference>Rule_42_Message_Assignment</targetReference>
         </defaultConnector>
@@ -1551,34 +1551,20 @@
     <decisions>
         <name>Rule_44</name>
         <label>Rule 44</label>
-        <locationX>2265</locationX>
-        <locationY>832</locationY>
+        <locationX>2245</locationX>
+        <locationY>874</locationY>
         <defaultConnector>
             <targetReference>Rule_44_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 44 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_44_Pass</name>
-            <conditionLogic>5 OR (1 AND (2 OR 3) AND 4)</conditionLogic>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1596,58 +1582,23 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_45</targetReference>
+                <targetReference>Rule_45_Check_Case_Type</targetReference>
             </connector>
             <label>Rule 44 Pass</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Rule_45</name>
-        <label>Rule 45</label>
-        <locationX>2430</locationX>
-        <locationY>868</locationY>
+        <name>Rule_45_1</name>
+        <label>Rule 45 -1</label>
+        <locationX>2421</locationX>
+        <locationY>1062</locationY>
         <defaultConnector>
             <targetReference>Rule_45_Message_Assignment</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>Rule 45 Fail</defaultConnectorLabel>
+        <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Rule_45_Pass</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 4) OR ((5 OR 6) AND 7) AND 8) OR 9</conditionLogic>
-            <conditions>
-                <leftValueReference>Var1634_Completed_Medical_Certificate_of_Death</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_Yes_Date_Of_Death</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_yes_underlying_case_of_death</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_yes_case_of_death_Specify</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_no_date_of_death</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
+            <conditionLogic>1 AND 2 AND 3 AND 5 AND 4</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_date_of_death_unkown</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1656,30 +1607,148 @@
                 </rightValue>
             </conditions>
             <conditions>
+                <leftValueReference>Var1634_Underlying_reason_s_of_death_1</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Date_Of_Death</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Case_Type_Reported_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Date_Of_Death</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_45_2</targetReference>
+            </connector>
+            <label>Rule 45 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_45_2</name>
+        <label>Rule 45-2</label>
+        <locationX>2291</locationX>
+        <locationY>1181</locationY>
+        <defaultConnector>
+            <targetReference>Rule_45_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>Check_Rule_45_2</name>
+            <conditionLogic>1 AND 2 AND 3</conditionLogic>
+            <conditions>
                 <leftValueReference>Var1634_Completed_Medical_Certificate_of_Death</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
+                <leftValueReference>Var1634_If_yes_case_of_death_Specify</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <leftValueReference>Var1634_If_yes_underlying_case_of_death</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_45_3</targetReference>
+            </connector>
+            <label>Check Rule 45-2</label>
+        </rules>
+        <rules>
+            <name>Check_Rule_45_Complete_Medical_certi_not_true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Completed_Medical_Certificate_of_Death</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_45_3</targetReference>
+            </connector>
+            <label>Check Rule 45 Complete Medical certi not true</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_45_3</name>
+        <label>Rule 45-3</label>
+        <locationX>2327</locationX>
+        <locationY>1467</locationY>
+        <defaultConnector>
+            <targetReference>Rule_45_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>Check_Rule_45_3</name>
+            <conditionLogic>1 AND 2</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Underlying_reason_s_of_death_1</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other reason</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Other_natural_death_reason</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_48</targetReference>
+            </connector>
+            <label>Check Rule 45-3</label>
+        </rules>
+        <rules>
+            <name>Check_45_3_Other_natural_death_reason</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Underlying_reason_s_of_death_1</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Other reason</stringValue>
                 </rightValue>
             </conditions>
             <connector>
                 <targetReference>Rule_48</targetReference>
             </connector>
-            <label>Rule 45 Pass</label>
+            <label>Check 45 -3 -Other natural death reason</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_45_Check_Case_Type</name>
+        <label>Rule 45 Check Case Type</label>
+        <locationX>2527</locationX>
+        <locationY>866</locationY>
+        <defaultConnector>
+            <targetReference>Rule_48</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>Rule_45_check_Case_Type_Ture</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_45_1</targetReference>
+            </connector>
+            <label>Rule 45 check Case Type Ture</label>
         </rules>
     </decisions>
     <decisions>
@@ -1756,8 +1825,8 @@
     <decisions>
         <name>Rule_48</name>
         <label>Rule 48</label>
-        <locationX>2579</locationX>
-        <locationY>1137</locationY>
+        <locationX>2664</locationX>
+        <locationY>1694</locationY>
         <defaultConnector>
             <targetReference>Rule_48_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2316,15 +2385,15 @@
     <decisions>
         <name>Rule_56</name>
         <label>Rule 56</label>
-        <locationX>2652</locationX>
-        <locationY>689</locationY>
+        <locationX>2794</locationX>
+        <locationY>622</locationY>
         <defaultConnector>
             <targetReference>Rule_56_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 56 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_56_Pass</name>
-            <conditionLogic>(1 AND 2 AND (3 OR 4)) OR 5</conditionLogic>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2337,20 +2406,6 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2377,7 +2432,7 @@
         <defaultConnectorLabel>Rule 57 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_57_Skipped</name>
-            <conditionLogic>(1 OR 2) AND (3 OR 4 OR 5)</conditionLogic>
+            <conditionLogic>1 OR (2 AND (3 OR 4 OR 5))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Assessor_did_not_receive_1632</leftValueReference>
                 <operator>Contains</operator>
@@ -2593,7 +2648,54 @@
             <label>Rule 58 Pass</label>
         </rules>
     </decisions>
-    <description>Rule 51 updates</description>
+    <decisions>
+        <name>Skip_Rule_57_58</name>
+        <label>Skip Rule 57 58</label>
+        <locationX>875</locationX>
+        <locationY>315</locationY>
+        <defaultConnector>
+            <targetReference>Rule_57</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Skip_Rule</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_46</targetReference>
+            </connector>
+            <label>Skip Rule</label>
+        </rules>
+    </decisions>
+    <description>Updating Rule : 45 - v3.0(Requested By Lara : 24/02/2023)</description>
+    <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
@@ -2933,6 +3035,10 @@
             <field>MAiD_Location_Type__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Other_natural_death_reason</assignToReference>
+            <field>Other_natural_death_reason__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Patient_lost_capability_to_consent</assignToReference>
             <field>Patient_lost_capabilty_to_consent__c</field>
         </outputAssignments>
@@ -2959,6 +3065,10 @@
         <outputAssignments>
             <assignToReference>Var1634_Secondassessorwasaphysicianornurse</assignToReference>
             <field>Second_assessor_was_a_physcian_or_nurse__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Underlying_reason_s_of_death_1</assignToReference>
+            <field>Underlying_reason_s_of_death__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Was_patient_transferred_for_MAiD</assignToReference>
@@ -3071,6 +3181,8 @@
         <queriedFields>Type</queriedFields>
         <queriedFields>Mandatory_Data__c</queriedFields>
         <queriedFields>Mandatory_Data_Feedback_Message__c</queriedFields>
+        <queriedFields>X1633__c</queriedFields>
+        <queriedFields>Case_Type_Reported_Date__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>UpdateMandatory_Fail</name>
@@ -3488,6 +3600,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Other_natural_death_reason</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Patient_lost_capability_to_consent</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -3546,6 +3665,20 @@
     <variables>
         <name>Var1634_Secondassessorwasaphysicianornurse</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Underlying_reason_s_of_death</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Underlying_reason_s_of_death_1</name>
+        <dataType>Multipicklist</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -3717,5 +3850,15 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>VarCase_CaseTypeReporteddate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
     </variables>
 </Flow>

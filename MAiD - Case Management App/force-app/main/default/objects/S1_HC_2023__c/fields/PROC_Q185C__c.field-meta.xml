@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PROC_Q185C__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    AND(
+        NOT(ISNULL(Form_1634__r.If_yes_indicate_services_means__c)),
+        OR(
+            INCLUDES(Form_1634__r.If_yes_indicate_services_means__c, &quot;Additional time&quot;),
+            NOT(INCLUDES(Form_1634__r.If_yes_indicate_services_means__c, &quot;Independent translation/interpretive services&quot;))
+        )
+    ), 1, 2
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PROC_Q185C</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -100,6 +100,12 @@
         <members>*</members>
         <name>PermissionSet</name>
     </types>
+
+    <types>
+        <members>*</members>
+        <name>PermissionSetGroup</name>
+     </types>
+
     <types>
          <members>*</members>
          <name>Role</name>
@@ -129,5 +135,5 @@
         <members>PlatformEncryption</members>
         <name>Settings</name>
     </types>    
-    <version>52.0</version>
+    <version>57.0</version>
 </Package>

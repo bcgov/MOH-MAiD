@@ -2,8 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_no_confirm__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <label>If no, date of death not known</label>
+    <inlineHelpText>If the practitioner did not complete the medical certificate or date of death is not known check this box</inlineHelpText>
+    <label>Unknown date of death</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>
     <type>Checkbox</type>

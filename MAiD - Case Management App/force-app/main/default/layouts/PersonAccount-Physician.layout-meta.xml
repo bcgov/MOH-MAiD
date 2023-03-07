@@ -119,19 +119,32 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
+        <fields>NAME</fields>
+        <fields>Case__c</fields>
+        <fields>Patient_Name__c</fields>
+        <fields>OWNER.ALIAS</fields>
+        <relatedList>Form_1633__c.Practitioner__c</relatedList>
+    </relatedLists>
+    <relatedLists>
         <fields>CASES.CASE_NUMBER</fields>
-        <fields>Education_provided_on_case__c</fields>
+        <fields>Patient_First_Name__c</fields>
+        <fields>Patient_Last_Name__c</fields>
         <fields>CASES.TYPE</fields>
-        <fields>If_yes_specify__c</fields>
-        <fields>Education_provided_to_practitioner__c</fields>
+        <fields>Education_provided_on_case__c</fields>
+        <fields>Notes_to_Manager__c</fields>
+        <fields>CASES.STATUS</fields>
+        <fields>CORE.USERS.ALIAS</fields>
         <relatedList>Case.Practitioner_Name__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>CASES.CASE_NUMBER</fields>
-        <fields>Education_provided_on_case__c</fields>
-        <fields>CASES.TYPE</fields>
-        <fields>If_yes_specify__c</fields>
+        <fields>OWNER_NAME</fields>
+        <fields>Parent_Case_Patient_Name__c</fields>
+        <fields>Impacted_Form__c</fields>
         <fields>Education_provided_to_practitioner__c</fields>
+        <fields>If_yes_specify__c</fields>
+        <fields>CASES.STATUS</fields>
+        <fields>PARENT.CASE_NUMBER</fields>
         <relatedList>Case.Practitioner__c</relatedList>
     </relatedLists>
     <showEmailCheckbox>false</showEmailCheckbox>

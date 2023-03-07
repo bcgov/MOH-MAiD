@@ -64,6 +64,10 @@
                 <behavior>Edit</behavior>
                 <field>Witness_Signature_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Consent_to_contact_for_organ_donor_info__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>

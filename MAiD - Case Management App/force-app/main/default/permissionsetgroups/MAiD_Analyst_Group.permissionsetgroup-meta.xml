@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>MAiD Analyst Group</description>
+    <label>MAiD Analyst Group</label>
+    <permissionSets>MAiD_Analyst</permissionSets>
+    <permissionSets>MAiD_Reports_Dashboards</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

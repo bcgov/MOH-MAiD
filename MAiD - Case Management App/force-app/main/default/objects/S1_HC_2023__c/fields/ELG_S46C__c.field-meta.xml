@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ELG_S46C__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISNULL(Form_1634__r.If_Organ_Failure_other_specify__c)) , Form_1634__r.If_Organ_Failure_other_specify__c, &quot;N/A&quot;)</formula>
+    <label>ELG_S46C</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -27,6 +27,11 @@
         <label>Discontinuation of Planning: Withdrawn Request</label>
     </standardValue>
     <standardValue>
+        <fullName>Preliminary Assessment</fullName>
+        <default>false</default>
+        <label>Preliminary Assessment</label>
+    </standardValue>
+    <standardValue>
         <fullName>Transfer of Request</fullName>
         <default>false</default>
         <label>Transfer of Request</label>
