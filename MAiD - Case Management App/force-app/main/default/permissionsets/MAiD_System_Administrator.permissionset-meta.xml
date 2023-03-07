@@ -3966,6 +3966,61 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40A__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40B__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40C__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40D__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40E__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40F__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40G__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40H__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40I__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_Q40J__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.COD_S40I__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>S1_HC_2023__c.DIS_Q05__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4217,6 +4272,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>S1_HC_2023__c.ELG_Q47E__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.ELG_Q47F__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4881,7 +4941,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>S1_HC_2023__c.SEX_Q05__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>S1_HC_2023__c.SEX_Q06__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.SEX_S05__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

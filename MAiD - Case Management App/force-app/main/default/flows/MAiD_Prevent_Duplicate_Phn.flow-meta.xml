@@ -17,7 +17,7 @@
                 <leftValueReference>loop_for_maid.PHN__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <elementReference>$Record.Form_1632__r.PHN__c</elementReference>
+                    <elementReference>$Record.PHN__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -81,6 +81,9 @@
         <label>Check if case type is MAiD Assessment of Eligibility</label>
         <locationX>430</locationX>
         <locationY>479</locationY>
+        <defaultConnector>
+            <targetReference>Get_Type_Of_Cases</targetReference>
+        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>MAiD_Assessment_of_Eligibility</name>
@@ -125,9 +128,6 @@
         <label>Check if maid case</label>
         <locationX>584</locationX>
         <locationY>359</locationY>
-        <defaultConnector>
-            <targetReference>Get_Type_Of_Cases</targetReference>
-        </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Maid_Case</name>
@@ -136,7 +136,7 @@
                 <leftValueReference>$Record.RecordType.Name</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Maid_Case</stringValue>
+                    <stringValue>Maid Case</stringValue>
                 </rightValue>
             </conditions>
             <connector>
