@@ -1647,7 +1647,7 @@
         <defaultConnectorLabel>Rule 6 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_6_Not_Applicable</name>
-            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>1 OR 7 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_O_Multiple_comorbidities</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1690,6 +1690,13 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Other_Condition_Co_Morbidity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_7</targetReference>
             </connector>
@@ -1697,7 +1704,7 @@
         </rules>
         <rules>
             <name>Rule_6_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((6 AND 7) OR (8 AND 9))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1742,6 +1749,20 @@
             </conditions>
             <conditions>
                 <leftValueReference>Get_Form_1634.If_multiple_co_morbidities_specify__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Other_Condition_Co_Morbidity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Other_Condition_Co_morbidity_specify__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -2116,6 +2137,11 @@ I determine that the patient: = 3 - Does not meet the criteria for MAiD</descrip
         <name>is_Selected_Other_Eligibility</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply__c},&apos;Other&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_Other_Condition_Co_Morbidity</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Other Condition / Co-Morbidity&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_P_Other</name>
