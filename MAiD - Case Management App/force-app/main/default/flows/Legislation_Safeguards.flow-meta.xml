@@ -2201,6 +2201,8 @@ I determine that the patient: = 3 - Does not meet the criteria for MAiD</descrip
         <name>is_Selected_Cardio_Vascular_Condition_Other</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Cardio-vascular condition - Other&apos;)</expression>
+    </formulas>
+    <formulas>
         <name>is_Selected_Cancer_Other</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Cancer - Other&apos;)</expression>
