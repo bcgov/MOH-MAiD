@@ -3087,6 +3087,11 @@
             <field>WOR_Q20J__c</field>
             <table>Form_1634__c.S1_HC_2023__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MDR1_Q05__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
         <masterLabel>HC2023 Reporting Fields</masterLabel>
     </sections>
 </ReportType>
