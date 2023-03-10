@@ -909,7 +909,7 @@
         <defaultConnectorLabel>Rule 3 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_3_Not_Applicable</name>
-            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>1 OR 7 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_H_Cancer_other</leftValueReference>
                 <operator>EqualTo</operator>
@@ -952,6 +952,13 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Cancer_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_4</targetReference>
             </connector>
@@ -959,7 +966,7 @@
         </rules>
         <rules>
             <name>Rule_3_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((6  OR 8) AND 7)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1007,6 +1014,13 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Cancer_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2147,6 +2161,11 @@ I determine that the patient: = 3 - Does not meet the criteria for MAiD</descrip
         <name>is_selected_3_Does_not_meet_the_criteria_for_MAiD</name>
         <dataType>Boolean</dataType>
         <expression>ISPICKVAL({!Get_Form_1634.I_determine_that_the_patient__c},&apos;3 - Does not meet the criteria for MAiD&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_Cancer_Other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Cancer - Other&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_H_Cancer_other</name>
