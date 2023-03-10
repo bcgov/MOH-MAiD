@@ -535,7 +535,7 @@
         </rules>
         <rules>
             <name>Rule_15_yes</name>
-            <conditionLogic>((1 OR 2) AND (3 OR 4)) OR (5 AND 6)</conditionLogic>
+            <conditionLogic>((1 OR 2)  AND (7 or 8)AND (3 OR 4)) OR (5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1632_ProxySignDate</leftValueReference>
                 <operator>EqualTo</operator>
@@ -576,6 +576,20 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_ProxySignDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Patient_MAiD_Request_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_RequestSigDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Patient_MAiD_Request_Date__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -2250,7 +2264,7 @@
         <name>GetCaseDetail_0</name>
         <label>GetCaseDetail</label>
         <locationX>1111</locationX>
-        <locationY>377</locationY>
+        <locationY>375</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1632</targetReference>
@@ -2269,6 +2283,7 @@
         <queriedFields>Federal_Safeguards__c</queriedFields>
         <queriedFields>Type</queriedFields>
         <queriedFields>X1645__c</queriedFields>
+        <queriedFields>Patient_MAiD_Request_Date__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Updatefedal</name>
