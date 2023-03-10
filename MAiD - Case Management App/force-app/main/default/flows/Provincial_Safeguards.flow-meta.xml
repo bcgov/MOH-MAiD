@@ -715,7 +715,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_Rule29_Pass</name>
-            <conditionLogic>((1 AND 2 AND (3 OR 4) AND (12 OR 13) AND 5 AND 6 AND 7) AND (8 OR 9)) OR (10 AND 11)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 12 AND 13 AND 5 AND 6 AND 7) AND (8 OR 9)) OR (10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2743,6 +2743,7 @@
         <queriedFields>Federal_Safeguards__c</queriedFields>
         <queriedFields>Type</queriedFields>
         <queriedFields>Case_Type_Reported_Date__c</queriedFields>
+        <queriedFields>Date_of_MAiD__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_FAIL</name>
