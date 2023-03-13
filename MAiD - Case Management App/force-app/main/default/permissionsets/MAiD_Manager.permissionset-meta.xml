@@ -4151,6 +4151,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>S1_HC_2023__c.ELG_Q130__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>S1_HC_2023__c.ELG_Q140__c</field>
         <readable>true</readable>
     </fieldPermissions>
