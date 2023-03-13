@@ -7,6 +7,10 @@
         <field>Form_1634__c$Case__c.Owner</field>
     </columns>
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$MDR1_Q05__c</field>
+    </columns>
+    <columns>
         <field>Form_1634__c$Record_ID__c</field>
     </columns>
     <columns>
