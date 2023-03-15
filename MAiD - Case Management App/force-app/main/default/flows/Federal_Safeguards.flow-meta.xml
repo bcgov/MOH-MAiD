@@ -1307,7 +1307,7 @@
         </rules>
         <rules>
             <name>Rule12_2</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 7 AND 8 AND 9) AND ((6 AND 9) OR 10)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 7 AND 8) AND ((6 AND 9) OR 10)</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
