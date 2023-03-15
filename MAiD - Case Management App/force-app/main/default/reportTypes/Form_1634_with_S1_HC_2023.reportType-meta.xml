@@ -203,6 +203,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>SLF_S11__c</field>
+            <table>Form_1634__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Did_the_patient_cause_their_death__c</field>
             <table>Form_1634__c</table>
         </columns>
@@ -238,6 +243,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>SLF_Q11__c</field>
+            <table>Form_1634__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>ELG_Q100_Formula__c</field>
             <table>Form_1634__c</table>
         </columns>
@@ -258,6 +268,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>SLF_Q50__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>ELG_Q115_Formula__c</field>
             <table>Form_1634__c</table>
         </columns>
@@ -275,6 +290,11 @@
             <checkedByDefault>false</checkedByDefault>
             <field>ELG_Q15_Formula__c</field>
             <table>Form_1634__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SLF_Q45__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
