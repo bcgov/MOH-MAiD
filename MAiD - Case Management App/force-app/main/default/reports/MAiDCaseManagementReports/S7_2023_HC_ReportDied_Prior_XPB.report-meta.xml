@@ -7,6 +7,10 @@
         <field>Form_1634__c$Case__c.Owner</field>
     </columns>
     <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$MDR1_Q05__c</field>
+    </columns>
+    <columns>
         <field>Form_1634__c$Record_ID__c</field>
     </columns>
     <columns>
@@ -15,6 +19,13 @@
     </columns>
     <columns>
         <field>Form_1634__c$DOB_Q05__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$SEX_Q05__c</field>
+    </columns>
+    <columns>
+        <field>Form_1634__c.S1_HC_2023__r$SEX_S05__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -445,14 +456,14 @@
         <field>Form_1634__c.S1_HC_2023__r$ELG_Q47E__c</field>
     </columns>
     <columns>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_S47E__c</field>
+    </columns>
+    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c.S1_HC_2023__r$ELG_Q47F__c</field>
     </columns>
     <columns>
         <field>Form_1634__c$Other_Condition_Co_morbidity_specify__c</field>
-    </columns>
-    <columns>
-        <field>Form_1634__c.S1_HC_2023__r$ELG_S47E__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
