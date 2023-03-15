@@ -985,15 +985,15 @@
     <decisions>
         <name>Rule_20</name>
         <label>Rule 20</label>
-        <locationX>1215</locationX>
-        <locationY>308</locationY>
+        <locationX>1225</locationX>
+        <locationY>267</locationY>
         <defaultConnector>
             <targetReference>Rule_20_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 20 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_20_Pass</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11) AND (12 OR 13)) OR (14 AND 15)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 16  AND 3 AND 4 AND 5 AND 6 AND 7 AND 17 AND 9 AND 10 AND 11 AND 18 AND 19) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 20) AND (12 OR 13)) OR (14 AND 15)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PriorPatientConsultation</leftValueReference>
                 <operator>IsNull</operator>
@@ -1097,6 +1097,35 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Written_or_verbal_request_date</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_required_palliative_care</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -1685,8 +1714,8 @@
     <decisions>
         <name>Rule_45_3</name>
         <label>Rule 45-3</label>
-        <locationX>2327</locationX>
-        <locationY>1467</locationY>
+        <locationX>2419</locationX>
+        <locationY>1390</locationY>
         <defaultConnector>
             <targetReference>Rule_45_Message_Assignment</targetReference>
         </defaultConnector>
@@ -2694,7 +2723,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Updating Rule : 45 - v3.0(Requested By Lara : 24/02/2023)</description>
+    <description>Updating Rule : 20- V1</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
@@ -3047,6 +3076,10 @@
             <field>Patient_received_palliative_care__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Patient_required_palliative_care</assignToReference>
+            <field>Patient_required_palliative_care__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Patientneedsdisabilitysupportservice</assignToReference>
             <field>Patient_requires_disability_support_serv__c</field>
         </outputAssignments>
@@ -3077,6 +3110,10 @@
         <outputAssignments>
             <assignToReference>Var1634_Who_did_you_receive_the_written_request</assignToReference>
             <field>Who_did_you_receive_the_written_request__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Written_or_verbal_request_date</assignToReference>
+            <field>Written_or_verbal_request_date__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Is1633Checked</assignToReference>
@@ -3215,7 +3252,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Draft</status>
     <variables>
         <name>extractedPicklist_Rule24</name>
         <dataType>String</dataType>
@@ -3614,6 +3651,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Patient_required_palliative_care</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Patient_Withdrew_Request</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -3693,6 +3737,13 @@
     <variables>
         <name>Var1634_Who_did_you_receive_the_written_request</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Written_or_verbal_request_date</name>
+        <dataType>Date</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>

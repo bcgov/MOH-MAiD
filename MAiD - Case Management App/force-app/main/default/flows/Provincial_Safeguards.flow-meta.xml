@@ -537,7 +537,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule27_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 12 AND (8 OR 9))  OR (10 AND 11)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND (12 AND 13) AND (8 OR 9))  OR (10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PractitionersSignature</leftValueReference>
                 <operator>EqualTo</operator>
@@ -612,6 +612,13 @@
             <conditions>
                 <leftValueReference>Var1634_Potential_BCCS_Review</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_Year_2023_Default</elementReference>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule28</targetReference>
@@ -708,7 +715,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_Rule29_Pass</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7) AND (8 OR 9)) OR (10 AND 11)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND (3 OR 4) AND (12 OR 13) AND 5 AND 6 AND 7) AND (8 OR 9)) OR (10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
@@ -778,6 +785,20 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Date_of_MAiD__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Date_of_MAiD__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -2721,6 +2742,7 @@
         <queriedFields>Id</queriedFields>
         <queriedFields>Federal_Safeguards__c</queriedFields>
         <queriedFields>Type</queriedFields>
+        <queriedFields>Case_Type_Reported_Date__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_FAIL</name>
@@ -3009,6 +3031,16 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Year_2023_Default</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
     </variables>
     <variables>
         <name>Var1641_Bupivacaine</name>
