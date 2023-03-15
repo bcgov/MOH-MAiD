@@ -2361,6 +2361,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Form_1634__c.SLF_Q11__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Form_1634__c.SLF_Q15_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2402,6 +2407,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Form_1634__c.SLF_S10_Formula__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Form_1634__c.SLF_S11__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4957,6 +4967,16 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>S1_HC_2023__c.SEX_S06__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.SLF_Q45__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.SLF_Q50__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
