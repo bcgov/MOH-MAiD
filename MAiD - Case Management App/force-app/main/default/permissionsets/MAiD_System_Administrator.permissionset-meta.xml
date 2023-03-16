@@ -4611,11 +4611,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>S1_HC_2023__c.PHA_Q16__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>S1_HC_2023__c.PROC_Q100__c</field>
         <readable>true</readable>
     </fieldPermissions>
