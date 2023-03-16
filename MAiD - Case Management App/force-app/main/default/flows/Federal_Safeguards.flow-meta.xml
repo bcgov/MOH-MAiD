@@ -1668,7 +1668,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule37_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5) OR 6 OR 7</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 5) AND (((8 AND 9 AND 10 AND 11 AND 12) AND (((13 AND 14) OR (NOT(13))) AND ((15 AND 16) OR (NOT(15))) AND ((17 AND 18) OR (NOT(17))))) OR 19))OR 6 OR 7</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Ideterminethatthepatient</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1713,6 +1713,69 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_Default_Year_2023</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Reasonsforseriousconsideration</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_NONRFNDSafeguardscompleteddate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Servicesofferedordiscussed</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Expertconsultantspecialty</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Expertconsultantspecialty</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_SpecifyexpertspecialtyifOther</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Servicesofferedordiscussed</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other service</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_IfOtherservicespecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Reasonsforseriousconsideration</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Otherreasonspecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>Var_Default_Year_2023</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -2049,6 +2112,10 @@
             <field>Ensured_there_were_at_least_90_days__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Expertconsultantspecialty</assignToReference>
+            <field>Expert_consultant_specialty__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_ExpertiseConsultantWas</assignToReference>
             <field>Expertise_consultant_was__c</field>
         </outputAssignments>
@@ -2059,6 +2126,10 @@
         <outputAssignments>
             <assignToReference>Var1634_Ideterminethatthepatient</assignToReference>
             <field>I_determine_that_the_patient__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_IfOtherservicespecify</assignToReference>
+            <field>If_Other_service_specify__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_IfYespatientconsented</assignToReference>
@@ -2079,6 +2150,14 @@
         <outputAssignments>
             <assignToReference>Var1634_MAiDPrescribersignselfadminist</assignToReference>
             <field>MAiD_Prescriber_sign_self_administ__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_NONRFNDSafeguardscompleteddate</assignToReference>
+            <field>NON_RFND_safeguard_completed_date__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Otherreasonspecify</assignToReference>
+            <field>Other_reason_specify__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientauthorizedtorecieve2nddose</assignToReference>
@@ -2145,6 +2224,10 @@
             <field>Prescriber_ensured_expertise_in_patient__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Reasonsforseriousconsideration</assignToReference>
+            <field>Reasons_for_serious_consideration__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Receivedsecondassessmentindicating</assignToReference>
             <field>Received_a_second_assessment_indicating__c</field>
         </outputAssignments>
@@ -2155,6 +2238,14 @@
         <outputAssignments>
             <assignToReference>Var1634_Righttowithdrawtheirreques</assignToReference>
             <field>Right_to_withdraw_their_request__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Servicesofferedordiscussed</assignToReference>
+            <field>Services_offered_or_discussed__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_SpecifyexpertspecialtyifOther</assignToReference>
+            <field>Specify_expert_specialty_if_Other__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_The_patientwasatriskoflosingcapacity</assignToReference>
@@ -2502,6 +2593,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Expertconsultantspecialty</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_ExpertiseConsultantWas</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2531,6 +2629,13 @@
     </variables>
     <variables>
         <name>Var1634_Ideterminethatthepatient</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_IfOtherservicespecify</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -2567,6 +2672,20 @@
     <variables>
         <name>Var1634_MAiDPrescribersignselfadminist</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_NONRFNDSafeguardscompleteddate</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Otherreasonspecify</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2670,6 +2789,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Reasonsforseriousconsideration</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Receivedsecondassessmentindicating</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -2693,6 +2819,20 @@
     <variables>
         <name>Var1634_Righttowithdrawtheirreques</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Servicesofferedordiscussed</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_SpecifyexpertspecialtyifOther</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2795,6 +2935,16 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_Default_Year_2023</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
     </variables>
     <variables>
         <name>Varbool</name>

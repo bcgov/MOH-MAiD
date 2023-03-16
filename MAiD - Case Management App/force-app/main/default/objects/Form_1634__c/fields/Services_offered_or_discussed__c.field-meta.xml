@@ -58,9 +58,9 @@
                 <label>Health Care services including Palliative care</label>
             </value>
             <value>
-                <fullName>Other</fullName>
+                <fullName>Other Service</fullName>
                 <default>false</default>
-                <label>Other</label>
+                <label>Other Service</label>
             </value>
         </valueSetDefinition>
     </valueSet>
