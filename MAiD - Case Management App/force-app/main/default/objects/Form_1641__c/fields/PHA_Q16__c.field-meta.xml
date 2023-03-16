@@ -3,7 +3,7 @@
     <fullName>PHA_Q16__c</fullName>
     <externalId>false</externalId>
     <formula>IF( 
-    ISPICKVAL(Form_1634__r.I_determine_that_the_patient__c, &quot;Pharmacist&quot;),1,0
+    ISPICKVAL(Case__r.Account.Type, &quot;Pharmacist&quot;),1,0
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>PHA_Q16</label>
