@@ -2981,6 +2981,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Form_1641__c.PHA_Q16__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Form_1641__c.PHA_Q20_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4672,11 +4677,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>S1_HC_2023__c.MDR1_Q05__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.PHA_Q16__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
