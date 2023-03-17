@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow> xmlns="http://soap.sforce.com/2006/04/metadata">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
     <assignments>
         <name>Rule_1_In_Scope</name>
@@ -1883,14 +1883,14 @@
         <name>Rule_7</name>
         <label>Rule 7</label>
         <locationX>2188</locationX>
-        <locationY>554</locationY>
+        <locationY>553</locationY>
         <defaultConnector>
             <targetReference>Rule_7_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 7 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_7_Not_Applicable</name>
-            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>1 OR ((2 AND 3 AND 4 AND 5 AND 6) OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_P_Other</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1933,6 +1933,13 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Case__r.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <dateValue>2023-01-01</dateValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_8</targetReference>
             </connector>
@@ -1940,7 +1947,7 @@
         </rules>
         <rules>
             <name>Rule_7_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND (7 AND 8))</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((6 AND (7 AND 8)) AND 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1995,6 +2002,13 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Case__r.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <dateValue>2023-01-01</dateValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2195,7 +2209,8 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <description>Updated Rule 40 and 47</description>
+    <description>Updated Rule 7</description>
+    <environments>Default</environments>
     <formulas>
         <name>is_If_other_specify</name>
         <dataType>Boolean</dataType>
@@ -2219,14 +2234,14 @@ I determine that the patient: = 3 - Does not meet the criteria for MAiD</descrip
         <expression>ISPICKVAL({!Get_Form_1634.I_determine_that_the_patient__c},&apos;3 - Does not meet the criteria for MAiD&apos;)</expression>
     </formulas>
     <formulas>
-        <name>is_Selected_Cardio_Vascular_Condition_Other</name>
-        <dataType>Boolean</dataType>
-        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Cardio-vascular condition - Other&apos;)</expression>
-    </formulas>
-    <formulas>
         <name>is_Selected_Cancer_Other</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Cancer - Other&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_Cardio_Vascular_Condition_Other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Cardio-vascular condition - Other&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_H_Cancer_other</name>
@@ -2259,14 +2274,14 @@ I determine that the patient: = 3 - Does not meet the criteria for MAiD</descrip
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Organ Failure - Other&apos;)</expression>
     </formulas>
     <formulas>
-        <name>is_Selected_Other_Eligibility</name>
-        <dataType>Boolean</dataType>
-        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply__c},&apos;Other&apos;)</expression>
-    </formulas>
-    <formulas>
         <name>is_Selected_Other_Condition_Co_Morbidity</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Other Condition / Co-Morbidity&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_Other_Eligibility</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply__c},&apos;Other&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_P_Other</name>
