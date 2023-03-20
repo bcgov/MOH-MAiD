@@ -2255,8 +2255,6 @@
         <outputAssignments>
             <assignToReference>Var1634_Ifyesindicateservicesmeans</assignToReference>
             <field>If_yes_indicate_services_means__c</field>
-            <assignToReference>Var1634_isYesReasonForOpinion</assignToReference>
-            <field>If_yes_reasons_for_opinion__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_ReqSignDate</assignToReference>
