@@ -286,6 +286,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Other_specify__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Length_of_medical_condition__c</field>
             </layoutItems>
             <layoutItems>
