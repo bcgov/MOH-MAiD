@@ -1062,7 +1062,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rule11</name>
-            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5</conditionLogic>
+            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5 AND 6</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1097,6 +1097,10 @@
                 <rightValue>
                     <stringValue>1 - IV</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_12_skip</targetReference>
@@ -1105,7 +1109,7 @@
         </rules>
         <rules>
             <name>Rule112</name>
-            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5</conditionLogic>
+            <conditionLogic>(1 OR 2) AND ((3 AND (NOT(4)) AND 11) OR (3 AND 4 AND 5 AND (7 OR ((6 AND 8) AND ((9 AND 10) OR (NOT(9)))))))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1140,6 +1144,39 @@
                 <rightValue>
                     <elementReference>Varbool</elementReference>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ifyesindicateservicesmeans</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ifyesindicateservicesmeans</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Otherservicesmeansspecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
+                <operator>EqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_12_skip</targetReference>
@@ -1978,6 +2015,7 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
+    <description>Rule 11 Update</description>
     <decisions>
         <name>Rule_66</name>
         <label>Rule 66</label>
@@ -2216,6 +2254,8 @@
             <field>If_Yes_patient_consented__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Ifyesindicateservicesmeans</assignToReference>
+            <field>If_yes_indicate_services_means__c</field>
             <assignToReference>Var1634_isYesReasonForOpinion</assignToReference>
             <field>If_yes_reasons_for_opinion__c</field>
         </outputAssignments>
@@ -2248,12 +2288,20 @@
             <field>Other_reason_specify__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Otherservicesmeansspecify</assignToReference>
+            <field>Other_services_means_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Patientauthorizedtorecieve2nddose</assignToReference>
             <field>Patient_authorized_to_recieve_2nd_dose__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientconsentedtoassessment</assignToReference>
             <field>Patient_consented_to_assessment__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Patienthaddifficultycommunicating</assignToReference>
+            <field>Patient_had_difficulty_communicating__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patienthasbeeninformedofriskoflos</assignToReference>
@@ -2748,6 +2796,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Ifyesindicateservicesmeans</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_IfYespatientconsented</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -2811,6 +2866,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Otherservicesmeansspecify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Patientauthorizedtorecieve2nddose</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -2820,6 +2882,13 @@
     <variables>
         <name>Var1634_Patientconsentedtoassessment</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Patienthaddifficultycommunicating</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
