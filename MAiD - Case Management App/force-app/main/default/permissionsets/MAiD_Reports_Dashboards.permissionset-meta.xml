@@ -3,6 +3,11 @@
     <description>Giving MAiD users permissions to create and edit reports and dashboards</description>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Form_1641__c.PHA_Q16__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>S1_HC_2023__c.ADM_Q15__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -249,6 +254,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>S1_HC_2023__c.ELG_Q112I__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>S1_HC_2023__c.ELG_Q130__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -673,6 +683,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>S1_HC_2023__c.MDR1_Q05__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>S1_HC_2023__c.PROC_Q100__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1075,15 +1090,6 @@
         <modifyAllRecords>false</modifyAllRecords>
         <object>Form_1634__c</object>
         <viewAllRecords>false</viewAllRecords>
-    </objectPermissions>
-    <objectPermissions>
-        <allowCreate>true</allowCreate>
-        <allowDelete>false</allowDelete>
-        <allowEdit>true</allowEdit>
-        <allowRead>true</allowRead>
-        <modifyAllRecords>false</modifyAllRecords>
-        <object>S1_HC_2023__c</object>
-        <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <tabSettings>
         <tab>standard-Dashboard</tab>

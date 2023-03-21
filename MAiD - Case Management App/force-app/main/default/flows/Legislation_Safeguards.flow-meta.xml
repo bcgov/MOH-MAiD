@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Flow> xmlns="http://soap.sforce.com/2006/04/metadata">
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
     <assignments>
         <name>Rule_1_In_Scope</name>
@@ -1101,7 +1101,7 @@
         <defaultConnectorLabel>Rule 4 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_4_Not_Applicable</name>
-            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>1 OR 7 OR 8 OR 9 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_K_Neurological_condition_other</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1144,6 +1144,27 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Neurologicalcondition_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Organ_Failure_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Respiratory_Disease_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_5</targetReference>
             </connector>
@@ -1151,7 +1172,7 @@
         </rules>
         <rules>
             <name>Rule_4_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((6 AND 7) OR (8 AND 7) OR (9 AND 10) OR (11 AND 12))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1196,6 +1217,41 @@
             </conditions>
             <conditions>
                 <leftValueReference>Get_Form_1634.If_Neurological_condition_other_speci__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Neurologicalcondition_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Organ_Failure_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_Organ_Failure_other_specify__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Respiratory_Disease_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_Respiratory_other_specify__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -1544,7 +1600,7 @@
         <defaultConnectorLabel>Rule 5 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_5_Not_Applicable</name>
-            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>1 OR 7 OR 8 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_M_Cardio_vascular_condition</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1587,6 +1643,20 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Respiratory_Disease_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Cardio_Vascular_Condition_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_6</targetReference>
             </connector>
@@ -1594,7 +1664,7 @@
         </rules>
         <rules>
             <name>Rule_5_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (((6 OR 8) AND 7) OR (9 AND 10))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1644,6 +1714,27 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Cardio_Vascular_Condition_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Respiratory_Disease_Other</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_Respiratory_other_specify__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_5_In_Scope</targetReference>
             </connector>
@@ -1661,7 +1752,7 @@
         <defaultConnectorLabel>Rule 6 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_6_Not_Applicable</name>
-            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>1 OR 7 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_O_Multiple_comorbidities</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1704,6 +1795,13 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Other_Condition_Co_Morbidity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_7</targetReference>
             </connector>
@@ -1711,7 +1809,7 @@
         </rules>
         <rules>
             <name>Rule_6_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((6 AND 7) OR (8 AND 9))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1761,6 +1859,20 @@
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>is_Selected_Other_Condition_Co_Morbidity</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Other_Condition_Co_morbidity_specify__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_6_In_Scope</targetReference>
             </connector>
@@ -1771,14 +1883,14 @@
         <name>Rule_7</name>
         <label>Rule 7</label>
         <locationX>2188</locationX>
-        <locationY>554</locationY>
+        <locationY>553</locationY>
         <defaultConnector>
             <targetReference>Rule_7_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 7 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_7_Not_Applicable</name>
-            <conditionLogic>1 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>1 OR ((2 AND 3 AND 4 AND 5 AND 6) OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_P_Other</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1821,6 +1933,13 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Case__r.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <dateValue>2023-01-01</dateValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_8</targetReference>
             </connector>
@@ -1828,7 +1947,7 @@
         </rules>
         <rules>
             <name>Rule_7_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (6 AND (7 AND 8))</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((6 AND (7 AND 8)) AND 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1883,6 +2002,13 @@
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Case__r.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <dateValue>2023-01-01</dateValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2084,6 +2210,7 @@
         </rules>
     </decisions>
     <description>Rule 3 Update </description>
+    <environments>Default</environments>
     <formulas>
         <name>is_If_other_specify</name>
         <dataType>Boolean</dataType>
@@ -2112,6 +2239,11 @@ I determine that the patient: = 3 - Does not meet the criteria for MAiD</descrip
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Cancer - Other&apos;)</expression>
     </formulas>
     <formulas>
+        <name>is_Selected_Cardio_Vascular_Condition_Other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Cardio-vascular condition - Other&apos;)</expression>
+    </formulas>
+    <formulas>
         <name>is_Selected_H_Cancer_other</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;H - Cancer - other&apos;)</expression>
@@ -2127,9 +2259,24 @@ I determine that the patient: = 3 - Does not meet the criteria for MAiD</descrip
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;M - Cardio-vascular condition&apos;)</expression>
     </formulas>
     <formulas>
+        <name>is_Selected_Neurologicalcondition_Other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Neurological condition - Other&apos;)</expression>
+    </formulas>
+    <formulas>
         <name>is_Selected_O_Multiple_comorbidities</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;O - Multiple co-morbidities&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_Organ_Failure_Other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Organ Failure - Other&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_Other_Condition_Co_Morbidity</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Other Condition / Co-Morbidity&apos;)</expression>
     </formulas>
     <formulas>
         <name>is_Selected_Other_Eligibility</name>
@@ -2145,6 +2292,11 @@ I determine that the patient: = 3 - Does not meet the criteria for MAiD</descrip
         <name>is_Selected_Patients_Describe_Suffering_Eligibility</name>
         <dataType>Boolean</dataType>
         <expression>Includes({!Get_Form_1634.Patient_desc_suffering_If_yes_select_all__c},&apos;Other&apos;)</expression>
+    </formulas>
+    <formulas>
+        <name>is_Selected_Respiratory_Disease_Other</name>
+        <dataType>Boolean</dataType>
+        <expression>Includes({!Get_Form_1634.If_yes_select_all_that_apply_1__c},&apos;Respiratory Disease - Other&apos;)</expression>
     </formulas>
     <interviewLabel>Legislation Safeguards {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Legislation Safeguards</label>

@@ -203,6 +203,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>SLF_S11__c</field>
+            <table>Form_1634__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Did_the_patient_cause_their_death__c</field>
             <table>Form_1634__c</table>
         </columns>
@@ -238,6 +243,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>SLF_Q11__c</field>
+            <table>Form_1634__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>ELG_Q100_Formula__c</field>
             <table>Form_1634__c</table>
         </columns>
@@ -258,6 +268,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>SLF_Q50__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>ELG_Q115_Formula__c</field>
             <table>Form_1634__c</table>
         </columns>
@@ -275,6 +290,11 @@
             <checkedByDefault>false</checkedByDefault>
             <field>ELG_Q15_Formula__c</field>
             <table>Form_1634__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>SLF_Q45__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -2995,6 +3015,106 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>COD_Q40I__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q15A__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_S20J__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q15B__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q15C__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q15D__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q15E__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_S15E__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q15F__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20A__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20B__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20E__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20F__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20C__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20D__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20G__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20H__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20I__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>WOR_Q20J__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>MDR1_Q05__c</field>
+            <table>Form_1634__c.S1_HC_2023__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ELG_Q130__c</field>
             <table>Form_1634__c.S1_HC_2023__r</table>
         </columns>
         <masterLabel>HC2023 Reporting Fields</masterLabel>

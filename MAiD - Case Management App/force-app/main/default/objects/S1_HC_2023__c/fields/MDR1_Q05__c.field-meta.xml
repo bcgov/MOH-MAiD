@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MDR1_Q05__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(((ISPICKVAL( Form_1634__r.Case__r.Type , &apos;MAiD Death Foreseeable&apos;) || ISPICKVAL( Form_1634__r.Case__r.Type , &apos;MAiD Death Not Foreseeable&apos;)) &amp;&amp;  ISPICKVAL( Form_1634__r.How_was_MAiD_administered__c , &apos;2 - Oral&apos;)), 2, 
+IF((ISPICKVAL( Form_1634__r.Case__r.Type , &apos;MAiD Death Foreseeable&apos;) || ISPICKVAL( Form_1634__r.Case__r.Type , &apos;MAiD Death Not Foreseeable&apos;)), 1,  IF(ISPICKVAL( Form_1634__r.Case__r.Type , &apos;Discontinuation of Planning: Withdrawn Request&apos;), 5, 
+IF(ISPICKVAL( Form_1634__r.Case__r.Type , &apos;Discontinuation of Planning: Ineligible&apos;), 6,
+IF(ISPICKVAL( Form_1634__r.Case__r.Type , &apos;Discontinuation of Planning: Death Prior&apos;), 7, NULL) ) ) ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>MDR1_Q05</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
