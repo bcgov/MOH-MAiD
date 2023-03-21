@@ -1736,16 +1736,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_the_patient_withdrew_request_what_we__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.If_transferred_was_it_due_to_facility_po__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.If_yes_cause_of_death_Specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2441,11 +2431,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Form_1634__c.SLF_Q11__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Form_1634__c.SLF_Q15_Formula__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -2487,11 +2472,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Form_1634__c.SLF_S10_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1634__c.SLF_S11__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2977,11 +2957,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Form_1641__c.PHA_Q15_Formula__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Form_1641__c.PHA_Q16__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4051,61 +4026,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40A__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40B__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40C__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40D__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40E__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40F__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40G__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40H__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40I__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_Q40J__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.COD_S40I__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>S1_HC_2023__c.DIS_Q05__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4246,11 +4166,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>S1_HC_2023__c.ELG_Q130__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>S1_HC_2023__c.ELG_Q140__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -4362,11 +4277,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>S1_HC_2023__c.ELG_Q47E__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.ELG_Q47F__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -4672,11 +4582,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>S1_HC_2023__c.IND_Q05F__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.MDR1_Q05__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -5056,112 +4961,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>S1_HC_2023__c.SLF_Q45__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.SLF_Q50__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>S1_HC_2023__c.SPC_Q16__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>S1_HC_2023__c.SPC_S16__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q15A__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q15B__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q15C__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q15D__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q15E__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q15F__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20A__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20B__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20C__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20D__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20E__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20F__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20G__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20H__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20I__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_Q20J__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_S15E__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>S1_HC_2023__c.WOR_S20J__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
