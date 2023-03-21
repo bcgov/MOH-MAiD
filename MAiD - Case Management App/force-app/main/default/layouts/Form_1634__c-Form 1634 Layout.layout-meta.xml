@@ -286,6 +286,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>If_multiple_co_morbidities_specify__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Other_specify__c</field>
             </layoutItems>
             <layoutItems>
