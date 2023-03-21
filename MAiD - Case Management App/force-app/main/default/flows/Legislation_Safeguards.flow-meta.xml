@@ -1752,7 +1752,7 @@
         <defaultConnectorLabel>Rule 6 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_6_Not_Applicable</name>
-            <conditionLogic>1 OR 7 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(7 AND 6) OR (1 AND 2 AND 3 AND 4 AND 5 )</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_O_Multiple_comorbidities</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1809,7 +1809,7 @@
         </rules>
         <rules>
             <name>Rule_6_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((6 AND 7) OR (8 AND 9))</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (((6 AND 7) OR (NOT(6))) AND ((8 AND 9) OR (NOT(8))))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2209,7 +2209,7 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <description>Rule 5 Update </description>
+    <description>Rule 6 Update</description>
     <environments>Default</environments>
     <formulas>
         <name>is_If_other_specify</name>
