@@ -1600,7 +1600,7 @@
         <defaultConnectorLabel>Rule 5 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_5_Not_Applicable</name>
-            <conditionLogic>1 OR 7 OR 8 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 7 AND 8 ) OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_M_Cardio_vascular_condition</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1664,7 +1664,7 @@
         </rules>
         <rules>
             <name>Rule_5_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (((6 OR 8) AND 7) OR (9 AND 10))</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (((6 AND 7) OR (NOT(6))) AND((8 AND 7) OR (NOT(8))) AND  ((9 AND 10) OR (NOT(9))))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2209,7 +2209,7 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <description>Updated Rule 7</description>
+    <description>Rule 5 Update</description>
     <environments>Default</environments>
     <formulas>
         <name>is_If_other_specify</name>
