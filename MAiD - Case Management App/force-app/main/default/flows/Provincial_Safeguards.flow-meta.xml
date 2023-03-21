@@ -537,7 +537,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule27_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND (12 AND 13) AND (8 OR 9))  OR (10 AND 11)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND ((12 AND 13) OR (NOT(13)) ) AND (8 OR 9))  OR (10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PractitionersSignature</leftValueReference>
                 <operator>EqualTo</operator>
