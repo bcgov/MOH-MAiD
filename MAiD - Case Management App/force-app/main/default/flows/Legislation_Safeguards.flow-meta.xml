@@ -1752,7 +1752,7 @@
         <defaultConnectorLabel>Rule 6 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_6_Not_Applicable</name>
-            <conditionLogic>(7 AND 6) OR (1 AND 2 AND 3 AND 4 AND 5 )</conditionLogic>
+            <conditionLogic>(7 AND 1) OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_O_Multiple_comorbidities</leftValueReference>
                 <operator>EqualTo</operator>
