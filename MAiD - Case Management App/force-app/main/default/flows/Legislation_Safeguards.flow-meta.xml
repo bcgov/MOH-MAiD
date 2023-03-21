@@ -909,7 +909,7 @@
         <defaultConnectorLabel>Rule 3 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_3_Not_Applicable</name>
-            <conditionLogic>1 OR 7 OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
+            <conditionLogic>(1 AND 7) OR (2 AND 3 AND 4 AND 5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>is_Selected_H_Cancer_other</leftValueReference>
                 <operator>EqualTo</operator>
@@ -966,7 +966,7 @@
         </rules>
         <rules>
             <name>Rule_3_Success</name>
-            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND ((6  OR 8) AND 7)</conditionLogic>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND (((6 AND 7) OR (NOT(6))) AND ((7 AND 8) OR (NOT(8))))</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2209,7 +2209,7 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <description>Rule 5 Update</description>
+    <description>Rule 4 Update </description>
     <environments>Default</environments>
     <formulas>
         <name>is_If_other_specify</name>
