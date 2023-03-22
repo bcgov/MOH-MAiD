@@ -1736,16 +1736,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Form_1634__c.If_the_patient_withdrew_request_what_we__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Form_1634__c.If_transferred_was_it_due_to_facility_po__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
         <field>Form_1634__c.If_yes_cause_of_death_Specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
