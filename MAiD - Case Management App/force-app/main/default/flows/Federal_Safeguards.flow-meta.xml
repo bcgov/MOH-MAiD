@@ -2025,8 +2025,8 @@
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Pass</name>
-            <conditionLogic>1 AND ( 2 AND 3 AND ( 4 AND 5) AND 6)</conditionLogic>
+            <name>Rule_66_Pass</name>
+            <conditionLogic>(1 AND 2 AND (((3 AND 4 AND 7) AND ((5 AND 6) OR (NOT(5))) ) OR (NOT(3)))) OR (NOT(1))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
                 <operator>GreaterThanOrEqualTo</operator>
@@ -2037,23 +2037,17 @@
             <conditions>
                 <leftValueReference>Var1634_lengthOfMedicalCondition</leftValueReference>
                 <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue></stringValue>
-                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_AdvanceStateOfIrreversibleDecline</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Yes</stringValue>
+                    <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_isYesReasonForOpinion</leftValueReference>
                 <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue></stringValue>
-                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_isYesReasonForOpinion</leftValueReference>
@@ -2065,17 +2059,18 @@
             <conditions>
                 <leftValueReference>Var1634_ifOtherreasonspecify</leftValueReference>
                 <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue></stringValue>
-                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_AdvanceStateOfIrreversibleDecline</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>UpdateFedralPASS</targetReference>
             </connector>
-            <label>Pass</label>
+            <label>Rule 66 Pass</label>
         </rules>
     </decisions>
-    <description>Rule 11 Update</description>
+    <description>Rule 66 Update</description>
     <environments>Default</environments>
     <formulas>
         <name>VarNumberofDays</name>
@@ -2255,6 +2250,10 @@
         <outputAssignments>
             <assignToReference>Var1634_Ifyesindicateservicesmeans</assignToReference>
             <field>If_yes_indicate_services_means__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_isYesReasonForOpinion</assignToReference>
+            <field>If_yes_reasons_for_opinion__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_ReqSignDate</assignToReference>
