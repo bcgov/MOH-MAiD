@@ -1826,7 +1826,7 @@
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Rule_45_Pass</name>
-            <conditionLogic>1 AND 2 AND 3 AND 5 AND 4</conditionLogic>
+            <conditionLogic>(1 OR 5) AND 2 AND 3  AND 4</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_date_of_death_unkown</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1921,7 +1921,7 @@
         <defaultConnectorLabel>default</defaultConnectorLabel>
         <rules>
             <name>Check_Rule_45_3</name>
-            <conditionLogic>1 AND 2</conditionLogic>
+            <conditionLogic>(1 AND 2) OR (NOT(1))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Underlying_reason_s_of_death_1</leftValueReference>
                 <operator>Contains</operator>
@@ -1937,21 +1937,6 @@
                 <targetReference>Rule_48</targetReference>
             </connector>
             <label>Check Rule 45-3</label>
-        </rules>
-        <rules>
-            <name>Check_45_3_Other_natural_death_reason</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>Var1634_Underlying_reason_s_of_death_1</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Other reason</stringValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>Rule_48</targetReference>
-            </connector>
-            <label>Check 45 -3 -Other natural death reason</label>
         </rules>
     </decisions>
     <decisions>
@@ -2966,7 +2951,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Rule 50 : Testing 3</description>
+    <description>Rule 45 : Completed 1</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
