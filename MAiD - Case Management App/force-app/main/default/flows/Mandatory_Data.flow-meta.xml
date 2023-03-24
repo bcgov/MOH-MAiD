@@ -2712,7 +2712,7 @@
         <defaultConnectorLabel>Rule 57 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_57_Skipped</name>
-            <conditionLogic>1 OR (2 AND (3 OR 4 OR 5))</conditionLogic>
+            <conditionLogic>(3 OR 4 OR 5) AND (1 OR 2 OR 6 OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Assessor_did_not_receive_1632</leftValueReference>
                 <operator>Contains</operator>
@@ -2746,6 +2746,20 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Incomplete</stringValue>
                 </rightValue>
             </conditions>
             <connector>
