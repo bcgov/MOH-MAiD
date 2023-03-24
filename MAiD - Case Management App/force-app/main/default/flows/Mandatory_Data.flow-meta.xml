@@ -466,6 +466,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_68_Fail</name>
+        <label>Rule 68 Fail</label>
+        <locationX>476</locationX>
+        <locationY>1121</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule68Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Update_Mandatory_Fail</name>
         <label>Update Mandatory Fail</label>
         <locationX>1253</locationX>
@@ -669,6 +685,13 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Rule 58 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule68Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 68 Validation Fail</stringValue>
         </value>
     </constants>
     <decisions>
@@ -2906,6 +2929,135 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Rule_68</name>
+        <label>Rule 68</label>
+        <locationX>385</locationX>
+        <locationY>908</locationY>
+        <defaultConnector>
+            <targetReference>Rule_68_Fail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 68 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_68_Pass</name>
+            <conditionLogic>(1 AND (2 OR (20 AND 21)) AND ((3 AND 4) OR (NOT(3)))AND (5 OR 6) AND (18 AND ((7 AND 8 ) OR (NOT(7))))AND (19 AND ((9 AND 10) OR (NOT(9))))AND (11 AND ((12 AND 13) OR ((14 AND 15) AND(16 AND 17))  OR (NOT(12))))) OR  (NOT(1))</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Preferred_Gender__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Preferred_Gender__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Other_Preferred_Gender_Specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Patient_Postal_Code__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Patient_has_no_home_address__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Identify_as_Indigenious__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_yes_Indigenious_heritage__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Racial_Ethinic_or_Cultural_Group__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Other_Race_Specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Usual_Place_of_Residence__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Usual_Place_of_Residence__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Other_Residence_Specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Usual_Place_of_Residence__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Private residence</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Private_Residence_Living_arrangement__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Private_Residence_Living_arrangement__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Other living Arrangement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Other_Living_Arrangement_Specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Identify_as_Indigenious__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Racial_Ethinic_or_Cultural_Group__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Older_MAiD_Forms_to_2021__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Older_MAiD_Forms_to_2021__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_69</targetReference>
+            </connector>
+            <label>Rule 68 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Skip_Rule_57_58</name>
         <label>Skip Rule 57 58</label>
         <locationX>875</locationX>
@@ -2951,7 +3103,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Rule 45 : Completed 1</description>
+    <description>Rule 68 Update</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
@@ -3500,6 +3652,25 @@
         <queriedFields>Mandatory_Data_Feedback_Message__c</queriedFields>
         <queriedFields>X1633__c</queriedFields>
         <queriedFields>Case_Type_Reported_Date__c</queriedFields>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Type</queriedFields>
+        <queriedFields>Mandatory_Data__c</queriedFields>
+        <queriedFields>Mandatory_Data_Feedback_Message__c</queriedFields>
+        <queriedFields>X1633__c</queriedFields>
+        <queriedFields>Preferred_Gender__c</queriedFields>
+        <queriedFields>If_Other_Preferred_Gender_Specify__c</queriedFields>
+        <queriedFields>Patient_Postal_Code__c</queriedFields>
+        <queriedFields>Patient_has_no_home_address__c</queriedFields>
+        <queriedFields>Identify_as_Indigenious__c</queriedFields>
+        <queriedFields>If_yes_Indigenious_heritage__c</queriedFields>
+        <queriedFields>Racial_Ethinic_or_Cultural_Group__c</queriedFields>
+        <queriedFields>If_Other_Race_Specify__c</queriedFields>
+        <queriedFields>Usual_Place_of_Residence__c</queriedFields>
+        <queriedFields>Other_Residence_Specify__c</queriedFields>
+        <queriedFields>If_Private_Residence_Living_arrangement__c</queriedFields>
+        <queriedFields>If_Other_Living_Arrangement_Specify__c</queriedFields>
+        <queriedFields>Older_MAiD_Forms_to_2021__c</queriedFields>
+        
     </recordLookups>
     <recordUpdates>
         <name>UpdateMandatory_Fail</name>
