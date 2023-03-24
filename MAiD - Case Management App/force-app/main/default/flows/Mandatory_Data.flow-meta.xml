@@ -3174,6 +3174,7 @@
             </connector>
             <label>Rule 69 Pass</label>
         </rules>
+    </decisions>
     <decisions>
         <name>Skip_Rule_57_58</name>
         <label>Skip Rule 57 58</label>
