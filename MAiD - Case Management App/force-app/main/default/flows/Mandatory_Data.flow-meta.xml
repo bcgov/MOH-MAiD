@@ -466,6 +466,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_67_Fail</name>
+        <label>Rule 67 Fail</label>
+        <locationX>80</locationX>
+        <locationY>1085</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule67Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Rule_68_Fail</name>
         <label>Rule 68 Fail</label>
         <locationX>476</locationX>
@@ -701,6 +717,13 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Rule 58 Validation Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule67Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 67 Validation Fail</stringValue>
         </value>
     </constants>
     <constants>
@@ -2966,6 +2989,54 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Rule_67</name>
+        <label>Rule 67</label>
+        <locationX>50</locationX>
+        <locationY>929</locationY>
+        <defaultConnector>
+            <targetReference>Rule_67_Fail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 67 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_67_Pass</name>
+            <conditionLogic>(1 AND 2 AND ((3 AND 4 AND ((5 AND 6) OR NOT(5))) OR NOT(3))) OR (NOT(1))</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PriorRequestforMAiD</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PriorRequestforMAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_IfPriorRequestoutcome</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_IfPriorRequestoutcome</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_OtherOutcomeSpecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <label>Rule 67 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Rule_68</name>
         <label>Rule 68</label>
         <locationX>385</locationX>
@@ -3221,7 +3292,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Rule 69 Update</description>
+    <description>Rule 67 Update</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
@@ -3486,6 +3557,10 @@
             <field>If_Other_specify_2__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_IfPriorRequestoutcome</assignToReference>
+            <field>If_Prior_Request_outcome__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_If_Yes_change_due_to_loss_of_capacity</assignToReference>
             <field>If_Yes_is_patients_change_in_eligbilit__c</field>
         </outputAssignments>
@@ -3578,6 +3653,10 @@
             <field>MAiD_Location_Address__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_OtherOutcomeSpecify</assignToReference>
+            <field>Other_Outcome_Specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_MAiD_Location_Type</assignToReference>
             <field>MAiD_Location_Type__c</field>
         </outputAssignments>
@@ -3620,6 +3699,10 @@
         <outputAssignments>
             <assignToReference>Var1634_Pract_prev_determine_patient_eligible</assignToReference>
             <field>Practitioner_previously_determined_patie__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_PriorRequestforMAiD</assignToReference>
+            <field>Prior_Request_for_MAiD__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Profession_if_yes_select_all_that_apply</assignToReference>
@@ -4208,6 +4291,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_IfPriorRequestoutcome</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Is1633Checked</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -4237,6 +4327,13 @@
     </variables>
     <variables>
         <name>Var1634_MAiDLocationAdress</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_OtherOutcomeSpecify</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -4314,6 +4411,13 @@
     </variables>
     <variables>
         <name>Var1634_PriorPatientConsultation</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_PriorRequestforMAiD</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
