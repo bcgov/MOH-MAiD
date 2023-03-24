@@ -3117,7 +3117,6 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-<<<<<<< HEAD
     <description>Rule 68 Update</description>
     <environments>Default</environments>
     <formulas>
@@ -3666,7 +3665,7 @@
         <queriedFields>Mandatory_Data__c</queriedFields>
         <queriedFields>Mandatory_Data_Feedback_Message__c</queriedFields>
         <queriedFields>X1633__c</queriedFields>
-        <queriedFields>Case_Type_Reported_Date__c</queriedFields>
+        <queriedFields>Case_Type_Reported_Date__c</quer
         <queriedFields>Preferred_Gender__c</queriedFields>
         <queriedFields>If_Other_Preferred_Gender_Specify__c</queriedFields>
         <queriedFields>Patient_Postal_Code__c</queriedFields>
