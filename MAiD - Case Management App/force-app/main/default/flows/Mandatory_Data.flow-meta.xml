@@ -2712,7 +2712,7 @@
         <defaultConnectorLabel>Rule 57 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_57_Skipped</name>
-            <conditionLogic>1 OR (2 AND (3 OR 4 OR 5))</conditionLogic>
+            <conditionLogic>(3 OR 4 OR 5) AND (1 OR 2 OR 6 OR 7)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Assessor_did_not_receive_1632</leftValueReference>
                 <operator>Contains</operator>
@@ -2746,6 +2746,20 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Incomplete</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -3103,6 +3117,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
+<<<<<<< HEAD
     <description>Rule 68 Update</description>
     <environments>Default</environments>
     <formulas>
@@ -3652,11 +3667,6 @@
         <queriedFields>Mandatory_Data_Feedback_Message__c</queriedFields>
         <queriedFields>X1633__c</queriedFields>
         <queriedFields>Case_Type_Reported_Date__c</queriedFields>
-        <queriedFields>Id</queriedFields>
-        <queriedFields>Type</queriedFields>
-        <queriedFields>Mandatory_Data__c</queriedFields>
-        <queriedFields>Mandatory_Data_Feedback_Message__c</queriedFields>
-        <queriedFields>X1633__c</queriedFields>
         <queriedFields>Preferred_Gender__c</queriedFields>
         <queriedFields>If_Other_Preferred_Gender_Specify__c</queriedFields>
         <queriedFields>Patient_Postal_Code__c</queriedFields>
