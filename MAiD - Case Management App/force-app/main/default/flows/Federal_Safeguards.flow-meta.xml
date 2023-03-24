@@ -1055,7 +1055,7 @@
         <name>CheckRule11</name>
         <label>CheckRule11,13 &amp; 14</label>
         <locationX>805</locationX>
-        <locationY>773</locationY>
+        <locationY>774</locationY>
         <defaultConnector>
             <targetReference>Rule11_13_14_ErrorMsg</targetReference>
         </defaultConnector>
@@ -1100,7 +1100,7 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_12_skip</targetReference>
@@ -1109,7 +1109,7 @@
         </rules>
         <rules>
             <name>Rule112</name>
-            <conditionLogic>(1 OR 2) AND ((3 AND (NOT(4)) AND 11) OR (3 AND 4 AND 5 AND (7 OR ((6 AND 8) AND ((9 AND 10) OR (NOT(9)))))))</conditionLogic>
+            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 10 AND 5 AND (6 OR ((5 AND 7) AND ((8 AND 9) OR (NOT(8)))))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1129,13 +1129,6 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - IV</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_PatlostCapacity</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1176,7 +1169,7 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_12_skip</targetReference>
@@ -2070,7 +2063,7 @@
             <label>Rule 66 Pass</label>
         </rules>
     </decisions>
-    <description>Rule 66 Update</description>
+    <description>Rule 11 Update</description>
     <environments>Default</environments>
     <formulas>
         <name>VarNumberofDays</name>
