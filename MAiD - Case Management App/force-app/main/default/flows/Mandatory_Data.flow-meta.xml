@@ -4471,4 +4471,14 @@
         <isOutput>false</isOutput>
         <scale>0</scale>
     </variables>
+    <variables>
+        <name>Var_DefaultYear_2023</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
+    </variables>
 </Flow>
