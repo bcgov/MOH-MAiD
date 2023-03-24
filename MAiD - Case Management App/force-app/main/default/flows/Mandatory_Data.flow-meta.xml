@@ -482,6 +482,22 @@
         </connector>
     </assignments>
     <assignments>
+        <name>Rule_69_Fail</name>
+        <label>Rule 69 Fail</label>
+        <locationX>260</locationX>
+        <locationY>1171</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule69Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Update_Mandatory_Fail</name>
         <label>Update Mandatory Fail</label>
         <locationX>1253</locationX>
@@ -692,6 +708,13 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Rule 68 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule69Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 69 Validation Fail</stringValue>
         </value>
     </constants>
     <decisions>
@@ -3058,6 +3081,86 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Rule_69</name>
+        <label>Rule 69</label>
+        <locationX>219</locationX>
+        <locationY>934</locationY>
+        <defaultConnector>
+            <targetReference>Rule_69_Fail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 69 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_69_Pass</name>
+            <conditionLogic>(1 AND 2 AND((3 AND 4) OR (NOT(3))) AND (5 AND ((9 AND 10) OR (11 AND 12) OR ((NOT(9)) AND (NOT(11)) ))) AND 6 AND ((7 AND 8) OR (NOT(7)))) OR (NOT(1))</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Requestor_disability_opinion__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Requestor_disability_opinion__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_yes_types_of_disabilites__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Length_of_Disability__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Daily_Activity_Limits__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_yes_types_of_disabilites__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other long term condition</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Other_long_term_condition_specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Length_of_Disability__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Years</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Years__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Length_of_Disability__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Months</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Months__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_67</targetReference>
+            </connector>
+            <label>Rule 69 Pass</label>
+        </rules>
+    <decisions>
         <name>Skip_Rule_57_58</name>
         <label>Skip Rule 57 58</label>
         <locationX>875</locationX>
@@ -3103,7 +3206,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Rule 68 Update</description>
+    <description>Rule 69 Update</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
@@ -3670,6 +3773,13 @@
         <queriedFields>If_Private_Residence_Living_arrangement__c</queriedFields>
         <queriedFields>If_Other_Living_Arrangement_Specify__c</queriedFields>
         <queriedFields>Older_MAiD_Forms_to_2021__c</queriedFields>
+        <queriedFields>Requestor_disability_opinion__c</queriedFields>
+        <queriedFields>If_yes_types_of_disabilites__c</queriedFields>
+        <queriedFields>Length_of_Disability__c</queriedFields>
+        <queriedFields>Daily_Activity_Limits__c</queriedFields>
+        <queriedFields>Other_long_term_condition_specify__c</queriedFields>
+        <queriedFields>If_Years__c</queriedFields>
+        <queriedFields>If_Months__c</queriedFields>
         
     </recordLookups>
     <recordUpdates>
