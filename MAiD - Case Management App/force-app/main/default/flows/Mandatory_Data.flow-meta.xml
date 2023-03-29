@@ -2766,7 +2766,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateMandatoryPass</targetReference>
+                <targetReference>Rule_68</targetReference>
             </connector>
             <label>Rule 56 Pass</label>
         </rules>
@@ -3057,7 +3057,7 @@
                 <leftValueReference>Var1634_OtherOutcomeSpecify</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
-            <label>Rule 67 Pass</label>
+            <label>UpdateMandatoryPass</label>
         </rules>
     </decisions>
     <decisions>
