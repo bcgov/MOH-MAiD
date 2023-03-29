@@ -180,7 +180,7 @@
     <assignments>
         <name>Rule37ErrorMsg</name>
         <label>Rule37ErrorMsg</label>
-        <locationX>1075</locationX>
+        <locationX>1076</locationX>
         <locationY>1608</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
@@ -290,10 +290,10 @@
         <locationX>1155</locationX>
         <locationY>1886</locationY>
         <assignmentItems>
-            <assignToReference>Var66_ErrMsg</assignToReference>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
             <value>
-                <stringValue>Rule 66 Failed</stringValue>
+                <elementReference>Var66Err</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -379,6 +379,13 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Rule 41 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var66Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 66 is Failed</stringValue>
         </value>
     </constants>
     <constants>
@@ -2063,7 +2070,7 @@
             <label>Rule 66 Pass</label>
         </rules>
     </decisions>
-    <description>Rule 11 Update</description>
+    <description>Rule 66 Update</description>
     <environments>Default</environments>
     <formulas>
         <name>VarNumberofDays</name>
@@ -3110,13 +3117,6 @@
     <variables>
         <name>Var1645_Verbal_Consent</name>
         <dataType>Boolean</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>Var66_ErrMsg</name>
-        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
