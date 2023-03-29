@@ -2044,12 +2044,40 @@
         <defaultConnectorLabel>Rule 46 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_46_Pass</name>
-            <conditionLogic>(1 AND (2 OR 3 OR 4)) AND ((5 AND 6) OR 7 OR 8)</conditionLogic>
+            <conditionLogic>(  ( (1 AND 2) OR ( 1 AND 4 AND 3) )  AND ( 6 OR 7 OR 8) )  OR  5 OR  ( 9 AND 10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Is1633Checked</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Older_MAiD_Forms_to_2021__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Is1633Checked</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2074,28 +2102,24 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_Who_did_you_receive_the_written_request</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>4 - Patient directly - other, specify</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_patient_directly_other_specify</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Who_did_you_receive_the_written_request</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Who_did_you_receive_the_written_request</leftValueReference>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>4 - Patient directly - other, specify</stringValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -3292,7 +3316,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Rule 67 Update</description>
+    <description>Rule : 46 is completing with All changes..!</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
@@ -3653,16 +3677,16 @@
             <field>MAiD_Location_Address__c</field>
         </outputAssignments>
         <outputAssignments>
-            <assignToReference>Var1634_OtherOutcomeSpecify</assignToReference>
-            <field>Other_Outcome_Specify__c</field>
-        </outputAssignments>
-        <outputAssignments>
             <assignToReference>Var1634_MAiD_Location_Type</assignToReference>
             <field>MAiD_Location_Type__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Name_of_facility_if_due_to_MAiD_policy</assignToReference>
             <field>Name_of_facility_if_due_to_MAiD_policy__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_OtherOutcomeSpecify</assignToReference>
+            <field>Other_Outcome_Specify__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Other_natural_death_reason</assignToReference>
@@ -3873,7 +3897,6 @@
         <queriedFields>Other_long_term_condition_specify__c</queriedFields>
         <queriedFields>If_Years__c</queriedFields>
         <queriedFields>If_Months__c</queriedFields>
-        
     </recordLookups>
     <recordUpdates>
         <name>UpdateMandatory_Fail</name>
@@ -4333,13 +4356,6 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
-        <name>Var1634_OtherOutcomeSpecify</name>
-        <dataType>String</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
         <name>Var1634_Name_of_facility_if_due_to_MAiD_policy</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -4362,6 +4378,13 @@
     </variables>
     <variables>
         <name>Var1634_Other_supports_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_OtherOutcomeSpecify</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -4669,6 +4692,16 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var_DefaultYear_2023</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
+    </variables>
+    <variables>
         <name>VarCase_CaseTypeReporteddate</name>
         <dataType>Date</dataType>
         <isCollection>false</isCollection>
@@ -4685,15 +4718,5 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <scale>0</scale>
-    </variables>
-    <variables>
-        <name>Var_DefaultYear_2023</name>
-        <dataType>Date</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-        <value>
-            <dateValue>2023-01-01</dateValue>
-        </value>
     </variables>
 </Flow>
