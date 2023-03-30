@@ -3075,7 +3075,10 @@
                 <leftValueReference>Var1634_OtherOutcomeSpecify</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
-            <label>UpdateMandatoryPass</label>
+            <connector>
+                <targetReference>UpdateMandatoryPass</targetReference>
+            </connector>
+            <label>Rule 67 pass</label>
         </rules>
     </decisions>
     <decisions>
