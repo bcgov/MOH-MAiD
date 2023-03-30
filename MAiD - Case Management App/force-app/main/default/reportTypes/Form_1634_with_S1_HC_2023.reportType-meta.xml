@@ -128,6 +128,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>X1634_Old_form__c</field>
+            <table>Form_1634__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>COD_Q20_Formula__c</field>
             <table>Form_1634__c</table>
         </columns>
