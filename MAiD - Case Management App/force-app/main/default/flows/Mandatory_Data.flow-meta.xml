@@ -1743,7 +1743,7 @@
         <defaultConnectorLabel>Rule 42 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_42_Pass</name>
-            <conditionLogic>((( 14 AND 1 AND 2 AND 3 AND 4 AND 5 AND 6 ) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 13)) AND (7 OR 8 OR 9)) OR (10 AND 11 AND 12)</conditionLogic>
+            <conditionLogic>((( 14 AND 1 AND 2 AND 3 AND 4 AND 5 AND 6 ) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 13 AND 15)) AND (7 OR 8 OR 9)) OR (10 AND 11 AND 12)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PriorPatientConsultation</leftValueReference>
                 <operator>IsNull</operator>
@@ -1838,6 +1838,10 @@
                 <rightValue>
                     <elementReference>VarCase_CaseTypeReporteddate</elementReference>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_required_palliative_care</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_21</targetReference>
@@ -2920,7 +2924,7 @@
         <defaultConnectorLabel>Rule 58 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_58_Skipped</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3 OR 4) AND (5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Is1633Checked</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2947,6 +2951,20 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Incomplete</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -3316,7 +3334,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Rule : 46 is completing with All changes..!</description>
+    <description>Final Copy : Rule : 42 &amp; 58 Changes are done...!</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
