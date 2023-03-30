@@ -3929,6 +3929,7 @@
         <queriedFields>Other_long_term_condition_specify__c</queriedFields>
         <queriedFields>If_Years__c</queriedFields>
         <queriedFields>If_Months__c</queriedFields>
+        <queriedFields>Health_Authority__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>UpdateMandatory_Fail</name>
