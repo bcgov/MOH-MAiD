@@ -2135,15 +2135,15 @@
     <decisions>
         <name>Rule_48</name>
         <label>Rule 48</label>
-        <locationX>2664</locationX>
-        <locationY>1694</locationY>
+        <locationX>2986</locationX>
+        <locationY>1136</locationY>
         <defaultConnector>
             <targetReference>Rule_48_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 48 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_48_Pass</name>
-            <conditionLogic>(7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 ) ) )  OR 8 OR (7 AND 10 AND 12)</conditionLogic>
+            <conditionLogic>13 OR ( (NOT(13)) AND (7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 ) ) )  OR 8 OR (7 AND 10 AND 12))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2223,6 +2223,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
                 </rightValue>
             </conditions>
             <connector>
