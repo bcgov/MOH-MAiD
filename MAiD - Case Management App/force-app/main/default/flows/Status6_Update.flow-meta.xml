@@ -4,8 +4,8 @@
     <decisions>
         <name>Case_Status_Not_Applicable</name>
         <label>Case Status Not Applicable</label>
-        <locationX>410</locationX>
-        <locationY>122</locationY>
+        <locationX>411</locationX>
+        <locationY>123</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Case_Status_Applicable</name>
@@ -26,15 +26,15 @@
     <decisions>
         <name>Check_for_MAiD_Manager</name>
         <label>Check for MAiD Manager</label>
-        <locationX>614</locationX>
-        <locationY>54</locationY>
+        <locationX>615</locationX>
+        <locationY>55</locationY>
         <defaultConnector>
             <targetReference>Update_Insufficient_Previledges</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>MaiD_Manager_check</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND ((4 AND 5) OR (NOT(4))))</conditionLogic>
             <conditions>
                 <leftValueReference>$UserRole.Name</leftValueReference>
                 <operator>Contains</operator>
@@ -55,6 +55,17 @@
                 <rightValue>
                     <stringValue>Ready for Manager Review</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.BCCS_Manager_Review_Required__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Include_in_BCCS_Report__c</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Check_requirements</targetReference>
@@ -179,7 +190,8 @@
             <label>Validate Requirements=Yes</label>
         </rules>
     </decisions>
-    <description>1.4 Fixed the Status 6 message and scenarios</description>
+    <description>Status flow Update</description>
+    <environments>Default</environments>
     <interviewLabel>Status6 Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status6 Update</label>
     <processMetadataValues>
