@@ -5046,6 +5046,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>S1_HC_2023__c.SLF_Q31__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>S1_HC_2023__c.SLF_Q45__c</field>
         <readable>true</readable>
     </fieldPermissions>
