@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
+        <field>Form_1634__c$Record_ID1__c</field>
+    </columns>
+    <columns>
         <field>Form_1634__c$Case__c</field>
     </columns>
     <columns>
@@ -998,6 +1001,47 @@
     </columns>
     <columns>
         <field>Form_1634__c$SUP_Q10_Formula__c</field>
+    </columns>
+    <columns>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_S40D__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_Q47C__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_Q47D__c</field>
+    </columns>
+    <columns>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_S47E__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$ELG_Q47F__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$PROC_Q185B__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$SLF_Q11__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$SLF_S11__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$SLF_Q45__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c.S1_HC_2023__r$SLF_Q50__c</field>
+    </columns>
+    <columns>
+        <field>Form_1634__c.S1_HC_2023__r$SLF_Q31__c</field>
     </columns>
     <format>Tabular</format>
     <name>S2 2023 HC Report-Oral MAiD</name>
