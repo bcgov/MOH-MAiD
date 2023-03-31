@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>College_ID__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>Practitioner_Name__r.College_ID__pc</formula>
     <label>College ID</label>
