@@ -2154,7 +2154,7 @@
         <defaultConnectorLabel>Rule 48 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_48_Pass</name>
-            <conditionLogic>13 OR ( (NOT(13)) AND (7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 ) ) )  OR 8 OR (7 AND 10 AND 12))</conditionLogic>
+            <conditionLogic>(7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 ) ) )  OR 8 OR (7 AND 10 AND 12)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2234,13 +2234,6 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <elementReference>Var_DefaultYear_2023</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -3359,7 +3352,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Rule 68, 69 Update</description>
+    <description> Rule 48 Bypass rule changes reverted</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
