@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Prevent_save_on_duplicate_PHN__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Prevent save on duplicate PHN</label>
     <trackFeedHistory>false</trackFeedHistory>

@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>If_Other_Preferred_Gender_Specify__c</fullName>
     <description>Created for 2023 HC reporting requirements if patient does not identify gender as male or female</description>
+    <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <inlineHelpText>Enter gender patient prefers if other is selected e.g Non-Binary, etc</inlineHelpText>
     <label>If Other Preferred Gender, Specify</label>

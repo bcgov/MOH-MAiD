@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SPC_Q20_ID__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>Account.College_ID__pc</formula>
     <label>SPC_Q20</label>
