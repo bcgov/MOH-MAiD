@@ -2,8 +2,18 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Practitioner__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Practitioner</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Nurse Practitioner, Pharmacist, Physician</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Error Log</relationshipLabel>
     <relationshipName>Error</relationshipName>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SPC_Q10_Specialty__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>IF ( INCLUDES (  Account.Specialty__pc  , &quot;1 - Anesthesiology&quot; ), &quot;1 - Anesthesiology; &quot;,null ) &amp;
 IF ( INCLUDES (  Account.Specialty__pc  , &quot;2 - Cardiology&quot; ), &quot;2 - Cardiology; &quot;,null ) &amp;
@@ -13,7 +14,7 @@ IF ( INCLUDES (  Account.Specialty__pc  , &quot;8 - Oncology&quot; ), &quot;8 - 
 IF ( INCLUDES (  Account.Specialty__pc  , &quot;9 - Palliative medicine&quot; ), &quot;9 - Palliative medicine; &quot;,null ) &amp;
 IF ( INCLUDES (  Account.Specialty__pc  , &quot;10 - Respiratory medicine&quot; ), &quot;10 - Respiratory medicine; &quot;,null ) &amp;
 IF ( INCLUDES (  Account.Specialty__pc  , &quot;11 - Other&quot; ), &quot;11 - Other; &quot;,null )</formula>
-   <label>SPC_Q10 - Specialty</label>
+    <label>SPC_Q10 - Specialty</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

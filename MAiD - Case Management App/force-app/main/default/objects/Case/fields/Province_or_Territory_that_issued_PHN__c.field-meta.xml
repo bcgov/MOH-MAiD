@@ -2,6 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Province_or_Territory_that_issued_PHN__c</fullName>
     <defaultValue>&apos;59 - British Columbia&apos;</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Province or Territory that issued PHN</label>
     <required>false</required>
