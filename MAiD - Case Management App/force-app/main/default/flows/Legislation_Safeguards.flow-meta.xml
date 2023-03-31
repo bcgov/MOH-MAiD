@@ -1352,9 +1352,9 @@
             </conditions>
             <conditions>
                 <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>4- NO determination made</stringValue>
+                    <stringValue>3 - Does not meet the criteria for MAiD</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1371,7 +1371,7 @@
         </rules>
         <rules>
             <name>Rule_47_Success_0</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND (9 OR (11 AND 12)) AND 10</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1410,6 +1410,9 @@
             <conditions>
                 <leftValueReference>Get_Form_1634.Patient_make_a_voluntary_request_for_MAI__c</leftValueReference>
                 <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - No</stringValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>is_selected_3_Does_not_meet_the_criteria_for_MAiD</leftValueReference>
@@ -1417,6 +1420,17 @@
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.Patient_make_a_voluntary_request_for_MAI__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>2 - No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Form_1634.If_No_why_not_voluntary__c</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_47_In_Scope</targetReference>
@@ -2223,7 +2237,7 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <description>Rule 47 Update</description>
+    <description>Rule 47 Update latest change after lara suggestion</description>
     <environments>Default</environments>
     <formulas>
         <name>is_If_other_specify</name>

@@ -2135,15 +2135,15 @@
     <decisions>
         <name>Rule_48</name>
         <label>Rule 48</label>
-        <locationX>2664</locationX>
-        <locationY>1694</locationY>
+        <locationX>2986</locationX>
+        <locationY>1136</locationY>
         <defaultConnector>
             <targetReference>Rule_48_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 48 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_48_Pass</name>
-            <conditionLogic>(7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 ) ) )  OR 8 OR (7 AND 10 AND 12)</conditionLogic>
+            <conditionLogic>13 OR ( (NOT(13)) AND (7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 ) ) )  OR 8 OR (7 AND 10 AND 12))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2223,6 +2223,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -3092,7 +3099,7 @@
         <defaultConnectorLabel>Rule 68 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_68_Pass</name>
-            <conditionLogic>(1 AND (2 OR (20 AND 21)) AND ((3 AND 4) OR (NOT(3)))AND (5 OR 6) AND (18 AND ((7 AND 8 ) OR (NOT(7))))AND (19 AND ((9 AND 10) OR (NOT(9))))AND (11 AND ((12 AND 13) OR ((14 AND 15) AND(16 AND 17))  OR (NOT(12))))) OR  (NOT(1))</conditionLogic>
+            <conditionLogic>(1 AND (2 OR (20 AND 21)) AND 22 AND  ((3 AND 4) OR (NOT(3)))AND (5 OR 6) AND (18 AND ((7 AND 8 ) OR (NOT(7))))AND (19 AND ((9 AND 10) OR (NOT(9))))AND (11 AND ((12 AND 13) OR ((14 AND 15) AND(16 AND 17))  OR ((NOT(12)) AND (NOT(14)) )))) OR  (NOT(1))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
                 <operator>GreaterThanOrEqualTo</operator>
@@ -3203,6 +3210,10 @@
                 <rightValue>
                     <stringValue>Yes</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Health_Authority__c</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_69</targetReference>
@@ -3337,7 +3348,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Final Copy : Rule : 42 &amp; 58 Changes are done...!</description>
+    <description>Rule 68 Update</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
@@ -3918,6 +3929,7 @@
         <queriedFields>Other_long_term_condition_specify__c</queriedFields>
         <queriedFields>If_Years__c</queriedFields>
         <queriedFields>If_Months__c</queriedFields>
+        <queriedFields>Health_Authority__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>UpdateMandatory_Fail</name>
