@@ -1342,7 +1342,7 @@
         <defaultConnectorLabel>Rule 47 Fails</defaultConnectorLabel>
         <rules>
             <name>Rule_47_Not_Applicable_0</name>
-            <conditionLogic>1 AND 2</conditionLogic>
+            <conditionLogic>1 OR (2 AND 3)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -1355,6 +1355,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>3 - Does not meet the criteria for MAiD</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2230,7 +2237,7 @@
             <label>Rule 9 Success</label>
         </rules>
     </decisions>
-    <description>Rule 47 Update latest change</description>
+    <description>Rule 47 Update latest change after lara suggestion</description>
     <environments>Default</environments>
     <formulas>
         <name>is_If_other_specify</name>
