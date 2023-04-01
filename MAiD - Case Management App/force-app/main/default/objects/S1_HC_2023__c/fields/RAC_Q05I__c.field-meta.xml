@@ -3,7 +3,7 @@
     <fullName>RAC_Q05I__c</fullName>
     <externalId>false</externalId>
     <formula>IF ( ISNULL ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c ), 0,
-IF ( INCLUDES ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c, &quot;Do not know&quot; ), 2,1))</formula>
+IF ( INCLUDES ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c, &quot;Does not know&quot; ), 1,2))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>RAC_Q05I</label>
     <precision>18</precision>
