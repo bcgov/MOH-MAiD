@@ -2048,7 +2048,7 @@
         <defaultConnectorLabel>Rule 46 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_46_Pass</name>
-            <conditionLogic>(  ( (1 AND 2) OR ( 1 AND 12 AND 4 AND 3 AND 13) )  AND ( 6 OR 7 OR 8) )  OR  5 OR  ( 9 AND 10 AND 11)</conditionLogic>
+            <conditionLogic>(1 AND (2 OR 3 OR 4)) AND ((5 AND 6) OR 7 OR 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Is1633Checked</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2057,84 +2057,49 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
-                <operator>LessThan</operator>
-                <rightValue>
-                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
-                <operator>GreaterThanOrEqualTo</operator>
-                <rightValue>
-                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Older_MAiD_Forms_to_2021__c</leftValueReference>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Yes</stringValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_Is1633Checked</leftValueReference>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Who_did_you_receive_the_written_request</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>4 - Patient directly - other, specify</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_patient_directly_other_specify</leftValueReference>
+                <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <leftValueReference>Var1634_Who_did_you_receive_the_written_request</leftValueReference>
                 <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <leftValueReference>Var1634_Who_did_you_receive_the_written_request</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Older_MAiD_Forms_to_2021__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Older_MAiD_Forms_to_2021__c</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>No</stringValue>
+                    <stringValue>4 - Patient directly - other, specify</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -3352,7 +3317,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description> Rule 48 Bypass rule changes reverted</description>
+    <description> Rule 46 changes Reverted to Original Version</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
