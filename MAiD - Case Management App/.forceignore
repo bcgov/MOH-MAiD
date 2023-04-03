@@ -43,3 +43,7 @@ force-app\main\default\objects\Form_1642__c\fields\Practitioner__c.field-meta.xm
 force-app\main\default\objects\Form_1645__c\fields\Practitioner__c.field-meta.xml
 force-app\main\default\objects\Form_RXMAR__c\fields\Administering_Prescriber_Full_Name__c.field-meta.xml
 force-app\main\default\objects\Form_RXMAR__c\fields\Prescribing_Practitioner__c.field-meta.xml
+
+force-app\main\default\objects\IDP_User_Registration_Permission_Set__mdt
+force-app\main\default\objects\IDP_User_Registration_User_Mapping__mdt
+force-app\main\default\customMetadata
