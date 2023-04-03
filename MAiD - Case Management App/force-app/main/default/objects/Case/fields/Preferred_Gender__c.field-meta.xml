@@ -18,9 +18,9 @@
                 <label>1 - Male</label>
             </value>
             <value>
-                <fullName>2 -  Female</fullName>
+                <fullName>2 - Female</fullName>
                 <default>false</default>
-                <label>2 -  Female</label>
+                <label>2 - Female</label>
             </value>
             <value>
                 <fullName>3 - Other</fullName>
