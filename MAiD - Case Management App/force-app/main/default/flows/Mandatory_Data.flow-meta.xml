@@ -2762,7 +2762,7 @@
         <defaultConnectorLabel>Rule 57 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_57_Skipped</name>
-            <conditionLogic>(3 OR 4 OR 5) AND (1 OR 2 OR 6 OR 7)</conditionLogic>
+            <conditionLogic>((3 OR 4 OR 5) AND (1 OR 2 OR 6 OR 7)) OR (1 AND (8 OR 9))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Assessor_did_not_receive_1632</leftValueReference>
                 <operator>Contains</operator>
@@ -2810,6 +2810,20 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Incomplete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2900,7 +2914,7 @@
         <defaultConnectorLabel>Rule 58 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_58_Skipped</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4) AND (5 OR 6)</conditionLogic>
+            <conditionLogic>(1 AND (2 OR 3 OR 4) AND (5 OR 6)) OR (9 AND (7 OR 8))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Is1633Checked</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2941,6 +2955,27 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Incomplete</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Assessor_did_not_receive_1632</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>1- Yes</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -3317,7 +3352,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description> Rule 46 changes Reverted to Original Version</description>
+    <description>Rule 57, 58, Updated</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
