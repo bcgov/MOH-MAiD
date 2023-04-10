@@ -1327,7 +1327,7 @@
                 <leftValueReference>Var1634_Types_of_palliative_care_received</leftValueReference>
                 <operator>Contains</operator>
                 <rightValue>
-                    <stringValue>Other</stringValue>
+                    <stringValue>Other Care Service</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
