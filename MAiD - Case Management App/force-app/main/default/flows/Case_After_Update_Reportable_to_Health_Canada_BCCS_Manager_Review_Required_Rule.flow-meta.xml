@@ -2,7 +2,7 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
     <decisions>
-        <description>If Case Type is &quot;MAiD Death Foreseeable OR MAiD Death NOT Foreseeable&quot; AND &quot;Potential BCCS Review&quot; on the 1634 form in section Eligibility Criteria equals &quot;Yes&quot; THEN &quot;BCCS Manager Review Required&quot; is &quot;TRUE&quot; (Non-editable), if that&apos;s not true then False(By default bypass i.e., the checkbox should be empty)</description>
+        <description>If Case Type is &quot;MAiD Death Foreseeable OR MAiD Death NOT Foreseeable&quot; AND &quot;Potential BCCS Review&quot; on the 1634 form in section Eligibility Criteria equals &quot;Yes&quot; THEN &quot;BCCS Manager Review Required&quot; is &quot;TRUE&quot; (Non-editable), if that&apos;s not true then bypass the rule</description>
         <name>BCCS_Manager_Review_Required_Rule</name>
         <label>BCCS Manager Review Required Rule</label>
         <locationX>770</locationX>
@@ -68,7 +68,39 @@
         </rules>
     </decisions>
     <decisions>
-        <description>If &quot;Patient MAiD Request date field&quot; =/+ 2018-11-01 AND if Case Type Reported Date = -/ 2023-01-01 THEN &quot;Reportable to Health Canada&quot; is TRUE      EXCEPTION: If Case Type Reported Date =/+ 2023-01-01  and Patient MAiD Request date field is Null THEN &quot;Reportable to Health Canada&quot; is &quot;TRUE&quot;  or  IF  in 1634 Form field &quot;I determined that the patient:&quot; field equals &quot;4- NO determination made&quot; THEN Reportable to Health Canada is &quot;FALSE&quot;(By default bypass i.e., the checkbox should be empty)</description>
+        <name>Parent_Case_Health_Authority_Check</name>
+        <label>Parent Case Health Authority Check</label>
+        <locationX>255</locationX>
+        <locationY>133</locationY>
+        <defaultConnector>
+            <targetReference>Get_Form_1634</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Success</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.RecordType.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ErrorLogRecordType</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Parent.Health_Authority__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CaseRecordHealthAuthorityUpdate</targetReference>
+            </connector>
+            <label>Success</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>If &quot;Patient MAiD Request date field&quot; =/+ 2018-11-01 AND if Case Type Reported Date = -/ 2023-01-01 THEN &quot;Reportable to Health Canada&quot; is TRUE      EXCEPTION: If Case Type Reported Date =/+ 2023-01-01 THEN &quot;Reportable to Health Canada&quot; is &quot;TRUE&quot;  or  IF  in 1634 Form field &quot;I determined that the patieint:&quot; field equals &quot;4- NO determination made&quot; THEN Reportable to Health Canada is &quot;FALSE&quot;</description>
         <name>Reportable_to_Health_Canada_Rule</name>
         <label>Reportable to Health Canada Rule</label>
         <locationX>776</locationX>
@@ -206,7 +238,7 @@
             <label>HCR_True</label>
         </rules>
     </decisions>
-    <description>This is for updating Reportable to Health Canada and BCCS Manager Review Required check box fields  33333</description>
+    <description>Error log healthcare</description>
     <environments>Default</environments>
     <interviewLabel>Case- After Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case- After Update Reportable to Health Canada-BCCS Manager Review Required Rule</label>
@@ -233,7 +265,7 @@
         <name>Get_Form_1634</name>
         <label>Get Form 1634</label>
         <locationX>776</locationX>
-        <locationY>359</locationY>
+        <locationY>318</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Reportable_to_Health_Canada_Rule</targetReference>
@@ -277,6 +309,22 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>CaseRecordHealthAuthorityUpdate</name>
+        <label>CaseRecordHealthAuthorityUpdate</label>
+        <locationX>180</locationX>
+        <locationY>494</locationY>
+        <connector>
+            <targetReference>Get_Form_1634</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Health_Authority__c</field>
+            <value>
+                <elementReference>$Record.Parent.Health_Authority__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>reportable_to_health_canada_False</name>
         <label>reportable to health canada False</label>
         <locationX>1148</locationX>
@@ -312,13 +360,13 @@
         <locationX>650</locationX>
         <locationY>48</locationY>
         <connector>
-            <targetReference>Get_Form_1634</targetReference>
+            <targetReference>Parent_Case_Health_Authority_Check</targetReference>
         </connector>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
     <variables>
         <description>Patient MAiD Request date field&quot; =/+ 2018-11-01 AND if Case Type Reported Date = -/ 2023-01-01</description>
         <name>caseTypeReportedDate</name>
@@ -328,6 +376,16 @@
         <isOutput>false</isOutput>
         <value>
             <dateValue>2023-01-01</dateValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ErrorLogRecordType</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>Error Log</stringValue>
         </value>
     </variables>
     <variables>
