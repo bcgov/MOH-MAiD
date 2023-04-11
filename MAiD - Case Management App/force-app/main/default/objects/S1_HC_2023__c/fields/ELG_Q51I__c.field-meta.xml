@@ -5,7 +5,7 @@
     <formula>IF( 
     ISNULL ( Form_1634__r.Patient_desc_suffering_If_yes_select_all__c ), 0,
     IF ( 
-        INCLUDES( Form_1634__r.Patient_desc_suffering_If_yes_select_all__c, &quot;Emotional distress/anxiety/fear/suffering&quot; ),
+        INCLUDES( Form_1634__r.Patient_desc_suffering_If_yes_select_all__c, &quot;Emotional distress/anxiety/fear/existential suffering&quot; ),
         1,2
     )
 )</formula>
