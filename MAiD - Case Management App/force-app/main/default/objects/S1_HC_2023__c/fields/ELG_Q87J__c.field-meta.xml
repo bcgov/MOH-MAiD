@@ -5,7 +5,7 @@
     <formula>IF(
     ISNULL ( Form_1634__r.Types_of_palliative_care_received__c ), 0,
     IF( 
-        INCLUDES ( Form_1634__r.Types_of_palliative_care_received__c, &quot;Other&quot; ), 1,2
+        INCLUDES ( Form_1634__r.Types_of_palliative_care_received__c, &quot;Other Care Service&quot; ), 1,2
     )
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
