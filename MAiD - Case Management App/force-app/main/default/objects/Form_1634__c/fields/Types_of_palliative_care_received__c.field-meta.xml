@@ -64,7 +64,7 @@
             <value>
                 <fullName>Other Care Service</fullName>
                 <default>false</default>
-                <label>Other</label>
+                <label>Other Care Service</label>
             </value>
         </valueSetDefinition>
     </valueSet>
