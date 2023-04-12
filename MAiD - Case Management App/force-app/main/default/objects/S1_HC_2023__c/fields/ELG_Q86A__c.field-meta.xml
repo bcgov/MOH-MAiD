@@ -5,7 +5,7 @@
     <formula>IF(
     ISNULL ( Form_1634__r.Location_of_Palliative_care__c ), 0,
     IF( 
-        INCLUDES ( Form_1634__r.Location_of_Palliative_care__c, &quot;Home based&quot; ), 1,2
+        INCLUDES ( Form_1634__r.Location_of_Palliative_care__c, &quot;Home-based&quot; ), 1,2
     )
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

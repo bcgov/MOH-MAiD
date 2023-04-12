@@ -2,23 +2,11 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SLF_S11__c</fullName>
     <externalId>false</externalId>
-    <formula>CASE ( MAiD_Location_Type__c ,
-&quot;1 - Hospital (exclude palliative care beds or units)&quot;,1,
-&quot;2 - Palliative care facility (include hospital based palliative care beds/unit)&quot;,2,
-&quot;3 - Residential care facility (including long term care facility, assisted living residence)&quot;,3,
-&quot;4 - Private residence&quot;,4,
-&quot;5 - Other Specify&quot;,5,
-&quot;6 - Hospice&quot;,2,
-&quot;7 - Medical Office or Clinic&quot;,5,
-&quot;8 - Ambulatory setting&quot;,5,
-&quot;9 - Community Care Facility&quot;,3,
-&quot;10 - Assisted Living Residence&quot;,3,0)</formula>
+    <formula>If_other_specify_4__c</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>SLF_S11</label>
-    <precision>18</precision>
     <required>false</required>
-    <scale>0</scale>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
+    <type>Text</type>
     <unique>false</unique>
 </CustomField>
