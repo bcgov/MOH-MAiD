@@ -5,7 +5,16 @@
     <formula>IF( 
     ISNULL ( Form_1634__r.If_yes_select_all_that_apply_1__c ), 0,
     IF(
-        INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Neurological Condition&quot; ), 1,2
+        (
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Neurological condition - (ALS)&quot; ) || 
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Neurological condition - Dementia&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Neurological condition - (M.S)&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Neurological condition - Parkinson&apos;s Disease&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Neurological condition - Other&quot; ) || 
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;I - Neurological condition - multiple sclerosis&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;J - Neurological condition - amyotrophic lateral sclerosis&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;K - Neurological condition - other&quot; )
+        ),1,2
     )
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

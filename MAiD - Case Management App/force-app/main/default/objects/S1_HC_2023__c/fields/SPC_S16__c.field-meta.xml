@@ -2,17 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>SPC_S16__c</fullName>
     <externalId>false</externalId>
-    <formula>IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;1 - Anesthesiology&quot; ), &quot;1 - Anesthesiology; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;2 - Cardiology&quot; ), &quot;2 - Cardiology; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;3 - Family medicine&quot; ), &quot;3 - Family medicine; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;4 - General internal medicine&quot; ), &quot;4 - General internal medicine; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;5 - Geriatric medicine&quot; ), &quot;5 - Geriatric medicine; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;6 - Nephrology&quot; ), &quot;6 - Nephrology; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;7 - Neurology&quot; ), &quot;7 - Neurology; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;8 - Oncology&quot; ), &quot;8 - Oncology; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;9 - Palliative medicine&quot; ), &quot;9 - Palliative medicine; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;10 - Respiratory medicine&quot; ), &quot;10 - Respiratory medicine; &quot;,null ) &amp;
-IF ( INCLUDES ( Form_1634__r.Case__r.Practitioner__r.Specialty__pc , &quot;11 - Other&quot; ), &quot;11 - Other; &quot;,null )</formula>
+    <formula>Form_1634__r.SPC_S10_Formula__c</formula>
     <label>SPC_S16</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
