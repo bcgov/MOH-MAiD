@@ -16,9 +16,19 @@
         <label>Date of written request received</label>
     </customValue>
     <customValue>
+        <fullName>Date of verbal or written request</fullName>
+        <default>false</default>
+        <label>Date of verbal or written request</label>
+    </customValue>
+    <customValue>
         <fullName>Prior patient knowledge/consultation</fullName>
         <default>false</default>
         <label>Prior patient knowledge/consultation</label>
+    </customValue>
+    <customValue>
+        <fullName>Prior MAiD Request</fullName>
+        <default>false</default>
+        <label>Prior MAiD Request</label>
     </customValue>
     <customValue>
         <fullName>Date of Assessment</fullName>
@@ -44,6 +54,46 @@
         <fullName>Interpreter info</fullName>
         <default>false</default>
         <label>Interpreter info</label>
+    </customValue>
+    <customValue>
+        <fullName>Request Safeguards are not met</fullName>
+        <default>false</default>
+        <label>Request Safeguards are not met</label>
+    </customValue>
+    <customValue>
+        <fullName>MAiD Request safeguards</fullName>
+        <default>false</default>
+        <label>MAiD Request safeguards</label>
+    </customValue>
+    <customValue>
+        <fullName>Patient informed safeguards</fullName>
+        <default>false</default>
+        <label>Patient informed safeguards</label>
+    </customValue>
+    <customValue>
+        <fullName>NRFND safeguards</fullName>
+        <default>false</default>
+        <label>NRFND safeguards</label>
+    </customValue>
+    <customValue>
+        <fullName>MAiD planning safeguards</fullName>
+        <default>false</default>
+        <label>MAiD planning safeguards</label>
+    </customValue>
+    <customValue>
+        <fullName>Waiver of Final consent Safeguards</fullName>
+        <default>false</default>
+        <label>Waiver of Final consent Safeguards</label>
+    </customValue>
+    <customValue>
+        <fullName>Self administration safeguards</fullName>
+        <default>false</default>
+        <label>Self administration safeguards</label>
+    </customValue>
+    <customValue>
+        <fullName>Administration of MAiD Safeguards</fullName>
+        <default>false</default>
+        <label>Administration of MAiD Safeguards</label>
     </customValue>
     <customValue>
         <fullName>Pg. 1 safeguards are not met</fullName>
@@ -86,6 +136,11 @@
         <label>Did not tick yes to ALL criteria</label>
     </customValue>
     <customValue>
+        <fullName>Criteria - If yes, Follow up question</fullName>
+        <default>false</default>
+        <label>Criteria - If yes, Follow up question</label>
+    </customValue>
+    <customValue>
         <fullName>Capability/incapability for informed consent</fullName>
         <default>false</default>
         <label>Capability/incapability for informed consent</label>
@@ -109,6 +164,16 @@
         <fullName>Reason for discontinuation</fullName>
         <default>false</default>
         <label>Reason for discontinuation</label>
+    </customValue>
+    <customValue>
+        <fullName>Date of Discontinuation</fullName>
+        <default>false</default>
+        <label>Date of Discontinuation</label>
+    </customValue>
+    <customValue>
+        <fullName>Discontinuation follow up questions</fullName>
+        <default>false</default>
+        <label>Discontinuation follow up questions</label>
     </customValue>
     <customValue>
         <fullName>Consult with other health care professionals</fullName>
@@ -146,6 +211,11 @@
         <label>Patient transfer for MAiD</label>
     </customValue>
     <customValue>
+        <fullName>Name of transferring facility with MAiD Policy</fullName>
+        <default>false</default>
+        <label>Name of transferring facility with MAiD Policy</label>
+    </customValue>
+    <customValue>
         <fullName>Patient information</fullName>
         <default>false</default>
         <label>Patient information</label>
@@ -154,6 +224,11 @@
         <fullName>Practitioner signature/initials</fullName>
         <default>false</default>
         <label>Practitioner signature/initials</label>
+    </customValue>
+    <customValue>
+        <fullName>Medication dosage/time</fullName>
+        <default>false</default>
+        <label>Medication dosage/time</label>
     </customValue>
     <customValue>
         <fullName>All safeguard boxes incomplete</fullName>
@@ -169,6 +244,16 @@
         <fullName>Prescription accountability</fullName>
         <default>false</default>
         <label>Prescription accountability</label>
+    </customValue>
+    <customValue>
+        <fullName>Meds not returned with 72 hours of MAiD</fullName>
+        <default>false</default>
+        <label>Meds not returned with 72 hours of MAiD</label>
+    </customValue>
+    <customValue>
+        <fullName>Dispensing Pharmacist information</fullName>
+        <default>false</default>
+        <label>Dispensing Pharmacist information</label>
     </customValue>
     <customValue>
         <fullName>Signatures</fullName>
