@@ -15,24 +15,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>MAiD Reporting</fullName>
-                <default>false</default>
-                <label>MAiD Reporting</label>
-            </value>
-            <value>
-                <fullName>Discontinuation Reporting</fullName>
-                <default>false</default>
-                <label>Discontinuation Reporting</label>
-            </value>
-            <value>
                 <fullName>1641 Reporting</fullName>
                 <default>false</default>
                 <label>1641 Reporting</label>
-            </value>
-            <value>
-                <fullName>Transfer of Request Reporting</fullName>
-                <default>false</default>
-                <label>Transfer of Request Reporting</label>
             </value>
             <value>
                 <fullName>1633 Form</fullName>
