@@ -2119,7 +2119,7 @@
         <defaultConnectorLabel>Rule 48 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_48_Pass</name>
-            <conditionLogic>(7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 ) ) )  OR 8 OR (7 AND 10 AND 12)</conditionLogic>
+            <conditionLogic>(7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 OR 13 ) ) )  OR 8 OR (7 AND 10 AND 12)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2199,6 +2199,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -3103,7 +3110,7 @@
         <defaultConnectorLabel>Rule 68 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_68_Pass</name>
-            <conditionLogic>(1 AND (2 OR (20 AND 21)) AND 22 AND  ((3 AND 4) OR (NOT(3)))AND (5 OR 6) AND (18 AND ((7 AND 8 ) OR (NOT(7))))AND (19 AND ((9 AND 10) OR (NOT(9))))AND (11 AND (((12 AND 13) OR ((14 AND 15) AND((16 AND 17) OR (NOT(16)))))  OR ((NOT(12)) AND (NOT(14)) )))) OR  (NOT(1))</conditionLogic>
+            <conditionLogic>(1 AND (2 OR (20 AND 21)) AND 22 AND  ((3 AND 4) OR (NOT(3)))AND (5 OR 6) AND (18 AND ((7 AND 8 ) OR (NOT(7))))AND ((19 AND ((9 AND 10) OR (NOT(9)))) OR (NOT(19))) AND (11 AND (((12 AND 13) OR ((14 AND 15) AND((16 AND 17) OR (NOT(16)))))  OR ((NOT(12)) AND (NOT(14)) )))) OR  (NOT(1))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
                 <operator>GreaterThanOrEqualTo</operator>
@@ -3352,7 +3359,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Rule 57, 58, Updated</description>
+    <description>Rule 48 Updated</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
