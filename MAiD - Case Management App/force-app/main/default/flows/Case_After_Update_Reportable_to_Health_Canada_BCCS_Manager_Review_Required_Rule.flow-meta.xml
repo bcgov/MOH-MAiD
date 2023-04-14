@@ -103,8 +103,8 @@
         <description>If &quot;Patient MAiD Request date field&quot; =/+ 2018-11-01 AND if Case Type Reported Date = -/ 2023-01-01 THEN &quot;Reportable to Health Canada&quot; is TRUE      EXCEPTION: If Case Type Reported Date =/+ 2023-01-01 THEN &quot;Reportable to Health Canada&quot; is &quot;TRUE&quot;  or  IF  in 1634 Form field &quot;I determined that the patieint:&quot; field equals &quot;4- NO determination made&quot; THEN Reportable to Health Canada is &quot;FALSE&quot;</description>
         <name>Reportable_to_Health_Canada_Rule</name>
         <label>Reportable to Health Canada Rule</label>
-        <locationX>777</locationX>
-        <locationY>479</locationY>
+        <locationX>780</locationX>
+        <locationY>478</locationY>
         <defaultConnector>
             <targetReference>BCCS_Manager_Review_Required_Rule</targetReference>
         </defaultConnector>
@@ -156,7 +156,7 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Case_Type_Reported_Date__c</leftValueReference>
-                <operator>LessThanOrEqualTo</operator>
+                <operator>LessThan</operator>
                 <rightValue>
                     <elementReference>caseTypeReportedDate</elementReference>
                 </rightValue>
@@ -201,7 +201,7 @@
                 <leftValueReference>$Record.Patient_MAiD_Request_Date__c</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
-                    <booleanValue>true</booleanValue>
+                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -252,7 +252,7 @@
             <label>HCR_True</label>
         </rules>
     </decisions>
-    <description>Error log healthcare Update</description>
+    <description>Health Canada reportable element Update</description>
     <environments>Default</environments>
     <interviewLabel>Case- After Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case- After Update Reportable to Health Canada-BCCS Manager Review Required Rule</label>
