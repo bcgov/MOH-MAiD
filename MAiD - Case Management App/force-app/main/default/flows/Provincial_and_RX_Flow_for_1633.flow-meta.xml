@@ -243,8 +243,8 @@
     <decisions>
         <name>check_60_Rule_0</name>
         <label>check 60 Rule</label>
-        <locationX>1441</locationX>
-        <locationY>714</locationY>
+        <locationX>1444</locationX>
+        <locationY>713</locationY>
         <defaultConnector>
             <targetReference>ErrorMessage60</targetReference>
         </defaultConnector>
@@ -273,7 +273,7 @@
         </rules>
         <rules>
             <name>rule_60_check_0</name>
-            <conditionLogic>(1 OR (2 AND 3 AND 4))</conditionLogic>
+            <conditionLogic>((1 OR (2 AND 3 AND 4))) OR ((5 OR 6) AND (7 OR 8))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Patient_Consent</leftValueReference>
                 <operator>EqualTo</operator>
@@ -297,6 +297,34 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>1 - Is capable of providing informed consent</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>check_if_1633_is_ticked</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1208,7 +1236,8 @@
             <label>Check if 1633 is ticked on 1634</label>
         </rules>
     </decisions>
-    <description>1633 field check condition is updated..!</description>
+    <description>Rule 60 Updated</description>
+    <environments>Default</environments>
     <interviewLabel>Provincial and RX Flow for 1633 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial and RX Flow for 1633</label>
     <processMetadataValues>
@@ -1478,6 +1507,7 @@
         <queriedFields>Id</queriedFields>
         <queriedFields>Federal_Safeguards__c</queriedFields>
         <queriedFields>Type</queriedFields>
+        <queriedFields>X1633__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>GetRecordsForm1633</name>
