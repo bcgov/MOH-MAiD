@@ -111,7 +111,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>HCR_False</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5 OR 6) AND 7 AND 8</conditionLogic>
+            <conditionLogic>(1 OR (7 AND 8)) AND  (2 OR 3 OR 4 OR 5 OR 6)</conditionLogic>
             <conditions>
                 <leftValueReference>Get_Form_1634.I_determine_that_the_patient__c</leftValueReference>
                 <operator>EqualTo</operator>
