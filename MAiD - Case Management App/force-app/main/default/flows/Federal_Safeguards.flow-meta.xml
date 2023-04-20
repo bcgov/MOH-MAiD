@@ -2026,7 +2026,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rule_66_Pass</name>
-            <conditionLogic>(1 AND ((2 AND (((3 AND 4 AND 7) AND ((5 AND 6) OR (NOT(5))) ) OR (NOT(3)))) OR (8 AND  (13 AND (9 OR 10)) AND (NOT(2)) AND (NOT(7) AND (11 OR 12)) AND (NOT(4))))) OR (NOT(1))</conditionLogic>
+            <conditionLogic>(1 AND ((2 AND (((3 AND 4 AND 7) AND ((5 AND 6) OR (NOT(5))) ) OR (NOT(3)))) OR (8 AND  (13 AND (9 OR 10)) AND (NOT(2)) AND (7 AND (11 OR 12)) AND (NOT(4))))) OR (NOT(1))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
                 <operator>GreaterThanOrEqualTo</operator>
