@@ -2265,7 +2265,7 @@
         </rules>
         <rules>
             <name>Rule_50_Pass</name>
-            <conditionLogic>(( 1  AND (2 AND (3 OR 9)) AND ((4 AND 5) OR (NOT(4))) AND ( (10 AND 11) OR (NOT(10))) AND (( 8 AND 12) OR 15) AND ( ( (8 AND 13 AND 14) OR (NOT(13)) ) OR 15 )  )   OR 6 )  OR 7</conditionLogic>
+            <conditionLogic>(( 1  AND (2 AND (3 OR 9)) AND ((4 AND 5) OR (NOT(4))) AND ( (10 AND 11) OR (NOT(10))) AND ((8 AND ((16 AND 12) OR  (NOT(12)))) OR 15) AND ( ( (8 AND 13 AND 14) OR (NOT(13)) ) OR 15 )  )   OR 6 )  OR 7</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2357,6 +2357,13 @@
                 <operator>LessThan</operator>
                 <rightValue>
                     <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_known_reasons_for_withdrawal</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Accepted the means to relieve their suffering</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -3342,7 +3349,7 @@
             <label>Skip Rule</label>
         </rules>
     </decisions>
-    <description>Rule 58 Updated</description>
+    <description>Rule 50 Updated</description>
     <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
