@@ -461,6 +461,18 @@
                 <behavior>Edit</behavior>
                 <field>I_determine_that_the_patient__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Practitioner_previously_determined_patie__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>If_Yes_is_patients_change_in_eligbilit__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>If_Yes_practitioner_became_aware_patien__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>
