@@ -1,30 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>57.0</apiVersion>
+    <assignments>
+        <description>Clear warning message text when there is no duplicate PHN found.</description>
+        <name>Empty_Warning_Message</name>
+        <label>Empty Warning Message</label>
+        <locationX>176</locationX>
+        <locationY>983</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.Warning_Message_If_Any__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </assignmentItems>
+    </assignments>
     <decisions>
-        <name>Compare_individual_records</name>
-        <label>Compare individual records</label>
+        <description>Check if incoming case is Discontinuation of Planning: Ineligible &amp; Discontinuation of Planning: Withdrawn Request</description>
+        <name>Discontinuation_of_Planning_Case</name>
+        <label>Discontinuation of Planning Case?</label>
         <locationX>528</locationX>
         <locationY>551</locationY>
         <defaultConnector>
-            <targetReference>Looping_through_Case_Records</targetReference>
+            <targetReference>Loop_through_all_Case_types</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
-            <name>Case_1_Check_if_entered_PHN_is_equal_to_Looping_record_PHN</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
-            <conditions>
-                <leftValueReference>Looping_through_Case_Records.PHN__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <elementReference>$Record.PHN__c</elementReference>
-                </rightValue>
-            </conditions>
+            <name>Prevent_same_and_Different_case_types_and_PHN</name>
+            <conditionLogic>14 AND (1 OR 8 OR 9 OR 10 OR 11 OR 12) AND 2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 13)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.PHN__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Loop_through_all_Case_types.PHN__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Assessment of Eligibility</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -41,62 +91,114 @@
                     <stringValue>MAiD Assessment of Eligibility</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Status</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
-                <targetReference>Update_Prevent_duplicate_flag</targetReference>
+                <targetReference>Prevent_Case_insert_update</targetReference>
             </connector>
-            <label>Case-1 [Check if entered PHN is equal to Looping record PHN]</label>
+            <label>Prevent same and Different case types and PHN</label>
         </rules>
         <rules>
-            <name>Case_2_Check_if_entered_PHN_is_equal_to_Looping_record_PHN</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <name>Allow_Discontinuation_of_Planning_Cases</name>
+            <conditionLogic>5 AND (1 OR 2) AND (3 OR 4) AND (6 OR (NOT(6)))</conditionLogic>
             <conditions>
-                <leftValueReference>Looping_through_Case_Records.PHN__c</leftValueReference>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Loop_through_all_Case_types.PHN__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>$Record.PHN__c</elementReference>
                 </rightValue>
             </conditions>
-            <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>MAiD Death Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>MAiD Death Not Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <stringValue>MAiD Assessment of Eligibility</stringValue>
-                </rightValue>
-            </conditions>
             <connector>
-                <targetReference>Update_Prevent_duplicate_flag_Warning_message</targetReference>
+                <targetReference>Update_Warning_Message</targetReference>
             </connector>
-            <label>Case-2 [Check if entered PHN is equal to Looping record PHN]</label>
+            <label>Allow Discontinuation of Planning Cases</label>
         </rules>
     </decisions>
+    <description>To check if PHN exists for the same case type or different case type.</description>
     <environments>Default</environments>
     <interviewLabel>Maid Prevent Duplicate Phn {!$Flow.CurrentDateTime}</interviewLabel>
     <label>MAiD Prevent Duplicate Phn</label>
     <loops>
-        <description>Iterate over cases that have same PHN that was entered/updated.</description>
-        <name>Looping_through_Case_Records</name>
-        <label>Looping through Case Records</label>
+        <name>Loop_through_all_Case_types</name>
+        <label>Loop through all Case types</label>
         <locationX>176</locationX>
         <locationY>431</locationY>
-        <collectionReference>Fetch_all_cases_with_PHN</collectionReference>
-        <iterationOrder>Asc</iterationOrder>
+        <collectionReference>Get_MAiD_cases_matching_PHN_and_all_Case_Types</collectionReference>
+        <iterationOrder>Desc</iterationOrder>
         <nextValueConnector>
-            <targetReference>Compare_individual_records</targetReference>
+            <targetReference>Discontinuation_of_Planning_Case</targetReference>
         </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Empty_Warning_Message</targetReference>
+        </noMoreValuesConnector>
     </loops>
     <processMetadataValues>
         <name>BuilderType</name>
@@ -118,16 +220,16 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <recordLookups>
-        <description>To fetch all cases in the org which has the same PHN that is entered/updated by the user.</description>
-        <name>Fetch_all_cases_with_PHN</name>
-        <label>Fetch all cases with PHN</label>
+        <description>To fetch all MAiD cases in the org which has the same PHN that is entered/updated by the user.</description>
+        <name>Get_MAiD_cases_matching_PHN_and_all_Case_Types</name>
+        <label>Get MAiD cases matching PHN and all Case Types</label>
         <locationX>176</locationX>
         <locationY>311</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Looping_through_Case_Records</targetReference>
+            <targetReference>Loop_through_all_Case_types</targetReference>
         </connector>
-        <filterLogic>(1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10))</filterLogic>
+        <filterLogic>1 AND 2 AND (3 OR 4 OR 5 OR 6 OR 7 OR 8)</filterLogic>
         <filters>
             <field>PHN__c</field>
             <operator>EqualTo</operator>
@@ -144,7 +246,7 @@
         </filters>
         <filters>
             <field>Type</field>
-            <operator>Contains</operator>
+            <operator>EqualTo</operator>
             <value>
                 <stringValue>MAiD Death Foreseeable</stringValue>
             </value>
@@ -154,6 +256,13 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>MAiD Death Not Foreseeable</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>MAiD Assessment of Eligibility</stringValue>
             </value>
         </filters>
         <filters>
@@ -177,36 +286,24 @@
                 <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
             </value>
         </filters>
-        <filters>
-            <field>Type</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Preliminary Assessment</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Type</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Transfer of Request</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Type</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>MAiD Assessment of Eligibility</stringValue>
-            </value>
-        </filters>
         <getFirstRecordOnly>false</getFirstRecordOnly>
         <object>Case</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Type</queriedFields>
+        <queriedFields>Status</queriedFields>
+        <queriedFields>PHN__c</queriedFields>
+        <queriedFields>Warning_Message_If_Any__c</queriedFields>
+        <queriedFields>Prevent_save_on_duplicate_PHN__c</queriedFields>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Update_Prevent_duplicate_flag</name>
-        <label>Update Prevent duplicate flag</label>
+        <name>Prevent_Case_insert_update</name>
+        <label>Prevent Case insert/update</label>
         <locationX>264</locationX>
         <locationY>671</locationY>
+        <connector>
+            <targetReference>Loop_through_all_Case_types</targetReference>
+        </connector>
         <inputAssignments>
             <field>Prevent_save_on_duplicate_PHN__c</field>
             <value>
@@ -216,17 +313,17 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Prevent_duplicate_flag_Warning_message</name>
-        <label>Update Prevent duplicate flag &amp; Warning message</label>
+        <name>Update_Warning_Message</name>
+        <label>Update Warning Message</label>
         <locationX>528</locationX>
         <locationY>671</locationY>
         <connector>
-            <targetReference>Looping_through_Case_Records</targetReference>
+            <targetReference>Loop_through_all_Case_types</targetReference>
         </connector>
         <inputAssignments>
             <field>Warning_Message_If_Any__c</field>
             <value>
-                <stringValue>There is an existing MAiD Death case with this PHN</stringValue>
+                <stringValue>There is already a case with same PHN for closed Discontinuation case.</stringValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -235,9 +332,9 @@
         <locationX>50</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Fetch_all_cases_with_PHN</targetReference>
+            <targetReference>Get_MAiD_cases_matching_PHN_and_all_Case_Types</targetReference>
         </connector>
-        <filterLogic>(1 AND ( 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9))</filterLogic>
+        <filterLogic>(1 AND ( 2 OR 3 OR 4 OR 5 OR 6 OR 7) AND 8)</filterLogic>
         <filters>
             <field>RecordTypeId</field>
             <operator>EqualTo</operator>
@@ -263,6 +360,13 @@
             <field>Type</field>
             <operator>Contains</operator>
             <value>
+                <stringValue>MAiD Assessment of Eligibility</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>Contains</operator>
+            <value>
                 <stringValue>Discontinuation of Planning: Death Prior</stringValue>
             </value>
         </filters>
@@ -281,24 +385,10 @@
             </value>
         </filters>
         <filters>
-            <field>Type</field>
-            <operator>Contains</operator>
+            <field>Status</field>
+            <operator>NotEqualTo</operator>
             <value>
-                <stringValue>Preliminary Assessment</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Type</field>
-            <operator>Contains</operator>
-            <value>
-                <stringValue>Transfer of Request</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Type</field>
-            <operator>Contains</operator>
-            <value>
-                <stringValue>MAiD Assessment of Eligibility</stringValue>
+                <stringValue>Closed</stringValue>
             </value>
         </filters>
         <object>Case</object>
@@ -307,11 +397,13 @@
     </start>
     <status>Active</status>
     <variables>
-        <name>templist</name>
-        <dataType>SObject</dataType>
-        <isCollection>true</isCollection>
+        <name>NullValue</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
         <isInput>true</isInput>
         <isOutput>true</isOutput>
-        <objectType>Case</objectType>
+        <value>
+            <stringValue></stringValue>
+        </value>
     </variables>
 </Flow>
