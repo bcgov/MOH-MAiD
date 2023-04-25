@@ -2265,7 +2265,7 @@
         </rules>
         <rules>
             <name>Rule_50_Pass</name>
-            <conditionLogic>(( 1  AND (2 AND (3 OR 9)) AND ((4 AND 5) OR (NOT(4))) AND ( (10 AND 11) OR (NOT(10))) AND ((8 AND ((16 AND 12) OR  (NOT(12)))) OR 15) AND ( ( (8 AND 13 AND 14) OR (NOT(13)) ) OR 15 )  )   OR 6 )  OR 7</conditionLogic>
+            <conditionLogic>(( 1  AND (2 AND (3 OR 9)) AND ((4 AND 5) OR (NOT(4))) AND ( (10 AND 11) OR (NOT(10))) AND ((8 AND ((16 AND 12) OR  (NOT(16)))) OR 15) AND ( ( (8 AND 13 AND 14) OR (NOT(13)) ) OR 15 )  )   OR 6 )  OR 7</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
