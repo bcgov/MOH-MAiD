@@ -2,9 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PHA_Q16__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( 
-    ISPICKVAL(Case__r.Account.Type, &quot;Pharmacist&quot;),1,0
-)</formula>
+    <formula>CASE(Case__r.Practitioner_Name__r.PersonContact.Account.RecordType.Name, &quot;Pharmacist&quot;,1,0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>PHA_Q16</label>
     <precision>18</precision>
