@@ -16,6 +16,10 @@
                 <field>College_ID__pc</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Type</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Profession_Type__c</field>
             </layoutItems>
