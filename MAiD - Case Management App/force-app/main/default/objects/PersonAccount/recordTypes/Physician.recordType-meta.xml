@@ -340,7 +340,7 @@
         <picklist>Type</picklist>
         <values>
             <fullName>Physician</fullName>
-            <default>false</default>
+            <default>true</default>
         </values>
     </picklistValues>
 </RecordType>

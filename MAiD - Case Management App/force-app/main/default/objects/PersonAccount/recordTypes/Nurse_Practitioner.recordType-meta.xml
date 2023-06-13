@@ -7,7 +7,7 @@
         <picklist>Type</picklist>
         <values>
             <fullName>Nurse practitioner</fullName>
-            <default>false</default>
+            <default>true</default>
         </values>
     </picklistValues>
 </RecordType>

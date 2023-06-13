@@ -340,7 +340,7 @@
         <picklist>Type</picklist>
         <values>
             <fullName>Other Health Care Professionals</fullName>
-            <default>false</default>
+            <default>true</default>
         </values>
     </picklistValues>
 </RecordType>
