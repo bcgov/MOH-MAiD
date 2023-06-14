@@ -7,11 +7,11 @@
     <duplicateRuleFilter xsi:nil="true"/>
     <duplicateRuleMatchRules>
         <matchRuleSObjectType>PersonAccount</matchRuleSObjectType>
-        <matchingRule>Verify_Unique_College_Id_Match</matchingRule>
+        <matchingRule>Verify_Unique_College</matchingRule>
         <objectMapping xsi:nil="true"/>
     </duplicateRuleMatchRules>
     <isActive>true</isActive>
     <masterLabel>Duplicate College Id Check</masterLabel>
     <securityOption>BypassSharingRules</securityOption>
-    <sortOrder>1</sortOrder>
+    <sortOrder>2</sortOrder>
 </DuplicateRule>

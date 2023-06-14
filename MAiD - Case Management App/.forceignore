@@ -11,7 +11,7 @@ package.xml
 **settings
 **standardValueSets
 #**matchingRule
-duplicateRules
+#duplicateRules
 entitlementProcesses
 #**permissionset
 #**recordTypes
