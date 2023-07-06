@@ -47,3 +47,4 @@ force-app\main\default\objects\Form_RXMAR__c\fields\Prescribing_Practitioner__c.
 force-app\main\default\objects\IDP_User_Registration_Permission_Set__mdt
 force-app\main\default\objects\IDP_User_Registration_User_Mapping__mdt
 force-app\main\default\customMetadata
+force-app\main\default\reports\MAiDCaseManagementReports\S2_2023_HC_ReportOral_MAiD_P8M.report-meta.xml
