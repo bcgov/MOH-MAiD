@@ -3,7 +3,6 @@
     <fullName>PHN__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
     <deprecated>false</deprecated>
-    <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>PHN</label>
     <length>10</length>
