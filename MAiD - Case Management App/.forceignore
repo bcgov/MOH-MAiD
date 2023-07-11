@@ -8,8 +8,8 @@ package.xml
 **objectTranslations
 **profilePasswordPolicies
 **profileSessionSettings
-**settings
-**standardValueSets
+# **settings
+# **standardValueSets
 #**matchingRule
 #duplicateRules
 entitlementProcesses
