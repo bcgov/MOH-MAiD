@@ -25,6 +25,7 @@ public class GetCasePHNandVerify {
         
        //Checking if there are any cases which are with the same PHN of triggering record 
         try{
+              
              if(existingCases!= NULL && existingCases.size()>0){
             
                caseList[0].Prevent_save_on_duplicate_PHN__c = true;
@@ -32,6 +33,12 @@ public class GetCasePHNandVerify {
                //updating the case if there are existing cases with the same PHN
                update caseList[0];
                 
+            }else if(caseList[0].Prevent_save_on_duplicate_PHN__c!=false){
+
+                caseList[0].Prevent_save_on_duplicate_PHN__c = false;
+               
+                //updating the case if there are existing cases with the same PHN
+                update caseList[0];
             }
         }catch(Exception e){
             System.debug('Exception Occured'+e.getTypeName()+'----'+e.getMessage());
