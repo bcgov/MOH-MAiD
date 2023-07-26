@@ -211,22 +211,22 @@
             <fullName>1642 Form</fullName>
             <default>false</default>
         </values>
-        <values>
+       <!-- <values>
             <fullName>Discontinuation Reporting</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>MAiD Reporting</fullName>
             <default>false</default>
-        </values>
+        </values> -->
         <values>
             <fullName>Rx%2FMAR Form</fullName>
             <default>false</default>
         </values>
-        <values>
+       <!-- <values>
             <fullName>Transfer of Request Reporting</fullName>
             <default>false</default>
-        </values>
+        </values> -->
     </picklistValues>
     <picklistValues>
         <picklist>Length_of_Disability__c</picklist>
