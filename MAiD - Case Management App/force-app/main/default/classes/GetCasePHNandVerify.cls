@@ -37,7 +37,7 @@ public class GetCasePHNandVerify {
 
                 caseList[0].Prevent_save_on_duplicate_PHN__c = false;
                
-                //updating the case if there are existing cases with the same PHN
+                //reset the value to false if there are no longer duplicate cases
                 update caseList[0];
             }
         }catch(Exception e){
