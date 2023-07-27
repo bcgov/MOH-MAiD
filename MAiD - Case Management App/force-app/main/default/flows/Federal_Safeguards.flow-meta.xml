@@ -1625,7 +1625,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule19_yes_0</name>
-            <conditionLogic>(((1 AND 2) OR (3 AND 4) OR 8) AND 9 AND 10 AND 11 AND 5 AND 6 AND 7 AND 12)</conditionLogic>
+            <conditionLogic>(((1 AND 2) OR (3 AND 4) OR 8) AND 9 AND 10 AND 5 AND 6 AND 7 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1645_PatientSafeguardsCompleted</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1691,13 +1691,6 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1645_Finalwaiverofconsentdatesigned</leftValueReference>
-                <operator>LessThan</operator>
-                <rightValue>
-                    <elementReference>Var1634_MAiDAdministrationDate</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -2026,7 +2019,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rule_66_Pass</name>
-            <conditionLogic>(1 AND ((2 AND (((3 AND 4 AND 7) AND ((5 AND 6) OR (NOT(5))) ) OR (NOT(3)))) OR (8 AND  (13 AND (9 OR 10)) AND (NOT(2)) AND (7 AND (11 OR 12)) AND (NOT(4))))) OR (NOT(1))</conditionLogic>
+            <conditionLogic>(1 AND 2 AND (((3 AND 4 AND 7) AND ((5 AND 6) OR (NOT(5))) ) OR (NOT(3)))) OR (NOT(1))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
                 <operator>GreaterThanOrEqualTo</operator>
@@ -2064,52 +2057,13 @@
                 <leftValueReference>Var1634_AdvanceStateOfIrreversibleDecline</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Patienthasseriousandincurableillnes</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>2 - No</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Patienthasseriousandincurableillnes</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>3 - Did not assess</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_AdvanceStateOfIrreversibleDecline</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>2 - No</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_AdvanceStateOfIrreversibleDecline</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>3 - Did not assess</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Patienthasseriousandincurableillnes</leftValueReference>
-                <operator>NotEqualTo</operator>
-            </conditions>
             <connector>
                 <targetReference>UpdateFedralPASS</targetReference>
             </connector>
             <label>Rule 66 Pass</label>
         </rules>
     </decisions>
-    <description>Rule 66 Update</description>
+    <description>Rule 19 update: Removed the 11 condition (Var1645_Finalwaiverofconsentdatesignes less-than Var1634_MAiDAdministrationDate)</description>
     <environments>Default</environments>
     <formulas>
         <name>VarNumberofDays</name>
@@ -2345,10 +2299,6 @@
         <outputAssignments>
             <assignToReference>Var1634_Discussedmeansofalleviatingsuffering</assignToReference>
             <field>Patient_has_discussed_and_considered_mea__c</field>
-        </outputAssignments>
-        <outputAssignments>
-            <assignToReference>Var1634_Patienthasseriousandincurableillnes</assignToReference>
-            <field>Patient_has_serious_and_incurable_illnes__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_AdvanceStateOfIrreversibleDecline</assignToReference>
@@ -2935,13 +2885,6 @@
     <variables>
         <name>Var1634_Patienthasbeeninformedofriskoflos</name>
         <dataType>Boolean</dataType>
-        <isCollection>false</isCollection>
-        <isInput>false</isInput>
-        <isOutput>false</isOutput>
-    </variables>
-    <variables>
-        <name>Var1634_Patienthasseriousandincurableillnes</name>
-        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
