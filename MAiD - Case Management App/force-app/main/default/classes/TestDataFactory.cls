@@ -26,6 +26,7 @@ public with sharing class TestDataFactory {
             cs.Date_of_MAiD__c = System.today();
             cs.Case_Type_Reported_Date__c = System.today();
             cs.recordtypeId = '0125W0000004KYUQA2';
+        	cs.Prevent_save_on_duplicate_PHN__c = false;
             
         	insert cs;
         
@@ -38,6 +39,7 @@ public with sharing class TestDataFactory {
             cs1.Patient_Last_Name__c = 'Test';
             cs1.Patient_First_Name__c = 'Test';
             cs1.Patient_Date_of_Birth__c = date.valueOf('1980-01-01');
+        	cs1.Prevent_save_on_duplicate_PHN__c = false;
             cs1.Gender__c = '1 - Male';
             cs1.Type = 'Discontinuation of Planning – Ineligible'; 
             cs1.Status = 'Awaiting Forms';
@@ -60,30 +62,13 @@ public with sharing class TestDataFactory {
             cs2.Date_of_MAiD__c = System.today();
             cs2.Case_Type_Reported_Date__c = System.today();
             cs2.recordtypeId = '0125W0000004KYUQA2';
+        	cs2.Prevent_save_on_duplicate_PHN__c = false;
             
         	insert cs2;
 			
 
-            List<Case> existingCaseList = [Select Id, PHN__c, Status, Type, RecordTypeId From Case];
+            List<Case> existingCaseList = [Select Id, PHN__c, Status, Type, RecordTypeId, Prevent_save_on_duplicate_PHN__c From Case];
             return existingCaseList;
     }
     
-    public static Case getCasetoInsert(){
-        
-        Case cs3  = new Case();
-        
-        cs3.File_Creation_Date__c = System.today();
-        cs3.PHN__c = '0101012347';
-        cs3.Patient_Last_Name__c = 'Test';
-        cs3.Patient_First_Name__c = 'Test';
-        cs3.Patient_Date_of_Birth__c = date.valueOf('1980-01-01');
-        cs3.Gender__c = '1 - Male';
-        cs3.Type = 'MAiD Assessment of Eligibility'; 
-        cs3.Status = 'Awaiting Forms';
-        cs3.Date_of_MAiD__c = System.today();
-        cs3.Case_Type_Reported_Date__c = System.today();
-        cs3.recordtypeId = '0125W0000004KYUQA2';
-       	
-        return cs3;
-    }
 }
