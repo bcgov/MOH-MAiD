@@ -32,7 +32,7 @@ public class GetCasePHNandVerify {
                                 RecordTypeId = :caseList[0].RecordTypeId AND 
                                 Id != :caseList[0].Id AND 
                                 PHN__C =: caseList[0].PHN__c ];
-        
+            
         }else if(caseList[0].Type == 'Discontinuation of Planning – Ineligible'){
             
             existingCases  = [Select
@@ -59,25 +59,19 @@ public class GetCasePHNandVerify {
         }     
         
        //Checking if there are any cases which are with the same PHN of triggering record 
-        try{
-              
-             if(existingCases!= NULL && existingCases.size()>0){
-            
-               caseList[0].Prevent_save_on_duplicate_PHN__c = true;
-               
-               //updating the case if there are existing cases with the same PHN
-               update caseList[0];
+        
+             	caseList[0].Prevent_save_on_duplicate_PHN__c = false;
+                if(existingCases!= NULL && existingCases.size()>0){
                 
-            }else if(caseList[0].Prevent_save_on_duplicate_PHN__c!=false){
-
-                caseList[0].Prevent_save_on_duplicate_PHN__c = false;
-               
-                //reset the value to false if there are no longer duplicate cases
-                update caseList[0];
-            }
-        }catch(Exception e){
-            System.debug('Exception Occured'+e.getTypeName()+'----'+e.getMessage());
-        }
+                        caseList[0].Prevent_save_on_duplicate_PHN__c = true;
+                 
+                }
+        
+                if(caseList[0].Prevent_save_on_duplicate_PHN__c!=false || existingCases!= NULL && existingCases.size()>0){
+                    
+                        
+                        update caseList[0];
+                }
        
         
     }
