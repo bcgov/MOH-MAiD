@@ -587,12 +587,19 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Q41A</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>A - Cancer - lung and bronchus</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancer - Lung</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -602,12 +609,19 @@
         </rules>
         <rules>
             <name>Q41B</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>B - Cancer - breast</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancer - Breast</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -617,12 +631,19 @@
         </rules>
         <rules>
             <name>Q41C</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>C- Cancer - colorectal</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancer - Colorectal</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -632,12 +653,19 @@
         </rules>
         <rules>
             <name>Q41D</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>D - Cancer - pancreas</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancer - Pancreatic</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -647,12 +675,19 @@
         </rules>
         <rules>
             <name>Q41E</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>E - Cancer - prostate</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancer - Prostate</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -662,12 +697,19 @@
         </rules>
         <rules>
             <name>Q41F</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>F - Cancer - ovary</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancer - Ovary</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -677,12 +719,19 @@
         </rules>
         <rules>
             <name>Q41G</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>G - Cancer - hematologic</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancer - Hematologic</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -692,12 +741,19 @@
         </rules>
         <rules>
             <name>Q41H</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>H - Cancer - other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cancer - Other</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -707,12 +763,19 @@
         </rules>
         <rules>
             <name>Q42A</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>I - Neurological condition - multiple sclerosis</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Neurological condition - (M.S)</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -722,12 +785,19 @@
         </rules>
         <rules>
             <name>Q42B</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>J - Neurological condition - amyotrophic lateral sclerosis</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Neurological condition - (ALS)</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -737,12 +807,19 @@
         </rules>
         <rules>
             <name>Q42C</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>K - Neurological condition - other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Neurological condition - Other</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -752,12 +829,19 @@
         </rules>
         <rules>
             <name>Q40C</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>L - Chronic respiratory disease</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Respiratory</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -767,12 +851,19 @@
         </rules>
         <rules>
             <name>Q40D</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>M - Cardio-vascular condition</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Cardio-vascular condition</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -782,12 +873,19 @@
         </rules>
         <rules>
             <name>Q40E</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>AddLoop</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>N - Other organ failure</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>AddLoop</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Organ Failure</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -851,7 +949,8 @@
             <label>IsNull</label>
         </rules>
     </decisions>
-    <description>Updated ELG_Q42 assignment reference</description>
+    <description>Updated ELG_Q41A-H assignment reference</description>
+    <environments>Default</environments>
     <formulas>
         <name>formatedAddSemicolon</name>
         <dataType>String</dataType>
@@ -914,102 +1013,102 @@
     <recordUpdates>
         <name>Update_Null_Q40_41_42_Records</name>
         <label>Update Null Q40 41 42 Records</label>
-        <locationX>439</locationX>
-        <locationY>374</locationY>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <inputAssignments>
             <field>ELG_Q40C__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q40D__c</field>
             <value>
-                <stringValue>2</stringValue>
+                <stringValue>0</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q40E__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q40F__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q40G__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q41A__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q41B__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q41C__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q41D__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q41E__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q41F__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q41G__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q41H__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q42A__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q42B__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputAssignments>
             <field>ELG_Q42C__c</field>
             <value>
-                <numberValue>2.0</numberValue>
+                <numberValue>0.0</numberValue>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -1017,13 +1116,13 @@
     <recordUpdates>
         <name>Update_Record_Q40_41_42</name>
         <label>Update Record Q40_41_42</label>
-        <locationX>788</locationX>
-        <locationY>362</locationY>
+        <locationX>4626</locationX>
+        <locationY>1355</locationY>
         <inputReference>updateRecord</inputReference>
     </recordUpdates>
     <start>
-        <locationX>38</locationX>
-        <locationY>478</locationY>
+        <locationX>2278</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>Assignment_Q40_41_42_Fields</targetReference>
         </connector>
