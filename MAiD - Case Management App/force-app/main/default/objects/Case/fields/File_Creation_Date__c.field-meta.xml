@@ -5,7 +5,8 @@
     <deprecated>false</deprecated>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
-    <label>File Creation Date</label>
+    <inlineHelpText>The Date the forms were first received in the MAiD inbox</inlineHelpText>
+    <label>Date Received at MOH</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

@@ -1884,7 +1884,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule38_2_Yes</name>
-            <conditionLogic>(((1 AND 2 AND 7) OR (5 AND 6)) AND 3) OR 4</conditionLogic>
+            <conditionLogic>(((1 AND 2 AND 7 AND 9 AND 10) OR (5 AND 6 AND 8 )) AND 3) OR 4</conditionLogic>
             <conditions>
                 <leftValueReference>VarNumberofDays</leftValueReference>
                 <operator>GreaterThanOrEqualTo</operator>
@@ -1930,6 +1930,27 @@
             <conditions>
                 <leftValueReference>Var1634_MAiDAdministrationDate</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ensuredtherewereatleast_90_days</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_The_patientwasatriskoflosingcapacity</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_AssessorAnd_PrescriberinAgreement</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule39</targetReference>
@@ -2063,7 +2084,7 @@
             <label>Rule 66 Pass</label>
         </rules>
     </decisions>
-    <description>Rule 19 update: Removed the 11 condition (Var1645_Finalwaiverofconsentdatesignes less-than Var1634_MAiDAdministrationDate)</description>
+    <description>Rule 38-2 update</description>
     <environments>Default</environments>
     <formulas>
         <name>VarNumberofDays</name>
