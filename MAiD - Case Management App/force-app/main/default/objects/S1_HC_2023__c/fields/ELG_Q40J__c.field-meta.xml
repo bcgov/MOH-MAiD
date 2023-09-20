@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ELG_Q40J__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>IF( 
     ISNULL ( Form_1634__r.If_yes_select_all_that_apply_1__c ), 0,
     IF(
-        INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Other Condition / Co-morbidity&quot; ), 1,2
+         NOT(INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Other Condition / Co-morbidity&quot; )), 2, 
+          IF( OR( INCLUDES(Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Diabetes&quot;),
+                  INCLUDES(Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Frailty&quot;),
+                  INCLUDES(Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Autoimmune condition&quot;),
+                  INCLUDES(Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Chronic pain&quot;),
+                  INCLUDES(Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Mental Disorder&quot;)),1,NULL) 
     )
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
