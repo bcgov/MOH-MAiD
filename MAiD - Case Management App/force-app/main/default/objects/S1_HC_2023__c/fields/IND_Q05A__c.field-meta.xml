@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>IND_Q05A__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>IF( ISBLANK(Form_1634__r.Case__r.If_yes_Indigenious_heritage__c) , 0, IF( INCLUDES(Form_1634__r.Case__r.If_yes_Indigenious_heritage__c, &apos;First Nations&apos;) , 1, 2))</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <formula>IF( ISBLANK(Form_1634__r.Case__r.If_yes_Indigenious_heritage__c) , 0, IF( INCLUDES(Form_1634__r.Case__r.If_yes_Indigenious_heritage__c, &quot;First Nations&quot;) , 1, 2))</formula>
     <label>IND_Q05A</label>
     <precision>18</precision>
     <required>false</required>
