@@ -337,6 +337,41 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Specialty_2023Reg__pc</picklist>
+        <values>
+            <fullName>1 - Family medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Palliative Medicine (Includes Family & Palliative Medicine)</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Anesthesiology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Internal Medicine (includes Gastroenterology, Hospital Medicine, etc.)</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - Critical Care and Emergency Medicine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 - Oncology</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7 - Psychiatry (includes Geriatric Psychiatry)</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8 - Other - specify:</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Type</picklist>
         <values>
             <fullName>Physician</fullName>
