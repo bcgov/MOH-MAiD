@@ -21,9 +21,9 @@
                 <label>2 - Palliative Medicine (Includes Family &amp; Palliative Medicine)</label>
             </value>
             <value>
-                <fullName>3 – Anesthesiology</fullName>
+                <fullName>3 - Anesthesiology</fullName>
                 <default>false</default>
-                <label>3 – Anesthesiology</label>
+                <label>3 - Anesthesiology</label>
             </value>
             <value>
                 <fullName>4 - Internal Medicine (includes Gastroenterology, Hospital Medicine, etc.)</fullName>
@@ -36,9 +36,9 @@
                 <label>5 - Critical Care and Emergency Medicine</label>
             </value>
             <value>
-                <fullName>6 – Oncology</fullName>
+                <fullName>6 - Oncology</fullName>
                 <default>false</default>
-                <label>6 – Oncology</label>
+                <label>6 - Oncology</label>
             </value>
             <value>
                 <fullName>7 - Psychiatry (includes Geriatric Psychiatry)</fullName>
@@ -46,9 +46,9 @@
                 <label>7 - Psychiatry (includes Geriatric Psychiatry)</label>
             </value>
             <value>
-                <fullName>8 -  Other - specify:</fullName>
+                <fullName>8 - Other Specify</fullName>
                 <default>false</default>
-                <label>8 -  Other - specify:</label>
+                <label>8 - Other Specify</label>
             </value>
         </valueSetDefinition>
     </valueSet>

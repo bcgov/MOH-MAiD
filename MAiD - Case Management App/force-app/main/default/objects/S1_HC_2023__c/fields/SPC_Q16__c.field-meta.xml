@@ -4,21 +4,21 @@
     <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>IF(
-    TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__pc) = &quot;1 - Family medicine&quot;, &quot;1&quot;,
+    TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__c) = &quot;1 - Family medicine&quot;, &quot;1&quot;,
     IF(
-        TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__pc) = &quot;2 - Palliative Medicine (Includes Family &amp; Palliative Medicine)&quot;, &quot;2&quot;,
+        TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__c) = &quot;2 - Palliative Medicine (Includes Family &amp; Palliative Medicine)&quot;, &quot;2&quot;,
         IF(
-            TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__pc) = &quot;3 – Anesthesiology&quot;, &quot;3&quot;,
+            TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__c) = &quot;3 – Anesthesiology&quot;, &quot;3&quot;,
             IF(
-                TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__pc) = &quot;4 - Internal Medicine (includes Gastroenterology, Hospital Medicine, etc.)&quot;, &quot;4&quot;,
+                TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__c) = &quot;4 - Internal Medicine (includes Gastroenterology, Hospital Medicine, etc.)&quot;, &quot;4&quot;,
                 IF(
-                    TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__pc) = &quot;5 - Critical Care and Emergency Medicine&quot;, &quot;5&quot;,
+                    TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__c) = &quot;5 - Critical Care and Emergency Medicine&quot;, &quot;5&quot;,
                     IF(
-                        TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__pc) = &quot;6 – Oncology&quot;, &quot;6&quot;,
+                        TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__c) = &quot;6 – Oncology&quot;, &quot;6&quot;,
                         IF(
-                            TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__pc) = &quot;7 - Psychiatry (includes Geriatric Psychiatry)&quot;, &quot;7&quot;,
+                            TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__c) = &quot;7 - Psychiatry (includes Geriatric Psychiatry)&quot;, &quot;7&quot;,
                             IF(
-                                TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__pc) = &quot;8 - Other - specify:&quot;, &quot;8&quot;,
+                                TEXT(Form_1634__r.Case__r.Practitioner__r.Specialty_2023Reg__c) = &quot;8 - Other - specify:&quot;, &quot;8&quot;,
                                 null
                             )
                         )

@@ -36,12 +36,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Specialty_Other_2023Reg__pc</field>
+        <field>Account.Specialty_Other_2023Reg__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Account.Specialty_2023Reg__pc</field>
+        <field>Account.Specialty_2023Reg__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

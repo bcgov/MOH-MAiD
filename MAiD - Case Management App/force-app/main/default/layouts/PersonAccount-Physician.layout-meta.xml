@@ -63,11 +63,11 @@
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Specialty_2023Reg__pc</field>
+                <field>Specialty_2023Reg__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Specialty_Other_2023Reg__pc</field>
+                <field>Specialty_Other_2023Reg__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

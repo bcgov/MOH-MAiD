@@ -4,7 +4,7 @@
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>Specialty Other (2023Reg)</label>
-    <length>64</length>
+    <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <type>Text</type>

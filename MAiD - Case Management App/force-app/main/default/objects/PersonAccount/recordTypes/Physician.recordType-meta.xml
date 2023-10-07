@@ -337,7 +337,7 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Specialty_2023Reg__pc</picklist>
+        <picklist>Specialty_2023Reg__c</picklist>
         <values>
             <fullName>1 - Family medicine</fullName>
             <default>false</default>
@@ -367,7 +367,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>8 - Other - specify:</fullName>
+            <fullName>8 - Other Specify</fullName>
             <default>false</default>
         </values>
     </picklistValues>
