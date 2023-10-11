@@ -38,6 +38,12 @@
         <closed>false</closed>
     </standardValue>
     <standardValue>
+        <fullName>Second Review</fullName>
+        <default>false</default>
+        <label>Second Review</label>
+        <closed>false</closed>
+    </standardValue>
+    <standardValue>
         <fullName>Ready for Manager Review</fullName>
         <default>false</default>
         <label>Ready for Manager Review</label>

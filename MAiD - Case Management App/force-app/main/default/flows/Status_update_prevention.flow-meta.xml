@@ -36,8 +36,8 @@
     <assignments>
         <name>Case_Status_Update_Success</name>
         <label>Case Status Update Success</label>
-        <locationX>1158</locationX>
-        <locationY>319</locationY>
+        <locationX>1289</locationX>
+        <locationY>240</locationY>
         <assignmentItems>
             <assignToReference>FailScenarioMessage</assignToReference>
             <operator>Assign</operator>
@@ -81,6 +81,22 @@
             <targetReference>Update_Error_Ready_for_CC_Review</targetReference>
         </connector>
     </assignments>
+    <assignments>
+        <name>SecondReview_Status_Update_Error</name>
+        <label>SecondReview Status Update Error</label>
+        <locationX>1298</locationX>
+        <locationY>534</locationY>
+        <assignmentItems>
+            <assignToReference>FailScenarioMessage</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>MSG_Second_Review_Error</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_SecondReview_Error_Message</targetReference>
+        </connector>
+    </assignments>
     <constants>
         <name>Holdstatusfail</name>
         <dataType>String</dataType>
@@ -103,6 +119,13 @@
         </value>
     </constants>
     <constants>
+        <name>MSG_Second_Review_Error</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Status update failed. This case can only be updated to Ready for CC Review/Checks, CC Review in Progress, or Follow up Required to close status </stringValue>
+        </value>
+    </constants>
+    <constants>
         <name>Msg_Status_Fail_AF</name>
         <dataType>String</dataType>
         <value>
@@ -119,8 +142,8 @@
     <decisions>
         <name>Is_Satisfying_Status_Conditions</name>
         <label>Is Satisfying Status Conditions</label>
-        <locationX>861</locationX>
-        <locationY>361</locationY>
+        <locationX>784</locationX>
+        <locationY>303</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Is_Awaiting_Forms</name>
@@ -551,8 +574,150 @@
             </connector>
             <label>Ready for CC Review Error</label>
         </rules>
+        <rules>
+            <name>Second_Review</name>
+            <conditionLogic>(1 OR 2 OR 3 OR 4 OR 5) AND 6 AND (7 OR 8 OR 9)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Second_Review</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up Required to Close</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Status_Update_Success</targetReference>
+            </connector>
+            <label>Second Review</label>
+        </rules>
+        <rules>
+            <name>Second_Review_Error</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4) AND(5 OR 6 OR 7 OR 8 OR 9)</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record__Prior.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Second Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Awaiting Forms</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Follow up required for CC Review/Checks</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SecondReview_Status_Update_Error</targetReference>
+            </connector>
+            <label>Second Review Error</label>
+        </rules>
     </decisions>
-    <description>Updated error messages of case status move</description>
+    <description>Second Review Status Update version 13</description>
     <interviewLabel>Status update prevention {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status update prevention</label>
     <processMetadataValues>
@@ -615,8 +780,8 @@
     <recordUpdates>
         <name>Update_College_Referral_Hold</name>
         <label>Update College Referral Hold</label>
-        <locationX>717</locationX>
-        <locationY>668</locationY>
+        <locationX>655</locationX>
+        <locationY>669</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
@@ -636,6 +801,25 @@
         <label>Update Error Ready for CC Review</label>
         <locationX>1049</locationX>
         <locationY>619</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>FailScenarioMessage</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_SecondReview_Error_Message</name>
+        <label>Update SecondReview Error Message</label>
+        <locationX>1257</locationX>
+        <locationY>677</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
