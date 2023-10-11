@@ -48,6 +48,11 @@
                 <default>false</default>
                 <label>Discontinuation of Planning</label>
             </value>
+            <value>
+                <fullName>Patient Care info</fullName>
+                <default>false</default>
+                <label>Patient Care info</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

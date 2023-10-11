@@ -86,5 +86,17 @@
             <controllingFieldValue>Discontinuation of Planning</controllingFieldValue>
             <valueName>Reason for discontinuation</valueName>
         </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Patient Care info</controllingFieldValue>
+            <valueName>Consult with other health care professionals</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Patient Care info</controllingFieldValue>
+            <valueName>Palliative care/access</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Patient Care info</controllingFieldValue>
+            <valueName>Disability support services/length</valueName>
+        </valueSettings>
     </valueSet>
 </CustomField>
