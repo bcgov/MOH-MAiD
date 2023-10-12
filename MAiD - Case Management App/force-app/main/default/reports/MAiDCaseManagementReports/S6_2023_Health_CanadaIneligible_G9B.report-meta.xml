@@ -11,7 +11,7 @@
         <field>Form_1634__c.S1_HC_2023__r$MDR1_Q05__c</field>
     </columns>
     <columns>
-        <field>Form_1634__c$Id</field>
+        <field>Form_1634__c$Record_ID1__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -454,9 +454,6 @@
         <field>Form_1634__c.S1_HC_2023__r$ELG_S47E__c</field>
     </columns>
     <columns>
-        <field>Form_1634__c$Mental_Disorder_specify__c</field>
-    </columns>
-    <columns>
         <aggregateTypes>Sum</aggregateTypes>
         <field>Form_1634__c.S1_HC_2023__r$ELG_Q47F__c</field>
     </columns>
@@ -751,7 +748,38 @@
     <columns>
         <field>Form_1634__c$SUP_Q10_Formula__c</field>
     </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$Case__c.Patient_has_no_home_address__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$X1633_Form_entered__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$X1634_Old_form__c</field>
+    </columns>
+    <columns>
+        <field>Form_1634__c$Case__c.Status</field>
+    </columns>
     <description>S6 2023 Health Canada-Ineligible</description>
+    <filter>
+        <criteriaItems>
+            <column>Form_1634__c$Case__c.Type</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Discontinuation of Planning: Ineligible</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Form_1634__c$Case__c.Case_Type_Reported_Date__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>greaterOrEqual</operator>
+            <value>1/1/2023</value>
+        </criteriaItems>
+    </filter>
     <format>Tabular</format>
     <name>S6 2023 Health Canada-Ineligible</name>
     <params>
