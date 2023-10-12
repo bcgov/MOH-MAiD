@@ -4,8 +4,8 @@
     <externalId>false</externalId>
     <formula>&apos;Q&apos;+TEXT(CEILING( MONTH ( Case__r.Case_Type_Reported_Date__c )/3  )) + 
 RIGHT(TEXT(YEAR(Case__r.Case_Type_Reported_Date__c )), 2) + 
-IF( AND(  ISPICKVAL(How_was_MAiD_administered__c , &quot;1 - IV&quot;), OR( ISPICKVAL(Case__r.Type, &quot;MAiD death not foreseeable&quot;) ,ISPICKVAL(Case__r.Type, &quot;MAiD death foreseeable&quot;)) ) ,&quot;S1&quot;,
-IF(AND(OR(ISPICKVAL(How_was_MAiD_administered__c , &quot;2 - Oral&quot;),ISPICKVAL(How_was_MAiD_administered__c , &quot;3 - Oral and IV&quot;)),OR( ISPICKVAL(Case__r.Type, &quot;MAiD death not foreseeable&quot;) ,ISPICKVAL(Case__r.Type, &quot;MAiD death foreseeable&quot;))),&quot;S2&quot;,
+IF( AND(  ISPICKVAL(How_was_MAiD_administered__c , &quot;2 - Oral&quot;), OR( ISPICKVAL(Case__r.Type, &quot;MAiD death not foreseeable&quot;) ,ISPICKVAL(Case__r.Type, &quot;MAiD death foreseeable&quot;)) ) ,&quot;S2&quot;,
+IF(AND(OR(ISPICKVAL(How_was_MAiD_administered__c , &quot;1 - IV&quot;),ISPICKVAL(How_was_MAiD_administered__c , &quot;3 - Oral and IV&quot;)),OR( ISPICKVAL(Case__r.Type, &quot;MAiD death not foreseeable&quot;) ,ISPICKVAL(Case__r.Type, &quot;MAiD death foreseeable&quot;))),&quot;S1&quot;,
 IF(ISPICKVAL(Case__r.Type, &quot;Transfer of Request&quot;),&quot;S3&quot;,
 IF(ISPICKVAL(Case__r.Type, &quot;Discontinuation of Planning: Withdrawn Request&quot;),&quot;S5&quot;,
 IF(ISPICKVAL(Case__r.Type, &quot;Discontinuation of Planning: Ineligible&quot;),&quot;S6&quot;,
