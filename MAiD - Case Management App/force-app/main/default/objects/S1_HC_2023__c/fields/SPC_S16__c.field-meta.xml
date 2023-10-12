@@ -3,7 +3,7 @@
     <fullName>SPC_S16__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>Form_1634__r.Case__r.Practitioner__r.Specialty_Other_2023Reg__c</formula>
+    <formula>Form_1634__r.Case__r.Practitioner_Name__r.Specialty_Other_2023Reg__c</formula>
     <label>SPC_S16</label>
     <required>false</required>
     <trackTrending>false</trackTrending>

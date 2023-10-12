@@ -46,9 +46,9 @@
                 <label>7 - Psychiatry (includes Geriatric Psychiatry)</label>
             </value>
             <value>
-                <fullName>8 - Other Specify</fullName>
+                <fullName>8 - Other specify</fullName>
                 <default>false</default>
-                <label>8 - Other Specify</label>
+                <label>8 - Other specify</label>
             </value>
         </valueSetDefinition>
     </valueSet>
