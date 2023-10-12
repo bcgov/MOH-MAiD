@@ -11,7 +11,7 @@
         <field>Form_1634__c.S1_HC_2023__r$MDR1_Q05__c</field>
     </columns>
     <columns>
-        <field>Form_1634__c$Record_ID__c</field>
+        <field>Form_1634__c$Record_ID1__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -407,9 +407,6 @@
     </columns>
     <columns>
         <field>Form_1634__c.S1_HC_2023__r$ELG_Q44D__c</field>
-    </columns>
-    <columns>
-        <field>Form_1634__c.S1_HC_2023__r$ELG_S40D__c</field>
     </columns>
     <columns>
         <aggregateTypes>Sum</aggregateTypes>
@@ -825,6 +822,21 @@
     </columns>
     <columns>
         <field>Form_1634__c$SUP_Q10__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$Case__c.Patient_has_no_home_address__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$X1634_Old_form__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Form_1634__c$X1633_Form_entered__c</field>
+    </columns>
+    <columns>
+        <field>Form_1634__c$Case__c.Status</field>
     </columns>
     <format>Tabular</format>
     <name>S5 2023 HC Report – Withdrawal</name>
