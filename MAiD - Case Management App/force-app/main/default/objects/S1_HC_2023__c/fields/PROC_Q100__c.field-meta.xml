@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PROC_Q100__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( AND(Form_1634__r.Patient_lost_capacity_to_consent_1__c == true,Form_1634__r.An_agreement_with_the_patient_to_waive_f__c == true) , 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PROC_Q100</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

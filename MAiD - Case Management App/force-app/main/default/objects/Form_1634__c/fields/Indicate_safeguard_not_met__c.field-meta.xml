@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Indicate_safeguard_not_met__c</fullName>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>If this is a case whereby a practitioner determined that the person met all of the eligibility
+criteria, but subsequently determined that a safeguard has not been met, Indicate which
+safeguard has not been met and specify the reason for this determination.</inlineHelpText>
+    <label>Indicate safeguard not met</label>
+    <length>3000</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>5</visibleLines>
+</CustomField>

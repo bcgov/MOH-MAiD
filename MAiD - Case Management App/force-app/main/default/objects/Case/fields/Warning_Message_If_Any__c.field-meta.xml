@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Warning_Message_If_Any__c</fullName>
+    <deprecated>false</deprecated>
     <description>This would include the warning message while creation of the case records with the same PHN.</description>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>

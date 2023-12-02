@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ELG_Q145__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Form_1634__r.Length_of_assessment_period__c ,
+&quot;less than 90 days&quot;,1,
+&quot;90 to 120 days&quot;,2,
+&quot;121 to 180 days&quot;,3,
+&quot;181 to 365 days&quot;, 4,
+&quot;1 to 2 years&quot;,5,
+&quot;More than 2 years&quot;,6,0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ELG_Q145</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Missed_Issue_on_Form_RX_MAR__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Missed Issue on Form RX/MAR</label>
     <required>false</required>
@@ -28,6 +29,10 @@
         <valueSettings>
             <controllingFieldValue>Safeguards (Rx/MAR)</controllingFieldValue>
             <valueName>All safeguard boxes incomplete</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Safeguards (Rx/MAR)</controllingFieldValue>
+            <valueName>Medication dosage/time</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

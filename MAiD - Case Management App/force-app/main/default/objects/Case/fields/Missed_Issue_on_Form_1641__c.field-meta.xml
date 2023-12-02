@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Missed_Issue_on_Form_1641__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Missed Issue on Form 1641</label>
     <required>false</required>
@@ -51,10 +52,6 @@
         <valueSettings>
             <controllingFieldValue>Medication Dispensing</controllingFieldValue>
             <valueName>Return date/time</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Patient info incomplete</controllingFieldValue>
-            <valueName>N/A</valueName>
         </valueSettings>
     </valueSet>
 </CustomField>

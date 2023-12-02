@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Gender__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Used for sex of patient data Nov 1, 2018 to Dec 31, 2022 and Sex at Birth of patient from January 1, 2023 to combined data for reporting purposes</description>
     <externalId>false</externalId>
-    <label>Gender</label>
+    <inlineHelpText>For reporting purposes Sex at Birth field was Sex field for all data prior to January 1, 2023</inlineHelpText>
+    <label>Sex at Birth</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Who_did_you_receive_the_written_request__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <inlineHelpText>From whom did you receive the written request for MAiD that triggered the reporting requirement?</inlineHelpText>
+    <inlineHelpText>From whom were you notified of the written or verbal request for MAiD?</inlineHelpText>
     <label>Who did you receive the request from?</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

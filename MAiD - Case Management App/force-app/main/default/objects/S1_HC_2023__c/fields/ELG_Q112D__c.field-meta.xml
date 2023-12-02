@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ELG_Q112D__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    INCLUDES( Form_1634__r.Disability_support_services_received__c ,&quot;Disability income supports&quot;),1,
+    IF(
+        NOT(
+            INCLUDES( Form_1634__r.Disability_support_services_received__c ,&quot;Disability income supports&quot;)
+        ),2,0
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ELG_Q112D</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

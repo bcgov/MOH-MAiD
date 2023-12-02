@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
+    <decisions>
+        <name>Check_Potential_BCCS_Review</name>
+        <label>Check Potential BCCS Review</label>
+        <locationX>474</locationX>
+        <locationY>334</locationY>
+        <defaultConnector>
+            <targetReference>UpdateCaseForPotentialBCCSReviewNo</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>BCCS_Review_Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Potential_BCCS_Review__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateCase</targetReference>
+            </connector>
+            <label>BCCS Review Yes</label>
+        </rules>
+    </decisions>
+    <description>For Potential BCCS Review field update</description>
+    <environments>Default</environments>
     <interviewLabel>Update 1634 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update 1634</label>
     <processMetadataValues>
@@ -29,7 +56,7 @@
         <locationX>144</locationX>
         <locationY>330</locationY>
         <connector>
-            <targetReference>UpdateCase</targetReference>
+            <targetReference>Check_Potential_BCCS_Review</targetReference>
         </connector>
         <inputAssignments>
             <field>SUP_Q05__c</field>
@@ -42,8 +69,8 @@
     <recordUpdates>
         <name>UpdateCase</name>
         <label>UpdateCase</label>
-        <locationX>525</locationX>
-        <locationY>283</locationY>
+        <locationX>769</locationX>
+        <locationY>341</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -52,6 +79,57 @@
                 <elementReference>$Record.Case__c</elementReference>
             </value>
         </filters>
+        <inputAssignments>
+            <field>BCCS_Manager_Review_Required__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Federal_Safeguards__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Legislation_and_Critical_Safeguards__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Mandatory_Data__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Provincial_Safeguards__c</field>
+            <value>
+                <stringValue></stringValue>
+            </value>
+        </inputAssignments>
+        <object>Case</object>
+    </recordUpdates>
+    <recordUpdates>
+        <name>UpdateCaseForPotentialBCCSReviewNo</name>
+        <label>UpdateCaseForPotentialBCCSReviewNo</label>
+        <locationX>788</locationX>
+        <locationY>519</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Id</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Case__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>BCCS_Manager_Review_Required__c</field>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </inputAssignments>
         <inputAssignments>
             <field>Federal_Safeguards__c</field>
             <value>

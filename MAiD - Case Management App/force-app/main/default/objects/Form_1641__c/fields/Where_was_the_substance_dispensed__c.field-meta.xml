@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Where_was_the_substance_dispensed__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Where was the substance dispensed?</label>
     <required>false</required>
@@ -12,7 +13,7 @@
             <sorted>false</sorted>
             <value>
                 <fullName>1 - Hospital</fullName>
-                <default>true</default>
+                <default>false</default>
                 <label>1 - Hospital</label>
             </value>
             <value>
@@ -28,4 +29,3 @@
         </valueSetDefinition>
     </valueSet>
 </CustomField>
-

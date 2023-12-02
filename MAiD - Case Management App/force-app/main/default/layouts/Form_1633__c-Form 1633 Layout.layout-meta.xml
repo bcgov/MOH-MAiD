@@ -50,10 +50,6 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Date_Written_Request_Received__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
                 <field>Who_did_you_receive_the_written_request__c</field>
             </layoutItems>
             <layoutItems>
@@ -190,6 +186,10 @@
         <editHeading>true</editHeading>
         <label>Conclusion of Eligibility</label>
         <layoutColumns>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Date_Written_Request_Received__c</field>
+            </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>I_determine_that_the_patient__c</field>

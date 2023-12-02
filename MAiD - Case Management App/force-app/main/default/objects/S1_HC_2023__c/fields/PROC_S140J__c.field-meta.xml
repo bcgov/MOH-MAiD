@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PROC_S140J__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( NOT(ISNULL(Form_1634__r.Specify_expert_specialty_if_Other__c)) , Form_1634__r.Specify_expert_specialty_if_Other__c, &quot;N/A&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PROC_S140J</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

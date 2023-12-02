@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RES_Q10__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( 
+    Form_1634__r.Case__r.If_Private_Residence_Living_arrangement__c,
+    &quot;Lives with family&quot;,1,
+    &quot;Lives alone&quot;,2,
+    &quot;Lives with relatives&quot;,3,
+    &quot;Lives with non-relatives&quot;,4,
+    &quot;Other living Arrangement&quot;,5,0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>RES_Q10</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

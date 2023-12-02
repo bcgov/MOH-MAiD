@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reasons_for_transfer__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If yes, what were the reasons the person was transferred to another location? (choose all that apply):</inlineHelpText>
+    <label>Reasons for transfer</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Public health recommendations</fullName>
+                <default>false</default>
+                <label>Public health recommendations</label>
+            </value>
+            <value>
+                <fullName>Policies of the facility where the person was located</fullName>
+                <default>false</default>
+                <label>Policies of the facility where the person was located</label>
+            </value>
+            <value>
+                <fullName>Availability/capacity/comfort of practitioners within the facility where the person was located</fullName>
+                <default>false</default>
+                <label>Availability/capacity/comfort of practitioners within the facility where the person was located</label>
+            </value>
+            <value>
+                <fullName>Privileges not available at time or at all to practitioners at facility of patient</fullName>
+                <default>false</default>
+                <label>Privileges not available at time or at all to practitioners at facility of patient</label>
+            </value>
+            <value>
+                <fullName>Person requested a transfer to an alternate location</fullName>
+                <default>false</default>
+                <label>Person requested a transfer to an alternate location</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

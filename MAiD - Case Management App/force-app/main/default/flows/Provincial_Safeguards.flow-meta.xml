@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>AssignFailList</name>
         <label>AssignFailList</label>
@@ -266,13 +266,6 @@
         <label>UpdateProvincialPASS</label>
         <locationX>2194</locationX>
         <locationY>3080</locationY>
-        <assignmentItems>
-            <assignToReference>ListCaseDetail.Provincial_Safeguards__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <stringValue>PASS</stringValue>
-            </value>
-        </assignmentItems>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -544,7 +537,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule27_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND (8 OR 9))  OR (10 AND 11)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND ((12 AND 13) OR (NOT(13)) ) AND (8 OR 9))  OR (10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PractitionersSignature</leftValueReference>
                 <operator>EqualTo</operator>
@@ -614,6 +607,17 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Potential_BCCS_Review</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_Year_2023_Default</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -711,7 +715,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Check_Rule29_Pass</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7) AND (8 OR 9)) OR (10 AND 11)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 12 AND 13 AND 5 AND 6 AND 7) AND (8 OR 9)) OR (10 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
@@ -783,6 +787,20 @@
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Date_of_MAiD__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Date_of_MAiD__c</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Check_Proxy_Signed_for_MAiD</targetReference>
             </connector>
@@ -790,7 +808,7 @@
         </rules>
         <rules>
             <name>CheckRule29_yes</name>
-            <conditionLogic>(((1 AND 3 AND 10) OR (2 AND 4 AND 11) OR 9) AND 12 AND 13 AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
+            <conditionLogic>(((1 AND 3 AND 10 AND 15) OR (2 AND 4 AND 11 AND 14) OR 9) AND 12 AND 13 AND (5 OR 6)) OR (7 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PatientSignedforMAiDAdministration</leftValueReference>
                 <operator>EqualTo</operator>
@@ -871,6 +889,20 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <elementReference>Var1634_PatientDateforMAiDAdministration</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_DateSignedbyProxyforMAID</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Date_of_MAiD__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PatientDateforMAiDAdministration</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Date_of_MAiD__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -1083,7 +1115,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule34_2_yes</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND ((12 AND 13) OR (14 AND 15))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_DispensingPharmacist</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -1154,6 +1186,20 @@
                     <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_Backup_Kit</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_BackUp_Kit_Consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>CheckRule34_4_Final</targetReference>
             </connector>
@@ -1163,15 +1209,15 @@
     <decisions>
         <name>CheckRule34_3</name>
         <label>CheckRule34-3</label>
-        <locationX>10</locationX>
-        <locationY>1946</locationY>
+        <locationX>8</locationX>
+        <locationY>1950</locationY>
         <defaultConnector>
             <targetReference>Rule34ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule34_3_yes</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND ((11 AND 12) OR (13 AND 14))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1641_DispensingPharmacist</leftValueReference>
                 <operator>NotEqualTo</operator>
@@ -1234,6 +1280,20 @@
             <conditions>
                 <leftValueReference>Var1641_Sealed_IV_BackUp_Kit_Consistent_with_MAR</leftValueReference>
                 <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_Backup_Kit</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Sealed_IV_BackUp_Kit_Consistent_with_MAR</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
                     <elementReference>Varbool</elementReference>
                 </rightValue>
@@ -2202,7 +2262,7 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>Fix on Rule 29 PS</description>
+    <description>Fix on Rule 34 PS</description>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
@@ -2293,6 +2353,10 @@
         <outputAssignments>
             <assignToReference>Var1634_Patientwasgivenopportunitytowithdra</assignToReference>
             <field>Patient_was_given_opportunity_to_withdra__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Potential_BCCS_Review</assignToReference>
+            <field>Potential_BCCS_Review__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_PractitionerAdministrationsignoffDat1</assignToReference>
@@ -2692,6 +2756,8 @@
         <queriedFields>Id</queriedFields>
         <queriedFields>Federal_Safeguards__c</queriedFields>
         <queriedFields>Type</queriedFields>
+        <queriedFields>Case_Type_Reported_Date__c</queriedFields>
+        <queriedFields>Date_of_MAiD__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Update_FAIL</name>
@@ -2703,8 +2769,8 @@
     <recordUpdates>
         <name>Update_PASS</name>
         <label>Update-PASS</label>
-        <locationX>1791</locationX>
-        <locationY>3286</locationY>
+        <locationX>1932</locationX>
+        <locationY>3320</locationY>
         <inputReference>UpdatePassList</inputReference>
     </recordUpdates>
     <recordUpdates>
@@ -2856,6 +2922,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Potential_BCCS_Review</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_PractitionerAdministrationsignoffDat</name>
         <dataType>DateTime</dataType>
         <isCollection>false</isCollection>
@@ -2973,6 +3046,16 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Year_2023_Default</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
     </variables>
     <variables>
         <name>Var1641_Bupivacaine</name>

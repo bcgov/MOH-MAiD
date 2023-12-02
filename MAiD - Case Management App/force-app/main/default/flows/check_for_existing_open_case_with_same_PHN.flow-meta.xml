@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>50.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>Prevent_Save_sets_to_true</name>
         <label>Prevent Save sets to true</label>
@@ -237,7 +237,7 @@
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>MAiDCaseRecordTypeID</name>
         <dataType>String</dataType>

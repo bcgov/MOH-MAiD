@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>54.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>assign_value_to_existing_PHN</name>
         <label>assign value to existing PHN</label>
@@ -40,6 +40,70 @@
                 <targetReference>update_warning_message</targetReference>
             </connector>
             <label>check collection has existing phn</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>check_the_case_type</name>
+        <label>check the case type</label>
+        <locationX>413</locationX>
+        <locationY>190</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>check_case_type</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Assessment of Eligibility</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Transfer of Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>assign_value_to_existing_PHN</targetReference>
+            </connector>
+            <label>check case type</label>
         </rules>
     </decisions>
     <description>This flow is responsible to check if a new case is being created with the same PHN already in the system.</description>
@@ -110,12 +174,19 @@
         <connector>
             <targetReference>loop_through_all_phn</targetReference>
         </connector>
-        <filterLogic>(1 AND 2) OR (3 AND 4) OR (5 AND 6)</filterLogic>
+        <filterLogic>(((1 OR 2) AND 3) OR (4 AND 5))</filterLogic>
         <filters>
             <field>Type</field>
             <operator>EqualTo</operator>
             <value>
-                <elementReference>$Record.Type</elementReference>
+                <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
             </value>
         </filters>
         <filters>
@@ -127,23 +198,9 @@
         </filters>
         <filters>
             <field>Type</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <elementReference>$Record.Type</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>Status</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Closed</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>Type</field>
-            <operator>NotEqualTo</operator>
-            <value>
-                <elementReference>$Record.Type</elementReference>
+                <stringValue>MAiD Assessment of Eligibility</stringValue>
             </value>
         </filters>
         <filters>
@@ -185,16 +242,16 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>121</locationX>
-        <locationY>70</locationY>
+        <locationX>15</locationX>
+        <locationY>76</locationY>
         <connector>
-            <targetReference>assign_value_to_existing_PHN</targetReference>
+            <targetReference>check_the_case_type</targetReference>
         </connector>
         <object>Case</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Active</status>
+    <status>Obsolete</status>
     <variables>
         <name>all_PHN_values</name>
         <dataType>SObject</dataType>

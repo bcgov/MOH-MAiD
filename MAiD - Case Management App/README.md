@@ -1,18 +1,35 @@
-# Salesforce DX Project: Next Steps
+# Project Description
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+Application developed for BC Ministry of Health - Medical Assistance in Dying to input MAiD data; that allows the MoH MAiD team to control the data and to generate reports; and that allows Health Authorities to consult the reports.
 
-## How Do You Plan to Deploy Your Changes?
+## Org Pre-Requisites
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Before executing the below steps, please submit a request for developer org from org admin. The SF org should be created from production instance and depends on availability.
 
-## Configure Your Salesforce DX Project
+## Installation
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+Make sure to install the below to run sfdx commands from your local Visual Studio code environment.
 
-## Read All About It
+To install VS code, navigate to the below url.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+```bash
+https://code.visualstudio.com/
+```
+
+install SFDX-cli, this is required to execute commands to fetch and push code into your developer org.
+
+```bash
+https://developer.salesforce.com/tools/sfdxcli
+```
+
+install all the below VS code extensions to help you out with code pull and push from your local VS code branch.
+
+```bash
+salesforce.salesforcedx-vscode-apex
+modicatech.apex-code-coverage-visualizer
+salesforce.salesforcedx-vscode-apex-debugger
+FinancialForce.lana
+chuckjonas.apex-pmd
+salesforce.salesforcedx-vscode-apex-replay-debugger
+salesforce.salesforcedx-vscode-lightning
+```

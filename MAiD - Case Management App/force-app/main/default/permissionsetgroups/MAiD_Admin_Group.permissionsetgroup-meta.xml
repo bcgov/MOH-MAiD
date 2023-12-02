@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>MAiD Admin Group</description>
+    <label>MAiD Admin Group</label>
+    <permissionSets>MAiD_Analyst</permissionSets>
+    <permissionSets>MAiD_Manage_Encryption_Keys</permissionSets>
+    <permissionSets>MAiD_Manager</permissionSets>
+    <permissionSets>MAiD_Reports_Dashboards</permissionSets>
+    <permissionSets>MAiD_System_Administrator</permissionSets>
+    <permissionSets>MoH_Manage_Encryption_Keys</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

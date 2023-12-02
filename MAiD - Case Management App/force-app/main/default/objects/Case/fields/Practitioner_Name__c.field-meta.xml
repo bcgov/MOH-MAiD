@@ -3,8 +3,18 @@
     <fullName>Practitioner_Name__c</fullName>
     <complianceGroup>PII;PHI</complianceGroup>
     <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Practitioner Name</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Account.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Nurse Practitioner, Physician</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
     <referenceTo>Account</referenceTo>
     <relationshipLabel>Cases</relationshipLabel>
     <relationshipName>Cases</relationshipName>

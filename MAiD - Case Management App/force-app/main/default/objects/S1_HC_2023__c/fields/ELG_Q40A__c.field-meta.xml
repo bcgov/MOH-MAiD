@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ELG_Q40A__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+    ISNULL ( Form_1634__r.If_yes_select_all_that_apply_1__c ), 0,
+    IF(
+        (
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Cancer - Breast&quot; ) || 
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Cancer - Colorectal&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Cancer - Hematologic&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Cancer - Lung&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Cancer - Ovary&quot; ) || 
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Cancer - Pancreatic&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Cancer - Prostate&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;Cancer - Other&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;A - Cancer - lung and bronchus&quot; ) || 
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;B - Cancer - breast&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;C- Cancer - colorectal&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;D - Cancer - pancreas&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;E - Cancer - prostate&quot; ) || 
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;F - Cancer - ovary&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;G - Cancer - hematologic&quot; ) ||
+            INCLUDES ( Form_1634__r.If_yes_select_all_that_apply_1__c, &quot;H - Cancer - other&quot; )
+        ),1,2
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ELG_Q40A</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

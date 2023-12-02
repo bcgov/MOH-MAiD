@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SLF_Q45__c</fullName>
+    <externalId>false</externalId>
+    <formula>if(Text(Form_1634__r.Did_the_patient_die_after_self_administ__c) == &apos;1 - Yes&apos;,1, if(Text(Form_1634__r.Did_the_patient_die_after_self_administ__c)==&apos;2 - No&apos;,2,0))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>SLF_Q45</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

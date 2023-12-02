@@ -362,6 +362,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Dose_of_Bupivacaine__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>Describe_Dose_of_Bupivacaine__c</field>
             </layoutItems>
             <layoutItems>

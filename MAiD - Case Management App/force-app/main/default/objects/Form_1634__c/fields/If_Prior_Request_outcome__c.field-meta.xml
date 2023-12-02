@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>If_Prior_Request_outcome__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If yes, what was the outcome of the prior request for MAiD?</inlineHelpText>
+    <label>If Prior Request, outcome</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Assessed and found ineligible</fullName>
+                <default>false</default>
+                <label>Assessed and found ineligible</label>
+            </value>
+            <value>
+                <fullName>Assessed and found eligible but person withdrew request</fullName>
+                <default>false</default>
+                <label>Assessed and found eligible but person withdrew request</label>
+            </value>
+            <value>
+                <fullName>Assessed and found eligible but considerable time elapsed since the assessment</fullName>
+                <default>false</default>
+                <label>Assessed and found eligible but considerable time elapsed since the assessment</label>
+            </value>
+            <value>
+                <fullName>Request not actioned</fullName>
+                <default>false</default>
+                <label>Request not actioned</label>
+            </value>
+            <value>
+                <fullName>Other-specify:</fullName>
+                <default>false</default>
+                <label>Other-specify:</label>
+            </value>
+            <value>
+                <fullName>Assessed and found eligible but considerable time elapsed since the assessment                                                                                                 Request not actioned</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Assessed and found eligible but considerable time elapsed since the assessment                                                                                                 Request not actioned</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

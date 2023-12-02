@@ -167,7 +167,6 @@
         <searchResultsAdditionalFields>Safeguards_signed_by_prescriber__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Pharmacists_safeguards_initialed__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Second_Practitioners_Name__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields xsi:nil="true"/>
         <searchResultsAdditionalFields>IV_Drug_Regiment__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Midazolam_being_ordered__c</searchResultsAdditionalFields>
     </searchLayouts>
