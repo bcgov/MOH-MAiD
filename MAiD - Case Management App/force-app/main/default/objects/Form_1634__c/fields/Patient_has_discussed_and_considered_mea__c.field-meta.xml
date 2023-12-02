@@ -2,8 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_has_discussed_and_considered_mea__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <inlineHelpText>I agree with the patient that they have discussed and appropriately considered reasonable means of alleviating their suffering</inlineHelpText>
+    <inlineHelpText>I confirm the other assessing practitioner and I have discussed with the patient the reasonable and available means to relieve their suffering, and we agree that they have given these means seriously consideration</inlineHelpText>
     <label>Discussed means of alleviating suffering</label>
     <trackFeedHistory>false</trackFeedHistory>
     <trackTrending>false</trackTrending>

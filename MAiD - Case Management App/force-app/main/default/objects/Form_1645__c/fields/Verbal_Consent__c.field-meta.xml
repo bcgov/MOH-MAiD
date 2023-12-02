@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Verbal_Consent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Provide verbal consent on the form.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide verbal consent on the form.</inlineHelpText>
+    <label>Verbal Consent</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

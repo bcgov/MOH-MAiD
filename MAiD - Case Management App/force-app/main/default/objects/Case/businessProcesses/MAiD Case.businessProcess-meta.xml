@@ -34,4 +34,8 @@
         <fullName>Closed</fullName>
         <default>false</default>
     </values>
+    <values>
+        <fullName>Second Review</fullName>
+        <default>false</default>
+    </values>
 </BusinessProcess>

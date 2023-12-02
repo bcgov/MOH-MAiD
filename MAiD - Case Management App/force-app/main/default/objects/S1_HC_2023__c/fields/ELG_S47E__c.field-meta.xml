@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ELG_S47E__c</fullName>
+    <externalId>false</externalId>
+    <formula>Form_1634__r.Mental_Disorder_specify__c</formula>
+    <label>ELG_S47E</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

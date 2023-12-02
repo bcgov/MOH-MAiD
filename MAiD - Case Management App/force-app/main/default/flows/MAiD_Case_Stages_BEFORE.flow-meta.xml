@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
-    <description>MAiD Case Stages BEFORE</description>
+    <apiVersion>57.0</apiVersion>
+    <description>MAiD Case Stages BEFORE Added clause date of MAiD</description>
     <interviewLabel>MAiD Case Stages BEFORE {!$Flow.CurrentDateTime}</interviewLabel>
     <label>MAiD Case Stages BEFORE</label>
     <processMetadataValues>
@@ -27,8 +27,8 @@
         <description>Get MAiD Entitlement ID</description>
         <name>Get_Entitlement_ID</name>
         <label>Get Entitlement ID</label>
-        <locationX>168</locationX>
-        <locationY>285</locationY>
+        <locationX>169</locationX>
+        <locationY>284</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Set_Case_Entitlement_Fields</targetReference>
@@ -49,7 +49,7 @@
         <description>Set Case Entitlement Fields</description>
         <name>Set_Case_Entitlement_Fields</name>
         <label>Set Case Entitlement Fields</label>
-        <locationX>173</locationX>
+        <locationX>175</locationX>
         <locationY>410</locationY>
         <inputAssignments>
             <field>EntitlementId</field>
@@ -66,12 +66,12 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>50</locationX>
-        <locationY>50</locationY>
+        <locationX>45</locationX>
+        <locationY>49</locationY>
         <connector>
             <targetReference>Get_Entitlement_ID</targetReference>
         </connector>
-        <filterLogic>or</filterLogic>
+        <filterLogic>and</filterLogic>
         <filters>
             <field>EntitlementId</field>
             <operator>IsNull</operator>
@@ -86,9 +86,16 @@
                 <booleanValue>true</booleanValue>
             </value>
         </filters>
+        <filters>
+            <field>Date_of_MAiD__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>
     </start>
-    <status>Draft</status>
+    <status>Active</status>
 </Flow>

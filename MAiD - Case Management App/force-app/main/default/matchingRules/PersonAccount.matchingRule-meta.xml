@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <MatchingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <matchingRules>
+        <fullName>Verify_Unique_College</fullName>
+        <label>Verify Unique College</label>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>College_ID__pc</fieldName>
+            <matchingMethod>Exact</matchingMethod>
+        </matchingRuleItems>
+        <matchingRuleItems>
+            <blankValueBehavior>NullNotAllowed</blankValueBehavior>
+            <fieldName>Type</fieldName>
+            <matchingMethod>Exact</matchingMethod>
+        </matchingRuleItems>
+        <ruleStatus>Active</ruleStatus>
+    </matchingRules>
+    <matchingRules>
         <fullName>Verify_Unique_College_Id_Match</fullName>
         <label>Verify Unique College Id Match</label>
         <matchingRuleItems>
@@ -8,6 +23,6 @@
             <fieldName>College_ID__pc</fieldName>
             <matchingMethod>Exact</matchingMethod>
         </matchingRuleItems>
-        <ruleStatus>Active</ruleStatus>
+        <ruleStatus>Inactive</ruleStatus>
     </matchingRules>
 </MatchingRules>

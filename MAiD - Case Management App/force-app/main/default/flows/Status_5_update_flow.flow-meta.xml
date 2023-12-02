@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>AssignCheckToEducationOnCase</name>
         <label>AssignCheckToEducationOnCase</label>
@@ -279,7 +279,7 @@
         <defaultConnectorLabel>Error Log Check Failed</defaultConnectorLabel>
         <rules>
             <name>Case_Type_1_0</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 6 AND 7) AND (4 OR 5)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 6 AND 7) AND (4 OR 5)) OR (1 AND 8 AND 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -329,6 +329,20 @@
                     <stringValue>Closed</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.BCCS_Manager_Review_Required__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Get_Related_Case_Records</targetReference>
             </connector>
@@ -336,7 +350,7 @@
         </rules>
         <rules>
             <name>Case_Type_2_0</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 6 AND 7) AND (4 OR 5)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 6 AND 7) AND (4 OR 5)) OR (1 AND 8 AND 9)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -384,6 +398,20 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BCCS_Manager_Review_Required__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1740,7 +1768,8 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Updates related to Education check over Tasks and Related Cases</description>
+    <description>Status flow 5 Updated</description>
+    <environments>Default</environments>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
@@ -1890,6 +1919,7 @@
         <queriedFields>Federal_Safeguards__c</queriedFields>
         <queriedFields>Manager_Override_Requested__c</queriedFields>
         <queriedFields>Notes_to_Manager__c</queriedFields>
+        <queriedFields>BCCS_Manager_Review_Required__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Fail_Status_Update</name>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disability_support_services_received__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>If the person received disability support services, what were the services received? (select all that apply)</inlineHelpText>
+    <label>Disability support services received</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Aids to support physical mobility</fullName>
+                <default>false</default>
+                <label>Aids to support physical mobility</label>
+            </value>
+            <value>
+                <fullName>Aids to support audio/visual/communication</fullName>
+                <default>false</default>
+                <label>Aids to support audio/visual/communication</label>
+            </value>
+            <value>
+                <fullName>Aid to support safety/access/transfers/ADLs</fullName>
+                <default>false</default>
+                <label>Aid to support safety/access/transfers/ADLs</label>
+            </value>
+            <value>
+                <fullName>Disability income supports</fullName>
+                <default>false</default>
+                <label>Disability income supports</label>
+            </value>
+            <value>
+                <fullName>Mental health / social support professional services</fullName>
+                <default>false</default>
+                <label>Mental health / social support professional services</label>
+            </value>
+            <value>
+                <fullName>Physical support services</fullName>
+                <default>false</default>
+                <label>Physical support services</label>
+            </value>
+            <value>
+                <fullName>Physiotherapy</fullName>
+                <default>false</default>
+                <label>Physiotherapy</label>
+            </value>
+            <value>
+                <fullName>Other supports</fullName>
+                <default>false</default>
+                <label>Other supports</label>
+            </value>
+            <value>
+                <fullName>Do not know</fullName>
+                <default>false</default>
+                <label>Do not know</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

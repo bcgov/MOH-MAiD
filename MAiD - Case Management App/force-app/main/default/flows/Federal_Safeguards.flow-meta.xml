@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>AssignNewFailListDetail</name>
         <label>AssignNewFailListDetail</label>
-        <locationX>2267</locationX>
-        <locationY>1525</locationY>
+        <locationX>1545</locationX>
+        <locationY>1895</locationY>
         <assignmentItems>
             <assignToReference>ListFailFedral</assignToReference>
             <operator>Add</operator>
@@ -180,7 +180,7 @@
     <assignments>
         <name>Rule37ErrorMsg</name>
         <label>Rule37ErrorMsg</label>
-        <locationX>1074</locationX>
+        <locationX>1076</locationX>
         <locationY>1608</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
@@ -212,8 +212,8 @@
     <assignments>
         <name>Rule39ErrorMsg</name>
         <label>Rule39ErrorMsg</label>
-        <locationX>1302</locationX>
-        <locationY>1703</locationY>
+        <locationX>1342</locationX>
+        <locationY>1263</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -228,8 +228,8 @@
     <assignments>
         <name>UpdateFedralFAIL</name>
         <label>UpdateFedralFAIL</label>
-        <locationX>2127</locationX>
-        <locationY>1345</locationY>
+        <locationX>1559</locationX>
+        <locationY>1620</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Federal_Safeguards__c</assignToReference>
             <operator>Assign</operator>
@@ -282,6 +282,22 @@
         </assignmentItems>
         <connector>
             <targetReference>AssignNewPASSListDetail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Var66ErrMSG</name>
+        <label>Var66ErrMSG</label>
+        <locationX>1155</locationX>
+        <locationY>1886</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Federal_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var66Err</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>UpdateFedralFAIL</targetReference>
         </connector>
     </assignments>
     <constants>
@@ -363,6 +379,13 @@
         <dataType>String</dataType>
         <value>
             <stringValue>Rule 41 is Failed</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Var66Err</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 66 is Failed</stringValue>
         </value>
     </constants>
     <constants>
@@ -482,8 +505,8 @@
     <decisions>
         <name>CheckCondition</name>
         <label>CheckCondition</label>
-        <locationX>2090</locationX>
-        <locationY>283</locationY>
+        <locationX>2134</locationX>
+        <locationY>336</locationY>
         <defaultConnector>
             <targetReference>Rule15ErrorMsg</targetReference>
         </defaultConnector>
@@ -535,7 +558,7 @@
         </rules>
         <rules>
             <name>Rule_15_yes</name>
-            <conditionLogic>((1 OR 2) AND (3 OR 4)) OR (5 AND 6)</conditionLogic>
+            <conditionLogic>((1 OR 2)  AND (7 or 8)AND (3 OR 4)) OR (5 AND 6)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1632_ProxySignDate</leftValueReference>
                 <operator>EqualTo</operator>
@@ -576,6 +599,20 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_ProxySignDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Patient_MAiD_Request_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1632_RequestSigDate</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>$Record.Patient_MAiD_Request_Date__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -893,15 +930,15 @@
     <decisions>
         <name>CheckRule10</name>
         <label>CheckRule10</label>
-        <locationX>1065</locationX>
-        <locationY>638</locationY>
+        <locationX>1066</locationX>
+        <locationY>637</locationY>
         <defaultConnector>
             <targetReference>Rule10ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule10_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 15 AND 16 AND (11 OR 12)) OR (13 AND 14)</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 15 AND 16 AND 17 AND (11 OR 12)) OR (13 AND 14)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientconsentedtoassessment</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1008,6 +1045,13 @@
                     <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1633_AllSafegaurdshavebeenmet</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>CheckCaseType</targetReference>
             </connector>
@@ -1018,14 +1062,14 @@
         <name>CheckRule11</name>
         <label>CheckRule11,13 &amp; 14</label>
         <locationX>805</locationX>
-        <locationY>773</locationY>
+        <locationY>774</locationY>
         <defaultConnector>
             <targetReference>Rule11_13_14_ErrorMsg</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Rule11</name>
-            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5</conditionLogic>
+            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5 AND 6</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1060,6 +1104,10 @@
                 <rightValue>
                     <stringValue>1 - IV</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
+                <operator>EqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_12_skip</targetReference>
@@ -1068,7 +1116,7 @@
         </rules>
         <rules>
             <name>Rule112</name>
-            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 5</conditionLogic>
+            <conditionLogic>(1 OR 2) AND 3 AND 4 AND 10 AND (6 OR ((5 AND 7) AND ((8 AND 9) OR (NOT(8)))))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1091,18 +1139,44 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_PatlostCapacity</leftValueReference>
-                <operator>NotEqualTo</operator>
-                <rightValue>
-                    <elementReference>Varbool</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>Var1634_Patientwasgivenopportunitytowithdra</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Varbool</elementReference>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ifyesindicateservicesmeans</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ifyesindicateservicesmeans</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Otherservicesmeansspecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patienthaddifficultycommunicating</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_12_skip</targetReference>
@@ -1286,7 +1360,7 @@
         </rules>
         <rules>
             <name>Rule12_2</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5 AND 7 AND 8) AND ((6 AND 9) OR 10)</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1341,6 +1415,20 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>Var1634_Default_Year_2023</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1634_Default_Year_2023</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -1537,9 +1625,55 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule19_yes_0</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>(((1 AND 2) OR (3 AND 4) OR 8) AND 9 AND 10 AND 5 AND 6 AND 7 AND 11)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1645_PatientSafeguardsCompleted</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Patient_Signed_and_Dated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Proxy_Completed_Safeguards</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Proxy_Signed_and_Dated</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_MAiDAdministrationDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var1645_Agreed_date_of_MAiD</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Agreed_date_of_MAiD</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1645_Verbal_Consent</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>Varbool</elementReference>
@@ -1553,17 +1687,10 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1645_Finalwaiverofconsentdatesigned</leftValueReference>
-                <operator>LessThan</operator>
-                <rightValue>
-                    <elementReference>Var1634_MAiDAdministrationDate</elementReference>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <leftValueReference>Var1645_Practitioner_Signed_and_Dated</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>MAiD Death Foreseeable</stringValue>
+                    <elementReference>Varbool</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1587,7 +1714,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule37_yes</name>
-            <conditionLogic>(1 AND 2 AND 3 AND 4 AND 5) OR 6 OR 7</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 5) AND (((8 AND 9 AND 10 AND 11 AND 12) AND (((13 AND 14) OR (NOT(13))) AND ((15 AND 16) OR (NOT(15))) AND ((17 AND 18) OR (NOT(17))))) OR 19))OR 6 OR 7</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Ideterminethatthepatient</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1632,6 +1759,69 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_Default_Year_2023</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Reasonsforseriousconsideration</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_NONRFNDSafeguardscompleteddate</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Servicesofferedordiscussed</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Expertconsultantspecialty</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Expertconsultantspecialty</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_SpecifyexpertspecialtyifOther</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Servicesofferedordiscussed</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other service</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_IfOtherservicespecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Reasonsforseriousconsideration</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Otherreasonspecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>Var_Default_Year_2023</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -1694,7 +1884,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>CheckRule38_2_Yes</name>
-            <conditionLogic>(((1 AND 2 AND 7) OR (5 AND 6)) AND 3) OR 4</conditionLogic>
+            <conditionLogic>(((1 AND 2 AND 7 AND 9 AND 10) OR (5 AND 6 AND 8 )) AND 3) OR 4</conditionLogic>
             <conditions>
                 <leftValueReference>VarNumberofDays</leftValueReference>
                 <operator>GreaterThanOrEqualTo</operator>
@@ -1740,6 +1930,27 @@
             <conditions>
                 <leftValueReference>Var1634_MAiDAdministrationDate</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Ensuredtherewereatleast_90_days</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_The_patientwasatriskoflosingcapacity</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_AssessorAnd_PrescriberinAgreement</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>Varbool</elementReference>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>CheckRule39</targetReference>
@@ -1788,7 +1999,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateFedralPASS</targetReference>
+                <targetReference>Rule_66</targetReference>
             </connector>
             <label>CheckRule39=yes</label>
         </rules>
@@ -1818,7 +2029,63 @@
             <label>skip MAiD Death Not foreseeable</label>
         </rules>
     </decisions>
-    <description>Removed Rule 41.</description>
+    <decisions>
+        <name>Rule_66</name>
+        <label>Rule 66</label>
+        <locationX>910</locationX>
+        <locationY>2093</locationY>
+        <defaultConnector>
+            <targetReference>Var66ErrMSG</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Rule_66_Pass</name>
+            <conditionLogic>(1 AND 2 AND (((3 AND 4 AND 7) AND ((5 AND 6) OR (NOT(5))) ) OR (NOT(3)))) OR (NOT(1))</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <dateValue>2023-01-01</dateValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_lengthOfMedicalCondition</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_AdvanceStateOfIrreversibleDecline</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_isYesReasonForOpinion</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_isYesReasonForOpinion</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_ifOtherreasonspecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_AdvanceStateOfIrreversibleDecline</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>UpdateFedralPASS</targetReference>
+            </connector>
+            <label>Rule 66 Pass</label>
+        </rules>
+    </decisions>
+    <description>Rule 38-2 update</description>
+    <environments>Default</environments>
     <formulas>
         <name>VarNumberofDays</name>
         <dataType>Number</dataType>
@@ -1904,6 +2171,10 @@
             <field>All_eligibility_criteria_has_been_met__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1633_AllSafegaurdshavebeenmet</assignToReference>
+            <field>All_safeguards_have_been_met__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1633_Ideterminethatthepatient</assignToReference>
             <field>I_determine_that_the_patient__c</field>
         </outputAssignments>
@@ -1963,6 +2234,10 @@
             <field>Ensured_there_were_at_least_90_days__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Expertconsultantspecialty</assignToReference>
+            <field>Expert_consultant_specialty__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_ExpertiseConsultantWas</assignToReference>
             <field>Expertise_consultant_was__c</field>
         </outputAssignments>
@@ -1975,8 +2250,24 @@
             <field>I_determine_that_the_patient__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_ifOtherreasonspecify</assignToReference>
+            <field>If_Other_reason_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_IfOtherservicespecify</assignToReference>
+            <field>If_Other_service_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_IfYespatientconsented</assignToReference>
             <field>If_Yes_patient_consented__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Ifyesindicateservicesmeans</assignToReference>
+            <field>If_yes_indicate_services_means__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_isYesReasonForOpinion</assignToReference>
+            <field>If_yes_reasons_for_opinion__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_ReqSignDate</assignToReference>
@@ -1987,12 +2278,28 @@
             <field>If_yes_was_the_Prescriber_present__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_lengthOfMedicalCondition</assignToReference>
+            <field>Length_of_medical_condition__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_MAiDAdministrationDate</assignToReference>
             <field>MAiD_Administration_Date__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_MAiDPrescribersignselfadminist</assignToReference>
             <field>MAiD_Prescriber_sign_self_administ__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_NONRFNDSafeguardscompleteddate</assignToReference>
+            <field>NON_RFND_safeguard_completed_date__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Otherreasonspecify</assignToReference>
+            <field>Other_reason_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Otherservicesmeansspecify</assignToReference>
+            <field>Other_services_means_specify__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientauthorizedtorecieve2nddose</assignToReference>
@@ -2003,12 +2310,20 @@
             <field>Patient_consented_to_assessment__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Patienthaddifficultycommunicating</assignToReference>
+            <field>Patient_had_difficulty_communicating__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Patienthasbeeninformedofriskoflos</assignToReference>
             <field>Patient_has_been_informed_of_risk_of_los__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Discussedmeansofalleviatingsuffering</assignToReference>
             <field>Patient_has_discussed_and_considered_mea__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_AdvanceStateOfIrreversibleDecline</assignToReference>
+            <field>Patient_in_an_advanced_state_of_irrevers__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientlostcapabilitytoconsent</assignToReference>
@@ -2059,6 +2374,10 @@
             <field>Prescriber_ensured_expertise_in_patient__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Reasonsforseriousconsideration</assignToReference>
+            <field>Reasons_for_serious_consideration__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Receivedsecondassessmentindicating</assignToReference>
             <field>Received_a_second_assessment_indicating__c</field>
         </outputAssignments>
@@ -2069,6 +2388,14 @@
         <outputAssignments>
             <assignToReference>Var1634_Righttowithdrawtheirreques</assignToReference>
             <field>Right_to_withdraw_their_request__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Servicesofferedordiscussed</assignToReference>
+            <field>Services_offered_or_discussed__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_SpecifyexpertspecialtyifOther</assignToReference>
+            <field>Specify_expert_specialty_if_Other__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_The_patientwasatriskoflosingcapacity</assignToReference>
@@ -2129,6 +2456,10 @@
         </filters>
         <object>Form_1645__c</object>
         <outputAssignments>
+            <assignToReference>Var1645_Agreed_date_of_MAiD</assignToReference>
+            <field>Agreed_date_of_MAiD__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1645_Finalwaiverofconsentdatesigned</assignToReference>
             <field>Final_waiver_of_consent_date_signed__c</field>
         </outputAssignments>
@@ -2137,8 +2468,28 @@
             <field>Patient_Safeguards_Completed__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1645_Patient_Signed_and_Dated</assignToReference>
+            <field>Patient_Signed_and_Dated__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1645_PractitionerSafeguardsCompleted</assignToReference>
             <field>Practitioner_Safeguards_Completed__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1645_Practitioner_Signed_and_Dated</assignToReference>
+            <field>Practitioner_Signed_and_Dated__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1645_Proxy_Completed_Safeguards</assignToReference>
+            <field>Proxy_Completed_Safeguards__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1645_Proxy_Signed_and_Dated</assignToReference>
+            <field>Proxy_Signed_and_Dated__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1645_Verbal_Consent</assignToReference>
+            <field>Verbal_Consent__c</field>
         </outputAssignments>
     </recordLookups>
     <recordLookups>
@@ -2168,7 +2519,7 @@
         <name>GetCaseDetail_0</name>
         <label>GetCaseDetail</label>
         <locationX>1111</locationX>
-        <locationY>377</locationY>
+        <locationY>375</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1632</targetReference>
@@ -2187,6 +2538,8 @@
         <queriedFields>Federal_Safeguards__c</queriedFields>
         <queriedFields>Type</queriedFields>
         <queriedFields>X1645__c</queriedFields>
+        <queriedFields>Patient_MAiD_Request_Date__c</queriedFields>
+        <queriedFields>Case_Type_Reported_Date__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>Updatefedal</name>
@@ -2296,6 +2649,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1633_AllSafegaurdshavebeenmet</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1633_Ideterminethatthepatient</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2305,6 +2665,13 @@
     <variables>
         <name>Var1634_Advanceconsentsignaturedatebypatien</name>
         <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_AdvanceStateOfIrreversibleDecline</name>
+        <dataType>Picklist</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2338,6 +2705,16 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Default_Year_2023</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
+    </variables>
+    <variables>
         <name>Var1634_Didthepatientdieafterselfadmin</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -2368,6 +2745,13 @@
     <variables>
         <name>Var1634_Ensuredtherewereatleast_90_days</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Expertconsultantspecialty</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2408,6 +2792,27 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_ifOtherreasonspecify</name>
+        <dataType>Picklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_IfOtherservicespecify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Ifyesindicateservicesmeans</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_IfYespatientconsented</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -2429,6 +2834,20 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_isYesReasonForOpinion</name>
+        <dataType>Picklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_lengthOfMedicalCondition</name>
+        <dataType>Picklist</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_MAiDAdministrationDate</name>
         <dataType>Date</dataType>
         <isCollection>false</isCollection>
@@ -2443,6 +2862,27 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_NONRFNDSafeguardscompleteddate</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Otherreasonspecify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Otherservicesmeansspecify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Patientauthorizedtorecieve2nddose</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -2452,6 +2892,13 @@
     <variables>
         <name>Var1634_Patientconsentedtoassessment</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Patienthaddifficultycommunicating</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2541,6 +2988,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Reasonsforseriousconsideration</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Receivedsecondassessmentindicating</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
@@ -2564,6 +3018,20 @@
     <variables>
         <name>Var1634_Righttowithdrawtheirreques</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Servicesofferedordiscussed</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_SpecifyexpertspecialtyifOther</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2605,8 +3073,22 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1645_Agreed_date_of_MAiD</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1645_Finalwaiverofconsentdatesigned</name>
         <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1645_Patient_Signed_and_Dated</name>
+        <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -2619,11 +3101,49 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1645_Practitioner_Signed_and_Dated</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1645_PractitionerSafeguardsCompleted</name>
         <dataType>Boolean</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1645_Proxy_Completed_Safeguards</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1645_Proxy_Signed_and_Dated</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1645_Verbal_Consent</name>
+        <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_Default_Year_2023</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
     </variables>
     <variables>
         <name>Varbool</name>

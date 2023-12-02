@@ -3,6 +3,17 @@
     <fullName>Dis_Ineligible_Status</fullName>
     <active>true</active>
     <description>Discontinuation of Planning: Ineligible</description>
-    <errorConditionFormula>AND(ISPICKVAL(Type,&quot;Discontinuation of Planning: Ineligible&quot;), NOT(ISPICKVAL(Status,&quot;Awaiting Forms&quot;)), NOT(ISPICKVAL(Status,&quot;Follow up required for CC Review/Checks&quot;)),OR(NOT(ISPICKVAL(X1632__c,&quot;Yes&quot;)), NOT(ISPICKVAL(X1633__c,&quot;Yes&quot;))), OR(NOT(ISPICKVAL(X1632__c,&quot;Yes&quot;)),NOT(ISPICKVAL(X1634__c,&quot;Yes&quot;))))</errorConditionFormula>
+    <errorConditionFormula>AND(
+ ISPICKVAL(Type,&quot;Discontinuation of Planning: Ineligible&quot;), NOT(ISPICKVAL(Status,&quot;Awaiting Forms&quot;)), NOT(ISPICKVAL(Status,&quot;Follow up required for CC Review/Checks&quot;)),
+	NOT(
+		OR(
+			AND(ISPICKVAL(X1632__c,&quot;Yes&quot;),ISPICKVAL(X1633__c,&quot;Yes&quot;),ISPICKVAL(X1634__c,&quot;Yes&quot;)),
+			AND(ISPICKVAL(X1632__c,&quot;Yes&quot;),ISPICKVAL(X1633__c,&quot;Yes&quot;),NOT(ISPICKVAL(X1634__c,&quot;Yes&quot;))),
+			AND(ISPICKVAL(X1632__c,&quot;Yes&quot;),NOT(ISPICKVAL(X1633__c,&quot;Yes&quot;)),ISPICKVAL(X1634__c,&quot;Yes&quot;)),
+			AND(ISPICKVAL(X1632__c,&quot;Incomplete&quot;),NOT(ISPICKVAL(X1633__c,&quot;Yes&quot;)),ISPICKVAL(X1634__c,&quot;Yes&quot;)),
+			AND(ISPICKVAL(X1632__c,&quot;Incomplete&quot;),ISPICKVAL(X1633__c,&quot;Yes&quot;),NOT(ISPICKVAL(X1634__c,&quot;Yes&quot;)))
+		)
+	)
+)</errorConditionFormula>
     <errorMessage>Not all forms have been received (Form 1632, Form 1633 or Form 1634), status can only be set to Awaiting Forms or Follow up required for CC Review/Checks</errorMessage>
 </ValidationRule>

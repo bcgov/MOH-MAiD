@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>52.0</apiVersion>
+    <apiVersion>57.0</apiVersion>
     <assignments>
         <name>Add_Extracted_Value_to_List</name>
         <label>Add Extracted Value to List</label>
@@ -212,8 +212,8 @@
     <assignments>
         <name>Rule_26_Message_Assignment</name>
         <label>Rule 26 Message Assignment</label>
-        <locationX>1732</locationX>
-        <locationY>887</locationY>
+        <locationX>1492</locationX>
+        <locationY>1101</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -228,8 +228,8 @@
     <assignments>
         <name>Rule_32_Message_Assignment</name>
         <label>Rule 32 Message Assignment</label>
-        <locationX>1579</locationX>
-        <locationY>1007</locationY>
+        <locationX>1499</locationX>
+        <locationY>1177</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -276,8 +276,8 @@
     <assignments>
         <name>Rule_44_Message_Assignment</name>
         <label>Rule 44 Message Assignment</label>
-        <locationX>2249</locationX>
-        <locationY>972</locationY>
+        <locationX>2254</locationX>
+        <locationY>1022</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -292,8 +292,8 @@
     <assignments>
         <name>Rule_45_Message_Assignment</name>
         <label>Rule 45 Message Assignment</label>
-        <locationX>2356</locationX>
-        <locationY>1063</locationY>
+        <locationX>2109</locationX>
+        <locationY>1348</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -308,8 +308,8 @@
     <assignments>
         <name>Rule_48_Message_Assignment</name>
         <label>Rule 48 Message Assignment</label>
-        <locationX>2435</locationX>
-        <locationY>1261</locationY>
+        <locationX>2280</locationX>
+        <locationY>1451</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -324,8 +324,8 @@
     <assignments>
         <name>Rule_50_Message_Assignment</name>
         <label>Rule 50 Message Assignment</label>
-        <locationX>2880</locationX>
-        <locationY>799</locationY>
+        <locationX>2915</locationX>
+        <locationY>792</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -420,8 +420,8 @@
     <assignments>
         <name>Rule_56_Message_Assignment</name>
         <label>Rule 56 Message Assignment</label>
-        <locationX>2436</locationX>
-        <locationY>740</locationY>
+        <locationX>2390</locationX>
+        <locationY>715</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -436,8 +436,8 @@
     <assignments>
         <name>Rule_57_Message_Assignment</name>
         <label>Rule 57 Message Assignment</label>
-        <locationX>1015</locationX>
-        <locationY>767</locationY>
+        <locationX>1043</locationX>
+        <locationY>763</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
             <operator>Assign</operator>
@@ -459,6 +459,54 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Rule58Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_67_Fail</name>
+        <label>Rule 67 Fail</label>
+        <locationX>80</locationX>
+        <locationY>1085</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule67Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_68_Fail</name>
+        <label>Rule 68 Fail</label>
+        <locationX>476</locationX>
+        <locationY>1121</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule68Message</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Update_Mandatory_Fail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule_69_Fail</name>
+        <label>Rule 69 Fail</label>
+        <locationX>260</locationX>
+        <locationY>1171</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Mandatory_Data_Feedback_Message__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Rule69Message</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -671,6 +719,27 @@
             <stringValue>Rule 58 Validation Failed</stringValue>
         </value>
     </constants>
+    <constants>
+        <name>Rule67Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 67 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule68Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 68 Validation Fail</stringValue>
+        </value>
+    </constants>
+    <constants>
+        <name>Rule69Message</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 69 Validation Fail</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>All_Values_Parsed</name>
         <label>All Values Parsed</label>
@@ -769,7 +838,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_57</targetReference>
+                <targetReference>Skip_Rule_57_58</targetReference>
             </connector>
             <label>Case Type Multiple values</label>
         </rules>
@@ -792,8 +861,8 @@
     <decisions>
         <name>Check_if_Rule_50_Multiselect_list_is_empty</name>
         <label>Check if Rule 50 Multiselect list is empty</label>
-        <locationX>2685</locationX>
-        <locationY>1300</locationY>
+        <locationX>2611</locationX>
+        <locationY>1135</locationY>
         <defaultConnector>
             <targetReference>Rule_50</targetReference>
         </defaultConnector>
@@ -892,8 +961,8 @@
     <decisions>
         <name>Rule24</name>
         <label>Rule 24</label>
-        <locationX>1730</locationX>
-        <locationY>655</locationY>
+        <locationX>1755</locationX>
+        <locationY>605</locationY>
         <defaultConnector>
             <targetReference>Rule_24_Message_Assignment</targetReference>
         </defaultConnector>
@@ -961,7 +1030,7 @@
                 <operator>EqualTo</operator>
             </conditions>
             <connector>
-                <targetReference>Rule_25</targetReference>
+                <targetReference>Rule_25_Case_Type_checking</targetReference>
             </connector>
             <label>Rule 24 Pass</label>
         </rules>
@@ -985,15 +1054,15 @@
     <decisions>
         <name>Rule_20</name>
         <label>Rule 20</label>
-        <locationX>1215</locationX>
-        <locationY>308</locationY>
+        <locationX>1209</locationX>
+        <locationY>245</locationY>
         <defaultConnector>
             <targetReference>Rule_20_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 20 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_20_Pass</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11) AND (12 OR 13)) OR (14 AND 15)</conditionLogic>
+            <conditionLogic>((1 AND 2 AND 16  AND 3 AND 4 AND 5 AND 6 AND 7 AND 17 AND 9 AND 10 AND 11 AND 18 AND 19) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 7 AND 8 AND 9 AND 10 AND 11 AND 20) AND (12 OR 13)) OR (14 AND 15)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PriorPatientConsultation</leftValueReference>
                 <operator>IsNull</operator>
@@ -1099,6 +1168,32 @@
                     <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Written_or_verbal_request_date</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_required_palliative_care</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Rule_42</targetReference>
             </connector>
@@ -1151,15 +1246,29 @@
     <decisions>
         <name>Rule_25</name>
         <label>Rule 25</label>
-        <locationX>1596</locationX>
-        <locationY>815</locationY>
+        <locationX>1559</locationX>
+        <locationY>973</locationY>
         <defaultConnector>
             <targetReference>Rule_25_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 25 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_25_Pass</name>
-            <conditionLogic>(1 AND 2) OR (3 AND 4) OR 5 OR 6</conditionLogic>
+            <conditionLogic>(1 AND 2) OR (2 AND 3 AND 4) OR (2 AND 5 AND 6) OR (7 AND (8 OR 9)) OR (7 AND 10 AND 1) OR ( 7 AND 10 AND 5 AND 6) OR (7 AND 10 AND 3 AND 4 AND 11 AND 14 AND ((12 AND 13) OR (NOT(12))))</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Do not know</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
             <conditions>
                 <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1169,10 +1278,7 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_yes_for_how_long_1</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
+                <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
@@ -1183,26 +1289,112 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_no_was_palliative_care_accessible</leftValueReference>
-                <operator>IsNull</operator>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
-                <operator>EqualTo</operator>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
+                <leftValueReference>Var1634_Patient_required_palliative_care</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>3 - Do not know</stringValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_required_palliative_care</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Do not know</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_required_palliative_care</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Location_of_Palliative_care</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Types_of_palliative_care_received</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other Care Service</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_other_type_specify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Types_of_palliative_care_received</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_26_Case_Type_checking</targetReference>
+            </connector>
+            <label>Rule 25 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_25_Case_Type_checking</name>
+        <label>Rule 25 Case_Type checking</label>
+        <locationX>1574</locationX>
+        <locationY>707</locationY>
+        <defaultConnector>
+            <targetReference>Rule_26_Case_Type_checking</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>Rule_25_Case_Type_check_true</name>
+            <conditionLogic>1 OR 2 OR 3 OR 4 OR 5</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_26</targetReference>
+                <targetReference>Rule_25</targetReference>
             </connector>
-            <label>Rule 25 Pass</label>
+            <label>Rule 25 Case Type check true</label>
         </rules>
     </decisions>
     <decisions>
@@ -1216,72 +1408,143 @@
         <defaultConnectorLabel>Rule 26 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_26_Pass</name>
-            <conditionLogic>(1 AND 3 AND 4 AND 9) OR (1 AND 2 AND 5 AND 8) OR (1 AND 10 AND 8 AND 9) OR (6 AND 7 AND 8 AND 9)</conditionLogic>
+            <conditionLogic>3 OR ((1 OR 10) AND 2) OR ((1 OR 10) AND 4 AND 5) OR ((1 OR 10) AND 4 AND 7 AND 6) OR (1 AND 4 AND 8 AND 9) OR (10 AND 4 AND 8 AND 9 AND 12 AND ((11 AND 13) OR (NOT(11))))</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
             <conditions>
                 <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
-                <operator>Contains</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Yes</stringValue>
+                    <stringValue>2 - No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>3 - Do not know</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1 - Yes</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_yes_did_patient_received_disability</leftValueReference>
-                <operator>Contains</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>No</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_yes_did_patient_received_disability</leftValueReference>
-                <operator>Contains</operator>
-                <rightValue>
-                    <stringValue>Yes</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_yes_for_how_long</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <stringValue>3 - Do not know</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_no_were_services_accessible</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Patientneedsdisabilitysupportservice</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_yes_did_patient_received_disability</leftValueReference>
+                <operator>EqualTo</operator>
                 <rightValue>
-                    <stringValue>Yes</stringValue>
+                    <stringValue>2- No</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_yes_did_patient_received_disability</leftValueReference>
                 <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>1-Yes</stringValue>
+                </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_If_yes_for_how_long</leftValueReference>
-                <operator>EqualTo</operator>
+                <operator>NotEqualTo</operator>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_If_no_were_services_accessible</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_If_yes_did_patient_received_disability</leftValueReference>
+                <leftValueReference>Var1634_Disability_support_services_received</leftValueReference>
                 <operator>Contains</operator>
                 <rightValue>
-                    <stringValue>Do not know</stringValue>
+                    <stringValue>Other supports</stringValue>
                 </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Disability_support_services_received</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Other_supports_specify</leftValueReference>
+                <operator>NotEqualTo</operator>
             </conditions>
             <connector>
                 <targetReference>Rule_32</targetReference>
             </connector>
             <label>Rule 26 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_26_Case_Type_checking</name>
+        <label>Rule 26 Case_Type checking</label>
+        <locationX>1782</locationX>
+        <locationY>717</locationY>
+        <defaultConnector>
+            <targetReference>Rule_32</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>Rule_26_Case_Type_check_TRUE</name>
+            <conditionLogic>1 OR 2 OR 3 OR 4 OR 5</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_26</targetReference>
+            </connector>
+            <label>Rule 26 Case_Type check TRUE</label>
         </rules>
     </decisions>
     <decisions>
@@ -1368,27 +1631,20 @@
     <decisions>
         <name>Rule_33</name>
         <label>Rule 33</label>
-        <locationX>2061</locationX>
-        <locationY>918</locationY>
+        <locationX>1973</locationX>
+        <locationY>930</locationY>
         <defaultConnector>
             <targetReference>Rule_33_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 33 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_33_Pass</name>
-            <conditionLogic>(((1 OR 7) AND 2 AND 6) OR ((1 OR 7) AND 2 AND 5 AND 3)) OR (4 AND 8) OR 9</conditionLogic>
+            <conditionLogic>(3 AND 7) OR 5 OR 8 OR ( (14 AND 4 AND ( 2 OR 9) )  AND ( (12 AND 10)  OR (NOT(12)) ) AND ( (13 AND 11) OR (NOT(13)) ) AND (1 OR 6))</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>MAiD Death Foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_Was_patient_transferred_for_MAiD</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1440,6 +1696,36 @@
                     <stringValue>3 - Do not know</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Reasons_for_transfer</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Specify_other_transfer_reason</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Name_of_facility_if_due_to_MAiD_policy</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Reasons_for_transfer</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Reasons_for_transfer</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Policies of the facility where the person was located</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Was_patient_transferred_for_MAiD</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>Rule_44</targetReference>
             </connector>
@@ -1449,15 +1735,15 @@
     <decisions>
         <name>Rule_42</name>
         <label>Rule 42</label>
-        <locationX>1203</locationX>
-        <locationY>489</locationY>
+        <locationX>1163</locationX>
+        <locationY>497</locationY>
         <defaultConnector>
             <targetReference>Rule_42_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 42 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_42_Pass</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 4 AND 5 AND 6) AND (7 OR 8 OR 9)) OR (10 AND 11 AND 12)</conditionLogic>
+            <conditionLogic>((( 14 AND 1 AND 2 AND 3 AND 4 AND 5 AND 6 ) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 13 AND 15)) AND (7 OR 8 OR 9)) OR (10 AND 11 AND 12)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PriorPatientConsultation</leftValueReference>
                 <operator>IsNull</operator>
@@ -1542,6 +1828,21 @@
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Written_or_verbal_request_date</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_required_palliative_care</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
             <connector>
                 <targetReference>Rule_21</targetReference>
             </connector>
@@ -1551,34 +1852,20 @@
     <decisions>
         <name>Rule_44</name>
         <label>Rule 44</label>
-        <locationX>2265</locationX>
-        <locationY>832</locationY>
+        <locationX>2245</locationX>
+        <locationY>874</locationY>
         <defaultConnector>
             <targetReference>Rule_44_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 44 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_44_Pass</name>
-            <conditionLogic>5 OR (1 AND (2 OR 3) AND 4)</conditionLogic>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <conditions>
@@ -1596,58 +1883,23 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_45</targetReference>
+                <targetReference>Rule_45_Check_Case_Type</targetReference>
             </connector>
             <label>Rule 44 Pass</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Rule_45</name>
-        <label>Rule 45</label>
-        <locationX>2430</locationX>
-        <locationY>868</locationY>
+        <name>Rule_45_1</name>
+        <label>Rule 45 -1</label>
+        <locationX>2421</locationX>
+        <locationY>1062</locationY>
         <defaultConnector>
             <targetReference>Rule_45_Message_Assignment</targetReference>
         </defaultConnector>
-        <defaultConnectorLabel>Rule 45 Fail</defaultConnectorLabel>
+        <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Rule_45_Pass</name>
-            <conditionLogic>((1 AND 2 AND 3 AND 4) OR ((5 OR 6) AND 7) AND 8) OR 9</conditionLogic>
-            <conditions>
-                <leftValueReference>Var1634_Completed_Medical_Certificate_of_Death</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_Yes_Date_Of_Death</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_yes_underlying_case_of_death</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_yes_case_of_death_Specify</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_If_no_date_of_death</leftValueReference>
-                <operator>IsNull</operator>
-                <rightValue>
-                    <booleanValue>false</booleanValue>
-                </rightValue>
-            </conditions>
+            <conditionLogic>(1 OR 5) AND 2 AND 3  AND 4</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_date_of_death_unkown</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1656,30 +1908,133 @@
                 </rightValue>
             </conditions>
             <conditions>
+                <leftValueReference>Var1634_Underlying_reason_s_of_death_1</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Date_Of_Death</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Case_Type_Reported_Date__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_Yes_Date_Of_Death</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_45_2</targetReference>
+            </connector>
+            <label>Rule 45 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_45_2</name>
+        <label>Rule 45-2</label>
+        <locationX>2291</locationX>
+        <locationY>1181</locationY>
+        <defaultConnector>
+            <targetReference>Rule_45_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>Check_Rule_45_2</name>
+            <conditionLogic>1 AND 2 AND 3</conditionLogic>
+            <conditions>
                 <leftValueReference>Var1634_Completed_Medical_Certificate_of_Death</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
-                    <booleanValue>false</booleanValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_yes_case_of_death_Specify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_yes_underlying_case_of_death</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_45_3</targetReference>
+            </connector>
+            <label>Check Rule 45-2</label>
+        </rules>
+        <rules>
+            <name>Check_Rule_45_Complete_Medical_certi_not_true</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Completed_Medical_Certificate_of_Death</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_45_3</targetReference>
+            </connector>
+            <label>Check Rule 45 Complete Medical certi not true</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_45_3</name>
+        <label>Rule 45-3</label>
+        <locationX>2419</locationX>
+        <locationY>1390</locationY>
+        <defaultConnector>
+            <targetReference>Rule_45_Message_Assignment</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>Check_Rule_45_3</name>
+            <conditionLogic>(1 AND 2) OR (NOT(1))</conditionLogic>
+            <conditions>
+                <leftValueReference>Var1634_Underlying_reason_s_of_death_1</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other reason</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Other_natural_death_reason</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_48</targetReference>
+            </connector>
+            <label>Check Rule 45-3</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_45_Check_Case_Type</name>
+        <label>Rule 45 Check Case Type</label>
+        <locationX>2527</locationX>
+        <locationY>866</locationY>
+        <defaultConnector>
+            <targetReference>Rule_48</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>default</defaultConnectorLabel>
+        <rules>
+            <name>Rule_45_check_Case_Type_Ture</name>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>ListCaseDetail.Type</leftValueReference>
-                <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Death Prior</stringValue>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Rule_48</targetReference>
+                <targetReference>Rule_45_1</targetReference>
             </connector>
-            <label>Rule 45 Pass</label>
+            <label>Rule 45 check Case Type Ture</label>
         </rules>
     </decisions>
     <decisions>
@@ -1756,15 +2111,15 @@
     <decisions>
         <name>Rule_48</name>
         <label>Rule 48</label>
-        <locationX>2579</locationX>
-        <locationY>1137</locationY>
+        <locationX>2986</locationX>
+        <locationY>1136</locationY>
         <defaultConnector>
             <targetReference>Rule_48_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 48 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_48_Pass</name>
-            <conditionLogic>(7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 ) ) )  OR 8 OR (7 AND 10 AND 12)</conditionLogic>
+            <conditionLogic>(7 AND ((1 OR 11) AND ( (2 AND 4 AND 5) OR (2 AND 6 AND 9) OR 3 OR 13 ) ) )  OR 8 OR (7 AND 10 AND 12)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1844,6 +2199,13 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -1903,7 +2265,7 @@
         </rules>
         <rules>
             <name>Rule_50_Pass</name>
-            <conditionLogic>(1 AND ((2 AND 3 AND 4 AND 5) OR 6)) OR 7</conditionLogic>
+            <conditionLogic>(( 1  AND (2 AND (3 OR 9)) AND ((4 AND 5) OR (NOT(4))) AND ( (10 AND 11) OR (NOT(10))) AND ((8 AND ((16 AND 12) OR  (NOT(16)))) OR 15) AND ( ( (8 AND 13 AND 14) OR (NOT(13)) ) OR 15 )  )   OR 6 )  OR 7</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1933,7 +2295,7 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_If_other_specify_3_Pt_Withdreq_req</leftValueReference>
+                <leftValueReference>Var1634_If_other_specify</leftValueReference>
                 <operator>IsNull</operator>
                 <rightValue>
                     <booleanValue>false</booleanValue>
@@ -1951,6 +2313,57 @@
                 <operator>NotEqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_known_reasons_for_withdrawal</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_known_reasons_for_withdrawal</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other reason</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Specify_other_withdrawal_reason</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Withdrawal_means_to_relieve_suffering</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Withdrawal_means_to_relieve_suffering</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Other_relief_means_specify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>LessThan</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_If_known_reasons_for_withdrawal</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Accepted the means to relieve their suffering</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2316,15 +2729,15 @@
     <decisions>
         <name>Rule_56</name>
         <label>Rule 56</label>
-        <locationX>2652</locationX>
-        <locationY>689</locationY>
+        <locationX>2794</locationX>
+        <locationY>622</locationY>
         <defaultConnector>
             <targetReference>Rule_56_Message_Assignment</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Rule 56 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_56_Pass</name>
-            <conditionLogic>(1 AND 2 AND (3 OR 4)) OR 5</conditionLogic>
+            <conditionLogic>(1 AND 2) OR 3</conditionLogic>
             <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2340,20 +2753,6 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>Var1634_I_determine_Patient</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>ListCaseDetail.Type</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
@@ -2361,7 +2760,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>UpdateMandatoryPass</targetReference>
+                <targetReference>Rule_68</targetReference>
             </connector>
             <label>Rule 56 Pass</label>
         </rules>
@@ -2377,7 +2776,7 @@
         <defaultConnectorLabel>Rule 57 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_57_Skipped</name>
-            <conditionLogic>(1 OR 2) AND (3 OR 4 OR 5)</conditionLogic>
+            <conditionLogic>((3 OR 4 OR 5) AND (1 OR 2 OR 6)) OR (1 AND (7 OR 8))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1633_Assessor_did_not_receive_1632</leftValueReference>
                 <operator>Contains</operator>
@@ -2411,6 +2810,27 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <stringValue></stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2501,7 +2921,7 @@
         <defaultConnectorLabel>Rule 58 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_58_Skipped</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditionLogic>(1 AND (2 OR 3 OR 4) AND 5) OR (8 AND (6 OR 7))</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Is1633Checked</leftValueReference>
                 <operator>EqualTo</operator>
@@ -2528,6 +2948,31 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Death Not Foreseeable</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1633_Assessor_did_not_receive_1632</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>1- Yes</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -2593,7 +3038,319 @@
             <label>Rule 58 Pass</label>
         </rules>
     </decisions>
-    <description>Rule 51 updates</description>
+    <decisions>
+        <name>Rule_67</name>
+        <label>Rule 67</label>
+        <locationX>50</locationX>
+        <locationY>929</locationY>
+        <defaultConnector>
+            <targetReference>Rule_67_Fail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 67 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_67_Pass</name>
+            <conditionLogic>(1 AND 2 AND ((3 AND 4 AND ((5 AND 6) OR NOT(5))) OR NOT(3))) OR (NOT(1))</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PriorRequestforMAiD</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_PriorRequestforMAiD</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_IfPriorRequestoutcome</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_IfPriorRequestoutcome</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_OtherOutcomeSpecify</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>UpdateMandatoryPass</targetReference>
+            </connector>
+            <label>Rule 67 pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_68</name>
+        <label>Rule 68</label>
+        <locationX>385</locationX>
+        <locationY>908</locationY>
+        <defaultConnector>
+            <targetReference>Rule_68_Fail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 68 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_68_Pass</name>
+            <conditionLogic>(1 AND (2 OR (20 AND 21)) AND 22 AND  ((3 AND 4) OR (NOT(3)))AND (5 OR 6) AND (18 AND ((7 AND 8 ) OR (NOT(7))))AND ((19 AND ((9 AND 10) OR (NOT(9)))) OR (NOT(19))) AND (11 AND (((12 AND 13) OR ((14 AND 15) AND((16 AND 17) OR (NOT(16)))))  OR ((NOT(12)) AND (NOT(14)) )))) OR  (NOT(1))</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Preferred_Gender__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Preferred_Gender__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Other_Preferred_Gender_Specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Patient_Postal_Code__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Patient_has_no_home_address__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Identify_as_Indigenious__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_yes_Indigenious_heritage__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Racial_Ethinic_or_Cultural_Group__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Other_Race_Specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Usual_Place_of_Residence__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Usual_Place_of_Residence__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Other_Residence_Specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Usual_Place_of_Residence__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Private residence</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Private_Residence_Living_arrangement__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Private_Residence_Living_arrangement__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Other living Arrangement</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Other_Living_Arrangement_Specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Identify_as_Indigenious__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Racial_Ethinic_or_Cultural_Group__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Older_MAiD_Forms_to_2021__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Older_MAiD_Forms_to_2021__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Health_Authority__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_69</targetReference>
+            </connector>
+            <label>Rule 68 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Rule_69</name>
+        <label>Rule 69</label>
+        <locationX>219</locationX>
+        <locationY>934</locationY>
+        <defaultConnector>
+            <targetReference>Rule_69_Fail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Rule 69 Fail</defaultConnectorLabel>
+        <rules>
+            <name>Rule_69_Pass</name>
+            <conditionLogic>(1 AND 2 AND ((3 AND 4 AND (5 AND ((9 AND 10) OR (11 AND 12) OR ((NOT(9)) AND (NOT(11)) ))) AND 6 AND ((7 AND 8) OR (NOT(7)))) OR (NOT(3)))) OR (NOT(1))</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>Var_DefaultYear_2023</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Requestor_disability_opinion__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Requestor_disability_opinion__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_yes_types_of_disabilites__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Length_of_Disability__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Daily_Activity_Limits__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_yes_types_of_disabilites__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Other long term condition</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Other_long_term_condition_specify__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Length_of_Disability__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Years</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Years__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Length_of_Disability__c</leftValueReference>
+                <operator>Contains</operator>
+                <rightValue>
+                    <stringValue>Months</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.If_Months__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <connector>
+                <targetReference>Rule_67</targetReference>
+            </connector>
+            <label>Rule 69 Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Skip_Rule_57_58</name>
+        <label>Skip Rule 57 58</label>
+        <locationX>875</locationX>
+        <locationY>315</locationY>
+        <defaultConnector>
+            <targetReference>Rule_57</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Skip_Rule</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4)</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.X1633__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>No</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Death Prior</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Ineligible</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Discontinuation of Planning: Withdrawn Request</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Rule_46</targetReference>
+            </connector>
+            <label>Skip Rule</label>
+        </rules>
+    </decisions>
+    <description>Rule 50 Updated</description>
+    <environments>Default</environments>
     <formulas>
         <name>FormatedAddSemicolon</name>
         <dataType>String</dataType>
@@ -2845,6 +3602,10 @@
             <field>Did_practitioner_complete_medical_certi__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Disability_support_services_received</assignToReference>
+            <field>Disability_support_services_received__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_I_determine_Patient</assignToReference>
             <field>I_determine_that_the_patient__c</field>
         </outputAssignments>
@@ -2853,12 +3614,20 @@
             <field>If_Other_specify_2__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_IfPriorRequestoutcome</assignToReference>
+            <field>If_Prior_Request_outcome__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_If_Yes_change_due_to_loss_of_capacity</assignToReference>
             <field>If_Yes_is_patients_change_in_eligbilit__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_If_Yes_Practitioner_became_aware</assignToReference>
             <field>If_Yes_practitioner_became_aware_patien__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_If_known_reasons_for_withdrawal</assignToReference>
+            <field>If_known_reasons_for_withdrawal__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_date_of_death_unkown</assignToReference>
@@ -2883,6 +3652,14 @@
         <outputAssignments>
             <assignToReference>Var1634_If_other_specify_4</assignToReference>
             <field>If_other_specify_4__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_If_other_specify</assignToReference>
+            <field>If_other_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_If_other_type_specify</assignToReference>
+            <field>If_other_type_specify__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_If_patient_directly_other_specify</assignToReference>
@@ -2925,6 +3702,10 @@
             <field>Location_of_Assessment__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Location_of_Palliative_care</assignToReference>
+            <field>Location_of_Palliative_care__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_MAiDLocationAdress</assignToReference>
             <field>MAiD_Location_Address__c</field>
         </outputAssignments>
@@ -2933,12 +3714,36 @@
             <field>MAiD_Location_Type__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Name_of_facility_if_due_to_MAiD_policy</assignToReference>
+            <field>Name_of_facility_if_due_to_MAiD_policy__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_OtherOutcomeSpecify</assignToReference>
+            <field>Other_Outcome_Specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Other_natural_death_reason</assignToReference>
+            <field>Other_natural_death_reason__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Other_relief_means_specify</assignToReference>
+            <field>Other_relief_means_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Other_supports_specify</assignToReference>
+            <field>Other_supports_specify__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Patient_lost_capability_to_consent</assignToReference>
             <field>Patient_lost_capabilty_to_consent__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientreceivedpalliativecare</assignToReference>
             <field>Patient_received_palliative_care__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Patient_required_palliative_care</assignToReference>
+            <field>Patient_required_palliative_care__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Patientneedsdisabilitysupportservice</assignToReference>
@@ -2953,12 +3758,36 @@
             <field>Practitioner_previously_determined_patie__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_PriorRequestforMAiD</assignToReference>
+            <field>Prior_Request_for_MAiD__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Profession_if_yes_select_all_that_apply</assignToReference>
             <field>Profession_if_yes_select_all_that_apply__c</field>
         </outputAssignments>
         <outputAssignments>
+            <assignToReference>Var1634_Reasons_for_transfer</assignToReference>
+            <field>Reasons_for_transfer__c</field>
+        </outputAssignments>
+        <outputAssignments>
             <assignToReference>Var1634_Secondassessorwasaphysicianornurse</assignToReference>
             <field>Second_assessor_was_a_physcian_or_nurse__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Specify_other_transfer_reason</assignToReference>
+            <field>Specify_other_transfer_reason__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Specify_other_withdrawal_reason</assignToReference>
+            <field>Specify_other_withdrawal_reason__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Types_of_palliative_care_received</assignToReference>
+            <field>Types_of_palliative_care_received__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Underlying_reason_s_of_death_1</assignToReference>
+            <field>Underlying_reason_s_of_death__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Was_patient_transferred_for_MAiD</assignToReference>
@@ -2967,6 +3796,14 @@
         <outputAssignments>
             <assignToReference>Var1634_Who_did_you_receive_the_written_request</assignToReference>
             <field>Who_did_you_receive_the_written_request__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Withdrawal_means_to_relieve_suffering</assignToReference>
+            <field>Withdrawal_means_to_relieve_suffering__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Written_or_verbal_request_date</assignToReference>
+            <field>Written_or_verbal_request_date__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>Var1634_Is1633Checked</assignToReference>
@@ -3071,6 +3908,29 @@
         <queriedFields>Type</queriedFields>
         <queriedFields>Mandatory_Data__c</queriedFields>
         <queriedFields>Mandatory_Data_Feedback_Message__c</queriedFields>
+        <queriedFields>X1633__c</queriedFields>
+        <queriedFields>Case_Type_Reported_Date__c</queriedFields>
+        <queriedFields>Preferred_Gender__c</queriedFields>
+        <queriedFields>If_Other_Preferred_Gender_Specify__c</queriedFields>
+        <queriedFields>Patient_Postal_Code__c</queriedFields>
+        <queriedFields>Patient_has_no_home_address__c</queriedFields>
+        <queriedFields>Identify_as_Indigenious__c</queriedFields>
+        <queriedFields>If_yes_Indigenious_heritage__c</queriedFields>
+        <queriedFields>Racial_Ethinic_or_Cultural_Group__c</queriedFields>
+        <queriedFields>If_Other_Race_Specify__c</queriedFields>
+        <queriedFields>Usual_Place_of_Residence__c</queriedFields>
+        <queriedFields>Other_Residence_Specify__c</queriedFields>
+        <queriedFields>If_Private_Residence_Living_arrangement__c</queriedFields>
+        <queriedFields>If_Other_Living_Arrangement_Specify__c</queriedFields>
+        <queriedFields>Older_MAiD_Forms_to_2021__c</queriedFields>
+        <queriedFields>Requestor_disability_opinion__c</queriedFields>
+        <queriedFields>If_yes_types_of_disabilites__c</queriedFields>
+        <queriedFields>Length_of_Disability__c</queriedFields>
+        <queriedFields>Daily_Activity_Limits__c</queriedFields>
+        <queriedFields>Other_long_term_condition_specify__c</queriedFields>
+        <queriedFields>If_Years__c</queriedFields>
+        <queriedFields>If_Months__c</queriedFields>
+        <queriedFields>Health_Authority__c</queriedFields>
     </recordLookups>
     <recordUpdates>
         <name>UpdateMandatory_Fail</name>
@@ -3334,7 +4194,21 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Disability_support_services_received</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_I_determine_Patient</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_If_known_reasons_for_withdrawal</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -3362,6 +4236,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_If_other_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_If_other_specify_3_Pt_Withdreq_req</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -3370,6 +4251,13 @@
     </variables>
     <variables>
         <name>Var1634_If_other_specify_4</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_If_other_type_specify</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
@@ -3460,8 +4348,22 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_IfPriorRequestoutcome</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Is1633Checked</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Location_of_Palliative_care</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -3488,8 +4390,50 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Name_of_facility_if_due_to_MAiD_policy</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Other_natural_death_reason</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Other_relief_means_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Other_supports_specify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_OtherOutcomeSpecify</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Patient_lost_capability_to_consent</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Patient_required_palliative_care</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -3530,6 +4474,13 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_PriorRequestforMAiD</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Proceduresforunusedmedication</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -3544,8 +4495,50 @@
         <isOutput>false</isOutput>
     </variables>
     <variables>
+        <name>Var1634_Reasons_for_transfer</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
         <name>Var1634_Secondassessorwasaphysicianornurse</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Specify_other_transfer_reason</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Specify_other_withdrawal_reason</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Types_of_palliative_care_received</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Underlying_reason_s_of_death</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Underlying_reason_s_of_death_1</name>
+        <dataType>Multipicklist</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -3560,6 +4553,20 @@
     <variables>
         <name>Var1634_Who_did_you_receive_the_written_request</name>
         <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Withdrawal_means_to_relieve_suffering</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Written_or_verbal_request_date</name>
+        <dataType>Date</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
@@ -3717,5 +4724,33 @@
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var_DefaultYear_2023</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
+    </variables>
+    <variables>
+        <name>VarCase_CaseTypeReporteddate</name>
+        <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <dateValue>2023-01-01</dateValue>
+        </value>
+    </variables>
+    <variables>
+        <name>VarRule25formula</name>
+        <dataType>Number</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>0</scale>
     </variables>
 </Flow>

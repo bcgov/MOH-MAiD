@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SPC_Q16__c</fullName>
+    <deprecated>false</deprecated>
+    <externalId>false</externalId>
+    <formula>CASE(
+    Form_1634__r.Case__r.Practitioner_Name__r.Specialty_2023Reg__c,
+    &quot;1 - Family medicine&quot;, &quot;1&quot;,
+    &quot;2 - Palliative Medicine (Includes Family &amp; Palliative Medicine)&quot;, &quot;2&quot;,
+    &quot;3 - Anesthesiology&quot;, &quot;3&quot;,
+    &quot;4 - Internal Medicine (includes Gastroenterology, Hospital Medicine, etc.)&quot;, &quot;4&quot;,
+    &quot;5 - Critical Care and Emergency Medicine&quot;, &quot;5&quot;,
+    &quot;6 - Oncology&quot;, &quot;6&quot;,
+    &quot;7 - Psychiatry (includes Geriatric Psychiatry)&quot;, &quot;7&quot;,
+    &quot;8 - Other specify&quot;, &quot;8&quot;,
+    NULL
+)</formula>
+    <label>SPC_Q16</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PROC_Q140E__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+    ISNULL(Form_1634__r.Expert_consultant_specialty__c ), 0,
+    IF(
+        INCLUDES(Form_1634__r.Expert_consultant_specialty__c, &quot;Neurology&quot;),1,2
+    )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>PROC_Q140E</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

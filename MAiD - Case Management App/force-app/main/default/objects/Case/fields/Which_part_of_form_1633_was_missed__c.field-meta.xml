@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Which_part_of_form_1633_was_missed__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Which part of Form-1633 was missed</label>
     <required>false</required>
@@ -46,6 +47,11 @@
                 <fullName>Discontinuation of Planning</fullName>
                 <default>false</default>
                 <label>Discontinuation of Planning</label>
+            </value>
+            <value>
+                <fullName>Patient Care info</fullName>
+                <default>false</default>
+                <label>Patient Care info</label>
             </value>
         </valueSetDefinition>
     </valueSet>
