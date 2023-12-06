@@ -3,6 +3,6 @@
     <description>MAiD Analyst Group</description>
     <label>MAiD Analyst Group</label>
     <permissionSets>MAiD_Analyst</permissionSets>
-    <permissionSets>MAiD_Reports_Dashboards</permissionSets>
+    <permissionSets>MAiD_Analyst_Reports_Dashboards</permissionSets>
     <status>Updated</status>
 </PermissionSetGroup>
