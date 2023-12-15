@@ -46,10 +46,7 @@ public with sharing class YTS_Referral_Controller {
 
     @AuraEnabled(cacheable=true)
     public static String getCaseContactRecordTypeId(){
-        if(getCurrentUserType() == 'ICY')
-            return YTS_Utility.getRecordTypeIdByDeveloperName('Case_Contact__c', 'ICY_Case_Contact');
-        else
-            return YTS_Utility.getRecordTypeIdByDeveloperName('Case_Contact__c', 'STADD_Case_Contact');
+        return YTS_Utility.getRecordTypeIdByDeveloperName('Case_Contact__c', 'ICY_Case_Contact');
     }
 
     @AuraEnabled
