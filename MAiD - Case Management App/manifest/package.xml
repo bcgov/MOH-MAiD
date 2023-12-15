@@ -145,12 +145,9 @@
     </types>
     <types>
         <members>Domains</members>
-        <members>Gender_List</members>
         <members>Haves_And_Needs_List</members>
         <members>Legal_Status_List</members>
         <members>Preferred_Method_Of_Contact</members>
-        <members>Province_List</members>
-        <members>Region</members>
         <members>Secondary_Eligibility_Type</members>
         <name>GlobalValueSet</name>
     </types>
