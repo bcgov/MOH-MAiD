@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Team_Member__c</fullName>
+    <externalId>false</externalId>
+    <label>Team Member</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Program Leader</fullName>
+                <default>false</default>
+                <label>Program Leader</label>
+            </value>
+            <value>
+                <fullName>ICY Clinical Counsellor</fullName>
+                <default>false</default>
+                <label>ICY Clinical Counsellor</label>
+            </value>
+            <value>
+                <fullName>Substance Use or Concurrent Clinician</fullName>
+                <default>false</default>
+                <label>Substance Use or Concurrent Clinician</label>
+            </value>
+            <value>
+                <fullName>CYMH Clinician</fullName>
+                <default>false</default>
+                <label>CYMH Clinician</label>
+            </value>
+            <value>
+                <fullName>Youth Peer Support</fullName>
+                <default>false</default>
+                <label>Youth Peer Support</label>
+            </value>
+            <value>
+                <fullName>Family Peer Support</fullName>
+                <default>false</default>
+                <label>Family Peer Support</label>
+            </value>
+            <value>
+                <fullName>Indigenous Support</fullName>
+                <default>false</default>
+                <label>Indigenous Support</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

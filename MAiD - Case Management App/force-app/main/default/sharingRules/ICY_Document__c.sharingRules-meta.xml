@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Document_Sharing_rule</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Document Sharing rule</label>
+        <sharedTo>
+            <group>ICY_Restiricted_Data</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Document_Type__c</field>
+            <operation>equals</operation>
+            <value>Restricted</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Document_Type_EQUALS_Collaborative</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Document Type EQUALS Collaborative</label>
+        <sharedTo>
+            <group>All_ICY_Team_Members</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>Document_Type__c</field>
+            <operation>equals</operation>
+            <value>Collaborative</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

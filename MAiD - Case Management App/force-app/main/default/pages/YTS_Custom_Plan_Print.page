@@ -1,0 +1,114 @@
+<apex:page applyHtmlTag="false" title="{!nameHeader}" showHeader="false" id="pageId" sidebar="false" controller="YTS_Print_Transition_Plan_Controller">
+    <apex:stylesheet value="{!URLFOR($Resource.YTS_Styles, 'sfg_pdf.css')}" />
+    <style>
+        #steps {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #steps td,
+        #steps th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #steps tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #steps tr:hover {
+            background-color: #ddd;
+        }
+
+        #steps th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #04AA6D;
+            color: white;
+        }
+    </style>
+    <script>
+        function printplan(inputtxt) {
+            document.getElementById(inputtxt.id).style.display = 'none';
+            window.print();
+            window.close();
+        }
+    </script>
+    <apex:form >
+        <div style="vertical-align: middle; text-align: center;">
+            <apex:commandButton id="cmButton" value="    Print Steps   " OnClick="printplan(this);" styleClass="button" />
+        </div>
+    </apex:form>
+    <br/>
+    <div style="text-align: center;">
+        <h1>{!nameHeader}</h1>
+    </div>
+    <table width="100%" class="orgDetialsTbl">
+        <tr width="100%">
+            <td>
+                <span style="font-family: sans-serif;
+                                    font-weight: bold;">
+                    Date Of Birth:
+                </span>{!dob}
+            </td>
+            <td>
+                <apex:outputLabel value="Age: " style="font-family: sans-serif;
+                font-weight: bold;" />{!age}
+            </td>
+        </tr>
+        <tr width="100%">
+            <td>
+                <apex:outputLabel value="{!completedWith}" style="font-family: sans-serif;
+                font-weight: bold;" /> {!navigatorName}
+            </td>
+            <td>
+                <apex:outputLabel value="Date Printed: " style="font-family: sans-serif;
+                font-weight: bold;" />{!datePrinted}
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <div style="margin: 0 10px;">
+        <table>
+            <tr>
+                <th style="border: 1px solid #ddd;
+                padding: 8px;font-family: sans-serif;
+                font-weight: bold; background-color:BlanchedAlmond;width:10%;">Domain</th>
+                <th style="border: 1px solid #ddd;
+                padding: 8px;font-family: sans-serif;
+                font-weight: bold;background-color:BlanchedAlmond;width:10%;">Title</th>
+                <th style="border: 1px solid #ddd;
+                padding: 8px;font-family: sans-serif;
+                font-weight: bold;background-color:BlanchedAlmond;width:40%;word-wrap: break-all;">Action to Meet Goal</th>
+                <th style="border: 1px solid #ddd;
+                padding: 8px;font-family: sans-serif;
+                font-weight: bold;background-color:BlanchedAlmond;width:10%;">Current Status</th>
+                <th style="border: 1px solid #ddd;
+                padding: 8px;font-family: sans-serif;
+                font-weight: bold;background-color:BlanchedAlmond;width:10%;">Step to be completed by</th>
+                <th style="border: 1px solid #ddd;
+                padding: 8px;font-family: sans-serif;
+                font-weight: bold;background-color:BlanchedAlmond;width:10%;">Who is Supporting?</th>
+            </tr>
+            <apex:repeat value="{!stepsToPrint}" var="step">
+                <tr>
+                    <td style="border: 1px solid #ddd;
+                    padding: 8px;width:10%;">{!step.domain}</td>
+                    <td style="border: 1px solid #ddd;
+                    padding: 8px;width:10%;">{!step.title}</td>
+                    <td style="border: 1px solid #ddd;
+                    padding: 8px;width:40%;">
+                    <apex:outputText escape="false" value="{!step.action}"></apex:outputText></td>
+                    <td style="border: 1px solid #ddd;
+                    padding: 8px;width:10px;">{!step.stage}</td>
+                    <td style="border: 1px solid #ddd;
+                    padding: 8px;width:10px;">{!step.stepTobeCompletedString}</td>
+                    <td style="border: 1px solid #ddd;
+                    padding: 8px; width:10px;">{!step.supportedBy}</td>
+                </tr>
+            </apex:repeat>
+        </table>
+    </div>
+</apex:page>

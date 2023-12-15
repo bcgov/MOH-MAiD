@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referral_Close_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Referral Close Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Eligible</fullName>
+                <default>false</default>
+                <label>Not Eligible</label>
+            </value>
+            <value>
+                <fullName>No Contact - Inactive</fullName>
+                <default>false</default>
+                <label>No Contact - Inactive</label>
+            </value>
+            <value>
+                <fullName>Service Declined</fullName>
+                <default>false</default>
+                <label>Service Declined</label>
+            </value>
+            <value>
+                <fullName>Moved out of Service Area</fullName>
+                <default>false</default>
+                <label>Moved out of Service Area</label>
+            </value>
+            <value>
+                <fullName>Outside of Age Requirements</fullName>
+                <default>false</default>
+                <label>Outside of Age Requirements</label>
+            </value>
+            <value>
+                <fullName>Deceased</fullName>
+                <default>false</default>
+                <label>Deceased</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

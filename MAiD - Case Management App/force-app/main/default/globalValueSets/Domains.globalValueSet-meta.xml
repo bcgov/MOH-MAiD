@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Relationships</fullName>
+        <default>false</default>
+        <label>Relationships</label>
+    </customValue>
+    <customValue>
+        <fullName>Team</fullName>
+        <default>false</default>
+        <label>Team</label>
+    </customValue>
+    <customValue>
+        <fullName>Identity, Culture and Community</fullName>
+        <default>false</default>
+        <label>Identity, Culture and Community</label>
+    </customValue>
+    <customValue>
+        <fullName>Money Management</fullName>
+        <default>false</default>
+        <label>Money Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Physical Health</fullName>
+        <default>false</default>
+        <label>Physical Health</label>
+    </customValue>
+    <customValue>
+        <fullName>Mental Health and Wellness</fullName>
+        <default>false</default>
+        <label>Mental Health and Wellness</label>
+    </customValue>
+    <customValue>
+        <fullName>Housing</fullName>
+        <default>false</default>
+        <label>Housing</label>
+    </customValue>
+    <customValue>
+        <fullName>Job Readiness and Employment</fullName>
+        <default>false</default>
+        <label>Job Readiness and Employment</label>
+    </customValue>
+    <customValue>
+        <fullName>Education</fullName>
+        <default>false</default>
+        <label>Education</label>
+    </customValue>
+    <customValue>
+        <fullName>Life Skills</fullName>
+        <default>false</default>
+        <label>Life Skills</label>
+    </customValue>
+    <customValue>
+        <fullName>Substance Use</fullName>
+        <default>false</default>
+        <label>Substance Use</label>
+    </customValue>
+    <customValue>
+        <fullName>Independent Living Skills</fullName>
+        <default>false</default>
+        <label>Independent Living Skills</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Domains</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

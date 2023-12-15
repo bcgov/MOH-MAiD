@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mailing_address_conditionally_required</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  OR(RecordType.DeveloperName = &apos;Standard&apos;, RecordType.DeveloperName = &apos;Partner&apos;),
+   NOT(
+        Mailing_Address_same_as_Physical_Address__c) , 
+        OR(ISBLANK(Mailing_Address_Line_1__c), 
+        ISBLANK(Mailing_Address_City__c 
+       ),ISBLANK(Mailing_Address_Postal_Code__c), ISPICKVAL(Mailing_Address_Province__c,&quot;&quot;)))</errorConditionFormula>
+    <errorDisplayField>Mailing_Address_Line_1__c</errorDisplayField>
+    <errorMessage>Please ensure that the full mailing address is entered if different from the physical address</errorMessage>
+</ValidationRule>

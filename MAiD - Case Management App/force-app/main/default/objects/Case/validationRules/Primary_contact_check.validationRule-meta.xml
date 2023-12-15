@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_contact_check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;ICY_Close_Case&apos;,
+RecordType.DeveloperName =&apos;ICY_Standard_Case&apos;),
+AND(Is_primary_contact__c, NOT(ISBLANK( Primary_Referral_Contact__c)))
+)</errorConditionFormula>
+    <errorDisplayField>Primary_Contact__c</errorDisplayField>
+    <errorMessage>You&apos;ve indicated that the individual is a primary contact</errorMessage>
+</ValidationRule>

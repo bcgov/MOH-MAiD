@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restrict_Edit_When_Case_is_Closed</fullName>
+    <active>true</active>
+    <description>Restrict the user to edit the case contact when a case is closed</description>
+    <errorConditionFormula>ISPICKVAL(Case__r.Status, &apos;Closed&apos;)</errorConditionFormula>
+    <errorMessage>Cannot Create/Edit a contact when the case is Closed.</errorMessage>
+</ValidationRule>

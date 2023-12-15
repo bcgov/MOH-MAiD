@@ -2,9 +2,13 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Date_received_required_for_1634</fullName>
     <active>true</active>
-    <errorConditionFormula>ISNULL(   X1634_Date_Received__c )  &amp;&amp;  
-(  
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;MAiD_Case&apos;,
+RecordType.DeveloperName =&apos;Error_Log&apos;),
+ISNULL(   X1634_Date_Received__c )  &amp;&amp;
+(
  ISPICKVAL( X1634__c , &quot;Yes&quot;)  ||  ISPICKVAL(X1634__c , &quot;Incomplete&quot;)
+)
 )</errorConditionFormula>
     <errorMessage>1634 Date Received is required</errorMessage>
 </ValidationRule>

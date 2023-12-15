@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="urn:metadata.tooling.soap.sforce.com" fqn="ytsCaseAccountTab">
+    <apiVersion>53.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>Account Information on Case</masterLabel>
+    <targets>
+      <target>lightning__RecordPage</target>
+    </targets>
+</LightningComponentBundle>

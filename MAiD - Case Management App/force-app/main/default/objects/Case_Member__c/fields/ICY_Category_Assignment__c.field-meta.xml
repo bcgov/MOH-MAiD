@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICY_Category_Assignment__c</fullName>
+    <externalId>false</externalId>
+    <label>Category Assignment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consulting</fullName>
+                <default>false</default>
+                <label>Consulting</label>
+            </value>
+            <value>
+                <fullName>MRTM</fullName>
+                <default>false</default>
+                <label>MRTM</label>
+            </value>
+            <value>
+                <fullName>Core Team Member</fullName>
+                <default>false</default>
+                <label>Core Team Member</label>
+            </value>
+            <value>
+                <fullName>Supplemental</fullName>
+                <default>false</default>
+                <label>Supplemental</label>
+            </value>
+            <value>
+                <fullName>Program Leader</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Program Leader</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

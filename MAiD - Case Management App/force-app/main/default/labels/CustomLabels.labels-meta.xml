@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CaseNewButtonMessage</fullName>
+        <categories>Case</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CaseNewButtonMessage</shortDescription>
+        <value>You must create a new referral  or accept an existing referral in order for a new case to be created</value>
+    </labels>
+    <labels>
+        <fullName>ICY_DaysForInactiveNotes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_DaysForInactiveNotes</shortDescription>
+        <value>90</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanDomainValues</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanDomainValues</shortDescription>
+        <value>Relationships:Education:Housing:Physical Health:Mental Health and Wellness:Substance Use:Identity, Culture and Community:Independent Living Skills:Other</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextEducation</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextEducation</shortDescription>
+        <value>Attendance
+Extracurricular
+Grades
+Educational Goals and Needs
+Peer Relations
+Bullying</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextHousing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextHousing</shortDescription>
+        <value>Stable, Safe and/or Suitable Housing</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextIdentityCultureCommunity</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextIdentityCultureCommunity</shortDescription>
+        <value>Community Connections and Groups
+Spiritual/Religious Support
+Peer/Mentorship Support
+Cultural Practices
+Language Support
+Volunteer</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextIndependentLiving</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextIndependentLiving</shortDescription>
+        <value>Money and Consumer Skills
+Employment Planning
+Personal Hygiene
+Personal Safety
+Social Media
+Time Management
+Home Economics
+Transportation</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextMentalHealth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextMentalHealth</shortDescription>
+        <value>Psychoeducation
+Coping Strategies
+Medication/Other Management Strategies
+Traditional/Cultural Healing Practices
+Safety Planning
+Services Waitlisted For
+Services/Referrals Needed
+Services Accessed</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextOther</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextOther</shortDescription>
+        <value>Other</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextPhysicalHealth</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextPhysicalHealth</shortDescription>
+        <value>Access to Health Professionals
+Health Status
+Medications
+Understanding of Physical Health
+Sexual Health
+Nutrition
+Therapeutic Needs (i.e., OT, PT, SLP)
+Transportation to Medical Appointments</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextRelationships</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextRelationships</shortDescription>
+        <value>Family
+Friends
+Peers
+Social Skills
+Dating/Romantic</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextSubstanceUse</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextSubstanceUse</shortDescription>
+        <value>Knowledge of Resources
+Harm Reduction
+Coping Strategies
+Medication/Other Management Strategies
+Traditional/Cultural Healing Practices
+Safety Planning
+Services Waitlisted For
+Services/Referrals Needed
+Services Accessed</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TransitionPlanHelpTextTeam</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TransitionPlanHelpTextTeam</shortDescription>
+        <value>Core-Youth Peer Support
+Core-Family Peer Support
+Core-Substance Use Counselling
+Core-Clinical Counsellor
+Core-CYMH
+Core-Indigenous Support
+Core-Cultural Support
+Supplemental</value>
+    </labels>
+    <labels>
+        <fullName>YTS_Interview_Generic_Validation_Msg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>YTS_Interview_Generic_Validation_Msg</shortDescription>
+        <value>Please Complete Required Fields</value>
+    </labels>
+</CustomLabels>

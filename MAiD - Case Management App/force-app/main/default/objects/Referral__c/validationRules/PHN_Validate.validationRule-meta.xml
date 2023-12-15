@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PHN_Validate</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ICY_Personal_Health_Number__c!=null , OR(NOT(ISNUMBER(ICY_Personal_Health_Number__c)), LEN(ICY_Personal_Health_Number__c)!=10))</errorConditionFormula>
+    <errorDisplayField>ICY_Personal_Health_Number__c</errorDisplayField>
+    <errorMessage>Please enter an only 10 numeric values</errorMessage>
+</ValidationRule>

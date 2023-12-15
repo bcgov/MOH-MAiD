@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Program_Connected__c</fullName>
+    <externalId>false</externalId>
+    <label>Program Connected</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CLBC</fullName>
+                <default>true</default>
+                <label>CLBC</label>
+            </value>
+            <value>
+                <fullName>EPBC</fullName>
+                <default>false</default>
+                <label>EPBC</label>
+            </value>
+            <value>
+                <fullName>Post Secondary</fullName>
+                <default>false</default>
+                <label>Post Secondary</label>
+            </value>
+            <value>
+                <fullName>High school</fullName>
+                <default>false</default>
+                <label>High school</label>
+            </value>
+            <value>
+                <fullName>MCFD</fullName>
+                <default>false</default>
+                <label>MCFD</label>
+            </value>
+            <value>
+                <fullName>Federal</fullName>
+                <default>false</default>
+                <label>Federal</label>
+            </value>
+            <value>
+                <fullName>Aborignal</fullName>
+                <default>false</default>
+                <label>Aborignal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

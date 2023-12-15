@@ -1,0 +1,106 @@
+<template>
+    <div onkeydown={handleKeyDown} class="slds-backdrop slds-backdrop_open">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01"
+            aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close">
+                        <lightning-icon icon-name="utility:close" variant="inverse" alternative-text="Close"
+                            onclick={closeModal}></lightning-icon>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+                        {headerTitle}
+                    </h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <article class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">
+                                        <span>{title}</span>
+                                    </h2>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner slds-p-left_xx-large slds-p-left_xx-right ">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-input name="Title__c" type="text" class="validate"
+                                                label="Goal" value={step.Title__c} required="true">
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-input name="Who_Is_Supporting_this__c" type="text"
+                                                class="validate" label="Who Is Supporting this"
+                                                value={step.Who_Is_Supporting_this__c}>
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-combobox name="Assigned_Case_Team_Member__c"
+                                                label="Case Team Member Assigned" value={assignedTeamMember}
+                                                class="validate" options={caseTeam} onchange={handleAssignment}></lightning-combobox>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-textarea name="Action_Goal_Description__c"
+                                                label="Progress Towards Goal" value={step.Action_Goal_Description__c}
+                                                class="validate"></lightning-textarea>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-combobox name="Current_Stage__c" label="Current Status"
+                                                value={step.Current_Stage__c} options={currentStageOpt} required="true"
+                                                class="validate">
+                                            </lightning-combobox>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-input type="date" name="Step_Completed_By__c"
+                                                label="Target Date"
+                                                value={step.Step_Completed_By__c} options={currentStageOpt}
+                                                required="true" class="validate">
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <footer class="slds-modal__footer">
+                        <div class="slds-button-group-row slds-align_absolute-center slds-m-vertical_small">
+                            <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                            <button class="slds-button slds-button_brand" onclick={validateAndSave}>Save</button>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <types>
-     <!--   <members>Form_1634__c.ELG_S25F__c</members>
+    <!--<types>
+        <members>Form_1634__c.ELG_S25F__c</members>
         <members>Form_1634__c.ELG_S40D__c</members>
         <members>Form_1634__c.ELG_S40F__c</members>
         <members>Form_1634__c.ELG_S40G__c</members>
@@ -10,9 +10,9 @@
         <members>Form_1634__c.SPC_Q05__c</members>
         <members>Form_1634__c.SPC_Q10_Formula_Text__c</members>
         <members>Form_1634__c.SPC_Q25_Formula_Text__c</members>
-        <members>Form_1634__c.WOR_S05D_NA__c</members> -->
+        <members>Form_1634__c.WOR_S05D_NA__c</members>
         <members>Case.REF_Q15__c</members>
         <name>CustomField</name>
-    </types> 
+    </types>-->
 
 </Package>

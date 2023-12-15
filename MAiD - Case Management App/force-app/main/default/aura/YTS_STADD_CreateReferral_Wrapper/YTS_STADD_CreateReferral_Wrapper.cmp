@@ -1,0 +1,10 @@
+<!--
+  @description       : Aura Wrapper Component For New Button Override for New Referral__c
+  @author            : Ravi.TejaMynam@gov.bc.ca
+  @group             : AURA BUNDLE
+  @last modified on  : 09-15-2021
+  @last modified by  : Ravi.TejaMynam@gov.bc.ca
+-->
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes,lightning:actionOverride" access="global">
+  <c:icyNewReferral></c:icyNewReferral>
+</aura:component>

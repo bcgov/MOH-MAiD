@@ -109,4 +109,10 @@
         <label>Logged for Tracking</label>
         <closed>false</closed>
     </standardValue>
+    <standardValue>
+        <fullName>Open</fullName>
+        <default>false</default>
+        <label>Open</label>
+        <closed>false</closed>
+    </standardValue>
 </StandardValueSet>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICY_Referral_Source__c</fullName>
+    <externalId>false</externalId>
+    <label>Referral Source</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Indigenous services</fullName>
+                <default>false</default>
+                <label>Indigenous services</label>
+            </value>
+            <value>
+                <fullName>Adult Mental Health</fullName>
+                <default>false</default>
+                <label>Adult Mental Health</label>
+            </value>
+            <value>
+                <fullName>Child Development Centre</fullName>
+                <default>false</default>
+                <label>Child Development Centre</label>
+            </value>
+            <value>
+                <fullName>Child Safety Services</fullName>
+                <default>false</default>
+                <label>Child Safety Services</label>
+            </value>
+            <value>
+                <fullName>Community Living Services</fullName>
+                <default>false</default>
+                <label>Community Living Services</label>
+            </value>
+            <value>
+                <fullName>Crisis Response Program</fullName>
+                <default>false</default>
+                <label>Crisis Response Program</label>
+            </value>
+            <value>
+                <fullName>Court</fullName>
+                <default>false</default>
+                <label>Court</label>
+            </value>
+            <value>
+                <fullName>CYMH</fullName>
+                <default>false</default>
+                <label>CYMH</label>
+            </value>
+            <value>
+                <fullName>Early Psychosis Intervention</fullName>
+                <default>false</default>
+                <label>Early Psychosis Intervention</label>
+            </value>
+            <value>
+                <fullName>Early Years Services</fullName>
+                <default>false</default>
+                <label>Early Years Services</label>
+            </value>
+            <value>
+                <fullName>Foundry</fullName>
+                <default>false</default>
+                <label>Foundry</label>
+            </value>
+            <value>
+                <fullName>General or Family Practitioner</fullName>
+                <default>false</default>
+                <label>General or Family Practitioner</label>
+            </value>
+            <value>
+                <fullName>Parent/guardian</fullName>
+                <default>false</default>
+                <label>Parent/guardian</label>
+            </value>
+            <value>
+                <fullName>Hospital</fullName>
+                <default>false</default>
+                <label>Hospital</label>
+            </value>
+            <value>
+                <fullName>Nurse/NP</fullName>
+                <default>false</default>
+                <label>Nurse/NP</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapist</fullName>
+                <default>false</default>
+                <label>Occupational Therapist</label>
+            </value>
+            <value>
+                <fullName>Pediatrician</fullName>
+                <default>false</default>
+                <label>Pediatrician</label>
+            </value>
+            <value>
+                <fullName>Police</fullName>
+                <default>false</default>
+                <label>Police</label>
+            </value>
+            <value>
+                <fullName>Psychologist</fullName>
+                <default>false</default>
+                <label>Psychologist</label>
+            </value>
+            <value>
+                <fullName>Psychiatrist</fullName>
+                <default>false</default>
+                <label>Psychiatrist</label>
+            </value>
+            <value>
+                <fullName>Public Health</fullName>
+                <default>false</default>
+                <label>Public Health</label>
+            </value>
+            <value>
+                <fullName>Rehab</fullName>
+                <default>false</default>
+                <label>Rehab</label>
+            </value>
+            <value>
+                <fullName>Relative (non-parental)</fullName>
+                <default>false</default>
+                <label>Relative (non-parental)</label>
+            </value>
+            <value>
+                <fullName>Residential Facility</fullName>
+                <default>false</default>
+                <label>Residential Facility</label>
+            </value>
+            <value>
+                <fullName>School</fullName>
+                <default>false</default>
+                <label>School</label>
+            </value>
+            <value>
+                <fullName>Self</fullName>
+                <default>false</default>
+                <label>Self</label>
+            </value>
+            <value>
+                <fullName>Social Worker</fullName>
+                <default>false</default>
+                <label>Social Worker</label>
+            </value>
+            <value>
+                <fullName>SUSD</fullName>
+                <default>false</default>
+                <label>SUSD</label>
+            </value>
+            <value>
+                <fullName>Substance Use Services/Addictions</fullName>
+                <default>false</default>
+                <label>Substance Use Services/Addictions</label>
+            </value>
+            <value>
+                <fullName>Youth Worker</fullName>
+                <default>false</default>
+                <label>Youth Worker</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

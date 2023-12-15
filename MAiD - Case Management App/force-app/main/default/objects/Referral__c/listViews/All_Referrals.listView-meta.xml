@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Referrals</fullName>
+    <columns>NAME</columns>
+    <columns>Individual_First_Name__c</columns>
+    <columns>Individual_Last_Name__c</columns>
+    <columns>Status__c</columns>
+    <columns>EIS_Location__c</columns>
+    <columns>Individual_Date_of_Birth__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <label>All Referrals</label>
+</ListView>

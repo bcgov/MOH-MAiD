@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Notify_new_referral_owner</fullName>
+        <description>Notify new referral owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Referral_Ownership_Transfer</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_Record_Email_Alert</fullName>
+        <description>Referral Record Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>ICY_Email_Templates/Referral_Owner_Email_Template</template>
+    </alerts>
+</Workflow>

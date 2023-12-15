@@ -4,6 +4,12 @@
     <active>true</active>
     <description>AND(ISPICKVAL( Profession_Type__c , &quot;Other&quot;),
   ISNULL(Other_Profession_Specify__c ))</description>
-    <errorConditionFormula>AND((ISPICKVAL( Profession_Type__c , &quot;Other&quot;)),  Other_Profession_Specify__c = &quot;&quot;)</errorConditionFormula>
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;Nurse_Practitioner&apos;,
+RecordType.DeveloperName =&apos;Other_Health_Care_Professionals&apos;,
+RecordType.DeveloperName =&apos;Pharmacist&apos;,
+RecordType.DeveloperName =&apos;Physician&apos;),
+AND((ISPICKVAL( Profession_Type__c , &quot;Other&quot;)),  Other_Profession_Specify__c = &quot;&quot;)
+)</errorConditionFormula>
     <errorMessage>Other Profession, Specify is required when Profession type is other.</errorMessage>
 </ValidationRule>

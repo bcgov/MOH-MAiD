@@ -1,0 +1,80 @@
+.logo {
+	text-align: center;
+    padding: 10px;
+}
+
+.sfg_form {
+	margin: 20px auto;
+	max-width: 880px;
+}
+.sfg_form p {
+	font-family: Arial;
+	font-size: 1.2em;
+}
+.sfg_form h1, .sfg_form h2 {
+	display: block;
+	font-family: Trebuchet MS;
+	font-size: 24px;
+	margin: 5px 0;
+	color: #222;
+	text-align: center;
+}
+.sfg_form h2 {
+	font-size: 20px;
+}
+.sfg_form fieldset {
+	margin: 15px 0;
+	border: 1px solid #aaa;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}    
+.sfg_form legend {
+	font-family: Trebuchet MS;
+	font-size: 18px;
+	margin: 5px 0;
+	color: #444;
+}
+.sfg_form table {
+	width: 100%;
+}
+.sfg_form label {
+	font-size: 1.2em;
+	color: #222;
+}
+.sfg_form input[type=text], .sfg_form select, textarea {
+	width: 100%;
+	padding: 5px;
+	margin: 0 0 10px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	box-sizing: border-box;
+}        
+.sfg_form input[type=file] {
+	padding: 5px;
+	margin: 0 0 10px 0;
+	display: inline-block;
+}        
+.sfg_form input[type=submit] {
+	background: #999999;
+	background-image: -webkit-linear-gradient(top, #999999, #555555);
+	background-image: -moz-linear-gradient(top, #999999, #555555);
+	background-image: -ms-linear-gradient(top, #999999, #555555);
+	background-image: -o-linear-gradient(top, #999999, #555555);
+	background-image: linear-gradient(to bottom, #999999, #555555);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	color: #ffffff;
+	font-size: 14px;
+	font-weight: normal;
+	padding: 8px 10px;
+	text-decoration: none;
+}        
+.sfg_form input[type=submit]:hover {
+	background: #999999;
+	text-decoration: none;
+}

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transition_Plan_Domain__c</fullName>
+    <externalId>false</externalId>
+    <label>Transition Plan Domain</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Relationships</fullName>
+                <default>false</default>
+                <label>Relationships</label>
+            </value>
+            <value>
+                <fullName>Team</fullName>
+                <default>false</default>
+                <label>Team</label>
+            </value>
+            <value>
+                <fullName>Identity, Culture and Community</fullName>
+                <default>false</default>
+                <label>Identity, Culture and Community</label>
+            </value>
+            <value>
+                <fullName>Money Management</fullName>
+                <default>false</default>
+                <label>Money Management</label>
+            </value>
+            <value>
+                <fullName>Physical Health</fullName>
+                <default>false</default>
+                <label>Physical Health</label>
+            </value>
+            <value>
+                <fullName>Mental Health and Wellness</fullName>
+                <default>false</default>
+                <label>Mental Health and Wellness</label>
+            </value>
+            <value>
+                <fullName>Housing</fullName>
+                <default>false</default>
+                <label>Housing</label>
+            </value>
+            <value>
+                <fullName>Job Readiness and Employment</fullName>
+                <default>false</default>
+                <label>Job Readiness and Employment</label>
+            </value>
+            <value>
+                <fullName>Education</fullName>
+                <default>false</default>
+                <label>Education</label>
+            </value>
+            <value>
+                <fullName>Life Skills</fullName>
+                <default>false</default>
+                <label>Life Skills</label>
+            </value>
+            <value>
+                <fullName>Substance Use</fullName>
+                <default>false</default>
+                <label>Substance Use</label>
+            </value>
+            <value>
+                <fullName>Independent Living Skills</fullName>
+                <default>false</default>
+                <label>Independent Living Skills</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

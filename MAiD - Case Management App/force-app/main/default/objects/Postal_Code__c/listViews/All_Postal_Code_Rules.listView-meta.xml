@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Postal_Code_Rules</fullName>
+    <columns>NAME</columns>
+    <columns>Community__c</columns>
+    <columns>Six_Digits__c</columns>
+    <columns>Three_Digits__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Postal Code Rules</label>
+</ListView>

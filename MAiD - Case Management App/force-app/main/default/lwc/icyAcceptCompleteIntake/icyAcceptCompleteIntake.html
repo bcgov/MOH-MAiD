@@ -1,0 +1,59 @@
+<template>
+    <lightning-quick-action-panel header="Accept/Complete Intake">
+        <template if:true={showScreen}>
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                <lightning-layout vertical-align="center" multiple-rows="true">
+                    <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                        <lightning-combobox name="Do you have Youth Consent?" label="Do you have Youth Consent?"
+                            options={options} onchange={handleChange}>
+                        </lightning-combobox>
+                    </lightning-layout-item>
+
+                    <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                        <div data-id="question2" class="slds-hide">
+                            <lightning-combobox name="Type Of Consent" label="Type Of Consent"
+                                placeholder="Select Type Of Consent" options={options2} onchange={handleChange2}>
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+
+
+                    <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                        <div data-id="question3" class="slds-hide">
+                            <lightning-textarea name="rationale" required={rationaleRequired} label="rationale">
+                            </lightning-textarea>
+                        </div>
+                    </lightning-layout-item>
+
+
+                    <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                        <div data-id="question4" class="slds-hide">
+                            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                                <lightning-file-upload label="Upload Signed Doc" name="Upload Signed Doc"
+                                    accept={acceptedFormats} record-id={myRecordId} required={uploadRequired}
+                                    onuploadfinished={handleUploadFinished} multiple>
+                                </lightning-file-upload>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+
+
+                    <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                        <div data-id="question5" class="slds-hide">
+                            <lightning-formatted-text value="You need youth’s consent to move forward.">
+                            </lightning-formatted-text>
+                        </div>
+                    </lightning-layout-item>
+
+                </lightning-layout>
+                <lightning-layout>
+                    <div class="slds-m-top_small slds-m-bottom_medium">
+                        <lightning-button label="Accept Intake and Create Case" title="Accept Intake and Create Case"
+                            onclick={handleClick} disabled={acceptIntakecaseDisable} class="slds-m-left_x-small">
+                        </lightning-button>
+                    </div>
+                </lightning-layout>
+            </div>
+        </template>
+    </lightning-quick-action-panel>
+</template>

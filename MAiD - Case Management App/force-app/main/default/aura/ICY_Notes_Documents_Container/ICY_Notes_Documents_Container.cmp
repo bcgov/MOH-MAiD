@@ -1,0 +1,42 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 04-13-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,flexipage:availableForAllPageTypes,forceCommunity:availableForAllPageTypes">
+    <aura:attribute name="showNotesTab" type="Boolean" access="global" />
+    <aura:attribute name="showDocumentsTab" type="Boolean" access="global" />
+    <aura:attribute name="showContactsTab" type="Boolean" access="global" />
+    <aura:attribute name="showTransitionDomain" type="Boolean" access="global"/>
+    <aura:attribute name="showCaseMembersTab" type="Boolean" access="global"/>
+    <aura:attribute name="objectApiName" type="String" access = "global"/>
+    <aura:attribute name="showCaseAdminNotes" type="Boolean" access="global"/>
+    <aura:attribute name="showAlertBanner" type="Boolean" access="global"/>
+    
+    <aura:if isTrue="{!v.showNotesTab}">
+        <c:iCY_NotesComponent parentRecordId="{!v.recordId}" objectApiName="{!v.objectApiName}"></c:iCY_NotesComponent>
+    </aura:if>
+    <aura:if isTrue="{!v.showDocumentsTab}">
+        <c:icyDocumentsComponent parentRecordId="{!v.recordId}" objectApiName="{!v.objectApiName}">
+        </c:icyDocumentsComponent>
+    </aura:if>
+    <aura:if isTrue="{!v.showContactsTab}">
+        <c:icyContactsComponent parentRecordId="{!v.recordId}" objectApiName="{!v.objectApiName}">
+        </c:icyContactsComponent>
+    </aura:if>
+    <aura:if isTrue="{!v.showTransitionDomain}">
+        <c:icyIntegratedCarePlan caseId="{!v.recordId}"></c:icyIntegratedCarePlan>
+    </aura:if>
+    <aura:if isTrue="{!v.showCaseMembersTab}">
+        <c:icyCaseTeamMembers parentRecordId="{!v.recordId}" objectApiName="{!v.objectApiName}">
+        </c:icyCaseTeamMembers>
+    </aura:if>
+    <aura:if isTrue="{!v.showCaseAdminNotes}">
+        <c:iCY_NotesComponent parentRecordId="{!v.recordId}" objectApiName="{!v.objectApiName}" adminNotes="true"></c:iCY_NotesComponent>
+    </aura:if>
+    <aura:if isTrue="{!v.showAlertBanner}">
+        <c:icyAlertBanner parentRecordId="{!v.recordId}" objectApiName="{!v.objectApiName}" ></c:icyAlertBanner>
+    </aura:if>
+</aura:component>

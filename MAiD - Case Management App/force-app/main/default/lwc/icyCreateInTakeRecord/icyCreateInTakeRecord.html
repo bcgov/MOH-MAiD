@@ -1,0 +1,16 @@
+<template>
+    <lightning-quick-action-panel header="Accept Referral">
+        <!--SHOW SPINNER-->
+   <template if:true={showSpinner}>
+       <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+   </template>
+       <p class="slds-align_absolute-center">
+           Accept This Referral?
+       </p>
+       <div slot="footer">
+           <lightning-button variant="neutral" label="Cancel" onclick={closeAction}></lightning-button>
+           <lightning-button variant="brand" label="Accept" class="slds-m-left_x-small" onclick={createIntake}>
+           </lightning-button>
+       </div>
+   </lightning-quick-action-panel>
+</template>

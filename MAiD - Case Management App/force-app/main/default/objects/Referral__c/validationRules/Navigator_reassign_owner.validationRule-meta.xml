@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Navigator_reassign_owner</fullName>
+    <active>true</active>
+    <description>Navigator should not be able to change the Referral owner. This should be a director and project admin function.</description>
+    <errorConditionFormula>AND( 
+ISCHANGED(OwnerId), 
+NOT( $Profile.Name = &quot;System Administrator&quot;), 
+NOT($Profile.Name =&quot;STADD Project Administrator&quot;), 
+NOT($Profile.Name =&quot;STADD Director&quot;),
+NOT($Profile.Name = &quot;STADD support team - referring (login)&quot;),
+NOT($Profile.Name = &quot;STADD support team - referring (member)&quot;),
+NOT($Permission.Validation_Rule_Bypass))</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>You cannot reassign the owner.</errorMessage>
+</ValidationRule>

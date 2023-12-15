@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Restricted_Indicator__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checkbox; checked when a Case Note, Case Alert, Case Document has record type = restricted. Otherwise unchecked.</description>
+    <externalId>false</externalId>
+    <label>Restricted Indicator</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

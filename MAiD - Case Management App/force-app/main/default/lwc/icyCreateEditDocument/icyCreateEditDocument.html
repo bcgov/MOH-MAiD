@@ -1,0 +1,150 @@
+<!--
+  @description       :
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             :
+  @last modified on  : 04-14-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <div onkeydown={handleKeyDown} class="slds-backdrop slds-backdrop_open">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01"
+            aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close">
+                        <lightning-icon icon-name="utility:close" variant="inverse" alternative-text="Close"
+                            onclick={closeModal}></lightning-icon>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{windowTitle}</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <article class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">
+                                        <span>{title}</span>
+                                    </h2>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner slds-p-left_xx-large slds-p-left_xx-right ">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-radio-group name="Type__c" label="Document Type"
+                                                value={documentType} type="button" class="validate" required="true"
+                                                options={documentTypeOptions} onchange={handleChange} tabindex="0">
+                                            </lightning-radio-group>
+                                        </div>
+                                        <div class="slds-p-left_medium">
+                                            <i>
+                                                {typeDesc}
+                                            </i>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-input type="text" label="Document Name" value={document.Name}
+                                                name="Name" class="validate" required="true" onchange={handleChange}>
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <template if:true={categoryValues.data}>
+                                                <lightning-radio-group name="Category__c" label="Document Category"
+                                                    value={document.Category__c} type="button" class="validate"
+                                                    required="true" options={categoryValues.data.values}
+                                                    onchange={handleChange} tabindex="0">
+                                                </lightning-radio-group>
+                                            </template>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <template if:true={showOtherSubject}>
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_small">
+                                                <lightning-input type="text" label="Other Document Type"
+                                                    value={document.Other_Document_Type__c}
+                                                    name="Other_Document_Type__c" class="validate" required="true"
+                                                    onchange={handleChange}>
+                                                </lightning-input>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </template>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-textarea name="Description__c" label="Description"
+                                                value={document.Description__c} class="validate" onchange={handleChange}
+                                                tabindex="0"></lightning-textarea>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div if:false={recordId}>
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_small">
+                                                <div class="slds-form-element">
+                                                    <span class="slds-form-element__label"
+                                                        id="file-selector-primary-label-101">Attachment</span>
+                                                    <div class="slds-form-element__control">
+                                                        <lightning-file-upload disabled={disableUploadButton}
+                                                            name="fileUploader" onuploadfinished={handleUploadFinished}
+                                                            required="true"></lightning-file-upload>
+                                                    </div>
+                                                </div>
+                                                <template if:true={missingFile}>
+                                                    <div class="slds-form-element__help slds-text-color_error"
+                                                        id="error-108">
+                                                        Please upload a file
+                                                    </div>
+                                                </template>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_small">
+                                                <div if:true={isFileUploaded}>
+                                                    <span>File Name: &nbsp;<strong>{fileName}</strong></span> &nbsp;
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <footer class="slds-modal__footer">
+                        <div class="slds-button-group-row slds-align_absolute-center slds-m-vertical_small">
+                            <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                            <button class="slds-button slds-button_brand" disabled={disableSaveButton} onclick={validateAndSave}>{nextLabel}</button>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>

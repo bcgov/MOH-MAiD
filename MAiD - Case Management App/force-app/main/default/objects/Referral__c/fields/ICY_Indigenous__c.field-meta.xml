@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICY_Indigenous__c</fullName>
+    <externalId>false</externalId>
+    <label>Indigenous</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First Nations</fullName>
+                <default>false</default>
+                <label>First Nations</label>
+            </value>
+            <value>
+                <fullName>Metis</fullName>
+                <default>false</default>
+                <label>Metis</label>
+            </value>
+            <value>
+                <fullName>Inuit</fullName>
+                <default>false</default>
+                <label>Inuit</label>
+            </value>
+            <value>
+                <fullName>Other Indigenous identity</fullName>
+                <default>false</default>
+                <label>Other Indigenous identity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

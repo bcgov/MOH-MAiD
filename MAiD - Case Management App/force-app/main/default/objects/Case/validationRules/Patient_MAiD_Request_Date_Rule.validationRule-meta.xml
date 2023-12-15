@@ -2,7 +2,11 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Patient_MAiD_Request_Date_Rule</fullName>
     <active>true</active>
-    <description>Field: &apos;Patient MAiD Request Date&apos; Rule: This date must be after Jan 1st 2016 and before or equal to todays date </description>
-    <errorConditionFormula>Patient_MAiD_Request_Date__c &gt; TODAY()   || Patient_MAiD_Request_Date__c &lt; DATE(2016,01,01)</errorConditionFormula>
+    <description>Field: &apos;Patient MAiD Request Date&apos; Rule: This date must be after Jan 1st 2016 and before or equal to todays date</description>
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;MAiD_Case&apos;,
+RecordType.DeveloperName =&apos;Error_Log&apos;),
+Patient_MAiD_Request_Date__c &gt; TODAY()   || Patient_MAiD_Request_Date__c &lt; DATE(2016,01,01)
+)</errorConditionFormula>
     <errorMessage>Patient MAiD Request Date must be after Jan 1st 2016 Or before/equal to today&apos;s date</errorMessage>
 </ValidationRule>

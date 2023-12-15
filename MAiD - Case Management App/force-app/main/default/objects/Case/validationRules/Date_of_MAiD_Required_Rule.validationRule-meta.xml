@@ -3,7 +3,10 @@
     <fullName>Date_of_MAiD_Required_Rule</fullName>
     <active>true</active>
     <description>If &apos;Type&apos; = MAiD Death, then &apos;Date of MAiD&apos; should be required</description>
-    <errorConditionFormula>IF(
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;MAiD_Case&apos;,
+RecordType.DeveloperName =&apos;Error_Log&apos;),
+IF(
 (ISPICKVAL( Type , &quot;MAiD Death Foreseeable&quot;) ||
 ISPICKVAL( Type , &quot;MAiD Death Not Foreseeable&quot;)) ,
 AND (
@@ -15,6 +18,7 @@ OR(NOT( ISNULL( X1632_Date_Received__c )), NOT(ISNULL( X1633_Date_Received__c ))
 )
 ,
 null
+)
 )</errorConditionFormula>
     <errorMessage>Date of MAiD is required</errorMessage>
 </ValidationRule>

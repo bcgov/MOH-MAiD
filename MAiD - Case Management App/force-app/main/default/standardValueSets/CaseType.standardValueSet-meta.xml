@@ -131,4 +131,14 @@
         <default>false</default>
         <label>Transfer information incomplete</label>
     </standardValue>
+    <standardValue>
+        <fullName>Self/Direct Family Referral</fullName>
+        <default>false</default>
+        <label>Self/Direct Family Referral</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Organization Referral</fullName>
+        <default>true</default>
+        <label>Organization Referral</label>
+    </standardValue>
 </StandardValueSet>

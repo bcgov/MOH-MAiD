@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_number_formatting</fullName>
+    <active>false</active>
+    <description>Phone number formatting</description>
+    <errorConditionFormula>NOT(REGEX( Contact_Person_Home_Phone_Number__c, &quot;\\D*?(\\d\\D*?){10}&quot;))</errorConditionFormula>
+    <errorDisplayField>Contact_Person_Home_Phone_Number__c</errorDisplayField>
+    <errorMessage>Please enter a valid phone number</errorMessage>
+</ValidationRule>
