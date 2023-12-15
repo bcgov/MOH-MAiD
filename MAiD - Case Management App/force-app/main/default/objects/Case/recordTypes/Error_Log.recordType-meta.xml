@@ -5,44 +5,6 @@
     <businessProcess>Error Log Support Process</businessProcess>
     <label>Error Log</label>
     <picklistValues>
-        <picklist>Gender__c</picklist>
-        <values>
-            <fullName>1 - Male</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>2 - Female</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>3 - Other</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Health_Authority__c</picklist>
-        <values>
-            <fullName>Fraser Health Authority</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Interior Health Authority</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Northern Health Authority</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Vancouver Coastal Health Authority</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Vancouver Island Health Authority</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Origin</picklist>
         <values>
             <fullName>Email</fullName>
@@ -70,61 +32,6 @@
         <values>
             <fullName>Medium</fullName>
             <default>true</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>Province_or_Territory_that_issued_PHN__c</picklist>
-        <values>
-            <fullName>10 - Newfoundland and Labrador</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>11 - Prince Edward Island</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>12 - Nova Scotia</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>13 - New Brunswick</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>24 - Quebec</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>35 - Ontario</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>46 - Manitoba</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>47 - Saskatchewan</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>48 - Alberta</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>59 - British Columbia</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>60 - Yukon</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>61 - Northwest Territories</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>62 - Nunavut</fullName>
-            <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>
@@ -366,96 +273,6 @@
         </values>
         <values>
             <fullName>Which part of the form was missed%3F</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>X1632__c</picklist>
-        <values>
-            <fullName>Incomplete</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>X1633__c</picklist>
-        <values>
-            <fullName>Incomplete</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>X1634__c</picklist>
-        <values>
-            <fullName>Incomplete</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>X1635__c</picklist>
-        <values>
-            <fullName>Incomplete</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>X1641__c</picklist>
-        <values>
-            <fullName>Incomplete</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>X1642__c</picklist>
-        <values>
-            <fullName>Incomplete</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>

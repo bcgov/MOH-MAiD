@@ -9,7 +9,7 @@
         <members>CaseType</members>
         <members>LeadSource</members>
         <members>TaskSubject</members>
-        <name>StandardValueSet</name>
+        <name>StandardValueSet</name> 
     </types>
     <version>57.0</version>
 </Package>
