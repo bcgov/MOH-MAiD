@@ -1,0 +1,126 @@
+<template>
+    <!--SHOW SPINNER-->
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+    </template>
+    <div class="slds-var-p-around_xx-small">
+        <div class="slds-gutters slds-grid">
+            <div class="slds-col">
+                <span>
+                    <ul>
+                        <div class="slds-clearfix">
+                            <div class="slds-float_right">
+                                <div class="slds-button-group-row  slds-m-vertical_small">
+                                    <template if:true={isSelfAccessBtn}>
+                                        <li class="slds-button-group-item slds-float_right">
+                                            <lightning-button variant="brand" label="Add Myself as a Team Member"
+                                                title="Add yourself as part of the team to accces"
+                                                onclick={createSelfAccess} icon-position="right" icon-name="action:new"
+                                                class="slds-p-left_x-small"></lightning-button>
+                                        </li>    
+                                    </template>
+                                    <li class="slds-button-group-item slds-float_right">
+                                        <lightning-button variant="brand" label="Add Team Member"
+                                            title="Add Team Member To provide access to Intake and Case"
+                                            onclick={addCaseMember} icon-position="right" icon-name="action:new"
+                                            class="slds-p-left_x-small"></lightning-button>
+                                    </li>
+                                    <li class="slds-button-group-item">
+                                        <lightning-button-icon icon-name="action:refresh" alternative-text="Refresh"
+                                            onclick={init}></lightning-button-icon>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+    <template if:true={createEdit}>
+        <c-icy-create-edit-case-team-member onclose={closeModal} parent-id={parentRecordId} record-id={memberId}
+            object-api-name={objectApiName} is-self-access={isSelfAccess}>
+        </c-icy-create-edit-case-team-member>
+    </template>
+    <template if:true={deleteConfirm}>
+        <c-yts-confirmation-modal modal-header-text="Remove this user From the team?"
+            modal-confirmation-text="Are you sure you want to revoke access for this user?" cancel-btn-lbl="No"
+            ok-btn-lbl="Yes" onokconfirm={deleteConfirmation} oncancelconfirm={closeModal}></c-yts-confirmation-modal>
+    </template>
+    <template if:false={members}>
+        <div class="slds-align_absolute-center slds-text-heading_medium">
+            No Team Members Assigned
+        </div>
+    </template>
+    <template if:true={members}>
+        <template for:each={members} for:item="m">
+            <div key={m.recordId}>
+                <div class="slds-var-p-around_small slds-box">
+                    <lightning-card variant="Narrow">
+                        <h4 slot="title">
+                            <lightning-icon icon-name="standard:team_member" size="small"></lightning-icon>
+                            &nbsp;&nbsp;{m.UserOrContactName}&nbsp;<lightning-badge class={m.categoryBadgeClass}
+                                label={m.category}></lightning-badge>&nbsp;&nbsp;<lightning-badge
+                                class={m.statusBadgeClass} label={m.status}></lightning-badge>
+                        </h4>
+                        <template if:true={m.hasRevokeAccess}>
+                            <lightning-button-icon icon-name="action:remove_relationship"
+                                alternative-text="Revoke Access" onclick={revokeAccess} slot="actions"
+                                data-id={m.recordId}>
+                            </lightning-button-icon>
+                        </template>
+                        <div class="slds-p-horizontal_small">
+                            <div class="slds-gutters slds-grid">
+                                <div class="slds-col slds-size_2-of-8">
+                                    <span>
+                                        <div class="slds-form-element">
+                                            <label class="slds-form-element__label" for="text-input-id-47"><b>Is ICY
+                                                    User</b></label>
+                                            <div class="slds-form-element__control">
+                                                {m.isICYTeamMember}
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_2-of-8">
+                                    <span>
+                                        <div class="slds-form-element">
+                                            <label class="slds-form-element__label" for="text-input-id-47"><b>Added
+                                                    By</b></label>
+                                            <div class="slds-form-element__control">
+                                                {m.addedBy}
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_2-of-8">
+                                    <span>
+                                        <div class="slds-form-element">
+                                            <label class="slds-form-element__label" for="text-input-id-47"><b>Start
+                                                    Date</b></label>
+                                            <div class="slds-form-element__control">
+                                                {m.startDate}
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_2-of-8">
+                                    <span>
+                                        <div class="slds-form-element">
+                                            <label class="slds-form-element__label" for="text-input-id-47"><b>End
+                                                    Date</b></label>
+                                            <div class="slds-form-element__control">
+                                                {m.endDate}
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-card>
+                </div>
+                <br />
+            </div>
+        </template>
+    </template>
+</template>

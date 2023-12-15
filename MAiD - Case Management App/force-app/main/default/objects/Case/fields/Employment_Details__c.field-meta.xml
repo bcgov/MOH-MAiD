@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employment_Details__c</fullName>
+    <externalId>false</externalId>
+    <label>Employment Details</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Achieved_Employment__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Employed before STADD FT</fullName>
+                <default>false</default>
+                <label>Employed before STADD FT</label>
+            </value>
+            <value>
+                <fullName>Employed after STADD FT</fullName>
+                <default>false</default>
+                <label>Employed after STADD FT</label>
+            </value>
+            <value>
+                <fullName>Employed before STADD PT</fullName>
+                <default>false</default>
+                <label>Employed before STADD PT</label>
+            </value>
+            <value>
+                <fullName>Employed after STADD PT</fullName>
+                <default>false</default>
+                <label>Employed after STADD PT</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Employed before STADD FT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Employed after STADD FT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Employed before STADD PT</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>checked</controllingFieldValue>
+            <valueName>Employed after STADD PT</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

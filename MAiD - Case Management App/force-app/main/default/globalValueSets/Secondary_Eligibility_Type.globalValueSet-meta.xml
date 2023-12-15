@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>None</label>
+    </customValue>
+    <customValue>
+        <fullName>Intellectual Disability</fullName>
+        <default>false</default>
+        <label>Intellectual Disability</label>
+    </customValue>
+    <customValue>
+        <fullName>FASD</fullName>
+        <default>false</default>
+        <label>FASD</label>
+    </customValue>
+    <customValue>
+        <fullName>ASD</fullName>
+        <default>false</default>
+        <label>ASD</label>
+    </customValue>
+    <customValue>
+        <fullName>Youth with Support Needs</fullName>
+        <default>false</default>
+        <label>Youth with Support Needs</label>
+    </customValue>
+    <customValue>
+        <fullName>Post Majority Services</fullName>
+        <default>false</default>
+        <label>Post Majority Services</label>
+    </customValue>
+    <masterLabel>Secondary Eligibility Type</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

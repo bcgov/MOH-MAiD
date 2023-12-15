@@ -2,9 +2,13 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Prevent_Analyst_to_Reopen_Case</fullName>
     <active>true</active>
-    <errorConditionFormula>AND(
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;MAiD_Case&apos;,
+RecordType.DeveloperName =&apos;Error_Log&apos;),
+AND(
 ISCHANGED(Status),
 ISPICKVAL(PRIORVALUE(Status), &quot;Closed&quot;),
-  $UserRole.Name = &quot;MAiD Analyst&quot;)</errorConditionFormula>
+  $UserRole.Name = &quot;MAiD Analyst&quot;)
+)</errorConditionFormula>
     <errorMessage>You do not have access to re-open this case.</errorMessage>
 </ValidationRule>

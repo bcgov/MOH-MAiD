@@ -1,0 +1,336 @@
+<template>
+    <!--SHOW SPINNER-->
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+    </template>
+    <!--Add Have/Need-->
+    <template if:true={add}>
+        <c-icy-plans-add-haves-and-needs transition-id={currentSelectedTab} domain={domain} onclose={closeModal}
+            selected-have-id={selectedHaveId} selected-need-id={selectedNeedId} is-have={isHave} is-need={isNeed}
+            is-goal={isGoal}>
+        </c-icy-plans-add-haves-and-needs>
+    </template>
+    <template if:true={addStep}>
+        <c-icy-plans-add-step onclose={closeModal} step-id={selectedStepId} need-id={selectedNeedId}
+            case-team={caseTeam} case-id={caseId}>
+        </c-icy-plans-add-step>
+    </template>
+    <!--Confirmation Modal To Delete Have/Need/Step-->
+    <template if:true={showConfirmation}>
+        <c-yts-confirmation-modal oncancelconfirm={closeModal} onokconfirm={confirmDelete}
+            modal-confirmation-text="Are you sure you want to delete this record? Any records that are associated will also be deleted."
+            cancel-btn-lbl="No" ok-btn-lbl="Yes" modal-header-text="Delete Record"></c-yts-confirmation-modal>
+    </template>
+    <div class="slds-vertical-tabs">
+        <ul class="slds-vertical-tabs__nav" style="width: 20%;" role="tablist" aria-orientation="vertical">
+            <template for:each={transitionPlans} for:item="t">
+                <div key={t.transitionId}>
+                    <li class={t.tabClass} title={t.domain} role="presentation" style="width: auto;">
+                        <a class="slds-vertical-tabs__link" href="#" key={t.transitionId}
+                            data-record-id={t.transitionId} onclick={handleTabChange} role="tab" tabindex="0">
+                            <span class="slds-vertical-tabs__left-icon" key={t.transitionId}
+                                data-record-id={t.transitionId}>
+                                <span class="slds-icon_container slds-icon-standard-partner_fund_allocation"
+                                    title="Description of icon when needed">
+                                    <lightning-icon icon-name={t.icon} alternative-text={t.domain} title={t.domain}
+                                        key={t.transitionId} data-record-id={t.transitionId} size="small">
+                                    </lightning-icon>
+                                </span>
+                            </span>
+                            <span class="slds-truncate" title={t.domainHelpText} key={t.transitionId}
+                                data-record-id={t.transitionId}>{t.domain}
+                            </span>
+                            <template if:true={t.showBadge}>
+                                <span class="slds-vertical-tabs__right-icon">
+                                    <span class="slds-badge slds-theme_success">Active</span>
+                                </span>
+                            </template>
+                        </a>
+                    </li>
+                </div>
+            </template>
+        </ul>
+        <div class="slds-vertical-tabs__content slds-show" role="tabpanel" aria-labelledby="slds-vertical-tabs-0__nav">
+            <h3 class="slds-text-heading_medium">{domainHeader}</h3><br />
+            <div class="slds-p-around_x-small">
+                <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleMainSectionToggle}
+                    active-section-name={activeSections}>
+                    <lightning-accordion-section name="A" label="What's Important to me?">
+                        <div class="slds-var-p-around_x-small">
+                            <div class="slds-form-element">
+                                <template if:false={whatsImpToMeReadOnly}>
+                                    <div class="slds-form-element__control">
+                                        <lightning-input-rich-text value={whatsImpToMe} onchange={handleChange}>
+                                        </lightning-input-rich-text>
+                                        <span class="floatToRight" style="color:red; font-weight: bold;">{characterLength} characters remaining</span>
+                                    </div>
+                                </template>
+                                <template if:true={whatsImpToMeReadOnly}>
+                                    <div class="slds-form-element__control">
+                                        <lightning-formatted-rich-text value={whatsImpToMe}>
+                                        </lightning-formatted-rich-text>
+                                    </div>
+                                </template>
+                            </div>
+                        </div>
+                        <div if:true={showSave} class="slds-var-p-around_xx-small">
+                            <div class="slds-form-element">
+                                <div class="slds-form-element__control">
+                                    <lightning-button variant="brand" label="Save" title="Save"
+                                        onclick={handleUpdateTransitionPlan} valid={validity}
+                                        class="slds-m-left_x-small">
+                                    </lightning-button>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-accordion-section>
+                    <!--WHAT I HAVE-->
+                    <lightning-accordion-section name="B" label="What I Have">
+                        <template if:false={isReadOnly}>
+                            <template if:true={createAccess}>
+                                <lightning-button-menu slot="actions" alternative-text="Show menu" icon-size="x-small"
+                                    menu-alignment="right">
+                                    <lightning-menu-item value="New" label="Add" onclick={addNewHave}
+                                        icon-name="action:add_relationship"></lightning-menu-item>
+                                </lightning-button-menu>
+                            </template>
+                        </template>
+                        <div class="slds-var-p-around_x-small">
+                            <!--List Of Haves-->
+                            <template if:false={listOfHaves}>
+                                <div class="slds-align_absolute-center slds-text-heading_small" style="height:2rem">
+                                    No Haves Identified
+                                </div>
+                            </template>
+                            <template if:true={listOfHaves}>
+                                <div class="slds-gutters slds-grid">
+                                    <div class="slds-col">
+                                        <span>
+                                            <ul>
+                                                <div class="slds-clearfix">
+                                                    <div class="slds-float_left">
+                                                        <div class="slds-button-group-row  slds-m-vertical_small">
+                                                            <li class="slds-button-group-item slds-float_left">
+                                                                <lightning-button variant="base"
+                                                                    label={haveUtilityTitle} title={haveUtilityTitle}
+                                                                    icon-name={haveUtilityIcon}
+                                                                    class="slds-m-left_x-small" onclick={expandAllHaves}
+                                                                    icon-position="right"></lightning-button>
+                                                            </li>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                </div>
+                                <lightning-accordion allow-multiple-sections-open
+                                    active-section-name={activeHaveSections}>
+                                    <template for:each={listOfHaves} for:item="h">
+                                        <div key={h.recordId}>
+                                            <lightning-accordion-section label={h.have} name={h.recordId}
+                                                style="background: rgb(245, 243, 243);">
+                                                <template if:false={isReadOnly}>
+                                                    <lightning-button-menu slot="actions" alternative-text="Show menu"
+                                                        icon-size="x-small" menu-alignment="right">
+                                                        <lightning-menu-item if:true={editAccess} value="Edit"
+                                                            label="Edit" onclick={editHave} key-field={h.recordId}
+                                                            data-record-id={h.recordId} icon-name="utility:edit">
+                                                        </lightning-menu-item>
+                                                        <lightning-menu-item if:true={deleteAccess} value="Delete"
+                                                            label="Delete" onclick={deleteRecord} key-field={h.recordId}
+                                                            data-record-id={h.recordId} icon-name="utility:delete">
+                                                        </lightning-menu-item>
+                                                    </lightning-button-menu>
+                                                </template>
+                                                <div class="slds-p-around_x-small">
+                                                    <div class="slds-grid">
+                                                        <div class="slds-col slds-size_4-of-8">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="text-input-id-47"><b>Details</b></label>
+                                                                <div class="slds-form-element__control">
+                                                                    {h.details}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-8">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="text-input-id-47"><b>Contact/Organization</b></label>
+                                                                <div class="slds-form-element__control">
+                                                                    {h.contact}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-8">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="text-input-id-47"><b>End Date</b></label>
+                                                                <div class="slds-form-element__control">
+                                                                    {h.endDate}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </lightning-accordion-section>
+                                            <br />
+                                        </div>
+                                    </template>
+                                </lightning-accordion>
+                            </template>
+                        </div>
+                    </lightning-accordion-section>
+                    <!--WHAT I NEED-->
+                    <lightning-accordion-section name="C" label="What I Need">
+                        <template if:false={isReadOnly}>
+                            <template if:true={createAccess}>
+                                <lightning-button-menu slot="actions" alternative-text="Show menu" icon-size="x-small"
+                                    menu-alignment="right">
+                                    <lightning-menu-item value="New" label="Add" onclick={addNewNeed}
+                                        icon-name="action:add_relationship"></lightning-menu-item>
+                                </lightning-button-menu>
+                            </template>
+                        </template>
+                        <div class="slds-var-p-around_x-small">
+                            <!--List Of Haves-->
+                            <template if:false={listOfNeeds}>
+                                <div class="slds-align_absolute-center slds-text-heading_small" style="height:2rem">
+                                    No Needs Identified
+                                </div>
+                            </template>
+                            <template if:true={listOfNeeds}>
+                                <div class="slds-gutters slds-grid">
+                                    <div class="slds-col">
+                                        <span>
+                                            <ul>
+                                                <div class="slds-clearfix">
+                                                    <div class="slds-float_left">
+                                                        <div class="slds-button-group-row  slds-m-vertical_small">
+                                                            <li class="slds-button-group-item slds-float_left">
+                                                                <lightning-button variant="base"
+                                                                    label={needUtilityTitle} title={needUtilityTitle}
+                                                                    icon-name={needUtilityIcon}
+                                                                    class="slds-m-left_x-small" onclick={expandAllNeeds}
+                                                                    icon-position="right"></lightning-button>
+                                                            </li>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </ul>
+                                        </span>
+                                    </div>
+                                </div>
+                                <lightning-accordion allow-multiple-sections-open onsectiontoggle={handleNeedToggle}
+                                    active-section-name={activeNeedSections}>
+                                    <template for:each={listOfNeeds} for:item="n">
+                                        <div key={n.recordId}>
+                                            <lightning-accordion-section name={n.recordId} label={n.need}
+                                                style="background: rgb(245, 243, 243);">
+                                                <template if:false={isReadOnly}>
+                                                    <lightning-button-menu slot="actions" alternative-text="Show menu"
+                                                        icon-size="x-small" menu-alignment="right">
+                                                        <lightning-menu-item if:true={editAccess} value="Edit"
+                                                            onclick={editNeed} label="Edit" key-field={n.recordId}
+                                                            data-record-id={n.recordId} icon-name="utility:edit">
+                                                        </lightning-menu-item>
+                                                        <lightning-menu-item if:true={deleteAccess} value="Delete_Need"
+                                                            label="Delete" onclick={deleteRecord} key-field={n.recordId}
+                                                            data-record-id={n.recordId} icon-name="utility:delete">
+                                                        </lightning-menu-item>
+                                                        <lightning-menu-item value="New Step" label="Add New Goal"
+                                                            onclick={addNewStep} data-record-id={n.recordId}
+                                                            icon-name="action:new">
+                                                        </lightning-menu-item>
+                                                    </lightning-button-menu>
+                                                </template>
+                                                <div class="slds-p-around_x-small">
+                                                    <div class="slds-grid">
+                                                        <div class="slds-col slds-size_3-of-8">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="text-input-id-47"><b>Details</b></label>
+                                                                <div class="slds-form-element__control">
+                                                                    {n.details}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-8">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="text-input-id-47"><b>Has Agreement Been
+                                                                        Captured?</b></label>
+                                                                <div class="slds-form-element__control">
+                                                                    {n.agreementCaptured}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-8">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="text-input-id-47"><b>Contact/Organization</b></label>
+                                                                <div class="slds-form-element__control">
+                                                                    {n.contact}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-8">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="text-input-id-47"><b>Start Date</b></label>
+                                                                <div class="slds-form-element__control">
+                                                                    {n.startDate}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--LIST OF GOALS-->
+                                                <div class="slds-p-around_small">
+                                                    <template if:false={n.needSteps}>
+                                                        <div class="slds-align_absolute-center slds-text-heading_small"
+                                                            style="height:2rem">
+                                                            No Steps are defined
+                                                        </div>
+                                                    </template>
+                                                    <template if:true={n.needSteps}>
+                                                        <!--Goal Steps-->
+                                                        <div>
+                                                           <template if:true={isReadOnly}>
+                                                                <lightning-datatable key-field="recordId"
+                                                                    columns={readOnlyColumns} data={n.needSteps}
+                                                                    hide-checkbox-column
+                                                                    default-sort-direction={defaultSortDirection}
+                                                                    sorted-direction={sortDirection}
+                                                                    sorted-by={sortedBy} onsort={onHandleSort}>
+                                                                </lightning-datatable>
+                                                            </template>
+                                                            <template if:false={isReadOnly}>
+                                                                <lightning-datatable key-field="recordId"
+                                                                    columns={columns} data={n.needSteps}
+                                                                    hide-checkbox-column
+                                                                    default-sort-direction={defaultSortDirection}
+                                                                    sorted-direction={sortDirection}
+                                                                    sorted-by={sortedBy} onsort={onHandleSort}
+                                                                    show-row-number-columns
+                                                                    onrowaction={handleRowAction}>
+                                                                </lightning-datatable>
+                                                            </template>
+
+                                                        </div>
+                                                    </template>
+                                                </div>
+                                            </lightning-accordion-section>
+                                            <br />
+                                        </div>
+                                    </template>
+                                </lightning-accordion>
+                            </template>
+                        </div>
+                    </lightning-accordion-section>
+                </lightning-accordion>
+            </div>
+        </div>
+    </div>
+</template>

@@ -162,6 +162,6 @@
     </nameField>
     <pluralLabel>Forms 1633</pluralLabel>
     <searchLayouts/>
-    <sharingModel>ReadWrite</sharingModel>
+    <sharingModel>Private</sharingModel>
     <visibility>Public</visibility>
 </CustomObject>

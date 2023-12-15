@@ -1,0 +1,31 @@
+<template>
+    <lightning-quick-action-panel header="Enable Banner">
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+        </template>
+        <div class="slds-card__body slds-card__body_inner slds-p-left_xx-large slds-p-left_xx-right ">
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col">
+                    <span>
+                        <div class="slds-p-around_small">
+                            <lightning-textarea name="Alert Banner Text" label="ICY Alert Banner Text" onchange={handleChange}
+                            value={alertMsg}>
+                            </lightning-textarea>
+                        </div>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div slot="footer" >
+           <!--<lightning-button-group>-->
+            <!--<span style="padding-right:20px;">-->
+                <lightning-button label="Cancel" variant="brand"  onclick={closeQuickAction}></lightning-button>
+            
+                <lightning-button label="Save" variant="brand" onclick={handleSubmit} class="slds-m-left_x-small"></lightning-button>
+            
+            <!--</lightning-button-group>-->
+        </div>
+
+    </lightning-quick-action-panel>
+</template>

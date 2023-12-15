@@ -1,0 +1,10 @@
+<design:component label="ICY Related Records Component">
+    <design:attribute name="showNotesTab" label="Show Notes Tab" default="false" description="To Render Related Notes Component"/>
+    <design:attribute name="showDocumentsTab" label="Show Documents Tab" default="false" description="To Render Related Documents Component"/>
+    <design:attribute name="showContactsTab" label="Show Contacts Tab" default="false" description="To Render Related Contacts Component"/>
+    <design:attribute name="objectApiName" label="Object Api Name" description="Enter the Object Api on which this component is placed"/>
+    <design:attribute name="showTransitionDomain" label="Show Integrated Care Plan" description="To render ICY Care plan"/>
+    <design:attribute name="showCaseMembersTab" label="Show Case Members" description="To render Case Members Tab (Only for Referral and Case pages)"/>
+    <design:attribute name="showCaseAdminNotes" label="Show Case Admin Notes" description="To render Case Admin nOtes Tab"/>
+    <design:attribute name="showAlertBanner" label="Show Alert Banner on Referral Intake and Case" description="To render Banner Message"/>
+</design:component>

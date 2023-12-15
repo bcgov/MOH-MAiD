@@ -1,0 +1,7 @@
+.slds-form-element__control .slds-radio_button-group {
+    display: inline-block !important;
+  }
+
+  .size-form{
+    width: 500px;
+  }

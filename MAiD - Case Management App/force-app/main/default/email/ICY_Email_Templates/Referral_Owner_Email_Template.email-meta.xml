@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>ICY Referral Owner Email Template</name>
+    <style>none</style>
+    <subject>Record has been assigned to you</subject>
+    <textOnly>Hello {!Referral__c.OwnerFullName},
+
+The Referral record {!Referral__c.Name} has been assigned to your queue.
+
+Thanks.</textOnly>
+    <type>custom</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

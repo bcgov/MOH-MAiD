@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Residence_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Residence Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Cluster Living</fullName>
+                <default>false</default>
+                <label>Cluster Living</label>
+            </value>
+            <value>
+                <fullName>Homeless – Shelter / Couch Surfing</fullName>
+                <default>false</default>
+                <label>Homeless – Shelter / Couch Surfing</label>
+            </value>
+            <value>
+                <fullName>Homeless – Street / Tent</fullName>
+                <default>false</default>
+                <label>Homeless – Street / Tent</label>
+            </value>
+            <value>
+                <fullName>Homeshare</fullName>
+                <default>false</default>
+                <label>Homeshare</label>
+            </value>
+            <value>
+                <fullName>Independent Rental</fullName>
+                <default>false</default>
+                <label>Independent Rental</label>
+            </value>
+            <value>
+                <fullName>Living in Foster Care</fullName>
+                <default>false</default>
+                <label>Living in Foster Care</label>
+            </value>
+            <value>
+                <fullName>Living with Parent / Relative</fullName>
+                <default>false</default>
+                <label>Living with Parent / Relative</label>
+            </value>
+            <value>
+                <fullName>Semi-Independent Living</fullName>
+                <default>false</default>
+                <label>Semi-Independent Living</label>
+            </value>
+            <value>
+                <fullName>Staffed Residential</fullName>
+                <default>false</default>
+                <label>Staffed Residential</label>
+            </value>
+            <value>
+                <fullName>Supported Home Living / Apartment Support</fullName>
+                <default>false</default>
+                <label>Supported Home Living / Apartment Support</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

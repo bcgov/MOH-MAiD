@@ -423,7 +423,7 @@
         <connector>
             <targetReference>Set_Current_DateTime</targetReference>
         </connector>
-        <filterLogic>1 OR 2 OR 3 OR 4 OR 5 OR 6</filterLogic>
+        <filterLogic>(1 OR 2 OR 3 OR 4 OR 5 OR 6) AND ( 7 OR 8)</filterLogic>
         <filters>
             <field>Type</field>
             <operator>EqualTo</operator>
@@ -464,6 +464,20 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Transfer of Request</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Error_Log</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>MAiD_Case</stringValue>
             </value>
         </filters>
         <object>Case</object>

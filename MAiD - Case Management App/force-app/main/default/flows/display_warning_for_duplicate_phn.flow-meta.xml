@@ -107,6 +107,7 @@
         </rules>
     </decisions>
     <description>This flow is responsible to check if a new case is being created with the same PHN already in the system.</description>
+    <environments>Default</environments>
     <interviewLabel>display warning for duplicate phn {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Display warning for duplicate phn</label>
     <loops>
@@ -247,6 +248,21 @@
         <connector>
             <targetReference>check_the_case_type</targetReference>
         </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Error_Log</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>MAiD_Case</stringValue>
+            </value>
+        </filters>
         <object>Case</object>
         <recordTriggerType>Create</recordTriggerType>
         <triggerType>RecordBeforeSave</triggerType>

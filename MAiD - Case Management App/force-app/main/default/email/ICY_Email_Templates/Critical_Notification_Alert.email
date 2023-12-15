@@ -1,0 +1,5 @@
+Hello, <br/><br/>
+
+There is a new critical incident note related to <a href="{!Case.Link}">{!Case.CaseNumber}</a>.  Please review as soon as possible. <br/><br/>
+
+Thanks.

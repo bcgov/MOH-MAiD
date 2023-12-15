@@ -3364,25 +3364,25 @@
     <formulas>
         <name>formulaOnePicklistValue</name>
         <dataType>String</dataType>
-        <expression>TRIM( 
+        <expression>TRIM(
      LEFT(
-              {!formattedPicklistValues} , 
+              {!formattedPicklistValues} ,
               FIND(
                      &quot;;&quot;,{!formattedPicklistValues}
              ) - 1
-       ) 
+       )
  )</expression>
     </formulas>
     <formulas>
         <name>formulaOnePicklistValueRule24</name>
         <dataType>String</dataType>
-        <expression>TRIM( 
+        <expression>TRIM(
      LEFT(
-              {!FormattedPicklistValues_Rule24} , 
+              {!FormattedPicklistValues_Rule24} ,
               FIND(
                      &quot;;&quot;,{!FormattedPicklistValues_Rule24}
              ) - 1
-       ) 
+       )
  )</expression>
     </formulas>
     <formulas>
@@ -3959,6 +3959,21 @@
         <connector>
             <targetReference>GetCaseDetail</targetReference>
         </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Error_Log</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>MAiD_Case</stringValue>
+            </value>
+        </filters>
         <object>Case</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
         <triggerType>RecordAfterSave</triggerType>

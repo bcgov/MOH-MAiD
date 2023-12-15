@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Need_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Need Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Started</fullName>
+                <default>false</default>
+                <label>Not Started</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Completed</fullName>
+                <default>false</default>
+                <label>Completed</label>
+            </value>
+            <value>
+                <fullName>No Longer Required​</fullName>
+                <default>false</default>
+                <label>No Longer Required​</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Future</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Future</label>
+            </value>
+            <value>
+                <fullName>No Longer required</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>No Longer required</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

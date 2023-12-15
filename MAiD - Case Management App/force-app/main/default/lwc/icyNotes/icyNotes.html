@@ -1,0 +1,190 @@
+<!--
+  @description       :
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             :
+  @last modified on  : 04-25-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <!--SHOW SPINNER-->
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+    </template>
+    <div class="slds-var-p-around_xx-small">
+        <div class="slds-gutters slds-grid">
+            <div class="slds-col">
+                <span>
+                    <ul>
+                        <div class="slds-clearfix">
+                            <template if:true={isCase}>
+                                <div class="slds-button-group-row  slds-m-vertical_small">
+                                    <li class="slds-button-group-item slds-float_left">
+                                        <lightning-button variant="brand" label="Sort" title="Sort By Created Date"
+                                            onclick={sortList} icon-position="right" icon-name="action:sort"
+                                            class="slds-p-left_x-small">
+                                        </lightning-button>
+                                    </li>
+                                    <li class="slds-button-group-item slds-float_left">
+                                        <lightning-combobox name="ind-lang" value={filtervalue}
+                                            placeholder="filter by Subject" options={caseSubjectOptions}
+                                            variant="label-hidden" class="slds-p-left_x-small" style="width:400px;"
+                                            onchange={handleChange}>
+                                        </lightning-combobox>
+                                    </li>
+                                    <li class="slds-button-group-item slds-float_left">
+                                        <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh"
+                                            onclick={refresh} class="slds-p-left_x-small"></lightning-button-icon>
+                                    </li>
+                                </div>
+                            </template>
+                            <div class="slds-float_right">
+                                <div class="slds-button-group-row  slds-m-vertical_small">
+                                    <li class="slds-button-group-item slds-float_right">
+                                        <lightning-button variant="brand" label={newNoteLabel} title={newNoteLabel}
+                                            onclick={addNote} icon-position="right" icon-name="action:new"
+                                            class="slds-p-left_x-small"></lightning-button>
+                                    </li>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+    <template if:true={createEdit}>
+        <c-icy-create-edit-notes onclose={closeModal} parent-record-id={parentRecordId} record-id={noteId}
+            object-api-name={objectApiName} case-subject-options={caseSubjectOptions}>
+        </c-icy-create-edit-notes>
+    </template>
+    <template if:true={deleteConfirm}>
+        <c-yts-confirmation-modal modal-header-text="Delete Note"
+            modal-confirmation-text="Are you sure you want to delete this Note?" cancel-btn-lbl="No" ok-btn-lbl="Delete"
+            onokconfirm={deleteConfirmation} oncancelconfirm={closeConfirmation}></c-yts-confirmation-modal>
+    </template>
+    <template if:false={notes}>
+        <div class="slds-align_absolute-center slds-text-heading_medium">
+            No Notes Found
+        </div>
+    </template>
+    <template for:each={notes} for:item="n">
+        <div key={n.recordId}>
+            <div class="slds-var-p-around_small slds-box">
+                <lightning-card variant="Narrow">
+                    <h4 slot="title">
+                        <lightning-icon icon-name="doctype:gform" size="small"></lightning-icon>&nbsp;&nbsp;
+                        {n.name}&nbsp;<lightning-badge class={n.badgeCSS} label={n.notesType}></lightning-badge>
+                    </h4>
+                    <template if:true={n.hasEditAccess}>
+                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editNote}
+                            slot="actions" data-record-id={n.recordId}>
+                        </lightning-button-icon>
+                    </template>
+                    <template if:true={n.hasDeleteAccess}>
+                        <lightning-button-icon variant="inverse" icon-name="utility:delete" alternative-text="Delete"
+                            onclick={handleDelete} slot="actions" data-record-id={n.recordId}
+                            class="slds-p-left_x-small"></lightning-button-icon>
+                    </template>
+                    <div class="slds-p-horizontal_small">
+                        <div class="slds-gutters slds-grid">
+                            <div class="slds-col slds-size_2-of-6">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label"
+                                            for="text-input-id-47"><b>{subjectLabel}</b></label>
+                                        <div class="slds-form-element__control">
+                                            {n.subject}
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-6">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="text-input-id-47"><b>Team Member</b></label>
+                                        <div class="slds-form-element__control">
+                                            {n.teamMember}
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-6">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="text-input-id-47"><b>Mode Location</b></label>
+                                        <div class="slds-form-element__control">
+                                            {n.modeLocation}
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slds-gutters slds-grid">
+                            <div class="slds-col slds-size_5-of-6">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label"
+                                            for="text-input-id-47"><b>Description</b></label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-formatted-text value={n.description}></lightning-formatted-text>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <br />
+
+                        <div class="slds-gutters slds-grid">
+                            <div class="slds-col slds-size_2-of-8">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="text-input-id-47"><b>Created
+                                                On</b></label>
+                                        <div class="slds-form-element__control">
+                                            {n.createdOn}
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-8">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="text-input-id-47"><b>Created
+                                                By</b></label>
+                                        <div class="slds-form-element__control">
+                                            {n.createdBy}
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-8">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="text-input-id-47"><b>Last
+                                                Modified On</b></label>
+                                        <div class="slds-form-element__control">
+                                            {n.lastModifiedOn}
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-8">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label" for="text-input-id-47"><b>Last
+                                                Modified By</b></label>
+                                        <div class="slds-form-element__control">
+                                            {n.lastModifiedBy}
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                </lightning-card>
+            </div>
+            <br />
+        </div>
+    </template>
+</template>

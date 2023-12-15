@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Service_Response__c</fullName>
+    <description>Intake Service Response</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Intake Service Response</inlineHelpText>
+    <label>Service Response</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Consultation</fullName>
+                <default>false</default>
+                <label>Consultation</label>
+            </value>
+            <value>
+                <fullName>Short-Term Planning</fullName>
+                <default>false</default>
+                <label>Short-Term Planning</label>
+            </value>
+            <value>
+                <fullName>Comprehensive Planning</fullName>
+                <default>false</default>
+                <label>Comprehensive Planning</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

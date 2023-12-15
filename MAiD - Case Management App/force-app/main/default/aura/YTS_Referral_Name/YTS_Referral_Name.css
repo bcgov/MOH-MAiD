@@ -1,0 +1,8 @@
+.THIS .yts-name-text{
+    color: #0000FF;
+    text-transform: capitalize;
+}
+
+.THIS .yts-name-background{
+    background-color:#e4e4e4 ;color:rgb(84, 39, 206); font-weight: bold; font-size: 17pt; display: block; text-align:center
+}

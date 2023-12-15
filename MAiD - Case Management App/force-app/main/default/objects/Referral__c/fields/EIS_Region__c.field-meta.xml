@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EIS_Region__c</fullName>
+    <externalId>false</externalId>
+    <label>Region</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Northern Region</fullName>
+                <default>false</default>
+                <label>Northern Region</label>
+            </value>
+            <value>
+                <fullName>Fraser Region</fullName>
+                <default>false</default>
+                <label>Fraser Region</label>
+            </value>
+            <value>
+                <fullName>Interior Region</fullName>
+                <default>false</default>
+                <label>Interior Region</label>
+            </value>
+            <value>
+                <fullName>Vancouver Island Region</fullName>
+                <default>false</default>
+                <label>Vancouver Island Region</label>
+            </value>
+            <value>
+                <fullName>Vancouver Coastal Region</fullName>
+                <default>false</default>
+                <label>Vancouver Coastal Region</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

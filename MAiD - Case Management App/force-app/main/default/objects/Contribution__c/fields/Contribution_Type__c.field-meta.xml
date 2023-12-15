@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contribution_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Contribution Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Case Note</fullName>
+                <default>false</default>
+                <label>Case Note</label>
+            </value>
+            <value>
+                <fullName>Supports and Services</fullName>
+                <default>false</default>
+                <label>Supports and Services</label>
+            </value>
+            <value>
+                <fullName>Supplies and Equipment</fullName>
+                <default>false</default>
+                <label>Supplies and Equipment</label>
+            </value>
+            <value>
+                <fullName>Protocols and Safeguards</fullName>
+                <default>false</default>
+                <label>Protocols and Safeguards</label>
+            </value>
+            <value>
+                <fullName>List of Assessments</fullName>
+                <default>false</default>
+                <label>List of Assessments</label>
+            </value>
+            <value>
+                <fullName>CAP - Functional Domain Summaries</fullName>
+                <default>false</default>
+                <label>CAP - Functional Domain Summaries</label>
+            </value>
+            <value>
+                <fullName>Functional Domain Update</fullName>
+                <default>false</default>
+                <label>Functional Domain Update</label>
+            </value>
+            <value>
+                <fullName>Case Alert</fullName>
+                <default>false</default>
+                <label>Case Alert</label>
+            </value>
+            <value>
+                <fullName>Case Contact</fullName>
+                <default>false</default>
+                <label>Case Contact</label>
+            </value>
+            <value>
+                <fullName>Case Document</fullName>
+                <default>false</default>
+                <label>Case Document</label>
+            </value>
+            <value>
+                <fullName>Goals</fullName>
+                <default>false</default>
+                <label>Goals</label>
+            </value>
+            <value>
+                <fullName>Milestone</fullName>
+                <default>false</default>
+                <label>Milestone</label>
+            </value>
+            <value>
+                <fullName>Action Item</fullName>
+                <default>false</default>
+                <label>Action Item</label>
+            </value>
+            <value>
+                <fullName>Have</fullName>
+                <default>false</default>
+                <label>Have</label>
+            </value>
+            <value>
+                <fullName>Need</fullName>
+                <default>false</default>
+                <label>Need</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

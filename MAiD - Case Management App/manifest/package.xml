@@ -70,7 +70,7 @@
     </types>
     <types>
         <members>duplicate_notification_builder</members>
-        <name>CustomNotificationType</name> 
+        <name>CustomNotificationType</name>
     </types>
     <types>
         <members>*</members>
@@ -87,11 +87,11 @@
     <types>
         <members>*</members>
         <name>MatchingRule</name>
-    </types>  
+    </types>
     <types>
         <members>*</members>
         <name>DuplicateRule</name>
-    </types>    
+    </types>
     <types>
         <members>*</members>
         <name>Profile</name>
@@ -117,7 +117,7 @@
     <types>
         <members>*</members>
         <name>ReportFolder</name>
-    </types>  
+    </types>
     <types>
         <members>*</members>
         <name>Report</name>
@@ -125,15 +125,62 @@
     <types>
         <members>*</members>
         <name>EntitlementProcess</name>
-    </types> 
+    </types>
     <types>
         <members>*</members>
         <name>MilestoneType</name>
-    </types>                  
+    </types>
     <types>
-        <members>Activities</members>
-        <members>PlatformEncryption</members>
-        <name>Settings</name>
-    </types>    
+        <members>ICY_Email_Templates/Critical_Notification_Alert</members>
+        <members>ICY_Email_Templates/ICY_Intake_Assignment_Notification_Latest</members>
+        <members>ICY_Email_Templates/Referral_Owner_Email_Template</members>
+        <members>ICY_Email_Templates/Referral_Status_Closed_Template</members>
+        <members>unfiled$public/Intake_Ownership_Transfer</members>
+        <members>unfiled$public/Referral_Ownership_Transfer</members>
+        <name>EmailTemplate</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomPermission</name>
+    </types>
+    <types>
+        <members>Domains</members>
+        <members>Gender_List</members>
+        <members>Haves_And_Needs_List</members>
+        <members>Legal_Status_List</members>
+        <members>Preferred_Method_Of_Contact</members>
+        <members>Province_List</members>
+        <members>Region</members>
+        <members>Secondary_Eligibility_Type</members>
+        <name>GlobalValueSet</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomLabels</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>Queue</name>
+	  </types>
+    <types>
+        <members>*</members>
+        <name>QuickAction</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>*</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>ICY_Case_with_CaseMembers</members>
+        <name>ReportType</name>
+    </types>
     <version>57.0</version>
 </Package>

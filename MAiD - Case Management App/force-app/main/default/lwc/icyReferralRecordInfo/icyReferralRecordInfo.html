@@ -1,0 +1,296 @@
+<!--
+  @description       : Referral Record Info
+  @author            : rmynam@deloitte.ca
+  @group             : LWC
+  @last modified on  : 05/23/2022
+  @last modified by  : rmynam@deloitte.ca
+-->
+<template>
+    <lightning-record-view-form object-api-name="Referral__c" record-id={recordId}>
+        <lightning-accordion allow-multiple-sections-open
+            active-section-name={activeSections}>
+            <lightning-accordion-section name="A" label="Referral Information">
+                <div class="slds-grid">
+                    <div class="slds-col slds-p-around_xx-small">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Name">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Referral_Type__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Date_of_Referral__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_CYMH__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Priority__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Referral_For__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Indigenous__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Referral_Source__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-p-around_xx-small">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="OwnerId">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Assigned_To__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Individual_Date_of_Birth__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Status__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Rationale_For_Closure__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Case__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <!--Josh-->
+                            <label class="slds-form-element__label" for="form-element-01">Referral Source Description</label>
+                            <lightning-output-field variant="label-hidden" field-name="ICY_Referral_Source_Description__c">
+                            </lightning-output-field>
+                            <!--Josh ends-->
+                        </div>
+                    </div>
+                </div>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="B" label="Individual Information">
+                <div class="slds-grid">
+                    <div class="slds-col slds-p-around_xx-small">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Individual_First_Name__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Individual_Last_Name__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Individual_Preferred_Name__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Geographic_Area__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_If_Parent_Guardian_is_aware__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Child_Youth_Aware__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Ethnicity__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-p-around_xx-small">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Referred_By__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Individual_Pronouns__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Individual_Gender__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Individual_Date_of_Birth__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Age_At_Referral__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Current_Age__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Personal_Health_Number__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                </div>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="C" label="Individual Addresses">
+                <div class="slds-p-around_x-small">
+                    <div class="slds-form-element slds-p-around_xx-small">
+                        <lightning-output-field variant="standard" field-name="ICY_Unknown_Address__c">
+                        </lightning-output-field>
+                    </div>
+                    <div class="slds-form-element slds-p-around_xx-small">
+                        <lightning-output-field variant="standard" field-name="Physical_Address_Line_1__c">
+                        </lightning-output-field>
+                    </div>
+                    <div class="slds-form-element slds-p-around_xx-small">
+                        <lightning-output-field variant="standard" field-name="Physical_Address_City__c">
+                        </lightning-output-field>
+                    </div>
+                    <div class="slds-form-element slds-p-around_xx-small">
+                        <lightning-output-field variant="standard" field-name="Physical_Address_Province__c">
+                        </lightning-output-field>
+                    </div>
+                    <div class="slds-form-element slds-p-around_xx-small">
+                        <lightning-output-field variant="standard" field-name="Physical_Address_Postal_Code__c">
+                        </lightning-output-field>
+                    </div>
+                </div>
+            </lightning-accordion-section>
+            <lightning-accordion-section name="D" label="Individual Contact Information">
+                <div class="slds-grid">
+                    <div class="slds-col slds-p-around_xx-small">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Preferred_Language__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Individual_Home_Phone_Number__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="Individual_Cell_Phone_Number__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Other_Phone__c">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-p-around_xx-small">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Preferred_Method_of_Contact__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard"
+                                field-name="ICY_Can_We_Leave_a_Message_On_Home_Phone__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard"
+                                field-name="ICY_Can_We_Leave_a_Message_On_Cell__c">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard"
+                                field-name="ICY_Leave_a_Message_On_other_Phone__c">
+                            </lightning-output-field>
+                        </div>
+
+                    </div>
+                </div>
+            </lightning-accordion-section>
+            <template if:true={showAdditionalInfo}>
+                <lightning-accordion-section name="E" label="Additional Information">
+                    <template if:true={isGeneralReferral}>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-p-around_xx-small">
+                                <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard" field-name="ICY_Reason_for_Referral__c">
+                                    </lightning-output-field>
+                                </div>
+                               <!--josh <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard" field-name="Referral_Notes__c">
+                                    </lightning-output-field>
+                                </div> josh-->
+                                <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard" field-name="ICY_Current_Supports__c">
+                                    </lightning-output-field>
+                                </div>
+                                <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard" field-name="ICY_Relevant_Information__c">
+                                    </lightning-output-field>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                    <template if:true={isMedicalReferral}>
+                        <div class="slds-grid">
+                            <div class="slds-col slds-p-around_xx-small">
+                                <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard" field-name="ICY_Diagnosis__c">
+                                    </lightning-output-field>
+                                </div>
+                                <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard"
+                                        field-name="ICY_Medical_Referral_Reason__c">
+                                    </lightning-output-field>
+                                </div>
+                                <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard" field-name="ICY_Medication__c">
+                                    </lightning-output-field>
+                                </div>
+
+
+                                <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard" field-name="ICY_Relevant_Information__c">
+                                    </lightning-output-field>
+                                </div>
+                                <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard" field-name="Referral_Notes__c">
+                                    </lightning-output-field>
+                                </div>
+                            </div>
+                        </div>
+                    </template>
+                </lightning-accordion-section>
+            </template>
+            <lightning-accordion-section name="F" label="System Information">
+                <div class="slds-grid">
+                    <div class="slds-col slds-p-around_xx-small">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="CreatedById">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="CreatedDate">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                    <div class="slds-col slds-p-around_xx-small">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="LastModifiedById">
+                            </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="LastModifiedDate">
+                            </lightning-output-field>
+                        </div>
+                    </div>
+                </div>
+            </lightning-accordion-section>
+        </lightning-accordion>
+    </lightning-record-view-form>
+</template>

@@ -15,6 +15,7 @@ package.xml
 entitlementProcesses
 #**permissionset
 #**recordTypes
+**sharingRules
 
 #MoH Standard User.profile
 

@@ -3,7 +3,10 @@
     <fullName>Dis_Death_Prior_Status</fullName>
     <active>true</active>
     <description>Discontinuation of Planning: Death Prior Status</description>
-    <errorConditionFormula>AND(
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;MAiD_Case&apos;,
+RecordType.DeveloperName =&apos;Error_Log&apos;),
+AND(
  ISPICKVAL(Type,&quot;Discontinuation of Planning: Death Prior&quot;), NOT(ISPICKVAL(Status,&quot;Awaiting Forms&quot;)), NOT(ISPICKVAL(Status,&quot;Follow up required for CC Review/Checks&quot;)),
 	NOT(
 		OR(
@@ -14,6 +17,7 @@
 			AND(ISPICKVAL(X1632__c,&quot;Incomplete&quot;),ISPICKVAL(X1633__c,&quot;Yes&quot;),NOT(ISPICKVAL(X1634__c,&quot;Yes&quot;)))
 		)
 	)
+)
 )</errorConditionFormula>
     <errorMessage>Not all forms have been received (Form 1632, Form 1633 or Form 1634), status can only be set to Awaiting Forms or Follow up required for CC Review/Checks</errorMessage>
 </ValidationRule>

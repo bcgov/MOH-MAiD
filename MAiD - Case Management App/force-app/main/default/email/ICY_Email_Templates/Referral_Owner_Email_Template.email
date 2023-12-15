@@ -1,0 +1,5 @@
+Hello {!Referral__c.OwnerFullName},<br/><br/>
+
+A new referral <a href="{!Referral__c.Link}">{!Referral__c.Name}</a> has been assigned to your team. Please follow link for details.<br/><br/>
+
+Thanks.

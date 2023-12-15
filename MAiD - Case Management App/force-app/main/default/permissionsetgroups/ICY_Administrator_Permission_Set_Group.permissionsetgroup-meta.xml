@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Integrate Administrator Permission Set group</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>ICY Administrator Permission Set Group</label>
+    <permissionSets>ICY_Administrator_Permissions</permissionSets>
+    <permissionSets>ICY_Integrate_Permissions</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

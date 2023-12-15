@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomPermission xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Referenced in the permission set &apos;Temporary Director duties for Navigator&apos; to relax the Referral validation rule (Navigator_reassign_owner) and Case Validation Rule(Navigator_reassign_owner)  in the permission set</description>
+    <isLicensed>false</isLicensed>
+    <label>Validation Rule Bypass</label>
+</CustomPermission>

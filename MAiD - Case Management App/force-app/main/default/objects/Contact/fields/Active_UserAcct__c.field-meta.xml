@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_UserAcct__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>A field updated from the user field that displays if the contact has an active user account</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will be ticked if the user has an active user account</inlineHelpText>
+    <label>Active User Account</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICY_Geographic_Area__c</fullName>
+    <externalId>false</externalId>
+    <label>Geographic Area</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Coast Mountains Team Hazelton</fullName>
+                <default>false</default>
+                <label>Coast Mountains Team Hazelton</label>
+            </value>
+            <value>
+                <fullName>Coast Mountains Team Terrace</fullName>
+                <default>false</default>
+                <label>Coast Mountains Team Terrace</label>
+            </value>
+            <value>
+                <fullName>Comox Valley Team 1</fullName>
+                <default>false</default>
+                <label>Comox Valley Team 1</label>
+            </value>
+            <value>
+                <fullName>Comox Valley Team 2</fullName>
+                <default>false</default>
+                <label>Comox Valley Team 2</label>
+            </value>
+            <value>
+                <fullName>Maple Ridge-Pitt Meadows Team 1</fullName>
+                <default>false</default>
+                <label>Maple Ridge-Pitt Meadows Team 1</label>
+            </value>
+            <value>
+                <fullName>Maple Ridge-Pitt Meadows Team 2</fullName>
+                <default>false</default>
+                <label>Maple Ridge-Pitt Meadows Team 2</label>
+            </value>
+            <value>
+                <fullName>Maple Ridge-Pitt Meadows Team 3</fullName>
+                <default>false</default>
+                <label>Maple Ridge-Pitt Meadows Team 3</label>
+            </value>
+            <value>
+                <fullName>Okanagan-Similkameen</fullName>
+                <default>false</default>
+                <label>Okanagan-Similkameen</label>
+            </value>
+            <value>
+                <fullName>Richmond Team 1</fullName>
+                <default>false</default>
+                <label>Richmond Team 1</label>
+            </value>
+            <value>
+                <fullName>Richmond Team 2</fullName>
+                <default>false</default>
+                <label>Richmond Team 2</label>
+            </value>
+            <value>
+                <fullName>Richmond Team 3</fullName>
+                <default>false</default>
+                <label>Richmond Team 3</label>
+            </value>
+            <value>
+                <fullName>Richmond Team 4</fullName>
+                <default>false</default>
+                <label>Richmond Team 4</label>
+            </value>
+            <value>
+                <fullName>Nanaimo-Ladysmith Team 1</fullName>
+                <default>false</default>
+                <label>Nanaimo-Ladysmith Team 1</label>
+            </value>
+            <value>
+                <fullName>Fraser Cascades</fullName>
+                <default>false</default>
+                <label>Fraser Cascades</label>
+            </value>
+            <value>
+                <fullName>Kootenay-Columbia</fullName>
+                <default>false</default>
+                <label>Kootenay-Columbia</label>
+            </value>
+            <value>
+                <fullName>Mission Team 1</fullName>
+                <default>false</default>
+                <label>Mission Team 1</label>
+            </value>
+            <value>
+                <fullName>Mission Team 2</fullName>
+                <default>false</default>
+                <label>Mission Team 2</label>
+            </value>
+            <value>
+                <fullName>Nanaimo-Ladysmith Team 2</fullName>
+                <default>false</default>
+                <label>Nanaimo-Ladysmith Team 2</label>
+            </value>
+            <value>
+                <fullName>Nanaimo-Ladysmith Team 3</fullName>
+                <default>false</default>
+                <label>Nanaimo-Ladysmith Team 3</label>
+            </value>
+            <value>
+                <fullName>Nanaimo-Ladysmith Team 4</fullName>
+                <default>false</default>
+                <label>Nanaimo-Ladysmith Team 4</label>
+            </value>
+            <value>
+                <fullName>North Okanagan Shuswap</fullName>
+                <default>false</default>
+                <label>North Okanagan Shuswap</label>
+            </value>
+            <value>
+                <fullName>Pacific Rim</fullName>
+                <default>false</default>
+                <label>Pacific Rim</label>
+            </value>
+            <value>
+                <fullName>qathet (Powell River)</fullName>
+                <default>false</default>
+                <label>qathet (Powell River)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
