@@ -9,7 +9,7 @@
         </recipients>
         <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/Referral_Ownership_Transfer</template>
+        <template>ICY_Email_Templates/Referral_Ownership_Transfer</template>
     </alerts>
     <alerts>
         <fullName>Referral_Record_Email_Alert</fullName>
