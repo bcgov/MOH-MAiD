@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Kootenay-Columbia Team 1 Clinical Member</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>Kootenay_Columbia_Team_Admin</parentRole>
+</Role>
