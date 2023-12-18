@@ -21,6 +21,6 @@
         </recipients>
         <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
-        <template>unfiled$public/Intake_Ownership_Transfer</template>
+        <template>ICY_Email_Templates/Intake_Ownership_Transfer</template>
     </alerts>
 </Workflow>

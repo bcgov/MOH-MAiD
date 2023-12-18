@@ -135,8 +135,8 @@
         <members>ICY_Email_Templates/ICY_Intake_Assignment_Notification_Latest</members>
         <members>ICY_Email_Templates/Referral_Owner_Email_Template</members>
         <members>ICY_Email_Templates/Referral_Status_Closed_Template</members>
-        <members>unfiled$public/Intake_Ownership_Transfer</members>
-        <members>unfiled$public/Referral_Ownership_Transfer</members>
+        <members>ICY_Email_Templates/Intake_Ownership_Transfer</members>
+        <members>ICY_Email_Templates/Referral_Ownership_Transfer</members>
         <name>EmailTemplate</name>
     </types>
     <types>
