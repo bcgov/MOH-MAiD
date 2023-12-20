@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>ShareForm1642BetweenMaidManagerAndMaidAnalyst</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareForm1642BetweenMaidManagerAndMaidAnalyst</label>
+        <sharedTo>
+            <role>MAiD_Analyst</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MAiD_Manager</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>ShareForm1642BteweenMaidManager</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareForm1642BteweenMaidManager</label>
+        <sharedTo>
+            <role>MAiD_Manager</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MAiD_Manager</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

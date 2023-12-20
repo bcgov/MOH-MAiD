@@ -168,4 +168,37 @@
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
+   <sharingOwnerRules>
+        <fullName>ShareICYCaseWithICYBusinessAdministrator</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareICYCaseWithICYBusinessAdministrator</label>
+        <sharedTo>
+            <role>ICY_Business_Administrator</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ICY</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>ShareMaidManagerCaseWithMaidManager</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ShareMaidManagerCaseWithMaidManager</label>
+        <sharedTo>
+            <role>MAiD_Manager</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MAiD_Manager</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>ShareMaidManagerCasesWithMaidAnalyst</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>ShareMaidManagerCasesWithMaidAnalyst</label>
+        <sharedTo>
+            <role>MAiD_Analyst</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>MAiD_Manager</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
 </SharingRules>
