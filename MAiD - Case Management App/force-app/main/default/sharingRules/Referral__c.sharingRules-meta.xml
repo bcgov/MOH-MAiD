@@ -228,4 +228,15 @@
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>ShareReferralWithICYBusinessAdministrator</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareReferralWithICYBusinessAdministrator</label>
+        <sharedTo>
+            <role>ICY_Business_Administrator</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinates>ICY</roleAndSubordinates>
+        </sharedFrom>
+    </sharingOwnerRules>
 </SharingRules>

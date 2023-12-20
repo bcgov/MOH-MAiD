@@ -4,7 +4,7 @@
     <contactAccessLevel>Edit</contactAccessLevel>
     <description>ICY Team Member Role</description>
     <mayForecastManagerShare>false</mayForecastManagerShare>
-    <name>Nanaimo-Ladysmith Team 3 Non Clinical Member</name>
+    <name>ICY Business Administrator</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>Nanaimo_Ladysmith_Team_Admin</parentRole>
+    <parentRole>ICY</parentRole>
 </Role>
