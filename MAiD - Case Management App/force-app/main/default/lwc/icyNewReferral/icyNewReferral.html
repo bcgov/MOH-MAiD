@@ -181,6 +181,7 @@
                                                         label="Date Of Birth "
                                                         value={referral.Individual_Date_of_Birth__c}
                                                         message-when-range-overflow="Date of birth cannot be a future date"
+                                                        message-when-bad-input="Your entry does not match the allowed format yyy-mm-dd"
                                                         onblur={handleChange} tabindex="0" class="validate" max={today}>
                                                     </lightning-input>
                                                 </div>

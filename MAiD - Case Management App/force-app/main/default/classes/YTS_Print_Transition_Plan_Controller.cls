@@ -27,19 +27,13 @@ public without sharing class YTS_Print_Transition_Plan_Controller{
         Referral__c r = [SELECT ID, Individual_Name_formula__c, Current_Age__c, Individual_Date_of_Birth__c FROM Referral__c WHERE Case__c =:caseId LIMIT 1];
         System.debug('$$ Case Record Type: '+c.RecordType.DeveloperName);
 
-        if(c.RecordType.DeveloperName == 'ICY_Standard_Case' || c.RecordType.DeveloperName == 'ICY_Close_Case'){
-            system.debug('$$ icy');
-            this.completedWith = 'Completed With Owner:';
-        }else{
-            this.completedWith = 'Completed With Navigator:';
-        }
-
+        this.completedWith = 'Completed With Owner:';
         System.debug('$$ Completed with: '+this.completedWith);
 
         if(c.Individual_Preferred_Name__c == '' || c.Individual_Preferred_Name__c == null){
-            this.nameHeader = c.Account.Name + ' Transition Plan';
+            this.nameHeader = c.Account.Name + ' Integrated Care Plan';
         }else{
-            this.nameHeader = c.Individual_Preferred_Name__c + ' Transition Plan';
+            this.nameHeader = c.Individual_Preferred_Name__c + ' Integrated Care Plan';
         }
 
      //   this.nameHeader = c.Individual_Preferred_Name__c + ' Transition Plan';
@@ -51,7 +45,7 @@ public without sharing class YTS_Print_Transition_Plan_Controller{
             Id checkRec = Id.valueOf(listRecIds[0]);
 
             if(checkRec.getSobjectType() == Schema.YTS_Transition_Plan__c.SObjectType){
-                for(YTS_Transition_Plan__c p: [SELECT Id, Transition_Domain__c, What_s_Important_to_Me__c FROM YTS_Transition_Plan__c WHERE ID IN :recordIds]){                    
+                for(YTS_Transition_Plan__c p: [SELECT Id, Transition_Domain__c, What_s_Important_to_Me__c FROM YTS_Transition_Plan__c WHERE ID IN :recordIds]){
                     switch on p.Transition_Domain__c {
                         when  'Relationships'{
                             transitionPlans.add(
@@ -198,7 +192,7 @@ public without sharing class YTS_Print_Transition_Plan_Controller{
                     Step_Completed_By__c, Who_Is_Supporting_this__c FROM YTS_Goal_Steps__c WHERE ID IN :recordIds];
                 }
 
-                for(YTS_Goal_Steps__c s: querySteps){ 
+                for(YTS_Goal_Steps__c s: querySteps){
                     YTS_Referral_Controller.TransitionGoalSteps g = new YTS_Referral_Controller.TransitionGoalSteps();
                     g.recordId = s.Id;
                     g.domain = s.Transition_Plan_Domain__c;
