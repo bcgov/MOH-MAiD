@@ -23,11 +23,6 @@
                 <label>School</label>
             </value>
             <value>
-                <fullName>CLBC</fullName>
-                <default>false</default>
-                <label>CLBC</label>
-            </value>
-            <value>
                 <fullName>Health Authority</fullName>
                 <default>false</default>
                 <label>Health Authority</label>
@@ -40,10 +35,6 @@
         <valueSettings>
             <controllingFieldValue>Organizational</controllingFieldValue>
             <valueName>School</valueName>
-        </valueSettings>
-        <valueSettings>
-            <controllingFieldValue>Organizational</controllingFieldValue>
-            <valueName>CLBC</valueName>
         </valueSettings>
         <valueSettings>
             <controllingFieldValue>Organizational</controllingFieldValue>

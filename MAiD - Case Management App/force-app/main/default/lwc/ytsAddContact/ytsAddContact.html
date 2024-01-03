@@ -12,7 +12,7 @@
             </header>
             <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
                 <template if:false={viewMode}>
-                    <lightning-record-edit-form object-api-name="Case_Contact__c" record-id={contactRecId} onsuccess={handleRecordCreation}>
+                    <lightning-record-edit-form object-api-name="Case_Contact__c" record-id={contactRecId} onsuccess={handleRecordCreation} record-type-id={recordTypeId}>
                         <div class="slds-vertical-tabs__content slds-show" role="tabpanel" aria-labelledby="slds-vertical-tabs-0__nav">
                             <lightning-messages></lightning-messages>
                             <div>
