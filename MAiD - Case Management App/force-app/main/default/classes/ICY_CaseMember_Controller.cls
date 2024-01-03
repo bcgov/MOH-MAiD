@@ -10,14 +10,14 @@ public without sharing class ICY_CaseMember_Controller {
         String profileName = [SELECT Profile.Name FROM USER WHERE ID=:UserInfo.getUserId()].Profile.Name;
        // if(profileName == 'ICY Program Leader' || profileName == 'System Administrator') hasRevokeAccess = true;
 
-        if (YTS_Utility.lookupRole('Program Leader') || profileName == 'System Administrator') hasRevokeAccess = true;
+        if (YTS_Utility.lookupRole('Program Leader') || YTS_Utility.lookupRole('Team Admin') || profileName == 'System Administrator') hasRevokeAccess = true;
 
         if(parentRecId.getSObjectType() == Schema.Referral__c.SObjectType){
             cmList = [SELECT Id, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_start_Date__c, ICY_Status__c,ICY_User__r.Name, ICY_Case_Contact__r.Contact_Full_Name__c, ICY_Team_Member__c, CreatedBy.Name  FROM Case_Member__c WHERE  Referral__c = :parentRecId ORDER By ICY_Status__c asc];
         }else if(parentRecId.getSObjectType() == Schema.Case.SObjectType){
             cmList = [SELECT Id, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_start_Date__c, ICY_Status__c,ICY_User__r.Name, ICY_Case_Contact__r.Contact_Full_Name__c, ICY_Team_Member__c, CreatedBy.Name FROM Case_Member__c WHERE  ICY_Case__c = :parentRecId ORDER By ICY_Status__c asc];
         }
-        
+
         for(Case_Member__c c: cmList){
             CaseMember cm = new CaseMember();
             cm.recordId = c.Id;
@@ -46,7 +46,7 @@ public without sharing class ICY_CaseMember_Controller {
         if (YTS_Utility.lookupRole('Program Leader') || profileName == 'System Administrator'){
             return false;
         }
-        
+
         if(parentRecId.getSObjectType() == Schema.Referral__c.SObjectType){
             cmList = [SELECT Id  FROM Case_Member__c WHERE  Referral__c = :parentRecId AND ICY_Status__c = 'Active' AND ICY_User__c = :UserInfo.getUserId()];
         }else if(parentRecId.getSObjectType() == Schema.Case.SObjectType){
@@ -71,7 +71,7 @@ public without sharing class ICY_CaseMember_Controller {
         @AuraEnabled public String addedBy{get;set;}
         @AuraEnabled public Boolean hasRevokeAccess{get;set;}
     }
-    
+
     //Create New Case Team Member
     @AuraEnabled
     public static String upsertCaseMember(Case_Member__c cm, String parentRecordId, String recordId, Boolean isSelfAccess){
@@ -96,8 +96,8 @@ public without sharing class ICY_CaseMember_Controller {
         String caseId;
         Set<Id> intakeIds = new Set<Id>();
         Set<Id> caseIds = new Set<Id>();
-        
-        //Read Only Access For Consulting 
+
+        //Read Only Access For Consulting
         if(cm.ICY_Category_Assignment__c == 'Consulting') accessLevel = 'Read';
 
         if(parentRecId.getSObjectType() == Schema.Referral__c.SObjectType){
@@ -169,7 +169,7 @@ public without sharing class ICY_CaseMember_Controller {
         if(caseIds.size() > 0){
             removeCaseShare(caseIds, cm.ICY_User__c);
         }
-        
+
 
     }
 
