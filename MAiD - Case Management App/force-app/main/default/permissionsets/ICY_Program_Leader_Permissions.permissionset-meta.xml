@@ -3,6 +3,10 @@
     <hasActivationRequired>false</hasActivationRequired>
     <label>ICY Program Leader Permissions</label>
     <license>Salesforce</license>
+    <tabSettings>
+        <tab>standard-report</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
     <userPermissions>
         <enabled>true</enabled>
         <name>CreateCustomizeFilters</name>
