@@ -3,7 +3,6 @@ import { CurrentPageReference } from 'lightning/navigation';
 //Toast
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 //Update Contact Record TYpe
-import updateCaseContactRecordType from '@salesforce/apex/YTS_Referral_Controller.updateCaseContactRecordType';
 import getCurrentUserRecordTypeId from '@salesforce/apex/YTS_Referral_Controller.getCaseContactRecordTypeId';
 
 export default class YtsAddContact extends LightningElement {
@@ -106,21 +105,7 @@ export default class YtsAddContact extends LightningElement {
             return;
         }
 
-        if (this.isInputValid()) {
-           updateCaseContactRecordType({contactId: event.detail.id, recordTypeId: this.recordTypeId,intakeRecId:this.IntakeId}).then(result=>{
-            this.contactRecId = result;
-                this.dispatchEvent(
-                    new ShowToastEvent({
-                        title: 'Success',
-                        message: 'Contact Saved Successfully ',
-                        variant: 'success',
-                    }),
-                );
-                this.disabled = false;
-                this.dispatchEvent(new CustomEvent('close',{ detail : this.contactRecId }));
-            }).catch(error=>{
-                console.error('$$ Unable to create/update case contact: ', error);
-            });
-        }
+        this.disabled = false;
+        this.dispatchEvent(new CustomEvent('close',{ detail : event.detail.id }));
      }
 }

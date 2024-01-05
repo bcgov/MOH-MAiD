@@ -49,18 +49,6 @@ public with sharing class YTS_Referral_Controller {
         return YTS_Utility.getRecordTypeIdByDeveloperName('Case_Contact__c', 'ICY_Case_Contact');
     }
 
-    @AuraEnabled
-    public static String updateCaseContactRecordType(String contactId, String recordTypeId, String intakeRecId){
-        System.debug('Intake Rec Id ::'+intakeRecId);
-        Case_Contact__c c = new Case_Contact__c(
-            Id = contactId,
-            recordTypeId = recordTypeId
-         //   Intake__c = intakeRecId
-        );
-        upsert c;
-        return c.Id;
-    }
-
     /**
      * Aura Method to create new referral with concent
      */
