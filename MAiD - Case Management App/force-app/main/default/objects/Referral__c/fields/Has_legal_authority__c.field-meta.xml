@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Has_legal_authority__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>If the individual is the first person to contact regarding the case, this indicator is checked and the primary contact information below is not completed</description>
+    <externalId>false</externalId>
+    <inlineHelpText>&quot;Representative, Guardian, or Committee&quot;</inlineHelpText>
+    <label>Has legal authority</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

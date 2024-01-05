@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location__c</fullName>
+    <description>Location</description>
+    <externalId>false</externalId>
+    <label>Location</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Region__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Abbotsford</fullName>
+                <default>false</default>
+                <label>Abbotsford</label>
+            </value>
+            <value>
+                <fullName>Bulkley / Stikine</fullName>
+                <default>false</default>
+                <label>Bulkley / Stikine</label>
+            </value>
+            <value>
+                <fullName>Burnaby</fullName>
+                <default>false</default>
+                <label>Burnaby</label>
+            </value>
+            <value>
+                <fullName>Campbell River</fullName>
+                <default>false</default>
+                <label>Campbell River</label>
+            </value>
+            <value>
+                <fullName>Cariboo</fullName>
+                <default>false</default>
+                <label>Cariboo</label>
+            </value>
+            <value>
+                <fullName>Chilliwack</fullName>
+                <default>false</default>
+                <label>Chilliwack</label>
+            </value>
+            <value>
+                <fullName>City Centre</fullName>
+                <default>false</default>
+                <label>City Centre</label>
+            </value>
+            <value>
+                <fullName>Comox Valley</fullName>
+                <default>false</default>
+                <label>Comox Valley</label>
+            </value>
+            <value>
+                <fullName>Delta</fullName>
+                <default>false</default>
+                <label>Delta</label>
+            </value>
+            <value>
+                <fullName>Downtown Eastside</fullName>
+                <default>false</default>
+                <label>Downtown Eastside</label>
+            </value>
+            <value>
+                <fullName>East Kootenay</fullName>
+                <default>false</default>
+                <label>East Kootenay</label>
+            </value>
+            <value>
+                <fullName>Fraser / Cascades</fullName>
+                <default>false</default>
+                <label>Fraser / Cascades</label>
+            </value>
+            <value>
+                <fullName>Gold Trail</fullName>
+                <default>false</default>
+                <label>Gold Trail</label>
+            </value>
+            <value>
+                <fullName>Haida Gwaii / Prince Rupert</fullName>
+                <default>false</default>
+                <label>Haida Gwaii / Prince Rupert</label>
+            </value>
+            <value>
+                <fullName>Kamloops</fullName>
+                <default>false</default>
+                <label>Kamloops</label>
+            </value>
+            <value>
+                <fullName>Langley</fullName>
+                <default>false</default>
+                <label>Langley</label>
+            </value>
+            <value>
+                <fullName>Mission</fullName>
+                <default>false</default>
+                <label>Mission</label>
+            </value>
+            <value>
+                <fullName>Nanaimo</fullName>
+                <default>false</default>
+                <label>Nanaimo</label>
+            </value>
+            <value>
+                <fullName>Nechako Lakes</fullName>
+                <default>false</default>
+                <label>Nechako Lakes</label>
+            </value>
+            <value>
+                <fullName>New Westminster</fullName>
+                <default>false</default>
+                <label>New Westminster</label>
+            </value>
+            <value>
+                <fullName>Parksville / Qualicum</fullName>
+                <default>false</default>
+                <label>Parksville / Qualicum</label>
+            </value>
+            <value>
+                <fullName>Peace North</fullName>
+                <default>false</default>
+                <label>Peace North</label>
+            </value>
+            <value>
+                <fullName>Prince George</fullName>
+                <default>false</default>
+                <label>Prince George</label>
+            </value>
+            <value>
+                <fullName>Quesnel</fullName>
+                <default>false</default>
+                <label>Quesnel</label>
+            </value>
+            <value>
+                <fullName>Ridge Meadows</fullName>
+                <default>false</default>
+                <label>Ridge Meadows</label>
+            </value>
+            <value>
+                <fullName>Shuswap</fullName>
+                <default>false</default>
+                <label>Shuswap</label>
+            </value>
+            <value>
+                <fullName>South Okanagan</fullName>
+                <default>false</default>
+                <label>South Okanagan</label>
+            </value>
+            <value>
+                <fullName>Surrey East</fullName>
+                <default>false</default>
+                <label>Surrey East</label>
+            </value>
+            <value>
+                <fullName>Surrey North</fullName>
+                <default>false</default>
+                <label>Surrey North</label>
+            </value>
+            <value>
+                <fullName>Surrey South</fullName>
+                <default>false</default>
+                <label>Surrey South</label>
+            </value>
+            <value>
+                <fullName>Tri-Cities</fullName>
+                <default>false</default>
+                <label>Tri-Cities</label>
+            </value>
+            <value>
+                <fullName>North Shore/Squamish</fullName>
+                <default>false</default>
+                <label>North Shore/Squamish</label>
+            </value>
+            <value>
+                <fullName>Sunshine Coast/Pemberton</fullName>
+                <default>false</default>
+                <label>Sunshine Coast/Pemberton</label>
+            </value>
+            <value>
+                <fullName>Powell River/Central Coast</fullName>
+                <default>false</default>
+                <label>Powell River/Central Coast</label>
+            </value>
+            <value>
+                <fullName>Richmond</fullName>
+                <default>false</default>
+                <label>Richmond</label>
+            </value>
+            <value>
+                <fullName>Midtown</fullName>
+                <default>false</default>
+                <label>Midtown</label>
+            </value>
+            <value>
+                <fullName>Westside</fullName>
+                <default>false</default>
+                <label>Westside</label>
+            </value>
+            <value>
+                <fullName>North East</fullName>
+                <default>false</default>
+                <label>North East</label>
+            </value>
+            <value>
+                <fullName>Vancouver South</fullName>
+                <default>false</default>
+                <label>Vancouver South</label>
+            </value>
+            <value>
+                <fullName>Kootenay Boundary</fullName>
+                <default>false</default>
+                <label>Kootenay Boundary</label>
+            </value>
+            <value>
+                <fullName>North Okanagan</fullName>
+                <default>false</default>
+                <label>North Okanagan</label>
+            </value>
+            <value>
+                <fullName>Central Okanagan</fullName>
+                <default>false</default>
+                <label>Central Okanagan</label>
+            </value>
+            <value>
+                <fullName>Victoria</fullName>
+                <default>false</default>
+                <label>Victoria</label>
+            </value>
+            <value>
+                <fullName>Sooke/Westshore</fullName>
+                <default>false</default>
+                <label>Sooke/Westshore</label>
+            </value>
+            <value>
+                <fullName>Peninsula/Gulf Islands</fullName>
+                <default>false</default>
+                <label>Peninsula/Gulf Islands</label>
+            </value>
+            <value>
+                <fullName>Duncan/Cowichan</fullName>
+                <default>false</default>
+                <label>Duncan/Cowichan</label>
+            </value>
+            <value>
+                <fullName>Port Alberni</fullName>
+                <default>false</default>
+                <label>Port Alberni</label>
+            </value>
+            <value>
+                <fullName>Port Hardy</fullName>
+                <default>false</default>
+                <label>Port Hardy</label>
+            </value>
+            <value>
+                <fullName>Terrace/Kitimat</fullName>
+                <default>false</default>
+                <label>Terrace/Kitimat</label>
+            </value>
+            <value>
+                <fullName>Peace South</fullName>
+                <default>false</default>
+                <label>Peace South</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Northern Region</controllingFieldValue>
+            <valueName>Bulkley / Stikine</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northern Region</controllingFieldValue>
+            <valueName>Haida Gwaii / Prince Rupert</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northern Region</controllingFieldValue>
+            <valueName>Nechako Lakes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northern Region</controllingFieldValue>
+            <valueName>Peace North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northern Region</controllingFieldValue>
+            <valueName>Prince George</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northern Region</controllingFieldValue>
+            <valueName>Quesnel</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northern Region</controllingFieldValue>
+            <valueName>Terrace/Kitimat</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Northern Region</controllingFieldValue>
+            <valueName>Peace South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Abbotsford</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Burnaby</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Chilliwack</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Delta</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Fraser / Cascades</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Langley</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Mission</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>New Westminster</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Ridge Meadows</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Surrey East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Surrey North</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Surrey South</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Fraser Region</controllingFieldValue>
+            <valueName>Tri-Cities</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior Region</controllingFieldValue>
+            <valueName>Cariboo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior Region</controllingFieldValue>
+            <valueName>East Kootenay</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior Region</controllingFieldValue>
+            <valueName>Gold Trail</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior Region</controllingFieldValue>
+            <valueName>Kamloops</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior Region</controllingFieldValue>
+            <valueName>Shuswap</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior Region</controllingFieldValue>
+            <valueName>South Okanagan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior Region</controllingFieldValue>
+            <valueName>Kootenay Boundary</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior Region</controllingFieldValue>
+            <valueName>North Okanagan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Interior Region</controllingFieldValue>
+            <valueName>Central Okanagan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Campbell River</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Comox Valley</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Nanaimo</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Parksville / Qualicum</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Victoria</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Sooke/Westshore</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Peninsula/Gulf Islands</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Duncan/Cowichan</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Port Alberni</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Island Region</controllingFieldValue>
+            <valueName>Port Hardy</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>City Centre</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>Downtown Eastside</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>North Shore/Squamish</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>Sunshine Coast/Pemberton</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>Powell River/Central Coast</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>Richmond</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>Midtown</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>Westside</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>North East</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Vancouver Coastal Region</controllingFieldValue>
+            <valueName>Vancouver South</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

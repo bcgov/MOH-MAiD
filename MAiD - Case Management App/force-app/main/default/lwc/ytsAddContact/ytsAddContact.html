@@ -1,0 +1,300 @@
+<template>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large"
+        aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                    title="Close">
+                    <lightning-icon icon-name="utility:close" variant="inverse" alternative-text="Close"
+                        onclick={handleReset}></lightning-icon>
+                </button>
+                <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{heading}</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <template if:false={viewMode}>
+                    <lightning-record-edit-form object-api-name="Case_Contact__c" record-id={contactRecId} onsuccess={handleRecordCreation}>
+                        <div class="slds-vertical-tabs__content slds-show" role="tabpanel" aria-labelledby="slds-vertical-tabs-0__nav">
+                            <lightning-messages></lightning-messages>
+                            <div>
+                                <lightning-accordion allow-multiple-sections-open
+                                    active-section-name={activeSections} style="background: rgb(245, 243, 243);">
+                                    <lightning-accordion-section name="A" label="Information">
+                                        <div class="slds-grid">
+                                            <div class="slds-col slds-p-around_xx-small">
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field  variant="standard" field-name="Contact_Person_First_Name__c" required>
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Contact_Person_Last_Name__c" required>
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Contact_Type__c">
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Contact_Subtype__c">
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Profession_Role__c">
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Contact_Person_Profession_Role__c">
+                                                    </lightning-input-field>
+                                                </div>
+
+                                            </div>
+                                            <div class="slds-col slds-p-around_xx-small">
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" disabled field-name="Referral__c" value={referralId}>
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field  variant="standard" disabled field-name="Intake__c" value={IntakeId}>
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" disabled field-name="Case__c" value={caseId}>
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Inactive__c">
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Inactive_Date__c">
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Support_Team_Member__c">
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Relationship_Subtype__c" required>
+                                                    </lightning-input-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-input-field variant="standard" field-name="Other_Relationship__c">
+                                                    </lightning-input-field>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </lightning-accordion-section>
+                                    <br /><br /><br /><br />
+                                    <!--CONTACT INFO-->
+                                    <lightning-accordion-section name="B" label="Contact Information">
+                                        <div class="slds-p-around_x-small">
+                                            <div class="slds-grid">
+                                                <div class="slds-col slds-p-around_xx-small">
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard" field-name="Mailing_Address_Line1__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard"
+                                                            field-name="Mailing_Address_Line2__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard" field-name="Mailing_Address_City__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard"
+                                                            field-name="Mailing_Address_Province__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard"
+                                                            field-name="Mailing_Address_Postal_Code__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-col slds-p-around_xx-small">
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard" field-name="Preferred_method_of_contact__c" required>
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard" field-name="Contact_Person_Home_Phone_Number__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard" field-name="Contact_Person_Cell_Phone_Number__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard" field-name="Contact_Person_Work_Phone_Number__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard" field-name="Contact_Person_Work_Phone_Extension__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-input-field variant="standard" field-name="Contact_Person_Email_Address__c">
+                                                        </lightning-input-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </lightning-accordion-section>
+                                </lightning-accordion>
+                            </div>
+                            <footer class="slds-modal__footer">
+                                <div class="slds-align_absolute-center slds-p-around_medium">
+                                    <lightning-button class="slds-m-around_xx-small" label="Cancel" onclick={handleReset}>
+                                    </lightning-button>
+                                    <lightning-button class="slds-m-around_xx-small" label="Save" disabled={disabled} type="submit" variant="brand">
+                                    </lightning-button>
+                                </div>
+                            </footer>
+                        </div>
+                    </lightning-record-edit-form>
+                </template>
+                <template if:true={viewMode}>
+                    <lightning-record-view-form object-api-name="Case_Contact__c" record-id={contactRecId}>
+                        <div class="slds-vertical-tabs__content slds-show" role="tabpanel" aria-labelledby="slds-vertical-tabs-0__nav">
+                            <div>
+                                <lightning-accordion allow-multiple-sections-open
+                                    active-section-name={activeSections}>
+                                    <lightning-accordion-section name="A" label="Information">
+                                        <div class="slds-grid">
+                                            <div class="slds-col slds-p-around_xx-small">
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Contact_Person_First_Name__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Contact_Person_Last_Name__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Contact_Type__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Contact_Subtype__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Profession_Role__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Contact_Person_Profession_Role__c">
+                                                    </lightning-output-field>
+                                                </div>
+
+                                            </div>
+                                            <div class="slds-col slds-p-around_xx-small">
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Referral__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Intake__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Case__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Inactive__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Inactive_Date__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Support_Team_Member__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Relationship_Subtype__c" required>
+                                                    </lightning-output-field>
+                                                </div>
+                                                <div class="slds-form-element slds-p-around_xx-small">
+                                                    <lightning-output-field variant="standard" field-name="Other_Relationship__c">
+                                                    </lightning-output-field>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </lightning-accordion-section>
+                                    <br />
+                                    <!--CONTACT INFO-->
+                                    <lightning-accordion-section name="B" label="Contact Information">
+                                        <div class="slds-p-around_x-small">
+                                            <div class="slds-grid">
+                                                <div class="slds-col slds-p-around_xx-small">
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard" field-name="Mailing_Address_Line1__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard"
+                                                            field-name="Mailing_Address_Line2__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard" field-name="Mailing_Address_City__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard"
+                                                            field-name="Mailing_Address_Province__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard"
+                                                            field-name="Mailing_Address_Postal_Code__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                </div>
+                                                <div class="slds-col slds-p-around_xx-small">
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard" field-name="Preferred_method_of_contact__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard" field-name="Contact_Person_Home_Phone_Number__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard" field-name="Contact_Person_Cell_Phone_Number__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard" field-name="Contact_Person_Work_Phone_Number__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard" field-name="Contact_Person_Work_Phone_Extension__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                    <div class="slds-form-element slds-p-around_xx-small">
+                                                        <lightning-output-field variant="standard" field-name="Contact_Person_Email_Address__c">
+                                                        </lightning-output-field>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </lightning-accordion-section>
+                                </lightning-accordion>
+                            </div>
+                        </div>
+                    </lightning-record-view-form>
+                </template>
+
+            </div>
+        </div>
+    <!--SHOW SPINNER-->
+
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

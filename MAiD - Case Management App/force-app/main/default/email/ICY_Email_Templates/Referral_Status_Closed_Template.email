@@ -1,0 +1,5 @@
+Hello,<br/><br/>
+
+This <a href="{!Referral__c.Link}">{!Referral__c.Name}</a> has been closed.<br/><br/>
+
+Thanks

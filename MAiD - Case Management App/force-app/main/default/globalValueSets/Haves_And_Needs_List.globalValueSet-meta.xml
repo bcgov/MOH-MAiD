@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Bank Account</fullName>
+        <default>false</default>
+        <label>Bank Account</label>
+    </customValue>
+    <customValue>
+        <fullName>Savings</fullName>
+        <default>false</default>
+        <label>Savings</label>
+    </customValue>
+    <customValue>
+        <fullName>Source of Income</fullName>
+        <default>false</default>
+        <label>Source of Income</label>
+    </customValue>
+    <customValue>
+        <fullName>Monthly Budget</fullName>
+        <default>false</default>
+        <label>Monthly Budget</label>
+    </customValue>
+    <customValue>
+        <fullName>Money Management Skills</fullName>
+        <default>false</default>
+        <label>Money Management Skills</label>
+    </customValue>
+    <customValue>
+        <fullName>Knowledge about filing Income Taxes</fullName>
+        <default>false</default>
+        <label>Knowledge about filing Income Taxes</label>
+    </customValue>
+    <customValue>
+        <fullName>Permanent family-like relationships (family friends/foster parents)</fullName>
+        <default>false</default>
+        <label>Permanent family-like relationships (family friends/foster parents)</label>
+    </customValue>
+    <customValue>
+        <fullName>Supportive adults</fullName>
+        <default>false</default>
+        <label>Supportive adults</label>
+    </customValue>
+    <customValue>
+        <fullName>Biological family</fullName>
+        <default>false</default>
+        <label>Biological family</label>
+    </customValue>
+    <customValue>
+        <fullName>Extended family</fullName>
+        <default>false</default>
+        <label>Extended family</label>
+    </customValue>
+    <customValue>
+        <fullName>Peers</fullName>
+        <default>false</default>
+        <label>Peers</label>
+    </customValue>
+    <customValue>
+        <fullName>Community/Cultural Support</fullName>
+        <default>false</default>
+        <label>Community/Cultural Support</label>
+    </customValue>
+    <customValue>
+        <fullName>Family</fullName>
+        <default>false</default>
+        <label>Family</label>
+    </customValue>
+    <customValue>
+        <fullName>Foster Parent</fullName>
+        <default>false</default>
+        <label>Foster Parent</label>
+    </customValue>
+    <customValue>
+        <fullName>Friend</fullName>
+        <default>false</default>
+        <label>Friend</label>
+    </customValue>
+    <customValue>
+        <fullName>Group Home</fullName>
+        <default>false</default>
+        <label>Group Home</label>
+    </customValue>
+    <customValue>
+        <fullName>Guardian</fullName>
+        <default>false</default>
+        <label>Guardian</label>
+    </customValue>
+    <customValue>
+        <fullName>Network</fullName>
+        <default>false</default>
+        <label>Network</label>
+    </customValue>
+    <customValue>
+        <fullName>Nurse</fullName>
+        <default>false</default>
+        <label>Nurse</label>
+    </customValue>
+    <customValue>
+        <fullName>Physician</fullName>
+        <default>false</default>
+        <label>Physician</label>
+    </customValue>
+    <customValue>
+        <fullName>Parent</fullName>
+        <default>false</default>
+        <label>Parent</label>
+    </customValue>
+    <customValue>
+        <fullName>Teacher</fullName>
+        <default>false</default>
+        <label>Teacher</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Worker</fullName>
+        <default>false</default>
+        <label>Social Worker</label>
+    </customValue>
+    <customValue>
+        <fullName>Trustee</fullName>
+        <default>false</default>
+        <label>Trustee</label>
+    </customValue>
+    <customValue>
+        <fullName>Community connections</fullName>
+        <default>false</default>
+        <label>Community connections</label>
+    </customValue>
+    <customValue>
+        <fullName>Spiritual support</fullName>
+        <default>false</default>
+        <label>Spiritual support</label>
+    </customValue>
+    <customValue>
+        <fullName>Peer/Mentorship circle</fullName>
+        <default>false</default>
+        <label>Peer/Mentorship circle</label>
+    </customValue>
+    <customValue>
+        <fullName>Cultural safety agreement/plan</fullName>
+        <default>false</default>
+        <label>Cultural safety agreement/plan</label>
+    </customValue>
+    <customValue>
+        <fullName>Ethnicity</fullName>
+        <default>false</default>
+        <label>Ethnicity</label>
+    </customValue>
+    <customValue>
+        <fullName>Voter registration</fullName>
+        <default>false</default>
+        <label>Voter registration</label>
+    </customValue>
+    <customValue>
+        <fullName>Language</fullName>
+        <default>false</default>
+        <label>Language</label>
+    </customValue>
+    <customValue>
+        <fullName>Involved health professionals</fullName>
+        <default>false</default>
+        <label>Involved health professionals</label>
+    </customValue>
+    <customValue>
+        <fullName>Health status</fullName>
+        <default>false</default>
+        <label>Health status</label>
+    </customValue>
+    <customValue>
+        <fullName>Assessment</fullName>
+        <default>false</default>
+        <label>Assessment</label>
+    </customValue>
+    <customValue>
+        <fullName>Education/understanding of physical health</fullName>
+        <default>false</default>
+        <label>Education/understanding of physical health</label>
+    </customValue>
+    <customValue>
+        <fullName>Education/understanding of sexual health</fullName>
+        <default>false</default>
+        <label>Education/understanding of sexual health</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical equipment</fullName>
+        <default>false</default>
+        <label>Medical equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Medications and other management strategies</fullName>
+        <default>false</default>
+        <label>Medications and other management strategies</label>
+    </customValue>
+    <customValue>
+        <fullName>Nutrition/Diet</fullName>
+        <default>false</default>
+        <label>Nutrition/Diet</label>
+    </customValue>
+    <customValue>
+        <fullName>Therapeutic needs – OT/PT/SL</fullName>
+        <default>false</default>
+        <label>Therapeutic needs – OT/PT/SL</label>
+    </customValue>
+    <customValue>
+        <fullName>Traditional/alternative healing practices or therapies</fullName>
+        <default>false</default>
+        <label>Traditional/alternative healing practices or therapies</label>
+    </customValue>
+    <customValue>
+        <fullName>Involvement in physical activities</fullName>
+        <default>false</default>
+        <label>Involvement in physical activities</label>
+    </customValue>
+    <customValue>
+        <fullName>Medical/Dental coverage</fullName>
+        <default>false</default>
+        <label>Medical/Dental coverage</label>
+    </customValue>
+    <customValue>
+        <fullName>Vision</fullName>
+        <default>false</default>
+        <label>Vision</label>
+    </customValue>
+    <customValue>
+        <fullName>Assessment/Diagnosis</fullName>
+        <default>false</default>
+        <label>Assessment/Diagnosis</label>
+    </customValue>
+    <customValue>
+        <fullName>Health coverage</fullName>
+        <default>false</default>
+        <label>Health coverage</label>
+    </customValue>
+    <customValue>
+        <fullName>Prescription plan</fullName>
+        <default>false</default>
+        <label>Prescription plan</label>
+    </customValue>
+    <customValue>
+        <fullName>Education/understanding of mental health</fullName>
+        <default>false</default>
+        <label>Education/understanding of mental health</label>
+    </customValue>
+    <customValue>
+        <fullName>Help with substance use</fullName>
+        <default>false</default>
+        <label>Help with substance use</label>
+    </customValue>
+    <customValue>
+        <fullName>Knowledge of resources</fullName>
+        <default>false</default>
+        <label>Knowledge of resources</label>
+    </customValue>
+    <customValue>
+        <fullName>Self-management strategies</fullName>
+        <default>false</default>
+        <label>Self-management strategies</label>
+    </customValue>
+    <customValue>
+        <fullName>Volunteer experience</fullName>
+        <default>false</default>
+        <label>Volunteer experience</label>
+    </customValue>
+    <customValue>
+        <fullName>Work experience</fullName>
+        <default>false</default>
+        <label>Work experience</label>
+    </customValue>
+    <customValue>
+        <fullName>Training</fullName>
+        <default>false</default>
+        <label>Training</label>
+    </customValue>
+    <customValue>
+        <fullName>Certificates</fullName>
+        <default>false</default>
+        <label>Certificates</label>
+    </customValue>
+    <customValue>
+        <fullName>Equipment</fullName>
+        <default>false</default>
+        <label>Equipment</label>
+    </customValue>
+    <customValue>
+        <fullName>Interview skills</fullName>
+        <default>false</default>
+        <label>Interview skills</label>
+    </customValue>
+    <customValue>
+        <fullName>Resume</fullName>
+        <default>false</default>
+        <label>Resume</label>
+    </customValue>
+    <customValue>
+        <fullName>Interests/skills/goals</fullName>
+        <default>false</default>
+        <label>Interests/skills/goals</label>
+    </customValue>
+    <customValue>
+        <fullName>Stable/Safe/Suitable housing</fullName>
+        <default>false</default>
+        <label>Stable/Safe/Suitable housing</label>
+    </customValue>
+    <customValue>
+        <fullName>Rental references</fullName>
+        <default>false</default>
+        <label>Rental references</label>
+    </customValue>
+    <customValue>
+        <fullName>Applications</fullName>
+        <default>false</default>
+        <label>Applications</label>
+    </customValue>
+    <customValue>
+        <fullName>Education/understanding of rights</fullName>
+        <default>false</default>
+        <label>Education/understanding of rights</label>
+    </customValue>
+    <customValue>
+        <fullName>Home furnishings/supplies</fullName>
+        <default>false</default>
+        <label>Home furnishings/supplies</label>
+    </customValue>
+    <customValue>
+        <fullName>Knowledge of housing services</fullName>
+        <default>false</default>
+        <label>Knowledge of housing services</label>
+    </customValue>
+    <customValue>
+        <fullName>Knowledge of resources/backup plan</fullName>
+        <default>false</default>
+        <label>Knowledge of resources/backup plan</label>
+    </customValue>
+    <customValue>
+        <fullName>High school graduation (Dogwood, Evergreen, Adult Dogwood)</fullName>
+        <default>false</default>
+        <label>High school graduation (Dogwood, Evergreen, Adult Dogwood)</label>
+    </customValue>
+    <customValue>
+        <fullName>Post-Secondary Education</fullName>
+        <default>false</default>
+        <label>Post-Secondary Education</label>
+    </customValue>
+    <customValue>
+        <fullName>Reading/writing skills</fullName>
+        <default>false</default>
+        <label>Reading/writing skills</label>
+    </customValue>
+    <customValue>
+        <fullName>Math skills</fullName>
+        <default>false</default>
+        <label>Math skills</label>
+    </customValue>
+    <customValue>
+        <fullName>Knowledge of education programs and services</fullName>
+        <default>false</default>
+        <label>Knowledge of education programs and services</label>
+    </customValue>
+    <customValue>
+        <fullName>Knowledge of financial resources</fullName>
+        <default>false</default>
+        <label>Knowledge of financial resources</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Hygiene</fullName>
+        <default>false</default>
+        <label>Personal Hygiene</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal Safety</fullName>
+        <default>false</default>
+        <label>Personal Safety</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Media</fullName>
+        <default>false</default>
+        <label>Social Media</label>
+    </customValue>
+    <customValue>
+        <fullName>Time Management</fullName>
+        <default>false</default>
+        <label>Time Management</label>
+    </customValue>
+    <customValue>
+        <fullName>House Management</fullName>
+        <default>false</default>
+        <label>House Management</label>
+    </customValue>
+    <customValue>
+        <fullName>Transportation</fullName>
+        <default>false</default>
+        <label>Transportation</label>
+    </customValue>
+    <customValue>
+        <fullName>Budgeting/Finance</fullName>
+        <default>false</default>
+        <label>Budgeting/Finance</label>
+    </customValue>
+    <customValue>
+        <fullName>Employment/Career Planning</fullName>
+        <default>false</default>
+        <label>Employment/Career Planning</label>
+    </customValue>
+    <customValue>
+        <fullName>Access Community Resources</fullName>
+        <default>false</default>
+        <label>Access Community Resources</label>
+    </customValue>
+    <customValue>
+        <fullName>Housing</fullName>
+        <default>false</default>
+        <label>Housing</label>
+    </customValue>
+    <customValue>
+        <fullName>Social Skills</fullName>
+        <default>false</default>
+        <label>Social Skills</label>
+    </customValue>
+    <customValue>
+        <fullName>Driver’s license</fullName>
+        <default>false</default>
+        <label>Driver’s license</label>
+    </customValue>
+    <customValue>
+        <fullName>Personal identification</fullName>
+        <default>false</default>
+        <label>Personal identification</label>
+    </customValue>
+    <customValue>
+        <fullName>Safe personal filing system</fullName>
+        <default>false</default>
+        <label>Safe personal filing system</label>
+    </customValue>
+    <customValue>
+        <fullName>Reporting Income</fullName>
+        <default>false</default>
+        <label>Reporting Income</label>
+    </customValue>
+    <customValue>
+        <fullName>Other</fullName>
+        <default>false</default>
+        <label>Other</label>
+    </customValue>
+    <masterLabel>Haves And Needs List</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

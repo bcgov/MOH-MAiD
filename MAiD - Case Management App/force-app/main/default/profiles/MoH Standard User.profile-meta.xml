@@ -3,6 +3,11 @@
     <fullName>MoH Standard User</fullName>
     <applicationVisibilities>
         <application>Case_Management</application>
+        <default>false</default>
+        <visible>false</visible>
+    </applicationVisibilities>
+    <applicationVisibilities>
+        <application>standard__Optimizer</application>
         <default>true</default>
         <visible>true</visible>
     </applicationVisibilities>
@@ -553,27 +558,27 @@
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>Case.Error_Log</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
+        <default>false</default>
         <recordType>Case.MAiD_Case</recordType>
-        <visible>true</visible>
-    </recordTypeVisibilities> 
+        <visible>false</visible>
+    </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>PersonAccount.Nurse_Practitioner</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
         <recordType>PersonAccount.Pharmacist</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
-        <default>true</default>
+        <default>false</default>
         <recordType>PersonAccount.Physician</recordType>
-        <visible>true</visible>
+        <visible>false</visible>
     </recordTypeVisibilities>
     <recordTypeVisibilities>
         <default>false</default>
@@ -1385,10 +1390,6 @@
     <userPermissions>
         <enabled>false</enabled>
         <name>SkipIdentityConfirmation</name>
-    </userPermissions>
-    <userPermissions>
-        <enabled>false</enabled>
-        <name>SocialInsightsLogoAdmin</name>
     </userPermissions>
     <userPermissions>
         <enabled>false</enabled>

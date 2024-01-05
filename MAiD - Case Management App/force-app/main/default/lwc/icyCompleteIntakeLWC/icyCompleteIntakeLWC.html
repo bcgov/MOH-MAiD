@@ -1,0 +1,113 @@
+<template>
+    <lightning-quick-action-panel header="Accept/Complete Intake">
+        <!--SHOW SPINNER-->
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+        </template>
+        <template if:true={showScreen1}>
+            <div class="slds-card__body slds-card__body_inner slds-p-left_xx-large slds-p-left_xx-right ">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <span>
+                            <div class="slds-p-around_small">
+                                <lightning-radio-group name="Type__c" label="Document Type" value={documentType}
+                                    type="button" class="validate" required="true" options={documentTypeOptions}
+                                    onchange={handleChange} tabindex="0">
+                                </lightning-radio-group>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <span>
+                            <div class="slds-p-around_small">
+                                <lightning-file-upload label="Upload Intake Assessment File" name="fileUploader"
+                                    accept={acceptedFormats} record-id={recordId}
+                                    onuploadfinished={handleUploadFinished} multiple>
+                                </lightning-file-upload>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col">
+                        <span>
+                            <div class="slds-p-around_small">
+                                <div if:true={isFileUploaded}>
+                                    <span>File Name: &nbsp;<strong>{fileName}</strong></span> &nbsp;
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div slot="footer">
+                <lightning-button label="Cancel" onclick={closeQuickAction}></lightning-button>
+                <lightning-button label="Next" variant="brand" onclick={handleNext} disabled={disableNext}>
+                </lightning-button>
+            </div>
+        </template>
+        <template if:true={showScreen2}>
+            <div class="slds-m-top_medium slds-m-bottom_x-large">
+                <lightning-layout vertical-align="center" multiple-rows="true">
+                    <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                        <div data-id="question2" class="slds-show">
+                            <lightning-combobox name="Type Of Consent" label="Type Of Consent"
+                                placeholder="Select Type Of Consent" required options={options2}
+                                onchange={handleChange2}>
+                            </lightning-combobox>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                        <div data-id="question3" class="slds-hide">
+                            <lightning-textarea name="Rationale" label="Rationale" required={makeRationaleReq}
+                                onchange={captureRationale}>
+                            </lightning-textarea>
+                        </div>
+                    </lightning-layout-item>
+                    <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                        <div data-id="question4" class="slds-hide">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-radio-group name="SignedDoucType__c" label="Document Type" value={documentTypeSigned}
+                                                type="button" class="validate" required="true" options={documentTypeOptions}
+                                                onchange={handleChange} tabindex="0">
+                                            </lightning-radio-group>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="slds-m-top_medium slds-m-bottom_small">
+                                <lightning-file-upload label="Upload Signed Document" name="Upload Signed Document"
+                                    accept={acceptedFormats} record-id={recordId} required={makeSignedDocReq}
+                                    onuploadfinished={handleUploadFinished1} multiple>
+                                </lightning-file-upload>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <div if:true={isSignedFileUploaded}>
+                                                <span>File Name: &nbsp;<strong>{signedFileName}</strong></span> &nbsp;
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </lightning-layout-item>
+
+                </lightning-layout>
+            </div>
+            <div slot="footer">
+                <lightning-button label="Cancel" onclick={closeQuickAction}></lightning-button>
+                <lightning-button label="Submit" variant="brand" onclick={handleSubmit} disabled={disableSubmit}>
+                </lightning-button>
+            </div>
+        </template>
+    </lightning-quick-action-panel>
+
+</template>

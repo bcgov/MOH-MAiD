@@ -2,6 +2,10 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Validates_PHN_is_10_digits_if_it_is_BC</fullName>
     <active>true</active>
-    <errorConditionFormula>ISPICKVAL(Province_or_Territory_that_issued_PHN__c , &apos;59 - British Columbia&apos;) &amp;&amp;  NOT(LEN( PHN__c ) == 10)  &amp;&amp; RecordType.Name = &apos;MAiD Case&apos;</errorConditionFormula>
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;MAiD_Case&apos;,
+RecordType.DeveloperName =&apos;Error_Log&apos;),
+ISPICKVAL(Province_or_Territory_that_issued_PHN__c , &apos;59 - British Columbia&apos;) &amp;&amp;  NOT(LEN( PHN__c ) == 10)  &amp;&amp; RecordType.Name = &apos;MAiD Case&apos;
+)</errorConditionFormula>
     <errorMessage>PHN must be 10 digits if BC is selected as Province or Territory that issued PHN</errorMessage>
 </ValidationRule>

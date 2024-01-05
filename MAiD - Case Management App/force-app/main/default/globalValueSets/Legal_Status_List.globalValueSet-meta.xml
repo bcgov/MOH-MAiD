@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>None</fullName>
+        <default>false</default>
+        <label>None</label>
+    </customValue>
+    <customValue>
+        <fullName>SNA</fullName>
+        <default>false</default>
+        <label>SNA</label>
+    </customValue>
+    <customValue>
+        <fullName>VCA</fullName>
+        <default>false</default>
+        <label>VCA</label>
+    </customValue>
+    <customValue>
+        <fullName>TCO</fullName>
+        <default>false</default>
+        <label>TCO</label>
+    </customValue>
+    <customValue>
+        <fullName>CCO</fullName>
+        <default>false</default>
+        <label>CCO</label>
+    </customValue>
+    <customValue>
+        <fullName>YAG</fullName>
+        <default>false</default>
+        <label>YAG</label>
+    </customValue>
+    <customValue>
+        <fullName>OOC</fullName>
+        <default>false</default>
+        <label>OOC</label>
+    </customValue>
+    <masterLabel>Legal Status List</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

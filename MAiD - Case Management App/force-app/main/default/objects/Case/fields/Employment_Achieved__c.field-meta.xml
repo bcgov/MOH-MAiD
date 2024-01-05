@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employment_Achieved__c</fullName>
+    <externalId>false</externalId>
+    <label>Employment Achieved</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Employed before STADD FT</fullName>
+                <default>true</default>
+                <label>Employed before STADD FT</label>
+            </value>
+            <value>
+                <fullName>Employed before STADD PT</fullName>
+                <default>false</default>
+                <label>Employed before STADD PT</label>
+            </value>
+            <value>
+                <fullName>Employed after STADD FT</fullName>
+                <default>false</default>
+                <label>Employed after STADD FT</label>
+            </value>
+            <value>
+                <fullName>Employed after STADD PT</fullName>
+                <default>false</default>
+                <label>Employed after STADD PT</label>
+            </value>
+            <value>
+                <fullName>Improved employment confidence</fullName>
+                <default>false</default>
+                <label>Improved employment confidence</label>
+            </value>
+            <value>
+                <fullName>Improved employment</fullName>
+                <default>false</default>
+                <label>Improved employment</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,199 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 11-22-2022
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_large"
+        aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+        <div class="slds-modal__container">
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close">
+                    <lightning-icon icon-name="utility:close" variant="inverse" alternative-text="Close"
+                        onclick={closeModal}></lightning-icon>
+                </button>
+                <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">{windowTitle}</h2>
+            </header>
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <div if:true={step1}>
+                    <div class="slds-align_absolute-center slds-m-vertical_small slds-grid_vertical-reverse">
+                        <template if:true={relationOptions.data}>
+                            <lightning-radio-group name="Relationship_Subtype__c" id="select-01" label="Relation Type"
+                                options={relationOptions.data.values} value={contact.Relationship_Subtype__c} required
+                                type="radio" onchange={handleChange}>
+                            </lightning-radio-group>
+                        </template>
+                    </div>
+                    <footer class="slds-modal__footer">
+                        <div class="slds-button-group-row slds-align_absolute-center slds-m-vertical_small">
+                            <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                            <button class="slds-button slds-button_brand" onclick={handleNext}>Next</button>
+                        </div>
+                    </footer>
+                </div>
+
+                <div if:true={step2}>
+                    <article class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">
+                                        <span>Contact Information</span>
+                                    </h2>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner slds-p-left_xx-large slds-p-left_xx-right ">
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_medium">
+                                            <lightning-input name="Contact_Person_First_Name__c" type="text"
+                                                label="First Name" value={contact.Contact_Person_First_Name__c}
+                                                required="true" onchange={handleChange} class="validate">
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col">
+                                    <div class="slds-p-around_medium">
+                                        <lightning-input name="Contact_Person_Last_Name__c" type="text"
+                                            label="Last Name" value={contact.Contact_Person_Last_Name__c}
+                                            required="true" onchange={handleChange} class="validate">
+                                        </lightning-input>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="slds-grid slds-gutters">
+                                <template if:true={isOtherContact}>
+                                    <div class="slds-col">
+                                        <div class="slds-p-around_medium">
+                                            <lightning-input name="Other_Relationship__c" type="text"
+                                                label="Specify Other Relation" value={contact.Other_Relationship__c}
+                                                required="true" onchange={handleChange} class="validate">
+                                            </lightning-input>
+                                        </div>
+                                    </div>
+                                </template>
+                                <div class="slds-col">
+                                    <div class="slds-p-around_medium">
+                                        <lightning-radio-group name="Preferred_method_of_contact__c"
+                                            label="Preferred method of contact"
+                                            value={contact.Preferred_method_of_contact__c}
+                                            options={prefMethodContactOption} class="validate" required="true"
+                                            onchange={handleChange} type="button">
+                                        </lightning-radio-group>
+                                    </div>
+                                </div>
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_medium">
+                                            <lightning-input name="Contact_Person_Home_Phone_Number__c" type="text"
+                                                label="Phone" value={contact.Contact_Person_Home_Phone_Number__c}
+                                                class="validate" maxlength="10" onchange={handleChange}>
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col">
+                                    <div class="slds-p-around_medium">
+                                        <lightning-input name="Contact_Person_Email_Address__c" type="text"
+                                            label="Email Address" value={contact.Contact_Person_Email_Address__c}
+                                            class="validate" onchange={handleChange}></lightning-input>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_medium">
+                                            <fieldset
+                                                class="slds-form-element slds-form-element_compound slds-form-element_address">
+                                                <legend class="slds-form-element__legend slds-form-element__label">
+                                                    Mailing
+                                                    Address</legend>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-form-element__row">
+                                                        <div class="slds-size_1-of-1">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="add">Mailing
+                                                                    Address Street</label>
+                                                                <div class="slds-form-element__control">
+                                                                    <textarea name="Mailing_Address_Line1__c"
+                                                                        class="slds-textarea validate"
+                                                                        onchange={handleChange}>{contact.Mailing_Address_Line1__c}</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-form-element__row">
+                                                        <div class="slds-size_4-of-6">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="city">City</label>
+                                                                <div class="slds-form-element__control">
+                                                                    <input type="text" name="Mailing_Address_City__c"
+                                                                        class="slds-input validate"
+                                                                        value={contact.Mailing_Address_City__c}
+                                                                        onchange={handleChange} />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-size_2-of-6">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label"
+                                                                    for="province">Province</label>
+                                                                <div class="slds-form-element__control">
+                                                                    <input type="text"
+                                                                        name="Mailing_Address_Province__c"
+                                                                        class="slds-input validate"
+                                                                        value={contact.Mailing_Address_Province__c}
+                                                                        disabled />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-form-element__row">
+                                                        <div class="slds-size_4-of-6">
+                                                            <div class="slds-form-element">
+                                                                <label class="slds-form-element__label" for="zip">Postal
+                                                                    Code</label>
+                                                                <div class="slds-form-element__control">
+                                                                    <input type="text"
+                                                                        name="Mailing_Address_Postal_Code__c"
+                                                                        class="slds-input validate"
+                                                                        value={contact.Mailing_Address_Postal_Code__c}
+                                                                        onchange={handleChange} />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col"></div>
+                            </div>
+                        </div>
+                    </article>
+                    <footer class="slds-modal__footer">
+                        <div class="slds-button-group-row slds-align_absolute-center slds-m-vertical_small">
+                            <button class="slds-button slds-button_brand" onclick={handlePrevious}>Previous</button>
+                            <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                            <button class="slds-button slds-button_brand" disabled={disabled} onclick={handleSave}>Save</button>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <div class="slds-backdrop slds-backdrop_open"></div>
+</template>

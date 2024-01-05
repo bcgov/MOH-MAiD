@@ -247,4 +247,28 @@
         <label>Was an eligibility assessment completed?</label>
         <cssExposed>false</cssExposed>
     </standardValue>
+    <standardValue>
+        <fullName>Opt-Out</fullName>
+        <default>false</default>
+        <label>Opt-Out</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Moved out of Region</fullName>
+        <default>false</default>
+        <label>Moved out of Region</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Deceased</fullName>
+        <default>false</default>
+        <label>Deceased</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
+    <standardValue>
+        <fullName>Choose Private</fullName>
+        <default>false</default>
+        <label>Choose Private</label>
+        <cssExposed>false</cssExposed>
+    </standardValue>
 </StandardValueSet>

@@ -1,0 +1,3 @@
+<design:component label="Referral Name Component">
+    <design:attribute name="objectApiName" default="" label="Object Api Name" description="Enter the Object Api on which this component is placed"/>
+</design:component>

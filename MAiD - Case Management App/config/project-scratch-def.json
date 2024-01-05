@@ -1,7 +1,7 @@
 {
   "orgName": "MAiD Dev",
   "edition": "Enterprise",
-  "features": ["PersonAccounts", "LightningServiceConsole", "ServiceCloud","PlatformEncryption"],
+  "features": ["PersonAccounts", "LightningServiceConsole", "ServiceCloud","PlatformEncryption","CaseClassification"],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
@@ -11,6 +11,9 @@
     },
     "nameSettings": {
       "enableMiddleName": true
+    },
+    "enhancedNotesSettings": {
+      "enableEnhancedNotes": true
     }
   }
 }

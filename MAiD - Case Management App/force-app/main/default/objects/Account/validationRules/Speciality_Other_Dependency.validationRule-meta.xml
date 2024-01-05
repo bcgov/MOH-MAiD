@@ -2,6 +2,12 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Speciality_Other_Dependency</fullName>
     <active>true</active>
-    <errorConditionFormula>AND((ISPICKVAL( Specialty_2023Reg__c , &quot;8 - Other Specify&quot;)),  Specialty_Other_2023Reg__c = &quot;&quot;)</errorConditionFormula>
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;Nurse_Practitioner&apos;,
+RecordType.DeveloperName =&apos;Other_Health_Care_Professionals&apos;,
+RecordType.DeveloperName =&apos;Pharmacist&apos;,
+RecordType.DeveloperName =&apos;Physician&apos;),
+AND((ISPICKVAL( Specialty_2023Reg__c , &quot;8 - Other Specify&quot;)),  Specialty_Other_2023Reg__c = &quot;&quot;)
+)</errorConditionFormula>
     <errorMessage>Specialty Other (2023Reg)  is required when Specialty (2023Reg) type is other specify</errorMessage>
 </ValidationRule>

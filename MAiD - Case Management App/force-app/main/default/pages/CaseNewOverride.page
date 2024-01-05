@@ -1,0 +1,11 @@
+<apex:page action="{!if($Profile.Name !='System Administrator',
+    null,
+    urlFor($Action.Case.NewCase, $ObjectType.Case,
+    [retURL=URLFOR($Action.Case.Tab, $ObjectType.Case)], true))}" standardController="Case" tabStyle="Case">
+    <apex:form >
+        <apex:pageBlock >
+        <apex:pageMessage detail="{!$Label.CaseNewButtonMessage}" severity="info" strength="3" />
+        <apex:pageMessages />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

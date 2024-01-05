@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>ICY_Intake_Assignment_Notification_Alert</fullName>
+        <description>Intake Assignment Notification Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>ICY_Assigned_To__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>ICY_Email_Templates/ICY_Intake_Assignment_Notification_Latest</template>
+    </alerts>
+    <alerts>
+        <fullName>Notify_New_Intake_Owner</fullName>
+        <description>Notify New Intake Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>ICY_Email_Templates/Intake_Ownership_Transfer</template>
+    </alerts>
+</Workflow>

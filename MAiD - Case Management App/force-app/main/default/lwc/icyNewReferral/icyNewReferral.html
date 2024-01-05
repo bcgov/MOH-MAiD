@@ -1,0 +1,875 @@
+<template>
+    <!--SHOW SPINNER-->
+    <template if:true={showSpinner}>
+        <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+    </template>
+    <!--MODAL FOR ADDING CONTACTS ON PAGE-3-->
+    <template if:true={showContactModal}>
+        <c-yts-create-edit-referral-contact onclosemodal={closeModal} onclose={closeModal} contact-id={contactId}
+            action={action} referral-id={referralId}></c-yts-create-edit-referral-contact>
+    </template>
+    <!--Referral Details-->
+    <div class="slds-box slds-theme_default slds-p-around_large" id="modal-content-id-1">
+        <div class="slds-p-bottom_medium">
+            <div class="slds-page-header">
+                <div class="slds-page-header__row">
+                    <div class="slds-page-header__col-title">
+                        <div class="slds-media__body">
+                            <div class="slds-page-header__name  slds-align_absolute-center">
+                                <div class="slds-page-header__name-title">
+                                    <h1>
+                                        <span class="slds-page-header__title slds-truncate"
+                                            title={modalHeader}>{modalHeader}</span>
+                                    </h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Consent Page 1-->
+        <lightning-card>
+            <template if:true={page1}>
+                <article class="slds-card">
+                    <div class="slds-card__header slds-grid">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <span>Type Of Referral</span>
+                                </h2>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <div class="slds-grid slds-grid_vertical">
+                            <div class="slds-col">
+                                <span>
+                                    <div class="slds-p-around_small">
+                                        <lightning-radio-group name="ref-type" type="button" label="Type Of Referral"
+                                            value={referralType} options={referralTypeOptions} onchange={handleChange}
+                                            required="false" class="validate">
+                                        </lightning-radio-group>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-card__header slds-grid">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <span>Date Of Referral</span>
+                                </h2>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <div class="slds-grid slds-grid_vertical">
+                            <div class="slds-col slds-size_2-of-6">
+                                <span>
+                                    <div class="slds-p-around_small">
+                                        <!--josh-->
+                                        <lightning-input type="date" name="ICY_Date_of_Referral__c"
+                                            label="Date Of Referral" value={referral.ICY_Date_of_Referral__c}
+                                            max={today} message-when-range-overflow="Date of Referral cannot be a future date"
+                                            onchange={handleChange} class="validate"></lightning-input>
+                                            <!--Josh changes ends-->
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </template>
+            <template if:true={page2}>
+                <article class="slds-card">
+                    <div class="slds-card__header slds-grid">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <span>Referral Details</span>
+                                </h2>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <div class="slds-grid slds-grid_vertical">
+                            <div class="slds-col">
+                                <span>
+                                    <div class="slds-p-around_medium">
+                                        <div class="slds-form-element">
+                                            <lightning-checkbox-group name="Referral_For__c" label="Referral For:"
+                                                options={referralForOptions} value={referral.ICY_Referral_For__c}
+                                                onchange={handleChange} class="validate">
+                                            </lightning-checkbox-group>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col">
+                                <div class="slds-grid">
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_medium">
+                                                <div class="slds-form-element">
+                                                    <lightning-input name="Last_Name__c" type="text" label="Last Name"
+                                                        value={referral.Individual_Last_Name__c} required="true"
+                                                        onblur={handleChange} tabindex="0" class="validate">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_medium">
+                                                <div class="slds-form-element">
+                                                    <lightning-input name="First_Name__c" type="text"
+                                                        label="First Name (Legal)"
+                                                        value={referral.Individual_First_Name__c} required="true"
+                                                        onblur={handleChange} tabindex="0" class="validate">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_medium">
+                                                <div class="slds-form-element">
+                                                    <lightning-input name="Individual_Preferred_Name__c" type="text"
+                                                        label="Chosen/Preferred name"
+                                                        value={referral.Individual_Preferred_Name__c}
+                                                        onblur={handleChange} tabindex="0" class="validate">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col">
+                                <div class="slds-grid">
+                                    <div class="slds-col">
+                                        <div class="slds-p-around_medium">
+                                            <div class="slds-grid">
+                                                <div class="slds-col">
+                                                    <lightning-record-edit-form object-api-name="Referral__c">
+                                                        <lightning-input-field field-name="ICY_Referred_By__c"
+                                                            value={referral.ICY_Referred_By__c} onchange={handleChange}
+                                                            name="ICY_Referred_By__c"> </lightning-input-field>
+                                                    </lightning-record-edit-form>
+                                                </div>
+                                                <div class="slds-col">
+                                                    <lightning-button variant="brand" label="Add New Contact"
+                                                        title="Add New Contact" onclick={addReferralContact}
+                                                        class="slds-m-left_x-small"></lightning-button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col">
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_2-of-6">
+                                        <span>
+                                            <div class="slds-p-around_medium">
+                                                <div class="slds-form-element">
+                                                    <lightning-input name="Date_of_Birth__c" type="date"
+                                                        label="Date Of Birth "
+                                                        value={referral.Individual_Date_of_Birth__c}
+                                                        message-when-range-overflow="Date of birth cannot be a future date"
+                                                        message-when-bad-input="Your entry does not match the allowed format yyy-mm-dd"
+                                                        onblur={handleChange} tabindex="0" class="validate" max={today}>
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col slds-size_1-of-6">
+                                        <span>
+                                            <div class="slds-p-around_medium">
+                                                <div class="slds-form-element">
+                                                    <lightning-input readonly type="number" label="Age"
+                                                        value={referralAge}>
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col slds-size_3-of-6">
+                                        <span>
+                                            <div class="slds-p-around_medium">
+                                                <div class="slds-form-element">
+                                                    <lightning-input name="Personal_Health_Number__c" type="text"
+                                                        label="Personal Health Number (PHN) " pattern="^[0-9 \-]+$"
+                                                        message-when-pattern-mismatch="Please enter only numerical values"
+                                                        value={referral.ICY_Personal_Health_Number__c} max-length="10"
+                                                        min-length="10" onfocus={populateOnlyNumbers}
+                                                        message-when-too-short="Please enter an only 10 numeric values"
+                                                        message-when-too-long="Please enter an only 10 numeric values"
+                                                        onblur={formatPHNOnBlur} autocomplete="off"
+                                                        onchange={handleChange} tabindex="0" class="validate">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slds-col">
+                                <div class="slds-grid">
+                                    <div class="slds-col slds-size_2-of-6">
+                                        <span>
+                                            <div class="slds-p-around_medium">
+                                                <div class="slds-form-element">
+                                                    <lightning-radio-group name="Gender__c" type="button" label="Gender"
+                                                        value={referral.Individual_Gender__c} options={genderOptions}
+                                                        onchange={handleChange} class="validate">
+                                                    </lightning-radio-group>
+
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col slds-size_2-of-6">
+                                        <span>
+                                            <div class="slds-p-around_small">
+                                                <lightning-input name="Preferred_Pronouns__c" type="text"
+                                                    label="Pronouns" value={referral.Individual_Pronouns__c}
+                                                    onblur={handleChange} class="validate">
+                                                </lightning-input>
+                                            </div>
+                                        </span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <lightning-record-edit-form object-api-name="Referral__c">
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_medium">
+                                                <lightning-input-field field-name="ICY_CYMH__c" onchange={handleChange}
+                                                    value={referral.ICY_CYMH__c} name="ICY_CYMH__c"
+                                                    variant="label-stacked">
+                                                </lightning-input-field>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_medium">
+                                                <lightning-input-field field-name="ICY_Priority__c"
+                                                    onchange={handleChange} value={referral.ICY_Priority__c}
+                                                    name="ICY_Priority__c" variant="label-stacked">
+                                                </lightning-input-field>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_small">
+                                                <lightning-input-field field-name="ICY_Indigenous__c"
+                                                    onchange={handleChange} value={referral.ICY_Indigenous__c}
+                                                    name="ICY_Indigenous__c" variant="label-stacked">
+                                                </lightning-input-field>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_small">
+                                                <lightning-input-field field-name="ICY_Referral_Source__c"
+                                                    onchange={handleChange} value={referral.ICY_Referral_Source__c}
+                                                    name="ICY_Referral_Source__c" variant="label-stacked">
+                                                </lightning-input-field>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_small">
+                                                <lightning-input-field field-name="ICY_Geographic_Area__c" required
+                                                    onchange={handleChange} value={referral.ICY_Geographic_Area__c}
+                                                    name="ICY_Geographic_Area__c" variant="label-stacked">
+                                                </lightning-input-field>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </lightning-record-edit-form>
+                            <div class="slds-col slds-size_1-of-3">
+                                <span>
+                                    <div class="slds-p-around_medium">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.ICY_Referral_Source_Description__c}
+                                                name="ICY_Referral_Source_Description__c"
+                                                label="Referral Source Description" class="validate"
+                                                onblur={handleChange} max-length="255">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_1-of-3">
+                                <span>
+                                    <div class="slds-p-around_medium">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.ICY_Preferred_Language__c}
+                                                name="Preferred_Language__c" label="Preferred Language" class="validate"
+                                                onblur={handleChange} max-length="255">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col  slds-size_1-of-6">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <label class="slds-checkbox_toggle slds-grid">
+                                                <span class="slds-p-around_xx-small slds-m-bottom_none">
+                                                    Unknown Address
+                                                </span>
+                                                <input type="checkbox" name="ICY_Unknown_Address__c"
+                                                    aria-describedby="support-need"
+                                                    checked={referral.ICY_Unknown_Address__c} onchange={handleChange}
+                                                    tabindex="0" />
+                                                <span id="ICY_Unknown_Address__c" class="slds-checkbox_faux_container"
+                                                    aria-live="assertive">
+                                                    <span class="slds-checkbox_faux"></span>
+                                                    <span class="slds-checkbox_on">Yes</span>
+                                                    <span class="slds-checkbox_off">No</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <template if:false={referral.ICY_Unknown_Address__c}>
+                                <div class="slds-col slds-size_3-of-6">
+                                    <span>
+                                        <div class="slds-p-around_medium">
+                                            <fieldset
+                                                class="slds-form-element slds-form-element_compound slds-form-element_address">
+                                                <legend class="slds-form-element__legend slds-form-element__label">
+                                                    Physical
+                                                    Address</legend>
+                                                <div class="slds-form-element__control">
+                                                    <div class="slds-form-element__row">
+                                                        <div class="slds-size_1-of-1">
+                                                            <div class="slds-form-element">
+                                                                <div class="slds-form-element__control">
+                                                                    <lightning-textarea name="Address__c"
+                                                                        value={referral.Physical_Address_Line_1__c}
+                                                                        label="Street Address" class="validate"
+                                                                        tabindex="0" onblur={handleChange}>
+                                                                    </lightning-textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-form-element__row">
+                                                        <div class="slds-size_4-of-6">
+                                                            <div class="slds-form-element">
+                                                                <div class="slds-form-element__control">
+                                                                    <lightning-input type="text"
+                                                                        value={referral.Physical_Address_City__c}
+                                                                        name="Address_Town__c" class="validate"
+                                                                        tabindex="0" label="Town" onblur={handleChange}>
+                                                                    </lightning-input>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="slds-size_2-of-6">
+                                                            <div class="slds-form-element">
+                                                                <div class="slds-form-element__control">
+                                                                    <lightning-input type="text" name="ind-phy-province"
+                                                                        required="" tabindex="0" label="Province"
+                                                                        value="BC" disabled>
+                                                                    </lightning-input>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="slds-form-element__row">
+                                                        <div class="slds-size_4-of-6">
+                                                            <div class="slds-form-element">
+                                                                <div class="slds-form-element__control">
+                                                                    <lightning-input type="text" label="Postal Code"
+                                                                        value={referral.Physical_Address_Postal_Code__c}
+                                                                        name="Address_Postal_Code__c" class="validate"
+                                                                        tabindex="0" onchange={handleChange}
+                                                                        onblur={validatePostalCode}>
+                                                                    </lightning-input>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </span>
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                </article>
+                <!--Referral CONTACT Information-->
+                <article class="slds-card">
+                    <div class="slds-card__header slds-grid">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <span>Contact Information</span>
+                                </h2>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <div class="slds-grid slds-grid_vertical">
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_xx-small">
+                                                <lightning-radio-group name="Preferred_Method_of_Contact__c"
+                                                    label="Preferred Method Of Contact"
+                                                    value={referral.ICY_Preferred_Method_of_Contact__c} type="button"
+                                                    class="validate" options={methodOfConOptions}
+                                                    onchange={handleChange} tabindex="0">
+                                                </lightning-radio-group>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col">
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col slds-size_2-of-6">
+                                                <div class="slds-p-around_xx-small">
+                                                    <lightning-input type="tel" label="Cell Phone" name="Cell_Phone__c"
+                                                        value={referral.Individual_Cell_Phone_Number__c} maxlength="10"
+                                                        onchange={handleChange} tabindex="0">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_2-of-6">
+                                                <br />
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                        <div class="slds-form-element">
+                                                            <label class="slds-checkbox_toggle slds-grid">
+                                                                <span class="slds-p-around_xx-small slds-m-bottom_none">
+                                                                    Can we leave a message?
+                                                                </span>
+                                                                <input type="checkbox"
+                                                                    name="ICY_Can_We_Leave_a_Message_On_Cell__c"
+                                                                    aria-describedby="support-need"
+                                                                    checked={referral.ICY_Can_We_Leave_a_Message_On_Cell__c}
+                                                                    onchange={handleChange} tabindex="0" />
+                                                                <span id="Leave_Message__c"
+                                                                    class="slds-checkbox_faux_container"
+                                                                    aria-live="assertive">
+                                                                    <span class="slds-checkbox_faux"></span>
+                                                                    <span class="slds-checkbox_on">Yes</span>
+                                                                    <span class="slds-checkbox_off">No</span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col">
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col slds-size_2-of-6">
+                                                <div class="slds-p-around_xx-small">
+                                                    <lightning-input type="tel" label="Home Phone" name="Home_Phone__c"
+                                                        value={referral.Individual_Home_Phone_Number__c} maxlength="10"
+                                                        onchange={handleChange} tabindex="0">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_2-of-6">
+                                                <br />
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                        <div class="slds-form-element">
+                                                            <label class="slds-checkbox_toggle slds-grid">
+                                                                <span class="slds-p-around_xx-small slds-m-bottom_none">
+                                                                    Can we leave a message?
+                                                                </span>
+                                                                <input type="checkbox"
+                                                                    name="ICY_Can_We_Leave_a_Message_On_Home_Phone__c"
+                                                                    aria-describedby="support-need"
+                                                                    checked={referral.ICY_Can_We_Leave_a_Message_On_Home_Phone__c}
+                                                                    onchange={handleChange} tabindex="0" />
+                                                                <span id="Leave_Message__c1"
+                                                                    class="slds-checkbox_faux_container"
+                                                                    aria-live="assertive">
+                                                                    <span class="slds-checkbox_faux"></span>
+                                                                    <span class="slds-checkbox_on">Yes</span>
+                                                                    <span class="slds-checkbox_off">No</span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col">
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col slds-size_2-of-6">
+                                                <div class="slds-p-around_xx-small">
+                                                    <lightning-input name="Other_Phone__c" type="tel"
+                                                        label="Other Phone Number" value={referral.ICY_Other_Phone__c}
+                                                        maxlength="10" onchange={handleChange} tabindex="0">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_2-of-6">
+                                                <br />
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                        <div class="slds-form-element">
+                                                            <label class="slds-checkbox_toggle slds-grid">
+                                                                <span class="slds-p-around_xx-small slds-m-bottom_none">
+                                                                    Can we leave a message?
+                                                                </span>
+                                                                <input type="checkbox"
+                                                                    name="ICY_Leave_a_Message_On_other_Phone__c"
+                                                                    aria-describedby="support-need"
+                                                                    checked={referral.ICY_Leave_a_Message_On_other_Phone__c}
+                                                                    onchange={handleChange} tabindex="0" />
+                                                                <span id="ICY_Leave_a_Message_On_other_Phone__c"
+                                                                    class="slds-checkbox_faux_container"
+                                                                    aria-live="assertive">
+                                                                    <span class="slds-checkbox_faux"></span>
+                                                                    <span class="slds-checkbox_on">Yes</span>
+                                                                    <span class="slds-checkbox_off">No</span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </template>
+            <template if:true={page3}>
+                <article class="slds-card">
+                    <div class="slds-card__header slds-grid">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <span>For Youth Referrals</span>
+                                </h2>
+                            </div>
+                        </header>
+                    </div>
+                    <div class="slds-card__body slds-card__body_inner">
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <lightning-record-edit-form object-api-name="Referral__c">
+                                                <div class="slds-grid slds-gutters">
+                                                    <div class="slds-col slds-size_2-of-6">
+                                                        <lightning-input-field
+                                                            field-name="ICY_If_Parent_Guardian_is_aware__c"
+                                                            name="ICY_If_Parent_Guardian_is_aware__c"
+                                                            value={referral.ICY_If_Parent_Guardian_is_aware__c}
+                                                            onchange={handleChange}>
+                                                        </lightning-input-field>
+                                                    </div>
+                                                </div>
+                                            </lightning-record-edit-form>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-gutters">
+                            <div class="slds-col">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <label class="slds-checkbox_toggle slds-grid">
+                                                <span class="slds-p-around_xx-small slds-m-bottom_none">
+                                                    Is the child/youth aware of referral?
+                                                </span>
+                                                <input type="checkbox" name="ICY_CHILD_YOUTH_Aware__c"
+                                                    aria-describedby="support-need"
+                                                    checked={referral.ICY_CHILD_YOUTH_Aware__c} onchange={handleChange}
+                                                    tabindex="0" />
+                                                <span id="ICY_CHILD_YOUTH_Aware__c" class="slds-checkbox_faux_container"
+                                                    aria-live="assertive">
+                                                    <span class="slds-checkbox_faux"></span>
+                                                    <span class="slds-checkbox_on">Yes</span>
+                                                    <span class="slds-checkbox_off">No</span>
+                                                </span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="slds-grid slds-gutters">
+                            <div if:true={showPrimaryContact}>
+                                <article class="slds-card">
+                                    <div class="slds-card__header slds-grid">
+                                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                            <div class="slds-media__body">
+                                                <h2 class="slds-card__header-title">
+                                                    <span>Parent/Caregiver Contact Information</span>
+                                                </h2>
+                                            </div>
+                                        </header>
+                                    </div>
+                                    <div class="slds-card__body slds-card__body_inner">
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col">
+                                                <lightning-input name="g-fn" type="text" label="First Name"
+                                                    value={primaryContact.Contact_Person_First_Name__c} required="true"
+                                                    onblur={handleChange} tabindex="0" class="validate">
+                                                </lightning-input>
+                                            </div>
+                                        </div>
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col">
+                                                <lightning-input name="g-ln" type="text" label="Last Name"
+                                                    value={primaryContact.Contact_Person_Last_Name__c} required="true"
+                                                    onblur={handleChange} tabindex="0" class="validate">
+                                                </lightning-input>
+                                            </div>
+                                        </div>
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col">
+                                                <lightning-combobox name="g-rel" label="Relationship to Individual"
+                                                    value={primaryContact.Relationship_Subtype__c} required="true"
+                                                    options={guardianRelationOptions} onchange={handleChange}
+                                                    class="validate" tabindex="0">
+                                                </lightning-combobox>
+                                            </div>
+                                        </div>
+                                        <lightning-record-edit-form object-api-name="Case_Contact__c"
+                                            record-type-id={icyContactRecordTypeId}>
+                                            <div class="slds-grid slds-gutters">
+                                                <div class="slds-col">
+                                                    <lightning-input-field field-name="Contact_Type__c"
+                                                        value={primaryContact.Contact_Type__c} onchange={handleChange}
+                                                        name="g-type">
+                                                    </lightning-input-field>
+                                                </div>
+                                            </div>
+                                            <div class="slds-grid slds-gutters">
+                                                <div class="slds-col">
+                                                    <lightning-input-field field-name="Contact_Subtype__c"
+                                                        value={primaryContact.Contact_Subtype__c}
+                                                        onchange={handleChange} name="g-sub-type">
+                                                    </lightning-input-field>
+                                                </div>
+                                            </div>
+                                        </lightning-record-edit-form>
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col">
+                                                <lightning-input name="Con_Phone__c" type="tel" label="Phone"
+                                                    value={primaryContact.Contact_Person_Home_Phone_Number__c}
+                                                    maxlength="10" onblur={handleChange} tabindex="0">
+                                                </lightning-input>
+
+                                            </div>
+                                            <div class="slds-col">
+                                                <lightning-input name="g-em" type="text" label="Email Address"
+                                                    value={primaryContact.Contact_Person_Email_Address__c}
+                                                    onchange={handleChange} tabindex="0">
+                                                </lightning-input>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </template>
+            <template if:true={page4}>
+                <article class="slds-card">
+                    <div class="slds-card__header slds-grid">
+                        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                            <div class="slds-media__body">
+                                <h2 class="slds-card__header-title">
+                                    <span>Additional Information</span>
+                                </h2>
+                            </div>
+                        </header>
+                    </div>
+                    <div if:true={isGeneralReferral} class="slds-card__body slds-card__body_inner">
+                        <div class="slds-grid slds-gutters slds-grid_vertical">
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.ICY_Reason_for_Referral__c}
+                                                name="Reason_for_Referral__c" label="Reason For Referral"
+                                                field-level-help="Include main concern, symptoms, stressors and any changes to functioning/activities of daily living"
+                                                class="validate" onchange={handleChange} max-length="4000">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.ICY_Relevant_Information__c}
+                                                name="Relevant_Information__c" label="Relevant information"
+                                                field-level-help="Include strengths, needs, factors that may support engagement, risk factors and/or barriers to contacting youth or family"
+                                                class="validate" onblur={handleChange} max-length="4000">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.ICY_Current_Supports__c}
+                                                name="Current_Supports__c" label="Current Supports" class="validate"
+                                                onblur={handleChange} max-length="255"
+                                                field-level-help="Current supports for child/youth/family/caregiver">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.ICY_Ethnicity__c} name="Ethnicity__c"
+                                                label="Ethnicity" class="validate" onblur={handleChange}
+                                                max-length="255">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <!--ADDITIONAL INFO FOR Professional REFERRAL-->
+                    <div if:true={isMedicalReferral} class="slds-card__body slds-card__body_inner">
+                        <div class="slds-grid slds-gutters slds-grid_vertical">
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.ICY_Diagnosis__c} name="Diagnosis__c"
+                                                label="Diagnosis" class="validate" onblur={handleChange}
+                                                max-length="255">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.ICY_Medication__c} name="Medication__c"
+                                                label="Medications" class="validate" onblur={handleChange}
+                                                max-length="255">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.ICY_Current_Supports__c}
+                                                name="Current_Supports__c" label="Current Supports" class="validate"
+                                                onblur={handleChange} max-length="255"
+                                                field-level-help="Current supports for child/youth/family/caregiver">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-3">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <lightning-textarea value={referral.Referral_Notes__c}
+                                                name="Additional_Comments__c" label="Additional Comments"
+                                                class="validate" onblur={handleChange} max-length="255">
+                                            </lightning-textarea>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <div class="slds-form-element">
+                                            <fieldset class="slds-form-element">
+                                                <legend class="slds-form-element__legend slds-form-element__label">
+                                                    Reason For Referral (Include main concern, symptoms, stressors and
+                                                    any changes to functioning/activities of daily living)</legend>
+                                                <div class="slds-form-element__control checkboxClass">
+                                                    <template for:each={medicalReferralReasonOptions} for:item="reason">
+                                                        <div key={reason.label}>
+                                                            <div class="slds-checkbox">
+                                                                <input type="checkbox" name="Referral_Medical_Reason"
+                                                                    id={reason.label} onchange={handleChange}
+                                                                    value={reason.value} />
+                                                                <label class="slds-checkbox__label" for={reason.label}>
+                                                                    <span class="slds-checkbox_faux"></span>
+                                                                    <span
+                                                                        class="slds-form-element__label">{reason.label}</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </template>
+                                                </div>
+                                            </fieldset>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </template>
+            <div slot="footer">
+                <ul class="slds-button-group-row slds-align_absolute-center slds-m-vertical_small">
+                    <template if:false={page1}>
+                        <li class="slds-button-group-item">
+                            <button class="slds-button slds-button_neutral slds-button-large"
+                                onclick={handlePrevious}>Previous</button>
+                        </li>
+                    </template>
+                    <li class="slds-button-group-item">
+                        <button class="slds-button slds-button_brand slds-button-large"
+                            onclick={handleNext}>{nextLabel}</button>
+                    </li>
+                </ul>
+            </div>
+        </lightning-card>
+    </div>
+</template>

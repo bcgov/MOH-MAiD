@@ -1,0 +1,7 @@
+<apex:page showHeader="false" action="{! URLFOR($Resource.Help_Case_document) }">
+
+    <!-- This page redirects to the URL in the action attribute above -->
+
+    <p>Redirecting to help content...</p>
+    
+</apex:page>

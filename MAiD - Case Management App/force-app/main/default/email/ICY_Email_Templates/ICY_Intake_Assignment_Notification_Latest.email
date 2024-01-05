@@ -1,0 +1,5 @@
+Hi {!Intake__c.ICY_Assigned_To_Name__c},<br/><br/>
+
+Intake <a href="{!Intake__c.Link}">{!Intake__c.Name}</a> has been assigned to you - please follow the link for details.<br/><br/>
+
+Thank you!

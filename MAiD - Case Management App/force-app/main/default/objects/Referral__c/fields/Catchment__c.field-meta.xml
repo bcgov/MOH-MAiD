@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Catchment__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+ISPICKVAL( EIS_Location__c , &apos;Abbotsford&apos;) || ISPICKVAL( EIS_Location__c , &apos;Chilliwack&apos;) || ISPICKVAL( EIS_Location__c , &apos;Mission&apos;) || ISPICKVAL( EIS_Location__c , &apos;Fraser / Cascades&apos;),&apos;East Fraser&apos;,
+IF(ISPICKVAL( EIS_Location__c , &apos;Burnaby&apos;) || ISPICKVAL( EIS_Location__c , &apos;New Westminster&apos;) || ISPICKVAL( EIS_Location__c , &apos;Ridge Meadows&apos;) || ISPICKVAL( EIS_Location__c , &apos;Tri-Cities&apos;),&apos;North Fraser&apos;, 
+IF(ISPICKVAL( EIS_Location__c , &apos;Langley&apos;) || ISPICKVAL( EIS_Location__c , &apos;Delta&apos;) || ISPICKVAL( EIS_Location__c , &apos;Surrey North&apos;) || ISPICKVAL( EIS_Location__c , &apos;Surrey East&apos;)|| ISPICKVAL( EIS_Location__c , &apos;Surrey South&apos;),&apos;South Fraser&apos;,
+IF(ISPICKVAL( EIS_Location__c , &apos;Richmond&apos;) || ISPICKVAL( EIS_Location__c , &apos;City Centre&apos;) || ISPICKVAL( EIS_Location__c , &apos;Downtown Eastside&apos;) || ISPICKVAL( EIS_Location__c , &apos;North East&apos;) || ISPICKVAL( EIS_Location__c , &apos;Vancouver South&apos;) || ISPICKVAL( EIS_Location__c , &apos;Midtown&apos;) || ISPICKVAL( EIS_Location__c , &apos;Westside&apos;),&apos;Vancouver / Richmond&apos;,
+IF(ISPICKVAL( EIS_Location__c , &apos;North Shore / Squamish&apos;) || ISPICKVAL( EIS_Location__c , &apos;Sunshine Coast / Pemberton&apos;) || ISPICKVAL( EIS_Location__c , &apos;Powell River / Central Coast&apos;),&apos;Coast / North Shore&apos;,
+IF(ISPICKVAL( EIS_Location__c , &apos;East Kootenay&apos;) || ISPICKVAL( EIS_Location__c , &apos;Kootenay Boundary&apos;),&apos;Kootenays&apos;, 
+IF(ISPICKVAL( EIS_Location__c , &apos;South Okanagan&apos;) || ISPICKVAL( EIS_Location__c , &apos;North Okanagan&apos;) || ISPICKVAL( EIS_Location__c , &apos;Central Okanagan&apos;),&apos;Okanagan&apos;, 
+IF(ISPICKVAL( EIS_Location__c , &apos;Shuswap&apos;) || ISPICKVAL( EIS_Location__c , &apos;Kamloops&apos;) || ISPICKVAL( EIS_Location__c , &apos;Gold Trail&apos;) || ISPICKVAL( EIS_Location__c , &apos;Cariboo&apos;),&apos;Thompson Cariboo Shuswap&apos;, 
+IF(ISPICKVAL( EIS_Location__c , &apos;Haida Gwaii / Prince Rupert&apos;) || ISPICKVAL( EIS_Location__c , &apos;Bulkley / Stikine&apos;) || ISPICKVAL( EIS_Location__c , &apos;Terrace / Kitimat&apos;),&apos;Northwest&apos;,
+IF(ISPICKVAL( EIS_Location__c , &apos;Quesnel&apos;) || ISPICKVAL( EIS_Location__c , &apos;Prince George&apos;) || ISPICKVAL( EIS_Location__c , &apos;Nechako Lakes&apos;),&apos;North Central&apos;,
+IF(ISPICKVAL( EIS_Location__c , &apos;Peace South&apos;) || ISPICKVAL( EIS_Location__c , &apos;Peace North&apos;),&apos;Northeast&apos;,
+IF(ISPICKVAL( EIS_Location__c , &apos;Victoria&apos;) || ISPICKVAL( EIS_Location__c , &apos;Sooke / Westshore&apos;) || ISPICKVAL( EIS_Location__c , &apos;Peninsula / Gulf Islands&apos;) || ISPICKVAL( EIS_Location__c , &apos;Duncan / Cowichan&apos;),&apos;South Vancouver Island&apos;, 
+IF(ISPICKVAL( EIS_Location__c , &apos;Nanaimo&apos;) || ISPICKVAL( EIS_Location__c , &apos;Parksville / Qualicum&apos;) || ISPICKVAL( EIS_Location__c , &apos;Port Alberni&apos;) || ISPICKVAL( EIS_Location__c , &apos;Comox Valley&apos;) || ISPICKVAL( EIS_Location__c , &apos;Campbell River&apos;) || ISPICKVAL( EIS_Location__c , &apos;Part Hardy&apos;),&apos;North Vancouver Island&apos;, &apos;Other&apos;
+)
+))))))))))) )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Catchment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

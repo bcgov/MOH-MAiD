@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_authority_check</fullName>
+    <active>false</active>
+    <description>cannot be primary contact and have legal authority at the same time</description>
+    <errorConditionFormula>AND( Has_legal_authority__c ,  Primary_Contact_Is_Individual_Indicator__c )</errorConditionFormula>
+    <errorDisplayField>Primary_Contact_Is_Individual_Indicator__c</errorDisplayField>
+    <errorMessage>if the Individual has legal authority then cannot be the primary contact</errorMessage>
+</ValidationRule>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Office__c</fullName>
+    <externalId>false</externalId>
+    <label>Office</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Prince George/Haida Gwaii</fullName>
+                <default>false</default>
+                <label>Prince George/Haida Gwaii</label>
+            </value>
+            <value>
+                <fullName>Surrey</fullName>
+                <default>false</default>
+                <label>Surrey</label>
+            </value>
+            <value>
+                <fullName>Kamloops/Merritt</fullName>
+                <default>false</default>
+                <label>Kamloops/Merritt</label>
+            </value>
+            <value>
+                <fullName>Nanaimo/Comox Valley</fullName>
+                <default>false</default>
+                <label>Nanaimo/Comox Valley</label>
+            </value>
+            <value>
+                <fullName>Burnaby</fullName>
+                <default>false</default>
+                <label>Burnaby</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

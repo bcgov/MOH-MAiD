@@ -2,6 +2,12 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Required_Account_First_Name</fullName>
     <active>true</active>
-    <errorConditionFormula>ISBLANK(FirstName)</errorConditionFormula>
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;Nurse_Practitioner&apos;,
+RecordType.DeveloperName =&apos;Other_Health_Care_Professionals&apos;,
+RecordType.DeveloperName =&apos;Pharmacist&apos;,
+RecordType.DeveloperName =&apos;Physician&apos;),
+ISBLANK(FirstName)
+)</errorConditionFormula>
     <errorMessage>Account First Name is required</errorMessage>
 </ValidationRule>

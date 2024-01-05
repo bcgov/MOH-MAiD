@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_Subtype__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose only if Contact Type is &quot;Organizational&quot;</inlineHelpText>
+    <label>Contact Subtype</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Contact_Type__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CFD</fullName>
+                <default>false</default>
+                <label>CFD</label>
+            </value>
+            <value>
+                <fullName>School</fullName>
+                <default>false</default>
+                <label>School</label>
+            </value>
+            <value>
+                <fullName>CLBC</fullName>
+                <default>false</default>
+                <label>CLBC</label>
+            </value>
+            <value>
+                <fullName>Health Authority</fullName>
+                <default>false</default>
+                <label>Health Authority</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Organizational</controllingFieldValue>
+            <valueName>CFD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organizational</controllingFieldValue>
+            <valueName>School</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organizational</controllingFieldValue>
+            <valueName>CLBC</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Organizational</controllingFieldValue>
+            <valueName>Health Authority</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Aboriginal_Origin__c</fullName>
+    <externalId>false</externalId>
+    <label>Aboriginal Origin</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>First Nation</fullName>
+                <default>false</default>
+                <label>First Nation</label>
+            </value>
+            <value>
+                <fullName>First Nation, Inuit</fullName>
+                <default>false</default>
+                <label>First Nation, Inuit</label>
+            </value>
+            <value>
+                <fullName>First Nation, Metis</fullName>
+                <default>false</default>
+                <label>First Nation, Metis</label>
+            </value>
+            <value>
+                <fullName>First Nation, Metis, Inuit</fullName>
+                <default>false</default>
+                <label>First Nation, Metis, Inuit</label>
+            </value>
+            <value>
+                <fullName>Inuit</fullName>
+                <default>false</default>
+                <label>Inuit</label>
+            </value>
+            <value>
+                <fullName>Metis</fullName>
+                <default>false</default>
+                <label>Metis</label>
+            </value>
+            <value>
+                <fullName>Metis, Inuit</fullName>
+                <default>false</default>
+                <label>Metis, Inuit</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+            <value>
+                <fullName>TBD</fullName>
+                <default>false</default>
+                <label>TBD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

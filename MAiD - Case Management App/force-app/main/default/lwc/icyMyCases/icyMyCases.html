@@ -1,0 +1,18 @@
+<template>
+    <lightning-card variant="Narrow">
+        <h4 slot="title">
+            <lightning-icon icon-name="standard:case" size="small"></lightning-icon>&nbsp;&nbsp;
+            My Cases&nbsp;
+        </h4>
+        <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh" onclick={refresh} slot="actions">
+        </lightning-button-icon>
+
+        <div style="height: 200px;">
+            <lightning-datatable key-field="caseId" data={data} show-row-number-column hide-checkbox-column
+                columns={columns} default-sort-direction={defaultSortDirection} sorted-direction={sortDirection}
+                sorted-by={sortedBy} onsort={onHandleSort}>
+            </lightning-datatable>
+        </div>
+    </lightning-card>
+
+</template>

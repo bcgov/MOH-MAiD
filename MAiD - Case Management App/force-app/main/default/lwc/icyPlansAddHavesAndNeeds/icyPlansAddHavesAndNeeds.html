@@ -1,0 +1,134 @@
+<template>
+    <div onkeydown={handleKeyDown} class="slds-backdrop slds-backdrop_open">
+        <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open" aria-labelledby="modal-heading-01"
+            aria-modal="true" aria-describedby="modal-content-id-1">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse"
+                        title="Close">
+                        <lightning-icon icon-name="utility:close" variant="inverse" alternative-text="Close"
+                            onclick={closeModal}></lightning-icon>
+                    </button>
+                    <h2 id="modal-heading-01" class="slds-modal__title slds-hyphenate">Add New</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                    <article class="slds-card">
+                        <div class="slds-card__header slds-grid">
+                            <header class="slds-media slds-media_center slds-has-flexi-truncate">
+                                <div class="slds-media__body">
+                                    <h2 class="slds-card__header-title">
+                                        <span>{title}</span>
+                                    </h2>
+                                </div>
+                            </header>
+                        </div>
+                        <div class="slds-card__body slds-card__body_inner slds-p-left_xx-large slds-p-left_xx-right ">
+                            <!--<div class="slds-grid slds-gutters">
+                                <div class="slds-col"> 
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <template if:true={isHave}>
+                                                <lightning-combobox name="Have__c" label={haveOrNeedLabel}
+                                                    value={haveOrNeed.Have__c} options={havesAndNeeds} required="true"
+                                                    class="validate" onchange={handleChange} tabindex="0">
+                                                </lightning-combobox>
+                                            </template>
+                                            <template if:true={isNeed}>
+                                                <lightning-combobox name="Need__c" label={haveOrNeedLabel}
+                                                    value={haveOrNeed.Need__c} options={havesAndNeeds} required="true"
+                                                    class="validate" onchange={handleChange} tabindex="0">
+                                                </lightning-combobox>
+                                            </template>
+
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>-->
+                            <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_small">
+                                                <lightning-input type="text" label={haveOrNeedLabel}
+                                                    value={haveOrNeed.Have_Need_Other_Description__c}
+                                                    name="Have_Need_Other_Description__c" max-length="255"
+                                                    class="validate" required="true" onchange={handleChange}>
+                                                </lightning-input>
+                                            </div>
+                                        </span>
+                                    </div>
+                            </div>
+                            <template if:true={isNeed}>
+                                <div class="slds-grid slds-gutters">
+                                    <div class="slds-col">
+                                        <span>
+                                            <div class="slds-p-around_small">
+                                                <lightning-input type="checkbox" label="Has Agreement Been Captured?"
+                                                    value={haveOrNeed.ICY_Has_Agreement_Been_Captured__c}
+                                                    name="ICY_Has_Agreement_Been_Captured__c" 
+                                                    checked={agreementCaptured}
+                                                    class="validate" onchange={handleChange}>
+                                                </lightning-input>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </template>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <lightning-input type="text" label="Contact/Organization"
+                                                value={haveOrNeed.Contact_Organization__c}
+                                                name="Contact_Organization__c" class="validate"
+                                                onchange={handleChange}>
+                                            </lightning-input>
+                                        </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <template if:true={isHave}>
+                                                <lightning-input type="date" name="End_Date__c" class="validate"
+                                                    label={haveOrNeedDateLabel} onchange={handleChange}
+                                                    value={haveOrNeed.End_Date__c}>
+                                                </lightning-input>
+                                            </template>
+                                            <template if:true={isNeed}>
+                                                <lightning-input type="date" name="Start_Date__c" class="validate"
+                                                    label={haveOrNeedDateLabel} value={haveOrNeed.Start_Date__c}
+                                                    onchange={handleChange}>
+                                                </lightning-input>
+                                            </template>
+
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                    <span>
+                                        <div class="slds-p-around_small">
+                                            <template if:true={isHave}>
+                                            <lightning-textarea name="Details__c" label="Details"
+                                                value={haveOrNeed.Details__c} max-length="255" class="validate"
+                                                onchange={handleChange} tabindex="0"></lightning-textarea>
+                                            </template>
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <footer class="slds-modal__footer">
+                        <div class="slds-button-group-row slds-align_absolute-center slds-m-vertical_small">
+                            <button class="slds-button slds-button_neutral" onclick={closeModal}>Cancel</button>
+                            <button class="slds-button slds-button_brand" onclick={validateAndSave}>Save</button>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </section>
+    </div>
+</template>

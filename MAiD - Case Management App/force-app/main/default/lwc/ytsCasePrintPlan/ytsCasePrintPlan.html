@@ -1,0 +1,49 @@
+<template>
+    <lightning-quick-action-panel header="Print Case Plan">
+        <!--SHOW SPINNER-->
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading" variant="brand"></lightning-spinner>
+        </template>
+        <template if:true={page1}>
+            <div class="slds-align_absolute-center">
+                <div class="slds-p-around_small">
+                    <lightning-radio-group name="printplan" label="Select Print Plan:" options={printPlanOptions}
+                        value={planSelected} type="radio" onchange={handleChange}></lightning-radio-group>
+                </div>
+            </div>
+        </template>
+        <template if:true={comprehensivePlan}>
+            <div class="slds-align_absolute-center">
+                <template if:true={planOptions}>
+                    <lightning-checkbox-group name="Checkbox Group" label="Select the domains to be printed"
+                        options={planOptions} value={selectedPlans} onchange={handleDomainsSelected}>
+                    </lightning-checkbox-group>
+                </template> <br />
+            </div>
+            <br />
+        </template>
+        <template if:true={customPlan}>
+            <div class="slds-p-around_small">
+                <lightning-checkbox-group name="filter" label="Filter Criteria:" options={filterCriteriaOptions}
+                    value={filterCriteria} onchange={handleChange}>
+                </lightning-checkbox-group>
+            </div>
+            <br />
+            <template if:true={goalSteps}>
+                <lightning-datatable key-field="recordId" data={goalSteps} columns={stepTableColumns}
+                    default-sort-direction={defaultSortDirection} sorted-direction={sortDirection} sorted-by={sortedBy}
+                    onsort={onHandleSort} onrowselection={getSelectedName}>
+                </lightning-datatable>
+            </template>
+        </template>
+        <div slot="footer">
+            <div class="slds-align_absolute-center">
+                <lightning-button variant="neutral" label="Cancel" onclick={closeModal}></lightning-button>
+                <div class="slds-p-around_x-small">
+                    <lightning-button variant="brand" label="Previous" onclick={handlePrevious}></lightning-button>
+                </div>
+                <lightning-button variant="brand" label={nextButtonLabel} onclick={handleNext}></lightning-button>
+            </div>
+        </div>
+    </lightning-quick-action-panel>
+</template>

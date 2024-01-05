@@ -3,7 +3,13 @@
     <fullName>College_ID</fullName>
     <active>true</active>
     <description>College_ID is a numeric field only, without the comma&apos;s.</description>
-    <errorConditionFormula>NOT(REGEX(College_ID__pc, &quot;[0-9]{0,80}&quot;))</errorConditionFormula>
+    <errorConditionFormula>AND (
+OR(RecordType.DeveloperName =&apos;Nurse_Practitioner&apos;,
+RecordType.DeveloperName =&apos;Other_Health_Care_Professionals&apos;,
+RecordType.DeveloperName =&apos;Pharmacist&apos;,
+RecordType.DeveloperName =&apos;Physician&apos;),
+NOT(REGEX(College_ID__pc, &quot;[0-9]{0,80}&quot;))
+)</errorConditionFormula>
     <errorDisplayField>College_ID__pc</errorDisplayField>
     <errorMessage>Only enter numbers for College ID.</errorMessage>
 </ValidationRule>
