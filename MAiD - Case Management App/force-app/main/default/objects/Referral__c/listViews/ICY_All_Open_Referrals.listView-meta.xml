@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ListView xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>All_Referrals</fullName>
+    <fullName>ICY_All_Open_Referrals</fullName>
+    <booleanFilter>1 AND 2</booleanFilter>
     <columns>NAME</columns>
     <columns>Individual_First_Name__c</columns>
     <columns>Individual_Last_Name__c</columns>
@@ -14,7 +15,15 @@
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
-        <value>Closed</value>
+        <value>Referral</value>
     </filters>
-    <label>All Referrals</label>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Ready for Intake</value>
+    </filters>
+    <label>ICY All Open Referrals</label>
+    <sharedTo>
+        <group>All_ICY_Team_Members</group>
+    </sharedTo>
 </ListView>

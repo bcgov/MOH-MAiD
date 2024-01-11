@@ -8,7 +8,7 @@
     <columns>Referral__c</columns>
     <columns>CREATED_DATE</columns>
     <filterScope>Everything</filterScope>
-    <label>All Intakes</label>
+    <label>ICY All Intakes</label>
     <sharedTo>
         <group>All_ICY_Team_Members</group>
     </sharedTo>
