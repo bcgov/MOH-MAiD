@@ -7,7 +7,7 @@ public with sharing class ICYNotesTriggerHandler{
             }
         }
         map<Id,List<String>> mapOfCaseIdVsUserIds = new map<Id,List<String>>();
-        for(Case_Member__c obj:[select id,ICY_User__r.Email, ICY_Case__c from Case_Member__c where ICY_Case__c in:setOfCaseIds AND ICY_Category_Assignment__c NOT IN ('Consulting', 'Supplemental') AND ICY_Status__c='Active']){
+        for(Case_Member__c obj:[select id,ICY_User__r.Email, ICY_Case__c from Case_Member__c where ICY_Case__c in:setOfCaseIds AND ICY_Category_Assignment__c != 'Supplemental' AND ICY_Status__c='Active']){
             List<String> userIds = new List<String>();
             if(mapOfCaseIdVsUserIds.containsKey(obj.ICY_Case__c)){
                 userIds = mapOfCaseIdVsUserIds.get(obj.ICY_Case__c);
