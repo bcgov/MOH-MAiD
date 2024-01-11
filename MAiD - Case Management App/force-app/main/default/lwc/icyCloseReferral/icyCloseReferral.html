@@ -1,0 +1,37 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <lightning-quick-action-panel header={title} class="slds-is-relative">
+    <lightning-spinner lwc:if={showSpinner} alternative-text={spinnerAltText} variant="brand">
+    </lightning-spinner>
+
+    <lightning-combobox
+      label={reasonFieldLabel}
+      lwc:ref="Referral_Close_Reason__c"
+      class="field"
+      placeholder={reasonsPlaceholder}
+      options={reasons}
+      required
+      variant="label-stacked">
+    </lightning-combobox>
+
+    <lightning-textarea
+      label={rationaleFieldLabel}
+      lwc:ref="ICY_Rationale_For_Closure__c"
+      class="field"
+      required
+      variant="label-stacked"
+      max-length={rationaleFieldMaxLength}></lightning-textarea>
+
+    <div slot="footer">
+      <lightning-button variant="brand" label={cancelButton} onclick={handleCancel}>
+      </lightning-button>
+
+      <lightning-button
+        variant="brand"
+        label={saveButton}
+        onclick={handleSave}
+        class="slds-m-left_x-small">
+      </lightning-button>
+    </div>
+  </lightning-quick-action-panel>
+</template>
