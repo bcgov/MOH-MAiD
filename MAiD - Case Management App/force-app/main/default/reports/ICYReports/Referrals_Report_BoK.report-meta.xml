@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Referral__c.Individual_First_Name__c</field>
+    </columns>
+    <columns>
+        <field>Referral__c.Individual_Last_Name__c</field>
+    </columns>
+    <columns>
+        <field>Referral__c.case_ID__c</field>
+    </columns>
+    <columns>
+        <field>Referral__c.ICY_Alert_Banner_Text__c</field>
+    </columns>
+    <description>Referrals Report</description>
+    <filter>
+        <criteriaItems>
+            <column>CUST_RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Referral__c.ICY_General,Referral__c.ICY_General_Read_Only,Referral__c.ICY_Medical,Referral__c.ICY_Medical_Read_Only</value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Referral__c.ICY_Geographic_Area__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Referral__c.ICY_Assigned_To__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Referrals Report</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Referral__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>Referral__c.ICY_Date_of_Referral__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>
