@@ -63,7 +63,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Referral__c.ICY_Close_Referral</value>
+                            <value>Referral__c.Close_Referral</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Status__c}</leftValue>

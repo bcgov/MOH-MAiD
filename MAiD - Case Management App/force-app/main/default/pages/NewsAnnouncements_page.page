@@ -1,0 +1,38 @@
+<apex:page id="newsannouncementsPage" showHeader="true" controller="NewsAnnouncements_controller">
+    <apex:define name="body">  
+          <center>
+            <apex:form id="theForm" forceSSL="true">
+                <br/>
+                <apex:outputPanel style="font-color:#b8338c; font-size: 1.4em; font-weight: bold; margin: 0.25em 0.5em ">
+                    Enter Recent News and/or System Announcements
+                </apex:outputPanel>
+                <br/><br/><br/>
+               <apex:pageblock >
+                 <apex:pageBlockSection columns="2">                
+                                                  
+                  <apex:inputField value="{!mapobj.Recent_News__c}" styleClass="myClass"/>
+                  <apex:inputField value="{!mapobj.System_Announcements__c }" styleClass="myClass1"/>
+                  <apex:inputField value="{!mapobj.Display_Recent_News__c}"/>
+                  <apex:inputField value="{!mapobj.Display_Announcements__c}"/>                
+                  
+                                                          
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+           
+                <br/>
+              <apex:commandButton action="{!dosave}" value="Apply" id="submit" />
+            </apex:form>
+        </center>
+        <br/>
+      <style>
+            
+            .myclass1 {
+              
+                width: 510px;
+                
+    
+            }
+             .myClass { width: 170px; height:600px;}
+        </style> 
+    </apex:define> 
+</apex:page>

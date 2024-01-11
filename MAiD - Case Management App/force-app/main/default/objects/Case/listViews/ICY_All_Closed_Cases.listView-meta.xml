@@ -3,17 +3,24 @@
     <fullName>ICY_All_Closed_Cases</fullName>
     <columns>CASES.CASE_NUMBER</columns>
     <columns>NAME</columns>
+    <columns>Current_Age__c</columns>
     <columns>CASES.STATUS</columns>
-    <columns>CASES.CREATED_DATE</columns>
-    <columns>CASES.RECORDTYPE</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>ICY_Geographic_Area__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CASES.STATUS</field>
         <operation>equals</operation>
         <value>Closed</value>
     </filters>
-    <label>All Closed Cases</label>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.ICY_Close_Case</value>
+    </filters>
+    <label>ICY All Closed Cases</label>
     <sharedTo>
-        <group>All_ICY_Team_Members</group>
+        <group>ICY_Program_Leaders</group>
     </sharedTo>
 </ListView>

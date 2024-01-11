@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICY_Access_requested__c</fullName>
+    <externalId>false</externalId>
+    <label>Access requested</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Admin</fullName>
+                <default>false</default>
+                <label>Admin</label>
+            </value>
+            <value>
+                <fullName>Clinical</fullName>
+                <default>false</default>
+                <label>Clinical</label>
+            </value>
+            <value>
+                <fullName>Non-Clinical</fullName>
+                <default>false</default>
+                <label>Non-Clinical</label>
+            </value>
+            <value>
+                <fullName>Program Leader</fullName>
+                <default>false</default>
+                <label>Program Leader</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
