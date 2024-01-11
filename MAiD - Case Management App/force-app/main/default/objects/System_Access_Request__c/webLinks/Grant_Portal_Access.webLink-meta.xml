@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Grant_Portal_Access</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Grant Portal Access</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/apex.js&quot;)}
+var status = &quot;{!System_Access_Request__c.Status__c}&quot;;
+var caseContact = &quot;{!System_Access_Request__c.Case_ContactId__c}&quot;;
+var case1 = &quot;{!System_Access_Request__c.CaseId__c}&quot;;
+var accessId = &quot;{!System_Access_Request__c.Id}&quot;;
+var PortalAccessGranted = &quot;{!System_Access_Request__c.Portal_Access_Granted__c}&quot;;
+var fName = &quot;{!System_Access_Request__c.First_Name__c}&quot;;
+var lName = &quot;{!System_Access_Request__c.Last_Name__c}&quot;;
+var siteId = &quot;{!System_Access_Request__c.SiteMinder_GUID__c}&quot;;
+var email = &quot;{!System_Access_Request__c.Email__c}&quot;;
+var errorMsg = &quot;&quot;;
+if(fName  == null || fName == &quot;&quot;){
+errorMsg = errorMsg + &quot;First Name,&quot;;
+}
+if(lName == null || lName == &quot;&quot;){
+errorMsg = errorMsg + &quot; Last Name,&quot;;
+}
+if(siteId == null || siteId == &quot;&quot;){
+errorMsg = errorMsg + &quot; SiteMinder GUID,&quot;;
+}
+if(email == null || email == &quot;&quot;){
+errorMsg = errorMsg + &quot; Email,&quot;;
+}
+if(PortalAccessGranted != &quot;&quot; ){
+alert(&quot;Portal Access already granted to the Case Contact&quot;);
+}
+else if(status != &quot;Approved&quot; || caseContact == &quot;&quot;){
+alert(&quot;Ensure system access request was approved by Project Admin and that the case contact exists already&quot;);
+}
+else if(caseContact != &quot;&quot; &amp;&amp; case1 == &quot;&quot; ){
+alert(&quot;Ensure that the Case exists for the Case Contact&quot;);
+}
+else if(errorMsg != &quot;&quot;){
+ errorMsg  = errorMsg.substring(0,errorMsg.length-1)
+ errorMsg = errorMsg +&quot; required to create community user&quot;;
+ alert(errorMsg);
+}
+else{
+window.parent.location = &apos;/apex/PartnerPortalUser?id=&apos;+accessId ;
+}</url>
+</WebLink>

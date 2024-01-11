@@ -1,0 +1,436 @@
+<apex:page showHeader="false" standardStylesheets="false" id="loginPage" controller="ICYRegistrationLoginController" title="ICY Login/Registration" action="{!addcookies}">
+    <apex:stylesheet value="{!URLFOR($Resource.icy_branding)}/style.css" />
+    <apex:stylesheet value="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple"/>
+    <script type="text/javascript">
+        function openLargeWindow(strURL, strWindowName) {
+            var intWidth,intHeight,locX,locY,oWindow;
+
+            intWidth = Math.min(800,screen.width);
+            intWidth = intWidth - 10;   //leave soom room for the border, scrollbars, etc.
+            intHeight = screen.height - 98; //leave soom room for the border, menu, status, etc.
+
+            openWindow(strURL,strWindowName,intWidth,intHeight,'status=yes,scrollbars=yes,resizable=yes')
+
+            if (typeof(window.event)=='object') { //required for XPSP2/IE6SP1 because it ignores the "return false;"
+                window.event.returnValue = false;
+            }
+
+            return false;
+        }
+
+        function openSmallWindow(strURL,strWindowName) {
+            openWindow(strURL,strWindowName,530,510,'status=yes,scrollbars=yes,resizable=yes')
+            if (typeof(window.event)=='object') { //required for XPSP2 IE6SP1 because it ignores the "return false;"
+                window.event.returnValue = false;
+            }
+            return false;
+        }
+
+        function toggle() {
+    var ele = document.getElementById("toggleText");
+    var text = document.getElementById("displayText");
+    if(ele.style.display == "block") {
+            ele.style.display = "none";
+        text.innerHTML = "Contact PSO";
+    }
+    else {
+        ele.style.display = "block";
+        text.innerHTML = "Contact PSO";
+    }
+}
+
+        function openWindow(theURL,winName,intWidth, intHeight, features) { //Modified by OpenRoad.
+            //Calculate screen location (Centered on the screen)
+            var locX = (screen.width /2) - (intWidth / 2);
+            var locY = (screen.height / 2) - (intHeight / 2);
+
+            //This will cascade the small help window under the large manual window so the user doesn't get confused.
+            if(window.name == "smallHelpWindow" && winName == "manual"){
+                locX = locX + 100;
+            }
+            var screenLoc = ",height="+intHeight+",width="+intWidth+",top="+locY+",left="+locX;
+            features = features + screenLoc
+
+            objWindow = window.open(theURL,winName,features);
+                if (objWindow !== null) {
+                   objWindow.focus();
+                }
+        }
+    </script>
+
+    <div align="center" bgcolor="#FFFFFF" text="#000000" leftmargin="0"
+        topmargin="0" marginwidth="0" marginheight="0">
+
+        <table width="760" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td colspan="3"><img
+                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="760"
+                        height="15" alt="" /></td>
+                </tr>
+                <tr>
+                    <td width="164"><img
+                        src="{!URLFOR($Resource.icy_branding)}/sun_logo_horiz.gif"
+                        width="164" height="46" alt="British Columbia Government Crest" /></td>
+                    <td width="410"></td>
+                    <td width="185">
+                        <table width="185" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td colspan="3"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="1"
+                                        height="22" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td width="10"></td>
+                                    <td><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="70" height="13" alt="" /></td>
+                                    <td rowspan="2">
+                                      <!-- <a
+                                        href="{!URLFOR($Resource.CollaborateFAQ)}"
+                                        target="bceidhelp"> <img
+                                            src="{!URLFOR($Resource.icy_branding)}/icon_help.gif"
+                                            width="64" height="22" border="0" alt="Help" />
+                                    </a> -->
+                                  </td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="70" height="11" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="3"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="1"
+                                        height="11" alt="" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" bgcolor="#CCCCCC"><img
+                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="411"
+                        height="1" alt="" /></td>
+                </tr>
+                <tr>
+
+                    <td colspan="3"><img
+                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="411"
+                        height="15" alt="" /></td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- HEADER END //-->
+
+        <!-- MAIN BODY CONTAINER START //-->
+        <table width="785" border="0" cellpadding="0" cellspacing="0">
+            <tbody align="left">
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                                <tr>
+                                    <td><img
+                                        src="{!URLFOR($Resource.icy_branding)}/header_tab_left.gif"
+                                        width="20" height="31" alt="" /></td>
+                                    <td bgcolor="#6699cc" class="title">Welcome to Integrate</td>
+                                    <td><img
+                                        src="{!URLFOR($Resource.icy_branding)}/header_tab_right.gif"
+                                        width="60" height="31" alt="" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td bgcolor="6699cc">
+                        <img
+                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="760"
+                        height="1" alt="" /></td>
+                </tr>
+                <tr>
+                    <td><img src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                        width="20" height="3" alt="" /></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <!-- MAIN BODY TASK SPECIFIC START // -->
+        <table width="758" border="0" cellpadding="0" cellspacing="0"
+            class="bodyTable">
+            <tbody>
+                <tr>
+                    <td><img src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                        height="10" alt="" /></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <table width="533" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td align="left">
+                                        <img border="0"
+                                        src="{!URLFOR($Resource.icy_branding)}/ICY_integrateChildYouthLogo.jpg"
+                                        alt="Integrated child and youth team" title="Integrated Child and Youth Teams"/>
+                                        </td>
+                                        <!--<td align="right">-->
+                                        <!--<td style="text-align: center;">
+                                            <p class="font-effect-outline" style="font-weight: bold;
+                                                      font-size: large;margin-right:10px;padding-top: 4px;
+                                                      padding-bottom: 4px;" >
+                                                Integrated Child and <br/>Youth Teams </p>
+                                            <!--<img border="0"
+                                                          src="{!URLFOR($Resource.icy_branding)}/ICY_integrateChildYouthFont.jpg"
+                                        alt="" />-->
+                                        <!--</td>-->
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="20" height="5" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="lineDot333" colspan="2"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="1"
+                                        height="1" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="1"
+                                        height="1" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="lineDot333" colspan="2"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="1"
+                                        height="1" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="20" height="20" alt="" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+
+                        <table width="533" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td style="text-align: center">
+                                        <a href="{!$Setup.ICY_SSO_Settings__c.Login_Location__c}">
+                                             <img src="{!URLFOR($Resource.icy_branding)}/images/button-login.png" alt="Login" border="0"/>
+                                        </a>
+                                    </td>
+                                    <td style="text-align: center">
+                                        <a href="{!$Setup.ICY_SSO_Settings__c.Login_Location__c}">
+                                             <img src="{!URLFOR($Resource.icy_branding)}/images/button-register.png" alt="Register" border="0"/>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="533" height="20" alt="" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- Reshma added code for User Story #275/214-->
+                        <head>
+                          <style>
+                                .gridtable {
+                                              font-family: "Verdana";
+                                              width:inherit;
+                                              border: 2px solid #ccc;
+                                              padding: 2px;
+                                              background-color: #fff;
+                                              }
+
+                           </style>
+                       </head>
+                       <apex:pageblock >
+                              <apex:pageBlockSection columns="1" rendered="{!IF(dispAnnouncements == TRUE,TRUE,FALSE)}">
+                                        <table width="480" class= "gridtable">
+                                               <tbody>
+                                                  <apex:outputPanel >
+                                                          <p  style="color:##1C450F;font-family: -webkit-body;font-size:15pt;font-weight:600;line-height:0.0001;">System Announcements :</p>
+                                                          <span style="color:red;font-family: -webkit-body;font-size:14pt">
+                                                          <apex:outputField value="{!mapobj.System_Announcements__c}" style="width:90%"  />
+                                                          </span>
+                                                     </apex:outputPanel>
+                                               </tbody>
+                                        </table>
+                               </apex:pageBlockSection>
+                        </apex:pageBlock>
+
+                        <table width="533" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="20" height="10" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="lineDot333"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="20" height="1" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="20" height="10" alt="" /></td>
+                                </tr>
+                                <tr>
+                                    <td class="caption" align="left">Access to or unauthorized use of data
+                                        on this computer system by any person other than the
+                                        authorized employee(s) or owner(s) of an account is strictly
+                                        prohibited and may result in legal action against such person.</td>
+                                </tr>
+                                <tr>
+                                    <td><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="20" height="25" alt="" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td bgcolor="#CCCCCC"><img
+                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="1"
+                        height="20" alt="" /></td>
+                    <td>&nbsp;</td>
+                    <td valign="top">
+                        <!-- BCEID MENU LINKS -->
+                        <table width="225" border="0" cellspacing="0" cellpadding="0">
+                            <tbody align="left">
+                                <!--tr>
+                                    <td bgcolor="#CCCCCC" class="rightColumnLinksBold">&raquo;</td>
+                                    <td bgcolor="#CCCCCC"><a
+                                        href="{!URLFOR($Resource.BCeIDQuickStartGuide)}"
+                                        target="bceidhelp" class="rightColumnLinks">BCeID Quick Start Guide</a></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="163" height="1" alt="" /></td>
+                                </tr-->
+
+
+                                <tr>
+                                    <td bgcolor="#CCCCCC" class="rightColumnLinksBold">&raquo;</td>
+                                    <td bgcolor="#CCCCCC"><a
+                                        href="https://www.bceid.ca/register/" target="_parent"
+                                        class="rightColumnLinks">Register for BCeID</a></td>
+                                </tr>
+
+                                  <tr>
+                                    <td colspan="2"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="163" height="1" alt="" /></td>
+                                </tr>
+
+                                 <tr>
+                                    <td bgcolor="#CCCCCC" class="rightColumnLinksBold">&raquo;</td>
+                                    <td bgcolor="#CCCCCC"><a
+                                        href="http://www.gov.bc.ca/icyteams" target="bceidabout"
+                                        class="rightColumnLinks">Visit the ICY Website</a></td>
+                                </tr>
+
+                                 <tr>
+                                    <td colspan="2"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="163" height="1" alt="" /></td>
+                                </tr>
+
+
+                                <tr>
+                                <td bgcolor="#CCCCCC" class="rightColumnLinksBold">&raquo;</td>
+                                <td bgcolor="#CCCCCC"> <div class="rightColumnLinks" >
+                               <a id="displayText" href="javascript:toggle();" style="color:black; text-decoration: none" >Contact PSO</a>
+                                <div id="toggleText" style="display: none"><p><b>Email:</b> <a href='mailto:PSO.IntegrateSupport@gov.bc.ca'>PSO.IntegrateSupport@gov.bc.ca</a> <br></br><!--br> <b>Phone:</b> 1-855-356-5609 </br--> </p>
+                                    </div> </div>
+                                    </td>
+                                    </tr>
+                              <!--Reshma added code for User Story # 275/214-->
+                              <apex:pageblock >
+                                 <apex:pageBlockSection columns="1" rendered="{!IF(dispNews == TRUE,TRUE,FALSE)}">
+                                    <table class= "gridtable">
+                                          <apex:outputPanel >
+                                              <p style="color:##1C450F;font-family: -webkit-body;font-size:larger;font-weight: 600;line-height:0.001">Recent News :</p>
+                                           </apex:outputPanel>
+                                           <apex:outputPanel style="width:100%">
+                                               <span style="color:black;font-size:small;word-wrap:break-word">
+                                                 <apex:outputfield value="{!mapobj.Recent_News__c}" style="width:100%"/>
+                                               </span>
+                                            </apex:outputPanel>
+                                       </table>
+                                 </apex:pageBlockSection>
+                              </apex:pageBlock>
+                                <tr>
+                                    <td colspan="2" style="background-color: rgb(250, 248, 248);"><img
+                                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif"
+                                        width="60" height="5" alt="" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="7"><img
+                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="758"
+                        height="10" alt="" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- MAIN BODY CONTAINER END //-->
+
+        <!-- FOOTER START //-->
+        <table width="760" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+                <tr>
+                    <td colspan="6"><img
+                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="760"
+                        height="40" alt="" /></td>
+                </tr>
+                <tr bgcolor="#999999">
+                    <td colspan="6"><img
+                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="1"
+                        height="1" alt="" /></td>
+                </tr>
+                <tr>
+                    <td class="footer"></td>
+                    <td>&nbsp;</td>
+                    <td><a href="http://www.gov.bc.ca/com/copy" target="_blank"><img
+                            src="{!URLFOR($Resource.icy_branding)}/ftrCopyright.gif"
+                            width="95" height="19" alt="Copyright" border="0" /></a></td>
+                    <td><a href="http://www.gov.bc.ca/com/disc" target="_blank"><img
+                            src="{!URLFOR($Resource.icy_branding)}/ftrDisclaimer.gif"
+                            width="99" height="19" border="0" alt="Disclaimer" /></a></td>
+                    <td><a href="http://www.gov.bc.ca/com/priv" target="_blank"><img
+                            src="{!URLFOR($Resource.icy_branding)}/ftrPrivacy.gif"
+                            width="76" height="19" alt="Privacy" border="0" /></a></td>
+                    <td><a href="http://www.gov.bc.ca/com/accessibility"
+                        target="_blank"><img
+                            src="{!URLFOR($Resource.icy_branding)}/ftrAccessibility.gif"
+                            width="108" height="19" border="0" alt="Accessibility" /></a></td>
+                </tr>
+                <tr>
+                    <td colspan="6"><img
+                        src="{!URLFOR($Resource.icy_branding)}/spacer.gif" width="1"
+                        height="30" alt="" /></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- FOOTER END //-->
+    </div>
+</apex:page>

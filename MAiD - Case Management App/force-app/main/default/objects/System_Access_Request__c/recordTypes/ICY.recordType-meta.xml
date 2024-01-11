@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICY</fullName>
+    <active>true</active>
+    <label>ICY</label>
+    <picklistValues>
+        <picklist>Access_type__c</picklist>
+        <values>
+            <fullName>BCeID</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>IDIR</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BCEID_Account_Type__c</picklist>
+        <values>
+            <fullName>Basic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>EIS_Region__c</picklist>
+        <values>
+            <fullName>Fraser Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interior Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northern Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vancouver Coastal Region</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vancouver Island Region</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ICY_Access_requested__c</picklist>
+        <values>
+            <fullName>Admin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clinical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-Clinical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Program Leader</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ICY_Community_Assigned__c</picklist>
+        <values>
+            <fullName>Coast Mountains Hazelton</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coast Mountains Terrace</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comox Valley 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Comox Valley 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fraser Cascades</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kootenay-Columbia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maple Ridge Pitt Meadows 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maple Ridge Pitt Meadows 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mission Team 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mission Team 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nanaimo-Ladysmith Team 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nanaimo-Ladysmith Team 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nanaimo-Ladysmith Team 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nanaimo-Ladysmith Team 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North Okanagan Shuswap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Okanagan Similkameen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pacific Rim</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Richmond 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Richmond 2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Richmond 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Richmond 4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>qathet %28Powell River%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>ICY_Employer_Organization__c</picklist>
+        <values>
+            <fullName>Health Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCFD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>School District</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Registered_User_Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Removed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Rejected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Removed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>User_Credentials_OR_Role_Profession__c</picklist>
+        <values>
+            <fullName>CLBC Worker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Committee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DAA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Family</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Foster Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group Home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guardian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MCFD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nurse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Physician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Representative</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resource Teacher</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Advocate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Worker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teacher</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Therapist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trustee</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>User_Role__c</picklist>
+        <values>
+            <fullName>Individual%2FFamily%2FSupport Network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard User</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support Team</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>
