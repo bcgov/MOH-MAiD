@@ -18,7 +18,9 @@ const SUCCESS_MESSAGE = 'Referral Closed Successfully';
 const ERROR_MESSAGE = 'Review the errors on this page.';
 const UNKNOWN_ERROR_MESSAGE = 'Error closing referral';
 const LOST_ACCESS_ERROR_MESSAGE = 'INSUFFICIENT_ACCESS';
-
+const LOST_ACCESS_ERROR_MESSAGE2 = 'Not Found';
+const LOST_ACCESS_ERROR_MESSAGE3 = 'INSUFFICIENT_ACCESS_OR_READONLY';
+const LOST_ACCESS_ERROR_MESSAGE4 = 'NOT_FOUND';
 export default class IcyCloseReferral extends NavigationMixin(LightningElement) {
   @api recordId;
   @api objectApiName;
@@ -85,7 +87,11 @@ export default class IcyCloseReferral extends NavigationMixin(LightningElement) 
         await updateRecord(recordInput);
         this.handleSuccess();
       } catch (e) {
-        if (e.body?.output?.errors?.[0]?.errorCode === LOST_ACCESS_ERROR_MESSAGE) {
+        if (e.body?.output?.errors?.[0]?.errorCode === LOST_ACCESS_ERROR_MESSAGE
+          || e.body?.output?.errors?.[0]?.errorCode === LOST_ACCESS_ERROR_MESSAGE3
+          || e.errorCode === LOST_ACCESS_ERROR_MESSAGE2
+          || e.body.errorCode === LOST_ACCESS_ERROR_MESSAGE2
+          || e.body.errorCode === LOST_ACCESS_ERROR_MESSAGE4) {
           this.handleSuccess();
         } else {
           this.dispatchEvent(
