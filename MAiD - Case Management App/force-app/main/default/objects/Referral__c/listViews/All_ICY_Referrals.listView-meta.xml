@@ -11,7 +11,7 @@
     <columns>CREATED_DATE</columns>
     <columns>OWNER.ALIAS</columns>
     <filterScope>Everything</filterScope>
-    <label>All Referrals</label>
+    <label>ICY All Referrals</label>
     <sharedTo>
         <group>All_ICY_Team_Members</group>
     </sharedTo>

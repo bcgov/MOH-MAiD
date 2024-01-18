@@ -3,16 +3,23 @@
     <fullName>ICY_All_Open_Cases</fullName>
     <columns>CASES.CASE_NUMBER</columns>
     <columns>NAME</columns>
+    <columns>Current_Age__c</columns>
     <columns>CASES.STATUS</columns>
     <columns>CASES.PRIORITY</columns>
-    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>ICY_Geographic_Area__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CASES.STATUS</field>
-        <operation>equals</operation>
-        <value>Open</value>
+        <operation>notEqual</operation>
+        <value>Closed</value>
     </filters>
-    <label>My Open Cases</label>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.ICY_Standard_Case</value>
+    </filters>
+    <label>ICY All Open Cases</label>
     <sharedTo>
         <group>All_ICY_Team_Members</group>
     </sharedTo>

@@ -181,7 +181,7 @@
     </sharingOwnerRules>
     <sharingOwnerRules>
         <fullName>ShareMaidManagerCaseWithMaidManager</fullName>
-        <accessLevel>Read</accessLevel>
+        <accessLevel>Edit</accessLevel>
         <label>ShareMaidManagerCaseWithMaidManager</label>
         <sharedTo>
             <role>MAiD_Manager</role>

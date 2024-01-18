@@ -13,7 +13,7 @@
         <operation>equals</operation>
         <value>1</value>
     </filters>
-    <label>My ICY Intake</label>
+    <label>ICY My Intakes</label>
     <sharedTo>
         <group>All_ICY_Team_Members</group>
     </sharedTo>

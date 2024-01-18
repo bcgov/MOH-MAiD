@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Functional_Domain_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Functional Domain Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Physical Functioning</fullName>
+                <default>false</default>
+                <label>Physical Functioning</label>
+            </value>
+            <value>
+                <fullName>Personal Living Skills</fullName>
+                <default>false</default>
+                <label>Personal Living Skills</label>
+            </value>
+            <value>
+                <fullName>Community Participation Skills and Social Inclusion</fullName>
+                <default>false</default>
+                <label>Community Participation Skills and Social Inclusion</label>
+            </value>
+            <value>
+                <fullName>Social Interaction and Self-Determination</fullName>
+                <default>false</default>
+                <label>Social Interaction and Self-Determination</label>
+            </value>
+            <value>
+                <fullName>Learning Styles and Education</fullName>
+                <default>false</default>
+                <label>Learning Styles and Education</label>
+            </value>
+            <value>
+                <fullName>Language and Communication</fullName>
+                <default>false</default>
+                <label>Language and Communication</label>
+            </value>
+            <value>
+                <fullName>Reason and Decision-Making</fullName>
+                <default>false</default>
+                <label>Reason and Decision-Making</label>
+            </value>
+            <value>
+                <fullName>Behavioral and Emotional Health</fullName>
+                <default>false</default>
+                <label>Behavioral and Emotional Health</label>
+            </value>
+            <value>
+                <fullName>Mental Health: Diagnostic Information</fullName>
+                <default>false</default>
+                <label>Mental Health: Diagnostic Information</label>
+            </value>
+            <value>
+                <fullName>Health Status</fullName>
+                <default>false</default>
+                <label>Health Status</label>
+            </value>
+            <value>
+                <fullName>Family Space Only</fullName>
+                <default>false</default>
+                <label>Family Space Only</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>ReferralPage1</fullName>
+                <default>false</default>
+                <label>ReferralPage1</label>
+            </value>
+            <value>
+                <fullName>ReferralPage2</fullName>
+                <default>false</default>
+                <label>ReferralPage2</label>
+            </value>
+            <value>
+                <fullName>ReferralPage3</fullName>
+                <default>false</default>
+                <label>ReferralPage3</label>
+            </value>
+            <value>
+                <fullName>FunctionalDomainPage</fullName>
+                <default>false</default>
+                <label>FunctionalDomainPage</label>
+            </value>
+            <value>
+                <fullName>PortalUserRegistration</fullName>
+                <default>false</default>
+                <label>PortalUserRegistration</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

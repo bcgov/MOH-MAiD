@@ -18,4 +18,7 @@
         <value>Reconciled</value>
     </filters>
     <label>All Open Errors</label>
+    <sharedTo>
+        <group>All_MAiD_users</group>
+    </sharedTo>
 </ListView>

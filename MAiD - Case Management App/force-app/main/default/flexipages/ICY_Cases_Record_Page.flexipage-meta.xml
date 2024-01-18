@@ -25,10 +25,21 @@
                         <valueListItems>
                             <value>Case.ICY_Reopen_Case</value>
                             <visibilityRule>
+                                <booleanFilter>1 AND (2 OR 3)</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.Status}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>Closed</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!$User.UserRole.Name}</leftValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>Team Admin</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!$User.UserRole.Name}</leftValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>Program Leader</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
