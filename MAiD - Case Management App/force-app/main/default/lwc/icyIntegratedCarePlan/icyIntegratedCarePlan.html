@@ -133,7 +133,7 @@
                                                 <template if:false={isReadOnly}>
                                                     <lightning-button-menu slot="actions" alternative-text="Show menu"
                                                         icon-size="x-small" menu-alignment="right">
-                                                        <lightning-menu-item if:true={editAccess} value="Edit"
+                                                        <lightning-menu-item value="Edit"
                                                             label="Edit" onclick={editHave} key-field={h.recordId}
                                                             data-record-id={h.recordId} icon-name="utility:edit">
                                                         </lightning-menu-item>
@@ -231,7 +231,7 @@
                                                 <template if:false={isReadOnly}>
                                                     <lightning-button-menu slot="actions" alternative-text="Show menu"
                                                         icon-size="x-small" menu-alignment="right">
-                                                        <lightning-menu-item if:true={editAccess} value="Edit"
+                                                        <lightning-menu-item value="Edit"
                                                             onclick={editNeed} label="Edit" key-field={n.recordId}
                                                             data-record-id={n.recordId} icon-name="utility:edit">
                                                         </lightning-menu-item>

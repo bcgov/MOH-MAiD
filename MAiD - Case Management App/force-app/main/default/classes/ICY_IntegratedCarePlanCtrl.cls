@@ -390,17 +390,6 @@ public class ICY_IntegratedCarePlanCtrl {
           return result;
       }
 
-      /*******
-      * Check if the logged in user is case member
-      *******/
-      @AuraEnabled
-      public static Boolean isLoggedInUserCaseMember(string caseId){
-          List<Case_Member__c> lstUser = new List<Case_Member__c>();
-          lstUser = [SELECT Id FROM Case_Member__c WHERE ICY_User__c =:UserInfo.getUserId() AND ICY_Case__c =: caseId AND ICY_Category_Assignment__c = 'Consulting' AND ICY_Status__c ='Active' LIMIT 1];
-          return lstUser.isEmpty()? false : true;
-      }
-
-
       /**
        * Case Team Wrapper
        */

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Community_Assigned__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <label>Community Assigned</label>
     <required>false</required>
@@ -23,32 +24,12 @@
             <value>
                 <fullName>Comox Valley 1</fullName>
                 <default>false</default>
-                <label>Comox Valley 1</label>
-            </value>
-            <value>
-                <fullName>Comox Valley 2</fullName>
-                <default>false</default>
-                <label>Comox Valley 2</label>
+                <label>Comox Valley</label>
             </value>
             <value>
                 <fullName>Richmond 1</fullName>
                 <default>false</default>
-                <label>Richmond 1</label>
-            </value>
-            <value>
-                <fullName>Richmond 2</fullName>
-                <default>false</default>
-                <label>Richmond 2</label>
-            </value>
-            <value>
-                <fullName>Richmond 3</fullName>
-                <default>false</default>
-                <label>Richmond 3</label>
-            </value>
-            <value>
-                <fullName>Richmond 4</fullName>
-                <default>false</default>
-                <label>Richmond 4</label>
+                <label>Richmond</label>
             </value>
             <value>
                 <fullName>Okanagan Similkameen</fullName>
@@ -58,12 +39,7 @@
             <value>
                 <fullName>Maple Ridge Pitt Meadows 1</fullName>
                 <default>false</default>
-                <label>Maple Ridge Pitt Meadows 1</label>
-            </value>
-            <value>
-                <fullName>Maple Ridge Pitt Meadows 2</fullName>
-                <default>false</default>
-                <label>Maple Ridge Pitt Meadows 2</label>
+                <label>Maple Ridge Pitt Meadows</label>
             </value>
             <value>
                 <fullName>Fraser Cascades</fullName>
@@ -78,32 +54,12 @@
             <value>
                 <fullName>Mission Team 1</fullName>
                 <default>false</default>
-                <label>Mission Team 1</label>
-            </value>
-            <value>
-                <fullName>Mission Team 2</fullName>
-                <default>false</default>
-                <label>Mission Team 2</label>
+                <label>Mission</label>
             </value>
             <value>
                 <fullName>Nanaimo-Ladysmith Team 1</fullName>
                 <default>false</default>
-                <label>Nanaimo-Ladysmith Team 1</label>
-            </value>
-            <value>
-                <fullName>Nanaimo-Ladysmith Team 2</fullName>
-                <default>false</default>
-                <label>Nanaimo-Ladysmith Team 2</label>
-            </value>
-            <value>
-                <fullName>Nanaimo-Ladysmith Team 3</fullName>
-                <default>false</default>
-                <label>Nanaimo-Ladysmith Team 3</label>
-            </value>
-            <value>
-                <fullName>Nanaimo-Ladysmith Team 4</fullName>
-                <default>false</default>
-                <label>Nanaimo-Ladysmith Team 4</label>
+                <label>Nanaimo-Ladysmith</label>
             </value>
             <value>
                 <fullName>North Okanagan Shuswap</fullName>

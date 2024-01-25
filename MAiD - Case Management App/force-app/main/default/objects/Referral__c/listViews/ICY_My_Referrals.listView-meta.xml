@@ -10,7 +10,7 @@
     <columns>Status__c</columns>
     <columns>CREATED_DATE</columns>
     <columns>OWNER.ALIAS</columns>
-    <filterScope>Mine</filterScope>
+    <filterScope>Everything</filterScope>
     <filters>
         <field>ICY_Is_My_Referral__c</field>
         <operation>equals</operation>

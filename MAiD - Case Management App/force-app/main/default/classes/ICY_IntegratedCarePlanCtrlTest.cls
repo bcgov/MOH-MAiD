@@ -204,7 +204,6 @@ public class ICY_IntegratedCarePlanCtrlTest {
             ICY_IntegratedCarePlanCtrl.getTransitionHaves(transitionPlans[0].transitionId);
             ICY_IntegratedCarePlanCtrl.getTransitionNeeds(transitionPlans[0].transitionId);
             ICY_IntegratedCarePlanCtrl.getTransitionSteps(caseRecord.Id,filter);
-            ICY_IntegratedCarePlanCtrl.isLoggedInUserCaseMember(caseRecord.Id);
             test.stopTest();
         // }
     }

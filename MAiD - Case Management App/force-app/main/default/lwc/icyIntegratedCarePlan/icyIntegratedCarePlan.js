@@ -6,7 +6,7 @@ import getTransitionNeeds from '@salesforce/apex/ICY_IntegratedCarePlanCtrl.getT
 import getCaseTeam from '@salesforce/apex/ICY_IntegratedCarePlanCtrl.getCaseTeam';
 import getUserProfileName from '@salesforce/apex/YTS_Notes_Documents_Controller.getUserProfileName';
 import getCaseStatus from '@salesforce/apex/ICY_IntegratedCarePlanCtrl.getCaseStatus';
-import checkIfUserIsCaseMember from '@salesforce/apex/ICY_IntegratedCarePlanCtrl.isLoggedInUserCaseMember';
+
 //DML Record
 import { updateRecord, deleteRecord } from 'lightning/uiRecordApi';
 //Transition Plan Fields Schema
@@ -74,7 +74,6 @@ export default class IcyIntegratedCarePlan extends LightningElement {
     isCaseClosed = false;
     isReadOnly = false;
     createAccess = false;
-    editAccess = false;
     whatsImpToMeReadOnly = true;
 
 
@@ -142,19 +141,9 @@ export default class IcyIntegratedCarePlan extends LightningElement {
             this.whatsImpToMeReadOnly = this.isReadOnly; //true;
             if (!this.isCaseClosed) {
                 this.createAccess = true;
-                this.editAccess = true; //false;
                 this.whatsImpToMeReadOnly = false; //true;
             }
-            return checkIfUserIsCaseMember({ caseId: this.caseId });
-        }).then(result => {
-            if(result){
-                this.isReadOnly=true;
-                this.createAccess=false;
-                this.editAccess = false;
-                this.whatsImpToMeReadOnly = true;
-             }
             this.showSpinner = false;
-
         }).catch(error => {
             this.showSpinner = false;
             console.error('$$ Error, ', JSON.stringify(error));

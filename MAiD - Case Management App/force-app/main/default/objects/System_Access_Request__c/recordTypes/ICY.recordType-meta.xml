@@ -86,10 +86,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Comox Valley 2</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Fraser Cascades</fullName>
             <default>false</default>
         </values>
@@ -102,31 +98,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Maple Ridge Pitt Meadows 2</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Mission Team 1</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Mission Team 2</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Nanaimo-Ladysmith Team 1</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Nanaimo-Ladysmith Team 2</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Nanaimo-Ladysmith Team 3</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Nanaimo-Ladysmith Team 4</fullName>
             <default>false</default>
         </values>
         <values>
@@ -143,18 +119,6 @@
         </values>
         <values>
             <fullName>Richmond 1</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Richmond 2</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Richmond 3</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Richmond 4</fullName>
             <default>false</default>
         </values>
         <values>

@@ -232,7 +232,7 @@
                                         </a>
                                     </td>
                                     <td style="text-align: center">
-                                        <a href="{!$Setup.ICY_SSO_Settings__c.Login_Location__c}">
+                                        <a href="{!$Setup.ICY_SSO_Settings__c.Portal_Redirect_Location__c}">
                                              <img src="{!URLFOR($Resource.icy_branding)}/images/button-register.png" alt="Register" border="0"/>
                                         </a>
                                     </td>
@@ -329,7 +329,7 @@
                                     <td bgcolor="#CCCCCC" class="rightColumnLinksBold">&raquo;</td>
                                     <td bgcolor="#CCCCCC"><a
                                         href="https://www.bceid.ca/register/" target="_parent"
-                                        class="rightColumnLinks">Register for BCeID</a></td>
+                                        class="rightColumnLinks">Register for Business BCeID</a></td>
                                 </tr>
 
                                   <tr>
@@ -342,7 +342,7 @@
                                     <td bgcolor="#CCCCCC" class="rightColumnLinksBold">&raquo;</td>
                                     <td bgcolor="#CCCCCC"><a
                                         href="http://www.gov.bc.ca/icyteams" target="bceidabout"
-                                        class="rightColumnLinks">Visit the ICY Website</a></td>
+                                        class="rightColumnLinks">Visit the ICY Teams Website</a></td>
                                 </tr>
 
                                  <tr>
