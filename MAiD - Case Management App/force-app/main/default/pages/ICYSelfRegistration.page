@@ -1,41 +1,45 @@
 <apex:page id="communitiesSelfRegPage" showHeader="true" controller="ICYSelfRegistrationController" title="{!$Label.site.user_registration}">
-    <apex:define name="body">  
+    <apex:define name="body">
         <center>
             <apex:form id="theForm" forceSSL="true">
                 <apex:outputPanel style="font-size: 1.5em; font-weight: bold; margin: 0.25em 0.5em">
-                    ICY Portal Registration 
+                    ICY Portal Registration
                 </apex:outputPanel>
                 <br/>
                 <apex:outputPanel style="font-size: 1.0em;">
                     <apex:outputText escape="false" value="{!mapobj.Context_prompt__c}"/>
-                </apex:outputPanel>  
-                
+                </apex:outputPanel>
+
                 <apex:pageMessages id="error"/>
                 <apex:panelGrid columns="4" style="margin-top:1em;">
                     <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.First_Name__c.Label}" for="RfirstName"/>
                     <apex:inputField id="RfirstName" required="true" value="{!request.First_Name__c}"/>
-					                    
+
                     <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.Last_Name__c.Label}" for="RlastName"/>
                     <apex:inputField id="RlastName" required="true" value="{!request.Last_Name__c}"/>
-                    
+
                     <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.Email__c.Label}" for="Remail"/>
                     <apex:inputField id="Remail" required="true" value="{!request.Email__c}"/>
-                    
+
                     <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.Contact_Phone_Number__c.Label}" for="Rphone"/>
                     <apex:inputField required="true" id="Rphone" value="{!request.Contact_Phone_Number__c}"/>
-                    
+
                     <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.ICY_Access_requested__c.Label}" for="RaccessRequested"/>
                     <apex:inputField required="true" id="RaccessRequested" value="{!request.ICY_Access_requested__c}"/>
-                    
+
                     <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.ICY_Employer_Organization__c.Label}" for="Rorganisation"/>
                     <apex:inputField id="Rorganisation" required="true" value="{!request.ICY_Employer_Organization__c}"/>
-                    
+
                     <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.ICY_Community_Assigned__c.Label}" for="Rcommunity"/>
                     <apex:inputField id="Rcommunity" required="true" value="{!request.ICY_Community_Assigned__c}"/>
-                    
+
                     <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.ICY_If_Other__c.Label}" for="Rother"/>
                     <apex:inputField id="Rother" value="{!request.ICY_If_Other__c}"/>
-                    
+
+                    <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.Business_BCeID_IDIR__c.Label}" for="Rid"/>
+                    <apex:inputField id="Rid" required="true" value="{!request.Business_BCeID_IDIR__c}"/>
+
+
                </apex:panelGrid>
                 <br/>
                 <apex:commandButton action="{!submitRequest}" value="Submit Request" id="submit"/>
@@ -54,10 +58,10 @@
             width: 3px;
             top: 1px;
             bottom: 1px;
-            
+
             }
             .myClass { width: 550px;
-            left: -4px;  
+            left: -4px;
             }
         </style>
     </apex:define>

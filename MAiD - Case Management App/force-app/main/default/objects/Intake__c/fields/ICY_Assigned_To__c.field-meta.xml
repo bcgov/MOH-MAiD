@@ -6,11 +6,22 @@
     <label>Assigned To</label>
     <lookupFilter>
         <active>true</active>
-        <booleanFilter>1 OR 2</booleanFilter>
+        <booleanFilter>1 OR 2 OR 3 OR 4</booleanFilter>
+        <errorMessage>Please select a valid ICY Team Member.</errorMessage>
         <filterItems>
-            <field>User.UserRole.RollupDescription</field>
+            <field>User.UserRole.DeveloperName</field>
             <operation>contains</operation>
-            <value>ICY</value>
+            <value>Program_Leader</value>
+        </filterItems>
+        <filterItems>
+            <field>User.UserRole.DeveloperName</field>
+            <operation>contains</operation>
+            <value>Clinical</value>
+        </filterItems>
+        <filterItems>
+            <field>User.UserRole.DeveloperName</field>
+            <operation>contains</operation>
+            <value>Admin</value>
         </filterItems>
         <filterItems>
             <field>User.Profile.Name</field>

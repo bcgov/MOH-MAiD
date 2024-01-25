@@ -11,7 +11,7 @@ import createPersonAcct from '@salesforce/apex/ICY_CompleteIntakeCtrl.createPers
 import { NavigationMixin } from 'lightning/navigation';
 
 const fields = [CONSENT_FIELD, STATUS_FIELD, VERBAL_FIELD];
-const InTakeRECFIELDS = ['Intake__c.CreatedDate', 'Intake__c.Referral__r.CreatedDate','Intake__c.Referral__r.ICY_Geographic_Area__c'];
+const InTakeRECFIELDS = ['Intake__c.CreatedDate', 'Intake__c.Referral__r.CreatedDate','Intake__c.Referral__r.ICY_Geographic_Area__c','Intake__c.Referral__r.Id'];
 const RESTRICTED_DESC = 'Restricted Case Documents will only be shared with the Navigator and the user who added the document. Any documents containing sensitive information should be uploaded as Restricted.';
 const COLLAB_DESC = 'Collaborative Case Documents will be shared with all support team members for this individual\'s case. Collaborative documents should be relevant to assist others in picture and planning activities.';
 
@@ -94,7 +94,7 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
         this.contentDocumentId = uploadedFiles[0].documentId;
         this.disableNext = false;
         this.isFileUploaded = true;
-        this.fileName = uploadedFiles[0].name;  
+        this.fileName = uploadedFiles[0].name;
     }
 
     handleUploadFinished1(event) {
@@ -103,7 +103,7 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
         this.signedContentDocumentId = uploadedFiles[0].documentId;
         this.disableSubmit = false;
         this.isSignedFileUploaded = true;
-        this.signedFileName = uploadedFiles[0].name;  
+        this.signedFileName = uploadedFiles[0].name;
     }
 
     handleNext() {
@@ -133,7 +133,7 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
 
             }
         }
-        
+
     }
     handleChange2(event) {
         let question2value = event.detail.value;
@@ -166,23 +166,25 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     handleSubmit() {
         this.showSpinner = true
         var caseId;
-        let casefields = { 'Status': 'Open', 'ICY_Consent__c': true, 
+
+        let casefields = { 'Status': 'Open', 'ICY_Consent__c': true,
                             'RecordTypeId': this.getRecordTypeId('ICY Standard Case'),
                             'ICY_Date_Intake_Happened__c': this.inTakeRec.fields.CreatedDate.value,
                             'ICY_Referral_Date__c': this.inTakeRec.fields.Referral__r.value.fields.CreatedDate.value,
-                            'ICY_Geographic_Area__c':this.inTakeRec.fields.Referral__r.value.fields.ICY_Geographic_Area__c.value
+                            'ICY_Geographic_Area__c':this.inTakeRec.fields.Referral__r.value.fields.ICY_Geographic_Area__c.value,
+                            'Referral__c':this.inTakeRec.fields.Referral__r.value.fields.Id.value
                             };
-        
+
         // Record details to pass to create method with api name of Object.
         let objCase = { 'apiName': 'Case', fields: casefields };
         // LDS method to create record.
         createRecord(objCase).then(response => {
-            
-            createPersonAcct({ strRecordId: this.recordId, strCaseID: response.id, strContentDoc: this.contentDocumentId, 
+
+            createPersonAcct({ strRecordId: this.recordId, strCaseID: response.id, strContentDoc: this.contentDocumentId,
                                 strDocumentType:this.documentType, strDocumentName: this.fileName, strSignedDoc: this.signedContentDocumentId,
                                 strSignedDocumentName: this.signedFileName, strDocumentTypeSigned: this.documentTypeSigned})
                 .then(result => {
-                    
+
                     let inTakefields = {
                         'Id': this.recordId,
                         'ICY_Consent_Provided__c': true,
@@ -192,10 +194,10 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
 
                     }
                     var objIntake = { fields: inTakefields };
-                    
+
                     updateRecord(objIntake)
                         .then(() => {
-                            
+
                             this.dispatchEvent(
                                 new ShowToastEvent({
                                     title: 'Success!',
@@ -208,7 +210,7 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                             this.navigateNext(response.id);
                         })
                         .catch(error => {
-                            
+
                             this.showSpinner = false;
                             this.dispatchEvent(
                                 new ShowToastEvent({
@@ -220,13 +222,13 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                         })
                 })
                 .catch(error => {
-                    
+
                     this.showSpinner = false;
                     console.error('Error: ' + JSON.stringify(error.message));
                 })
 
         }).catch(error => {
-            
+
             this.showSpinner = false;
             console.error('Error: ' + JSON.stringify(error.message));
         });
