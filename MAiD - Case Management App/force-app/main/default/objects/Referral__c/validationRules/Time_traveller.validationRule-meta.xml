@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_traveller</fullName>
+    <active>true</active>
+    <description>Error if birthdate is in the future</description>
+    <errorConditionFormula>Individual_Date_of_Birth__c &gt; TODAY()</errorConditionFormula>
+    <errorDisplayField>Individual_Date_of_Birth__c</errorDisplayField>
+    <errorMessage>Date of birth cannot be a future date</errorMessage>
+</ValidationRule>

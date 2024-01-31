@@ -13,9 +13,9 @@ public without sharing class ICY_CaseMember_Controller {
         if (YTS_Utility.lookupRole('Program Leader') || YTS_Utility.lookupRole('Team Admin') || profileName == 'System Administrator') hasRevokeAccess = true;
 
         if(parentRecId.getSObjectType() == Schema.Referral__c.SObjectType){
-            cmList = [SELECT Id, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_start_Date__c, ICY_Status__c,ICY_User__r.Name, ICY_Case_Contact__r.Contact_Full_Name__c, ICY_Team_Member__c, CreatedBy.Name  FROM Case_Member__c WHERE  Referral__c = :parentRecId ORDER By ICY_Status__c asc];
+            cmList = [SELECT Id, CreatedDate, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_Status__c,ICY_User__r.Name, ICY_Case_Contact__r.Contact_Full_Name__c, ICY_Team_Member__c, CreatedBy.Name FROM Case_Member__c WHERE  Referral__c = :parentRecId ORDER By ICY_Status__c asc];
         }else if(parentRecId.getSObjectType() == Schema.Case.SObjectType){
-            cmList = [SELECT Id, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_start_Date__c, ICY_Status__c,ICY_User__r.Name, ICY_Case_Contact__r.Contact_Full_Name__c, ICY_Team_Member__c, CreatedBy.Name FROM Case_Member__c WHERE  ICY_Case__c = :parentRecId ORDER By ICY_Status__c asc];
+            cmList = [SELECT Id, CreatedDate, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_Status__c,ICY_User__r.Name, ICY_Case_Contact__r.Contact_Full_Name__c, ICY_Team_Member__c, CreatedBy.Name FROM Case_Member__c WHERE  ICY_Case__c = :parentRecId ORDER By ICY_Status__c asc];
         }
 
         for(Case_Member__c c: cmList){
@@ -26,7 +26,7 @@ public without sharing class ICY_CaseMember_Controller {
             cm.statusBadgeClass = c.ICY_Status__c == 'Active'?'slds-theme_success':'slds-theme_warning';
             cm.category = c.ICY_Category_Assignment__c;
             cm.categoryBadgeClass = 'slds-badge';
-            cm.startDate = YTS_Utility.dateFormat_eeeeMMMdyyyy(c.ICY_start_Date__c);
+            cm.dateAdded = YTS_Utility.dateFormat_MMMdyyyykma(c.CreatedDate);
             cm.endDate = YTS_Utility.dateFormat_eeeeMMMdyyyy(c.ICY_End_Date__c);
             cm.isICYTeamMember = c.ICY_Team_Member__c?'Yes':'No';
             cm.addedBy = c.CreatedBy.Name;
@@ -65,7 +65,7 @@ public without sharing class ICY_CaseMember_Controller {
         @AuraEnabled public String statusBadgeClass{get;set;}
         @AuraEnabled public String category{get;set;}
         @AuraEnabled public String categoryBadgeClass{get;set;}
-        @AuraEnabled public String startDate{get;set;}
+        @AuraEnabled public String dateAdded{get;set;}
         @AuraEnabled public String endDate{get;set;}
         @AuraEnabled public String isICYTeamMember{get;set;}
         @AuraEnabled public String addedBy{get;set;}
