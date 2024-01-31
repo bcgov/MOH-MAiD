@@ -9,13 +9,13 @@ package.xml
 **profilePasswordPolicies
 **profileSessionSettings
 **settings
-**standardValueSets
+#**standardValueSets
 #**matchingRule
 #duplicateRules
 entitlementProcesses
 #**permissionset
 #**recordTypes
-**sharingRules
+#**sharingRules
 
 #MoH Standard User.profile
 
