@@ -183,13 +183,11 @@ export default class IcyIntegratedCarePlan extends LightningElement {
 
     getRowActions(row, doneCallback) {
         const actions = [];
-        if (row.isGoalStepEditable) {
-            actions.push({
-                'label': 'Edit',
-                'iconName': 'utility:edit',
-                'name': 'edit'
-            });
-        }
+        actions.push({
+            'label': 'Edit',
+            'iconName': 'utility:edit',
+            'name': 'edit'
+        });
         if (row.isGoalStepDeletable) {
             actions.push({
                 'label': 'Delete',
