@@ -1,10 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
+        <name>Referral_Closed_Email_Alert</name>
+        <label>Referral Closed Email Alert</label>
+        <locationX>314</locationX>
+        <locationY>539</locationY>
+        <actionName>Referral__c.Referral_Closed_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <actionCalls>
         <name>Referral_Record_Email_Alert</name>
         <label>Referral Record Email Alert</label>
-        <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
         <actionName>Referral__c.Referral_Record_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -15,7 +30,86 @@
             </value>
         </inputParameters>
     </actionCalls>
+    <actionCalls>
+        <name>Referral_Updated_Email_Alert</name>
+        <label>Referral Updated Email Alert</label>
+        <locationX>578</locationX>
+        <locationY>539</locationY>
+        <actionName>Referral__c.Referral_Updated_Email_Alert</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
     <apiVersion>54.0</apiVersion>
+    <decisions>
+        <name>New_Referral</name>
+        <label>New Referral</label>
+        <locationX>248</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Referral_Closed</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Existing Referral</defaultConnectorLabel>
+        <rules>
+            <name>Yes_New_Referral</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ISNEW</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Referral_Record_Email_Alert</targetReference>
+            </connector>
+            <label>New Referral</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Referral_Closed</name>
+        <label>Referral Closed</label>
+        <locationX>446</locationX>
+        <locationY>431</locationY>
+        <defaultConnector>
+            <targetReference>Referral_Updated_Email_Alert</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Referral Updated</defaultConnectorLabel>
+        <rules>
+            <name>Yes_Referral_Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>IsChanged</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Referral_Closed_Email_Alert</targetReference>
+            </connector>
+            <label>Referral Closed</label>
+        </rules>
+    </decisions>
+    <description>Added separate email action for when the referral is closed.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ISNEW</name>
+        <dataType>Boolean</dataType>
+        <expression>ISNEW()</expression>
+    </formulas>
     <interviewLabel>Referral Record Email Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>ICY Referral Owner Email Flow</label>
     <processMetadataValues>
@@ -38,10 +132,10 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>50</locationX>
+        <locationX>122</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Referral_Record_Email_Alert</targetReference>
+            <targetReference>New_Referral</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
