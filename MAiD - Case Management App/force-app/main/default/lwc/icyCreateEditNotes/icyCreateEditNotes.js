@@ -25,7 +25,9 @@ export default class icyCreateEditNotes extends LightningElement {
         Referral_Subject__c: '',
         Other__c:'',
         Other_Team_Member__c:'',
-        Mode_Location__c:''
+        Mode_Location__c:'',
+        Attendees__c:'',
+        Length_of_Meeting__c:''
     };
     isCase = false;
     noteType;
@@ -171,6 +173,12 @@ export default class icyCreateEditNotes extends LightningElement {
                 case 'Other_Team_Member__c':
                     this.note.Other_Team_Member__c = event.target.value;
                     break;
+                case 'Attendees__c':
+                    this.note.Attendees__c = event.target.value;
+                    break;
+                case 'Length_of_Meeting__c':
+                  this.note.Length_of_Meeting__c = event.target.value;
+                  break;
             }
         }
     }

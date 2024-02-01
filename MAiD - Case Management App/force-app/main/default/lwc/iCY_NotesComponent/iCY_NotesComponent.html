@@ -154,6 +154,36 @@
                         </div>
                         <br />
                         <div class="slds-gutters slds-grid">
+                            <div class="slds-col slds-size_5-of-6">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label"
+                                            for="text-input-id-47"><b>Attendees</b></label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-formatted-text style="word-wrap: break-word;" value={n.attendees}>
+                                            </lightning-formatted-text>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="slds-gutters slds-grid">
+                          <div class="slds-col slds-size_5-of-6">
+                              <span>
+                                  <div class="slds-form-element">
+                                      <label class="slds-form-element__label"
+                                          for="text-input-id-47"><b>Length of Meeting (in minutes)</b></label>
+                                      <div class="slds-form-element__control">
+                                          <lightning-formatted-number style="word-wrap: break-word;" value={n.lengthOfMeeting}>
+                                          </lightning-formatted-number>
+                                      </div>
+                                  </div>
+                              </span>
+                          </div>
+                        </div>
+                        <br />
+                        <div class="slds-gutters slds-grid">
                             <div class="slds-col slds-size_2-of-8">
                                 <span>
                                     <div class="slds-form-element">
