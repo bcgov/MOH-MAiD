@@ -12,6 +12,16 @@
         <template>ICY_Email_Templates/Referral_Ownership_Transfer</template>
     </alerts>
     <alerts>
+        <fullName>Referral_Closed_Email_Alert</fullName>
+        <description>Referral Closed Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ICY_Email_Templates/Referral_Status_Closed_Template</template>
+    </alerts>
+    <alerts>
         <fullName>Referral_Record_Email_Alert</fullName>
         <description>Referral Record Email Alert</description>
         <protected>false</protected>
@@ -21,5 +31,15 @@
         <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>ICY_Email_Templates/Referral_Owner_Email_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Referral_Updated_Email_Alert</fullName>
+        <description>Referral Updated Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ICY_Email_Templates/ICY_Referral_Updated_Template</template>
     </alerts>
 </Workflow>

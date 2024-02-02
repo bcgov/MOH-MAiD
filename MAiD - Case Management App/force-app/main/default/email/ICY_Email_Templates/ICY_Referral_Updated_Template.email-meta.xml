@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
     <available>true</available>
-    <encodingKey>ISO-8859-1</encodingKey>
-    <name>ICY Referral Status Closed Template</name>
+    <encodingKey>UTF-8</encodingKey>
+    <name>ICY Referral Updated Template</name>
     <style>none</style>
-    <subject>Referral Closed</subject>
+    <subject>Referral Updated</subject>
     <textOnly>Hello,
 
-{!Referral__c.Name} has been closed. Please follow link for details.
+{!Referral__c.Name} has been updated. Please follow link for details.
 
 Thanks</textOnly>
     <type>custom</type>
