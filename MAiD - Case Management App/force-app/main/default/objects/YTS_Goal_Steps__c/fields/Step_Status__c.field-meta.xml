@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Step_Status__c</fullName>
+    <description>USED in Reports</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Current_Stage__c , &apos;Completed&apos;) ,&apos;Completed&apos;,
+IF(AND(Step_Completed_By__c &lt; TODAY(),Step_Completed_By__c &gt; TODAY()-15),&apos;Overdue&apos;,
+IF( Step_Completed_By__c &lt; TODAY()-15,&apos;Late&apos;,
+IF(AND( today()&lt; Step_Completed_By__c ,Step_Completed_By__c &lt; TODAY()+30),&apos;Pending&apos;,
+IF(Step_Completed_By__c &gt; TODAY()+30,&apos;Planned&apos;,&apos;&apos;)))))</formula>
+    <label>Step Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
