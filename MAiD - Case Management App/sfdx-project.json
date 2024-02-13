@@ -10,7 +10,7 @@
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "57.0",
+    "sourceApiVersion": "59.0",
     "packageAliases": {
         "MAiD - Case Management App": "0Ho5W000000002HSAQ",
         "MAiD - Case Management App@1.1.2-1": "04t5W0000000TgJQAU",
