@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingCriteriaRules>
+        <fullName>MAiD_Cases_Visibility</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>MAiD Cases Visibility</label>
+        <sharedTo>
+            <group>All_MAiD_users</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>MAiD Error Log,MAiD Case</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
         <fullName>ShareICYCasesWithCoastMountainsAdmin</fullName>
         <accessLevel>Edit</accessLevel>
         <label>ShareICYCasesWithCoastMountainsAdmin</label>
