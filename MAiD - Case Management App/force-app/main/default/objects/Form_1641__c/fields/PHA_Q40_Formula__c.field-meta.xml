@@ -2,7 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PHA_Q40_Formula__c</fullName>
     <externalId>false</externalId>
-    <formula>Dispensed_Date_Time__c</formula>
+    <formula>DATE(year(DATEVALUE( Dispensed_Date_Time__c )),month(DATEVALUE( Dispensed_Date_Time__c )),day(DATEVALUE( Dispensed_Date_Time__c )))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>PHA_Q40 - Formula</label>
     <required>false</required>
