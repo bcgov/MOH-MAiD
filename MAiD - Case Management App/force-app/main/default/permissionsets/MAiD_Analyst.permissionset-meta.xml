@@ -30,8 +30,13 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
-        <field>Account.Specialty_2023Reg__c</field>
+        <editable>false</editable>
+        <field>Account.Specialty_Other__pc</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Account.Specialty__pc</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -40,13 +45,8 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Specialty_Other__pc</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Account.Specialty__pc</field>
+        <editable>true</editable>
+        <field>Account.Specialty_2023Reg__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
