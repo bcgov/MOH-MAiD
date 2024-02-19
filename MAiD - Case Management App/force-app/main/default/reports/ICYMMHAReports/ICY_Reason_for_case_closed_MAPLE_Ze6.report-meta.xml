@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Case.ICY_Geographic_Area__c</field>
+    </columns>
+    <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>CLOSED_DATEONLY</field>
+    </columns>
+    <columns>
+        <field>Case.Referral__c</field>
+    </columns>
+    <columns>
+        <field>Case.ICY_Rationale__c</field>
+    </columns>
+    <description>ICY Reason for case closed - MAPLE</description>
+    <filter>
+        <criteriaItems>
+            <column>RECORDTYPE</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Case.ICY_Close_Case</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.ICY_Geographic_Area__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Maple Ridge-Pitt Meadows Team 1,Maple Ridge-Pitt Meadows Team 2,Maple Ridge-Pitt Meadows Team 3</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>ICY Reason for case closed - MAPLE</name>
+    <params>
+        <name>units</name>
+        <value>h</value>
+    </params>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CaseList</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <showGrandTotal>true</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CREATED_DATE</dateColumn>
+        <endDate>2023-12-31</endDate>
+        <interval>INTERVAL_CUSTOM</interval>
+        <startDate>2022-07-01</startDate>
+    </timeFrameFilter>
+</Report>
