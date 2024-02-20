@@ -4,9 +4,11 @@
     <booleanFilter>1 OR 2</booleanFilter>
     <columns>CASES.CASE_NUMBER</columns>
     <columns>NAME</columns>
+    <columns>Current_Age__c</columns>
     <columns>CASES.STATUS</columns>
     <columns>CASES.PRIORITY</columns>
     <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
+    <columns>ICY_Geographic_Area__c</columns>
     <filterScope>Everything</filterScope>
     <filters>
         <field>CASES.RECORDTYPE</field>

@@ -3,7 +3,7 @@
     <fullName>Error_Log</fullName>
     <active>true</active>
     <businessProcess>Error Log Support Process</businessProcess>
-    <label>Error Log</label>
+    <label>MAiD Error Log</label>
     <picklistValues>
         <picklist>Origin</picklist>
         <values>

@@ -7,10 +7,16 @@
         <sharedTo>
             <role>Coast_Mountains_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Coast_Mountains</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Coast Mountains Team Hazelton,Coast Mountains Team Terrace</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -21,10 +27,16 @@
         <sharedTo>
             <role>Comox_Valley_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Comox_Valley</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Comox Valley Team 2,Comox Valley Team 1</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -35,10 +47,16 @@
         <sharedTo>
             <role>Fraser_Cascades_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Fraser_Cascades</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Fraser Cascades</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -49,10 +67,16 @@
         <sharedTo>
             <role>Kootenay_Columbia_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Kootenay_Columbia</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Kootenay-Columbia</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -63,10 +87,16 @@
         <sharedTo>
             <role>Maple_Ridge_Pitt_Meadows_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Maple_Ridge_Pitt_Meadows</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Maple Ridge-Pitt Meadows Team 1,Maple Ridge-Pitt Meadows Team 2,Maple Ridge-Pitt Meadows Team 3</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -77,10 +107,16 @@
         <sharedTo>
             <role>Mission_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Mission</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Mission Team 1,Mission Team 2</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -91,10 +127,16 @@
         <sharedTo>
             <role>Nanaimo_Ladysmith_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Nanaimo_Ladysmith</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Nanaimo-Ladysmith Team 3,Nanaimo-Ladysmith Team 1,Nanaimo-Ladysmith Team 4,Nanaimo-Ladysmith Team 2</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -105,10 +147,16 @@
         <sharedTo>
             <role>North_Okanagan_Shuswap_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>North_Okanagan_Shuswap</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>North Okanagan Shuswap</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -119,10 +167,16 @@
         <sharedTo>
             <role>Okanagan_Similkameen_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Okanagan_Similkameen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Okanagan-Similkameen</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -133,10 +187,16 @@
         <sharedTo>
             <role>Pacific_Rim_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Pacific_Rim</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Pacific Rim</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -147,10 +207,16 @@
         <sharedTo>
             <role>Richmond_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>Richmond</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Richmond Team 3,Richmond Team 1,Richmond Team 4,Richmond Team 2</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -161,14 +227,20 @@
         <sharedTo>
             <role>qathet_Powell_River_Team_Admin</role>
         </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
             <value>qathet_Powell_River</value>
         </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>qathet (Powell River)</value>
+        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
-   <sharingOwnerRules>
+    <sharingOwnerRules>
         <fullName>ShareICYCaseWithICYBusinessAdministrator</fullName>
         <accessLevel>Edit</accessLevel>
         <label>ShareICYCaseWithICYBusinessAdministrator</label>

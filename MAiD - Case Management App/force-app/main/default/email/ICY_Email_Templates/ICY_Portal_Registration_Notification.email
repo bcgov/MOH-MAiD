@@ -1,0 +1,12 @@
+First Name :  {!System_Access_Request__c.First_Name__c}
+Last Name : {!System_Access_Request__c.Last_Name__c}
+
+Email : {!System_Access_Request__c.Email__c}
+Contact Phone Number : {!System_Access_Request__c.Contact_Phone_Number__c}
+Access Requested : {!System_Access_Request__c.ICY_Access_requested__c}
+Employer Organization : {!System_Access_Request__c.ICY_Employer_Organization__c}
+Community Assigned : {!System_Access_Request__c.ICY_Community_Assigned__c}
+
+If Other Employer Organization : {!System_Access_Request__c.ICY_If_Other__c}
+
+Business BCeID/IDIR : {!System_Access_Request__c.Business_BCeID_IDIR__c}
