@@ -7,6 +7,9 @@ import getCaseTeam from '@salesforce/apex/ICY_IntegratedCarePlanCtrl.getCaseTeam
 import getUserProfileName from '@salesforce/apex/YTS_Notes_Documents_Controller.getUserProfileName';
 import getCaseStatus from '@salesforce/apex/ICY_IntegratedCarePlanCtrl.getCaseStatus';
 
+//Custom Labels
+import ICY_RecordDeletedSuccessfully from '@salesforce/label/c.ICY_RecordDeletedSuccessfully';
+
 //DML Record
 import { updateRecord, deleteRecord } from 'lightning/uiRecordApi';
 //Transition Plan Fields Schema
@@ -468,7 +471,7 @@ export default class IcyIntegratedCarePlan extends LightningElement {
             this.dispatchEvent(
                 new ShowToastEvent({
                     title: 'Success',
-                    message: 'Record Deleted Successfully',
+                    message: ICY_RecordDeletedSuccessfully,
                     variant: 'success'
                 })
             )

@@ -4,7 +4,11 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getPicklistvalues from '@salesforce/apex/ICY_Referral_Controller.getPicklistvalues';
 import upsertCaseMember from '@salesforce/apex/ICY_CaseMember_Controller.upsertCaseMember';
 //Custom Labels
-import YTS_Interview_Generic_Validation_Msg from '@salesforce/label/c.YTS_Interview_Generic_Validation_Msg'
+import YTS_Interview_Generic_Validation_Msg from '@salesforce/label/c.YTS_Interview_Generic_Validation_Msg';
+import ICY_CaseMemberAdded from '@salesforce/label/c.ICY_CaseMemberAdded';
+import ICY_UnableToAddMember from '@salesforce/label/c.ICY_UnableToAddMember';
+
+
 export default class IcyCreateEditCaseTeamMember extends LightningElement {
 
     @api parentId;
@@ -140,7 +144,7 @@ export default class IcyCreateEditCaseTeamMember extends LightningElement {
                 if(result == 'SUCCESS'){
                     console.log('$$ Case Member Inserted: ');
                     const evt = new ShowToastEvent({
-                        title: 'Case Member Added Successfully!!!',
+                        title: ICY_CaseMemberAdded,
                         variant: 'success'
                     });
                     this.dispatchEvent(evt);
@@ -159,7 +163,7 @@ export default class IcyCreateEditCaseTeamMember extends LightningElement {
             console.error('$$ Error Inserting Case Member: ', error);
 
             const evt = new ShowToastEvent({
-                title: 'Oops!! Unable To Add Member. Please try again or contact Admin',
+                title: ICY_UnableToAddMember,
                 variant: 'error'
             });
             this.dispatchEvent(evt);

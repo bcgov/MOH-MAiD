@@ -27,6 +27,15 @@ import CONTACT_TYPE from '@salesforce/schema/Case_Contact__c.Contact_Type__c';
 import PRIMARY_CONTACT_IND from '@salesforce/schema/Referral__c.Primary_Contact_Is_Individual_Indicator__c';
 import REFERRAL_ID from '@salesforce/schema/Referral__c.Id';
 
+//Custom Labels
+import ICY_EitherIndividualHomePhone from '@salesforce/label/c.ICY_EitherIndividualHomePhone';
+import ICY_MissingRequiredFields from '@salesforce/label/c.ICY_MissingRequiredFields';
+import ICY_ReferralContactCreated from '@salesforce/label/c.ICY_ReferralContactCreated';
+import ICY_ReferralContactUpdated from '@salesforce/label/c.ICY_ReferralContactUpdated';
+
+
+
+
 
 export default class YtsCreateEditReferralContact extends LightningElement {
     @track contact = {
@@ -204,7 +213,7 @@ export default class YtsCreateEditReferralContact extends LightningElement {
         this.disableButton();
         if (!this.isInputValid()) {
             const evt = new ShowToastEvent({
-                title: 'Missing Required Fields',
+                title: ICY_MissingRequiredFields,
                 variant: 'error'
             });
             this.dispatchEvent(evt);
@@ -213,7 +222,7 @@ export default class YtsCreateEditReferralContact extends LightningElement {
         }
         if ((this.contact.Preferred_method_of_contact__c == 'Email' && !this.contact.Contact_Person_Email_Address__c) || ((this.contact.Preferred_method_of_contact__c == 'Phone' || this.contact.Preferred_method_of_contact__c == 'Text') && !this.contact.Contact_Person_Home_Phone_Number__c)) {
             const evt = new ShowToastEvent({
-                title: 'either Individual Home Phone or Email must be provided',
+                title: ICY_EitherIndividualHomePhone,
                 variant: 'error'
             });
             this.dispatchEvent(evt);
@@ -258,7 +267,7 @@ export default class YtsCreateEditReferralContact extends LightningElement {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Success',
-                        message: 'Referral Contact Updated',
+                        message: ICY_ReferralContactUpdated ,
                         variant: 'success',
                     }),
                 );
@@ -277,7 +286,7 @@ export default class YtsCreateEditReferralContact extends LightningElement {
                         this.dispatchEvent(
                             new ShowToastEvent({
                                 title: 'Success',
-                                message: 'Referral Contact Created',
+                                message: ICY_ReferralContactCreated,
                                 variant: 'success',
                             }),
                         );
@@ -289,7 +298,7 @@ export default class YtsCreateEditReferralContact extends LightningElement {
                     this.dispatchEvent(
                         new ShowToastEvent({
                             title: 'Success',
-                            message: 'Referral Contact Created',
+                            message: ICY_ReferralContactCreated,
                             variant: 'success',
                         }),
                     );
