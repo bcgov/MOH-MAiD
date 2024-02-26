@@ -3,20 +3,12 @@
     <baseObject>Case</baseObject>
     <category>other</category>
     <deployed>true</deployed>
-    <description>Case Transition Goals</description>
+    <description>ICY Cases with or without Case Notes</description>
     <join>
-        <join>
-            <join>
-                <outerJoin>false</outerJoin>
-                <relationship>Transition_Goal_Steps__r</relationship>
-            </join>
-            <outerJoin>false</outerJoin>
-            <relationship>Transition_Haves_And_Needs__r</relationship>
-        </join>
-        <outerJoin>false</outerJoin>
-        <relationship>Transition_Plans__r</relationship>
+        <outerJoin>true</outerJoin>
+        <relationship>Notes__r</relationship>
     </join>
-    <label>Case Transition Goals</label>
+    <label>ICY Cases with or without Case Notes</label>
     <sections>
         <columns>
             <checkedByDefault>false</checkedByDefault>
@@ -53,7 +45,7 @@
             <field>Origin</field>
             <table>Case</table>
         </columns>
-         <columns>
+        <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>ClosedDate</field>
             <table>Case</table>
@@ -93,7 +85,7 @@
             <field>Additional_Notes__c</field>
             <table>Case</table>
         </columns>
-         <columns>
+        <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Case_Type_Reported_Date__c</field>
             <table>Case</table>
@@ -113,7 +105,7 @@
             <field>Health_Canada_Reportable_Date__c</field>
             <table>Case</table>
         </columns>
-         <columns>
+        <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Case_re_open_date__c</field>
             <table>Case</table>
@@ -128,7 +120,7 @@
             <field>Identify_as_Indigenious__c</field>
             <table>Case</table>
         </columns>
-         <columns>
+        <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Preferred_Gender__c</field>
             <table>Case</table>
@@ -238,7 +230,7 @@
             <field>Last_Active_Date__c</field>
             <table>Case</table>
         </columns>
-         <columns>
+        <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Record_Type_Name__c</field>
             <table>Case</table>
@@ -253,7 +245,7 @@
             <field>Region__c</field>
             <table>Case</table>
         </columns>
-         <columns>
+        <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>sfxId__c</field>
             <table>Case</table>
@@ -274,234 +266,83 @@
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>Id</field>
-            <table>Case.Transition_Plans__r</table>
+            <table>Case.Notes__r</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Owner</field>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>true</checkedByDefault>
             <field>Name</field>
-            <table>Case.Transition_Plans__r</table>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CreatedDate</field>
-            <table>Case.Transition_Plans__r</table>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>CreatedBy</field>
-            <table>Case.Transition_Plans__r</table>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedDate</field>
-            <table>Case.Transition_Plans__r</table>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
-            <table>Case.Transition_Plans__r</table>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastActivityDate</field>
-            <table>Case.Transition_Plans__r</table>
+            <field>Description__c</field>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Transition_Domain__c</field>
-            <table>Case.Transition_Plans__r</table>
+            <field>Intake__c</field>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Transition_Plan_Status__c</field>
-            <table>Case.Transition_Plans__r</table>
+            <field>Mode_Location__c</field>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>What_s_Important_to_Me__c</field>
-            <table>Case.Transition_Plans__r</table>
-        </columns>
-        <masterLabel>Transition Plans</masterLabel>
-    </sections>
-    <sections>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
+            <field>Notes_Type__c</field>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
+            <field>Other_Team_Member__c</field>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
+            <field>Other__c</field>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
+            <field>Referral_Subject__c</field>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
+            <field>Referral__c</field>
+            <table>Case.Notes__r</table>
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>LastActivityDate</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
+            <field>Team_Member__c</field>
+            <table>Case.Notes__r</table>
         </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Contact_Organization__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Details__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>End_Date__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Have_Need_Other_Description__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Have__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ICY_Has_Agreement_Been_Captured__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Need_Status__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Need__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Start_Date__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Test_to_be_Depricated__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r</table>
-        </columns>
-        <masterLabel>Transition Haves And Needs</masterLabel>
-    </sections>
-    <sections>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Id</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>true</checkedByDefault>
-            <field>Name</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedDate</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>CreatedBy</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedDate</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastModifiedBy</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>LastActivityDate</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Action_Goal_Description__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Action_To_Meet_Goal__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Assigned_Case_Team_Member__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Current_Stage__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>ICY_Case_Contact__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Step_Completed_By__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Title__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Who_Is_Supporting_this__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Individual_Preferred_Name__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Transition_Plan_Domain__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>Step_Status__c</field>
-            <table>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r</table>
-        </columns>
-        <masterLabel>Transition Goal Steps</masterLabel>
+        <masterLabel>Notes</masterLabel>
     </sections>
 </ReportType>
