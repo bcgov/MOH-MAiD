@@ -10,13 +10,19 @@ import ID_FIELD from '@salesforce/schema/Referral__c.Id';
 import REASON_FIELD from '@salesforce/schema/Referral__c.Referral_Close_Reason__c';
 import RATIONALE_FIELD from '@salesforce/schema/Referral__c.ICY_Rationale_For_Closure__c';
 import STATUS_FIELD from '@salesforce/schema/Referral__c.Status__c';
+//Custom Labels
+import ICY_ReferralClosedSuccessfully from '@salesforce/label/c.ICY_ReferralClosedSuccessfully';
+import ICY_ReviewTheErrors from '@salesforce/label/c.ICY_ReviewTheErrors';
+import ICY_ErrorClosingReferral from '@salesforce/label/c.ICY_ErrorClosingReferral';
+
+
 
 const FIELDS = [REASON_FIELD, RATIONALE_FIELD];
 
 const CLOSED_STATUS = 'Closed';
-const SUCCESS_MESSAGE = 'Referral Closed Successfully';
-const ERROR_MESSAGE = 'Review the errors on this page.';
-const UNKNOWN_ERROR_MESSAGE = 'Error closing referral';
+const SUCCESS_MESSAGE = ICY_ReferralClosedSuccessfully;
+const ERROR_MESSAGE = ICY_ReviewTheErrors;
+const UNKNOWN_ERROR_MESSAGE = ICY_ErrorClosingReferral;
 const LOST_ACCESS_ERROR_MESSAGE = 'INSUFFICIENT_ACCESS';
 const LOST_ACCESS_ERROR_MESSAGE2 = 'Not Found';
 const LOST_ACCESS_ERROR_MESSAGE3 = 'INSUFFICIENT_ACCESS_OR_READONLY';

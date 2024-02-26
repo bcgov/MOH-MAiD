@@ -64,7 +64,7 @@ public string cid;
             //if(listUserAccessRecord.Isempty()) 
             {
                 //system.debug('Entered ELSE');
-                ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR,'Insufficient Privileges: You do not have access to this record.'));
+                ApexPages.addMessage(new ApexPages.message(ApexPages.severity.ERROR,System.label.ICY_InsufficientPriviliges;));
                 rend=false;
                 
             }

@@ -24,7 +24,8 @@ public without sharing class ICYSelfRegistrationController {
         string role = request.ICY_Employer_Organization__c;
         if(role == 'Other' && (string.isBlank(request.ICY_If_Other__c)))
         {
-            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, 'Please specify the other Organization'));
+            ApexPages.addMessage(new ApexPages.Message(ApexPages.Severity.ERROR, System.label.ICY_SpecifyOtherOrg));
+            
             return null;
         }else
         {
