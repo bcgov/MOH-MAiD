@@ -71,7 +71,7 @@ public with sharing class YTS_Utility {
      * converts date time value to "January 15, 2024 4:32 pm" format
      */
     public static String dateFormat_MMMdyyyykma(DateTime dt){
-        return dt.format('MMMMM d, yyyy k:m a').replace('AM', 'am').replace('PM', 'pm');
+        return dt.format('MMMMM d, yyyy h:mm a').replace('AM', 'am').replace('PM', 'pm');
     }
 
     /**
