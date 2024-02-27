@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Phone_number_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>OR(AND(Individual_Cell_Phone_Number__c!=null,OR(NOT(ISNUMBER(Individual_Cell_Phone_Number__c)),LEN(Individual_Cell_Phone_Number__c)!=10)),
+AND(Individual_Home_Phone_Number__c!=null,OR(NOT(ISNUMBER(Individual_Home_Phone_Number__c)),LEN(Individual_Home_Phone_Number__c)!=10)),
+AND(Individual_Work_Phone_Number__c!=null,OR(NOT(ISNUMBER(Individual_Work_Phone_Number__c)),LEN(Individual_Work_Phone_Number__c)!=10)),
+AND(ICY_Other_Phone__c!=null,OR(NOT(ISNUMBER(ICY_Other_Phone__c)),LEN(ICY_Other_Phone__c)!=10)))</errorConditionFormula>
+    <errorMessage>Phone number must be 10 digits</errorMessage>
+</ValidationRule>
