@@ -3,12 +3,12 @@
     <fullName>Phone_number_Validation</fullName>
     <active>true</active>
     <errorConditionFormula>OR(AND(Individual_Cell_Phone_Number__c!=null,
-NOT(REGEX(Individual_Cell_Phone_Number__c,&quot;(\\D?[0-9]{3}\\D?)[\\s][0-9]{3}-[0-9]{4}&quot;))),
-AND(Individual_Home_Phone_Number__c!=null,
-NOT(REGEX(Individual_Home_Phone_Number__c,&quot;(\\D?[0-9]{3}\\D?)[\\s][0-9]{3}-[0-9]{4}&quot;))),
+NOT(REGEX(Individual_Cell_Phone_Number__c,&quot;(\\D?[0-9]{3}\\D?)[\\s][0-9]{3}-[0-9]{4}&quot;)),NOT(REGEX(Individual_Cell_Phone_Number__c,&quot;^[0-9]{10}$&quot;))),
+AND(Individual_Cell_Phone_Number__c!=null,
+NOT(REGEX(Individual_Cell_Phone_Number__c,&quot;(\\D?[0-9]{3}\\D?)[\\s][0-9]{3}-[0-9]{4}&quot;)),NOT(REGEX(Individual_Cell_Phone_Number__c,&quot;^[0-9]{10}$&quot;))),
 AND(Individual_Work_Phone_Number__c!=null,
-NOT(REGEX(Individual_Work_Phone_Number__c,&quot;(\\D?[0-9]{3}\\D?)[\\s][0-9]{3}-[0-9]{4}&quot;))),
+NOT(REGEX(Individual_Work_Phone_Number__c,&quot;(\\D?[0-9]{3}\\D?)[\\s][0-9]{3}-[0-9]{4}&quot;)),NOT(REGEX(Individual_Work_Phone_Number__c,&quot;^[0-9]{10}$&quot;))),
 AND(ICY_Other_Phone__c!=null,
-NOT(REGEX(ICY_Other_Phone__c,&quot;(\\D?[0-9]{3}\\D?)[\\s][0-9]{3}-[0-9]{4}&quot;))))</errorConditionFormula>
-    <errorMessage>Phone number must  in format (xxx) xxx-xxxx</errorMessage>
+NOT(REGEX(ICY_Other_Phone__c,&quot;(\\D?[0-9]{3}\\D?)[\\s][0-9]{3}-[0-9]{4}&quot;)),NOT(REGEX(ICY_Other_Phone__c,&quot;^[0-9]{10}$&quot;))))</errorConditionFormula>
+    <errorMessage>Phone number should be in valid format 0000000000 or (000) 000-0000</errorMessage>
 </ValidationRule>
