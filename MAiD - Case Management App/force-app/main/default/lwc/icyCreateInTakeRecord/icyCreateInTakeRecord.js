@@ -3,7 +3,11 @@ import { NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CloseActionScreenEvent } from 'lightning/actions';
 
-import createICYIntakeRecord from '@salesforce/apex/ICY_Referral_Controller.createICYIntakeRecord'
+import createICYIntakeRecord from '@salesforce/apex/ICY_Referral_Controller.createICYIntakeRecord';
+
+//Custom Labels
+import ICY_UnableCreateIntake from '@salesforce/label/c.ICY_UnableCreateIntake';
+import ICY_IntakeCreatedSuccessfully from '@salesforce/label/c.ICY_IntakeCreatedSuccessfully';
  
 export default class IcyCreateInTakeRecord extends NavigationMixin(LightningElement) {
     @api recordId;
@@ -29,7 +33,7 @@ export default class IcyCreateInTakeRecord extends NavigationMixin(LightningElem
             console.error('$$ Error Creating Intake: ', error);
             const event = new ShowToastEvent({
                 title: 'error',
-                message: 'Unable to Create Intake!!! '+error,
+                message: ICY_UnableCreateIntake +' ' +error,
                 variant: 'error',
                 mode: 'dismissable'
             });
@@ -46,7 +50,7 @@ export default class IcyCreateInTakeRecord extends NavigationMixin(LightningElem
 
     showToast() {
         const event = new ShowToastEvent({
-            title: 'Intake Created Successfully',
+            title: ICY_IntakeCreatedSuccessfully ,
             message: '',
             variant: 'success',
             mode: 'dismissable'

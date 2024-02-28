@@ -11,6 +11,13 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import upsertDocument from '@salesforce/apex/ICY_Notes_Documents_Controller.upsertDocument';
 import getDocument from '@salesforce/apex/ICY_Notes_Documents_Controller.getDocument';
 
+//Custom Labels
+import ICY_UnableCreateDocument from '@salesforce/label/c.ICY_UnableCreateDocument';
+import ICY_DocumentUpdatedSuccessfully from '@salesforce/label/c.ICY_DocumentUpdatedSuccessfully';
+import ICY_DocumentCreatedSuccessfully from '@salesforce/label/c.ICY_DocumentCreatedSuccessfully';
+
+
+
 
 const RESTRICTED_DESC = 'Restricted Case Documents will only be shared with the Navigator and the user who added the document. Any documents containing sensitive information should be uploaded as Restricted.';
 const COLLAB_DESC = 'Collaborative Case Documents will be shared with all support team members for this individual\'s case. Collaborative documents should be relevant to assist others in picture and planning activities.';
@@ -146,7 +153,7 @@ export default class IcyCreateEditDocument extends LightningElement {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Success',
-                        message: 'Document Updated Successfully',
+                        message: ICY_DocumentUpdatedSuccessfully,
                         variant: 'success',
                     }),
                 );
@@ -156,7 +163,7 @@ export default class IcyCreateEditDocument extends LightningElement {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Error',
-                        message: 'Unable to create the document. please try again/contact admin',
+                        message: ICY_UnableCreateDocument,
                         variant: 'success',
                     }),
                 );
@@ -172,7 +179,7 @@ export default class IcyCreateEditDocument extends LightningElement {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Success',
-                        message: 'Document Created Successfully',
+                        message: ICY_DocumentCreatedSuccessfully,
                         variant: 'success',
                     }),
                 );
@@ -182,7 +189,7 @@ export default class IcyCreateEditDocument extends LightningElement {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Error',
-                        message: 'Unable to create the document. please try again/contact admin',
+                        message: ICY_UnableCreateDocument,
                         variant: 'success',
                     }),
                 );

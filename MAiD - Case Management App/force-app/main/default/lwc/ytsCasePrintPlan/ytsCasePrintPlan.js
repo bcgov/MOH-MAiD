@@ -16,6 +16,10 @@ import STEP_OBJ from '@salesforce/schema/YTS_Goal_Steps__c';
 //import object field schema
 import Current_Stage__c from '@salesforce/schema/YTS_Goal_Steps__c.Current_Stage__c';
 
+//Custom Labels
+import ICY_SelectAtLeastOneRow from '@salesforce/label/c.ICY_SelectAtLeastOneRow';
+
+
 export default class YtsCasePrintPlan extends NavigationMixin(LightningElement) {
     @wire(CurrentPageReference) pageReference;
     @api recordidfromaura;
@@ -233,7 +237,7 @@ export default class YtsCasePrintPlan extends NavigationMixin(LightningElement) 
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Error',
-                        message: 'Select atleast one row to print.',
+                        message: ICY_SelectAtLeastOneRow ,
                         variant: 'error',
                     }),
                 );
@@ -246,7 +250,7 @@ export default class YtsCasePrintPlan extends NavigationMixin(LightningElement) 
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Error',
-                        message: 'Select atleast one row to print.',
+                        message: ICY_SelectAtLeastOneRow ,
                         variant: 'error',
                     }),
                 );

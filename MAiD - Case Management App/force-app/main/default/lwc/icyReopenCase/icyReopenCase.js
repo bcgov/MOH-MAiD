@@ -9,6 +9,9 @@ import { NavigationMixin } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { CloseActionScreenEvent } from 'lightning/actions';
 
+//Custom Labels
+import ICY_SomethingWentWrong from '@salesforce/label/c.ICY_SomethingWentWrong';
+
 export default class IcyReopenCase extends NavigationMixin(LightningElement)  {
 
     @api recordId
@@ -105,7 +108,7 @@ export default class IcyReopenCase extends NavigationMixin(LightningElement)  {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Error!',
-                        message: 'Something went wrong, please try again '+JSON.stringify(error.message),
+                        message: ICY_SomethingWentWrong +JSON.stringify(error.message),
                         variant: 'error'
                     })
                 )

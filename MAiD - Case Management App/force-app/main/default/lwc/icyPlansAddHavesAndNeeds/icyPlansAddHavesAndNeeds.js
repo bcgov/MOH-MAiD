@@ -19,6 +19,9 @@ import getHaveNeedRecord from '@salesforce/apex/YTS_Referral_Controller.getHaveN
 //Toast Event
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
+//Custom Labels
+import ICY_UnableToRetrieveRecord from '@salesforce/label/c.ICY_UnableToRetrieveRecord';
+
 
 export default class IcyPlansAddHavesAndNeeds extends LightningElement {
     @track haveOrNeed={
@@ -70,7 +73,7 @@ export default class IcyPlansAddHavesAndNeeds extends LightningElement {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Error',
-                        message: 'Unable to retrieve Record. Refresh screen and try again.',
+                        message: ICY_UnableToRetrieveRecord,
                         variant: 'error'
                     })
                 );

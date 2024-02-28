@@ -9,11 +9,165 @@
         <value>You must create a new referral  or accept an existing referral in order for a new case to be created</value>
     </labels>
     <labels>
+        <fullName>ICY_CaseMemberAdded</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_CaseMemberAdded</shortDescription>
+        <value>Case Member added successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_CaseMemberRemoved</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_CaseMemberRemoved</shortDescription>
+        <value>Case Member removed successfully.</value>
+    </labels>
+    <labels>
         <fullName>ICY_DaysForInactiveNotes</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ICY_DaysForInactiveNotes</shortDescription>
         <value>90</value>
+    </labels>
+    <labels>
+        <fullName>ICY_DocumentCreatedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_DocumentCreatedSuccessfully</shortDescription>
+        <value>Document created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_DocumentDeleted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_DocumentDeleted</shortDescription>
+        <value>Document deleted.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_DocumentUpdatedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_DocumentUpdatedSuccessfully</shortDescription>
+        <value>Document updated successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_EitherIndividualHomePhone</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_EitherIndividualHomePhone</shortDescription>
+        <value>Either Individual Home Phone or Email must be provided.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_ErrorClosingReferral</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_ErrorClosingReferral</shortDescription>
+        <value>Error closing referral.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_ErrorRetrievingNotes</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_ErrorRetrievingNotes</shortDescription>
+        <value>Error retrieving notes.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_InsufficientPriviliges</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_InsufficientPriviliges</shortDescription>
+        <value>Insufficient privileges: You do not have access to this record.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_IntakeCreatedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_IntakeCreatedSuccessfully</shortDescription>
+        <value>Intake created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_MissingRequiredFields</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_MissingRequiredFields</shortDescription>
+        <value>Missing required fields.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_NoProgramLeader</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_NoProgramLeader</shortDescription>
+        <value>There are no program leaders associated with this Geographic Region. Please select another region or contact Admin.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_NoteDeleted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_NoteDeleted</shortDescription>
+        <value>Note deleted.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_PleaseEnterPostalCode</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_PleaseEnterPostalCode</shortDescription>
+        <value>Please enter the Postal Code in the format: A1A1A1 or A1A 1A1, where A is a letter and 1 is a digit.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_RecordDeletedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_RecordDeletedSuccessfully</shortDescription>
+        <value>Record deleted successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_ReferralClosedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_ReferralClosedSuccessfully</shortDescription>
+        <value>Referral closed successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_ReferralContactCreated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_ReferralContactCreated</shortDescription>
+        <value>Referral Contact created.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_ReferralContactUpdated</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_ReferralContactUpdated</shortDescription>
+        <value>Referral Contact updated.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_ReviewTheErrors</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_ReviewTheErrors</shortDescription>
+        <value>Review the errors on this page.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_SelectAtLeastOneRow</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_SelectAtLeastOneRow</shortDescription>
+        <value>Select at least one row to print.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_SomethingWentWrong</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_SomethingWentWrong</shortDescription>
+        <value>Something went wrong, please try again.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_SpecifyOtherOrg</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_SpecifyOtherOrg</shortDescription>
+        <value>Please specify the other Organization.</value>
     </labels>
     <labels>
         <fullName>ICY_TransitionPlanDomainValues</fullName>
@@ -143,10 +297,59 @@ Core-Cultural Support
 Supplemental</value>
     </labels>
     <labels>
+        <fullName>ICY_UnableCreateDocument</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_UnableCreateDocument</shortDescription>
+        <value>Unable to create the document. Please try again and contact your Admin if the issue persists.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_UnableCreateIntake</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_UnableCreateIntake</shortDescription>
+        <value>Unable to create intake.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_UnableRevokeTeamMember</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_UnableRevokeTeamMember</shortDescription>
+        <value>Unable to revoke team member. Please try again or contact Admin.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_UnableToAddMember</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_UnableToAddMember</shortDescription>
+        <value>Unable to add team member. Please try again or contact Admin.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_UnableToDeleteDocument</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_UnableToDeleteDocument</shortDescription>
+        <value>Unable to delete document.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_UnableToDownloadDocument</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_UnableToDownloadDocument</shortDescription>
+        <value>Unable to download document. Try Again.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_UnableToRetrieveRecord</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_UnableToRetrieveRecord</shortDescription>
+        <value>Unable to retrieve Record. Refresh screen and try again.</value>
+    </labels>
+    <labels>
         <fullName>YTS_Interview_Generic_Validation_Msg</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>YTS_Interview_Generic_Validation_Msg</shortDescription>
-        <value>Please Complete Required Fields</value>
+        <value>Please complete required fields.</value>
     </labels>
 </CustomLabels>

@@ -6,6 +6,11 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getRelatedNotes from '@salesforce/apex/ICY_Notes_Documents_Controller.getRelatedNotes';
 import getUserProfileName from '@salesforce/apex/ICY_Notes_Documents_Controller.getUserProfileName';
 
+//Custom Labels
+import ICY_ErrorRetrievingNotes from '@salesforce/label/c.ICY_ErrorRetrievingNotes';
+import ICY_NoteDeleted from '@salesforce/label/c.ICY_NoteDeleted';
+
+
 export default class IcyNotes extends LightningElement {
     @api objectApiName;
     @api parentRecordId
@@ -89,7 +94,7 @@ export default class IcyNotes extends LightningElement {
             this.dispatchEvent(
                 new ShowToastEvent({
                     title: 'Error',
-                    message: 'Error Retrieving notes',
+                    message: ICY_ErrorRetrievingNotes,
                     variant: 'error'
                 })
             );
@@ -157,7 +162,7 @@ export default class IcyNotes extends LightningElement {
             this.dispatchEvent(
                 new ShowToastEvent({
                     title: 'Success',
-                    message: 'Note Deleted',
+                    message: ICY_NoteDeleted ,
                     variant: 'success'
                 })
             );

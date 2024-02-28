@@ -49,6 +49,11 @@ import ICY_Unknown_Address__c from '@salesforce/schema/Referral__c.ICY_Unknown_A
 import ICY_Referral_Source_Description__c from '@salesforce/schema/Referral__c.ICY_Referral_Source_Description__c';
 import ICY_Date_of_Referral__c from '@salesforce/schema/Referral__c.ICY_Date_of_Referral__c';
 import OWNERID from '@salesforce/schema/Referral__c.OwnerId';
+
+//Custom Labels
+import ICY_NoProgramLeader from '@salesforce/label/c.ICY_NoProgramLeader';
+import ICY_PleaseEnterPostalCode from '@salesforce/label/c.ICY_PleaseEnterPostalCode';
+
 //Toast
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { NavigationMixin } from 'lightning/navigation';
@@ -473,7 +478,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
             if (JSON.stringify(error).includes('ICY Referral Owner Email Flow')) {
                 this.showToast(
                     'Error',
-                    'There are no program leaders associated with this Geographic Region. Please select another region  or contact Admin',
+                     ICY_NoProgramLeader,
                     'error'
                 )
 
@@ -778,7 +783,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Invalid Postal Code',
-                        message: 'Please enter the Postal Code in the format: A1A1A1 or A1A 1A1, where A is a letter and 1 is a digit.',
+                        message: ICY_PleaseEnterPostalCode ,
                         variant: 'error'
                     }),
                 );
