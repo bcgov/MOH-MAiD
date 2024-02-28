@@ -15,7 +15,7 @@
             </value>
         </inputParameters>
     </actionCalls>
-    <apiVersion>54.0</apiVersion>
+    <apiVersion>59.0</apiVersion>
     <interviewLabel>Send Case Member Email Notification {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Send Case Member Email Notification</label>
     <processMetadataValues>
