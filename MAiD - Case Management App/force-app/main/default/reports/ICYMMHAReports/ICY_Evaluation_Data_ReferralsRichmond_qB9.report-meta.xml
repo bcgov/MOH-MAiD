@@ -54,6 +54,9 @@
     <columns>
         <field>Referral__c.ICY_Personal_Health_Number__c</field>
     </columns>
+    <columns>
+        <field>Referral__c.ICY_Referral_For__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>Referral__c.Status__c</column>
