@@ -452,7 +452,7 @@
                                             <div class="slds-col slds-size_2-of-6">
                                                 <div class="slds-p-around_xx-small">
                                                     <lightning-input type="tel" label="Cell Phone" name="Cell_Phone__c"
-                                                        value={referral.Individual_Cell_Phone_Number__c} maxlength="10"
+                                                        value={referral.Individual_Cell_Phone_Number__c} min-length="10" maxlength="10"
                                                         onchange={handleChange} tabindex="0">
                                                     </lightning-input>
                                                 </div>
@@ -490,7 +490,7 @@
                                             <div class="slds-col slds-size_2-of-6">
                                                 <div class="slds-p-around_xx-small">
                                                     <lightning-input type="tel" label="Home Phone" name="Home_Phone__c"
-                                                        value={referral.Individual_Home_Phone_Number__c} maxlength="10"
+                                                        value={referral.Individual_Home_Phone_Number__c} min-length="10" maxlength="10"
                                                         onchange={handleChange} tabindex="0">
                                                     </lightning-input>
                                                 </div>
@@ -529,7 +529,7 @@
                                                 <div class="slds-p-around_xx-small">
                                                     <lightning-input name="Other_Phone__c" type="tel"
                                                         label="Other Phone Number" value={referral.ICY_Other_Phone__c}
-                                                        maxlength="10" onchange={handleChange} tabindex="0">
+                                                        min-length="10" maxlength="10" onchange={handleChange} tabindex="0">
                                                     </lightning-input>
                                                 </div>
                                             </div>
