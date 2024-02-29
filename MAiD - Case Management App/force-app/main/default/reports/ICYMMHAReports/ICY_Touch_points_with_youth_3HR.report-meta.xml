@@ -24,6 +24,9 @@
     <columns>
         <field>Case.Notes__r$CreatedDate</field>
     </columns>
+    <columns>
+        <field>Case.Notes__r$Team_Member__c</field>
+    </columns>
     <description>ICY Touch points with youth - COMOX VALLEY</description>
     <filter>
         <criteriaItems>
