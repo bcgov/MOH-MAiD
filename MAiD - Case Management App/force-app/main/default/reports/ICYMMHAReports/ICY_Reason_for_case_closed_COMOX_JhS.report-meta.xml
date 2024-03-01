@@ -18,6 +18,9 @@
     <columns>
         <field>Case.ICY_Rationale__c</field>
     </columns>
+    <columns>
+        <field>Case.Case_Closed_Reason__c</field>
+    </columns>
     <description>ICY Reason for case closed - COAST MOUNTAINS</description>
     <filter>
         <criteriaItems>
