@@ -55,7 +55,9 @@ public class ICY_ReopenCaseCtrl {
                 system.debug('roleId'+roleId);
                 if(!roleId.isEmpty() || !userid.isEmpty()){
                     For(User u: [SELECT Id,email FROM User WHERE (UserRoleId =: roleId OR ID IN:userid) AND isActive = true]){
-                        toAddressess.add(u.email);
+                        if (u.id != UserInfo.getUserId()){
+                            toAddressess.add(u.email);
+                           }
                     }
                 }
                 system.debug('toAddressess'+toAddressess);

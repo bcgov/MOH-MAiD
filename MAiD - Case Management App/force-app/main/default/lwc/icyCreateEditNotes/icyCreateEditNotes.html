@@ -135,6 +135,28 @@
                                     </span>
                                 </div>
                             </div>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col">
+                                  <span>
+                                      <div class="slds-p-around_small">
+                                          <lightning-input name="Attendees__c" label="Attendees"
+                                              value={note.Attendees__c} class="validate" onchange={handleChange}
+                                              tabindex="0"></lightning-input>
+                                      </div>
+                                  </span>
+                                </div>
+                            </div>
+                            <div class="slds-grid slds-gutters">
+                              <div class="slds-col">
+                                <span>
+                                    <div class="slds-p-around_small">
+                                        <lightning-input name="Length_of_Meeting__c" label="Length of Meeting (in minutes)"
+                                            value={note.Length_of_Meeting__c} class="validate" onchange={handleChange}
+                                            tabindex="0"></lightning-input>
+                                    </div>
+                                </span>
+                              </div>
+                          </div>
                         </div>
                     </article>
                     <footer class="slds-modal__footer">
