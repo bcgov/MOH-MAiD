@@ -16,6 +16,9 @@
         <field>Case.Notes__r$Name</field>
     </columns>
     <columns>
+        <field>Case.Notes__r$CreatedBy</field>
+    </columns>
+    <columns>
         <field>Case.Notes__r$Description__c</field>
     </columns>
     <columns>
