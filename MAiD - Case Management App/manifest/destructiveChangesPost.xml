@@ -10,4 +10,12 @@
         <name>Flow</name>
     </types>
 -->
+    <types>
+        <members>ICY_Case_with_Integrated_Care_Plan_RIC_Eax</members>
+        <members>ICY_Case_with_Integrated_Care_Plan_OKA_oe9</members>
+        <members>ICY_Case_with_Integrated_Care_Plan_COM_KxB</members>
+        <members>ICY_Case_with_Integrated_Care_Plan_COA_gjX</members>
+        <members>ICY_Case_with_Integrated_Plan_Okanagan_BLJ</members>
+        <name>Report</name>
+    </types>
 </Package>
