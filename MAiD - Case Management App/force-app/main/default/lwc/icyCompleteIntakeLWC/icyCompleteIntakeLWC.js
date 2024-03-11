@@ -10,6 +10,9 @@ import CASE_OBJECT from '@salesforce/schema/Case';
 import createPersonAcct from '@salesforce/apex/ICY_CompleteIntakeCtrl.createPersonAcc';
 import { NavigationMixin } from 'lightning/navigation';
 
+//Custom Labels
+import ICY_IntakeCompletedSuccessfully from '@salesforce/label/c.ICY_IntakeCompletedSuccessfully';
+
 const fields = [CONSENT_FIELD, STATUS_FIELD, VERBAL_FIELD];
 const InTakeRECFIELDS = ['Intake__c.CreatedDate', 'Intake__c.Referral__r.CreatedDate','Intake__c.Referral__r.ICY_Geographic_Area__c','Intake__c.Referral__r.Id'];
 const RESTRICTED_DESC = 'Restricted Case Documents will only be shared with the Navigator and the user who added the document. Any documents containing sensitive information should be uploaded as Restricted.';
@@ -200,8 +203,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
 
                             this.dispatchEvent(
                                 new ShowToastEvent({
-                                    title: 'Success!',
-                                    message: 'InTake Completed Successfully',
+                                    title: '',
+                                    message: ICY_IntakeCompletedSuccessfully ,
                                     variant: 'success'
                                 })
                             )
