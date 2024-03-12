@@ -27,7 +27,7 @@
     <columns>
         <field>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r$Action_Goal_Description__c</field>
     </columns>
-    <description>ICY Case with Integrated Care Plan - COAST MOUTAINS</description>
+    <description>ICY Case with  Integrated Plan - COAST MOUNTAINS</description>
     <filter>
         <criteriaItems>
             <column>Case$ICY_Geographic_Area__c</column>
@@ -36,24 +36,29 @@
             <operator>equals</operator>
             <value>Coast Mountains Team Hazelton,Coast Mountains Team Terrace</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>Case$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Case.ICY_Close_Case,Case.ICY_Standard_Case</value>
+        </criteriaItems>
     </filter>
     <format>Tabular</format>
-    <name>ICY Case with Integrated Care Plan - COA</name>
+    <name>ICY Case with  Integrated Plan -CoastMou</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>Case_Transition_Goals__c</reportType>
+    <reportType>MMHA_Case_Transition_HaveNeeds_Goals__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <sortColumn>Case$CaseNumber</sortColumn>
-    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Case$CreatedDate</dateColumn>
         <endDate>2023-12-31</endDate>
         <interval>INTERVAL_CUSTOM</interval>
-        <startDate>2022-07-01</startDate>
+        <startDate>2023-07-01</startDate>
     </timeFrameFilter>
 </Report>

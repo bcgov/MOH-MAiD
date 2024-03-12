@@ -27,33 +27,38 @@
     <columns>
         <field>Case.Transition_Plans__r.Transition_Haves_And_Needs__r.Transition_Goal_Steps__r$Action_Goal_Description__c</field>
     </columns>
-    <description>ICY Case with Integrated Care Plan - OKANAGAN</description>
+    <description>ICY Case with  Integrated Plan - MAPLE</description>
     <filter>
         <criteriaItems>
             <column>Case$ICY_Geographic_Area__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Okanagan-Similkameen</value>
+            <value>Maple Ridge-Pitt Meadows Team 1,Maple Ridge-Pitt Meadows Team 2,Maple Ridge-Pitt Meadows Team 3</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case$RecordType</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>false</isUnlocked>
+            <operator>equals</operator>
+            <value>Case.ICY_Close_Case,Case.ICY_Standard_Case</value>
         </criteriaItems>
     </filter>
     <format>Tabular</format>
-    <name>ICY Case with Integrated Care Plan - OKA</name>
+    <name>ICY Case with  Integrated Plan - Maple</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>Case_Transition_Goals__c</reportType>
+    <reportType>MMHA_Case_Transition_HaveNeeds_Goals__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <sortColumn>Case$CaseNumber</sortColumn>
-    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Case$CreatedDate</dateColumn>
         <endDate>2023-12-31</endDate>
         <interval>INTERVAL_CUSTOM</interval>
-        <startDate>2023-08-01</startDate>
+        <startDate>2022-07-01</startDate>
     </timeFrameFilter>
 </Report>
