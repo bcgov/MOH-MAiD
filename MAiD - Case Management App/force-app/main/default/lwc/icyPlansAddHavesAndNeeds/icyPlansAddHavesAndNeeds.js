@@ -21,6 +21,11 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 //Custom Labels
 import ICY_UnableToRetrieveRecord from '@salesforce/label/c.ICY_UnableToRetrieveRecord';
+import ICY_HaveCreatedSuccessfully from '@salesforce/label/c.ICY_HaveCreatedSuccessfully';
+import ICY_NeedCreatedSuccessfully from '@salesforce/label/c.ICY_NeedCreatedSuccessfully';
+import ICY_HaveUpdatedSuccessfully from '@salesforce/label/c.ICY_HaveUpdatedSuccessfully';
+import ICY_NeedUpdatedSuccessfully from '@salesforce/label/c.ICY_NeedUpdatedSuccessfully';
+
 
 
 export default class IcyPlansAddHavesAndNeeds extends LightningElement {
@@ -296,6 +301,9 @@ export default class IcyPlansAddHavesAndNeeds extends LightningElement {
         fields[END_DATE_FIELD.fieldApiName] = this.haveOrNeed.End_Date__c;
         fields[OTHER_DESCRIPTION_FIELD.fieldApiName] = this.haveOrNeed.Have_Need_Other_Description__c;
         let needOrHaveName = (this.haveOrNeed.Have__c? this.haveOrNeed.Have__c: this.haveOrNeed.Need__c);
+        let confCreatedMsg= (this.isHave? ICY_HaveCreatedSuccessfully: ICY_NeedCreatedSuccessfully);
+        let confUpdatedMsg= (this.isHave? ICY_HaveUpdatedSuccessfully: ICY_NeedUpdatedSuccessfully);
+       
 
         if(this.haveOrNeedId){
             fields[ID_FIELD.fieldApiName] = this.haveOrNeedId;
@@ -303,8 +311,8 @@ export default class IcyPlansAddHavesAndNeeds extends LightningElement {
             updateRecord(recordInput).then(()=>{
                 this.dispatchEvent(
                     new ShowToastEvent({
-                        title: 'Success',
-                        message: needOrHaveName + ' updated Successfully',
+                        title: '',
+                        message: confUpdatedMsg,
                         variant: 'success'
                     })
                 );
@@ -328,8 +336,8 @@ export default class IcyPlansAddHavesAndNeeds extends LightningElement {
             createRecord(recordInput).then(result=>{
                 this.dispatchEvent(
                     new ShowToastEvent({
-                        title: 'Success',
-                        message: needOrHaveName + ' created Successfully',
+                        title: '',
+                        message: confCreatedMsg,
                         variant: 'success'
                     })
                 );
