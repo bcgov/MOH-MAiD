@@ -3,6 +3,25 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>icyAlertBannerOutage</componentName>
+                <identifier>c_icyAlertBannerOutage</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>icyAlertBannerPrivacyAgreement</componentName>
+                <identifier>c_icyAlertBannerPrivacyAgreement</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.Privacy_Statement_Accepted__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>actionNames</name>
                     <valueList>
