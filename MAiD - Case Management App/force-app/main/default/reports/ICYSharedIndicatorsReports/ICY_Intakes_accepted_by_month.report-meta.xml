@@ -13,7 +13,14 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>THIS_YEAR</value>
+            <value>LAST_MONTH</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Intake__c$Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>notEqual</operator>
+            <value>Closed</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -27,7 +34,7 @@
         <field>Intake__c$Status__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>ICY Intakes accepted by month</name>
+    <name>ICY Intakes Accepted Last Month</name>
     <params>
         <name>co</name>
         <value>1</value>

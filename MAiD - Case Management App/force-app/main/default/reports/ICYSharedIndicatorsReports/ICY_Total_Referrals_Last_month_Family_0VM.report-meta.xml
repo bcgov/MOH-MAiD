@@ -25,7 +25,14 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>,Case Created,Closed,Intake Complete,Ready for Intake,Referral</value>
+            <value>Case Created,Closed,Draft,Intake Complete,Ready for Intake,Referral</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Referral__c.ICY_Referral_For__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Family</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
@@ -34,7 +41,12 @@
         <field>Referral__c.Status__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>ICY Total Referrals Last Month</name>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Referral__c.ICY_Referral_For__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>ICY Total Referrals Last Month - FPSW</name>
     <params>
         <name>co</name>
         <value>1</value>

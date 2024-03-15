@@ -32,7 +32,7 @@
         <field>STATUS</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>ICY Total Cases Last month</name>
+    <name>ICY Total Cases Last Month</name>
     <params>
         <name>units</name>
         <value>h</value>
