@@ -18,6 +18,10 @@
         <viewAllRecords>false</viewAllRecords>
     </objectPermissions>
     <tabSettings>
+        <tab>standard-Dashboard</tab>
+        <visibility>Available</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>standard-report</tab>
         <visibility>Visible</visibility>
     </tabSettings>
