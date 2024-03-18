@@ -37,8 +37,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     isSignedFileUploaded;
     fileName;
     signedFileName;
-    documentType;
-    documentTypeSigned;
+    documentType='Collaborative';
+    documentTypeSigned='Collaborative';
 
     get acceptedFormats() {
         return ['.pdf', '.png', '.txt', '.xlsx', '.doc', '.docx'];
