@@ -114,6 +114,13 @@
         <value>Please enter the Postal Code in the format: A1A1A1 or A1A 1A1, where A is a letter and 1 is a digit.</value>
     </labels>
     <labels>
+        <fullName>ICY_PrivacyAgreement</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_PrivacyAgreement</shortDescription>
+        <value>Action required: go to the Home page and acknowledge the Integrate Privacy, Confidentiality and Acceptable Use Agreement.</value>
+    </labels>
+    <labels>
         <fullName>ICY_RecordDeletedSuccessfully</fullName>
         <language>en_US</language>
         <protected>false</protected>

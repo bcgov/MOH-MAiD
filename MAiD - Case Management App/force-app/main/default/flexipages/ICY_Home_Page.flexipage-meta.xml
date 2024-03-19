@@ -4,6 +4,48 @@
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p&gt;&lt;strong style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;Integrate Privacy, Confidentiality and Acceptable Use Agreement&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;em style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(23, 43, 77);&quot;&gt;This Agreement must be acknowledged every 90 days in order to continue using Integrate.&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;1.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;I acknowledge that I will hold the personal information I view, access and/or use, relating to Integrate data in the strictest of confidence as per applicable legislation, policies and standards, while providing health care services or in a technical or administrative role. &lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;2.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;I agree to only view, access and/or use personal information which directly pertains to my specific role and responsibilities with respect to Integrate data. If applicable to my role, I will not share personal information that may be revealed to me in the process of supporting, maintaining, administering, and resolving work - and/or system-related issues.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;3.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;If I am involved in providing health care services to a client, I will share personal information only with individuals who need to know, who are also involved the care of that client, and, where appropriate, with the client’s consent.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;4.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;I acknowledge that my username and password are equivalent to my electronic signature and that I will not share access to my account with anyone. I will be held accountable for all activity performed under my access account.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;5.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;I understand that all my activity relating to Integrate data (e.g. access) is monitored and recorded in an audit trail or log.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;6.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;I understand that I may not, and I undertake that I will not, access my own personal information or anyone’s personal information (including family and friends) relating to Integrate data&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;unless legitimately required to do so in the process of providing a necessary service that I am responsible for providing.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;7.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;Should I have reason to believe that there is potential for a privacy or security incident/breach to occur, that a privacy or security incident/breach may have occurred, or that a privacy or&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;security incident/breach has occurred, I will notify the office responsible for privacy in my organization, and contact the Provincial Support Office at &lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif;&quot;&gt;PSO.IntegrateSupport@gov.bc.ca.&lt;/span&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt; And,&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p class=&quot;ql-indent-1&quot;&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;8.&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Times New Roman&amp;quot;; color: rgb(116, 116, 116);&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;font-size: 14px; font-family: &amp;quot;Segoe UI&amp;quot;, sans-serif; color: rgb(116, 116, 116);&quot;&gt;I hereby acknowledge that failure to comply with these terms will be subject to discipline as per my employer organization’s policies.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.Privacy_Statement_Accepted__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>flowLayout</name>
+                    <value>oneColumn</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>flowName</name>
+                    <value>Update_Privacy_Acknowledgement</value>
+                </componentInstanceProperties>
+                <componentName>flowruntime:interview</componentName>
+                <identifier>flowruntime_interview</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.Privacy_Statement_Accepted__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
                     <name>enableInlineEdit</name>
                     <value>true</value>
                 </componentInstanceProperties>
@@ -29,6 +71,13 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
                 <identifier>flexipage_filterListCard</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.Privacy_Statement_Accepted__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -59,12 +108,26 @@
                 </componentInstanceProperties>
                 <componentName>flexipage:filterListCard</componentName>
                 <identifier>flexipage_filterListCard2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.Privacy_Statement_Accepted__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentName>icyMyCases</componentName>
                 <identifier>icyMyCases</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.Privacy_Statement_Accepted__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -76,6 +139,13 @@
             <componentInstance>
                 <componentName>home:recentRecordContainer</componentName>
                 <identifier>home_recentRecordContainer</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.Privacy_Statement_Accepted__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
