@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Privacy_Statement_Accepted__c</fullName>
+    <externalId>false</externalId>
+    <formula>!isblank( Privacy_Acknowledgement__c ) &amp;&amp;
+DATEVALUE(Privacy_Acknowledgement__c) &gt; (TODAY() - 90)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Privacy Statement Accepted</label>
+    <type>Checkbox</type>
+</CustomField>
