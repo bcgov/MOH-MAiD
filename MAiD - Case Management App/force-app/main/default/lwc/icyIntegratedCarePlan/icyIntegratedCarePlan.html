@@ -32,11 +32,12 @@
                                 data-record-id={t.transitionId}>
                                 <span class="slds-icon_container slds-icon-standard-partner_fund_allocation"
                                     title="Description of icon when needed">
-                                    <lightning-icon icon-name={t.icon} alternative-text={t.domain} title={t.domain}
+                                   <lightning-icon icon-name={t.icon} alternative-text={t.domain} title={t.domain}
                                         key={t.transitionId} data-record-id={t.transitionId} size="small">
                                     </lightning-icon>
                                 </span>
                             </span>
+                            
                             <span class="slds-truncate" title={t.domainHelpText} key={t.transitionId}
                                 data-record-id={t.transitionId}>{t.domain}
                             </span>
@@ -45,6 +46,15 @@
                                     <span class="slds-badge slds-theme_success">Active</span>
                                 </span>
                             </template>
+                            <span class="slds-vertical-tabs__right-icon" key={t.transitionId}
+                                data-record-id={t.transitionId}>
+                                <span class="slds-icon_container slds-icon-standard-partner_fund_allocation"
+                                    title="Description of icon when needed">
+                                   <lightning-icon icon-name="utility:info" alternative-text={t.domain} title={t.domainHelpText}
+                                        key={t.transitionId} data-record-id={t.transitionId} size="small">
+                                    </lightning-icon>
+                                </span>
+                            </span>
                         </a>
                     </li>
                 </div>
