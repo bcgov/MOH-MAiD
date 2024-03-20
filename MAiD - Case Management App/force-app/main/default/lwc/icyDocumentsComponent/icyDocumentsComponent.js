@@ -7,6 +7,12 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import getRelatedDocuments from '@salesforce/apex/ICY_Notes_Documents_Controller.getRelatedDocuments';
 import getContentDistributionForFile from '@salesforce/apex/ICY_Notes_Documents_Controller.getContentDistributionForFile';
 
+//Custom Labels
+import ICY_UnableToDownloadDocument from '@salesforce/label/c.ICY_UnableToDownloadDocument';
+import ICY_UnableToDeleteDocument from '@salesforce/label/c.ICY_UnableToDeleteDocument';
+import ICY_DocumentDeleted from '@salesforce/label/c.ICY_DocumentDeleted';
+
+
 export default class icyDocumentsComponent extends NavigationMixin(LightningElement) {
 
     @api objectApiName;
@@ -72,7 +78,7 @@ export default class icyDocumentsComponent extends NavigationMixin(LightningElem
             this.dispatchEvent(
                 new ShowToastEvent({
                     title: 'Error',
-                    message: 'Unable to Download Document. Try Again.',
+                    message: ICY_UnableToDownloadDocument,
                     variant: 'error'
                 })
             );
@@ -131,7 +137,7 @@ export default class icyDocumentsComponent extends NavigationMixin(LightningElem
             this.dispatchEvent(
                 new ShowToastEvent({
                     title: 'Success',
-                    message: 'Document Deleted',
+                    message: ICY_DocumentDeleted,
                     variant: 'success'
                 })
             );
@@ -139,7 +145,7 @@ export default class icyDocumentsComponent extends NavigationMixin(LightningElem
             this.dispatchEvent(
                 new ShowToastEvent({
                     title: 'Error',
-                    message: 'Unable to Delete Document',
+                    message: ICY_UnableToDeleteDocument,
                     variant: 'error'
                 })
             );

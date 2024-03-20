@@ -5,6 +5,11 @@ import getAllCaseTeamMembers from '@salesforce/apex/ICY_CaseMember_Controller.ge
 import revokeCaseTeamMemberAccess from '@salesforce/apex/ICY_CaseMember_Controller.revokeCaseTeamMemberAccess';
 import showSelfAccessButton from '@salesforce/apex/ICY_CaseMember_Controller.showSelfAccessButton';
 
+//Custom Label
+import ICY_CaseMemberRemoved from '@salesforce/label/c.ICY_CaseMemberRemoved';
+import ICY_UnableRevokeTeamMember from '@salesforce/label/c.ICY_UnableRevokeTeamMember';
+
+
 export default class IcyCaseTeamMembers extends LightningElement {
 
     createEdit = false;
@@ -40,7 +45,7 @@ export default class IcyCaseTeamMembers extends LightningElement {
     deleteConfirmation(){
         revokeCaseTeamMemberAccess({recordId: this.recordIdToBeRevoked}).then(result=>{
             const evt = new ShowToastEvent({
-                title: 'Case Member Removed Successfully!!!',
+                title: ICY_CaseMemberRemoved,
                 variant: 'success'
             });
             this.dispatchEvent(evt);
@@ -48,7 +53,7 @@ export default class IcyCaseTeamMembers extends LightningElement {
         }).catch(error=>{
             console.error('$$ Error Revoking permission: ', error);
             const evt = new ShowToastEvent({
-                title: 'Oops!! Unable to revoke permission Member. Please try again or contact Admin',
+                title: ICY_UnableRevokeTeamMember,
                 variant: 'error'
             });
             this.dispatchEvent(evt);

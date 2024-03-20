@@ -10,9 +10,6 @@
         <field>CREATED_DATE</field>
     </columns>
     <columns>
-        <field>AGE</field>
-    </columns>
-    <columns>
         <field>OPEN</field>
     </columns>
     <columns>
@@ -23,9 +20,9 @@
             <column>CreatedDate</column>
             <isUnlocked>false</isUnlocked>
             <operator>equals</operator>
-            <value>TODAY</value>
+            <value>TODAY,LAST_90_DAYS</value>
         </criteriaItems>
-        <operation>with</operation>
+        <operation>without</operation>
         <primaryTableColumn>CASE_ID</primaryTableColumn>
         <relatedTable>ICY_Notes__c</relatedTable>
         <relatedTableJoinColumn>Case__c</relatedTableJoinColumn>
