@@ -177,6 +177,13 @@
         <value>Please specify the other Organization.</value>
     </labels>
     <labels>
+        <fullName>ICY_TeamMemberExits</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TeamMemberExits</shortDescription>
+        <value>This case team member you are trying to add already exists.</value>
+    </labels>
+    <labels>
         <fullName>ICY_TransitionPlanDomainValues</fullName>
         <language>en_US</language>
         <protected>false</protected>

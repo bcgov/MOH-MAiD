@@ -96,7 +96,13 @@ public without sharing class ICY_CaseMember_Controller {
             }
        }
 
-        if(cmList != null && cmList.size() > 0) return 'This case team member you are trying to add already exists.';
+       if(cmList != null && cmList.size() > 0) {
+        String profileName = [SELECT Profile.Name FROM USER WHERE ID=:UserInfo.getUserId()].Profile.Name;
+        if (YTS_Utility.lookupRole('Program Leader') || YTS_Utility.lookupRole('Team Admin') || profileName == 'System Administrator')
+           revokeCaseTeamMemberAccess(cmList[0].id);
+        else
+           return System.label.ICY_TeamMemberExits ;
+        }
 
         //Process if case Team member doesn't exist
         if(String.isNotBlank(recordId)) cm.Id = recordId;
