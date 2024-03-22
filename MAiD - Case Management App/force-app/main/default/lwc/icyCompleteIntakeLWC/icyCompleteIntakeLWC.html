@@ -23,7 +23,7 @@
                         <span>
                             <div class="slds-p-around_small">
                                 <lightning-file-upload label="Upload Intake Assessment File" name="fileUploader"
-                                    accept={acceptedFormats} record-id={recordId}
+                                    accept={acceptedFormats} record-id={recordId} required="true"
                                     onuploadfinished={handleUploadFinished} multiple>
                                 </lightning-file-upload>
                             </div>
@@ -44,7 +44,7 @@
             </div>
             <div slot="footer">
                 <lightning-button label="Cancel" onclick={closeQuickAction}></lightning-button>
-                <lightning-button label="Next" variant="brand" onclick={handleNext} disabled={disableNext}>
+                <lightning-button label="Next" variant="brand" onclick={handleNext}  disabled={isButtonNextDisabled}>
                 </lightning-button>
             </div>
         </template>
@@ -104,7 +104,7 @@
             </div>
             <div slot="footer">
                 <lightning-button label="Cancel" onclick={closeQuickAction}></lightning-button>
-                <lightning-button label="Submit" variant="brand" onclick={handleSubmit} disabled={disableSubmit}>
+                <lightning-button label="Submit" variant="brand" onclick={handleSubmit} disabled={isButtonSubmitDisabled}>
                 </lightning-button>
             </div>
         </template>
