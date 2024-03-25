@@ -39,7 +39,7 @@
             <value>MAiD Death Foreseeable, MAiD Death Not Foreseeable</value>
         </milestoneCriteriaFilterItems>
         <milestoneName>MAiD All Forms Received 6 Days</milestoneName>
-        <minutesToComplete>8640</minutesToComplete>
+        <minutesToComplete>11520</minutesToComplete>
         <successActions>
             <name>All_Forms_Received_1641</name>
             <type>FieldUpdate</type>

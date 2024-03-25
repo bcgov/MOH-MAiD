@@ -72,11 +72,32 @@
         <value>Error retrieving notes.</value>
     </labels>
     <labels>
+        <fullName>ICY_HaveCreatedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_HaveCreatedSuccessfully</shortDescription>
+        <value>What I Have created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_HaveUpdatedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_HaveUpdatedSuccessfully</shortDescription>
+        <value>What I have updated successfully.</value>
+    </labels>
+    <labels>
         <fullName>ICY_InsufficientPriviliges</fullName>
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ICY_InsufficientPriviliges</shortDescription>
         <value>Insufficient privileges: You do not have access to this record.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_IntakeCompletedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_IntakeCompletedSuccessfully</shortDescription>
+        <value>Intake completed successfully.</value>
     </labels>
     <labels>
         <fullName>ICY_IntakeCreatedSuccessfully</fullName>
@@ -91,6 +112,20 @@
         <protected>false</protected>
         <shortDescription>ICY_MissingRequiredFields</shortDescription>
         <value>Missing required fields.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_NeedCreatedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_NeedCreatedSuccessfully</shortDescription>
+        <value>What I Need created successfully.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_NeedUpdatedSuccessfully</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_NeedUpdatedSuccessfully</shortDescription>
+        <value>What I need updated successfully.</value>
     </labels>
     <labels>
         <fullName>ICY_NoProgramLeader</fullName>
@@ -175,6 +210,13 @@
         <protected>false</protected>
         <shortDescription>ICY_SpecifyOtherOrg</shortDescription>
         <value>Please specify the other Organization.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_TeamMemberExits</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_TeamMemberExits</shortDescription>
+        <value>This case team member you are trying to add already exists.</value>
     </labels>
     <labels>
         <fullName>ICY_TransitionPlanDomainValues</fullName>
