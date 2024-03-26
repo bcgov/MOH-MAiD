@@ -13,9 +13,9 @@ public without sharing class ICY_CaseMember_Controller {
         if (YTS_Utility.lookupRole('Program Leader') || YTS_Utility.lookupRole('Team Admin') || profileName == 'System Administrator') hasRevokeAccess = true;
 
         if(parentRecId.getSObjectType() == Schema.Referral__c.SObjectType){
-            cmList = [SELECT Id, CreatedDate, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_Status__c,ICY_User__r.Name, ICY_Case_Contact__r.Contact_Full_Name__c, ICY_Team_Member__c, CreatedBy.Name FROM Case_Member__c WHERE  Referral__c = :parentRecId ORDER By ICY_Status__c asc];
+            cmList = [SELECT Id, CreatedDate, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_Status__c,ICY_User__r.Name,ICY_User__r.CompanyName, ICY_User__r.title, ICY_Case_Contact__r.Contact_Full_Name__c,ICY_Case_Contact__r.Profession_Role__c,ICY_Case_Contact__r.Contact_Person_Profession_Role__c,ICY_Case_Contact__r.Relationship_Subtype__c,ICY_Case_Contact__r.Other_Relationship__c, ICY_Team_Member__c, CreatedBy.Name FROM Case_Member__c WHERE  Referral__c = :parentRecId ORDER By ICY_Status__c asc];
         }else if(parentRecId.getSObjectType() == Schema.Case.SObjectType){
-            cmList = [SELECT Id, CreatedDate, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_Status__c,ICY_User__r.Name, ICY_Case_Contact__r.Contact_Full_Name__c, ICY_Team_Member__c, CreatedBy.Name FROM Case_Member__c WHERE  ICY_Case__c = :parentRecId ORDER By ICY_Status__c asc];
+            cmList = [SELECT Id, CreatedDate, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_Status__c,ICY_User__r.Name, ICY_User__r.CompanyName, ICY_User__r.title,ICY_Case_Contact__r.Contact_Full_Name__c,ICY_Case_Contact__r.Profession_Role__c,ICY_Case_Contact__r.Contact_Person_Profession_Role__c,ICY_Case_Contact__r.Relationship_Subtype__c,ICY_Case_Contact__r.Other_Relationship__c, ICY_Team_Member__c, CreatedBy.Name FROM Case_Member__c WHERE  ICY_Case__c = :parentRecId ORDER By ICY_Status__c asc];
         }
 
         for(Case_Member__c c: cmList){
@@ -30,7 +30,13 @@ public without sharing class ICY_CaseMember_Controller {
             cm.endDate = YTS_Utility.dateFormat_eeeeMMMdyyyy(c.ICY_End_Date__c);
             cm.isICYTeamMember = c.ICY_Team_Member__c?'Yes':'No';
             cm.addedBy = c.CreatedBy.Name;
+            cm.professionRole = (c.ICY_Case_Contact__r.Profession_Role__c!= null)? c.ICY_Case_Contact__r.Profession_Role__c: c.ICY_Case_Contact__r.Contact_Person_Profession_Role__c ;
+            cm.relationshipSubtypetype = (c.ICY_Case_Contact__r.Relationship_Subtype__c!='other') ? c.ICY_Case_Contact__r.Relationship_Subtype__c : c.ICY_Case_Contact__r.Other_Relationship__c;
             cm.hasRevokeAccess = ((hasRevokeAccess || UserInfo.getUserId() == c.ICY_User__c) && c.ICY_Status__c == 'Active');
+            cm.isSupplemntal = (cm.category=='Supplemental');
+            cm.CompanyName= c.ICY_User__r.CompanyName;
+            cm.Title=c.ICY_User__r.title;
+            cm.isUser=c.ICY_Team_Member__c;
             result.add(cm);
         }
         return result;
@@ -68,8 +74,14 @@ public without sharing class ICY_CaseMember_Controller {
         @AuraEnabled public String dateAdded{get;set;}
         @AuraEnabled public String endDate{get;set;}
         @AuraEnabled public String isICYTeamMember{get;set;}
+        @AuraEnabled public String relationshipSubtypetype{get;set;}
+        @AuraEnabled public String professionRole{get;set;}
+        @AuraEnabled public String CompanyName{get;set;}
+        @AuraEnabled public String Title{get;set;}
         @AuraEnabled public String addedBy{get;set;}
         @AuraEnabled public Boolean hasRevokeAccess{get;set;}
+        @AuraEnabled public Boolean isSupplemntal{get;set;}
+        @AuraEnabled public Boolean isUser{get;set;}
     }
 
     //Create New Case Team Member

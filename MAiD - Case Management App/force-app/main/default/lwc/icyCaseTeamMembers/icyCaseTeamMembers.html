@@ -71,7 +71,7 @@
                         </template>
                         <div class="slds-p-horizontal_small">
                             <div class="slds-gutters slds-grid">
-                                <div class="slds-col slds-size_2-of-8">
+                                <div class="slds-col slds-size_2-of-6">
                                     <span>
                                         <div class="slds-form-element">
                                             <label class="slds-form-element__label" for="text-input-id-47"><b>Is ICY
@@ -82,7 +82,51 @@
                                         </div>
                                     </span>
                                 </div>
-                                <div class="slds-col slds-size_2-of-8">
+                                <template if:true={m.isUser}>
+                                    <div class="slds-col slds-size_1-of-8">
+                                          <span>
+                                              <div class="slds-form-element">
+                                                  <label class="slds-form-element__label" for="text-input-id-47"><b>Profession/Role</b></label>
+                                                  <div class="slds-form-element__control">
+                                                      {m.Title}
+                                                  </div>
+                                              </div>
+                                          </span>
+                                      </div>
+                                      <div class="slds-col slds-size_1-of-8">
+                                          <span>
+                                              <div class="slds-form-element">
+                                                  <label class="slds-form-element__label" for="text-input-id-47"><b>Employer organization</b></label>
+                                                  <div class="slds-form-element__control">
+                                                      {m.CompanyName}
+                                                  </div>
+                                              </div>
+                                          </span>
+                                      </div>
+                                </template>
+                                <template if:true={m.isSupplemntal}>
+                                    <div class="slds-col slds-size_1-of-8">
+                                          <span>
+                                              <div class="slds-form-element">
+                                                  <label class="slds-form-element__label" for="text-input-id-47"><b>Profession/Role</b></label>
+                                                  <div class="slds-form-element__control">
+                                                      {m.professionRole}
+                                                  </div>
+                                              </div>
+                                          </span>
+                                      </div>
+                                      <div class="slds-col slds-size_1-of-8">
+                                          <span>
+                                              <div class="slds-form-element">
+                                                  <label class="slds-form-element__label" for="text-input-id-47"><b>Relationship to Individual</b></label>
+                                                  <div class="slds-form-element__control">
+                                                      {m.relationshipSubtypetype}
+                                                  </div>
+                                              </div>
+                                          </span>
+                                      </div>
+                                </template>
+                                <div class="slds-col slds-size_1-of-8">
                                     <span>
                                         <div class="slds-form-element">
                                             <label class="slds-form-element__label" for="text-input-id-47"><b>Added
@@ -93,7 +137,7 @@
                                         </div>
                                     </span>
                                 </div>
-                                <div class="slds-col slds-size_2-of-8">
+                                <div class="slds-col slds-size_1-of-8">
                                     <span>
                                         <div class="slds-form-element">
                                             <label class="slds-form-element__label" for="text-input-id-47"><b>Date
@@ -104,7 +148,7 @@
                                         </div>
                                     </span>
                                 </div>
-                                <div class="slds-col slds-size_2-of-8">
+                                <div class="slds-col slds-size_1-of-8">
                                     <span>
                                         <div class="slds-form-element">
                                             <label class="slds-form-element__label" for="text-input-id-47"><b>End
