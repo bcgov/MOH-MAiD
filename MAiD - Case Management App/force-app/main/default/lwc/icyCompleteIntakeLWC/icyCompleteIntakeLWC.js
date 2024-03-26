@@ -145,6 +145,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     handleChange2(event) {
         let question2value = event.detail.value;
         if (question2value == 'Verbal') {
+            this.disableSubmit= (this.rationale == '') || (this.rationale == undefined);
+            this.disableNextDocTypeSelected2 = (this.rationale == '') || (this.rationale == undefined);
             var divblock = this.template.querySelector('[data-id="question3"]');
             if (divblock) {
                 this.makeRationaleReq = true;
@@ -154,6 +156,9 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
 
             }
         } else if (question2value == 'Signed Document') {
+            this.disableSubmit= (this.documentTypeSigned != 'Restricted' && this.documentTypeSigned != 'Collaborative' && !this.isSignedFileUploaded );
+            this.disableNextDocTypeSelected2 = (this.documentTypeSigned != 'Restricted' && this.documentTypeSigned != 'Collaborative' && !this.isSignedFileUploaded );
+            
             var divblock = this.template.querySelector('[data-id="question4"]');
             if (divblock) {
                 this.makeSignedDocReq = true;
@@ -167,7 +172,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     }
     captureRationale(event) {
         this.rationale = event.detail.value;
-        this.disableSubmit = false;
+        this.disableSubmit =  (this.rationale == '') || (this.rationale == undefined);
+        this.disableNextDocTypeSelected2 = (this.rationale == '') || (this.rationale == undefined);
     }
 
     handleSubmit() {
@@ -264,4 +270,5 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
      get isButtonSubmitDisabled(){
         return (this.disableNextDocTypeSelected2 || this.disableSubmit);
      }
+
 }
