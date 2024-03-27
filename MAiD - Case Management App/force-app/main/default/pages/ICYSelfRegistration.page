@@ -40,7 +40,7 @@
                     <apex:inputField id="Rid" required="true" value="{!request.Business_BCeID_IDIR__c}"/>
 
                     <apex:outputLabel value="{!$ObjectType.System_Access_Request__c.Fields.Profession_Role__c.Label}" for="Rprof"/>
-                    <apex:inputField id="Rprof"  value="{!request.Profession_Role__c}"/>
+                    <apex:inputField id="Rprof" required="true" value="{!request.Profession_Role__c}"/>
 
 
                </apex:panelGrid>
