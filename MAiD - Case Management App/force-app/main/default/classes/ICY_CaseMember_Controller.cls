@@ -30,8 +30,8 @@ public without sharing class ICY_CaseMember_Controller {
             cm.endDate = YTS_Utility.dateFormat_eeeeMMMdyyyy(c.ICY_End_Date__c);
             cm.isICYTeamMember = c.ICY_Team_Member__c?'Yes':'No';
             cm.addedBy = c.CreatedBy.Name;
-            cm.professionRole = (c.ICY_Case_Contact__r.Profession_Role__c!= null)? c.ICY_Case_Contact__r.Profession_Role__c: c.ICY_Case_Contact__r.Contact_Person_Profession_Role__c ;
-            cm.relationshipSubtypetype = (c.ICY_Case_Contact__r.Relationship_Subtype__c!='other') ? c.ICY_Case_Contact__r.Relationship_Subtype__c : c.ICY_Case_Contact__r.Other_Relationship__c;
+            cm.professionRole = (c.ICY_Case_Contact__r.Profession_Role__c!= null)&& (c.ICY_Case_Contact__r.Profession_Role__c!= 'Other')? c.ICY_Case_Contact__r.Profession_Role__c: c.ICY_Case_Contact__r.Contact_Person_Profession_Role__c ;
+            cm.relationshipSubtypetype = (c.ICY_Case_Contact__r.Relationship_Subtype__c!='Other') ? c.ICY_Case_Contact__r.Relationship_Subtype__c : c.ICY_Case_Contact__r.Other_Relationship__c;
             cm.hasRevokeAccess = ((hasRevokeAccess || UserInfo.getUserId() == c.ICY_User__c) && c.ICY_Status__c == 'Active');
             cm.isSupplemntal = (cm.category=='Supplemental');
             cm.CompanyName= c.ICY_User__r.CompanyName;
