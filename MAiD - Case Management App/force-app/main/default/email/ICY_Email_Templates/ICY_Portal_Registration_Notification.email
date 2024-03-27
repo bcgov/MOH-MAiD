@@ -10,3 +10,4 @@ Community Assigned : {!System_Access_Request__c.ICY_Community_Assigned__c}
 If Other Employer Organization : {!System_Access_Request__c.ICY_If_Other__c}
 
 Business BCeID/IDIR : {!System_Access_Request__c.Business_BCeID_IDIR__c}
+Profession/Role : {!System_Access_Request__c.Profession_Role__c}
