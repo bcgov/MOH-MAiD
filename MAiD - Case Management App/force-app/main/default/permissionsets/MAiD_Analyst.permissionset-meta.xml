@@ -750,12 +750,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Contact.Specialty_Other__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Contact.Specialty__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1695,7 +1695,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Form_1634__c.If_multiple_co_morbidities_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1955,7 +1955,7 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>true</editable>
+        <editable>false</editable>
         <field>Form_1634__c.Other_specify__c</field>
         <readable>true</readable>
     </fieldPermissions>

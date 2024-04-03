@@ -7,9 +7,6 @@
         <field>Referral__c.ICY_Date_of_Referral__c</field>
     </columns>
     <columns>
-        <field>Referral__c.ICY_Referral_Source__c</field>
-    </columns>
-    <columns>
         <field>Referral__c.ICY_Geographic_Area__c</field>
     </columns>
     <filter>
@@ -25,16 +22,21 @@
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>,Case Created,Closed,Intake Complete,Ready for Intake,Referral</value>
+            <value>Case Created,Closed,Draft,Intake Complete,Ready for Intake,Referral</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
+        <field>Referral__c.ICY_Referral_Source__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
         <field>Referral__c.Status__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>ICY Total Referrals Last Month</name>
+    <name>ICY Referral Sources</name>
     <params>
         <name>co</name>
         <value>1</value>

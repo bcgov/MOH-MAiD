@@ -3,6 +3,25 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>icyAlertBannerOutage</componentName>
+                <identifier>c_icyAlertBannerOutage</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentName>icyAlertBannerPrivacyAgreement</componentName>
+                <identifier>c_icyAlertBannerPrivacyAgreement</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!$User.Privacy_Statement_Accepted__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>false</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>actionNames</name>
                     <valueList>
@@ -124,12 +143,6 @@
                 </componentInstanceProperties>
                 <componentName>YTS_Referral_Name</componentName>
                 <identifier>YTS_Referral_Name</identifier>
-            </componentInstance>
-        </itemInstances>
-        <itemInstances>
-            <componentInstance>
-                <componentName>icyAlertBanner</componentName>
-                <identifier>icyAlertBanner</identifier>
             </componentInstance>
         </itemInstances>
         <mode>Replace</mode>
@@ -307,6 +320,12 @@
         <type>Facet</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <itemInstances>
+            <componentInstance>
+                <componentName>icyAlertBanner</componentName>
+                <identifier>c_icyAlertBanner</identifier>
+            </componentInstance>
+        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>

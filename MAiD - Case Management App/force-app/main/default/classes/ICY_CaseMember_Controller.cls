@@ -80,14 +80,29 @@ public without sharing class ICY_CaseMember_Controller {
         Id parentRecId = Id.ValueOf(parentRecordId);
         List<Case_Member__c> cmList = new List<Case_Member__c>();
         if(isSelfAccess) cm.ICY_User__c = UserInfo.getUserId();
-        //Validate if Case Member already Exists
-        if(parentRecId.getSObjectType() == Schema.Referral__c.SObjectType){
-            cmList = [SELECT Id FROM Case_Member__c WHERE ICY_User__c = :cm.ICY_User__c AND ICY_Status__c = 'Active' AND Referral__c = :parentRecId];
-        }else if(parentRecId.getSObjectType() == Schema.Case.SObjectType){
-            cmList = [SELECT Id FROM Case_Member__c WHERE ICY_User__c = :cm.ICY_User__c AND ICY_Status__c = 'Active' AND ICY_Case__c = :parentRecId];
+        if (cm.ICY_Category_Assignment__c=='Supplemental'){
+            if(parentRecId.getSObjectType() == Schema.Referral__c.SObjectType){
+                cmList = [SELECT Id FROM Case_Member__c WHERE ICY_Case_Contact__c = :cm.ICY_Case_Contact__c AND ICY_Status__c = 'Active' AND Referral__c = :parentRecId];
+            }else if(parentRecId.getSObjectType() == Schema.Case.SObjectType){
+                cmList = [SELECT Id FROM Case_Member__c WHERE ICY_Case_Contact__c = :cm.ICY_Case_Contact__c AND ICY_Status__c = 'Active' AND ICY_Case__c = :parentRecId];
+            }
         }
+        else{
+            //Validate if Case Member already Exists
+            if(parentRecId.getSObjectType() == Schema.Referral__c.SObjectType){
+                cmList = [SELECT Id FROM Case_Member__c WHERE ICY_User__c = :cm.ICY_User__c AND ICY_Status__c = 'Active' AND Referral__c = :parentRecId];
+            }else if(parentRecId.getSObjectType() == Schema.Case.SObjectType){
+                cmList = [SELECT Id FROM Case_Member__c WHERE ICY_User__c = :cm.ICY_User__c AND ICY_Status__c = 'Active' AND ICY_Case__c = :parentRecId];
+            }
+       }
 
-        if(cmList != null && cmList.size() > 0) return 'This case team member you are trying to add already exists.';
+       if(cmList != null && cmList.size() > 0) {
+        String profileName = [SELECT Profile.Name FROM USER WHERE ID=:UserInfo.getUserId()].Profile.Name;
+        if (YTS_Utility.lookupRole('Program Leader') || YTS_Utility.lookupRole('Team Admin') || profileName == 'System Administrator')
+           revokeCaseTeamMemberAccess(cmList[0].id);
+        else
+           return System.label.ICY_TeamMemberExits ;
+        }
 
         //Process if case Team member doesn't exist
         if(String.isNotBlank(recordId)) cm.Id = recordId;

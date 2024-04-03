@@ -30,6 +30,6 @@
         </quickActionLayoutColumns>
         <quickActionLayoutColumns/>
     </quickActionLayout>
-    <successMessage>Intake Closed Successfully!</successMessage>
+    <successMessage>Intake Closed Successfully.</successMessage>
     <type>Update</type>
 </QuickAction>

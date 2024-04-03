@@ -204,13 +204,13 @@
                                             <div class="slds-p-around_medium">
                                                 <div class="slds-form-element">
                                                     <lightning-input name="Personal_Health_Number__c" type="text"
-                                                        label="Personal Health Number (PHN) " pattern="^[0-9 \-]+$"
-                                                        message-when-pattern-mismatch="Please enter only numerical values"
+                                                        label="Personal Health Number (PHN) " pattern="[0-9]{10}"
+                                                        message-when-pattern-mismatch="Please enter only 10 numerical values"
                                                         value={referral.ICY_Personal_Health_Number__c} max-length="10"
                                                         min-length="10" onfocus={populateOnlyNumbers}
                                                         message-when-too-short="Please enter an only 10 numeric values"
                                                         message-when-too-long="Please enter an only 10 numeric values"
-                                                        onblur={formatPHNOnBlur} autocomplete="off"
+                                                        autocomplete="off"
                                                         onchange={handleChange} tabindex="0" class="validate">
                                                     </lightning-input>
                                                 </div>

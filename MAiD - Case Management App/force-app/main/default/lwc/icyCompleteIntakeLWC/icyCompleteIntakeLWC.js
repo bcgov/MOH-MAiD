@@ -10,6 +10,9 @@ import CASE_OBJECT from '@salesforce/schema/Case';
 import createPersonAcct from '@salesforce/apex/ICY_CompleteIntakeCtrl.createPersonAcc';
 import { NavigationMixin } from 'lightning/navigation';
 
+//Custom Labels
+import ICY_IntakeCompletedSuccessfully from '@salesforce/label/c.ICY_IntakeCompletedSuccessfully';
+
 const fields = [CONSENT_FIELD, STATUS_FIELD, VERBAL_FIELD];
 const InTakeRECFIELDS = ['Intake__c.CreatedDate', 'Intake__c.Referral__r.CreatedDate','Intake__c.Referral__r.ICY_Geographic_Area__c','Intake__c.Referral__r.Id'];
 const RESTRICTED_DESC = 'Restricted Case Documents will only be shared with the Navigator and the user who added the document. Any documents containing sensitive information should be uploaded as Restricted.';
@@ -31,6 +34,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     inTakeRec;
     typeDesc;
     isFileUploaded;
+    disableNextDocTypeSelected= true;
+    disableNextDocTypeSelected2= true;
     isSignedFileUploaded;
     fileName;
     signedFileName;
@@ -107,8 +112,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     }
 
     handleNext() {
-        this.showScreen1 = false;
-        this.showScreen2 = true;
+            this.showScreen1 = false;
+            this.showScreen2 = true;
     }
     /**
      * Handle Chnage
@@ -118,13 +123,15 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
             switch(event.target.name){
                 case 'Type__c':
                     this.documentType = event.target.value;
+                    this.disableNextDocTypeSelected= false;                 
                     if(event.target.value == 'Restricted')
                         this.typeDesc = RESTRICTED_DESC;
                     else if(event.target.value == 'Collaborative')
-                        this.typeDesc = COLLAB_DESC;
+                          this.typeDesc = COLLAB_DESC;
                     break;
                 case 'SignedDoucType__c':
                     this.documentTypeSigned = event.target.value;
+                    this.disableNextDocTypeSelected2= false;
                     if(event.target.value == 'Restricted')
                         this.typeDescSigned = RESTRICTED_DESC;
                     else if(event.target.value == 'Collaborative')
@@ -164,76 +171,75 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     }
 
     handleSubmit() {
-        this.showSpinner = true
-        var caseId;
+            this.showSpinner = true
+            var caseId;
 
-        let casefields = { 'Status': 'Open', 'ICY_Consent__c': true,
-                            'RecordTypeId': this.getRecordTypeId('ICY Standard Case'),
-                            'ICY_Date_Intake_Happened__c': this.inTakeRec.fields.CreatedDate.value,
-                            'ICY_Referral_Date__c': this.inTakeRec.fields.Referral__r.value.fields.CreatedDate.value,
-                            'ICY_Geographic_Area__c':this.inTakeRec.fields.Referral__r.value.fields.ICY_Geographic_Area__c.value,
-                            'Referral__c':this.inTakeRec.fields.Referral__r.value.fields.Id.value
-                            };
+            let casefields = { 'Status': 'Open', 'ICY_Consent__c': true,
+                                'RecordTypeId': this.getRecordTypeId('ICY Standard Case'),
+                                'ICY_Date_Intake_Happened__c': this.inTakeRec.fields.CreatedDate.value,
+                                'ICY_Referral_Date__c': this.inTakeRec.fields.Referral__r.value.fields.CreatedDate.value,
+                                'ICY_Geographic_Area__c':this.inTakeRec.fields.Referral__r.value.fields.ICY_Geographic_Area__c.value,
+                                'Referral__c':this.inTakeRec.fields.Referral__r.value.fields.Id.value
+                                };
 
-        // Record details to pass to create method with api name of Object.
-        let objCase = { 'apiName': 'Case', fields: casefields };
-        // LDS method to create record.
-        createRecord(objCase).then(response => {
+            // Record details to pass to create method with api name of Object.
+            let objCase = { 'apiName': 'Case', fields: casefields };
+            // LDS method to create record.
+            createRecord(objCase).then(response => {
 
-            createPersonAcct({ strRecordId: this.recordId, strCaseID: response.id, strContentDoc: this.contentDocumentId,
-                                strDocumentType:this.documentType, strDocumentName: this.fileName, strSignedDoc: this.signedContentDocumentId,
-                                strSignedDocumentName: this.signedFileName, strDocumentTypeSigned: this.documentTypeSigned})
-                .then(result => {
+                createPersonAcct({ strRecordId: this.recordId, strCaseID: response.id, strContentDoc: this.contentDocumentId,
+                                    strDocumentType:this.documentType, strDocumentName: this.fileName, strSignedDoc: this.signedContentDocumentId,
+                                    strSignedDocumentName: this.signedFileName, strDocumentTypeSigned: this.documentTypeSigned})
+                    .then(result => {
 
-                    let inTakefields = {
-                        'Id': this.recordId,
-                        'ICY_Consent_Provided__c': true,
-                        'Status__c': 'Complete',
-                        'ICY_Rationale__c': this.rationale, //Josh
-                        'Case__c': response.id
+                        let inTakefields = {
+                            'Id': this.recordId,
+                            'ICY_Consent_Provided__c': true,
+                            'Status__c': 'Complete',
+                            'ICY_Rationale__c': this.rationale, //Josh
+                            'Case__c': response.id
 
-                    }
-                    var objIntake = { fields: inTakefields };
+                        }
+                        var objIntake = { fields: inTakefields };
 
-                    updateRecord(objIntake)
-                        .then(() => {
+                        updateRecord(objIntake)
+                            .then(() => {
 
-                            this.dispatchEvent(
-                                new ShowToastEvent({
-                                    title: 'Success!',
-                                    message: 'InTake Completed Successfully',
-                                    variant: 'success'
-                                })
-                            )
-                            this.showSpinner = false;
-                            this.closeQuickAction();
-                            this.navigateNext(response.id);
-                        })
-                        .catch(error => {
+                                this.dispatchEvent(
+                                    new ShowToastEvent({
+                                        title: '',
+                                        message: ICY_IntakeCompletedSuccessfully ,
+                                        variant: 'success'
+                                    })
+                                )
+                                this.showSpinner = false;
+                                this.closeQuickAction();
+                                this.navigateNext(response.id);
+                            })
+                            .catch(error => {
 
-                            this.showSpinner = false;
-                            this.dispatchEvent(
-                                new ShowToastEvent({
-                                    title: 'Error!',
-                                    message: JSON.stringify(error.message),
-                                    variant: 'error'
-                                })
-                            )
-                        })
-                })
-                .catch(error => {
+                                this.showSpinner = false;
+                                this.dispatchEvent(
+                                    new ShowToastEvent({
+                                        title: 'Error!',
+                                        message: JSON.stringify(error.message),
+                                        variant: 'error'
+                                    })
+                                )
+                            })
+                    })
+                    .catch(error => {
 
-                    this.showSpinner = false;
-                    console.error('Error: ' + JSON.stringify(error.message));
-                })
+                        this.showSpinner = false;
+                        console.error('Error: ' + JSON.stringify(error.message));
+                    })
 
-        }).catch(error => {
+            }).catch(error => {
 
-            this.showSpinner = false;
-            console.error('Error: ' + JSON.stringify(error.message));
-        });
-
-
+                this.showSpinner = false;
+                console.error('Error: ' + JSON.stringify(error.message));
+            });
+            
     }
 
     closeQuickAction() {
@@ -250,4 +256,12 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
             },
         });
     }
+   
+    get isButtonNextDisabled(){
+        return (this.disableNextDocTypeSelected || this.disableNext);
+     }
+
+     get isButtonSubmitDisabled(){
+        return (this.disableNextDocTypeSelected2 || this.disableSubmit);
+     }
 }
