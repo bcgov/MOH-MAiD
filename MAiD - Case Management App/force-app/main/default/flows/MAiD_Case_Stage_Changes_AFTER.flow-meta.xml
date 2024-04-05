@@ -285,7 +285,7 @@
             <label>Assign New DateTime</label>
         </rules>
     </decisions>
-    <description>MAiD Case Stage Changes AFTER for Milestone Closure</description>
+    <description>MAiD Case Stage Changes AFTER for Milestone Closure for 8 days</description>
     <interviewLabel>Stage Changes AFTER {!$Flow.CurrentDateTime}</interviewLabel>
     <label>MAiD Case Stage Changes Milestones AFTER</label>
     <processMetadataValues>
@@ -371,7 +371,7 @@
             <field>TargetResponseInMins</field>
             <operator>EqualTo</operator>
             <value>
-                <numberValue>8640.0</numberValue>
+                <numberValue>11520.0</numberValue>
             </value>
         </filters>
         <inputAssignments>
