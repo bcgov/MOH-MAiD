@@ -17,6 +17,7 @@ public class ICY_SystemAccessRequestEmailTrigger_Test {
          record.ICY_Community_Assigned__c = 'Pacific Rim';
          record.ICY_If_Other__c = 'test';
          record.Business_BCeID_IDIR__c = 'test';
+         record.Profession_Role__c= 'Consultant';
          insert record;
          Assert.areEqual(2, Limits.getEmailInvocations());
         }
