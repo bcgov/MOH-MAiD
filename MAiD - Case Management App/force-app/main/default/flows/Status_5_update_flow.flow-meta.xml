@@ -144,6 +144,13 @@
         </value>
     </constants>
     <constants>
+        <name>MaidAnalystCannotCloseMsg</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>This case requires manager review. Update to Ready for Manager Review status.</stringValue>
+        </value>
+    </constants>
+    <constants>
         <name>ManagerClosure</name>
         <dataType>String</dataType>
         <value>
@@ -1427,6 +1434,59 @@
         </rules>
     </decisions>
     <decisions>
+        <name>Maid_Analyst_Check</name>
+        <label>Maid Analyst Check</label>
+        <locationX>1814</locationX>
+        <locationY>335</locationY>
+        <defaultConnector>
+            <targetReference>GetCaseDetail</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_Eligible_to_Close</name>
+            <conditionLogic>1 AND (2 OR 3 OR 4) AND 5</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.BCCS_Manager_Review_Required__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Maid Analyst</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>UpdateCaseMessageAnalystCannotClose</targetReference>
+            </connector>
+            <label>Not Eligible to Close</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>MRR_Requirements_for_Related_Case</name>
         <label>MRR Requirements for Related Case</label>
         <locationX>1341</locationX>
@@ -1768,7 +1828,7 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Status flow 5 Updated</description>
+    <description>Status flow 5 Updated for MAID - Analyst Case Closure Issue final</description>
     <environments>Default</environments>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
@@ -1994,11 +2054,30 @@
         </inputAssignments>
         <inputReference>$Record</inputReference>
     </recordUpdates>
-    <start>
+    <recordUpdates>
+        <name>UpdateCaseMessageAnalystCannotClose</name>
+        <label>UpdateCaseMessageAnalystCannotClose</label>
         <locationX>50</locationX>
-        <locationY>617</locationY>
+        <locationY>443</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>MaidAnalystCannotCloseMsg</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>1688</locationX>
+        <locationY>48</locationY>
         <connector>
-            <targetReference>GetCaseDetail</targetReference>
+            <targetReference>Maid_Analyst_Check</targetReference>
         </connector>
         <filterLogic>or</filterLogic>
         <filters>
