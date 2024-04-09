@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MAiD_Reporting_Deadline__c</fullName>
+    <description>Date of MAiD + 3 days</description>
+    <externalId>false</externalId>
+    <formula>Date_of_MAiD__c+3</formula>
+    <label>MAiD Reporting Deadline</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>
