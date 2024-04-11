@@ -1436,8 +1436,8 @@
     <decisions>
         <name>Maid_Analyst_Check</name>
         <label>Maid Analyst Check</label>
-        <locationX>1814</locationX>
-        <locationY>335</locationY>
+        <locationX>1806</locationX>
+        <locationY>413</locationY>
         <defaultConnector>
             <targetReference>GetCaseDetail</targetReference>
         </defaultConnector>
@@ -1454,21 +1454,21 @@
             </conditions>
             <conditions>
                 <leftValueReference>$Record.BCCS_Manager_Review_Required__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Education_provided_on_case__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
                 <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
-                <operator>NotEqualTo</operator>
+                <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
@@ -1828,7 +1828,7 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Status flow 5 Updated for MAID - Analyst Case Closure Issue final</description>
+    <description>Status flow 5 Updated for MAID - Analyst Case Closure</description>
     <environments>Default</environments>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
@@ -1984,8 +1984,8 @@
     <recordUpdates>
         <name>Fail_Status_Update</name>
         <label>Fail Status Update</label>
-        <locationX>1850</locationX>
-        <locationY>370</locationY>
+        <locationX>1738</locationX>
+        <locationY>672</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
@@ -2057,8 +2057,8 @@
     <recordUpdates>
         <name>UpdateCaseMessageAnalystCannotClose</name>
         <label>UpdateCaseMessageAnalystCannotClose</label>
-        <locationX>50</locationX>
-        <locationY>443</locationY>
+        <locationX>1894</locationX>
+        <locationY>541</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
