@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pharmacy_Reporting_Deadline__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(
+     WEEKDAY(Date_of_MAiD__c),
+    1,  Date_of_MAiD__c + 8,
+    2,  Date_of_MAiD__c + 8,
+    3,  Date_of_MAiD__c + 8,
+    4,  Date_of_MAiD__c + 8,
+    5,  Date_of_MAiD__c + 8,
+    6,  Date_of_MAiD__c + 10,
+    7,  Date_of_MAiD__c + 9,
+    NULL
+)</formula>
+    <label>Pharmacy Reporting Deadline</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>
