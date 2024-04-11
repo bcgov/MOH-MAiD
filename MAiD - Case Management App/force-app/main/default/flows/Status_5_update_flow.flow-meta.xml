@@ -4,8 +4,8 @@
     <assignments>
         <name>AssignCheckToEducationOnCase</name>
         <label>AssignCheckToEducationOnCase</label>
-        <locationX>638</locationX>
-        <locationY>160</locationY>
+        <locationX>3711</locationX>
+        <locationY>1475</locationY>
         <assignmentItems>
             <assignToReference>SelectionValue</assignToReference>
             <operator>Assign</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>Case_Requirements_failure</name>
         <label>Case Requirements failure</label>
-        <locationX>1595</locationX>
-        <locationY>1180</locationY>
+        <locationX>3420</locationX>
+        <locationY>3137</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
             <operator>Assign</operator>
@@ -36,8 +36,8 @@
     <assignments>
         <name>DeselectEducationOnCase</name>
         <label>DeselectEducationOnCase</label>
-        <locationX>625</locationX>
-        <locationY>446</locationY>
+        <locationX>3975</locationX>
+        <locationY>1475</locationY>
         <assignmentItems>
             <assignToReference>SelectionValue</assignToReference>
             <operator>Assign</operator>
@@ -52,8 +52,8 @@
     <assignments>
         <name>ImplementCounter</name>
         <label>ImplementCounter</label>
-        <locationX>451</locationX>
-        <locationY>361</locationY>
+        <locationX>3931</locationX>
+        <locationY>1091</locationY>
         <assignmentItems>
             <assignToReference>EducationCheckCounter</assignToReference>
             <operator>Add</operator>
@@ -68,8 +68,8 @@
     <assignments>
         <name>Insufficient_Privileges</name>
         <label>Insufficient Privileges</label>
-        <locationX>1076</locationX>
-        <locationY>1028</locationY>
+        <locationX>4591</locationX>
+        <locationY>2706</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
             <operator>Assign</operator>
@@ -84,8 +84,8 @@
     <assignments>
         <name>Manager_Review_Needed_for_Empty_Case_Childs</name>
         <label>Manager Review Needed for Empty Case Childs</label>
-        <locationX>1656</locationX>
-        <locationY>890</locationY>
+        <locationX>1265</locationX>
+        <locationY>1951</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
             <operator>Assign</operator>
@@ -100,8 +100,8 @@
     <assignments>
         <name>Related_Case_Check_Failure</name>
         <label>Related Case Check Failure</label>
-        <locationX>1501</locationX>
-        <locationY>599</locationY>
+        <locationX>4345</locationX>
+        <locationY>3217</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
             <operator>Assign</operator>
@@ -116,8 +116,8 @@
     <assignments>
         <name>Tasks_Check_Fail</name>
         <label>Tasks Check Fail</label>
-        <locationX>1489</locationX>
-        <locationY>327</locationY>
+        <locationX>3926</locationX>
+        <locationY>1994</locationY>
         <assignmentItems>
             <assignToReference>TaskMessage</assignToReference>
             <operator>Assign</operator>
@@ -165,6 +165,13 @@
         </value>
     </constants>
     <constants>
+        <name>ReadyforManagerReviewbyMAiDAnalyst</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Manager Override Request and notes to manager must be entered to update to Ready for Manager Review</stringValue>
+        </value>
+    </constants>
+    <constants>
         <name>TasksFailureMessage</name>
         <dataType>String</dataType>
         <value>
@@ -181,8 +188,8 @@
     <decisions>
         <name>check_case_status</name>
         <label>check case status</label>
-        <locationX>855</locationX>
-        <locationY>50</locationY>
+        <locationX>2974</locationX>
+        <locationY>1171</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>case_status</name>
@@ -203,8 +210,8 @@
     <decisions>
         <name>Check_Education_Practitioner</name>
         <label>Check Education Practitioner</label>
-        <locationX>237</locationX>
-        <locationY>370</locationY>
+        <locationX>4063</locationX>
+        <locationY>983</locationY>
         <defaultConnector>
             <targetReference>Related_Cases_Loop</targetReference>
         </defaultConnector>
@@ -228,8 +235,8 @@
     <decisions>
         <name>Check_for_Null_Related_Case_Records</name>
         <label>Check for Null Related Case Records</label>
-        <locationX>973</locationX>
-        <locationY>850</locationY>
+        <locationX>2309</locationX>
+        <locationY>1895</locationY>
         <defaultConnector>
             <targetReference>ToBeCaseStatus_MRR_Check</targetReference>
         </defaultConnector>
@@ -253,8 +260,8 @@
     <decisions>
         <name>Check_for_Null_Tasks</name>
         <label>Check for Null Tasks</label>
-        <locationX>963</locationX>
-        <locationY>373</locationY>
+        <locationX>2308</locationX>
+        <locationY>1439</locationY>
         <defaultConnector>
             <targetReference>GetTaskRecords</targetReference>
         </defaultConnector>
@@ -278,8 +285,8 @@
     <decisions>
         <name>Check_requirements_for_Related_Cases</name>
         <label>Check requirements for Related Cases</label>
-        <locationX>1318</locationX>
-        <locationY>492</locationY>
+        <locationX>4357</locationX>
+        <locationY>2842</locationY>
         <defaultConnector>
             <targetReference>Related_Case_Check_Failure</targetReference>
         </defaultConnector>
@@ -693,8 +700,8 @@
     <decisions>
         <name>Check_requirements_for_Tasks</name>
         <label>Check requirements for Tasks</label>
-        <locationX>1301</locationX>
-        <locationY>315</locationY>
+        <locationX>3614</locationX>
+        <locationY>1761</locationY>
         <defaultConnector>
             <targetReference>Tasks_Check_Fail</targetReference>
         </defaultConnector>
@@ -1102,8 +1109,8 @@
     <decisions>
         <name>Empty_child_check_Case</name>
         <label>Empty child check Case</label>
-        <locationX>1344</locationX>
-        <locationY>844</locationY>
+        <locationX>2062</locationX>
+        <locationY>2040</locationY>
         <defaultConnector>
             <targetReference>Manager_Review_Needed_for_Empty_Case_Childs</targetReference>
         </defaultConnector>
@@ -1325,8 +1332,8 @@
     <decisions>
         <name>Insufficient_Privilege_s</name>
         <label>Insufficient Privilege&apos;s</label>
-        <locationX>1062</locationX>
-        <locationY>696</locationY>
+        <locationX>4463</locationX>
+        <locationY>2461</locationY>
         <defaultConnector>
             <targetReference>Insufficient_Privileges</targetReference>
         </defaultConnector>
@@ -1386,8 +1393,8 @@
     <decisions>
         <name>IsCounterEmpty</name>
         <label>IsCounterEmpty</label>
-        <locationX>434</locationX>
-        <locationY>162</locationY>
+        <locationX>3520</locationX>
+        <locationY>1375</locationY>
         <defaultConnector>
             <targetReference>DeselectEducationOnCase</targetReference>
         </defaultConnector>
@@ -1411,8 +1418,8 @@
     <decisions>
         <name>IsListEmpty</name>
         <label>IsListEmpty</label>
-        <locationX>175</locationX>
-        <locationY>56</locationY>
+        <locationX>2939</locationX>
+        <locationY>806</locationY>
         <defaultConnector>
             <targetReference>Related_Cases_Loop</targetReference>
         </defaultConnector>
@@ -1436,8 +1443,8 @@
     <decisions>
         <name>Maid_Analyst_Check</name>
         <label>Maid Analyst Check</label>
-        <locationX>1806</locationX>
-        <locationY>413</locationY>
+        <locationX>1814</locationX>
+        <locationY>335</locationY>
         <defaultConnector>
             <targetReference>GetCaseDetail</targetReference>
         </defaultConnector>
@@ -1485,12 +1492,48 @@
             </connector>
             <label>Not Eligible to Close</label>
         </rules>
+        <rules>
+            <name>Status_by_MAID_Analyst_for_Ready_for_Manager_Review</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Analyst</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Status</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Manager Review</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Notes_to_Manager__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>ManagerOverrideRequestMsgUpdate</targetReference>
+            </connector>
+            <label>Status by MAID Analyst for Ready for Manager Review</label>
+        </rules>
     </decisions>
     <decisions>
         <name>MRR_Requirements_for_Related_Case</name>
         <label>MRR Requirements for Related Case</label>
-        <locationX>1341</locationX>
-        <locationY>1184</locationY>
+        <locationX>3172</locationX>
+        <locationY>3049</locationY>
         <defaultConnector>
             <targetReference>Case_Requirements_failure</targetReference>
         </defaultConnector>
@@ -1799,8 +1842,8 @@
     <decisions>
         <name>ToBeCaseStatus_MRR_Check</name>
         <label>ToBeCaseStatus MRR Check</label>
-        <locationX>1261</locationX>
-        <locationY>753</locationY>
+        <locationX>3483</locationX>
+        <locationY>2383</locationY>
         <defaultConnector>
             <targetReference>Insufficient_Privilege_s</targetReference>
         </defaultConnector>
@@ -1828,15 +1871,15 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Status flow 5 Updated for MAID - Analyst Case Closure</description>
+    <description>Status flow 5 Updated for MAID - BCCS Feedback Message Updated</description>
     <environments>Default</environments>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
     <loops>
         <name>Get_Related_Case_Records</name>
         <label>Get Related Case Records</label>
-        <locationX>1181</locationX>
-        <locationY>576</locationY>
+        <locationX>4116</locationX>
+        <locationY>2559</locationY>
         <collectionReference>GetRelatedCaseRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1849,8 +1892,8 @@
     <loops>
         <name>Get_Related_Case_Records_MRR</name>
         <label>Get Related Case Records MRR</label>
-        <locationX>1197</locationX>
-        <locationY>1047</locationY>
+        <locationX>3174</locationX>
+        <locationY>2144</locationY>
         <collectionReference>GetRelatedCaseRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1863,8 +1906,8 @@
     <loops>
         <name>GetTaskRecords</name>
         <label>GetTaskRecords</label>
-        <locationX>1103</locationX>
-        <locationY>236</locationY>
+        <locationX>2861</locationX>
+        <locationY>1768</locationY>
         <collectionReference>TasksRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1877,8 +1920,8 @@
     <loops>
         <name>Related_Cases_Loop</name>
         <label>Related Cases Loop</label>
-        <locationX>238</locationX>
-        <locationY>196</locationY>
+        <locationX>3508</locationX>
+        <locationY>878</locationY>
         <collectionReference>GetRelatedCaseRecords</collectionReference>
         <iterationOrder>Asc</iterationOrder>
         <nextValueConnector>
@@ -1910,8 +1953,8 @@
     <recordLookups>
         <name>Get_Related_Case</name>
         <label>Get Related Case</label>
-        <locationX>80</locationX>
-        <locationY>172</locationY>
+        <locationX>2649</locationX>
+        <locationY>805</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>IsListEmpty</targetReference>
@@ -1933,8 +1976,8 @@
     <recordLookups>
         <name>Get_Task</name>
         <label>Get Task</label>
-        <locationX>81</locationX>
-        <locationY>338</locationY>
+        <locationX>2649</locationX>
+        <locationY>597</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Related_Case</targetReference>
@@ -1954,8 +1997,8 @@
     <recordLookups>
         <name>GetCaseDetail</name>
         <label>GetCaseDetail</label>
-        <locationX>83</locationX>
-        <locationY>485</locationY>
+        <locationX>2651</locationX>
+        <locationY>338</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get_Task</targetReference>
@@ -1984,8 +2027,8 @@
     <recordUpdates>
         <name>Fail_Status_Update</name>
         <label>Fail Status Update</label>
-        <locationX>1738</locationX>
-        <locationY>672</locationY>
+        <locationX>1273</locationX>
+        <locationY>2474</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
@@ -2001,10 +2044,29 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>ManagerOverrideRequestMsgUpdate</name>
+        <label>ManagerOverrideRequestMsgUpdate</label>
+        <locationX>1614</locationX>
+        <locationY>608</locationY>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <elementReference>$Record__Prior.Status</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status_Feedback_Msg__c</field>
+            <value>
+                <elementReference>ReadyforManagerReviewbyMAiDAnalyst</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Pass_Case_Status</name>
         <label>Pass Case Status</label>
-        <locationX>1770</locationX>
-        <locationY>758</locationY>
+        <locationX>821</locationX>
+        <locationY>2211</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
@@ -2022,8 +2084,8 @@
     <recordUpdates>
         <name>Revert_Status</name>
         <label>Revert Status</label>
-        <locationX>1560</locationX>
-        <locationY>469</locationY>
+        <locationX>1074</locationX>
+        <locationY>2336</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
@@ -2041,8 +2103,8 @@
     <recordUpdates>
         <name>Update_Education_Selection</name>
         <label>Update Education Selection</label>
-        <locationX>741</locationX>
-        <locationY>296</locationY>
+        <locationX>3263</locationX>
+        <locationY>1637</locationY>
         <connector>
             <targetReference>check_case_status</targetReference>
         </connector>
@@ -2057,8 +2119,8 @@
     <recordUpdates>
         <name>UpdateCaseMessageAnalystCannotClose</name>
         <label>UpdateCaseMessageAnalystCannotClose</label>
-        <locationX>1894</locationX>
-        <locationY>541</locationY>
+        <locationX>1158</locationX>
+        <locationY>328</locationY>
         <inputAssignments>
             <field>Status</field>
             <value>
