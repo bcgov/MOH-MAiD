@@ -17,7 +17,7 @@ package.xml
 #**recordTypes
 **sharingRules
 
-MoH Standard User.profile
+#MoH Standard User.profile
 
 # LWC configuration files
 **/jsconfig.json
