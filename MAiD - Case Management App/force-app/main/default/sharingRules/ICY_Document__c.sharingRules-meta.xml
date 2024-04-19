@@ -2,7 +2,7 @@
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingCriteriaRules>
         <fullName>Document_Sharing_rule</fullName>
-        <accessLevel>Read</accessLevel>
+        <accessLevel>Edit</accessLevel>
         <label>Document Sharing rule</label>
         <sharedTo>
             <group>ICY_Restiricted_Data</group>

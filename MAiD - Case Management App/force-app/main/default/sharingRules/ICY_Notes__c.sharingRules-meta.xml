@@ -2,7 +2,7 @@
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingCriteriaRules>
         <fullName>ICY_Admin_Notes_Share</fullName>
-        <accessLevel>Read</accessLevel>
+        <accessLevel>Edit</accessLevel>
         <label>ICY Admin Notes Share</label>
         <sharedTo>
             <group>All_ICY_Team_Members</group>
@@ -16,7 +16,7 @@
     </sharingCriteriaRules>
     <sharingCriteriaRules>
         <fullName>ICY_Restricted_notes</fullName>
-        <accessLevel>Read</accessLevel>
+        <accessLevel>Edit</accessLevel>
         <label>ICY Restricted notes</label>
         <sharedTo>
             <group>ICY_Restiricted_Data</group>
