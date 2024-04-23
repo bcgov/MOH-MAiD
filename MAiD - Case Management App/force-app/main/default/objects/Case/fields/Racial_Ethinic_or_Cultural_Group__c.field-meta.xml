@@ -3,7 +3,7 @@
     <fullName>Racial_Ethinic_or_Cultural_Group__c</fullName>
     <externalId>false</externalId>
     <inlineHelpText>Person affiliates with which racial, ethnic or cultural group (choose all that apply)</inlineHelpText>
-    <label>Racial, Ethinic or Cultural Group</label>
+    <label>Racial, Ethnic or Cultural Group</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
