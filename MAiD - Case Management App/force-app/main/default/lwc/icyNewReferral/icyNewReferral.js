@@ -49,6 +49,8 @@ import ICY_Unknown_Address__c from '@salesforce/schema/Referral__c.ICY_Unknown_A
 import ICY_Referral_Source_Description__c from '@salesforce/schema/Referral__c.ICY_Referral_Source_Description__c';
 import ICY_Date_of_Referral__c from '@salesforce/schema/Referral__c.ICY_Date_of_Referral__c';
 import OWNERID from '@salesforce/schema/Referral__c.OwnerId';
+import ICY_Program_Leader__c from '@salesforce/schema/Referral__c.ICY_Program_Leader__c';
+
 
 //Custom Labels
 import ICY_NoProgramLeader from '@salesforce/label/c.ICY_NoProgramLeader';
@@ -63,6 +65,7 @@ import { createRecord } from 'lightning/uiRecordApi';
 import getPicklistvalues from '@salesforce/apex/ICY_Referral_Controller.getPicklistvalues';
 import getRecordTypeId from '@salesforce/apex/ICY_Referral_Controller.getRecordTypeId';
 import getICYQueueId from '@salesforce/apex/ICY_Referral_Controller.getICYQueueId'
+import getICYPlId from '@salesforce/apex/ICY_Referral_Controller.getICYPlId'
 import checkIfHealthNumberIsUnique from '@salesforce/apex/ICY_Referral_Controller.checkIfHealthNumberIsUnique'
 import createPrimaryContact from '@salesforce/apex/ICY_Referral_Controller.createPrimaryContact'
 
@@ -148,6 +151,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         ICY_Unknown_Address__c: false,
         ICY_Referral_Source_Description__c: '',
         ICY_Date_of_Referral__c: '',
+        ICY_Program_Leader__c:'',
         OwnerId: ''
     };
 
@@ -438,6 +442,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         fields[ICY_Referral_Source_Description__c.fieldApiName] = this.referral.ICY_Referral_Source_Description__c;
         fields[ICY_Date_of_Referral__c.fieldApiName] = this.referral.ICY_Date_of_Referral__c;
         fields[OWNERID.fieldApiName] = this.referral.OwnerId;
+        fields[ICY_Program_Leader__c.fieldApiName] = this.referral.ICY_Program_Leader__c;
 
         if (this.referralType == 'Professional Referral') fields[RecordTypeId.fieldApiName] = this.medicalRecordTypeId;
         else fields[RecordTypeId.fieldApiName] = this.generalRecordTypeId;
@@ -677,6 +682,13 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                     }).catch(error => {
                         this.showSpinner = false;
                         console.error('$$ Error getting group owner: ' + error);
+                    })
+                    getICYPlId({ geographicArea: event.target.value }).then(result => {
+                        this.showSpinner = false;
+                        if (result) this.referral.ICY_Program_Leader__c = result;
+                    }).catch(error => {
+                        this.showSpinner = false;
+                        console.error('$$ Error getting Program leader id : ' + error);
                     })
                     break;
                 case 'Referral_Medical_Reason':

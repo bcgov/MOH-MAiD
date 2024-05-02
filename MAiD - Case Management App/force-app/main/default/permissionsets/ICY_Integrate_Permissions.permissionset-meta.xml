@@ -1442,6 +1442,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Referral__c.ICY_Program_Leader__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Referral__c.ICY_Rationale_For_Closure__c</field>
         <readable>true</readable>
     </fieldPermissions>
