@@ -8,7 +8,7 @@
         IF(AND(MAiD_Reporting_Deadline__c &lt;  TODAY(),  Pharmacy_Reporting_Deadline__c &gt;= TODAY(), ISBLANK(X1641_Date_Received__c)), &apos;WAITING ON PHARMACY&apos;, 
         IF(AND(MAiD_Reporting_Deadline__c &lt;  TODAY(),  Pharmacy_Reporting_Deadline__c &lt; TODAY(), OR(ISBLANK( X1632_Date_Received__c ), ISBLANK(  X1633_Date_Received__c ), ISBLANK(  X1634_Date_Received__c ), ISBLANK(RX_MAR_Date_Received__c), ISBLANK(X1641_Date_Received__c ))), &apos;OVERDUE&apos;, 
         IF(NOT(OR(ISBLANK( X1632_Date_Received__c ), ISBLANK(  X1633_Date_Received__c ), ISBLANK(  X1634_Date_Received__c ), ISBLANK(RX_MAR_Date_Received__c), ISBLANK(X1641_Date_Received__c ))), 
-        IF(AND(MAiD_Reporting_Deadline__c &gt;= X1632_Date_Received__c, MAiD_Reporting_Deadline__c &gt;= X1633_Date_Received__c, MAiD_Reporting_Deadline__c &gt;= X1634_Date_Received__c , MAiD_Reporting_Deadline__c &gt;= RX_MAR_Date_Received__c, Pharmacy_Reporting_Deadline__c &gt;= X1641_Date_Received__c), &apos;MET REQUIREMENTS&apos;,&apos;DID NOT MET REQUIREMENTS&apos;), &apos;OVERDUE&apos;
+        IF(AND(MAiD_Reporting_Deadline__c &gt;= X1632_Date_Received__c, MAiD_Reporting_Deadline__c &gt;= X1633_Date_Received__c, MAiD_Reporting_Deadline__c &gt;= X1634_Date_Received__c , MAiD_Reporting_Deadline__c &gt;= RX_MAR_Date_Received__c, Pharmacy_Reporting_Deadline__c &gt;= X1641_Date_Received__c), &apos;MET REQUIREMENTS&apos;,&apos;DID NOT MEET REQUIREMENTS&apos;), &apos;OVERDUE&apos;
        )
        )
        )   
