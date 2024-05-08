@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Notify_intake_user</name>
         <label>Notify intake user</label>
-        <locationX>50</locationX>
-        <locationY>455</locationY>
+        <locationX>452</locationX>
+        <locationY>479</locationY>
         <actionName>Intake__c.ICY_Intake_Assignment_Notification_Alert</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -14,20 +14,22 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>Intake__c.ICY_Intake_Assignment_Notification_Alert</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>59.0</apiVersion>
     <decisions>
         <name>Met_Conditions</name>
         <label>Met Conditions?</label>
-        <locationX>182</locationX>
-        <locationY>335</locationY>
+        <locationX>583</locationX>
+        <locationY>372</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Yes</name>
-            <conditionLogic>or</conditionLogic>
+            <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>NewRecord</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>$Record.ICY_Assigned_To__c</leftValueReference>
+                <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
@@ -39,12 +41,20 @@
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>$Record.ICY_Assigned_To__r.Username</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$User.Username</elementReference>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Notify_intake_user</targetReference>
             </connector>
             <label>Yes</label>
         </rules>
     </decisions>
+    <environments>Default</environments>
     <formulas>
         <name>NewRecord</name>
         <dataType>Boolean</dataType>
@@ -61,7 +71,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -72,8 +82,8 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>56</locationX>
-        <locationY>0</locationY>
+        <locationX>458</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Met_Conditions</targetReference>
         </connector>
