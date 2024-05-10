@@ -1,13 +1,7 @@
 @isTest
 public class ICY_ReferralFeatureUtilityTest {
     @testSetup public static void setup() {
-        
-        case objCase = new case ();
-        objCase.status = 'New';
-        objCase.Origin = 'Phone';
-        objCase.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Case', 'ICY_Standard_Case');
-        insert objCase;
-            
+                   
         Referral__c RefRecord1 = new Referral__c();
         RefRecord1.Type_of_Referral__c = 'Organizational Referral';
         RefRecord1.Referring_Organization__c = 'Health Authority';
@@ -47,10 +41,21 @@ public class ICY_ReferralFeatureUtilityTest {
         RefRecord1.Referral_Notes__c = 'This is a test note.';
         RefRecord1.ICY_Show_Banner__c = TRUE;
         RefRecord1.ICY_Geographic_Area__c = 'Coast Mountains Team Hazelton';
-        RefRecord1.Case__c = objCase.Id;
+        RefRecord1.ICY_Program_Leader__c=ICY_Referral_Controller.getICYPlId('Coast Mountains Team Hazelton');
         RefRecord1.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Referral__c', 'ICY_General'); 
         insert RefRecord1;
         
+
+        case objCase = new case ();
+        objCase.status = 'New';
+        objCase.Origin = 'Phone';
+        objCase.Referral__c =RefRecord1.id;
+        objCase.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Case', 'ICY_Standard_Case');
+        insert objCase;
+
+        RefRecord1.Case__c= objCase.Id;
+        update RefRecord1;
+
         Intake__c intake = new Intake__c();
         intake.Referral__c = RefRecord1.Id;
         intake.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Intake__c', 'ICY_Intake');
@@ -177,11 +182,6 @@ public class ICY_ReferralFeatureUtilityTest {
         Intake__c objIntake = [SELECT id from Intake__c LIMIT 1];
         user u = [Select id from User where email = 'testLead@gov.bc.ca'];
         
-        case objCase1 = new case ();
-        objCase1.status = 'Open';
-        objCase1.Origin = 'Phone';
-        objCase1.recordTypeid = YTS_Utility.getRecordTypeIdByDeveloperName('Case', 'ICY_Standard_Case');
-        insert objCase1;
             
         Referral__c RefRecord = new Referral__c();
         RefRecord.Type_of_Referral__c = 'Organizational Referral';
@@ -221,9 +221,19 @@ public class ICY_ReferralFeatureUtilityTest {
         RefRecord.DAA_or_other_cultural_or_spiritual_repre__c = 'Test';
         RefRecord.Referral_Notes__c = 'This is a test note.';
        	RefRecord.ICY_Show_Banner__c = TRUE;
-        RefRecord.ICY_Geographic_Area__c = 'Coast Mountains Team Hazelton';
-        RefRecord.Case__c = objCase1.Id;    
+        RefRecord.ICY_Geographic_Area__c = 'Coast Mountains Team Hazelton';   
+        RefRecord.ICY_Program_Leader__c=ICY_Referral_Controller.getICYPlId('Coast Mountains Team Hazelton');
         insert RefRecord;
+
+        case objCase1 = new case ();
+        objCase1.status = 'Open';
+        objCase1.Origin = 'Phone';
+        objCase1.recordTypeid = YTS_Utility.getRecordTypeIdByDeveloperName('Case', 'ICY_Standard_Case');
+        objCase1.Referral__c =RefRecord.id;
+        insert objCase1;
+
+        RefRecord.Case__c = objCase1.Id; 
+        upsert(RefRecord);
         
 		// system.runAs(u) {
             ICY_AlertBannerCtrl.fetchBannerDetails(objIntake.id,'Intake__c');

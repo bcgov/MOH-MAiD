@@ -3,8 +3,8 @@
     <actionCalls>
         <name>Send_Email_Notification</name>
         <label>Send Email Notification</label>
-        <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationX>644</locationX>
+        <locationY>479</locationY>
         <actionName>ICY_CaseMemberTriggerHandler</actionName>
         <actionType>apex</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -14,8 +14,40 @@
                 <elementReference>$Record</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>ICY_CaseMemberTriggerHandler</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>59.0</apiVersion>
+    <decisions>
+        <name>Case_Member_is_added_other_than_current</name>
+        <label>Case Member is added other than current user</label>
+        <locationX>776</locationX>
+        <locationY>371</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Case_Member_is_added_other_than_current_user</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_User__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ICY_User__r.Username</leftValueReference>
+                <operator>NotEqualTo</operator>
+                <rightValue>
+                    <elementReference>$User.Username</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Send_Email_Notification</targetReference>
+            </connector>
+            <label>Case Member is added other than current user</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
     <interviewLabel>Send Case Member Email Notification {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Send Case Member Email Notification</label>
     <processMetadataValues>
@@ -27,7 +59,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -38,10 +70,10 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>50</locationX>
-        <locationY>0</locationY>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
         <connector>
-            <targetReference>Send_Email_Notification</targetReference>
+            <targetReference>Case_Member_is_added_other_than_current</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>

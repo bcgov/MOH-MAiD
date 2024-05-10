@@ -3,6 +3,7 @@ public class ICY_Notes_Documents_ControllerTest {
     static testMethod void unitTest(){
         Referral__c obj = new Referral__c();
         obj.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Referral__c', 'ICY_General');
+        obj.ICY_Program_Leader__c=ICY_Referral_Controller.getICYPlId('Coast Mountains Team Hazelton');
         insert obj;
 
         ICY_Notes__c notes = new ICY_Notes__c();
@@ -40,6 +41,7 @@ public class ICY_Notes_Documents_ControllerTest {
         objCase.status = 'New';
         objCase.Origin = 'Phone';
         objCase.RecordTypeId = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('ICY_Standard_Case').getRecordTypeId();
+        objCase.Referral__c = obj.Id;
         insert objCase;
 
         ContentVersion contentVersion_2 = [SELECT Id, Title, ContentDocumentId FROM ContentVersion WHERE Id = :contentVersion_1.Id LIMIT 1];

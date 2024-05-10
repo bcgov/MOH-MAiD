@@ -40,6 +40,7 @@ public with sharing class YTS_Referral_Controller_Test {
         RefRecord.What_services_they_are_waiting_for__c = 'Test Services';
         RefRecord.DAA_or_other_cultural_or_spiritual_repre__c = 'Test';
         RefRecord.Referral_Notes__c = 'This is a test note.';
+        RefRecord.ICY_Program_Leader__c=ICY_Referral_Controller.getICYPlId('Coast Mountains Team Hazelton');
         insert RefRecord;
 
         String testString = YTS_Referral_Controller.createReferral(RefRecord,RefRecord.Id);
@@ -62,6 +63,7 @@ public with sharing class YTS_Referral_Controller_Test {
         Case cas = new case();
         cas.Status = 'New';
         cas.RecordTypeId = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('ICY_Standard_Case').getRecordTypeId();
+        cas.Referral__c=RefRecord.id;
         insert cas;
 
         RefRecord.Case__c= cas.Id;
