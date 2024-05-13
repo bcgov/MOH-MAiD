@@ -5,31 +5,36 @@ public with sharing class ICYNotesTriggerHandler{
             if(obj.Referral_Subject__c == 'Critical Incident' && obj.Case__c!=null){
                 setOfCaseIds.add(obj.Case__c);
             }
+        } 
+        
+        
+       map<Id,List<String>> mapOfCaseIdUserEmail = new map<Id,List<String>>();
+       
+        for(Case obj:[select id,ICY_Geographic_Area__c from Case where id in:setOfCaseIds ]){
+           String  sPL='';
+           List<String> lstEmails = new List<String>();
+           sPL=ICY_Referral_Controller.getICYPlId(obj.ICY_Geographic_Area__c);
+           if (sPL <> null){
+            User objUser=[select id,Email from user where  id=:sPL];
+            lstEmails.add(objUser.Email);
+            mapOfCaseIdUserEmail.put(obj.id,lstEmails);
+           }
         }
-        map<Id,List<String>> mapOfCaseIdVsUserIds = new map<Id,List<String>>();
-        for(Case_Member__c obj:[select id,ICY_User__r.Email, ICY_Case__c from Case_Member__c where ICY_Case__c in:setOfCaseIds AND ICY_Category_Assignment__c != 'Supplemental' AND ICY_Status__c='Active']){
-            List<String> userIds = new List<String>();
-            if(mapOfCaseIdVsUserIds.containsKey(obj.ICY_Case__c)){
-                userIds = mapOfCaseIdVsUserIds.get(obj.ICY_Case__c);
-            }
-            userIds.add(obj.ICY_User__r.Email);
-            mapOfCaseIdVsUserIds.put(obj.ICY_Case__c,userIds);
-        }
+
         List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
         Id orgwideEmailId = YTS_Utility.getICYOrgWideEmailAddressId();
         String subject = 'Incident Alert';
 
-
-        for(Case obj:[select id,CaseNumber,Primary_Contact__c from Case where id in:mapOfCaseIdVsUserIds.keyset()]){
+        for(Case obj:[select id,CaseNumber,Primary_Contact__c from Case where id in:mapOfCaseIdUserEmail.keyset()]){
             Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-            String body = 'Hello, <br/><br/>There is a new critical incident note related to <a href="'+ System.URL.getSalesforceBaseUrl().toExternalForm()+'/'+obj.id+'">'+obj.CaseNumber+'</a>. Please review as soon as possible. <br/><br/>Thanks.';
+            String body = 'Hello, <br/><br/>There is a new critical incident note related to <a href="'+ System.URL.getSalesforceBaseUrl().toExternalForm()+'/'+obj.id+'">'+obj.CaseNumber+'</a>. Please review as soon as possible. <br/><br/>Thank you.';
             //Change with Template ID
             mail.setTargetObjectId(UserInfo.getUserId());
             //Record ID for which letter will be generated
             mail.setSubject(subject);
             mail.setHtmlBody(body);
             if(orgwideEmailId != null) mail.setOrgWideEmailAddressId(orgwideEmailId);
-            mail.setToAddresses(mapOfCaseIdVsUserIds.get(obj.Id));
+            mail.setToAddresses(mapOfCaseIdUserEmail.get(obj.Id));
             mail.setBccSender(false);
             mail.setUseSignature(false);
             mail.setSaveAsActivity(false);

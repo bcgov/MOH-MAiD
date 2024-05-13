@@ -51,6 +51,7 @@ public class ICY_ReferralFeatureUtilityTest {
         objCase.Origin = 'Phone';
         objCase.Referral__c =RefRecord1.id;
         objCase.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Case', 'ICY_Standard_Case');
+        objCase.ICY_Geographic_Area__c ='Coast Mountains Team Hazelton';
         insert objCase;
 
         RefRecord1.Case__c= objCase.Id;
@@ -229,6 +230,7 @@ public class ICY_ReferralFeatureUtilityTest {
         objCase1.status = 'Open';
         objCase1.Origin = 'Phone';
         objCase1.recordTypeid = YTS_Utility.getRecordTypeIdByDeveloperName('Case', 'ICY_Standard_Case');
+        objCase1.ICY_Geographic_Area__c ='Coast Mountains Team Hazelton';  
         objCase1.Referral__c =RefRecord.id;
         insert objCase1;
 
