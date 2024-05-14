@@ -25,6 +25,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ICY_CustomSettingsController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ICY_IntakeFlowHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -64,6 +68,10 @@
         <apexClass>YTS_Referral_Controller</apexClass>
         <enabled>true</enabled>
     </classAccesses>
+    <customSettingAccesses>
+        <enabled>true</enabled>
+        <name>ICY_Outage_Message_Settings__c</name>
+    </customSettingAccesses>
     <description>Permission set to be given to Permission set groups for access to Integrate.</description>
     <fieldPermissions>
         <editable>true</editable>
