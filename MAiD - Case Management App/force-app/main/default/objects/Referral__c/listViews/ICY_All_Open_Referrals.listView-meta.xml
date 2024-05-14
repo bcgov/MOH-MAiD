@@ -14,7 +14,7 @@
     <filters>
         <field>Status__c</field>
         <operation>equals</operation>
-        <value>Referral,Ready for Intake</value>
+        <value>Referral</value>
     </filters>
     <label>ICY All Open Referrals</label>
     <sharedTo>
