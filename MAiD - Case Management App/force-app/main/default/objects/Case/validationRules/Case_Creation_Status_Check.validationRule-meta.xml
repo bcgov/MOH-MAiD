@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Case_Creation_Status_Check</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNEW(), 
+Record_Type_Name__c = &apos;MAiD_Case&apos;,NOT(OR(ISPICKVAL(Status, &apos;Awaiting Forms&apos;), ISPICKVAL(Status, &apos;Follow up required for CC Review/Checks&apos;), ISPICKVAL(Status, &apos;Ready for CC Review/Checks&apos;))))</errorConditionFormula>
+    <errorMessage>This case can only be saved with the status of Awaiting Forms, Follow-up Required for CC Review/Checks, or Ready for CC Review status</errorMessage>
+</ValidationRule>
