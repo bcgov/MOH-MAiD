@@ -26,8 +26,7 @@
         <description>Referral Record Email Alert</description>
         <protected>false</protected>
         <recipients>
-            <field>ICY_Program_Leader__c</field>
-            <type>userLookup</type>
+            <type>owner</type>
         </recipients>
         <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>

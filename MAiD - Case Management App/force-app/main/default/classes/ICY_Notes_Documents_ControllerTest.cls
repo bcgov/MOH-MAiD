@@ -3,7 +3,6 @@ public class ICY_Notes_Documents_ControllerTest {
     static testMethod void unitTest(){
         Referral__c obj = new Referral__c();
         obj.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Referral__c', 'ICY_General');
-        obj.ICY_Program_Leader__c=ICY_Referral_Controller.getICYPlId('Coast Mountains Team Hazelton');
         insert obj;
 
         ICY_Notes__c notes = new ICY_Notes__c();

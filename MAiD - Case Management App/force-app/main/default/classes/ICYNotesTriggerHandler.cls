@@ -11,15 +11,36 @@ public with sharing class ICYNotesTriggerHandler{
        map<Id,List<String>> mapOfCaseIdUserEmail = new map<Id,List<String>>();
        
         for(Case obj:[select id,ICY_Geographic_Area__c from Case where id in:setOfCaseIds ]){
-           String  sPL='';
-           List<String> lstEmails = new List<String>();
-           sPL=ICY_Referral_Controller.getICYPlId(obj.ICY_Geographic_Area__c);
-           if (sPL <> null){
-            User objUser=[select id,Email from user where  id=:sPL];
-            lstEmails.add(objUser.Email);
-            mapOfCaseIdUserEmail.put(obj.id,lstEmails);
-           }
+            if(String.isNotBlank(obj.ICY_Geographic_Area__c)){  
+                String queueName = '%'+obj.ICY_Geographic_Area__c.replace('-', ' ')+'%';
+                List<String> toAddressess = new List<String>();
+                Set<Id> groupOrQueuId = new Set<Id>();
+                Set<Id> roleId = new Set<Id>();
+                Set<Id> userid = new Set<Id>();
+            For(GroupMember gm: [SELECT UserOrGroupId FROM GroupMember WHERE Group.Type = 'Queue' AND Group.Name LIKE :queueName]){
+                if((String.valueOf(gm.UserOrGroupId)).startsWithIgnoreCase('00G')){
+                    groupOrQueuId.add(gm.UserOrGroupId);
+                }else{
+                    userid.add(gm.UserOrGroupId);
+                }
+            }
+            if(!groupOrQueuId.isEmpty()){
+                For(Group gm: [SELECT RelatedId,Type,DeveloperName FROM group WHERE Id IN:groupOrQueuId AND Type = 'Role'and DeveloperName  like '%Program_Leader%']){
+                    roleId.add(gm.RelatedId);
+                }
+            }
+            
+            if(!roleId.isEmpty() || !userid.isEmpty()){
+                For(User u: [SELECT Id,Name, email FROM User WHERE (UserRoleId =: roleId OR ID IN:userid ) AND isActive = true]){
+                        toAddressess.add(u.email);
+                    }
+                }
+            
+              mapOfCaseIdUserEmail.put(obj.id,toAddressess);
+            }
         }
+
+
 
         List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
         Id orgwideEmailId = YTS_Utility.getICYOrgWideEmailAddressId();

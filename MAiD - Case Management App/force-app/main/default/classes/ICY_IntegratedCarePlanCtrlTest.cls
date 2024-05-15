@@ -80,7 +80,6 @@ public class ICY_IntegratedCarePlanCtrlTest {
             RefRecord.Referral_Notes__c = 'This is a test note.';
             RefRecord.ICY_Show_Banner__c = TRUE;
             RefRecord.ICY_Geographic_Area__c = 'Coast Mountains Team Hazelton';
-            RefRecord.ICY_Program_Leader__c=ICY_Referral_Controller.getICYPlId('Coast Mountains Team Hazelton');
             
             insert RefRecord;
 

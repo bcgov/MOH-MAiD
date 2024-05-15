@@ -110,7 +110,6 @@ public class ICY_AccessCaseControllerTest {
         RefRecord1.ICY_Show_Banner__c = TRUE;
         RefRecord1.ICY_Geographic_Area__c = 'Coast Mountains Team Hazelton';
         RefRecord1.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Referral__c', 'ICY_General');  
-        RefRecord1.ICY_Program_Leader__c=ICY_Referral_Controller.getICYPlId('Coast Mountains Team Hazelton');
         insert RefRecord1;
         
         Intake__c intake = new Intake__c();

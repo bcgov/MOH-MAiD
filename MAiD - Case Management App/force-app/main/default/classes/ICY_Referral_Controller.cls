@@ -56,25 +56,6 @@ public without sharing class ICY_Referral_Controller {
         return groupList[0].Id;
     }
 
-    //update referral PL id 
-    @AuraEnabled
-    public static String getICYPlId(String geographicArea){
-        geographicArea = geographicArea.replace('-', ' ');
-        String geoArea = '%'+geographicArea+'%';
-        List<Group> groupList = [SELECT ID FROM GROUP WHERE TYPE='Queue' AND Name LIKE :geoArea LIMIT 1];
-        
-        if (groupList.size()>0){
-            List<Group> groupList2=[select developername  from group where id in (select  UserOrGroupId from groupmember where groupId =:groupList[0].Id) and 
-                                    type='Role'  and DeveloperName  like '%Program_Leader%' ];                  
-                
-           if (groupList2.size()>0){
-               List<User> userList=[select id from user where  UserRoleId in (select id from userrole where developername=:groupList2[0].developername)];
-                    if (userList.size()> 0 )
-                      return userList[0].Id;
-           }
-        }
-        return '';
-    }
 
     //checkIfHealthNumberIsUnique
     @AuraEnabled

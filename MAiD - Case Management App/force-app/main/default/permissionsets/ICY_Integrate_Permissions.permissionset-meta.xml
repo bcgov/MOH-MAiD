@@ -37,6 +37,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>ICY_ReferralFlowHandler</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>ICY_Referral_Controller</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -1438,11 +1442,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.ICY_Priority__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>true</editable>
-        <field>Referral__c.ICY_Program_Leader__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
