@@ -17,7 +17,7 @@ public class ICY_UtilityTest {
         ref.Individual_First_Name__c ='Test';
         ref.Individual_Last_Name__c ='User';
         ref.Individual_Date_of_Birth__c = system.today();
-        ref.Individual_Home_Phone_Number__c = '1231231';
+        ref.Individual_Home_Phone_Number__c = '1231231111';
         ref.Physical_Address_City__c='City';
         ref.Physical_Address_Line_1__c ='12th street';
         ref.Physical_Address_Postal_Code__c='V2X6M2';
