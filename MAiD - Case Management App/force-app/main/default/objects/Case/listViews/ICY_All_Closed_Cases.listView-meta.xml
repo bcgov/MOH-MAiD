@@ -21,6 +21,7 @@
     </filters>
     <label>ICY All Closed Cases</label>
     <sharedTo>
+        <group>All_ICY_Admins</group>
         <group>ICY_Program_Leaders</group>
     </sharedTo>
 </ListView>
