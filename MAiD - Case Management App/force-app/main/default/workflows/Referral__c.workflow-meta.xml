@@ -37,7 +37,8 @@
         <description>Referral Updated Email Alert</description>
         <protected>false</protected>
         <recipients>
-            <type>owner</type>
+            <field>ICY_Assigned_To__c</field>
+            <type>userLookup</type>
         </recipients>
         <senderType>CurrentUser</senderType>
         <template>ICY_Email_Templates/ICY_Referral_Updated_Template</template>

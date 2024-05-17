@@ -5,11 +5,12 @@
     <name>ICY Intake Assignment Notification</name>
     <style>none</style>
     <subject>Intake {!Intake__c.Name} has been assigned to you.</subject>
-    <textOnly>Hi {!Intake__c.ICY_Assigned_To_Name__c},
+    <textOnly>Hello,
 
-Intake {!Intake__c.Name} has been assigned to you - please follow the link for details.
+{!Intake__c.Name} has been assigned to you.
+Please follow the link for more details.
 
-Thank you!</textOnly>
+Thank you.</textOnly>
     <type>custom</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

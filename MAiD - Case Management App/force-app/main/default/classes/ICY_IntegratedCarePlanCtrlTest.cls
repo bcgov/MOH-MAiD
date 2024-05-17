@@ -41,12 +41,6 @@ public class ICY_IntegratedCarePlanCtrlTest {
 
         UserRole urole;
 
-            case objCase = new case ();
-            objCase.status = 'New';
-            objCase.Origin = 'Phone';
-            objCase.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Case', 'ICY_Standard_Case');
-            insert objCase;
-
            	Referral__c RefRecord = new Referral__c();
             RefRecord.Type_of_Referral__c = 'Organizational Referral';
             RefRecord.Referring_Organization__c = 'Health Authority';
@@ -86,8 +80,18 @@ public class ICY_IntegratedCarePlanCtrlTest {
             RefRecord.Referral_Notes__c = 'This is a test note.';
             RefRecord.ICY_Show_Banner__c = TRUE;
             RefRecord.ICY_Geographic_Area__c = 'Coast Mountains Team Hazelton';
-            RefRecord.Case__c = objCase.Id;
+            
             insert RefRecord;
+
+            case objCase = new case ();
+            objCase.status = 'New';
+            objCase.Origin = 'Phone';
+            objCase.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Case', 'ICY_Standard_Case');
+            objCase.Referral__c = RefRecord.id;
+            insert objCase;
+
+            RefRecord.Case__c = objCase.Id;
+            upsert(RefRecord);
 
             Intake__c intake = new Intake__c();
             intake.Referral__c = RefRecord.Id;

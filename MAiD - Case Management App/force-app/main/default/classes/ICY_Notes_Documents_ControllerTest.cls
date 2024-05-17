@@ -40,6 +40,7 @@ public class ICY_Notes_Documents_ControllerTest {
         objCase.status = 'New';
         objCase.Origin = 'Phone';
         objCase.RecordTypeId = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('ICY_Standard_Case').getRecordTypeId();
+        objCase.Referral__c = obj.Id;
         insert objCase;
 
         ContentVersion contentVersion_2 = [SELECT Id, Title, ContentDocumentId FROM ContentVersion WHERE Id = :contentVersion_1.Id LIMIT 1];

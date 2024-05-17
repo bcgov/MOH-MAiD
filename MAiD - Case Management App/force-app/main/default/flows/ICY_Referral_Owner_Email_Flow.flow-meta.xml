@@ -1,40 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <actionCalls>
-        <name>Referral_Closed_Email_Alert</name>
-        <label>Referral Closed Email Alert</label>
-        <locationX>314</locationX>
-        <locationY>539</locationY>
-        <actionName>Referral__c.Referral_Closed_Email_Alert</actionName>
-        <actionType>emailAlert</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
-        <name>Referral_Record_Email_Alert</name>
-        <label>Referral Record Email Alert</label>
-        <locationX>50</locationX>
-        <locationY>431</locationY>
-        <actionName>Referral__c.Referral_Record_Email_Alert</actionName>
-        <actionType>emailAlert</actionType>
-        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
-        <inputParameters>
-            <name>SObjectRowId</name>
-            <value>
-                <elementReference>$Record.Id</elementReference>
-            </value>
-        </inputParameters>
-    </actionCalls>
-    <actionCalls>
         <name>Referral_Updated_Email_Alert</name>
         <label>Referral Updated Email Alert</label>
-        <locationX>578</locationX>
-        <locationY>539</locationY>
+        <locationX>842</locationX>
+        <locationY>587</locationY>
         <actionName>Referral__c.Referral_Updated_Email_Alert</actionName>
         <actionType>emailAlert</actionType>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
@@ -44,15 +14,34 @@
                 <elementReference>$Record.Id</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>Referral__c.Referral_Updated_Email_Alert</nameSegment>
+        <versionSegment>1</versionSegment>
+    </actionCalls>
+    <actionCalls>
+        <name>Send_Referral_Created_Email_Notification</name>
+        <label>Send Referral Created Email Notification</label>
+        <locationX>570</locationX>
+        <locationY>502</locationY>
+        <actionName>ICY_ReferralFlowHandler</actionName>
+        <actionType>apex</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>referralList</name>
+            <value>
+                <elementReference>$Record</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>ICY_ReferralFlowHandler</nameSegment>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>59.0</apiVersion>
     <decisions>
         <name>New_Referral</name>
         <label>New Referral</label>
-        <locationX>248</locationX>
-        <locationY>323</locationY>
+        <locationX>740</locationX>
+        <locationY>404</locationY>
         <defaultConnector>
-            <targetReference>Referral_Closed</targetReference>
+            <targetReference>Referral_is_Assigned_to</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Existing Referral</defaultConnectorLabel>
         <rules>
@@ -66,44 +55,48 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Referral_Record_Email_Alert</targetReference>
+                <targetReference>Send_Referral_Created_Email_Notification</targetReference>
             </connector>
             <label>New Referral</label>
         </rules>
     </decisions>
     <decisions>
-        <name>Referral_Closed</name>
-        <label>Referral Closed</label>
-        <locationX>446</locationX>
-        <locationY>431</locationY>
-        <defaultConnector>
-            <targetReference>Referral_Updated_Email_Alert</targetReference>
-        </defaultConnector>
+        <name>Referral_is_Assigned_to</name>
+        <label>Referral is Assigned to</label>
+        <locationX>974</locationX>
+        <locationY>479</locationY>
         <defaultConnectorLabel>Referral Updated</defaultConnectorLabel>
         <rules>
-            <name>Yes_Referral_Closed</name>
+            <name>Referral_is_Assigned_to_other_than_current_user</name>
             <conditionLogic>and</conditionLogic>
             <conditions>
-                <leftValueReference>$Record.Status__c</leftValueReference>
+                <leftValueReference>$Record.ICY_Assigned_To__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ICY_Assigned_To__c</leftValueReference>
                 <operator>IsChanged</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.Status__c</leftValueReference>
-                <operator>EqualTo</operator>
+                <leftValueReference>$Record.ICY_Assigned_To__r.Username</leftValueReference>
+                <operator>NotEqualTo</operator>
                 <rightValue>
-                    <stringValue>Closed</stringValue>
+                    <elementReference>$User.Username</elementReference>
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Referral_Closed_Email_Alert</targetReference>
+                <targetReference>Referral_Updated_Email_Alert</targetReference>
             </connector>
-            <label>Referral Closed</label>
+            <label>Referral is Assigned to other than current user</label>
         </rules>
     </decisions>
-    <description>Added separate email action for when the referral is closed.</description>
+    <description>Added separate email action for when the referral is created or Assigned to other than the current user.</description>
     <environments>Default</environments>
     <formulas>
         <name>ISNEW</name>
@@ -121,7 +114,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -132,8 +125,8 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>122</locationX>
-        <locationY>0</locationY>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>New_Referral</targetReference>
         </connector>
