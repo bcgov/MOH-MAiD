@@ -37,7 +37,7 @@
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>4</colSpan>
+            <colSpan>3</colSpan>
             <columnIndex>1</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
@@ -69,31 +69,31 @@
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
             <rowIndex>5</rowIndex>
-            <rowSpan>7</rowSpan>
+            <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>3</colSpan>
-            <columnIndex>5</columnIndex>
+            <colSpan>4</colSpan>
+            <columnIndex>4</columnIndex>
             <dashboardComponent>
-                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
-                <chartSummary>
-                    <column>RowCount</column>
-                </chartSummary>
-                <componentType>Metric</componentType>
-                <decimalPrecision>-1</decimalPrecision>
+                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+                <chartAxisRange>Auto</chartAxisRange>
+                <componentType>Bar</componentType>
                 <displayUnits>Auto</displayUnits>
+                <drillEnabled>false</drillEnabled>
+                <drillToDetailEnabled>false</drillToDetailEnabled>
+                <enableHover>false</enableHover>
+                <expandOthers>false</expandOthers>
                 <groupingSortProperties/>
-                <header>ICY Total Cases Last Month</header>
-                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
-                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
-                <indicatorHighColor>#00716B</indicatorHighColor>
-                <indicatorLowColor>#C23934</indicatorLowColor>
-                <indicatorMiddleColor>#FFB75D</indicatorMiddleColor>
-                <report>ICYSharedIndicatorsReports/ICY_Total_Cases_Last_month</report>
-                <showRange>false</showRange>
+                <header>ICY All Open Cases</header>
+                <report>ICYSharedIndicatorsReports/ICY_All_Open_Cases_sH3</report>
+                <showPercentage>false</showPercentage>
+                <showPicturesOnCharts>false</showPicturesOnCharts>
+                <showValues>false</showValues>
+                <sortBy>RowLabelAscending</sortBy>
+                <useReportChart>true</useReportChart>
             </dashboardComponent>
             <rowIndex>5</rowIndex>
-            <rowSpan>7</rowSpan>
+            <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>7</colSpan>
@@ -106,7 +106,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>12</rowIndex>
+            <rowIndex>13</rowIndex>
             <rowSpan>3</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -120,7 +120,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>15</rowIndex>
+            <rowIndex>16</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -134,7 +134,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>17</rowIndex>
+            <rowIndex>18</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -171,7 +171,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>19</rowIndex>
+            <rowIndex>20</rowIndex>
             <rowSpan>10</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -181,11 +181,11 @@
                 <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
                 <componentType>RichText</componentType>
                 <dashboardComponentContents>
-                    <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;italic\&amp;quot;:true,\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Number of Referrals connected to more appropriate services\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;left\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
+                    <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;italic\&amp;quot;:true,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Number of children\/youth connected to the more appropriate services\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;left\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>29</rowIndex>
+            <rowIndex>30</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -222,7 +222,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>31</rowIndex>
+            <rowIndex>32</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -259,7 +259,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>31</rowIndex>
+            <rowIndex>32</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -273,7 +273,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>39</rowIndex>
+            <rowIndex>40</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -310,7 +310,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>41</rowIndex>
+            <rowIndex>42</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -334,7 +334,7 @@
                 <report>ICYSharedIndicatorsReports/ICY_Intakes_accepted_by_month</report>
                 <showRange>false</showRange>
             </dashboardComponent>
-            <rowIndex>41</rowIndex>
+            <rowIndex>42</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -348,7 +348,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>49</rowIndex>
+            <rowIndex>50</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -385,7 +385,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>51</rowIndex>
+            <rowIndex>52</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -399,7 +399,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>59</rowIndex>
+            <rowIndex>60</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -439,7 +439,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>61</rowIndex>
+            <rowIndex>62</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -476,7 +476,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>61</rowIndex>
+            <rowIndex>62</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -490,7 +490,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>70</rowIndex>
+            <rowIndex>71</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -530,7 +530,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>72</rowIndex>
+            <rowIndex>73</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -544,7 +544,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>80</rowIndex>
+            <rowIndex>81</rowIndex>
             <rowSpan>3</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -558,7 +558,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>83</rowIndex>
+            <rowIndex>84</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -595,7 +595,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>85</rowIndex>
+            <rowIndex>86</rowIndex>
             <rowSpan>10</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -609,7 +609,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>95</rowIndex>
+            <rowIndex>96</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <numberOfColumns>9</numberOfColumns>
@@ -617,7 +617,7 @@
     </dashboardGridLayout>
     <dashboardType>LoggedInUser</dashboardType>
     <isGridLayout>true</isGridLayout>
-    <owner>admin@icyuat.admin.com</owner>
+    <owner>admin.user@gov.bc.ca.bcmohmaid</owner>
     <runningUser>admin.user@gov.bc.ca.bcmohmaid</runningUser>
     <textColor>#000000</textColor>
     <title>Shared Indicators - Integrate Data - Last Month</title>
