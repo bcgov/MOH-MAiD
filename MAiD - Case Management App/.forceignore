@@ -12,7 +12,7 @@ package.xml
 **standardValueSets
 #**matchingRule
 #duplicateRules
-entitlementProcesses
+**entitlementProcesses
 #**permissionset
 #**recordTypes
 #**sharingRules
