@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>ICY_User_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>This rule makes sure that all ICY Users can see all ICY Users</description>
+        <label>ICY User Access</label>
+        <sharedTo>
+            <group>All_ICY_Team_Members</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>All_ICY_Team_Members</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>
