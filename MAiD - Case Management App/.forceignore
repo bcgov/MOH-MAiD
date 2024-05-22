@@ -12,10 +12,10 @@ package.xml
 **standardValueSets
 #**matchingRule
 #duplicateRules
-#entitlementProcesses
+**entitlementProcesses
 #**permissionset
 #**recordTypes
-**sharingRules
+#**sharingRules
 
 #MoH Standard User.profile
 
