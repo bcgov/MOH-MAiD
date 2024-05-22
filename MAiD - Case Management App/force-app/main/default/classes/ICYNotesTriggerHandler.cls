@@ -45,13 +45,10 @@ public with sharing class ICYNotesTriggerHandler{
         List<Messaging.SingleEmailMessage> emails = new List<Messaging.SingleEmailMessage>();
         Id orgwideEmailId = YTS_Utility.getICYOrgWideEmailAddressId();
         String subject = 'Incident Alert';
-
+        
         for(Case obj:[select id,CaseNumber,Primary_Contact__c from Case where id in:mapOfCaseIdUserEmail.keyset()]){
             Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
             String body = 'Hello, <br/><br/>There is a new critical incident note related to <a href="'+ System.URL.getSalesforceBaseUrl().toExternalForm()+'/'+obj.id+'">'+obj.CaseNumber+'</a>. Please review as soon as possible. <br/><br/>Thank you.';
-            //Change with Template ID
-            mail.setTargetObjectId(UserInfo.getUserId());
-            //Record ID for which letter will be generated
             mail.setSubject(subject);
             mail.setHtmlBody(body);
             if(orgwideEmailId != null) mail.setOrgWideEmailAddressId(orgwideEmailId);
