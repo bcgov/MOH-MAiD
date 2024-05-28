@@ -27,6 +27,12 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
+        <field>Case.Case_Members__r$ICY_User__c.Title</field>
+    </columns>
+    <columns>
+        <field>Case.Case_Members__r$ICY_User__c.CompanyName</field>
+    </columns>
+    <columns>
         <field>Case.Case_Members__r$ICY_Team_Member__c</field>
     </columns>
     <columns>
