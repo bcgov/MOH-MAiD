@@ -1,4 +1,4 @@
-public class ICY_CompleteIntakeCtrl {
+public without sharing class ICY_CompleteIntakeCtrl {
     @AuraEnabled
     public static void createPersonAcc(String strRecordId,String strCaseID, String strContentDoc, String strDocumentType, 
                                         String strDocumentName, String strSignedDoc,
@@ -194,6 +194,6 @@ public class ICY_CompleteIntakeCtrl {
             );
         }
 
-        if(accountShareList.size() > 0) INSERT accountShareList;
+        if(accountShareList.size() > 0) Database.insert(accountShareList, false);
     }
 }
