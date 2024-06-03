@@ -15,6 +15,7 @@
     </filters>
     <label>ICY All Closed Intakes</label>
     <sharedTo>
+        <group>All_ICY_Admins</group>
         <group>ICY_Program_Leaders</group>
     </sharedTo>
 </ListView>

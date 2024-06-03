@@ -8,16 +8,15 @@
             <axisBinding>y</axisBinding>
             <column>RowCount</column>
         </chartSummaries>
-        <chartType>VerticalColumnStacked</chartType>
+        <chartType>Donut</chartType>
         <enableHoverLabels>false</enableHoverLabels>
-        <expandOthers>true</expandOthers>
-        <groupingColumn>Case$CaseNumber</groupingColumn>
+        <expandOthers>false</expandOthers>
+        <groupingColumn>Case$ICY_Geographic_Area__c</groupingColumn>
         <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
-        <secondaryGroupingColumn>Case.Case_Members__r$ICY_User__c.UserRole</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
-        <showTotal>false</showTotal>
+        <showTotal>true</showTotal>
         <showValues>false</showValues>
         <size>Medium</size>
         <summaryAxisRange>Auto</summaryAxisRange>
@@ -27,71 +26,54 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>Case.Case_Members__r$ICY_User__c.Title</field>
+        <field>Case$CaseNumber</field>
     </columns>
     <columns>
-        <field>Case.Case_Members__r$ICY_User__c.CompanyName</field>
+        <field>Case$Account</field>
     </columns>
     <columns>
-        <field>Case.Case_Members__r$ICY_Team_Member__c</field>
+        <field>Case$Status</field>
     </columns>
-    <columns>
-        <field>Case.Case_Members__r$ICY_Category_Assignment__c</field>
-    </columns>
-    <columns>
-        <field>Case.Case_Members__r$ICY_Status__c</field>
-    </columns>
+    <description>ICY All Open Cases to answer Q1A in Shared Indicators Dashboard: For the reporting month, total # of children/youth receiving ICY Team services including active cases, brief services, consults, groups (if available).</description>
     <filter>
+        <criteriaItems>
+            <column>Case$Status</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>Open</value>
+        </criteriaItems>
         <criteriaItems>
             <column>Case$RecordType</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
-            <value>Case.ICY_Close_Case,Case.ICY_Standard_Case</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>Case$CreatedDate</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>equals</operator>
-            <value>LAST_MONTH</value>
-        </criteriaItems>
-        <criteriaItems>
-            <column>Case.Case_Members__r$ICY_Category_Assignment__c</column>
-            <columnToColumn>false</columnToColumn>
-            <isUnlocked>true</isUnlocked>
-            <operator>notEqual</operator>
-            <value></value>
+            <value>Case.ICY_Standard_Case</value>
         </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Case$CaseNumber</field>
+        <field>Case$ICY_Geographic_Area__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>Case.Case_Members__r$ICY_User__c.UserRole</field>
+        <field>Case$ICY_Case_Owner__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <groupingsDown>
-        <dateGranularity>Day</dateGranularity>
-        <field>Case.Case_Members__r$ICY_User__c.Name</field>
-        <sortOrder>Asc</sortOrder>
-    </groupingsDown>
-    <name># CY being seen 1+ Members</name>
+    <name>ICY All Open Cases</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>MMHA_Reporting_Report_Type__c</reportType>
+    <reportType>Cases_with_Case_Contacts__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
-    <showGrandTotal>true</showGrandTotal>
-    <showSubTotals>true</showSubTotals>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>Case$ICY_Case_Close_Date__c</dateColumn>
+        <dateColumn>Case.Referral_Contacts__r$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>

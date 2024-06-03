@@ -1,5 +1,5 @@
 Hello,<br/><br/>
 
-<a href="{!Referral__c.Link}">{!Referral__c.Name}</a> has been updated. Please follow link for details.<br/><br/>
+<a href="{!Referral__c.Link}">{!Referral__c.Name}</a> has been assigned to you. Please follow the link for more details.<br/><br/>
 
-Thanks
+Thank you.

@@ -16,12 +16,12 @@ trigger YTS_Case_Trigger on Case (after insert, after update) {
           }
       }
   }
-  //Handle Close Case
-  if(Trigger.isAfter && Trigger.isUpdate){
+  //Handle Close Case Removed as per ticket BCMOHAD-23038
+ /* if(Trigger.isAfter && Trigger.isUpdate){
       List<Case> ICYCsNew =ICY_Utility.filterICYCases(trigger.new);
         if (!ICYCsNew.isEmpty()) {
           ICY_CaseTriggerHandler.sendClosedCaseEmailNotificationToLead(ICYCsNew, trigger.oldMap);
-        }
-  }
+        } 
+  }*/
 
 }

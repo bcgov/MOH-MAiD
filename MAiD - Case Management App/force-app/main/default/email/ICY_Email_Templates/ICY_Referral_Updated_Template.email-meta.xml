@@ -7,9 +7,9 @@
     <subject>Referral Updated</subject>
     <textOnly>Hello,
 
-{!Referral__c.Name} has been updated. Please follow link for details.
+{!Referral__c.Name} has been assigned to you. Please follow the link for more details..
 
-Thanks</textOnly>
+Thank you.</textOnly>
     <type>custom</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>

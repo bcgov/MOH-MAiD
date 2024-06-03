@@ -22,6 +22,6 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
-        <name>ViewAllUsers</name>
+        <name>ViewRoles</name>
     </userPermissions>
 </PermissionSet>

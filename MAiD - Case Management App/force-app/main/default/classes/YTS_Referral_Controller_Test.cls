@@ -62,6 +62,7 @@ public with sharing class YTS_Referral_Controller_Test {
         Case cas = new case();
         cas.Status = 'New';
         cas.RecordTypeId = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('ICY_Standard_Case').getRecordTypeId();
+        cas.Referral__c=RefRecord.id;
         insert cas;
 
         RefRecord.Case__c= cas.Id;

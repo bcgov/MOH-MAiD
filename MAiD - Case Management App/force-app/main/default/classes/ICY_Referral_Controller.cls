@@ -56,6 +56,7 @@ public without sharing class ICY_Referral_Controller {
         return groupList[0].Id;
     }
 
+
     //checkIfHealthNumberIsUnique
     @AuraEnabled
     public static Boolean checkIfHealthNumberIsUnique(String phn){

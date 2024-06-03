@@ -5,11 +5,11 @@
     <name>ICY Referral Owner Email Template</name>
     <style>none</style>
     <subject>Record has been assigned to you</subject>
-    <textOnly>Hello {!Referral__c.OwnerFullName},
+    <textOnly>Hello,
 
-The Referral record {!Referral__c.Name} has been assigned to your queue.
+{!Referral__c.Name} has been created. Please follow the link for more details.
 
-Thanks.</textOnly>
+Thank you.</textOnly>
     <type>custom</type>
     <uiType>Aloha</uiType>
 </EmailTemplate>
