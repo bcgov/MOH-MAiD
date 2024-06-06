@@ -15,6 +15,26 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
+        <fullName>ShareICYCaseWithCentralCoastAdmin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareICYCaseWithCentralCoastAdmin</label>
+        <sharedTo>
+            <role>Central_Coast_Team_Admin</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Central_Coast</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Central Coast</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
         <fullName>ShareICYCasesWithCoastMountainsAdmin</fullName>
         <accessLevel>Edit</accessLevel>
         <label>ShareICYCasesWithCoastMountainsAdmin</label>

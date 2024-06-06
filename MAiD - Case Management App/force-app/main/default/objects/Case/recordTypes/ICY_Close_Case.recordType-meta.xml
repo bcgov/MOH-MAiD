@@ -178,6 +178,10 @@
     <picklistValues>
         <picklist>ICY_Geographic_Area__c</picklist>
         <values>
+            <fullName>Central Coast</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Coast Mountains Team Hazelton</fullName>
             <default>false</default>
         </values>
