@@ -2,15 +2,17 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Reporting_Status__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( AND(MAiD_Reporting_Deadline__c &gt;= TODAY(), OR(ISBLANK( X1632_Date_Received__c ), ISBLANK( X1633_Date_Received__c ), ISBLANK(
+    <formula>IF( OR(ISPICKVAL(Type , &apos;MAiD Death Foreseeable&apos;) ,ISPICKVAL(Type , &apos;MAiD Death NOT Foreseeable&apos;)), 
+IF( AND(MAiD_Reporting_Deadline__c &gt;= TODAY(), OR(ISBLANK( X1632_Date_Received__c ), ISBLANK( X1633_Date_Received__c ), ISBLANK(
 X1634_Date_Received__c ), ISBLANK(RX_MAR_Date_Received__c))), &apos;AWAITING&apos;,
 IF(AND(MAiD_Reporting_Deadline__c &lt; TODAY(), OR(ISBLANK( X1632_Date_Received__c ), ISBLANK( X1633_Date_Received__c ), ISBLANK( X1634_Date_Received__c ), ISBLANK(RX_MAR_Date_Received__c))), &apos;OVERDUE&apos;,
 IF(NOT(OR(ISBLANK( X1632_Date_Received__c ), ISBLANK( X1633_Date_Received__c ), ISBLANK( X1634_Date_Received__c ), ISBLANK(RX_MAR_Date_Received__c))),
 IF(AND(MAiD_Reporting_Deadline__c &gt;= X1632_Date_Received__c, MAiD_Reporting_Deadline__c &gt;= X1633_Date_Received__c, MAiD_Reporting_Deadline__c &gt;= X1634_Date_Received__c , MAiD_Reporting_Deadline__c &gt;= RX_MAR_Date_Received__c), &apos;MET REQUIREMENTS&apos;,&apos;DID NOT MEET REQUIREMENTS&apos;), &apos;OVERDUE&apos;
 )
 )
-)</formula>
-    <label>Maid Reporting Status</label>
+), 
+&apos;Not Applicable&apos;)</formula>
+    <label>MAiD Reporting Status</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
