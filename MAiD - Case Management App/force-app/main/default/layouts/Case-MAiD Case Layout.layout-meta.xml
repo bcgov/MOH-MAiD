@@ -129,10 +129,6 @@
                 <field>Status_Feedback_Msg__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Case_re_open_date__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>MAiD_Reporting_Deadline__c</field>
             </layoutItems>
@@ -147,6 +143,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Pharmacy_Reporting_Status__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Case_re_open_date__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
