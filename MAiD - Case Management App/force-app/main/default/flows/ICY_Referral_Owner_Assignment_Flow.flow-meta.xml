@@ -2,6 +2,19 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>59.0</apiVersion>
     <assignments>
+        <name>Assign_Owner_Central_Coast</name>
+        <label>Assign Owner Central Coast</label>
+        <locationX>6122</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Records_Central_Coast.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Assign_Owner_Coast_Mountains_Team_Hazelton</name>
         <label>Assign Owner Coast Mountains Team Hazelton</label>
         <locationX>1634</locationX>
@@ -303,7 +316,7 @@
     <decisions>
         <name>Check_If_Referral_is_ICY</name>
         <label>Check If Referral is ICY</label>
-        <locationX>4736</locationX>
+        <locationX>4934</locationX>
         <locationY>287</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -332,7 +345,7 @@
     <decisions>
         <name>Update_Referral_Owner_Id</name>
         <label>Update Referral Owner Id</label>
-        <locationX>3086</locationX>
+        <locationX>3218</locationX>
         <locationY>395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -679,6 +692,21 @@
                 <targetReference>Get_record_Fraser_Cascades</targetReference>
             </connector>
             <label>Fraser Cascades</label>
+        </rules>
+        <rules>
+            <name>Central_Coast</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_Geographic_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Central Coast</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Records_Central_Coast</targetReference>
+            </connector>
+            <label>Central Coast</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -1186,8 +1214,29 @@
         <object>Group</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Records_Central_Coast</name>
+        <label>Get Records Central Coast</label>
+        <locationX>6122</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Owner_Central_Coast</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CentralCoast</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
-        <locationX>4610</locationX>
+        <locationX>4808</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Check_If_Referral_is_ICY</targetReference>
@@ -1212,6 +1261,16 @@
         <triggerType>RecordBeforeSave</triggerType>
     </start>
     <status>Active</status>
+    <variables>
+        <name>CentralCoast</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ICY_Central_Coast</stringValue>
+        </value>
+    </variables>
     <variables>
         <name>CoastMountainsTeamHazelton</name>
         <dataType>String</dataType>

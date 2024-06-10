@@ -12,9 +12,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Coast Mountains Terrace</fullName>
+                <fullName>Central Coast</fullName>
                 <default>false</default>
-                <label>Coast Mountains Terrace</label>
+                <label>Central Coast</label>
             </value>
             <value>
                 <fullName>Coast Mountains Hazelton</fullName>
@@ -22,24 +22,14 @@
                 <label>Coast Mountains Hazelton</label>
             </value>
             <value>
+                <fullName>Coast Mountains Terrace</fullName>
+                <default>false</default>
+                <label>Coast Mountains Terrace</label>
+            </value>
+            <value>
                 <fullName>Comox Valley 1</fullName>
                 <default>false</default>
                 <label>Comox Valley</label>
-            </value>
-            <value>
-                <fullName>Richmond 1</fullName>
-                <default>false</default>
-                <label>Richmond</label>
-            </value>
-            <value>
-                <fullName>Okanagan Similkameen</fullName>
-                <default>false</default>
-                <label>Okanagan Similkameen</label>
-            </value>
-            <value>
-                <fullName>Maple Ridge Pitt Meadows 1</fullName>
-                <default>false</default>
-                <label>Maple Ridge Pitt Meadows</label>
             </value>
             <value>
                 <fullName>Fraser Cascades</fullName>
@@ -50,6 +40,11 @@
                 <fullName>Kootenay-Columbia</fullName>
                 <default>false</default>
                 <label>Kootenay-Columbia</label>
+            </value>
+            <value>
+                <fullName>Maple Ridge Pitt Meadows 1</fullName>
+                <default>false</default>
+                <label>Maple Ridge Pitt Meadows</label>
             </value>
             <value>
                 <fullName>Mission Team 1</fullName>
@@ -67,6 +62,11 @@
                 <label>North Okanagan Shuswap</label>
             </value>
             <value>
+                <fullName>Okanagan Similkameen</fullName>
+                <default>false</default>
+                <label>Okanagan Similkameen</label>
+            </value>
+            <value>
                 <fullName>Pacific Rim</fullName>
                 <default>false</default>
                 <label>Pacific Rim</label>
@@ -75,6 +75,11 @@
                 <fullName>qathet (Powell River)</fullName>
                 <default>false</default>
                 <label>qathet (Powell River)</label>
+            </value>
+            <value>
+                <fullName>Richmond 1</fullName>
+                <default>false</default>
+                <label>Richmond</label>
             </value>
         </valueSetDefinition>
     </valueSet>
