@@ -54,6 +54,32 @@
         </assignmentItems>
     </assignments>
     <assignments>
+        <name>Assign_Owner_Cowichan_Valley</name>
+        <label>Assign Owner Cowichan Valley</label>
+        <locationX>6386</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Records_Cowichan_Valley.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Owner_Delta</name>
+        <label>Assign Owner Delta</label>
+        <locationX>6650</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Records_Delta.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Assign_Owner_Fraser_Cascades</name>
         <label>Assign Owner Fraser Cascades</label>
         <locationX>5858</locationX>
@@ -76,6 +102,19 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>get_record_Coast_Mountains_Team_Terrace.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Owner_Gold_Trail</name>
+        <label>Assign Owner Gold Trail</label>
+        <locationX>6914</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Records_Gold_Trail.Id</elementReference>
             </value>
         </assignmentItems>
     </assignments>
@@ -210,6 +249,19 @@
         </assignmentItems>
     </assignments>
     <assignments>
+        <name>Assign_Owner_Nicola_Similkameen</name>
+        <label>Assign Owner  Nicola Similkameen</label>
+        <locationX>7178</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Records_Nicola_Similkameen.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Assign_Owner_North_Okanagan_Shuswap</name>
         <label>Assign Owner North Okanagan Shuswap</label>
         <locationX>5330</locationX>
@@ -249,6 +301,19 @@
         </assignmentItems>
     </assignments>
     <assignments>
+        <name>Assign_Owner_Peace_River_South</name>
+        <label>Assign Owner Peace River South</label>
+        <locationX>7442</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Records_Peace_River_South.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Assign_Owner_qathet_Powell_River</name>
         <label>Assign Owner qathet(Powell River)</label>
         <locationX>4802</locationX>
@@ -258,6 +323,19 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Get_record_qathet_Powell_River.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Owner_Qualicum</name>
+        <label>Assign Owner Qualicum</label>
+        <locationX>7706</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Records_Qualicum.Id</elementReference>
             </value>
         </assignmentItems>
     </assignments>
@@ -310,6 +388,19 @@
             <operator>Assign</operator>
             <value>
                 <elementReference>Get_record_Richmond_Team_4.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
+        <name>Assign_Owner_Surrey</name>
+        <label>Assign Owner Surrey</label>
+        <locationX>7970</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Records_Surrey.Id</elementReference>
             </value>
         </assignmentItems>
     </assignments>
@@ -707,6 +798,111 @@
                 <targetReference>Get_Records_Central_Coast</targetReference>
             </connector>
             <label>Central Coast</label>
+        </rules>
+        <rules>
+            <name>Cowichan_Valley</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_Geographic_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Cowichan Valley</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Records_Cowichan_Valley</targetReference>
+            </connector>
+            <label>Cowichan Valley</label>
+        </rules>
+        <rules>
+            <name>Delta</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_Geographic_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Delta</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Records_Delta</targetReference>
+            </connector>
+            <label>Delta</label>
+        </rules>
+        <rules>
+            <name>Gold_Trail</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_Geographic_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Gold Trail</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Records_Gold_Trail</targetReference>
+            </connector>
+            <label>Gold Trail</label>
+        </rules>
+        <rules>
+            <name>Nicola_Similkameen</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_Geographic_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Nicola-Similkameen</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Records_Nicola_Similkameen</targetReference>
+            </connector>
+            <label>Nicola Similkameen</label>
+        </rules>
+        <rules>
+            <name>Peace_River_South</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_Geographic_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Peace River South</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Records_Peace_River_South</targetReference>
+            </connector>
+            <label>Peace River South</label>
+        </rules>
+        <rules>
+            <name>Qualicum</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_Geographic_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Qualicum</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Records_Qualicum</targetReference>
+            </connector>
+            <label>Qualicum</label>
+        </rules>
+        <rules>
+            <name>Surrey</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_Geographic_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Surrey</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_Records_Surrey</targetReference>
+            </connector>
+            <label>Surrey</label>
         </rules>
     </decisions>
     <environments>Default</environments>
@@ -1235,6 +1431,153 @@
         <object>Group</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
+    <recordLookups>
+        <name>Get_Records_Cowichan_Valley</name>
+        <label>Get Records Cowichan Valley</label>
+        <locationX>6386</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Owner_Cowichan_Valley</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>CowichanValley</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Records_Delta</name>
+        <label>Get Records Delta</label>
+        <locationX>6650</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Owner_Delta</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ICYDelta</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Records_Gold_Trail</name>
+        <label>Get Records Gold Trail</label>
+        <locationX>6914</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Owner_Gold_Trail</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>GoldTrail</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Records_Nicola_Similkameen</name>
+        <label>Get Records Nicola Similkameen</label>
+        <locationX>7178</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Owner_Nicola_Similkameen</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>NicolaSimilkameen</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Records_Peace_River_South</name>
+        <label>Get Records Peace River South</label>
+        <locationX>7442</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Owner_Peace_River_South</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>PeaceRiverSouth</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Records_Qualicum</name>
+        <label>Get Records Qualicum</label>
+        <locationX>7706</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Owner_Qualicum</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ICYQualicum</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
+        <name>Get_Records_Surrey</name>
+        <label>Get Records Surrey</label>
+        <locationX>7970</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Owner_Surrey</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ICYSurrey</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
         <locationX>4808</locationX>
         <locationY>0</locationY>
@@ -1312,6 +1655,16 @@
         </value>
     </variables>
     <variables>
+        <name>CowichanValley</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ICY_Cowichan_Valley</stringValue>
+        </value>
+    </variables>
+    <variables>
         <name>FraserCascades</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1319,6 +1672,26 @@
         <isOutput>false</isOutput>
         <value>
             <stringValue>ICY_Fraser_Cascades</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>GoldTrail</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ICY_Gold_Trail</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ICYDelta</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ICY_Delta</stringValue>
         </value>
     </variables>
     <variables>
@@ -1339,6 +1712,26 @@
         <isOutput>false</isOutput>
         <value>
             <stringValue>ICY_Mission_Team_2</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ICYQualicum</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ICY_Qualicum</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ICYSurrey</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ICY_Surrey</stringValue>
         </value>
     </variables>
     <variables>
@@ -1422,6 +1815,16 @@
         </value>
     </variables>
     <variables>
+        <name>NicolaSimilkameen</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ICY_Nicola_Similkameen</stringValue>
+        </value>
+    </variables>
+    <variables>
         <name>NorthOkanaganShuswap</name>
         <dataType>String</dataType>
         <isCollection>false</isCollection>
@@ -1449,6 +1852,16 @@
         <isOutput>false</isOutput>
         <value>
             <stringValue>ICY_Pacific_Rim</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>PeaceRiverSouth</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ICY_Peace_River_South</stringValue>
         </value>
     </variables>
     <variables>

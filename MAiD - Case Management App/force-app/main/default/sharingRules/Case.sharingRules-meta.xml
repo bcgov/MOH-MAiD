@@ -35,6 +35,146 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
+        <fullName>ShareICYCaseWithCowichanValleyAdmin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareICYCaseWithCowichanValleyAdmin</label>
+        <sharedTo>
+            <role>Cowichan_Valley_Team_Admin</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Cowichan_Valley</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Cowichan Valley</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareICYCaseWithDeltaAdmin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareICYCaseWithDeltaAdmin</label>
+        <sharedTo>
+            <role>Delta_Team_Admin</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Delta</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Delta</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareICYCaseWithGoldTrailAdmin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareICYCaseWithGoldTrailAdmin</label>
+        <sharedTo>
+            <role>Gold_Trail_Team_Admin</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Gold_Trail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Gold Trail</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareICYCaseWithNicolaSimilkameenAdmin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareICYCaseWithNicolaSimilkameenAdmin</label>
+        <sharedTo>
+            <role>Nicola_Similkameen_Team_Admin</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Nicola_Similkameen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Nicola-Similkameen</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareICYCaseWithPeaceRiverSouthAdmin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareICYCaseWithPeaceRiverSouthAdmin</label>
+        <sharedTo>
+            <role>Peace_River_South_Team_Admin</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Peace_River_South</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Peace River South</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareICYCaseWithQualicumAdmin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareICYCaseWithQualicumAdmin</label>
+        <sharedTo>
+            <role>Qualicum_Team_Admin</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Qualicum</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Qualicum</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareICYCaseWithSurrey_Admin</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareICYCaseWithSurrey Admin</label>
+        <sharedTo>
+            <role>Surrey_Team_Admin</role>
+        </sharedTo>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Surrey </value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Surrey</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
         <fullName>ShareICYCasesWithCoastMountainsAdmin</fullName>
         <accessLevel>Edit</accessLevel>
         <label>ShareICYCasesWithCoastMountainsAdmin</label>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>None</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>ICY Team Member Role</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Gold Trail Team Admin</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>Gold_Trail_Team_Program_Leader</parentRole>
+</Role>

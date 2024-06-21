@@ -76,6 +76,56 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
+        <fullName>ShareOpenReferralWithCowichanValleyCLNonCL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareOpenReferralWithCowichanValleyCLNonCL</label>
+        <sharedTo>
+            <group>ICY_Cowichan_Valley_CL_NCL</group>
+        </sharedTo>
+        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Cowichan_Valley</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Cowichan Valley</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareOpenReferralWithDeltaCLNonCL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareOpenReferralWithDeltaCLNonCL</label>
+        <sharedTo>
+            <group>ICY_Delta_CL_NCL</group>
+        </sharedTo>
+        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Delta</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Delta</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
         <fullName>ShareOpenReferralWithFraserCascadesCLNonCL</fullName>
         <accessLevel>Edit</accessLevel>
         <label>ShareOpenReferralWithFraserCascadesCLNonCL</label>
@@ -92,6 +142,31 @@
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
             <value>Fraser Cascades</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareOpenReferralWithGoldTrailCLNonCL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareOpenReferralWithGoldTrailCLNonCL</label>
+        <sharedTo>
+            <group>ICY_Gold_Trail_CL_NCL</group>
+        </sharedTo>
+        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Gold_Trail</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Gold Trail</value>
         </criteriaItems>
         <criteriaItems>
             <field>Status__c</field>
@@ -201,6 +276,31 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
+        <fullName>ShareOpenReferralWithNicolaSimilkameenCLNonCL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareOpenReferralWithNicolaSimilkameenCLNonCL</label>
+        <sharedTo>
+            <group>ICY_Nicola_Similkameen_CL_NCL</group>
+        </sharedTo>
+        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Nicola_Similkameen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Nicola-Similkameen</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
         <fullName>ShareOpenReferralWithNorthOkanaganShuswapCLNonCL</fullName>
         <accessLevel>Edit</accessLevel>
         <label>ShareOpenReferralWithNorthOkanaganShuswapCLNonCL</label>
@@ -276,6 +376,56 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
+        <fullName>ShareOpenReferralWithPeaceRiverSouthCLNonCL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareOpenReferralWithPeaceRiverSouthCLNonCL</label>
+        <sharedTo>
+            <group>ICY_Peace_River_South_CL_NCL</group>
+        </sharedTo>
+        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Peace_River_South</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Peace River South</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareOpenReferralWithQualicumCLNonCL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareOpenReferralWithQualicumCLNonCL</label>
+        <sharedTo>
+            <group>ICY_Qualicum_CL_NCL</group>
+        </sharedTo>
+        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Qualicum</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Qualicum</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
         <fullName>ShareOpenReferralWithRichmondTeamCLNonCL</fullName>
         <accessLevel>Edit</accessLevel>
         <label>ShareOpenReferralWithRichmondTeamCLNonCL</label>
@@ -292,6 +442,31 @@
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
             <value>Richmond Team 3,Richmond Team 1,Richmond Team 4,Richmond Team 2</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>notEqual</operation>
+            <value>Closed</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareOpenReferralWithSurreyCLNonCL</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareOpenReferralWithSurreyCLNonCL</label>
+        <sharedTo>
+            <group>ICY_Surrey_CL_NCL</group>
+        </sharedTo>
+        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <criteriaItems>
+            <field>User_Role_Name__c</field>
+            <operation>startsWith</operation>
+            <value>Surrey </value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Surrey</value>
         </criteriaItems>
         <criteriaItems>
             <field>Status__c</field>
