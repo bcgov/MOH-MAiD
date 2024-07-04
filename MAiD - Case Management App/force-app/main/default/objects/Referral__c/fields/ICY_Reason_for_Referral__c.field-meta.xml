@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Reason_for_Referral__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The reason for the general referral including main concern, symptoms, stressors and any changes to functioning/activities of daily living.</description>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
-    <inlineHelpText>Include main concern, symptoms, stressors and any changes to functioning/activities of daily living</inlineHelpText>
+    <inlineHelpText>The reason for the general referral including main concern, symptoms, stressors and any changes to functioning/activities of daily living.</inlineHelpText>
     <label>Reason for Referral</label>
     <length>5000</length>
     <trackHistory>false</trackHistory>

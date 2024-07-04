@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Referral_Source__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The source of the referral defined by the ICY Referral Form.</description>
     <externalId>false</externalId>
+    <inlineHelpText>The source of the referral defined by the ICY Referral Form.</inlineHelpText>
     <label>Referral Source</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

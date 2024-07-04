@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Individual_Work_Phone_Number_Extension__c</fullName>
-    <description>Work phone number extension (if required)</description>
+    <deprecated>false</deprecated>
+    <description>The work phone number extension of the individual (child/youth).</description>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>Individual Work Phone Number Extension</label>

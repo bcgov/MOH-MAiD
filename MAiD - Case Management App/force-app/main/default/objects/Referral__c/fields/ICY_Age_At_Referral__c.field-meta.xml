@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Age_At_Referral__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The individual&apos;s (child/youth) age at the time the referral is made.</description>
     <externalId>false</externalId>
     <formula>FLOOR(( IF(ISBLANK(ICY_Date_of_Referral__c), DATEVALUE(CreatedDate), ICY_Date_of_Referral__c) - Individual_Date_of_Birth__c )/365.25+0.001)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

@@ -2,6 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Send_notification_email__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicates if a notification email should be sent to the Integrate User.</description>
     <externalId>false</externalId>
     <label>Send notification email</label>
     <trackHistory>false</trackHistory>

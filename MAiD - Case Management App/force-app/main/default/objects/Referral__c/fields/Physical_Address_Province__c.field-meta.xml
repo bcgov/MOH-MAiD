@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Physical_Address_Province__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The individual&apos;s (child/youth) province of the physical address.</description>
     <externalId>false</externalId>
     <label>Physical Address Province</label>
     <required>false</required>

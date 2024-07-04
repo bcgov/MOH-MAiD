@@ -2,6 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Leave_a_Message_On_other_Phone__c</fullName>
     <defaultValue>false</defaultValue>
+    <deprecated>false</deprecated>
+    <description>Indicate whether a message can be left on the individual&apos;s (child/youth) other phone.</description>
     <externalId>false</externalId>
     <label>Can We Leave a Message On other Phone</label>
     <trackHistory>false</trackHistory>
