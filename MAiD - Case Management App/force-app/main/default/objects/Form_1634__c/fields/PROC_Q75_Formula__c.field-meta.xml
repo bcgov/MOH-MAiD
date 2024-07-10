@@ -3,8 +3,7 @@
     <fullName>PROC_Q75_Formula__c</fullName>
     <deprecated>false</deprecated>
     <externalId>false</externalId>
-    <formula>CASE(Patient_had_difficulty_communicating__c, &quot;Yes&quot;, 1, &quot;No&quot;, 2,0)</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <formula>CASE(Patient_had_difficulty_communicating__c, &quot;Yes&quot;, 1,2)</formula>
     <label>PROC_Q75 - Formula</label>
     <precision>18</precision>
     <required>false</required>
