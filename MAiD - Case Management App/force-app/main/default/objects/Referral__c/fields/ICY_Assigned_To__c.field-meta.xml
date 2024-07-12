@@ -2,7 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Assigned_To__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The ICY team member responsible for the referral.</description>
     <externalId>false</externalId>
+    <inlineHelpText>The ICY team member responsible for the referral.</inlineHelpText>
     <label>Assigned To</label>
     <lookupFilter>
         <active>false</active>

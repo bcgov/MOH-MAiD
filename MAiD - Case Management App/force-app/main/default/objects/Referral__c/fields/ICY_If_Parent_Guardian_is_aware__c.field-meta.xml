@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_If_Parent_Guardian_is_aware__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Indicate if the parent/guardian is aware of their child/youth&apos;s referral to ICY Teams or not.</description>
     <externalId>false</externalId>
     <inlineHelpText>Check this box if Parent/Guardian is aware of the Referral</inlineHelpText>
     <label>If Parent/Guardian is aware</label>

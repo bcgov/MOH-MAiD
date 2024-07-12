@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Physical_Address_City__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The individual&apos;s (child/youth) city of the physical address.</description>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>Physical Address City</label>

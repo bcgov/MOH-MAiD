@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Referral_For__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The category of the referral (Child &amp; Family, Youth, Parent/Caregiver Support and Family).</description>
     <externalId>false</externalId>
+    <inlineHelpText>The category of the referral (Child &amp; Family, Youth, Parent/Caregiver Support and Family).</inlineHelpText>
     <label>Referral For</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

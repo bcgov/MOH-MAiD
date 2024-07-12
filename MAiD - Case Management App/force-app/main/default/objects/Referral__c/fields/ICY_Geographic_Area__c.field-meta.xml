@@ -2,8 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Geographic_Area__c</fullName>
     <deprecated>false</deprecated>
+    <description>The ICY Team community in which the individual (child/youth) lives.</description>
     <externalId>false</externalId>
-    <inlineHelpText>Please select the relevant geographic area</inlineHelpText>
+    <inlineHelpText>The ICY Team community in which the individual (child/youth) lives.</inlineHelpText>
     <label>Geographic Area</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
