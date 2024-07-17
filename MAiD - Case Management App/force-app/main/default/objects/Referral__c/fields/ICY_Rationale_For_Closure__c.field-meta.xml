@@ -5,7 +5,6 @@
     <description>The reason for closing the record.</description>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
-    <inlineHelpText>The reason for closing the record.</inlineHelpText>
     <label>Rationale For Closure</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
