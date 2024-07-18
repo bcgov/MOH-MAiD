@@ -3,8 +3,9 @@
     <fullName>Primary_Contact_Is_Individual__c</fullName>
     <defaultValue>false</defaultValue>
     <deprecated>false</deprecated>
-    <description>Indicates if the  the Referral Parent/Caregiver Contact primary contact is the individual.</description>
+    <description>Indicates if the Referral Parent/Caregiver primary contact is the individual.</description>
     <externalId>false</externalId>
+    <inlineHelpText>Indicates if the Referral Parent/Caregiver primary contact is the individual.</inlineHelpText>
     <label>Primary Contact Is Individual</label>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
