@@ -2,6 +2,7 @@
 <RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Intake_Read_Only</fullName>
     <active>true</active>
+    <compactLayoutAssignment>ICY_Compact_Layout</compactLayoutAssignment>
     <description>Read Only record Type Once the intake is closed or completed</description>
     <label>ICY Intake Read Only</label>
     <picklistValues>
