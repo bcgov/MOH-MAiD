@@ -37,6 +37,11 @@
                 <default>false</default>
                 <label>Other living Arrangement</label>
             </value>
+            <value>
+                <fullName>No Data Disclosed</fullName>
+                <default>false</default>
+                <label>No Data Disclosed</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
