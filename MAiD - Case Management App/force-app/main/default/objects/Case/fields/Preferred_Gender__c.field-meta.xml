@@ -3,7 +3,7 @@
     <fullName>Preferred_Gender__c</fullName>
     <description>Created for new 2023 HC reporting requirements</description>
     <externalId>false</externalId>
-    <label>Preferred Gender</label>
+    <label>Gender Identity</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
