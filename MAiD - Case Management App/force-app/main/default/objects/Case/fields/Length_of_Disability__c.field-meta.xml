@@ -32,6 +32,11 @@
                 <default>false</default>
                 <label>Do not consent</label>
             </value>
+            <value>
+                <fullName>No Data Disclosed</fullName>
+                <default>false</default>
+                <label>No Data Disclosed</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
