@@ -47,6 +47,11 @@
                 <default>false</default>
                 <label>Do not know</label>
             </value>
+            <value>
+                <fullName>Unknown - Pre 2023 Assessment</fullName>
+                <default>false</default>
+                <label>Unknown - Pre 2023 Assessment</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
