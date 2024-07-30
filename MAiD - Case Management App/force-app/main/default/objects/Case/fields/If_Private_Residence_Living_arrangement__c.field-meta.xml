@@ -38,6 +38,11 @@
                 <label>Other living Arrangement</label>
             </value>
             <value>
+                <fullName>Do not know</fullName>
+                <default>false</default>
+                <label>Do not know</label>
+            </value>
+            <value>
                 <fullName>No Data Disclosed</fullName>
                 <default>false</default>
                 <label>No Data Disclosed</label>
