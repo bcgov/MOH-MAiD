@@ -2,7 +2,8 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Older_MAiD_Forms_to_2021__c</fullName>
     <externalId>false</externalId>
-    <label>Older MAiD Forms to 2021</label>
+    <inlineHelpText>Select &quot;&quot;Yes&quot;&quot; If the Prescriber&apos;s 1634 is NOT the current version of the 1634 form on the case reported date</inlineHelpText>
+    <label>Older 1634 Form Version</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
     <trackHistory>false</trackHistory>
