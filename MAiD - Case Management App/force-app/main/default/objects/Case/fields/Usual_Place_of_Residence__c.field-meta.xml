@@ -52,6 +52,16 @@
                 <default>false</default>
                 <label>Do not know</label>
             </value>
+            <value>
+                <fullName>No Data Disclosed</fullName>
+                <default>false</default>
+                <label>No Data Disclosed</label>
+            </value>
+            <value>
+                <fullName>Pre 2023 MAiD Request - No data</fullName>
+                <default>false</default>
+                <label>Pre 2023 MAiD Request - No data</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

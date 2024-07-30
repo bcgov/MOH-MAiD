@@ -125,6 +125,10 @@ export default class IcyCreateEditCaseTeamMember extends LightningElement {
                 isValid = false;
             }
         });
+        
+        if ((this.isUser  && this.caseMember.ICY_User__c=='') ||(!(this.isUser) && this.caseMember.ICY_Case_Contact__c==''))
+            isValid = false;
+
         if(isValid){
             this.handleSave();
         }else{
