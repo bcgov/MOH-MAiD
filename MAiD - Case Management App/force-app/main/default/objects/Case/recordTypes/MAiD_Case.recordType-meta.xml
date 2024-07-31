@@ -114,6 +114,14 @@
             <fullName>Other living Arrangement</fullName>
             <default>false</default>
         </values>
+        <values>
+            <fullName>Do not know</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Data Disclosed</fullName>
+            <default>false</default>
+        </values>
     </picklistValues>
     <picklistValues>
         <picklist>If_yes_Indigenious_heritage__c</picklist>
