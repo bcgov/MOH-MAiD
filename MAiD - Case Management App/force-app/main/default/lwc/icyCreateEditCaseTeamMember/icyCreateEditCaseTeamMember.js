@@ -126,7 +126,7 @@ export default class IcyCreateEditCaseTeamMember extends LightningElement {
             }
         });
         
-        if ((this.isUser  && this.caseMember.ICY_User__c=='') ||(!(this.isUser) && this.caseMember.ICY_Case_Contact__c==''))
+        if ((this.isUser  && this.caseMember.ICY_User__c=='') ||((this.isContact) && this.caseMember.ICY_Case_Contact__c==''))
             isValid = false;
 
         if(isValid){
