@@ -6,6 +6,7 @@
     <externalId>false</externalId>
     <formula>RecordType.Name</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The type or category of the referral.</inlineHelpText>
     <label>Referral Type</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
