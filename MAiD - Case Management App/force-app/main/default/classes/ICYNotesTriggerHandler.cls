@@ -11,13 +11,13 @@ public with sharing class ICYNotesTriggerHandler{
         for(Case_Member__c obj:[select id,ICY_User__r.Id,ICY_User__r.Email, ICY_Case__c from Case_Member__c where ICY_Case__c in:setOfCaseIds AND ICY_Category_Assignment__c != 'Supplemental' AND ICY_Status__c='Active']){
             List<String> userIds = new List<String>();
            
-          //  if (UserInfo.getUserId() <> obj.ICY_User__r.Id){
+            if (UserInfo.getUserId() <> obj.ICY_User__r.Id){
                 if(mapOfCaseIdVsUserIds.containsKey(obj.ICY_Case__c) ){
                     userIds = mapOfCaseIdVsUserIds.get(obj.ICY_Case__c);
                 }
                 userIds.add(obj.ICY_User__r.Email);
                 mapOfCaseIdVsUserIds.put(obj.ICY_Case__c,userIds);
-           // }
+            }
         }
         //Adding PL
         for(Case obj:[select id,ICY_Geographic_Area__c from Case where id in:setOfCaseIds ]){
@@ -35,7 +35,7 @@ public with sharing class ICYNotesTriggerHandler{
                 }
             }
             if(!groupOrQueuId.isEmpty()){
-                For(Group gm: [SELECT RelatedId,Type,DeveloperName FROM group WHERE Id IN:groupOrQueuId AND Type = 'Role'and (DeveloperName  like '%Program_Leader%' OR  DeveloperName  like '%Admin%')]){
+                For(Group gm: [SELECT RelatedId,Type,DeveloperName FROM group WHERE Id IN:groupOrQueuId AND Type = 'Role'and DeveloperName  like '%Program_Leader%']){
                     roleId.add(gm.RelatedId);
                 }
             }
@@ -59,7 +59,7 @@ public with sharing class ICYNotesTriggerHandler{
 
         for(Case obj:[select id,CaseNumber,Primary_Contact__c from Case where id in:mapOfCaseIdVsUserIds.keyset()]){
             Messaging.SingleEmailMessage mail = new Messaging.SingleEmailMessage();
-            String body = 'Hello, <br/><br/>There is a new critical incident note related to <a href="'+ System.URL.getSalesforceBaseUrl().toExternalForm()+'/'+obj.id+'">'+obj.CaseNumber+'</a>. Please review as soon as possible. <br/><br/>Thank you.';
+            String body = 'Hello, <br/><br/>There is a new critical incident note related to <a href="'+ System.URL.getSalesforceBaseUrl().toExternalForm()+'/'+obj.id+'">'+obj.CaseNumber+'</a>. Please review as soon as possible. <br/><br/>Thanks.';
             mail.setSubject(subject);
             mail.setHtmlBody(body);
             if(orgwideEmailId != null) mail.setOrgWideEmailAddressId(orgwideEmailId);
