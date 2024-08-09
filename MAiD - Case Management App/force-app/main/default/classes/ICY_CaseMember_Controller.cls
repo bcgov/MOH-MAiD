@@ -220,11 +220,50 @@ public without sharing class ICY_CaseMember_Controller {
     private static void createAccountShares(Set<Id> caseIds, Id userId, String accessLevel){
         List<AccountShare> shareRecords = new List<AccountShare>();
         List<AccountShare> updateShareRecords = new List<AccountShare>();
-        for(Case c: [SELECT Id, AccountId FROM Case WHERE ID IN :caseIds]){
-            
-           List<AccountShare> accsh = [SELECT Id ,AccountAccessLevel FROM AccountShare WHERE AccountId = :c.AccountId and UserOrGroupId = :userId];
-            if (((!accsh.IsEmpty() ) && (accsh[0].AccountAccessLevel !='All')) || (accsh.IsEmpty())){
-              
+      
+        Set<Id> setAccountId = new Set<Id>();  
+        Map<Id, String> accShIdAccessMap = new Map<Id, String>();
+        Map<Id, Id> accShIdAccIdMap = new Map<Id, Id>();
+        
+        Boolean bFound = false;
+
+        List<Case> caseList= [SELECT Id, AccountId FROM Case WHERE ID IN :caseIds];
+        for (Case c: caseList){
+            setAccountId.add(c.AccountId);
+        }
+        List<AccountShare> accShList = [SELECT Id ,AccountId,AccountAccessLevel FROM AccountShare WHERE AccountId IN :setAccountId and UserOrGroupId = :userId];
+        for (AccountShare accSh: accShList){
+            accShIdAccIdMap.put(accSh.Id,accSh.AccountId);
+            accShIdAccessMap.put(accSh.Id,accSh.AccountAccessLevel);
+           
+        }
+       
+        for (Case c: caseList){
+            bFound = false;
+             for (Id key : accShIdAccIdMap.keySet()) {
+                if ((accShIdAccIdMap.get(key)== c.AccountId) && (accShIdAccessMap.get(key)!='All')) {
+                    shareRecords.add(
+                        new AccountShare(
+                            AccountAccessLevel = accessLevel,
+                            AccountId = c.AccountId,
+                            CaseAccessLevel = accessLevel,
+                            OpportunityAccessLevel = 'None',
+                            UserOrGroupId = userId
+                        )
+                    );
+                    bFound= true;
+                    break;
+                
+                }
+                if ((accShIdAccIdMap.get(key)== c.AccountId) && (accShIdAccessMap.get(key)=='All')) {                    
+                    AccountShare accShare= new AccountShare();
+                    accShare.Id = key;
+                    accShare.CaseAccessLevel= accessLevel;
+                    updateShareRecords.add(accShare);  
+                    bFound= true;
+                }
+             }
+              if (!bFound){
                 shareRecords.add(
                     new AccountShare(
                         AccountAccessLevel = accessLevel,
@@ -234,14 +273,9 @@ public without sharing class ICY_CaseMember_Controller {
                         UserOrGroupId = userId
                     )
                 );
-            }
-            if ((!accsh.IsEmpty())&& (accsh[0].AccountAccessLevel =='All')){
-                accsh[0].CaseAccessLevel= accessLevel;
-                updateShareRecords.add(accsh[0]);        
-            }
-
-        }
-
+              }
+            }     
+            
         INSERT shareRecords;
         update updateShareRecords;
     }
