@@ -2,8 +2,7 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>IND_Q05D__c</fullName>
     <externalId>false</externalId>
-    <formula>IF(ISPICKVAL(Form_1634__r.Case__r.Identify_as_Indigenious__c , &quot;Do not know&quot;),1,IF(ISBLANK(TEXT(Form_1634__r.Case__r.Identify_as_Indigenious__c)),0,2))</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <formula>IF(ISPICKVAL(Form_1634__r.Case__r.Identify_as_Indigenious__c , &quot;Do not know&quot;),1,IF(ISBLANK(TEXT(Form_1634__r.Case__r.Identify_as_Indigenious__c)),0,null))</formula>
     <label>IND_Q05D</label>
     <precision>18</precision>
     <required>false</required>
