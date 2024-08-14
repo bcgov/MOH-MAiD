@@ -7,8 +7,7 @@
 &quot;Months&quot;,TEXT(2),
 &quot;Do not know&quot;,TEXT(3),
 &quot;Do not consent&quot;,TEXT(4),
-&quot;No Data Disclosed&quot;,&quot;No Data Disclosed&quot;,TEXT(0))</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+&quot;No Data Disclosed&quot;,&quot;No Data Disclosed&quot;,&quot;&quot;)</formula>
     <label>DIS_Q20</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
