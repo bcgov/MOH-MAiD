@@ -246,7 +246,7 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
 
                         this.showSpinner = false;
                         console.error('Error: ' + JSON.stringify(error.message));
-                        alert('Error in createPersonAcct Notify your administrator :' + JSON.stringify(error.message));
+                        alert('Error in createPersonAcct Notify your administrator');
                     })
 
             }).catch(error => {
