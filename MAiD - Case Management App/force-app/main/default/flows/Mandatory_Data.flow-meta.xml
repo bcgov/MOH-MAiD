@@ -625,7 +625,7 @@
         <name>Rule42Message</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>Rule 42 Validation Failed</stringValue>
+            <stringValue>Rule 42 failed, check the request data or assessment data on the 1634</stringValue>
         </value>
     </constants>
     <constants>
@@ -1743,7 +1743,7 @@
         <defaultConnectorLabel>Rule 42 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_42_Pass</name>
-            <conditionLogic>((( 14 AND 1 AND 2 AND 3 AND 4 AND 5 AND 6 ) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 13 AND 15)) AND (7 OR 8 OR 9)) OR (10 AND 11 AND 12)</conditionLogic>
+            <conditionLogic>((( 14 AND 1 AND 2 AND 3 AND 4 AND 5 AND 6 ) OR (1 AND 2 AND 3 AND 4 AND 5 AND 6 AND 13 AND 15) OR (16 AND 1 AND 2 AND 13 AND 17)) AND (7 OR 8 OR 9)) OR (10 AND 11 AND 12)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_PriorPatientConsultation</leftValueReference>
                 <operator>IsNull</operator>
@@ -1842,6 +1842,20 @@
             <conditions>
                 <leftValueReference>Var1634_Patient_required_palliative_care</leftValueReference>
                 <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Is1633Checked</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Case_Type_Reported_Date__c</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>VarCase_CaseTypeReporteddate</elementReference>
+                </rightValue>
             </conditions>
             <connector>
                 <targetReference>Rule_21</targetReference>
