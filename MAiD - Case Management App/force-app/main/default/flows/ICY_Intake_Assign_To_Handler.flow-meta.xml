@@ -6,9 +6,9 @@
         <name>Check_If_Assigned_To_User_is_a_Program_Leader</name>
         <label>Check If &quot;Assigned To&quot; User is a Program Leader</label>
         <locationX>176</locationX>
-        <locationY>335</locationY>
+        <locationY>323</locationY>
         <defaultConnector>
-            <targetReference>Create_Intake_Share_For_New_User_0</targetReference>
+            <targetReference>Get_Intake_Share_Records_If_Available</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -24,7 +24,30 @@
             <label>Assigned To Is Program Leader</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Create_Intake_Share_Record</name>
+        <label>Create Intake Share Record</label>
+        <locationX>374</locationX>
+        <locationY>539</locationY>
+        <defaultConnectorLabel>Intake Share Record Already Present</defaultConnectorLabel>
+        <rules>
+            <name>Intake_Share_Record_Not_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Intake_Share_Records_If_Available</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Create_Intake_Share_For_New_User_0</targetReference>
+            </connector>
+            <label>Intake Share Record Not Present</label>
+        </rules>
+    </decisions>
     <description>Update Sharing Settings When ICY_Assigned_To__c field is Modified on Intake Record</description>
+    <environments>Default</environments>
     <interviewLabel>ICY Intake Assign To Handler {!$Flow.CurrentDateTime}</interviewLabel>
     <label>ICY Intake Assign To Handler</label>
     <processMetadataValues>
@@ -49,8 +72,8 @@
     <recordCreates>
         <name>Create_Intake_Share_For_New_User_0</name>
         <label>Create Intake Share For New User</label>
-        <locationX>308</locationX>
-        <locationY>455</locationY>
+        <locationX>242</locationX>
+        <locationY>647</locationY>
         <inputAssignments>
             <field>AccessLevel</field>
             <value>
@@ -78,6 +101,34 @@
         <object>Intake__Share</object>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordCreates>
+    <recordLookups>
+        <name>Get_Intake_Share_Records_If_Available</name>
+        <label>Get Intake Share Records If Available</label>
+        <locationX>374</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Create_Intake_Share_Record</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>ParentId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>UserOrGroupId</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.ICY_Assigned_To__c</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Intake__Share</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
     <start>
         <locationX>50</locationX>
         <locationY>0</locationY>
