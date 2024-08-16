@@ -9,7 +9,6 @@ import { CloseActionScreenEvent } from 'lightning/actions';
 import CASE_OBJECT from '@salesforce/schema/Case';
 import createPersonAcct from '@salesforce/apex/ICY_CompleteIntakeCtrl.createPersonAcc';
 import { NavigationMixin } from 'lightning/navigation';
-import { deleteRecord } from 'lightning/uiRecordApi';
 
 //Custom Labels
 import ICY_IntakeCompletedSuccessfully from '@salesforce/label/c.ICY_IntakeCompletedSuccessfully';
@@ -236,20 +235,13 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                             })
                     })
                     .catch(error => {
-                        deleteRecord(response.id)
-                        .then(() => {
-                            console.log('Record deleted successfully');
-                        })
-                        .catch(error => {
-                            console.error('Error deleting record:', error);
-                        });
 
                         this.showSpinner = false;
                         console.error('Error: ' + JSON.stringify(error.message));
-                        alert('Error in createPersonAcct Notify your administrator');
                     })
 
             }).catch(error => {
+
                 this.showSpinner = false;
                 console.error('Error: ' + JSON.stringify(error.message));
             });
