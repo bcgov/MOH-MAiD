@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rule_25_Failed_Issue_with_palliative</fullName>
+    <active>true</active>
+    <description>If Patient required palliative care? of Form 1634 object equals Unknown- Pre-2023 Assessment 
+then Patient received palliative care? field cannot be left blank</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Patient_required_palliative_care__c, &quot;Unknown - Pre 2023 Assessment&quot;),
+    ISBLANK(TEXT(Patient_received_palliative_care__c))
+)</errorConditionFormula>
+    <errorDisplayField>Patient_received_palliative_care__c</errorDisplayField>
+    <errorMessage>Rule 25 Failed - Issue with palliative care data</errorMessage>
+</ValidationRule>
