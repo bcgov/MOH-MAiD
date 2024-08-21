@@ -18,6 +18,7 @@ public class GetCasePHNandVerify {
 
         try {
             List<Case> existingCases;
+            Boolean preventUpdate = false;
                 
             //Querying the existing cases which consists of same PHN of triggering record based on case type
             //This process is never expected to be more than 1response. So we can avoid with looping the cases. The flow is never expected to pass more than 1 cases
@@ -47,7 +48,7 @@ public class GetCasePHNandVerify {
     
             if(maidPlanningCaseType.contains(caseList[0].Type)){
                 existingCases  = [Select
-                                    Id, PHN__c, Type 
+                                    Id, PHN__c, Type, Status
                                     From Case 
                                     Where RecordTypeId = :caseList[0].RecordTypeId AND Id != :caseList[0].Id AND PHN__C =: caseList[0].PHN__c ];
                 caseList[0].Prevent_save_on_duplicate_PHN__c = false;
@@ -57,10 +58,13 @@ public class GetCasePHNandVerify {
                             caseList[0].Warning_Message_If_Any__c = 'There is an existing case in the database with the same PHN';
                         }else if(maidPlanningCaseType.contains(cs.Type)){
                             caseList[0].Warning_Message_If_Any__c = 'There is an existing case in the database with the same PHN';
-                            if(cs.Type == caseList[0].Type){
-                                caseList[0].Prevent_save_on_duplicate_PHN__c = true;
+                            if (cs.Type == caseList[0].Type && cs.Status != 'Closed'){
+                                preventUpdate = true;
                             }
                         }
+                    }
+                    if (preventUpdate){
+                        caseList[0].Prevent_save_on_duplicate_PHN__c = true;
                     }
                     update caseList[0];
                 }
