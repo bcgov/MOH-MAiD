@@ -240,7 +240,7 @@
         </rules>
         <rules>
             <name>AF_Error_in_Closed_or_further_move</name>
-            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5)</conditionLogic>
+            <conditionLogic>1 AND (2 OR 3 OR 4 OR 5) AND NOT(6 AND 7 AND 8)</conditionLogic>
             <conditions>
                 <leftValueReference>$Record__Prior.Status</leftValueReference>
                 <operator>EqualTo</operator>
@@ -274,6 +274,27 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <stringValue>CC Review/Checks in Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Type</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Assessment of Eligibility</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$UserRole.Name</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>MAiD Manager</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Manager_Override_Requested__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -717,7 +738,8 @@
             <label>Second Review Error</label>
         </rules>
     </decisions>
-    <description>Second Review Status Update version 13</description>
+    <description>Second Review Status Update versionstatus</description>
+    <environments>Default</environments>
     <interviewLabel>Status update prevention {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status update prevention</label>
     <processMetadataValues>
