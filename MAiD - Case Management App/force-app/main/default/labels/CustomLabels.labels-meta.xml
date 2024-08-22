@@ -111,7 +111,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ICY_IntakeIntakeCannotBeCompleted</shortDescription>
-        <value>Intake cannot be completed ,Error in createPersonAcct  please notify  your administrator&apos;</value>
+        <value>Record cannot be updated/created. Please contact your administrator</value>
     </labels>
     <labels>
         <fullName>ICY_MissingRequiredFields</fullName>
