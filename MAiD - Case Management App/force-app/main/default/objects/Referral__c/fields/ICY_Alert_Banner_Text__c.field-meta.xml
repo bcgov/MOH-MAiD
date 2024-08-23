@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Alert_Banner_Text__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The text that will appear in the banner on Integrate.</description>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>ICY Alert Banner Text</label>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>false</doesSendEmailToMembers>
+    <name>ICY Central Coast</name>
+    <queueMembers>
+        <roles>
+            <role>Central_Coast_Team_Admin</role>
+            <role>Central_Coast_Team_Program_Leader</role>
+        </roles>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Intake__c</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>Referral__c</sobjectType>
+    </queueSobject>
+</Queue>

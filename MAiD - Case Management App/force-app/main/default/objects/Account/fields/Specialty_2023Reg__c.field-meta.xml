@@ -2,6 +2,9 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Specialty_2023Reg__c</fullName>
     <externalId>false</externalId>
+    <inlineHelpText>Internal medicine includes: General internal medicine, Urology, Endocrinology, Hematology, Rheumatology, Pathology. 
+
+Other includes: MAID specialist, Neurology, Respiratory Medicine, Surgeon, Rehabilitation Medicine, Nephrology, Cardiology, Geriatric Medicine, Obstetrician and Otolaryngology</inlineHelpText>
     <label>Specialty(2023Reg)</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Diagnosis__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The nature of the mental health or substance use concern as noted by a professional.</description>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>Diagnosis</label>

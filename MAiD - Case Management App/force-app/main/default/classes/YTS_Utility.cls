@@ -78,7 +78,7 @@ public with sharing class YTS_Utility {
      * Retrive org wide email address Id
      */
     public static Id getICYOrgWideEmailAddressId(){
-        List<OrgWideEmailAddress> addresses = [select id, Address, DisplayName from OrgWideEmailAddress WHERE DisplayName='Integrate Support ' LIMIT 1];
+        List<OrgWideEmailAddress> addresses = [select id, Address, DisplayName from OrgWideEmailAddress WHERE DisplayName='Integrate Support' LIMIT 1];
         Id orgwideEmailId;
         if(addresses.size() > 0){
             orgwideEmailId = addresses[0].Id;

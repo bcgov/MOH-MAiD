@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Physical_Address_Line_1__c</fullName>
-    <description>The address of the physical location where the individual is living</description>
+    <deprecated>false</deprecated>
+    <description>The individual&apos;s (child/youth) first line of the physical address.</description>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>Physical Address Line 1</label>

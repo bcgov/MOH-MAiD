@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Relationship_to_Individual__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The relationship of the contact person to the individual (child/youth).</description>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <label>Relationship to Individual</label>

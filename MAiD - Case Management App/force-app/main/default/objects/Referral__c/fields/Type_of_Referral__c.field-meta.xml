@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Type_of_Referral__c</fullName>
+    <deprecated>false</deprecated>
+    <description>The category of the referral: professional or general.</description>
     <externalId>false</externalId>
+    <inlineHelpText>The category of the referral: professional or general.</inlineHelpText>
     <label>Type of Referral</label>
     <required>false</required>
     <trackHistory>false</trackHistory>

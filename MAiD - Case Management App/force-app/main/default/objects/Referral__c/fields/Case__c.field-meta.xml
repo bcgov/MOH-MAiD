@@ -2,8 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Case__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
+    <deprecated>false</deprecated>
+    <description>The name of an individual&apos;s (child/youth) file once it has gone through the referral and intake stages.</description>
     <externalId>false</externalId>
-    <inlineHelpText>filled out by the system (blank until a case is created)</inlineHelpText>
+    <inlineHelpText>The number assigned to an individual&apos;s (child/youth) file once it has gone through the referral and intake stages.</inlineHelpText>
     <label>Case</label>
     <referenceTo>Case</referenceTo>
     <relationshipLabel>Referrals</relationshipLabel>

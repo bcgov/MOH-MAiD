@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Mailing_Address_City__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Referral&apos;s contact city of the mailing address.</description>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>Mailing Address City</label>

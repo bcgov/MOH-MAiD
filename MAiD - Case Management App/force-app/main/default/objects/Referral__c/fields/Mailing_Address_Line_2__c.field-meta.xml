@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Mailing_Address_Line_2__c</fullName>
+    <deprecated>false</deprecated>
+    <description>Referral&apos;s contact second line of the mailing address, if applicable.</description>
     <encryptionScheme>CaseInsensitiveDeterministicEncryption</encryptionScheme>
     <externalId>false</externalId>
     <label>Mailing Address Line 2</label>
