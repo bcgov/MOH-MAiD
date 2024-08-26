@@ -238,7 +238,6 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                     })
                     .catch(error => {
                         deleteRecord(response.id)
-                     
                         .catch(error => {
                             this.showSpinner = false;
                                 this.dispatchEvent(
