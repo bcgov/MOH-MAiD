@@ -56,7 +56,7 @@ public class GetCasePHNandVerify {
                     for(Case cs : existingCases){
                         if(maidDeathCaseType.contains(cs.Type) || maidPlanningCaseType.contains(cs.Type)){
                             caseList[0].Warning_Message_If_Any__c = 'There is an existing case in the database with the same PHN';
-                            if (cs.Type == caseList[0].Type && cs.Status != 'Closed'){
+                            if (maidPlanningCaseType.contains(cs.Type) && cs.Status != 'Closed'){
                                 preventUpdate = true;
                             }
                         }
