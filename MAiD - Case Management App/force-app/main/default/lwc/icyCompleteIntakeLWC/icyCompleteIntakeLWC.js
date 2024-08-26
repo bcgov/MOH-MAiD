@@ -238,11 +238,16 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                     })
                     .catch(error => {
                         deleteRecord(response.id)
-                        .then(() => {
-                            console.log('Record deleted successfully');
-                        })
+                     
                         .catch(error => {
-                            console.error('Error deleting record:', error);
+                            this.showSpinner = false;
+                                this.dispatchEvent(
+                                    new ShowToastEvent({
+                                        title: 'Error',
+                                        message: JSON.stringify(error.message),
+                                        variant: 'error'
+                                    })
+                                )
                         });
 
                         this.showSpinner = false;
