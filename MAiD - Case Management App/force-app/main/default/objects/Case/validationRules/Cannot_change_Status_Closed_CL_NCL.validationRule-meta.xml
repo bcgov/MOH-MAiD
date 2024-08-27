@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_Status_Closed_CL_NCL</fullName>
+    <active>true</active>
+    <description>Cannot change status for closed cases for clinical Non clinical users</description>
+    <errorConditionFormula>AND (
+RecordType.DeveloperName =&apos;ICY_Close_Case&apos;,
+ISCHANGED(Status),
+ISPICKVAL(PRIORVALUE(Status), &quot;Closed&quot;),
+CONTAINS($UserRole.Name,&apos;Clinical&apos;))</errorConditionFormula>
+    <errorMessage>The Status cannot be changed when Case is closed</errorMessage>
+</ValidationRule>
