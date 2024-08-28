@@ -5,8 +5,8 @@
     <formula>Case( Form_1634__r.I_determine_that_the_patient__c,
 &quot;1 - Does meet the criteria for MAiD and natural death IS reasonably foreseeable&quot;,1,
 &quot;2- Does meet the criteria for MAiD and natural death IS NOT reasonably foreseeable&quot;,2,
-&quot;3 - Does not meet the criteria for MAiD&quot;,0,
-&quot;4- NO determination made&quot;,0,0)</formula>
+&quot;3 - Does not meet the criteria for MAiD&quot;,3,
+&quot;4- NO determination made&quot;,3,0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>RFD_Q05</label>
     <precision>18</precision>

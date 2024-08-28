@@ -90,7 +90,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Cowichan Valley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delta</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Fraser Cascades</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gold Trail</fullName>
             <default>false</default>
         </values>
         <values>
@@ -110,6 +122,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Nicola-Similkameen</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>North Okanagan Shuswap</fullName>
             <default>false</default>
         </values>
@@ -122,7 +138,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Peace River South</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qualicum</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Richmond 1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Surrey</fullName>
             <default>false</default>
         </values>
         <values>

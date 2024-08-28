@@ -32,9 +32,24 @@
                 <label>Comox Valley</label>
             </value>
             <value>
+                <fullName>Cowichan Valley</fullName>
+                <default>false</default>
+                <label>Cowichan Valley</label>
+            </value>
+            <value>
+                <fullName>Delta</fullName>
+                <default>false</default>
+                <label>Delta</label>
+            </value>
+            <value>
                 <fullName>Fraser Cascades</fullName>
                 <default>false</default>
                 <label>Fraser Cascades</label>
+            </value>
+            <value>
+                <fullName>Gold Trail</fullName>
+                <default>false</default>
+                <label>Gold Trail</label>
             </value>
             <value>
                 <fullName>Kootenay-Columbia</fullName>
@@ -57,6 +72,11 @@
                 <label>Nanaimo-Ladysmith</label>
             </value>
             <value>
+                <fullName>Nicola-Similkameen</fullName>
+                <default>false</default>
+                <label>Nicola-Similkameen</label>
+            </value>
+            <value>
                 <fullName>North Okanagan Shuswap</fullName>
                 <default>false</default>
                 <label>North Okanagan Shuswap</label>
@@ -72,14 +92,29 @@
                 <label>Pacific Rim</label>
             </value>
             <value>
+                <fullName>Peace River South</fullName>
+                <default>false</default>
+                <label>Peace River South</label>
+            </value>
+            <value>
                 <fullName>qathet (Powell River)</fullName>
                 <default>false</default>
                 <label>qathet (Powell River)</label>
             </value>
             <value>
+                <fullName>Qualicum</fullName>
+                <default>false</default>
+                <label>Qualicum</label>
+            </value>
+            <value>
                 <fullName>Richmond 1</fullName>
                 <default>false</default>
                 <label>Richmond</label>
+            </value>
+            <value>
+                <fullName>Surrey</fullName>
+                <default>false</default>
+                <label>Surrey</label>
             </value>
         </valueSetDefinition>
     </valueSet>
