@@ -599,7 +599,8 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                     break;
                 case 'Address_Postal_Code__c':
                     var s = ("" + event.target.value).replace(/\s/g, '');
-                    var m = s.match(/([a-zA-Z][0-9][a-zA-Z][0-9][a-zA-Z][0-9])$/);
+                    var m = s.match(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVXY][ -]?\d[ABCEGHJKLMNPRSTVXY]\d$/i); 
+
                     if (m == null) return;
                     var formattedCode = (m.input.substring(0, 3) + ' ' + m.input.substring(3, 6)).toUpperCase();
                     this.referral.Physical_Address_Postal_Code__c = formattedCode;
@@ -778,9 +779,9 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
     validatePostalCode(event) {
         let postalCode = event.target.value;
         if (postalCode) {
-            let t = event.target.name;
-            var m = postalCode.match(/^[ABCDEFGHIJKLMNOPQRSTUVWXYZ]\d[ABCDEFGHIJKLMNOPQRSTUVWXYZ][ -]?\d[ABCDEFGHIJKLMNOPQRSTUVWXYZ]\d$/i);
-            if (m == null) {
+          let t = event.target.name;
+          var m = postalCode.match(/^[ABCEGHJKLMNPRSTVXY]\d[ABCEGHJKLMNPRSTVXY][ -]?\d[ABCEGHJKLMNPRSTVXY]\d$/i);  
+          if (m == null) {
                 this.dispatchEvent(
                     new ShowToastEvent({
                         title: 'Invalid Postal Code',

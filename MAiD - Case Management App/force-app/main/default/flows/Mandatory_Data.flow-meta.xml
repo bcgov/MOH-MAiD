@@ -1254,7 +1254,7 @@
         <defaultConnectorLabel>Rule 25 Fail</defaultConnectorLabel>
         <rules>
             <name>Rule_25_Pass</name>
-            <conditionLogic>(1 AND 2) OR (2 AND 3 AND 4) OR (2 AND 5 AND 6) OR (7 AND (8 OR 9)) OR (7 AND 10 AND 1) OR ( 7 AND 10 AND 5 AND 6) OR (7 AND 10 AND 3 AND 4 AND 11 AND 14 AND ((12 AND 13) OR (NOT(12))))</conditionLogic>
+            <conditionLogic>(1 AND 2) OR (2 AND 3 AND 4) OR (2 AND 5 AND 6) OR (7 AND (8 OR 9)) OR (7 AND 10 AND 1) OR ( 7 AND 10 AND 5 AND 6) OR (7 AND 10 AND 3 AND 4 AND 11 AND 14 AND ((12 AND 13) OR (NOT(12)))) OR (15 AND 16)</conditionLogic>
             <conditions>
                 <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
                 <operator>EqualTo</operator>
@@ -1336,6 +1336,17 @@
             </conditions>
             <conditions>
                 <leftValueReference>Var1634_Types_of_palliative_care_received</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patient_required_palliative_care</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Unknown - Pre 2023 Assessment</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Patientreceivedpalliativecare</leftValueReference>
                 <operator>NotEqualTo</operator>
             </conditions>
             <connector>
