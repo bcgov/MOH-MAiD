@@ -3,19 +3,18 @@
     <fullName>ELG_Q37__c</fullName>
     <externalId>false</externalId>
     <formula>CASE( Form_1634__r.Length_of_medical_condition__c ,
-&quot;Less than 3 months&quot;,1,
-&quot;Between 3 months and less than 1 year&quot;,2,
-&quot;Between 1 - less than 5 years&quot;,3,
-&quot;Between 5 - less than 10 years&quot;, 4,
-&quot;Between 10 - less than 20 years&quot;,5,
-&quot;20 years or more&quot;,6,
-&quot;Do not know&quot;,7,0)</formula>
+&quot;Less than 3 months&quot;,TEXT(1),
+&quot;Between 3 months and less than 1 year&quot;,TEXT(2),
+&quot;Between 1 - less than 5 years&quot;,TEXT(3),
+&quot;Between 5 - less than 10 years&quot;, TEXT(4),
+&quot;Between 10 - less than 20 years&quot;,TEXT(5),
+&quot;20 years or more&quot;,TEXT(6),
+&quot;Do not know&quot;,TEXT(7),
+&quot;Unknown - Pre 2023 Assessment&quot;,&quot;Unknown - Pre 2023 Assessment&quot;,TEXT(0))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>ELG_Q37</label>
-    <precision>18</precision>
     <required>false</required>
-    <scale>0</scale>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
+    <type>Text</type>
     <unique>false</unique>
 </CustomField>
