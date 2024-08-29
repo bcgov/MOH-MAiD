@@ -4,8 +4,8 @@
     <assignments>
         <name>AssignFailList</name>
         <label>AssignFailList</label>
-        <locationX>2975</locationX>
-        <locationY>1633</locationY>
+        <locationX>2426</locationX>
+        <locationY>6737</locationY>
         <assignmentItems>
             <assignToReference>UpdateFalList</assignToReference>
             <operator>Add</operator>
@@ -20,8 +20,8 @@
     <assignments>
         <name>AssignNullList</name>
         <label>AssignNullList</label>
-        <locationX>3410</locationX>
-        <locationY>789</locationY>
+        <locationX>5526</locationX>
+        <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>UpdateNullList</assignToReference>
             <operator>Add</operator>
@@ -36,8 +36,8 @@
     <assignments>
         <name>AssignPASSList</name>
         <label>AssignPASSList</label>
-        <locationX>2065</locationX>
-        <locationY>3248</locationY>
+        <locationX>50</locationX>
+        <locationY>5021</locationY>
         <assignmentItems>
             <assignToReference>UpdatePassList</assignToReference>
             <operator>Add</operator>
@@ -52,8 +52,8 @@
     <assignments>
         <name>Rule22ErrorMsg</name>
         <label>Rule22ErrorMsg</label>
-        <locationX>3045</locationX>
-        <locationY>671</locationY>
+        <locationX>5262</locationX>
+        <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -62,14 +62,15 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialFail</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Rule23ErrorMsg</name>
         <label>Rule23ErrorMsg</label>
-        <locationX>2476</locationX>
-        <locationY>717</locationY>
+        <locationX>4558</locationX>
+        <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -78,14 +79,15 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialFail</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Rule23ErrorMsg_1</name>
         <label>Rule23ErrorMsg-1</label>
-        <locationX>2585</locationX>
-        <locationY>570</locationY>
+        <locationX>4998</locationX>
+        <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -94,14 +96,15 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialFail</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Rule27ErrorMsg</name>
         <label>Rule27ErrorMsg</label>
-        <locationX>2234</locationX>
-        <locationY>784</locationY>
+        <locationX>4714</locationX>
+        <locationY>1721</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -110,14 +113,15 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialFail</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Rule28ErrorMsg</name>
         <label>Rule28ErrorMsg</label>
-        <locationX>1613</locationX>
-        <locationY>862</locationY>
+        <locationX>4450</locationX>
+        <locationY>1829</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -126,14 +130,15 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialFail</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Rule29ErrorMsg_0</name>
         <label>Rule29ErrorMsg</label>
-        <locationX>1516</locationX>
-        <locationY>1002</locationY>
+        <locationX>4181</locationX>
+        <locationY>1937</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -142,14 +147,15 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialFail</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Rule30ErrorMsg</name>
         <label>Rule30ErrorMsg</label>
-        <locationX>1396</locationX>
-        <locationY>1123</locationY>
+        <locationX>3829</locationX>
+        <locationY>2411</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -158,14 +164,15 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialFail</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Rule31ErrorMsg</name>
         <label>Rule31ErrorMsg</label>
-        <locationX>1262</locationX>
-        <locationY>1283</locationY>
+        <locationX>4186</locationX>
+        <locationY>2861</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -174,14 +181,15 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialFail</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Rule34ErrorMsg</name>
         <label>Rule34ErrorMsg</label>
-        <locationX>961</locationX>
-        <locationY>1692</locationY>
+        <locationX>3097</locationX>
+        <locationY>7313</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -190,14 +198,15 @@
             </value>
         </assignmentItems>
         <connector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialFail</targetReference>
         </connector>
     </assignments>
     <assignments>
         <name>Rule35ErrorMsg</name>
         <label>Rule35ErrorMsg</label>
-        <locationX>2273</locationX>
-        <locationY>1600</locationY>
+        <locationX>2250</locationX>
+        <locationY>6437</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -212,13 +221,30 @@
     <assignments>
         <name>Rule43ErrorMsg</name>
         <label>Rule43ErrorMsg</label>
-        <locationX>1131</locationX>
-        <locationY>1428</locationY>
+        <locationX>3922</locationX>
+        <locationY>2969</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
             <value>
                 <elementReference>Var43Msg</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <isGoTo>true</isGoTo>
+            <targetReference>UpdateProvincialFail</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Rule70ErrorMsg</name>
+        <label>Rule70ErrorMsg</label>
+        <locationX>2602</locationX>
+        <locationY>3509</locationY>
+        <assignmentItems>
+            <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Var70Msg</elementReference>
             </value>
         </assignmentItems>
         <connector>
@@ -228,8 +254,8 @@
     <assignments>
         <name>UpdateProviencialNull</name>
         <label>UpdateProviencialNull</label>
-        <locationX>3404</locationX>
-        <locationY>521</locationY>
+        <locationX>5526</locationX>
+        <locationY>755</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards__c</assignToReference>
             <operator>Assign</operator>
@@ -248,8 +274,8 @@
     <assignments>
         <name>UpdateProvincialFail</name>
         <label>UpdateProvincialFail</label>
-        <locationX>2772</locationX>
-        <locationY>1333</locationY>
+        <locationX>2426</locationX>
+        <locationY>6629</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards__c</assignToReference>
             <operator>Assign</operator>
@@ -264,8 +290,8 @@
     <assignments>
         <name>UpdateProvincialPASS</name>
         <label>UpdateProvincialPASS</label>
-        <locationX>2194</locationX>
-        <locationY>3080</locationY>
+        <locationX>50</locationX>
+        <locationY>4913</locationY>
         <assignmentItems>
             <assignToReference>ListCaseDetail.Provincial_Safeguards_Feedback__c</assignToReference>
             <operator>Assign</operator>
@@ -340,11 +366,18 @@
             <stringValue>Rule 43 is failed</stringValue>
         </value>
     </constants>
+    <constants>
+        <name>Var70Msg</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Rule 70 failed, the medication dispensing/return date on the 1641 do not align with the date of MAiD.</stringValue>
+        </value>
+    </constants>
     <decisions>
         <name>CaseType</name>
         <label>CaseType</label>
-        <locationX>2681</locationX>
-        <locationY>105</locationY>
+        <locationX>5191</locationX>
+        <locationY>647</locationY>
         <defaultConnector>
             <targetReference>UpdateProviencialNull</targetReference>
         </defaultConnector>
@@ -396,8 +429,8 @@
     <decisions>
         <name>Check_Proxy_Signed_for_MAiD</name>
         <label>Check-Proxy Signed for MAiD</label>
-        <locationX>621</locationX>
-        <locationY>904</locationY>
+        <locationX>3917</locationX>
+        <locationY>2195</locationY>
         <defaultConnector>
             <targetReference>CheckRule31</targetReference>
         </defaultConnector>
@@ -421,9 +454,10 @@
     <decisions>
         <name>CheckCaseType35Rule</name>
         <label>CheckCaseType35Rule</label>
-        <locationX>50</locationX>
-        <locationY>1510</locationY>
+        <locationX>3377</locationX>
+        <locationY>2969</locationY>
         <defaultConnector>
+            <isGoTo>true</isGoTo>
             <targetReference>UpdateProvincialPASS</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
@@ -453,8 +487,8 @@
     <decisions>
         <name>CheckMandatory_Location_Assesment</name>
         <label>CheckMandatory-Location Assesment</label>
-        <locationX>1622</locationX>
-        <locationY>463</locationY>
+        <locationX>4470</locationX>
+        <locationY>1079</locationY>
         <defaultConnector>
             <targetReference>Rule23ErrorMsg</targetReference>
         </defaultConnector>
@@ -475,8 +509,8 @@
     <decisions>
         <name>CheckMandatory_Location_Assesment_0</name>
         <label>CheckMandatory-Location Assesment</label>
-        <locationX>2222</locationX>
-        <locationY>547</locationY>
+        <locationX>4910</locationX>
+        <locationY>1079</locationY>
         <defaultConnector>
             <targetReference>Rule23ErrorMsg_1</targetReference>
         </defaultConnector>
@@ -504,8 +538,8 @@
     <decisions>
         <name>CheckRule23_Home_Option</name>
         <label>CheckRule23- Home Option</label>
-        <locationX>1478</locationX>
-        <locationY>223</locationY>
+        <locationX>4448</locationX>
+        <locationY>863</locationY>
         <defaultConnector>
             <targetReference>CheckRule_23</targetReference>
         </defaultConnector>
@@ -529,8 +563,8 @@
     <decisions>
         <name>CheckRule27</name>
         <label>CheckRule27</label>
-        <locationX>1487</locationX>
-        <locationY>623</locationY>
+        <locationX>4448</locationX>
+        <locationY>1613</locationY>
         <defaultConnector>
             <targetReference>Rule27ErrorMsg</targetReference>
         </defaultConnector>
@@ -629,8 +663,8 @@
     <decisions>
         <name>CheckRule28</name>
         <label>CheckRule28</label>
-        <locationX>1278</locationX>
-        <locationY>791</locationY>
+        <locationX>4183</locationX>
+        <locationY>1721</locationY>
         <defaultConnector>
             <targetReference>Rule28ErrorMsg</targetReference>
         </defaultConnector>
@@ -707,8 +741,8 @@
     <decisions>
         <name>CheckRule29</name>
         <label>CheckRule29</label>
-        <locationX>1152</locationX>
-        <locationY>948</locationY>
+        <locationX>3917</locationX>
+        <locationY>1829</locationY>
         <defaultConnector>
             <targetReference>Rule29ErrorMsg_0</targetReference>
         </defaultConnector>
@@ -936,8 +970,8 @@
     <decisions>
         <name>CheckRule30</name>
         <label>CheckRule30</label>
-        <locationX>934</locationX>
-        <locationY>1051</locationY>
+        <locationX>3741</locationX>
+        <locationY>2303</locationY>
         <defaultConnector>
             <targetReference>Rule30ErrorMsg</targetReference>
         </defaultConnector>
@@ -1021,8 +1055,8 @@
     <decisions>
         <name>CheckRule31</name>
         <label>CheckRule31</label>
-        <locationX>749</locationX>
-        <locationY>1219</locationY>
+        <locationX>3917</locationX>
+        <locationY>2753</locationY>
         <defaultConnector>
             <targetReference>Rule31ErrorMsg</targetReference>
         </defaultConnector>
@@ -1082,8 +1116,8 @@
     <decisions>
         <name>CheckRule34_1</name>
         <label>CheckRule34-1</label>
-        <locationX>246</locationX>
-        <locationY>1838</locationY>
+        <locationX>3097</locationX>
+        <locationY>3077</locationY>
         <defaultConnector>
             <targetReference>CheckRule34_3</targetReference>
         </defaultConnector>
@@ -1107,8 +1141,8 @@
     <decisions>
         <name>CheckRule34_2</name>
         <label>CheckRule34-2</label>
-        <locationX>732</locationX>
-        <locationY>1946</locationY>
+        <locationX>2844</locationX>
+        <locationY>3185</locationY>
         <defaultConnector>
             <targetReference>Rule34ErrorMsg</targetReference>
         </defaultConnector>
@@ -1209,8 +1243,8 @@
     <decisions>
         <name>CheckRule34_3</name>
         <label>CheckRule34-3</label>
-        <locationX>8</locationX>
-        <locationY>1950</locationY>
+        <locationX>3350</locationX>
+        <locationY>3185</locationY>
         <defaultConnector>
             <targetReference>Rule34ErrorMsg</targetReference>
         </defaultConnector>
@@ -1299,6 +1333,7 @@
                 </rightValue>
             </conditions>
             <connector>
+                <isGoTo>true</isGoTo>
                 <targetReference>CheckRule34_4_Final</targetReference>
             </connector>
             <label>CheckRule34-3=yes</label>
@@ -1307,8 +1342,8 @@
     <decisions>
         <name>CheckRule34_4_Final</name>
         <label>CheckRule34-4-Final</label>
-        <locationX>270</locationX>
-        <locationY>2248</locationY>
+        <locationX>2646</locationX>
+        <locationY>3293</locationY>
         <defaultConnector>
             <targetReference>Rule34ErrorMsg</targetReference>
         </defaultConnector>
@@ -1355,7 +1390,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>CheckRule35_1</targetReference>
+                <targetReference>CheckRule70</targetReference>
             </connector>
             <label>CheckRule34-4-Final=Yes</label>
         </rules>
@@ -1363,8 +1398,8 @@
     <decisions>
         <name>CheckRule35_1</name>
         <label>CheckRule35-1</label>
-        <locationX>1081</locationX>
-        <locationY>1582</locationY>
+        <locationX>2250</locationX>
+        <locationY>3509</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1425,8 +1460,8 @@
     <decisions>
         <name>CheckRule35_10</name>
         <label>CheckRule35-10</label>
-        <locationX>2560</locationX>
-        <locationY>2837</locationY>
+        <locationX>671</locationX>
+        <locationY>4481</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1487,8 +1522,8 @@
     <decisions>
         <name>CheckRule35_11</name>
         <label>CheckRule35-11</label>
-        <locationX>2861</locationX>
-        <locationY>2903</locationY>
+        <locationX>501</locationX>
+        <locationY>4589</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1549,8 +1584,8 @@
     <decisions>
         <name>CheckRule35_12</name>
         <label>CheckRule35-12</label>
-        <locationX>2923</locationX>
-        <locationY>3033</locationY>
+        <locationX>336</locationX>
+        <locationY>4697</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1603,8 +1638,8 @@
     <decisions>
         <name>CheckRule35_13</name>
         <label>CheckRule35-13</label>
-        <locationX>3116</locationX>
-        <locationY>3166</locationY>
+        <locationX>182</locationX>
+        <locationY>4805</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1657,8 +1692,8 @@
     <decisions>
         <name>CheckRule35_2</name>
         <label>CheckRule35-2</label>
-        <locationX>1183</locationX>
-        <locationY>1796</locationY>
+        <locationX>2074</locationX>
+        <locationY>3617</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1719,8 +1754,8 @@
     <decisions>
         <name>CheckRule35_3</name>
         <label>CheckRule35-3</label>
-        <locationX>1467</locationX>
-        <locationY>1933</locationY>
+        <locationX>1898</locationX>
+        <locationY>3725</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1781,8 +1816,8 @@
     <decisions>
         <name>CheckRule35_4</name>
         <label>CheckRule35-4</label>
-        <locationX>1590</locationX>
-        <locationY>2153</locationY>
+        <locationX>1722</locationX>
+        <locationY>3833</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1843,8 +1878,8 @@
     <decisions>
         <name>CheckRule35_5</name>
         <label>CheckRule35-5</label>
-        <locationX>1755</locationX>
-        <locationY>2265</locationY>
+        <locationX>1546</locationX>
+        <locationY>3941</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1905,8 +1940,8 @@
     <decisions>
         <name>CheckRule35_6</name>
         <label>CheckRule35-6</label>
-        <locationX>1924</locationX>
-        <locationY>2447</locationY>
+        <locationX>1370</locationX>
+        <locationY>4049</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -1967,8 +2002,8 @@
     <decisions>
         <name>CheckRule35_7</name>
         <label>CheckRule35-7</label>
-        <locationX>2104</locationX>
-        <locationY>2464</locationY>
+        <locationX>1194</locationX>
+        <locationY>4157</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -2029,8 +2064,8 @@
     <decisions>
         <name>CheckRule35_8</name>
         <label>CheckRule35-8</label>
-        <locationX>2238</locationX>
-        <locationY>2601</locationY>
+        <locationX>1019</locationX>
+        <locationY>4265</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -2091,8 +2126,8 @@
     <decisions>
         <name>CheckRule35_9</name>
         <label>CheckRule35-9</label>
-        <locationX>2480</locationX>
-        <locationY>2627</locationY>
+        <locationX>844</locationX>
+        <locationY>4373</locationY>
         <defaultConnector>
             <targetReference>Rule35ErrorMsg</targetReference>
         </defaultConnector>
@@ -2153,8 +2188,8 @@
     <decisions>
         <name>CheckRule43</name>
         <label>CheckRule43</label>
-        <locationX>683</locationX>
-        <locationY>1381</locationY>
+        <locationX>3649</locationX>
+        <locationY>2861</locationY>
         <defaultConnector>
             <targetReference>Rule43ErrorMsg</targetReference>
         </defaultConnector>
@@ -2208,10 +2243,48 @@
         </rules>
     </decisions>
     <decisions>
+        <description>Prescriber Returned Date/Time on 1641 form must be equal or greater that the &quot;Date of MAiD&quot; on Case AND must be equal or less than &quot;Dispensing date/time&quot; field on 1641 form.
+ Applicable only for  MAiD Death and MAiD Death NOT foreseeable case types only</description>
+        <name>CheckRule70</name>
+        <label>CheckRule70</label>
+        <locationX>2426</locationX>
+        <locationY>3401</locationY>
+        <defaultConnector>
+            <targetReference>Rule70ErrorMsg</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>CheckRule70_Pass</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>ListCaseDetail.Date_of_MAiD__c</leftValueReference>
+                <operator>NotEqualTo</operator>
+            </conditions>
+            <conditions>
+                <leftValueReference>DispensedDate</leftValueReference>
+                <operator>LessThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Date_of_MAiD__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1641_Prescriber_Returned</leftValueReference>
+                <operator>GreaterThanOrEqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Date_of_MAiD__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>CheckRule35_1</targetReference>
+            </connector>
+            <label>CheckRule70=Pass</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Checkrule_22</name>
         <label>Checkrule-22</label>
-        <locationX>2206</locationX>
-        <locationY>310</locationY>
+        <locationX>4855</locationX>
+        <locationY>755</locationY>
         <defaultConnector>
             <targetReference>Rule22ErrorMsg</targetReference>
         </defaultConnector>
@@ -2240,8 +2313,8 @@
     <decisions>
         <name>CheckRule_23</name>
         <label>CheckRule-23</label>
-        <locationX>1848</locationX>
-        <locationY>364</locationY>
+        <locationX>4690</locationX>
+        <locationY>971</locationY>
         <defaultConnector>
             <targetReference>CheckMandatory_Location_Assesment_0</targetReference>
         </defaultConnector>
@@ -2262,7 +2335,14 @@
             <label>CheckRule-23=yes</label>
         </rules>
     </decisions>
-    <description>Fix on Rule 34 PS</description>
+    <description>Addition of rule 70</description>
+    <environments>Default</environments>
+    <formulas>
+        <description>This formula will pick date from date and time field.</description>
+        <name>DispensedDate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE({!Var1641_DispensedDateTime})</expression>
+    </formulas>
     <interviewLabel>Provincial Safe {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial Safeguards</label>
     <processMetadataValues>
@@ -2274,7 +2354,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -2287,8 +2367,8 @@
     <recordLookups>
         <name>Get1634</name>
         <label>Get1634</label>
-        <locationX>1706</locationX>
-        <locationY>111</locationY>
+        <locationX>5191</locationX>
+        <locationY>431</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1641</targetReference>
@@ -2426,8 +2506,8 @@
     <recordLookups>
         <name>Get1641</name>
         <label>Get1641</label>
-        <locationX>1966</locationX>
-        <locationY>50</locationY>
+        <locationX>5191</locationX>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>CaseType</targetReference>
@@ -2737,8 +2817,8 @@
     <recordLookups>
         <name>GetCaseDetail</name>
         <label>GetCaseDetail</label>
-        <locationX>1290</locationX>
-        <locationY>143</locationY>
+        <locationX>5191</locationX>
+        <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Get1634</targetReference>
@@ -2762,27 +2842,27 @@
     <recordUpdates>
         <name>Update_FAIL</name>
         <label>Update-FAIL</label>
-        <locationX>3076</locationX>
-        <locationY>1869</locationY>
+        <locationX>2426</locationX>
+        <locationY>6845</locationY>
         <inputReference>UpdateFalList</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>Update_PASS</name>
         <label>Update-PASS</label>
-        <locationX>1932</locationX>
-        <locationY>3320</locationY>
+        <locationX>50</locationX>
+        <locationY>5129</locationY>
         <inputReference>UpdatePassList</inputReference>
     </recordUpdates>
     <recordUpdates>
         <name>UpdateNull_ProvincialSafeguards</name>
         <label>UpdateNull-ProvincialSafeguards</label>
-        <locationX>3451</locationX>
-        <locationY>1010</locationY>
+        <locationX>5526</locationX>
+        <locationY>971</locationY>
         <inputReference>UpdateNullList</inputReference>
     </recordUpdates>
     <start>
-        <locationX>569</locationX>
-        <locationY>254</locationY>
+        <locationX>5065</locationX>
+        <locationY>0</locationY>
         <connector>
             <targetReference>GetCaseDetail</targetReference>
         </connector>
