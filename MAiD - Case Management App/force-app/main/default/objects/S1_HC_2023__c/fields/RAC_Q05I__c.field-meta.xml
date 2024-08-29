@@ -3,7 +3,7 @@
     <fullName>RAC_Q05I__c</fullName>
     <externalId>false</externalId>
     <formula>IF( ISBLANK( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c  ) , &apos;0&apos;, IF ( INCLUDES ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c, &quot;No Data Disclosed&quot; ), &apos;No Data Disclosed&apos;,
-IF ( INCLUDES ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c, &quot;Pre-2023 MAiD Request-No data available&quot; ), &apos;Pre-2023 MAiD Request-No data available&apos;,IF ( INCLUDES ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c, &quot;Does not know&quot; ), &apos;1&apos;,&apos;2&apos;))))</formula>
+IF ( INCLUDES ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c, &quot;Pre-2023 MAiD Request-No data&quot; ), &apos;Pre-2023 MAiD Request-No data&apos;,IF ( INCLUDES ( Form_1634__r.Case__r.Racial_Ethinic_or_Cultural_Group__c, &quot;Does not know&quot; ), &apos;1&apos;,&apos;2&apos;))))</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>RAC_Q05I</label>
     <required>false</required>
