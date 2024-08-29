@@ -5,7 +5,7 @@
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
     <inlineHelpText>Enter gender patient prefers if other is selected e.g Non-Binary, etc</inlineHelpText>
-    <label>If Other Preferred Gender, Specify</label>
+    <label>If Other Gender Identity, Specify</label>
     <length>255</length>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
