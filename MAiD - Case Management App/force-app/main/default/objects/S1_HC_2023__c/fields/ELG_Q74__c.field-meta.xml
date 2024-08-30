@@ -3,17 +3,16 @@
     <fullName>ELG_Q74__c</fullName>
     <externalId>false</externalId>
     <formula>CASE(
-    Form_1634__r.Patient_required_palliative_care__c ,
-    &quot;Yes&quot;,1,
-    &quot;No&quot;,2,
-    &quot;Do not know&quot;,3, 0
+Form_1634__r.Patient_required_palliative_care__c ,
+&quot;Yes&quot;,TEXT(1),
+&quot;No&quot;,TEXT(2),
+&quot;Do not know&quot;,TEXT(3), 
+&quot;Unknown - Pre 2023 Assessment&quot;,&quot;Unknown - Pre 2023 Assessment&quot;,TEXT(0)
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>ELG_Q74</label>
-    <precision>18</precision>
     <required>false</required>
-    <scale>2</scale>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
+    <type>Text</type>
     <unique>false</unique>
 </CustomField>
