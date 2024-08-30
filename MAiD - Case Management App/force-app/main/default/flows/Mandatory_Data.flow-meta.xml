@@ -597,7 +597,7 @@
         <name>Rule25Message</name>
         <dataType>String</dataType>
         <value>
-            <stringValue>Rule 25 Validation Failed</stringValue>
+            <stringValue>Rule 25 Failed - Issue with palliative care data</stringValue>
         </value>
     </constants>
     <constants>
