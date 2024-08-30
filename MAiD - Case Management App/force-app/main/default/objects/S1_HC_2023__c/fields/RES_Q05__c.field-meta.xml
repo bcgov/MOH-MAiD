@@ -3,20 +3,20 @@
     <fullName>RES_Q05__c</fullName>
     <externalId>false</externalId>
     <formula>CASE( Form_1634__r.Case__r.Usual_Place_of_Residence__c ,
-&quot;Hospital&quot;,1,
-&quot;Palliative care facility&quot;,2,
-&quot;Residential care facility&quot;,3,
-&quot;Private residence&quot;,4,
-&quot;Correctional facility/Prison&quot;, 5,
-&quot;Shelter/Group Home&quot;,6,
-&quot;Other&quot;,7,
-&quot;Do not know&quot;,8,0)</formula>
+&quot;Hospital&quot;,&quot;1&quot;,
+&quot;Palliative care facility&quot;,&quot;2&quot;,
+&quot;Residential care facility&quot;,&quot;3&quot;,
+&quot;Private residence&quot;,&quot;4&quot;,
+&quot;Correctional facility/Prison&quot;, &quot;5&quot;,
+&quot;Shelter/Group Home&quot;,&quot;6&quot;,
+&quot;Other&quot;,&quot;7&quot;,
+&quot;Do not know&quot;,&quot;8&quot;,
+&quot;No Data Disclosed&quot;, &quot;No Data Disclosed&quot;,
+&quot;Pre-2023 MAiD Request-No data&quot;, &quot;Pre-2023 MAiD Request-No data&quot;,&quot;0&quot;)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>RES_Q05</label>
-    <precision>18</precision>
     <required>false</required>
-    <scale>0</scale>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
+    <type>Text</type>
     <unique>false</unique>
 </CustomField>
