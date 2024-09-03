@@ -2121,6 +2121,11 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
+            <field>Case__c.Was_education_provided__c</field>
+            <table>Form_1634__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
             <field>Case__c.Entitlement</field>
             <table>Form_1634__c</table>
         </columns>

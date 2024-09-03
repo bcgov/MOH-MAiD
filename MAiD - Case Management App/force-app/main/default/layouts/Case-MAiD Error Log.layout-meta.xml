@@ -82,11 +82,11 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Date_Reconciled__c</field>
+                <field>If_yes_specify__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>If_yes_specify__c</field>
+                <field>Date_Reconciled__c</field>
             </layoutItems>
             <layoutItems>
                 <emptySpace>true</emptySpace>

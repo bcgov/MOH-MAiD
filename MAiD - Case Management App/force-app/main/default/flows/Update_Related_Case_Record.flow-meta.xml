@@ -9,12 +9,19 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Update_main_case</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Education_provided_to_practitioner__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Was_education_provided__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -23,7 +30,8 @@
             <label>Update main case</label>
         </rules>
     </decisions>
-    <description>Updated Case Selection Criteria</description>
+    <description>Updating the was education provided? field to yes/no.</description>
+    <environments>Default</environments>
     <interviewLabel>Update Related Case Record {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Update Related Case Record</label>
     <processMetadataValues>

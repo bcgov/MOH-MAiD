@@ -596,6 +596,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Was_education_provided__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.X1630_Date_Received__c</field>
         <readable>true</readable>
     </fieldPermissions>

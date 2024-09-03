@@ -656,6 +656,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Was_education_provided__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Which_part_of_Form_1634_was_missed__c</field>
         <readable>true</readable>
     </fieldPermissions>
