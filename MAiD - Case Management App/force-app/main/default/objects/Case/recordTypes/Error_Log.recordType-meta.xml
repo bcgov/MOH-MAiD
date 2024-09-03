@@ -370,6 +370,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Was_education_provided__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>X1632__c</picklist>
         <values>
             <fullName>Incomplete</fullName>

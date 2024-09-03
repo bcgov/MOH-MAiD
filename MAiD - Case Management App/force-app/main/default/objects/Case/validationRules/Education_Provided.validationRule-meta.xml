@@ -4,8 +4,6 @@
     <active>true</active>
     <errorConditionFormula>AND (
 OR(RecordType.DeveloperName =&apos;MAiD_Case&apos;,
-RecordType.DeveloperName =&apos;Error_Log&apos;),
-Education_provided_to_practitioner__c = true &amp;&amp;    ISBLANK(If_yes_specify__c )
-)</errorConditionFormula>
+RecordType.DeveloperName =&apos;Error_Log&apos;),AND(OR(Education_provided_to_practitioner__c = true,  ISPICKVAL(Was_education_provided__c, &apos;Yes&apos;)),ISBLANK(If_yes_specify__c )))</errorConditionFormula>
     <errorMessage>If Education is provided to practitioner, please specify</errorMessage>
 </ValidationRule>

@@ -113,7 +113,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Validate_Requirements_Yes</name>
-            <conditionLogic>( 1 OR 2 OR 3 OR 4 OR 5 OR 6) AND (8 OR 9) AND 7 AND 10</conditionLogic>
+            <conditionLogic>( 1 OR 2 OR 3 OR 4 OR 5 OR 6) AND (8 OR 9 OR 11) AND 7 AND 10</conditionLogic>
             <conditions>
                 <leftValueReference>VarGetCaseDetail.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -184,13 +184,20 @@
                     <stringValue>MAiD Manager</stringValue>
                 </rightValue>
             </conditions>
+            <conditions>
+                <leftValueReference>VarParCaseDetail.Was_education_provided__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
+                </rightValue>
+            </conditions>
             <connector>
                 <targetReference>Close_Status_Update</targetReference>
             </connector>
             <label>Validate Requirements=Yes</label>
         </rules>
     </decisions>
-    <description>Status flow Update</description>
+    <description>Status flow Update with Was Education Provided</description>
     <environments>Default</environments>
     <interviewLabel>Status6 Update {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status6 Update</label>
@@ -234,6 +241,7 @@
         <outputReference>VarParCaseDetail</outputReference>
         <queriedFields>Id</queriedFields>
         <queriedFields>Education_provided_to_practitioner__c</queriedFields>
+        <queriedFields>Was_education_provided__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>GetCaseDetail</name>
