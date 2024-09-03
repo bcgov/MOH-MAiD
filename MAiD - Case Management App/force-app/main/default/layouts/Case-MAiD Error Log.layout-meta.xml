@@ -69,6 +69,10 @@
                 <field>Status</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Date_Reconciled__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Education_provided_to_practitioner__c</field>
             </layoutItems>
@@ -83,10 +87,6 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>If_yes_specify__c</field>
-            </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Date_Reconciled__c</field>
             </layoutItems>
             <layoutItems>
                 <emptySpace>true</emptySpace>
