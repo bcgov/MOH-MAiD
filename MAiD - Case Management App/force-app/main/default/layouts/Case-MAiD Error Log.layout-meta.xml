@@ -82,6 +82,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Education_Level__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>If_yes_specify__c</field>
             </layoutItems>
             <layoutItems>

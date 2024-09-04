@@ -5,6 +5,29 @@
     <businessProcess>Error Log Support Process</businessProcess>
     <label>MAiD Error Log</label>
     <picklistValues>
+        <picklist>Education_Level__c</picklist>
+        <values>
+            <fullName>Level 1%3A Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 2%3A Formal Notice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 3%3A Referral to Applicable Regulatory College</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 4%3A Referral to Law Enforcement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proactive Education</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Gender__c</picklist>
         <values>
             <fullName>1 - Male</fullName>
