@@ -4,6 +4,7 @@
     <deprecated>false</deprecated>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
+    <inlineHelpText>Indicate the education topic(s) only (e.g. 72-hour reporting deadline)</inlineHelpText>
     <label>If yes, specify</label>
     <required>false</required>
     <trackFeedHistory>false</trackFeedHistory>
