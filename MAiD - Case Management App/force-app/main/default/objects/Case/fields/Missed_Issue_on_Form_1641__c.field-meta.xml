@@ -14,10 +14,6 @@
         <restricted>true</restricted>
         <valueSetName>Missed_Error_Log_Issue</valueSetName>
         <valueSettings>
-            <controllingFieldValue>Patient info incomplete</controllingFieldValue>
-            <valueName>N/A</valueName>
-        </valueSettings>
-        <valueSettings>
             <controllingFieldValue>Safeguards (1641)</controllingFieldValue>
             <valueName>Patient information</valueName>
         </valueSettings>
