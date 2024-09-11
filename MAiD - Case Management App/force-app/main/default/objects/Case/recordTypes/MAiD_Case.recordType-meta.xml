@@ -23,6 +23,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>No Data Disclosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Often</fullName>
             <default>false</default>
         </values>
@@ -88,12 +92,24 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>No Data Disclosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre 2023 MAiD Request - No data</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>
     <picklistValues>
         <picklist>If_Private_Residence_Living_arrangement__c</picklist>
+        <values>
+            <fullName>Do not know</fullName>
+            <default>false</default>
+        </values>
         <values>
             <fullName>Lives alone</fullName>
             <default>false</default>
@@ -111,15 +127,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Other living Arrangement</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Do not know</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>No Data Disclosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other living Arrangement</fullName>
             <default>false</default>
         </values>
     </picklistValues>
@@ -248,6 +260,10 @@
         </values>
         <values>
             <fullName>Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Data Disclosed</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1308,6 +1324,33 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Preferred_Gender__c</picklist>
+        <values>
+            <fullName>1 - Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Did not consent to provide</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Data Disclosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre 2023 MAiD Request - No data</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Priority</picklist>
         <values>
             <fullName>High</fullName>
@@ -1419,7 +1462,15 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>No Data Disclosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Other race</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre 2023 MAiD Request - No data</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1473,6 +1524,14 @@
         </values>
         <values>
             <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Data Disclosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre 2023 MAiD Request - No data</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1549,11 +1608,19 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>No Data Disclosed</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Other</fullName>
             <default>false</default>
         </values>
         <values>
             <fullName>Palliative care facility</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre 2023 MAiD Request - No data</fullName>
             <default>false</default>
         </values>
         <values>

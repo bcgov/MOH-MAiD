@@ -4,15 +4,16 @@
     <externalId>false</externalId>
     <formula>CASE(
     Form_1634__r.Case__r.Preferred_Gender__c ,
-    &quot;1 - Male&quot;,1,
-    &quot;2 - Female&quot;,2,
-    &quot;3 - Other&quot;,3,0
+    &quot;1 - Male&quot;,&apos;1&apos;,
+    &quot;2 - Female&quot;,&apos;2&apos;,
+    &quot;3 - Other&quot;,&apos;3&apos;,
+&quot;4 - Did not consent to provide&quot;,&apos;4&apos;,
+&quot;No Data Disclosed&quot;,&apos;No Data Disclosed&apos;,
+&quot;Pre 2023 MAiD Request - No data&quot;,&apos;Pre 2023 MAiD Request - No data&apos;,&apos;0&apos;
 )</formula>
     <label>SEX_Q06</label>
-    <precision>18</precision>
     <required>false</required>
-    <scale>0</scale>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
+    <type>Text</type>
     <unique>false</unique>
 </CustomField>

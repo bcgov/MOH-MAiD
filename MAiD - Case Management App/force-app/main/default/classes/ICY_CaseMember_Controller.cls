@@ -219,19 +219,65 @@ public without sharing class ICY_CaseMember_Controller {
     @TestVisible
     private static void createAccountShares(Set<Id> caseIds, Id userId, String accessLevel){
         List<AccountShare> shareRecords = new List<AccountShare>();
-        for(Case c: [SELECT Id, AccountId FROM Case WHERE ID IN :caseIds]){
-            shareRecords.add(
-                new AccountShare(
-                    AccountAccessLevel = accessLevel,
-                    AccountId = c.AccountId,
-                    CaseAccessLevel = accessLevel,
-                    OpportunityAccessLevel = 'None',
-                    UserOrGroupId = userId
-                )
-            );
-        }
+        List<AccountShare> updateShareRecords = new List<AccountShare>();
+      
+        Set<Id> setAccountId = new Set<Id>();  
+        Map<Id, String> accShIdAccessMap = new Map<Id, String>();
+        Map<Id, Id> accShIdAccIdMap = new Map<Id, Id>();
+        
+        Boolean bFound = false;
 
+        List<Case> caseList= [SELECT Id, AccountId FROM Case WHERE ID IN :caseIds];
+        for (Case c: caseList){
+            setAccountId.add(c.AccountId);
+        }
+        List<AccountShare> accShList = [SELECT Id ,AccountId,AccountAccessLevel FROM AccountShare WHERE AccountId IN :setAccountId and UserOrGroupId = :userId];
+        for (AccountShare accSh: accShList){
+            accShIdAccIdMap.put(accSh.Id,accSh.AccountId);
+            accShIdAccessMap.put(accSh.Id,accSh.AccountAccessLevel);
+           
+        }
+       
+        for (Case c: caseList){
+            bFound = false;
+             for (Id key : accShIdAccIdMap.keySet()) {
+                if ((accShIdAccIdMap.get(key)== c.AccountId) && (accShIdAccessMap.get(key)!='All')) {
+                    shareRecords.add(
+                        new AccountShare(
+                            AccountAccessLevel = accessLevel,
+                            AccountId = c.AccountId,
+                            CaseAccessLevel = accessLevel,
+                            OpportunityAccessLevel = 'None',
+                            UserOrGroupId = userId
+                        )
+                    );
+                    bFound= true;
+                    break;
+                
+                }
+                if ((accShIdAccIdMap.get(key)== c.AccountId) && (accShIdAccessMap.get(key)=='All')) {                    
+                    AccountShare accShare= new AccountShare();
+                    accShare.Id = key;
+                    accShare.CaseAccessLevel= accessLevel;
+                    updateShareRecords.add(accShare);  
+                    bFound= true;
+                }
+             }
+              if (!bFound){
+                shareRecords.add(
+                    new AccountShare(
+                        AccountAccessLevel = accessLevel,
+                        AccountId = c.AccountId,
+                        CaseAccessLevel = accessLevel,
+                        OpportunityAccessLevel = 'None',
+                        UserOrGroupId = userId
+                    )
+                );
+              }
+            }     
+            
         INSERT shareRecords;
+        update updateShareRecords;
     }
 
     @TestVisible
@@ -246,8 +292,15 @@ public without sharing class ICY_CaseMember_Controller {
     @TestVisible
     private static void removeCaseShare(Set<Id> caseIds, Id userId){
         try{
-            DELETE [SELECT ID FROM AccountShare WHERE UserOrGroupId = :userId AND AccountId IN (SELECT AccountId FROM CASE WHERE ID IN :caseIds)];
-        }catch(Exception ex){
+            AccountShare accsh = [SELECT Id ,AccountAccessLevel FROM AccountShare WHERE AccountId IN (SELECT AccountId FROM CASE WHERE ID IN :caseIds) and UserOrGroupId = :userId];
+            if ((accsh != null)&& (accsh.AccountAccessLevel !='All')){
+              DELETE [SELECT ID FROM AccountShare WHERE UserOrGroupId = :userId AND AccountId IN (SELECT AccountId FROM CASE WHERE ID IN :caseIds)];
+            }
+            if ((accsh != null)&& (accsh.AccountAccessLevel =='All')){
+                accsh.CaseAccessLevel= 'none';
+                update accsh; 
+            }      
+            }catch(Exception ex){
             System.debug('$$ Remove Case and Account Share exception: '+ex);
         }
     }
