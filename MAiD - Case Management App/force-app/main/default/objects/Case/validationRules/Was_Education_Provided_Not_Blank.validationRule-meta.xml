@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Was_Education_Provided_Not_Blank</fullName>
+    <active>true</active>
+    <description>The Purpose of this rule to make sure that Was education Provided field value is not blank/null/none</description>
+    <errorConditionFormula>AND( OR ( ISPICKVAL(Status, &quot;Reconciled&quot;), ISPICKVAL(Status, &quot;Logged for Tracking&quot;)), ISBLANK( TEXT(Was_education_provided__c) ))</errorConditionFormula>
+    <errorMessage>If the status is Reconciled or Logged for tracking then Was education provided? field can&apos;t be blank</errorMessage>
+</ValidationRule>

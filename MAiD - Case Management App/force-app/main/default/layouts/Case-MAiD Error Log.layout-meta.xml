@@ -73,8 +73,16 @@
                 <field>Date_Reconciled__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Education_provided_to_practitioner__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Was_education_provided__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Education_Level__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

@@ -225,12 +225,19 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>IsChecked</name>
-            <conditionLogic>and</conditionLogic>
+            <conditionLogic>or</conditionLogic>
             <conditions>
                 <leftValueReference>Related_Cases_Loop.Education_provided_to_practitioner__c</leftValueReference>
                 <operator>EqualTo</operator>
                 <rightValue>
                     <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Related_Cases_Loop.Was_education_provided__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Yes</stringValue>
                 </rightValue>
             </conditions>
             <connector>
@@ -1878,7 +1885,7 @@
             <label>ManagerReadyForReviewStatus</label>
         </rules>
     </decisions>
-    <description>Status flow 5 Updated for MAID - BCCS Feedback failure message..</description>
+    <description>Status flow 5 Updated for MAID - Was Education Provided</description>
     <environments>Default</environments>
     <interviewLabel>Status 5 update flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Status 5 update flow</label>
@@ -1979,6 +1986,7 @@
         <queriedFields>ParentId</queriedFields>
         <queriedFields>Status</queriedFields>
         <queriedFields>Education_provided_to_practitioner__c</queriedFields>
+        <queriedFields>Was_education_provided__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>Get_Task</name>
@@ -2212,6 +2220,13 @@
     <variables>
         <name>SelectionValue</name>
         <dataType>Boolean</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>SelectionvalueforWasEducationProvided</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>

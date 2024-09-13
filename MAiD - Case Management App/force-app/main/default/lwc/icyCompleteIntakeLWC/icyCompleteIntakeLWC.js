@@ -9,9 +9,11 @@ import { CloseActionScreenEvent } from 'lightning/actions';
 import CASE_OBJECT from '@salesforce/schema/Case';
 import createPersonAcct from '@salesforce/apex/ICY_CompleteIntakeCtrl.createPersonAcc';
 import { NavigationMixin } from 'lightning/navigation';
+import { deleteRecord } from 'lightning/uiRecordApi';
 
 //Custom Labels
 import ICY_IntakeCompletedSuccessfully from '@salesforce/label/c.ICY_IntakeCompletedSuccessfully';
+import ICY_IntakeIntakeCannotBeCompleted from '@salesforce/label/c.ICY_IntakeIntakeCannotBeCompleted';
 
 const fields = [CONSENT_FIELD, STATUS_FIELD, VERBAL_FIELD];
 const InTakeRECFIELDS = ['Intake__c.CreatedDate', 'Intake__c.Referral__r.CreatedDate','Intake__c.Referral__r.ICY_Geographic_Area__c','Intake__c.Referral__r.Id'];
@@ -227,7 +229,7 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                                 this.showSpinner = false;
                                 this.dispatchEvent(
                                     new ShowToastEvent({
-                                        title: 'Error!',
+                                        title: 'Error',
                                         message: JSON.stringify(error.message),
                                         variant: 'error'
                                     })
@@ -235,13 +237,30 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                             })
                     })
                     .catch(error => {
+                        deleteRecord(response.id)
+                        .catch(error => {
+                            this.showSpinner = false;
+                                this.dispatchEvent(
+                                    new ShowToastEvent({
+                                        title: 'Error',
+                                        message: JSON.stringify(error.message),
+                                        variant: 'error'
+                                    })
+                                )
+                        });
 
                         this.showSpinner = false;
                         console.error('Error: ' + JSON.stringify(error.message));
+                        this.dispatchEvent(
+                            new ShowToastEvent({
+                                title: 'Error',
+                                message: ICY_IntakeIntakeCannotBeCompleted,                   
+                                variant: 'error'
+                            })
+                        )
                     })
 
             }).catch(error => {
-
                 this.showSpinner = false;
                 console.error('Error: ' + JSON.stringify(error.message));
             });

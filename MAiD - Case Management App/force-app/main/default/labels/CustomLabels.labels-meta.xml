@@ -107,6 +107,13 @@
         <value>Intake created successfully.</value>
     </labels>
     <labels>
+        <fullName>ICY_IntakeIntakeCannotBeCompleted</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_IntakeIntakeCannotBeCompleted</shortDescription>
+        <value>Record cannot be updated/created. Please contact your administrator</value>
+    </labels>
+    <labels>
         <fullName>ICY_MissingRequiredFields</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -146,7 +153,7 @@
         <language>en_US</language>
         <protected>false</protected>
         <shortDescription>ICY_PleaseEnterPostalCode</shortDescription>
-        <value>Please enter the Postal Code in the format: A1A1A1 or A1A 1A1, where A is a letter and 1 is a digit.</value>
+        <value>Please enter an existing postal code in the format: A1A1A1 or A1A 1A1, where A is a letter, and 1 is a digit.</value>
     </labels>
     <labels>
         <fullName>ICY_PrivacyAgreement</fullName>

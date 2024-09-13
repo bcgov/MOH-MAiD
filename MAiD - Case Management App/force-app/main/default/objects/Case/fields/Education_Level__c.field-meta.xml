@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Education_Level__c</fullName>
+    <externalId>false</externalId>
+    <label>Education Level</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Was_education_provided__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Proactive Education</fullName>
+                <default>false</default>
+                <label>Proactive Education</label>
+            </value>
+            <value>
+                <fullName>Level 1: Education</fullName>
+                <default>false</default>
+                <label>Level 1: Education</label>
+            </value>
+            <value>
+                <fullName>Level 2: Formal Notice</fullName>
+                <default>false</default>
+                <label>Level 2: Formal Notice</label>
+            </value>
+            <value>
+                <fullName>Level 3: Referral to Applicable Regulatory College</fullName>
+                <default>false</default>
+                <label>Level 3: Referral to Applicable Regulatory College</label>
+            </value>
+            <value>
+                <fullName>Level 4: Referral to Law Enforcement</fullName>
+                <default>false</default>
+                <label>Level 4: Referral to Law Enforcement</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Proactive Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Level 1: Education</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Level 2: Formal Notice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Level 3: Referral to Applicable Regulatory College</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Yes</controllingFieldValue>
+            <valueName>Level 4: Referral to Law Enforcement</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

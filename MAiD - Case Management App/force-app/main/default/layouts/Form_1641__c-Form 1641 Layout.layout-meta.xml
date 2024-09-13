@@ -116,20 +116,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Medication Return</label>
-        <layoutColumns>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Practitioner_did_not_return_medication__c</field>
-            </layoutItems>
-        </layoutColumns>
-        <style>OneColumn</style>
-    </layoutSections>
-    <layoutSections>
-        <customLabel>true</customLabel>
-        <detailHeading>true</detailHeading>
-        <editHeading>true</editHeading>
-        <label>IV Medications</label>
+        <label>Returned IV Medications</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -262,7 +249,7 @@
         <customLabel>true</customLabel>
         <detailHeading>true</detailHeading>
         <editHeading>true</editHeading>
-        <label>Oral Medications</label>
+        <label>Returned Oral Medications</label>
         <layoutColumns>
             <layoutItems>
                 <behavior>Edit</behavior>
@@ -316,7 +303,6 @@
                 <behavior>Edit</behavior>
                 <field>Oral_Suspension_consistent_with_MAR__c</field>
             </layoutItems>
-            
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Lorazepam__c</field>
@@ -361,8 +347,20 @@
                 <behavior>Edit</behavior>
                 <field>Compound_Suspension_consistent_with_MAR__c</field>
             </layoutItems>
+        </layoutColumns>
+        <style>OneColumn</style>
+    </layoutSections>
+    <layoutSections>
+        <customLabel>true</customLabel>
+        <detailHeading>true</detailHeading>
+        <editHeading>true</editHeading>
+        <label>Medication Return</label>
+        <layoutColumns>
             <layoutItems>
-
+                <behavior>Edit</behavior>
+                <field>Practitioner_did_not_return_medication__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Returning_Prescriber_Name__c</field>
             </layoutItems>
@@ -379,7 +377,6 @@
                 <field>Returning_Prescriber_s_Signature__c</field>
             </layoutItems>
             <layoutItems>
-                
                 <behavior>Edit</behavior>
                 <field>Receiving_Pharmacist__c</field>
             </layoutItems>
@@ -444,6 +441,11 @@
     <platformActionList>
         <actionListContext>Record</actionListContext>
         <platformActionListItems>
+            <actionName>Edit</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>0</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
             <actionName>ChangeOwnerOne</actionName>
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
@@ -472,11 +474,6 @@
             <actionName>NewEvent</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>6</sortOrder>
-        </platformActionListItems>
-        <platformActionListItems>
-            <actionName>Edit</actionName>
-            <actionType>StandardButton</actionType>
-            <sortOrder>0</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <relatedLists>

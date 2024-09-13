@@ -5,6 +5,67 @@
     <businessProcess>Error Log Support Process</businessProcess>
     <label>MAiD Error Log</label>
     <picklistValues>
+        <picklist>Education_Level__c</picklist>
+        <values>
+            <fullName>Level 1%3A Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 2%3A Formal Notice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 3%3A Referral to Applicable Regulatory College</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Level 4%3A Referral to Law Enforcement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Proactive Education</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender__c</picklist>
+        <values>
+            <fullName>1 - Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Health_Authority__c</picklist>
+        <values>
+            <fullName>Fraser Health Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interior Health Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Northern Health Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vancouver Coastal Health Authority</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vancouver Island Health Authority</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Origin</picklist>
         <values>
             <fullName>Email</fullName>
@@ -273,6 +334,107 @@
         </values>
         <values>
             <fullName>Which part of the form was missed%3F</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Was_education_provided__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1632__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1633__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1634__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1635__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1641__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X1642__c</picklist>
+        <values>
+            <fullName>Incomplete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
             <default>false</default>
         </values>
     </picklistValues>

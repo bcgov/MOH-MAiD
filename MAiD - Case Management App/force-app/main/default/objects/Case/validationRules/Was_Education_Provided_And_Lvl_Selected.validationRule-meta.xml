@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Was_Education_Provided_And_Lvl_Selected</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(RecordType.DeveloperName =&apos;Error_Log&apos;, ISPICKVAL(Was_education_provided__c, &quot;Yes&quot;) , ISPICKVAL(Education_Level__c,&apos;&apos; ))</errorConditionFormula>
+    <errorMessage>Education Level cannot be blank</errorMessage>
+</ValidationRule>
