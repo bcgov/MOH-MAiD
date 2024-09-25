@@ -215,12 +215,12 @@
                 <field>WhoId</field>
             </layoutItem>
         </relatedContentItems>
-        <relatedContentItems>
+       <!-- <relatedContentItems>
             <layoutItem>
                 <behavior>Readonly</behavior>
-                <field>WhatId</field>
+              <field>WhatId</field> 
             </layoutItem>
-        </relatedContentItems>
+        </relatedContentItems> -->
     </relatedContent>
     <relatedLists>
         <relatedList>RelatedActivityAttachmentList</relatedList>
