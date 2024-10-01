@@ -1129,6 +1129,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Intake__c.ICY_Reopened_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Intake__c.ICY_Verbal_Consent__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1500,6 +1505,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.ICY_Relevant_Information__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.ICY_Reopened_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
