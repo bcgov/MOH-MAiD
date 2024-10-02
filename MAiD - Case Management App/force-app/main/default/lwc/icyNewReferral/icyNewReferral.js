@@ -383,6 +383,11 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                 isValid = false;
             }
         });
+       
+       
+        if (((!this.referral.ICY_Referral_Source__c) ||(!this.referral.ICY_Geographic_Area__c)) && (this.page2 == true)) {
+            isValid = false;
+        }
         return isValid;
     }
 
