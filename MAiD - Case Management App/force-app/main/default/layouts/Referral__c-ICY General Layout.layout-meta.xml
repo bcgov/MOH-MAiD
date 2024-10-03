@@ -29,7 +29,7 @@
                 <field>ICY_Referral_For__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Required</behavior>
                 <field>ICY_Referral_Source__c</field>
             </layoutItems>
             <layoutItems>
