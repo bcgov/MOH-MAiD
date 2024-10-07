@@ -35,7 +35,7 @@
         <field>CUST_CREATED_DATE</field>
     </columns>
     <columns>
-        <field>Referral__c.Last_modified_Date_formula_Report__c</field>
+        <field>Referral__c.ICY_Closed_Date__c</field>
     </columns>
     <columns>
         <field>Referral__c.ICY_Geographic_Area__c</field>
@@ -50,7 +50,7 @@
             <value>Closed</value>
         </criteriaItems>
         <criteriaItems>
-            <column>CUST_LAST_UPDATE</column>
+            <column>Referral__c.ICY_Closed_Date__c</column>
             <columnToColumn>false</columnToColumn>
             <isUnlocked>true</isUnlocked>
             <operator>equals</operator>
