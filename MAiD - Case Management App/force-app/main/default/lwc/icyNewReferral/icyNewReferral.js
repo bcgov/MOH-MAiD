@@ -39,6 +39,20 @@ import ICY_Medical_Referral_Reason__c from '@salesforce/schema/Referral__c.ICY_M
 import ICY_Can_We_Leave_a_Message_On_Cell__c from '@salesforce/schema/Referral__c.ICY_Can_We_Leave_a_Message_On_Cell__c';
 import ICY_Leave_a_Message_On_other_Phone__c from '@salesforce/schema/Referral__c.ICY_Leave_a_Message_On_other_Phone__c';
 import ICY_Can_We_Leave_a_Message_On_Home_Phone__c from '@salesforce/schema/Referral__c.ICY_Can_We_Leave_a_Message_On_Home_Phone__c';
+
+import Preferred_Contact_s_Name_Cell__c from '@salesforce/schema/Referral__c.Preferred_Contact_s_Name_Cell__c';
+import Preferred_Contact_s_Name_Home__c from '@salesforce/schema/Referral__c.Preferred_Contact_s_Name_Home__c';
+import Preferred_Contact_s_Name_Other__c from '@salesforce/schema/Referral__c.Preferred_Contact_s_Name_Other__c';
+
+import Relationship_to_Individual_Cell__c from '@salesforce/schema/Referral__c.Relationship_to_Individual_Cell__c';
+import Relationship_to_Individual_Home__c from '@salesforce/schema/Referral__c.Relationship_to_Individual_Home__c';
+import Relationship_to_Individual_Other__c from '@salesforce/schema/Referral__c.Relationship_to_Individual_Other__c';
+
+import Other_Relationship_Cell__c from '@salesforce/schema/Referral__c.Other_Relationship_Cell__c';
+import Other_Relationship_Home__c from '@salesforce/schema/Referral__c.Other_Relationship_Home__c';
+import Other_Relationship_Other__c from '@salesforce/schema/Referral__c.Other_Relationship_Other__c';
+
+
 import ICY_Referral_For__c from '@salesforce/schema/Referral__c.ICY_Referral_For__c';
 import ICY_CYMH__c from '@salesforce/schema/Referral__c.ICY_CYMH__c';
 import ICY_Priority__c from '@salesforce/schema/Referral__c.ICY_Priority__c';
@@ -149,8 +163,21 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         ICY_Unknown_Address__c: false,
         ICY_Referral_Source_Description__c: '',
         ICY_Date_of_Referral__c: '',
-        OwnerId: ''
+        OwnerId: '',
+        Preferred_Contact_s_Name_Cell__c: '',
+        Preferred_Contact_s_Name_Home__c: '',
+        Preferred_Contact_s_Name_Other__c: '',
+        Relationship_to_Individual_Cell__c: '',
+        Relationship_to_Individual_Home__c: '',
+        Relationship_to_Individual_Other__c: '',
+        Other_Relationship_Cell__c: '',
+        Other_Relationship_Home__c: ''
+
     };
+
+    @track isFieldOtherCellRequired = false;
+    @track isFieldOtherHomeRequired = false;
+    @track isFieldOtherRequired = false;
 
     //Getter Methods
 
@@ -251,9 +278,6 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
             console.error('$$ Error getting Referral For options: ' + error);
         }
     }
-
-
-
 
     //Relationship Types    
     @wire(getPicklistvalues, {
@@ -444,6 +468,15 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         fields[ICY_Referral_Source_Description__c.fieldApiName] = this.referral.ICY_Referral_Source_Description__c;
         fields[ICY_Date_of_Referral__c.fieldApiName] = this.referral.ICY_Date_of_Referral__c;
         fields[OWNERID.fieldApiName] = this.referral.OwnerId;
+        fields[Preferred_Contact_s_Name_Cell__c.fieldApiName] = this.referral.Preferred_Contact_s_Name_Cell__c;
+        fields[Preferred_Contact_s_Name_Home__c.fieldApiName] = this.referral.Preferred_Contact_s_Name_Home__c;
+        fields[Preferred_Contact_s_Name_Other__c.fieldApiName] = this.referral.Preferred_Contact_s_Name_Other__c;
+        fields[Relationship_to_Individual_Cell__c.fieldApiName] = this.referral.Relationship_to_Individual_Cell__c;
+        fields[Relationship_to_Individual_Home__c.fieldApiName] = this.referral.Relationship_to_Individual_Home__c;
+        fields[Relationship_to_Individual_Other__c.fieldApiName] = this.referral.Relationship_to_Individual_Other__c;
+        fields[Other_Relationship_Cell__c.fieldApiName] = this.referral.Other_Relationship_Cell__c;
+        fields[Other_Relationship_Home__c.fieldApiName] = this.referral.Other_Relationship_Home__c;
+        fields[Other_Relationship_Other__c.fieldApiName] = this.referral.Other_Relationship_Other__c;
 
         if (this.referralType == 'Professional Referral') fields[RecordTypeId.fieldApiName] = this.medicalRecordTypeId;
         else fields[RecordTypeId.fieldApiName] = this.generalRecordTypeId;
@@ -707,6 +740,42 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                 case 'ICY_Can_We_Leave_a_Message_On_Cell__c':
                     this.referral.ICY_Can_We_Leave_a_Message_On_Cell__c = event.target.checked;
                     break;
+                case 'Preferred_Contact_s_Name_Cell__c':
+                    this.referral.Preferred_Contact_s_Name_Cell__c = event.target.value;
+                    break;
+                case 'Preferred_Contact_s_Name_Home__c':
+                    this.referral.Preferred_Contact_s_Name_Home__c = event.target.value;
+                    break;
+                case 'Preferred_Contact_s_Name_Other__c':
+                    this.referral.Preferred_Contact_s_Name_Other__c = event.target.value;
+                    break; 
+                case 'Relationship_to_Individual_Cell__c':
+                    this.referral.Relationship_to_Individual_Cell__c = event.target.value;
+                    this.isFieldOtherCellRequired= false;
+                    if (this.referral.Relationship_to_Individual_Cell__c=='Other')
+                        this.isFieldOtherCellRequired= true;
+                    break;
+                case 'Relationship_to_Individual_Home__c':
+                    this.referral.Relationship_to_Individual_Home__c = event.target.value;
+                    this.isFieldOtherHomeRequired= false;
+                    if (this.referral.Relationship_to_Individual_Home__c=='Other')
+                        this.isFieldOtherHomeRequired= true;
+                    break;
+                case 'Relationship_to_Individual_Other__c':
+                    this.referral.Relationship_to_Individual_Other__c = event.target.value;
+                    this.isFieldOtherRequired= false;
+                    if (this.referral.Relationship_to_Individual_Other__c=='Other')
+                        this.isFieldOtherRequired= true;
+                    break;  
+                case 'Other_Relationship_Cell__c':
+                    this.referral.Other_Relationship_Cell__c = event.target.value;
+                    break;
+                case 'Other_Relationship_Home__c':
+                    this.referral.Other_Relationship_Home__c = event.target.value;
+                    break;
+                case 'Other_Relationship_Other__c':
+                    this.referral.Other_Relationship_Other__c = event.target.value;
+                    break;     
                 case 'Individual_Middle_Name__c':
                     this.referral.Individual_Middle_Name__c = event.target.value;
                     break;
