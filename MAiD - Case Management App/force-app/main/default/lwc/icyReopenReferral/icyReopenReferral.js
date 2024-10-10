@@ -22,6 +22,7 @@ export default class IcyReopenReferral extends NavigationMixin(LightningElement)
             'Referral_Close_Reason__c': '',
             'ICY_Rationale_For_Closure__c':'',
             'ICY_Reopened_Date__c':new Date().toISOString().slice(0, 10),
+            'ICY_Closed_Date__c':'',
             'Id': this.recordId
             };
         let objReferral = { fields: referralfields };
