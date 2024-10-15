@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Relationship_Type_Other_Home</fullName>
-    <active>true</active>
-    <errorConditionFormula>AND( ISBLANK(Other_Relationship_Home__c) , ISPICKVAL( Relationship_to_Individual_Home__c , &apos;Other&apos;))</errorConditionFormula>
-    <errorDisplayField>Other_Relationship_Home__c</errorDisplayField>
-    <errorMessage>Please specify the Other Relationship</errorMessage>
-</ValidationRule>
