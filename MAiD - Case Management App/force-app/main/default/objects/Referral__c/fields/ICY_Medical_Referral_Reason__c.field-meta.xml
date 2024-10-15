@@ -15,24 +15,14 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Abuse: physical/ sexual/emotional/ neglect</fullName>
+                <fullName>Impulsivity</fullName>
                 <default>false</default>
-                <label>Abuse: physical/ sexual/emotional/ neglect</label>
+                <label>Impulsivity</label>
             </value>
             <value>
-                <fullName>Anger/aggression</fullName>
+                <fullName>Hyperactivity</fullName>
                 <default>false</default>
-                <label>Anger/aggression</label>
-            </value>
-            <value>
-                <fullName>Anxiety/worries Panic attacks</fullName>
-                <default>false</default>
-                <label>Anxiety/worries Panic attacks</label>
-            </value>
-            <value>
-                <fullName>Appetite issues</fullName>
-                <default>false</default>
-                <label>Appetite issues</label>
+                <label>Hyperactivity</label>
             </value>
             <value>
                 <fullName>Attention/focus</fullName>
@@ -40,14 +30,9 @@
                 <label>Attention/focus</label>
             </value>
             <value>
-                <fullName>Autistic traits</fullName>
+                <fullName>Learning difficulties</fullName>
                 <default>false</default>
-                <label>Autistic traits</label>
-            </value>
-            <value>
-                <fullName>Brain injury</fullName>
-                <default>false</default>
-                <label>Brain injury</label>
+                <label>Learning difficulties</label>
             </value>
             <value>
                 <fullName>Cognitive delay</fullName>
@@ -55,9 +40,14 @@
                 <label>Cognitive delay</label>
             </value>
             <value>
-                <fullName>Compulsive behaviors</fullName>
+                <fullName>Anger/aggression</fullName>
                 <default>false</default>
-                <label>Compulsive behaviors</label>
+                <label>Anger/aggression</label>
+            </value>
+            <value>
+                <fullName>Oppositional Behavior</fullName>
+                <default>false</default>
+                <label>Oppositional Behavior</label>
             </value>
             <value>
                 <fullName>Conduct problems</fullName>
@@ -65,34 +55,14 @@
                 <label>Conduct problems</label>
             </value>
             <value>
-                <fullName>Critical incident</fullName>
+                <fullName>Peer problems</fullName>
                 <default>false</default>
-                <label>Critical incident</label>
+                <label>Peer problems</label>
             </value>
             <value>
-                <fullName>Delusions</fullName>
+                <fullName>School difficulties</fullName>
                 <default>false</default>
-                <label>Delusions</label>
-            </value>
-            <value>
-                <fullName>Depressed mood</fullName>
-                <default>false</default>
-                <label>Depressed mood</label>
-            </value>
-            <value>
-                <fullName>Eating disorder</fullName>
-                <default>false</default>
-                <label>Eating disorder</label>
-            </value>
-            <value>
-                <fullName>Enuresis/encopresis</fullName>
-                <default>false</default>
-                <label>Enuresis/encopresis</label>
-            </value>
-            <value>
-                <fullName>Excessive tantrums</fullName>
-                <default>false</default>
-                <label>Excessive tantrums</label>
+                <label>School difficulties</label>
             </value>
             <value>
                 <fullName>Family difficulties</fullName>
@@ -105,104 +75,9 @@
                 <label>Family history mental illness</label>
             </value>
             <value>
-                <fullName>Gender identity (dysphoria or transition)</fullName>
+                <fullName>Appetite issues</fullName>
                 <default>false</default>
-                <label>Gender identity (dysphoria or transition)</label>
-            </value>
-            <value>
-                <fullName>Hallucinations</fullName>
-                <default>false</default>
-                <label>Hallucinations</label>
-            </value>
-            <value>
-                <fullName>Hyperactivity</fullName>
-                <default>false</default>
-                <label>Hyperactivity</label>
-            </value>
-            <value>
-                <fullName>Impulsivity</fullName>
-                <default>false</default>
-                <label>Impulsivity</label>
-            </value>
-            <value>
-                <fullName>Learning difficulties</fullName>
-                <default>false</default>
-                <label>Learning difficulties</label>
-            </value>
-            <value>
-                <fullName>Medical/dental trauma</fullName>
-                <default>false</default>
-                <label>Medical/dental trauma</label>
-            </value>
-            <value>
-                <fullName>Mood/affect</fullName>
-                <default>false</default>
-                <label>Mood/affect</label>
-            </value>
-            <value>
-                <fullName>Neurological issues</fullName>
-                <default>false</default>
-                <label>Neurological issues</label>
-            </value>
-            <value>
-                <fullName>Obsessive thoughts</fullName>
-                <default>false</default>
-                <label>Obsessive thoughts</label>
-            </value>
-            <value>
-                <fullName>Oppositional Behavior</fullName>
-                <default>false</default>
-                <label>Oppositional Behavior</label>
-            </value>
-            <value>
-                <fullName>Paranoid thoughts</fullName>
-                <default>false</default>
-                <label>Paranoid thoughts</label>
-            </value>
-            <value>
-                <fullName>Peer problems</fullName>
-                <default>false</default>
-                <label>Peer problems</label>
-            </value>
-            <value>
-                <fullName>Phobias</fullName>
-                <default>false</default>
-                <label>Phobias</label>
-            </value>
-            <value>
-                <fullName>Post-traumatic stress</fullName>
-                <default>false</default>
-                <label>Post-traumatic stress</label>
-            </value>
-            <value>
-                <fullName>Problematic substance use</fullName>
-                <default>false</default>
-                <label>Problematic substance use</label>
-            </value>
-            <value>
-                <fullName>School difficulties</fullName>
-                <default>false</default>
-                <label>School difficulties</label>
-            </value>
-            <value>
-                <fullName>Seizures/tics</fullName>
-                <default>false</default>
-                <label>Seizures/tics</label>
-            </value>
-            <value>
-                <fullName>Self harm issues</fullName>
-                <default>false</default>
-                <label>Self harm issues</label>
-            </value>
-            <value>
-                <fullName>Separation anxiety</fullName>
-                <default>false</default>
-                <label>Separation anxiety</label>
-            </value>
-            <value>
-                <fullName>Sexually intrusive behaviors</fullName>
-                <default>false</default>
-                <label>Sexually intrusive behaviors</label>
+                <label>Appetite issues</label>
             </value>
             <value>
                 <fullName>Sleep difficulties</fullName>
@@ -215,24 +90,44 @@
                 <label>Somatic issues</label>
             </value>
             <value>
-                <fullName>Suicidal attempts</fullName>
+                <fullName>Enuresis/encopresis</fullName>
                 <default>false</default>
-                <label>Suicidal attempts</label>
+                <label>Enuresis/encopresis</label>
             </value>
             <value>
-                <fullName>Suicidal plan</fullName>
+                <fullName>Separation anxiety</fullName>
                 <default>false</default>
-                <label>Suicidal plan</label>
+                <label>Separation anxiety</label>
             </value>
             <value>
-                <fullName>Suicidal thoughts</fullName>
+                <fullName>Excessive tantrums</fullName>
                 <default>false</default>
-                <label>Suicidal thoughts</label>
+                <label>Excessive tantrums</label>
             </value>
             <value>
-                <fullName>Thought difficulties</fullName>
+                <fullName>Depressed mood</fullName>
                 <default>false</default>
-                <label>Thought difficulties</label>
+                <label>Depressed mood</label>
+            </value>
+            <value>
+                <fullName>Mood/affect</fullName>
+                <default>false</default>
+                <label>Mood/affect</label>
+            </value>
+            <value>
+                <fullName>Anxiety/worries</fullName>
+                <default>false</default>
+                <label>Anxiety/worries</label>
+            </value>
+            <value>
+                <fullName>Panic attacks</fullName>
+                <default>false</default>
+                <label>Panic attacks</label>
+            </value>
+            <value>
+                <fullName>Phobias</fullName>
+                <default>false</default>
+                <label>Phobias</label>
             </value>
             <value>
                 <fullName>Withdrawal</fullName>
@@ -240,9 +135,125 @@
                 <label>Withdrawal</label>
             </value>
             <value>
+                <fullName>Self harm issues</fullName>
+                <default>false</default>
+                <label>Self harm issues</label>
+            </value>
+            <value>
+                <fullName>Suicidal thoughts</fullName>
+                <default>false</default>
+                <label>Suicidal thoughts</label>
+            </value>
+            <value>
+                <fullName>Suicidal plan</fullName>
+                <default>false</default>
+                <label>Suicidal plan</label>
+            </value>
+            <value>
+                <fullName>Suicidal attempts</fullName>
+                <default>false</default>
+                <label>Suicidal attempts</label>
+            </value>
+            <value>
+                <fullName>Thought difficulties</fullName>
+                <default>false</default>
+                <label>Thought difficulties</label>
+            </value>
+            <value>
+                <fullName>Paranoid thoughts</fullName>
+                <default>false</default>
+                <label>Paranoid thoughts</label>
+            </value>
+            <value>
+                <fullName>Obsessive thoughts</fullName>
+                <default>false</default>
+                <label>Obsessive thoughts</label>
+            </value>
+            <value>
+                <fullName>Compulsive behaviors</fullName>
+                <default>false</default>
+                <label>Compulsive behaviors</label>
+            </value>
+            <value>
+                <fullName>Hallucinations</fullName>
+                <default>false</default>
+                <label>Hallucinations</label>
+            </value>
+            <value>
+                <fullName>Delusions</fullName>
+                <default>false</default>
+                <label>Delusions</label>
+            </value>
+            <value>
+                <fullName>Abuse: physical/ sexual/emotional/ neglect</fullName>
+                <default>false</default>
+                <label>Abuse: physical/ sexual/emotional/ neglect</label>
+            </value>
+            <value>
+                <fullName>Medical/dental trauma</fullName>
+                <default>false</default>
+                <label>Medical/dental trauma</label>
+            </value>
+            <value>
+                <fullName>Critical incident</fullName>
+                <default>false</default>
+                <label>Critical incident</label>
+            </value>
+            <value>
+                <fullName>Post-traumatic stress</fullName>
+                <default>false</default>
+                <label>Post-traumatic stress</label>
+            </value>
+            <value>
+                <fullName>Sexually intrusive behaviors</fullName>
+                <default>false</default>
+                <label>Sexually intrusive behaviors</label>
+            </value>
+            <value>
+                <fullName>Autistic traits</fullName>
+                <default>false</default>
+                <label>Autistic traits</label>
+            </value>
+            <value>
+                <fullName>Brain injury</fullName>
+                <default>false</default>
+                <label>Brain injury</label>
+            </value>
+            <value>
+                <fullName>Neurological issues</fullName>
+                <default>false</default>
+                <label>Neurological issues</label>
+            </value>
+            <value>
+                <fullName>Seizures/tics</fullName>
+                <default>false</default>
+                <label>Seizures/tics</label>
+            </value>
+            <value>
+                <fullName>Problematic substance use</fullName>
+                <default>false</default>
+                <label>Problematic substance use</label>
+            </value>
+            <value>
+                <fullName>Eating disorder</fullName>
+                <default>false</default>
+                <label>Eating disorder</label>
+            </value>
+            <value>
+                <fullName>Gender identity (dysphoria or transition)</fullName>
+                <default>false</default>
+                <label>Gender identity (dysphoria or transition)</label>
+            </value>
+            <value>
                 <fullName>Other</fullName>
                 <default>false</default>
                 <label>Other</label>
+            </value>
+            <value>
+                <fullName>Anxiety/worries Panic attacks</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Anxiety/worries Panic attacks</label>
             </value>
         </valueSetDefinition>
     </valueSet>
