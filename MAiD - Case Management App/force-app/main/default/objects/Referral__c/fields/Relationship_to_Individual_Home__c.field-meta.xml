@@ -17,19 +17,9 @@
                 <label>Advocate</label>
             </value>
             <value>
-                <fullName>Care Giver</fullName>
-                <default>false</default>
-                <label>Care Giver</label>
-            </value>
-            <value>
                 <fullName>Child/family support worker</fullName>
                 <default>false</default>
                 <label>Child/family support worker</label>
-            </value>
-            <value>
-                <fullName>CLBC (Community Living BC) Worker</fullName>
-                <default>false</default>
-                <label>CLBC (Community Living BC) Worker</label>
             </value>
             <value>
                 <fullName>Consulting Therapist</fullName>
@@ -47,29 +37,14 @@
                 <label>Elder</label>
             </value>
             <value>
-                <fullName>Family</fullName>
-                <default>false</default>
-                <label>Family</label>
-            </value>
-            <value>
                 <fullName>Family Member</fullName>
                 <default>false</default>
                 <label>Family Member</label>
             </value>
             <value>
-                <fullName>Foster Parent</fullName>
-                <default>false</default>
-                <label>Foster Parent</label>
-            </value>
-            <value>
                 <fullName>Friend</fullName>
                 <default>false</default>
                 <label>Friend</label>
-            </value>
-            <value>
-                <fullName>Guardian</fullName>
-                <default>false</default>
-                <label>Guardian</label>
             </value>
             <value>
                 <fullName>Multicultural worker</fullName>
@@ -142,24 +117,9 @@
                 <label>Supported Child Development Worker/Consultant</label>
             </value>
             <value>
-                <fullName>Support Worker</fullName>
-                <default>false</default>
-                <label>Support Worker</label>
-            </value>
-            <value>
-                <fullName>Teacher</fullName>
-                <default>false</default>
-                <label>Teacher</label>
-            </value>
-            <value>
                 <fullName>Therapist</fullName>
                 <default>false</default>
                 <label>Therapist</label>
-            </value>
-            <value>
-                <fullName>Youth</fullName>
-                <default>false</default>
-                <label>Youth</label>
             </value>
             <value>
                 <fullName>Youth Worker</fullName>
