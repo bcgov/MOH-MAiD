@@ -1,13 +1,17 @@
 import { LightningElement, api } from 'lwc';
 import getRecordTypeName from '@salesforce/apex/ICY_Referral_Controller.getRecordTypeName';
 import isUserPartOfCaseMembers from '@salesforce/apex/ICY_Referral_Controller.isUserPartOfCaseMembers';
+
+
 export default class IcyReferralRecordInfo extends LightningElement {
     @api recordId;
+   
     activeSections = ['A','B','C','D','E','F'];
     isGeneralReferral = false;
     isMedicalReferral = false;
     showAdditionalInfo = false;
-    connectedCallback(){
+
+       connectedCallback(){
         if(this.recordId){
             getRecordTypeName({recordId: this.recordId}).then(result=>{
                 if(result){
