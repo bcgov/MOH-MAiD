@@ -1759,6 +1759,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Referral__c.Reason_for_Referral_if_Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Referral__c.Receiving_Services_on_Reserve__c</field>
         <readable>true</readable>
     </fieldPermissions>

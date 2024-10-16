@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_referral_if_other</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISBLANK(Reason_for_Referral_if_Other__c) ,  INCLUDES(ICY_Medical_Referral_Reason__c , &apos;Other&apos;))</errorConditionFormula>
+    <errorDisplayField>Reason_for_Referral_if_Other__c</errorDisplayField>
+    <errorMessage>Please specify the Other Reason for Referral</errorMessage>
+</ValidationRule>

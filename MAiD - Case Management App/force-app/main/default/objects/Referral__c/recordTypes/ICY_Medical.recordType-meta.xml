@@ -455,7 +455,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Anxiety%2Fworries Panic attacks</fullName>
+            <fullName>Anxiety%2Fworries</fullName>
             <default>false</default>
         </values>
         <values>
@@ -560,6 +560,10 @@
         </values>
         <values>
             <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panic attacks</fullName>
             <default>false</default>
         </values>
         <values>
