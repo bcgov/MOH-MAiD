@@ -336,7 +336,6 @@ public without sharing class ICY_CaseMember_Controller {
                 } else {
                     // If the key doesn't exist, create a new Set and add the user Id
                     mapRefIdMembersIdA.put(cm.Referral__c, new Set<Id>{cm.ICY_User__c});
-                   // mapRefIdRefrecB.put(cm.Referral__c,cm.Referral__r.Team_members_Id__c);
                 }
             }
 
@@ -348,7 +347,6 @@ public without sharing class ICY_CaseMember_Controller {
                 } else {
                     // If the key doesn't exist, create a new Set and add the user Id
                     mapRemoveRefIdMembersIdA.put(cm.Referral__c, new Set<Id>{cm.ICY_User__c});
-                   // mapRefIdRefrecB.put(cm.Referral__c,cm.Referral__r.Team_members_Id__c);
                 }
             }
         }// end for
@@ -356,6 +354,7 @@ public without sharing class ICY_CaseMember_Controller {
         for (Id parentId : mapRefIdMembersIdA.keySet()) {
             Referral__c refRec=mapRefIdRefrecB.get(parentId);
             existingValue =refRec.Team_members_Id__c; 
+            updateTeamMembersId='';
             // Get the Set of Ids for the current key
             Set<Id> childIds = mapRefIdMembersIdA.get(parentId);
             // Loop through the Set of Ids
@@ -371,6 +370,7 @@ public without sharing class ICY_CaseMember_Controller {
         for (Id parentId : mapRemoveRefIdMembersIdA.keySet()) {
             Referral__c refRec=mapRefIdRefrecB.get(parentId);
             existingValue =refRec.Team_members_Id__c; 
+            updateTeamMembersId='';
 
             // Get the Set of Ids for the current key
             Set<Id> childIds = mapRemoveRefIdMembersIdA.get(parentId);
@@ -393,7 +393,7 @@ public without sharing class ICY_CaseMember_Controller {
      public static String updateTeamMembersId(String newValue, String existingValue) {
         String updatedValue = existingValue;
         // Check if the field is empty or has values
-        if (String.isBlank(updatedValue )) {
+        if (String.isBlank(updatedValue)) {
             updatedValue = newValue;
         } else {
             // Convert the CSV string into a Set to prevent duplicates
@@ -408,13 +408,14 @@ public without sharing class ICY_CaseMember_Controller {
 
     public static String removeTeamMembersId(String existingValue, String valueToRemove) {
         String updatedValue;
-        Set<String> csvSet = new Set<String>(existingValue.split(','));
-        if (csvSet.contains(valueToRemove)) {
-            csvSet.remove(valueToRemove);
+        if (!String.isBlank(existingValue)) {
+            Set<String> csvSet = new Set<String>(existingValue.split(','));
+            if (csvSet.contains(valueToRemove)) {
+                csvSet.remove(valueToRemove);
+            }
+            // Convert the Set back into a comma-separated string
+            updatedValue = String.join(new List<String>(csvSet), ',');
         }
-        // Convert the Set back into a comma-separated string
-         updatedValue = String.join(new List<String>(csvSet), ',');
-        
         return updatedValue;
     }
 }
