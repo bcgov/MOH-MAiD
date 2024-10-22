@@ -1613,6 +1613,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Referral__c.Is_Team_member__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Is_stable_housing_a_concern__c</field>
         <readable>true</readable>
@@ -1795,6 +1800,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Team_Member_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Referral__c.Team_members_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
