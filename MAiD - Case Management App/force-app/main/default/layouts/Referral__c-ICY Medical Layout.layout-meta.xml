@@ -322,6 +322,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
+                <field>Reason_for_Referral_if_Other__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
                 <field>ICY_Current_Supports__c</field>
             </layoutItems>
         </layoutColumns>

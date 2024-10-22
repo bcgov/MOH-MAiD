@@ -825,30 +825,23 @@
                             </div>
                             <div class="slds-col">
                                 <span>
-                                    <div class="slds-p-around_xx-small">
+                                    <div class="slds-p-around_medium">
                                         <div class="slds-form-element">
-                                            <fieldset class="slds-form-element">
-                                                <legend class="slds-form-element__legend slds-form-element__label">
-                                                    Reason For Referral (Include main concern, symptoms, stressors and
-                                                    any changes to functioning/activities of daily living)</legend>
-                                                <div class="slds-form-element__control checkboxClass">
-                                                    <template for:each={medicalReferralReasonOptions} for:item="reason">
-                                                        <div key={reason.label}>
-                                                            <div class="slds-checkbox">
-                                                                <input type="checkbox" name="Referral_Medical_Reason"
-                                                                    id={reason.label} onchange={handleChange}
-                                                                    value={reason.value} />
-                                                                <label class="slds-checkbox__label" for={reason.label}>
-                                                                    <span class="slds-checkbox_faux"></span>
-                                                                    <span
-                                                                        class="slds-form-element__label">{reason.label}</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </template>
-                                                </div>
-                                            </fieldset>
+                                            <lightning-checkbox-group name="Referral_Medical_Reason" label="Reason For Referral (Include main concern, symptoms, stressors and any changes to functioning/activities of daily living)"
+                                                options={medicalReferralReasonOptions} value={referral.ICY_Medical_Referral_Reason__c}
+                                                onchange={handleChange} class="validate">
+                                            </lightning-checkbox-group>
                                         </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <lightning-input type="text" label="Reason for Referral (if Other)" name="Reason_for_Referral_if_Other__c"
+                                            value={referral.Reason_for_Referral_if_Other__c} required={isFieldReasonForReferralifOtherRequired} class="validate"
+                                            onchange={handleChange} tabindex="0" variant="label-stacked">
+                                        </lightning-input>
                                     </div>
                                 </span>
                             </div>
