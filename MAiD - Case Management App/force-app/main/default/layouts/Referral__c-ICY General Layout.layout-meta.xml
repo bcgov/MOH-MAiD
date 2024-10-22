@@ -184,10 +184,6 @@
                 <field>Individual_Home_Phone_Number__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
-                <field>ICY_Can_We_Leave_a_Message_On_Home_Phone__c</field>
-            </layoutItems>
-            <layoutItems>
                 <emptySpace>true</emptySpace>
             </layoutItems>
             <layoutItems>
