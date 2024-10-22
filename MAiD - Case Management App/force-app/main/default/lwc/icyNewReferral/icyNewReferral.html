@@ -447,10 +447,9 @@
                                             </div>
                                         </span>
                                     </div>
-                                    <lightning-record-edit-form object-api-name="Referral__c">
                                     <div class="slds-col">
                                         <div class="slds-grid slds-gutters">
-                                            <div class="slds-col slds-size_1-of-8">
+                                            <div class="slds-col slds-size_2-of-6">
                                                 <div class="slds-p-around_xx-small">
                                                     <lightning-input type="tel" label="Cell Phone" name="Cell_Phone__c"
                                                         value={referral.Individual_Cell_Phone_Number__c} min-length="10" maxlength="10"
@@ -458,7 +457,7 @@
                                                     </lightning-input>
                                                 </div>
                                             </div>
-                                            <div class="slds-col slds-size_1-of-6">
+                                            <div class="slds-col slds-size_2-of-6">
                                                 <br />
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
@@ -484,43 +483,11 @@
                                                     </div>
                                                 </span>
                                             </div>
-                                            
-                                            <div class="slds-col slds-size_1-of-4">
-                                                <span>
-                                                    <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Preferred Contact’s Name" name="Preferred_Contact_s_Name_Cell__c"
-                                                            value={referral.Preferred_Contact_s_Name_Cell__c}  variant="label-stacked"
-                                                            field-level-help="Preferred Contact’s Name (if not the child/youth’s own phone number)"
-                                                            onchange={handleChange} tabindex="0">
-                                                        </lightning-input>
-                                                    </div>
-                                                </span>
-                                            </div>
-                                            <div class="slds-col slds-size_1-of-6">
-                                                <span>
-                                                    <div class="slds-p-around_xx-small">
-                                                        <lightning-input-field field-name="Relationship_to_Individual_Cell__c"
-                                                        onchange={handleChange} value={referral.Relationship_to_Individual_Cell__c}
-                                                        name="Relationship_to_Individual_Cell__c" variant="label-stacked">
-                                                    </lightning-input-field>                                                 
-                                                    </div>
-                                                </span>
-                                            </div>
-                                            <div class="slds-col slds-size_1-of-4">
-                                                <span>
-                                                    <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Relationship to Individual (if other)" name="Other_Relationship_Cell__c"
-                                                            value={referral.Other_Relationship_Cell__c} required={isFieldOtherCellRequired} class="validate"
-                                                            onchange={handleChange} tabindex="0" variant="label-stacked">
-                                                        </lightning-input>
-                                                    </div>
-                                                </span>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="slds-col">
                                         <div class="slds-grid slds-gutters">
-                                            <div class="slds-col slds-size_1-of-8">
+                                            <div class="slds-col slds-size_2-of-6">
                                                 <div class="slds-p-around_xx-small">
                                                     <lightning-input type="tel" label="Home Phone" name="Home_Phone__c"
                                                         value={referral.Individual_Home_Phone_Number__c} min-length="10" maxlength="10"
@@ -528,7 +495,7 @@
                                                     </lightning-input>
                                                 </div>
                                             </div>
-                                            <div class="slds-col slds-size_1-of-6">
+                                            <div class="slds-col slds-size_2-of-6">
                                                 <br />
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
@@ -554,45 +521,11 @@
                                                     </div>
                                                 </span>
                                             </div>
-
-                                            <div class="slds-col slds-size_1-of-4">
-                                                <span>
-                                                    <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Preferred Contact’s Name" name="Preferred_Contact_s_Name_Home__c"
-                                                            value={referral.Preferred_Contact_s_Name_Home__c} variant="label-stacked"
-                                                            field-level-help="Preferred Contact’s Name (if not the child/youth’s own phone number)"
-                                                            onchange={handleChange} tabindex="0">
-                                                        </lightning-input>
-                                                    </div>
-                                                </span>
-                                            </div>
-                                            <div class="slds-col slds-size_1-of-6">
-                                                <span>
-                                                    <div class="slds-p-around_xx-small">
-                                                        <div class="slds-p-around_xx-small">
-                                                            <lightning-input-field field-name="Relationship_to_Individual_Home__c"
-                                                            onchange={handleChange} value={referral.Relationship_to_Individual_Home__c}
-                                                            name="Relationship_to_Individual_Home__c" variant="label-stacked">
-                                                        </lightning-input-field>                                                 
-                                                        </div>                                               
-                                                    </div>
-                                                </span>
-                                            </div>
-                                            <div class="slds-col slds-size_1-of-4">
-                                                <span>
-                                                    <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Relationship to Individual (if other)" name="Other_Relationship_Home__c"
-                                                            value={referral.Other_Relationship_Home__c} required={isFieldOtherHomeRequired} class="validate"
-                                                            onchange={handleChange} tabindex="0" variant="label-stacked">
-                                                        </lightning-input>
-                                                    </div>
-                                                </span>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="slds-col">
                                         <div class="slds-grid slds-gutters">
-                                            <div class="slds-col slds-size_1-of-8">
+                                            <div class="slds-col slds-size_2-of-6">
                                                 <div class="slds-p-around_xx-small">
                                                     <lightning-input name="Other_Phone__c" type="tel"
                                                         label="Other Phone Number" value={referral.ICY_Other_Phone__c}
@@ -600,7 +533,7 @@
                                                     </lightning-input>
                                                 </div>
                                             </div>
-                                            <div class="slds-col slds-size_1-of-6">
+                                            <div class="slds-col slds-size_2-of-6">
                                                 <br />
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
@@ -626,41 +559,8 @@
                                                     </div>
                                                 </span>
                                             </div>
-
-                                            <div class="slds-col slds-size_1-of-4">
-                                                <span>
-                                                    <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Preferred Contact’s Name" name="Preferred_Contact_s_Name_Other__c"
-                                                            value={referral.Preferred_Contact_s_Name_Other__c}  variant="label-stacked"
-                                                            field-level-help="Preferred Contact’s Name (if not the child/youth’s own phone number)"
-                                                            onchange={handleChange} tabindex="0">
-                                                        </lightning-input>
-                                                    </div>
-                                                </span>
-                                            </div>
-                                            <div class="slds-col slds-size_1-of-6">
-                                                <span>
-                                                    <div class="slds-p-around_xx-small">
-                                                        <lightning-input-field field-name="Relationship_to_Individual_Other__c"
-                                                        onchange={handleChange} value={referral.Relationship_to_Individual_Other__c}
-                                                        name="Relationship_to_Individual_Other__c" variant="label-stacked">
-                                                    </lightning-input-field>                                                 
-                                                    </div>
-                                                </span>
-                                            </div>
-                                            <div class="slds-col slds-size_1-of-4">
-                                                <span>
-                                                    <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Relationship to Individual (if other)" name="Other_Relationship_Other__c"
-                                                            value={referral.Other_Relationship_Other__c} required={isFieldOtherRequired} class="validate"
-                                                            onchange={handleChange} tabindex="0" variant="label-stacked">
-                                                        </lightning-input>
-                                                    </div>
-                                                </span>
-                                            </div>
                                         </div>
                                     </div>
-                                </lightning-record-edit-form>
                                 </div>
                             </div>
                         </div>
@@ -925,30 +825,23 @@
                             </div>
                             <div class="slds-col">
                                 <span>
-                                    <div class="slds-p-around_xx-small">
+                                    <div class="slds-p-around_medium">
                                         <div class="slds-form-element">
-                                            <fieldset class="slds-form-element">
-                                                <legend class="slds-form-element__legend slds-form-element__label">
-                                                    Reason For Referral (Include main concern, symptoms, stressors and
-                                                    any changes to functioning/activities of daily living)</legend>
-                                                <div class="slds-form-element__control checkboxClass">
-                                                    <template for:each={medicalReferralReasonOptions} for:item="reason">
-                                                        <div key={reason.label}>
-                                                            <div class="slds-checkbox">
-                                                                <input type="checkbox" name="Referral_Medical_Reason"
-                                                                    id={reason.label} onchange={handleChange}
-                                                                    value={reason.value} />
-                                                                <label class="slds-checkbox__label" for={reason.label}>
-                                                                    <span class="slds-checkbox_faux"></span>
-                                                                    <span
-                                                                        class="slds-form-element__label">{reason.label}</span>
-                                                                </label>
-                                                            </div>
-                                                        </div>
-                                                    </template>
-                                                </div>
-                                            </fieldset>
+                                            <lightning-checkbox-group name="Referral_Medical_Reason" label="Reason For Referral (Include main concern, symptoms, stressors and any changes to functioning/activities of daily living)"
+                                                options={medicalReferralReasonOptions} value={referral.ICY_Medical_Referral_Reason__c}
+                                                onchange={handleChange} class="validate">
+                                            </lightning-checkbox-group>
                                         </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="slds-col slds-size_1-of-4">
+                                <span>
+                                    <div class="slds-p-around_xx-small">
+                                        <lightning-input type="text" label="Reason for Referral (if Other)" name="Reason_for_Referral_if_Other__c"
+                                            value={referral.Reason_for_Referral_if_Other__c} required={isFieldReasonForReferralifOtherRequired} class="validate"
+                                            onchange={handleChange} tabindex="0" variant="label-stacked">
+                                        </lightning-input>
                                     </div>
                                 </span>
                             </div>

@@ -455,7 +455,7 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Anxiety%2Fworries Panic attacks</fullName>
+            <fullName>Anxiety%2Fworries</fullName>
             <default>false</default>
         </values>
         <values>
@@ -560,6 +560,10 @@
         </values>
         <values>
             <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Panic attacks</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1368,14 +1372,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>CLBC %28Community Living BC%29 Worker</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Care Giver</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Child%2Ffamily support worker</fullName>
             <default>false</default>
         </values>
@@ -1392,23 +1388,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Family</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Family Member</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Foster Parent</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Friend</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Guardian</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1464,23 +1448,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Support Worker</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Supported Child Development Worker%2FConsultant</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Teacher</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Therapist</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Youth</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1495,14 +1467,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>CLBC %28Community Living BC%29 Worker</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Care Giver</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Child%2Ffamily support worker</fullName>
             <default>false</default>
         </values>
@@ -1519,23 +1483,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Family</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Family Member</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Foster Parent</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Friend</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Guardian</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1591,23 +1543,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Support Worker</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Supported Child Development Worker%2FConsultant</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Teacher</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Therapist</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Youth</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1622,14 +1562,6 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>CLBC %28Community Living BC%29 Worker</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Care Giver</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Child%2Ffamily support worker</fullName>
             <default>false</default>
         </values>
@@ -1646,23 +1578,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Family</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Family Member</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Foster Parent</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Friend</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Guardian</fullName>
             <default>false</default>
         </values>
         <values>
@@ -1718,23 +1638,11 @@
             <default>false</default>
         </values>
         <values>
-            <fullName>Support Worker</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Supported Child Development Worker%2FConsultant</fullName>
             <default>false</default>
         </values>
         <values>
-            <fullName>Teacher</fullName>
-            <default>false</default>
-        </values>
-        <values>
             <fullName>Therapist</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Youth</fullName>
             <default>false</default>
         </values>
         <values>

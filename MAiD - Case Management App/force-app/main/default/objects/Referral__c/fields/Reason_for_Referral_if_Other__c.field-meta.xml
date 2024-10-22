@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
-    <fullName>Other_Relationship_Other__c</fullName>
+    <fullName>Reason_for_Referral_if_Other__c</fullName>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
-    <label>Relationship to Individual  (if other)</label>
-    <length>80</length>
+    <label>Reason for Referral (if Other)</label>
+    <length>100</length>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
