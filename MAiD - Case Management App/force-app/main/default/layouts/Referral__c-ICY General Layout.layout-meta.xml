@@ -184,6 +184,12 @@
                 <field>Individual_Home_Phone_Number__c</field>
             </layoutItems>
             <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
+                <emptySpace>true</emptySpace>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Individual_Cell_Phone_Number__c</field>
             </layoutItems>
