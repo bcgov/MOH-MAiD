@@ -13,8 +13,8 @@
     <filterScope>Everything</filterScope>
     <filters>
         <field>Status__c</field>
-        <operation>notEqual</operation>
-        <value>Referral,Ready for Intake</value>
+        <operation>equals</operation>
+        <value>Closed</value>
     </filters>
     <label>ICY All Closed Referrals</label>
     <sharedTo>
