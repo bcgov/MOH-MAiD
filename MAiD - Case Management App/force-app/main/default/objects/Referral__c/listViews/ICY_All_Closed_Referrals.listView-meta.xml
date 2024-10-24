@@ -29,6 +29,6 @@
     </filters>
     <label>ICY All Closed Referrals</label>
     <sharedTo>
-        <group>All_ICY_Team_Members</group>
+        <group>All_ICY_ONLY_Clinical_Non_Clinical</group>
     </sharedTo>
 </ListView>

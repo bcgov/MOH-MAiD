@@ -16,7 +16,7 @@
         <operation>notEqual</operation>
         <value>Referral,Ready for Intake</value>
     </filters>
-    <label>ICY All Closed Referrals (Admin, PL)</label>
+    <label>ICY All Closed Referrals</label>
     <sharedTo>
         <group>All_ICY_Admins</group>
         <group>All_ICY_Program_Leaders</group>
