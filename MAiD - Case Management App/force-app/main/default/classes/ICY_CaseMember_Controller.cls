@@ -430,6 +430,7 @@ public without sharing class ICY_CaseMember_Controller {
         map<Id,Case> mapCaseIdCaseRecB = new  map<Id,Case>();
         Id teamId;
         String sRole;
+        Boolean bSelect = true;
         Set<Id> userIds = new Set<Id>();
 
         //Get the UserRole,name for all cm.ICY_Team_Member__c
@@ -448,7 +449,7 @@ public without sharing class ICY_CaseMember_Controller {
         //get set<Id> of ICY_Case__c  Ids from List of Case members
         for(Case_Member__c cm:lstCaseMember){
             //Wen team member is ICY_Team_Member__c exclude Role admin
-            if (cm.ICY_Team_Member__c){
+            if (cm.ICY_User__c!= null){
               sRole= usersMap.get(cm.ICY_User__c).UserRole.name;
               if (sRole !=null){
                     sRole = sRole.toLowerCase(); 
@@ -471,17 +472,26 @@ public without sharing class ICY_CaseMember_Controller {
         }
 
         //Query Case_Member__c for the setCaseId 
-        List<Case_Member__c> lstCm = [Select id,ICY_User__c,ICY_Case_Contact__c,ICY_Case__c
+        List<Case_Member__c> lstCm = [Select id,ICY_User__r.UserRole.name,ICY_Case_Contact__c,ICY_Case__c
                                            from Case_Member__c where ICY_Case__c IN : setCaseId];
     
         for(Case_Member__c cm:lstCm){
             teamId= cm.ICY_User__c!=null? cm.ICY_User__c: cm.ICY_Case_Contact__c;
+            if (cm.ICY_User__c!= null){
+              sRole= cm.ICY_User__r.UserRole.name;
+                if (sRole !=null){
+                    sRole = sRole.toLowerCase(); 
+                    bSelect= (!(sRole.contains('admin'))) ? true : false;
+                }
+            }
+            if (bSelect) {
                 if(mapCaseIdMembersIdA.Containskey(cm.ICY_Case__c)){
                     // If the key already exists, add the user Id to the existing Set
                     mapCaseIdMembersIdA.get(cm.ICY_Case__c).add(teamId);
                 } else {
                     // If the key doesn't exist, create a new Set and add the user Id
                     mapCaseIdMembersIdA.put(cm.ICY_Case__c, new Set<Id>{teamId});
+                }
                 }
         }
 
