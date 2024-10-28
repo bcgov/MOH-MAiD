@@ -494,7 +494,7 @@
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
-            <colSpan>5</colSpan>
+            <colSpan>3</colSpan>
             <columnIndex>1</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
@@ -503,28 +503,23 @@
                     <axisBinding>y</axisBinding>
                     <column>RowCount</column>
                 </chartSummary>
-                <componentType>ColumnStacked</componentType>
+                <componentType>Column</componentType>
                 <decimalPrecision>-1</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
                 <enableHover>false</enableHover>
                 <expandOthers>false</expandOthers>
-                <groupingColumn>Case$CaseNumber</groupingColumn>
-                <groupingColumn>Case.Case_Members__r$ICY_User__c.UserRole</groupingColumn>
+                <groupingColumn>Case$Case_Team_Size__c</groupingColumn>
                 <groupingSortProperties>
                     <groupingSorts>
                         <groupingLevel>g1</groupingLevel>
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
-                    <groupingSorts>
-                        <groupingLevel>g2</groupingLevel>
-                        <sortOrder>a</sortOrder>
-                    </groupingSorts>
                 </groupingSortProperties>
-                <header># CY being seen 1+ Members</header>
-                <legendPosition>Right</legendPosition>
-                <report>ICYSharedIndicatorsReports/CY_being_seen_1_Members_fzC</report>
+                <header># ICY being seen by 1+ Members</header>
+                <legendPosition>Bottom</legendPosition>
+                <report>ICYSharedIndicatorsReports/Copy_of_ICY_being_seen_1_Members_b51</report>
                 <showPercentage>false</showPercentage>
                 <showValues>false</showValues>
                 <sortBy>RowLabelAscending</sortBy>
