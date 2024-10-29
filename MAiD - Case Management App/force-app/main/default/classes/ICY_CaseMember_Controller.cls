@@ -123,6 +123,7 @@ public without sharing class ICY_CaseMember_Controller {
         String caseId;
         Set<Id> intakeIds = new Set<Id>();
         Set<Id> caseIds = new Set<Id>();
+        Set<Id> refIds = new Set<Id>();
 
         //Read Only Access For Consulting
         if(cm.ICY_Category_Assignment__c == 'Consulting') accessLevel = 'Read';
@@ -157,6 +158,9 @@ public without sharing class ICY_CaseMember_Controller {
                 caseIds.add(c.Id);
             }
 
+             //Query All Related Referrals
+            refIds.add(referralId); 
+
             //Create Intake Share Records
             if(intakeIds.size() > 0){
                 createIntakeShare(intakeIds, cm.ICY_User__c, accessLevel);
@@ -164,6 +168,10 @@ public without sharing class ICY_CaseMember_Controller {
             //Create Case Share Records
             if(caseIds.size() > 0){
                 createAccountShares(caseIds, cm.ICY_User__c, accessLevel);
+            }
+            //Create Referral Share Records
+            if(refIds.size() > 0){
+                createReferralShare(refIds, cm.ICY_User__c, accessLevel);
             }
         }
 
@@ -179,6 +187,7 @@ public without sharing class ICY_CaseMember_Controller {
         UPDATE cm;
         Set<Id> intakeIds = new Set<Id>();
         Set<Id> caseIds = new Set<Id>();
+        Set<Id> refIds = new Set<Id>();
 
         //Query All Related Intakes
         for(Intake__c i: [SELECT ID from Intake__c WHERE Referral__c = :cm.Referral__c]){
@@ -188,6 +197,10 @@ public without sharing class ICY_CaseMember_Controller {
         for(Case c: [SELECT Id FROM CASE WHERE Referral__c = :cm.Referral__c]){
             caseIds.add(c.Id);
         }
+
+        //Query All Related Referrals
+        refIds.add(cm.Referral__c);
+
         //Create Intake Share Records
         if(intakeIds.size() > 0){
             removeIntakeShare(intakeIds, cm.ICY_User__c);
@@ -195,6 +208,10 @@ public without sharing class ICY_CaseMember_Controller {
         //Create Case Share Records
         if(caseIds.size() > 0){
             removeCaseShare(caseIds, cm.ICY_User__c);
+        }
+         //Create Referral Share Records
+         if(refIds.size() > 0){
+            removeRefShare(refIds, cm.ICY_User__c);
         }
 
 
@@ -281,6 +298,23 @@ public without sharing class ICY_CaseMember_Controller {
     }
 
     @TestVisible
+    private static void createReferralShare(Set<Id> refIds, Id userId, String accessLevel){
+        List<Referral__Share> shareRecords = new List<Referral__Share>();
+        for(Id i: refIds){
+            shareRecords.add(
+                new Referral__Share(
+                    AccessLevel = accessLevel,
+                    UserOrGroupId = userId,
+                    RowCause = Schema.Referral__Share.RowCause.Case_Team_Member_Share__c,
+                    ParentId = i
+                )
+            );
+        }
+        INSERT shareRecords;
+    }
+
+
+    @TestVisible
     private static void removeIntakeShare(Set<Id> intakeIds, Id userId){
         try{
             DELETE [SELECT ID FROM Intake__Share WHERE UserOrGroupId = :userId AND ParentId IN :intakeIds];
@@ -302,6 +336,15 @@ public without sharing class ICY_CaseMember_Controller {
             }      
             }catch(Exception ex){
             System.debug('$$ Remove Case and Account Share exception: '+ex);
+        }
+    }
+
+    @TestVisible
+    private static void removeRefShare(Set<Id> refIds, Id userId){
+        try{
+            DELETE [SELECT ID FROM Referral__Share WHERE UserOrGroupId = :userId AND ParentId IN :refIds];
+        }catch(Exception ex){
+            System.debug('$$ Remove Referral Share exception: '+ex);
         }
     }
 
