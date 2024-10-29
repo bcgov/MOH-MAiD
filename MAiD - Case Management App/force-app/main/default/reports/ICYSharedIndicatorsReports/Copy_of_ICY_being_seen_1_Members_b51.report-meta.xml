@@ -70,6 +70,20 @@
             <operator>equals</operator>
             <value>LAST_MONTH</value>
         </criteriaItems>
+        <criteriaItems>
+            <column>Case.Case_Members__r$ICY_Category_Assignment__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Consulting,MRTM,Core Team Member,Supplemental</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Case.Case_Members__r$ICY_Status__c</column>
+            <columnToColumn>false</columnToColumn>
+            <isUnlocked>true</isUnlocked>
+            <operator>equals</operator>
+            <value>,Active,Inactive</value>
+        </criteriaItems>
     </filter>
     <format>Summary</format>
     <groupingsDown>
@@ -87,6 +101,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <sortColumn>Case$CaseNumber</sortColumn>
+    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Case$ICY_Case_Close_Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
