@@ -1749,7 +1749,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Referral__c.Reason_for_Referral_if_Other__c</field>
+        <field>Referral__c.Preferred_method_of_contact__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Primary_Contact_Is_Individual_Indicator__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Primary_Contact_Is_Individual__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
