@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Type_Other_Cell</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( ISBLANK(Other_Relationship_Cell__c) , ISPICKVAL( Relationship_to_Individual_Cell__c , &apos;Other&apos;))</errorConditionFormula>
+    <errorDisplayField>Other_Relationship_Cell__c</errorDisplayField>
+    <errorMessage>Please specify the Other Relationship</errorMessage>
+</ValidationRule>
