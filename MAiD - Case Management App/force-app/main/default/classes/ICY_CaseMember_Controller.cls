@@ -467,4 +467,99 @@ public without sharing class ICY_CaseMember_Controller {
      }
      return updatedValue;
     }
+
+
+   //Update Case team Size on Case when a team member is added
+    public static void updateCaseTeamSize(List<Case_Member__c> lstCaseMember)
+    {   
+        map<Id,Set<Id>> mapCaseIdMembersIdA = new Map<id,Set<Id>>();
+        map<Id,Integer> mapCaseIdTeamSizeCount = new Map<id,Integer>();
+        List<Case> ListCasesToUpdate =new List<Case>();
+        Set<Id> setCaseId = new set<Id>();
+        map<Id,Case> mapCaseIdCaseRecB = new  map<Id,Case>();
+        Id teamId;
+        String sRole;
+        Boolean bSelect = true;
+        Set<Id> userIds = new Set<Id>();
+
+        //Get the UserRole,name for all cm.ICY_Team_Member__c
+        for(Case_Member__c cm:lstCaseMember){
+            if (cm.ICY_Team_Member__c){
+                userIds.add(cm.ICY_User__c);
+            }
+        }
+
+        // Query Account fields using the IDs collected
+        Map<Id, User> usersMap = new Map<Id, User>(
+            [SELECT Id, UserRole.name FROM User WHERE Id IN :userIds]
+        );
+      
+           
+        //get set<Id> of ICY_Case__c  Ids from List of Case members
+        for(Case_Member__c cm:lstCaseMember){
+            //Wen team member is ICY_Team_Member__c exclude Role admin
+            if (cm.ICY_User__c!= null){
+              sRole= usersMap.get(cm.ICY_User__c).UserRole.name;
+              if (sRole !=null){
+                    sRole = sRole.toLowerCase(); 
+                if (!(sRole.contains('admin')))
+                    setCaseId.add(cm.ICY_Case__c);
+              }
+              else {
+                setCaseId.add(cm.ICY_Case__c);
+              }
+            }
+            else {
+                setCaseId.add(cm.ICY_Case__c);
+            }
+        }
+        //Query Case for Case_Team_Size__c and Udpate mapCaseIdCaseRecB
+        List<Case> lstCases = [Select id,Case_Team_Size__c
+		     							  from Case where Id IN : setCaseId];
+         for(Case cmCase:lstCases){
+            mapCaseIdCaseRecB.put(cmCase.id,cmCase);
+        }
+
+        //Query Case_Member__c for the setCaseId 
+        List<Case_Member__c> lstCm = [Select id,ICY_User__r.UserRole.name,ICY_Case_Contact__c,ICY_Case__c
+                                           from Case_Member__c where ICY_Case__c IN : setCaseId];
+    
+        for(Case_Member__c cm:lstCm){
+            teamId= cm.ICY_User__c!=null? cm.ICY_User__c: cm.ICY_Case_Contact__c;
+            if (cm.ICY_User__c!= null){
+              sRole= cm.ICY_User__r.UserRole.name;
+                if (sRole !=null){
+                    sRole = sRole.toLowerCase(); 
+                    bSelect= (!(sRole.contains('admin'))) ? true : false;
+                }
+            }
+            if (bSelect) {
+                if(mapCaseIdMembersIdA.Containskey(cm.ICY_Case__c)){
+                    // If the key already exists, add the user Id to the existing Set
+                    mapCaseIdMembersIdA.get(cm.ICY_Case__c).add(teamId);
+                } else {
+                    // If the key doesn't exist, create a new Set and add the user Id
+                    mapCaseIdMembersIdA.put(cm.ICY_Case__c, new Set<Id>{teamId});
+                }
+                }
+        }
+
+        Integer teamSize = 0;
+        for (Id key : mapCaseIdMembersIdA.keySet()) {
+            Set<Id> membersSet = mapCaseIdMembersIdA.get(key);
+            teamSize= membersSet.size();
+            mapCaseIdTeamSizeCount.put(key,teamSize);
+        }
+              
+        for (Id caseId : mapCaseIdTeamSizeCount.keySet()) {
+            Case caseRec=mapCaseIdCaseRecB.get(caseId); 
+            caseRec.Case_Team_Size__c = mapCaseIdTeamSizeCount.get(caseId);
+            ListCasesToUpdate.add(caseRec);
+        }
+        // Perform a bulk update at the end
+        if (!ListCasesToUpdate.isEmpty()) {
+            update ListCasesToUpdate;
+        }
+     }
+    
 }
