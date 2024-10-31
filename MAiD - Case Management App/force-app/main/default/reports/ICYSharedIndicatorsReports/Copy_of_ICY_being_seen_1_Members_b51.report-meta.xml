@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <calculatedFormula>Case.CaseNumber:UNIQUE</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Number of Cases</masterLabel>
+        <scale>0</scale>
+    </aggregates>
     <chart>
         <backgroundColor1>#FFFFFF</backgroundColor1>
         <backgroundColor2>#FFFFFF</backgroundColor2>
         <backgroundFadeDir>Diagonal</backgroundFadeDir>
         <chartSummaries>
             <axisBinding>y</axisBinding>
-            <column>RowCount</column>
+            <column>FORMULA1</column>
         </chartSummaries>
-        <chartType>VerticalColumn</chartType>
+        <chartType>VerticalColumnStacked</chartType>
         <enableHoverLabels>false</enableHoverLabels>
         <expandOthers>true</expandOthers>
         <groupingColumn>Case$Case_Team_Size__c</groupingColumn>
+        <legendPosition>Right</legendPosition>
         <location>CHART_BOTTOM</location>
+        <secondaryGroupingColumn>Case$CaseNumber</secondaryGroupingColumn>
         <showAxisLabels>true</showAxisLabels>
         <showPercentage>false</showPercentage>
         <showTotal>false</showTotal>
@@ -25,13 +36,13 @@
         <titleSize>18</titleSize>
     </chart>
     <columns>
-        <field>Case$CaseNumber</field>
-    </columns>
-    <columns>
         <field>Case$User_Role_Name__c</field>
     </columns>
     <columns>
         <field>Case.Case_Members__r$ICY_User__c.Name</field>
+    </columns>
+    <columns>
+        <field>Case.Case_Members__r$ICY_Case_Contact__c.Contact_Full_Name__c</field>
     </columns>
     <columns>
         <field>Case.Case_Members__r$ICY_User__c.Title</field>
@@ -91,6 +102,11 @@
         <field>Case$Case_Team_Size__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Case$CaseNumber</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
     <name># ICY being seen by 1+ Members</name>
     <params>
         <name>co</name>
@@ -101,8 +117,6 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <sortColumn>Case$CaseNumber</sortColumn>
-    <sortOrder>Asc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Case$ICY_Case_Close_Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

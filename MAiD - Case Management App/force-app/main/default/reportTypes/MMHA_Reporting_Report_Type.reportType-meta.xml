@@ -1228,6 +1228,11 @@
             <field>ICY_Case_Contact__c.Profession_Role__c</field>
             <table>Case.Case_Members__r</table>
         </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ICY_Case_Contact__c.Contact_Full_Name__c</field>
+            <table>Case.Case_Members__r</table>
+        </columns>
         <masterLabel>Case Members</masterLabel>
     </sections>
 </ReportType>
