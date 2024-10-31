@@ -64,6 +64,8 @@ import ICY_Unknown_Address__c from '@salesforce/schema/Referral__c.ICY_Unknown_A
 import ICY_Referral_Source_Description__c from '@salesforce/schema/Referral__c.ICY_Referral_Source_Description__c';
 import ICY_Date_of_Referral__c from '@salesforce/schema/Referral__c.ICY_Date_of_Referral__c';
 import OWNERID from '@salesforce/schema/Referral__c.OwnerId';
+import Current_School__c from '@salesforce/schema/Referral__c.Current_School__c';
+
 
 
 //Custom Labels
@@ -164,6 +166,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         ICY_Indigenous__c: '',
         ICY_Unknown_Address__c: false,
         ICY_Referral_Source_Description__c: '',
+        Current_School__c:'',
         ICY_Date_of_Referral__c: '',
         OwnerId: '',
         Preferred_Contact_s_Name_Cell__c: '',
@@ -481,6 +484,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         fields[ICY_CHILD_YOUTH_Aware__c.fieldApiName] = this.referral.ICY_CHILD_YOUTH_Aware__c;
         fields[ICY_Unknown_Address__c.fieldApiName] = this.referral.ICY_Unknown_Address__c;
         fields[ICY_Referral_Source_Description__c.fieldApiName] = this.referral.ICY_Referral_Source_Description__c;
+        fields[Current_School__c.fieldApiName] = this.referral.Current_School__c;
         fields[ICY_Date_of_Referral__c.fieldApiName] = this.referral.ICY_Date_of_Referral__c;
         fields[OWNERID.fieldApiName] = this.referral.OwnerId;
         fields[Preferred_Contact_s_Name_Cell__c.fieldApiName] = this.referral.Preferred_Contact_s_Name_Cell__c;
@@ -817,6 +821,9 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                     break;
                 case 'ICY_Referral_Source_Description__c':
                     this.referral.ICY_Referral_Source_Description__c = event.target.value;
+                    break;
+                case 'Current_School__c':
+                    this.referral.Current_School__c = event.target.value;
                     break;
                 case 'ICY_Date_of_Referral__c':
                     this.referral.ICY_Date_of_Referral__c = event.target.value;
