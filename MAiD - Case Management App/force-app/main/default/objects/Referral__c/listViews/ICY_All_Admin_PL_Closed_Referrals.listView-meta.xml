@@ -19,6 +19,6 @@
     <label>ICY All Closed Referrals</label>
     <sharedTo>
         <group>All_ICY_Admins</group>
-        <group>All_ICY_Program_Leaders</group>
+        <group>ICY_Program_Leaders</group>
     </sharedTo>
 </ListView>
