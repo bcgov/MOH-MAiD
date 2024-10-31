@@ -44,7 +44,7 @@
                         <valueListItems>
                             <value>Referral__c.ICY_Reopen_Referral</value>
                             <visibilityRule>
-                                <booleanFilter>(1 OR 2) AND 3</booleanFilter>
+                                <booleanFilter>(1 OR 2) AND 3 AND 4</booleanFilter>
                                 <criteria>
                                     <leftValue>{!$User.UserRole.Name}</leftValue>
                                     <operator>CONTAINS</operator>
@@ -59,6 +59,11 @@
                                     <leftValue>{!Record.Status__c}</leftValue>
                                     <operator>EQUAL</operator>
                                     <rightValue>Closed</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Is_Related_Intake_Closed__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>false</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
