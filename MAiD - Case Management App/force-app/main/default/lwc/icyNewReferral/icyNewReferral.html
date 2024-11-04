@@ -303,19 +303,34 @@
                                     </div>
                                 </div>
                             </lightning-record-edit-form>
-                            <div class="slds-col slds-size_1-of-3">
-                                <span>
-                                    <div class="slds-p-around_medium">
-                                        <div class="slds-form-element">
-                                            <lightning-textarea value={referral.ICY_Referral_Source_Description__c}
-                                                name="ICY_Referral_Source_Description__c"
-                                                label="Referral Source Description" class="validate"
-                                                onblur={handleChange} max-length="255">
-                                            </lightning-textarea>
+                            <div class="slds-grid slds-gutters">
+                                <div class="slds-col slds-size_1-of-3">
+                                    <span>
+                                        <div class="slds-p-around_medium">
+                                            <div class="slds-form-element">
+                                                <lightning-textarea value={referral.ICY_Referral_Source_Description__c}
+                                                    name="ICY_Referral_Source_Description__c"
+                                                    label="Referral Source Description" class="validate"
+                                                    onblur={handleChange} max-length="255">
+                                                </lightning-textarea>
+                                            </div>
                                         </div>
-                                    </div>
-                                </span>
-                            </div>
+                                    </span>
+                                </div>
+                                <div class="slds-col slds-size_1-of-3">
+                                    <span>
+                                        <div class="slds-p-around_medium">
+                                            <div class="slds-form-element">
+                                                <lightning-textarea value={referral.Current_School__c}
+                                                    name="Current_School__c" label="Current School"
+                                                    class="validate"
+                                                    onblur={handleChange} max-length="255">
+                                                </lightning-textarea>
+                                            </div>
+                                        </div>
+                                    </span>
+                                </div>
+                        </div>
                             <div class="slds-col slds-size_1-of-3">
                                 <span>
                                     <div class="slds-p-around_medium">
