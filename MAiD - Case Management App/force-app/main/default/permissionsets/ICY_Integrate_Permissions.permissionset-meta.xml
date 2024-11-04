@@ -663,6 +663,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Case_Member__c.Report_User_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Contact.AccountId</field>
         <readable>true</readable>
@@ -1615,6 +1620,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Is_Individual_Attending_School__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Referral__c.Is_Related_Intake_Closed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
