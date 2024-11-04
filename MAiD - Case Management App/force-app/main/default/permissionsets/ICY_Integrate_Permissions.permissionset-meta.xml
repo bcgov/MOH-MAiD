@@ -944,6 +944,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ICY_Notes__c.ICY_Meeting_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ICY_Notes__c.Intake__c</field>
         <readable>true</readable>
     </fieldPermissions>
