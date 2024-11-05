@@ -1624,6 +1624,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Referral__c.Is_Related_Intake_Closed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Referral__c.Is_Team_member__c</field>
         <readable>true</readable>
     </fieldPermissions>
