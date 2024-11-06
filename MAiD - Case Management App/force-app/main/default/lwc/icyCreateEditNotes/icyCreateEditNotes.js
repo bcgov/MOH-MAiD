@@ -86,6 +86,11 @@ export default class icyCreateEditNotes extends LightningElement {
             {label: 'Video Conferencing', value: 'Video Conferencing'}
         ]
     }
+
+    get today() {
+        var d = new Date();
+        return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
+    }
     /**
      * Connected Call Back
      */
