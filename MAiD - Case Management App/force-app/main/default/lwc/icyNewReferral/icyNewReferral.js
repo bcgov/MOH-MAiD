@@ -184,6 +184,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
     @track isFieldOtherHomeRequired = false;
     @track isFieldOtherRequired = false;
     @track isFieldReasonForReferralifOtherRequired = false;
+    @track isFieldRefSourceDescRequired = false;
 
     //Getter Methods
 
@@ -809,6 +810,9 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                     break;
                 case 'ICY_Referral_Source__c':
                     this.referral.ICY_Referral_Source__c = event.target.value;
+                    this.isFieldRefSourceDescRequired= false;
+                    if (this.referral.ICY_Referral_Source__c=='Other')
+                        this.isFieldRefSourceDescRequired= true;
                     break;
                 case 'ICY_Indigenous__c':
                     this.referral.ICY_Indigenous__c = event.target.value;

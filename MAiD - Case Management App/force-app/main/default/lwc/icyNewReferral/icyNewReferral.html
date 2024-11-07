@@ -310,7 +310,7 @@
                                             <div class="slds-form-element">
                                                 <lightning-textarea value={referral.ICY_Referral_Source_Description__c}
                                                     name="ICY_Referral_Source_Description__c"
-                                                    label="Referral Source Description" class="validate"
+                                                    label="Referral Source Description" class="validate" required={isFieldRefSourceDescRequired}
                                                     onblur={handleChange} max-length="255">
                                                 </lightning-textarea>
                                             </div>
