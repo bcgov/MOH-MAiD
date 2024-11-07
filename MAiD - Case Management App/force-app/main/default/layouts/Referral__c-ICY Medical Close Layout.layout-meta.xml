@@ -115,6 +115,10 @@
                 <behavior>Readonly</behavior>
                 <field>ICY_Referral_Source_Description__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Current_School__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>
     </layoutSections>

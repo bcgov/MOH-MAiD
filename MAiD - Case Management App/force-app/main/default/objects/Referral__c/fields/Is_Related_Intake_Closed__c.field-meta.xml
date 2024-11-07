@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Related_Intake_Closed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Field updated in flow and used in lightning Record page to manage visibility of Reopen Referral Button</description>
+    <externalId>false</externalId>
+    <label>Is Related Intake Closed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

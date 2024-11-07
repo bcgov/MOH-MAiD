@@ -126,6 +126,54 @@
                 <default>false</default>
                 <label>Youth Worker</label>
             </value>
+            <value>
+                <fullName>CLBC (Community Living BC) Worker</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CLBC (Community Living BC) Worker</label>
+            </value>
+            <value>
+                <fullName>Care Giver</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Care Giver</label>
+            </value>
+            <value>
+                <fullName>Family</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Family</label>
+            </value>
+            <value>
+                <fullName>Foster Parent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Foster Parent</label>
+            </value>
+            <value>
+                <fullName>Guardian</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Guardian</label>
+            </value>
+            <value>
+                <fullName>Support Worker</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Support Worker</label>
+            </value>
+            <value>
+                <fullName>Teacher</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Teacher</label>
+            </value>
+            <value>
+                <fullName>Youth</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Youth</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

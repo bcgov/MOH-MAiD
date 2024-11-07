@@ -123,6 +123,7 @@ public without sharing class ICY_CaseMember_Controller {
         String caseId;
         Set<Id> intakeIds = new Set<Id>();
         Set<Id> caseIds = new Set<Id>();
+        Set<Id> refIds = new Set<Id>();
 
         //Read Only Access For Consulting
         if(cm.ICY_Category_Assignment__c == 'Consulting') accessLevel = 'Read';
@@ -157,6 +158,9 @@ public without sharing class ICY_CaseMember_Controller {
                 caseIds.add(c.Id);
             }
 
+             //Query All Related Referrals
+            refIds.add(referralId); 
+
             //Create Intake Share Records
             if(intakeIds.size() > 0){
                 createIntakeShare(intakeIds, cm.ICY_User__c, accessLevel);
@@ -164,6 +168,10 @@ public without sharing class ICY_CaseMember_Controller {
             //Create Case Share Records
             if(caseIds.size() > 0){
                 createAccountShares(caseIds, cm.ICY_User__c, accessLevel);
+            }
+            //Create Referral Share Records
+            if(refIds.size() > 0){
+                createReferralShare(refIds, cm.ICY_User__c, accessLevel);
             }
         }
 
@@ -179,6 +187,7 @@ public without sharing class ICY_CaseMember_Controller {
         UPDATE cm;
         Set<Id> intakeIds = new Set<Id>();
         Set<Id> caseIds = new Set<Id>();
+        Set<Id> refIds = new Set<Id>();
 
         //Query All Related Intakes
         for(Intake__c i: [SELECT ID from Intake__c WHERE Referral__c = :cm.Referral__c]){
@@ -188,6 +197,10 @@ public without sharing class ICY_CaseMember_Controller {
         for(Case c: [SELECT Id FROM CASE WHERE Referral__c = :cm.Referral__c]){
             caseIds.add(c.Id);
         }
+
+        //Query All Related Referrals
+        refIds.add(cm.Referral__c);
+
         //Create Intake Share Records
         if(intakeIds.size() > 0){
             removeIntakeShare(intakeIds, cm.ICY_User__c);
@@ -195,6 +208,10 @@ public without sharing class ICY_CaseMember_Controller {
         //Create Case Share Records
         if(caseIds.size() > 0){
             removeCaseShare(caseIds, cm.ICY_User__c);
+        }
+         //Create Referral Share Records
+         if(refIds.size() > 0){
+            removeRefShare(refIds, cm.ICY_User__c);
         }
 
 
@@ -281,6 +298,23 @@ public without sharing class ICY_CaseMember_Controller {
     }
 
     @TestVisible
+    private static void createReferralShare(Set<Id> refIds, Id userId, String accessLevel){
+        List<Referral__Share> shareRecords = new List<Referral__Share>();
+        for(Id i: refIds){
+            shareRecords.add(
+                new Referral__Share(
+                    AccessLevel = accessLevel,
+                    UserOrGroupId = userId,
+                    RowCause = Schema.Referral__Share.RowCause.Case_Team_Member_Share__c,
+                    ParentId = i
+                )
+            );
+        }
+        INSERT shareRecords;
+    }
+
+
+    @TestVisible
     private static void removeIntakeShare(Set<Id> intakeIds, Id userId){
         try{
             DELETE [SELECT ID FROM Intake__Share WHERE UserOrGroupId = :userId AND ParentId IN :intakeIds];
@@ -305,117 +339,227 @@ public without sharing class ICY_CaseMember_Controller {
         }
     }
 
-   //if case member is being inserted then need to update on Referral Field: which will be used for filter criteria on Referral List view
-    public static void updateReferralTeamMemberIds(List<Case_Member__c> lstCaseMember, Boolean isDelete)
-	{
-        Set<Id> setRefId = new set<Id>(); 
-        map<Id,Set<Id>> mapRefIdMembersIdA = new Map<id,Set<Id>>();
-        map<Id,Set<Id>> mapRemoveRefIdMembersIdA = new Map<id,Set<Id>>();
-        map<Id,Referral__c> mapRefIdRefrecB = new  map<Id,Referral__c>();
-        List<Referral__c> updatedListReferrals =new List<Referral__c>();
-
-        String existingValue;
-        String updateTeamMembersId;
-        
-        //get set<Id> of Referral Ids from List of Case members
-        for(Case_Member__c cm:lstCaseMember){
-             setRefId.add(cm.Referral__c);
+    @TestVisible
+    private static void removeRefShare(Set<Id> refIds, Id userId){
+        try{
+            DELETE [SELECT ID FROM Referral__Share WHERE UserOrGroupId = :userId AND ParentId IN :refIds];
+        }catch(Exception ex){
+            System.debug('$$ Remove Referral Share exception: '+ex);
         }
-        //Query Referral for Team_members_Id__c and Udpate mapRefIdRefrecB
-        List<Referral__c> lstCmRef = [Select id,Team_members_Id__c
-		     							  from Referral__c where Id IN : setRefId];
-         for(Referral__c cmRef:lstCmRef){
-            mapRefIdRefrecB.put(cmRef.id,cmRef);
-        }
+    }
 
-        for(Case_Member__c cm:lstCaseMember){
-          if (cm.ICY_Status__c=='Active' && cm.ICY_User__c!= null && !isDelete){
-                if(mapRefIdMembersIdA.Containskey(cm.Referral__c)){
-                    // If the key already exists, add the user Id to the existing Set
-                    mapRefIdMembersIdA.get(cm.Referral__c).add(cm.ICY_User__c);
-                } else {
-                    // If the key doesn't exist, create a new Set and add the user Id
-                    mapRefIdMembersIdA.put(cm.Referral__c, new Set<Id>{cm.ICY_User__c});
-                }
-            }
+ //if case member is being inserted then need to update on Referral Field: which will be used for filter criteria on Referral List view
+ public static void updateReferralTeamMemberIds(List<Case_Member__c> lstCaseMember, Boolean isDelete)
+ {
+     Set<Id> setRefId = new set<Id>(); 
+     map<Id,Set<Id>> mapRefIdMembersIdA = new Map<id,Set<Id>>();
+     map<Id,Set<Id>> mapRemoveRefIdMembersIdA = new Map<id,Set<Id>>();
+     map<Id,Referral__c> mapRefIdRefrecB = new  map<Id,Referral__c>();
+     List<Referral__c> updatedListReferrals =new List<Referral__c>();
+     List<Referral__c> updatedListReferralsRemove =new List<Referral__c>();
 
-            //Inactive members should be removed
-            if ((cm.ICY_Status__c=='Inactive' && cm.ICY_User__c!= null && !isDelete) || (isDelete)){
-                if(mapRemoveRefIdMembersIdA.Containskey(cm.Referral__c)){
-                    // If the key already exists, add the user Id to the existing Set
-                    mapRemoveRefIdMembersIdA.get(cm.Referral__c).add(cm.ICY_User__c);
-                } else {
-                    // If the key doesn't exist, create a new Set and add the user Id
-                    mapRemoveRefIdMembersIdA.put(cm.Referral__c, new Set<Id>{cm.ICY_User__c});
-                }
-            }
-        }// end for
+     String existingValue;
+     String updateTeamMembersId;
+     
+     //get set<Id> of Referral Ids from List of Case members
+     for(Case_Member__c cm:lstCaseMember){
+          setRefId.add(cm.Referral__c);
+     }
+     //Query Referral for Team_members_Id__c and Udpate mapRefIdRefrecB
+     List<Referral__c> lstCmRef = [Select id,Team_members_Id__c
+                                        from Referral__c where Id IN : setRefId];
+      for(Referral__c cmRef:lstCmRef){
+         mapRefIdRefrecB.put(cmRef.id,cmRef);
+     }
+
+     for(Case_Member__c cm:lstCaseMember){
+       if (cm.ICY_Status__c=='Active' && cm.ICY_User__c!= null && !isDelete){
+             if(mapRefIdMembersIdA.Containskey(cm.Referral__c)){
+                 // If the key already exists, add the user Id to the existing Set
+                 mapRefIdMembersIdA.get(cm.Referral__c).add(cm.ICY_User__c);
+             } else {
+                 // If the key doesn't exist, create a new Set and add the user Id
+                 mapRefIdMembersIdA.put(cm.Referral__c, new Set<Id>{cm.ICY_User__c});
+             }
+         }
+
+         //Inactive members should be removed
+         if ((cm.ICY_Status__c=='Inactive' && cm.ICY_User__c!= null && !isDelete) || (isDelete)){
+             if(mapRemoveRefIdMembersIdA.Containskey(cm.Referral__c)){
+                 // If the key already exists, add the user Id to the existing Set
+                 mapRemoveRefIdMembersIdA.get(cm.Referral__c).add(cm.ICY_User__c);
+             } else {
+                 // If the key doesn't exist, create a new Set and add the user Id
+                 mapRemoveRefIdMembersIdA.put(cm.Referral__c, new Set<Id>{cm.ICY_User__c});
+             }
+         }
+     }// end for
+    
+     for (Id parentId : mapRefIdMembersIdA.keySet()) {
+         Referral__c refRec=mapRefIdRefrecB.get(parentId);
+         existingValue =refRec.Team_members_Id__c; 
+         updateTeamMembersId='';
+         // Get the Set of Ids for the current key
+         Set<Id> childIds = mapRefIdMembersIdA.get(parentId);
+         // Loop through the Set of Ids
+         for (Id childId : childIds) {
+             updateTeamMembersId = updateTeamMembersId(childId,existingValue);
+             existingValue = updateTeamMembersId;
+         }
+         refRec.Team_members_Id__c = updateTeamMembersId;
+         updatedListReferrals.add(refRec);
+     }
+
+     //Ids to be removed
+     for (Id parentId : mapRemoveRefIdMembersIdA.keySet()) {
+         Referral__c refRec=mapRefIdRefrecB.get(parentId);
+         existingValue =refRec.Team_members_Id__c; 
+         updateTeamMembersId='';
+
+         // Get the Set of Ids for the current key
+         Set<Id> childIds = mapRemoveRefIdMembersIdA.get(parentId);
+         // Loop through the Set of Ids
+         for (Id childId : childIds) {
+             updateTeamMembersId=removeTeamMembersId(existingValue,childId);
+             existingValue = updateTeamMembersId;
+         }
+         refRec.Team_members_Id__c = updateTeamMembersId;
+         updatedListReferralsRemove.add(refRec);
+     }
+
+     // Perform a bulk update at the end
+     if (!updatedListReferrals.isEmpty()) {
+         update updatedListReferrals;
+     }
+
+       // Perform a bulk update at the end
+       if (!updatedListReferralsRemove.isEmpty()) {
+         update updatedListReferralsRemove;
+     }
+  }
        
-        for (Id parentId : mapRefIdMembersIdA.keySet()) {
-            Referral__c refRec=mapRefIdRefrecB.get(parentId);
-            existingValue =refRec.Team_members_Id__c; 
-            updateTeamMembersId='';
-            // Get the Set of Ids for the current key
-            Set<Id> childIds = mapRefIdMembersIdA.get(parentId);
-            // Loop through the Set of Ids
-            for (Id childId : childIds) {
-                updateTeamMembersId = updateTeamMembersId(childId,existingValue);
-                existingValue = updateTeamMembersId;
+  
+  public static String updateTeamMembersId(String newValue, String existingValue) {
+     String updatedValue = existingValue;
+     // Check if the field is empty or has values
+     if (String.isBlank(updatedValue)) {
+         updatedValue = newValue;
+     } else {
+         // Convert the CSV string into a Set to prevent duplicates
+         Set<String> csvSet = new Set<String>(updatedValue.split(','));  
+         // Add the new value
+         csvSet.add(newValue);   
+         // Convert the Set back into a comma-separated string
+         updatedValue = String.join(new List<String>(csvSet), ',');
+     }    
+     return updatedValue;
+ }
+
+ public static String removeTeamMembersId(String existingValue, String valueToRemove) {
+     String updatedValue;
+     if (!String.isBlank(existingValue)) {
+         Set<String> csvSet = new Set<String>(existingValue.split(','));
+         if (csvSet.contains(valueToRemove)) {
+             csvSet.remove(valueToRemove);
+         }
+         // Convert the Set back into a comma-separated string
+         updatedValue = String.join(new List<String>(csvSet), ',');
+     }
+     return updatedValue;
+    }
+
+
+   //Update Case team Size on Case when a team member is added
+    public static void updateCaseTeamSize(List<Case_Member__c> lstCaseMember)
+    {   
+        map<Id,Set<Id>> mapCaseIdMembersIdA = new Map<id,Set<Id>>();
+        map<Id,Integer> mapCaseIdTeamSizeCount = new Map<id,Integer>();
+        List<Case> ListCasesToUpdate =new List<Case>();
+        Set<Id> setCaseId = new set<Id>();
+        map<Id,Case> mapCaseIdCaseRecB = new  map<Id,Case>();
+        Id teamId;
+        String sRole;
+        Boolean bSelect = true;
+        Set<Id> userIds = new Set<Id>();
+
+        //Get the UserRole,name for all cm.ICY_Team_Member__c
+        for(Case_Member__c cm:lstCaseMember){
+            if (cm.ICY_Team_Member__c){
+                userIds.add(cm.ICY_User__c);
             }
-            refRec.Team_members_Id__c = updateTeamMembersId;
-            updatedListReferrals.add(refRec);
         }
 
-        //Ids to be removed
-        for (Id parentId : mapRemoveRefIdMembersIdA.keySet()) {
-            Referral__c refRec=mapRefIdRefrecB.get(parentId);
-            existingValue =refRec.Team_members_Id__c; 
-            updateTeamMembersId='';
-
-            // Get the Set of Ids for the current key
-            Set<Id> childIds = mapRemoveRefIdMembersIdA.get(parentId);
-            // Loop through the Set of Ids
-            for (Id childId : childIds) {
-                updateTeamMembersId=removeTeamMembersId(existingValue,childId);
-                existingValue = updateTeamMembersId;
+        // Query Account fields using the IDs collected
+        Map<Id, User> usersMap = new Map<Id, User>(
+            [SELECT Id, UserRole.name FROM User WHERE Id IN :userIds]
+        );
+      
+           
+        //get set<Id> of ICY_Case__c  Ids from List of Case members
+        for(Case_Member__c cm:lstCaseMember){
+            //Wen team member is ICY_Team_Member__c exclude Role admin
+            if (cm.ICY_User__c!= null){
+              sRole= usersMap.get(cm.ICY_User__c).UserRole.name;
+              if (sRole !=null){
+                    sRole = sRole.toLowerCase(); 
+                if (!(sRole.contains('admin')))
+                    setCaseId.add(cm.ICY_Case__c);
+              }
+              else {
+                setCaseId.add(cm.ICY_Case__c);
+              }
             }
-            refRec.Team_members_Id__c = updateTeamMembersId;
-            updatedListReferrals.add(refRec);
+            else {
+                setCaseId.add(cm.ICY_Case__c);
+            }
+        }
+        //Query Case for Case_Team_Size__c and Udpate mapCaseIdCaseRecB
+        List<Case> lstCases = [Select id,Case_Team_Size__c
+		     							  from Case where Id IN : setCaseId];
+         for(Case cmCase:lstCases){
+            mapCaseIdCaseRecB.put(cmCase.id,cmCase);
         }
 
+        //Query Case_Member__c for the setCaseId 
+        List<Case_Member__c> lstCm = [Select id,ICY_User__r.UserRole.name,ICY_Case_Contact__c,ICY_Case__c
+                                           from Case_Member__c where ICY_Case__c IN : setCaseId];
+    
+        for(Case_Member__c cm:lstCm){
+            teamId= cm.ICY_User__c!=null? cm.ICY_User__c: cm.ICY_Case_Contact__c;
+            if (cm.ICY_User__c!= null){
+              sRole= cm.ICY_User__r.UserRole.name;
+                if (sRole !=null){
+                    sRole = sRole.toLowerCase(); 
+                    bSelect= (!(sRole.contains('admin'))) ? true : false;
+                }
+            }
+            if (bSelect) {
+                if(mapCaseIdMembersIdA.Containskey(cm.ICY_Case__c)){
+                    // If the key already exists, add the user Id to the existing Set
+                    mapCaseIdMembersIdA.get(cm.ICY_Case__c).add(teamId);
+                } else {
+                    // If the key doesn't exist, create a new Set and add the user Id
+                    mapCaseIdMembersIdA.put(cm.ICY_Case__c, new Set<Id>{teamId});
+                }
+                }
+        }
+
+        Integer teamSize = 0;
+        for (Id key : mapCaseIdMembersIdA.keySet()) {
+            Set<Id> membersSet = mapCaseIdMembersIdA.get(key);
+            teamSize= membersSet.size();
+            mapCaseIdTeamSizeCount.put(key,teamSize);
+        }
+              
+        for (Id caseId : mapCaseIdTeamSizeCount.keySet()) {
+            Case caseRec=mapCaseIdCaseRecB.get(caseId); 
+            caseRec.Case_Team_Size__c = mapCaseIdTeamSizeCount.get(caseId);
+            ListCasesToUpdate.add(caseRec);
+        }
         // Perform a bulk update at the end
-        if (!updatedListReferrals.isEmpty()) {
-            update updatedListReferrals;
+        if (!ListCasesToUpdate.isEmpty()) {
+            update ListCasesToUpdate;
         }
      }
-          
-     
-     public static String updateTeamMembersId(String newValue, String existingValue) {
-        String updatedValue = existingValue;
-        // Check if the field is empty or has values
-        if (String.isBlank(updatedValue)) {
-            updatedValue = newValue;
-        } else {
-            // Convert the CSV string into a Set to prevent duplicates
-            Set<String> csvSet = new Set<String>(updatedValue.split(','));  
-            // Add the new value
-            csvSet.add(newValue);   
-            // Convert the Set back into a comma-separated string
-            updatedValue = String.join(new List<String>(csvSet), ',');
-        }    
-        return updatedValue;
-    }
-
-    public static String removeTeamMembersId(String existingValue, String valueToRemove) {
-        String updatedValue;
-        if (!String.isBlank(existingValue)) {
-            Set<String> csvSet = new Set<String>(existingValue.split(','));
-            if (csvSet.contains(valueToRemove)) {
-                csvSet.remove(valueToRemove);
-            }
-            // Convert the Set back into a comma-separated string
-            updatedValue = String.join(new List<String>(csvSet), ',');
-        }
-        return updatedValue;
-    }
+    
 }
