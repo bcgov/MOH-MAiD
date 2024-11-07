@@ -26,7 +26,7 @@
             <label>Prior Assigned To Value Not Null</label>
         </rules>
     </decisions>
-    <description>Update Sharing Settings When ICY_Assigned_To__c field is Modified on Referral Record</description>
+    <description>Version-8 : Update conditions for deleting the existing referral sharing records records to re assign and create new referral sharing records</description>
     <interviewLabel>ICY Referral Assign To Handler {!$Flow.CurrentDateTime}</interviewLabel>
     <label>ICY Referral Assign To Handler</label>
     <processMetadataValues>
@@ -94,13 +94,6 @@
             <operator>EqualTo</operator>
             <value>
                 <elementReference>$Record__Prior.ICY_Assigned_To__c</elementReference>
-            </value>
-        </filters>
-        <filters>
-            <field>RowCause</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Manual</stringValue>
             </value>
         </filters>
         <filters>
