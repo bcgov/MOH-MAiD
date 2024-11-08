@@ -117,7 +117,7 @@
         <field>Case$CaseNumber</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name># ICY being seen by 1+ Members</name>
+    <name># CY being seen 1+ Members</name>
     <params>
         <name>co</name>
         <value>1</value>
