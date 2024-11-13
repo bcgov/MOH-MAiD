@@ -521,11 +521,12 @@ public without sharing class ICY_CaseMember_Controller {
         }
 
         //Query Case_Member__c for the setCaseId 
-        List<Case_Member__c> lstCm = [Select id,ICY_User__r.UserRole.name,ICY_Case_Contact__c,ICY_Case__c
+        List<Case_Member__c> lstCm = [Select id,ICY_User__c,ICY_User__r.UserRole.name,ICY_Case_Contact__c,ICY_Case__c
                                            from Case_Member__c where ICY_Case__c IN : setCaseId];
     
         for(Case_Member__c cm:lstCm){
             teamId= cm.ICY_User__c!=null? cm.ICY_User__c: cm.ICY_Case_Contact__c;
+            bSelect = true;
             if (cm.ICY_User__c!= null){
               sRole= cm.ICY_User__r.UserRole.name;
                 if (sRole !=null){
