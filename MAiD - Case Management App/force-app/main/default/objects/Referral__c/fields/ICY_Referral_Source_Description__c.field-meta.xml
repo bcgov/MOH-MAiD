@@ -2,10 +2,10 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ICY_Referral_Source_Description__c</fullName>
     <deprecated>false</deprecated>
-    <description>A description of the individual&apos;s (child/youth) Indigenous identity if further information is available.</description>
+    <description>A description of the source of the child/youth’s referral.</description>
     <encryptionScheme>None</encryptionScheme>
     <externalId>false</externalId>
-    <label>Indigenous Description</label>
+    <label>Referral Source Description</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>

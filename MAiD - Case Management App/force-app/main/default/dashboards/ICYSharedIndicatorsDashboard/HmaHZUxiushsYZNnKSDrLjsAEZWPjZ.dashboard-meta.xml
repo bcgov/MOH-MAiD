@@ -501,10 +501,10 @@
                 <chartAxisRange>Auto</chartAxisRange>
                 <chartSummary>
                     <axisBinding>y</axisBinding>
-                    <column>RowCount</column>
+                    <column>FORMULA1</column>
                 </chartSummary>
                 <componentType>Column</componentType>
-                <decimalPrecision>-1</decimalPrecision>
+                <decimalPrecision>0</decimalPrecision>
                 <displayUnits>Auto</displayUnits>
                 <drillEnabled>false</drillEnabled>
                 <drillToDetailEnabled>false</drillToDetailEnabled>
@@ -517,7 +517,7 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header># ICY being seen by 1+ Members</header>
+                <header># CY being seen 1+ Members</header>
                 <legendPosition>Bottom</legendPosition>
                 <report>ICYSharedIndicatorsReports/Copy_of_ICY_being_seen_1_Members_b51</report>
                 <showPercentage>false</showPercentage>
