@@ -23,6 +23,7 @@ export default class IcyContactsComponent extends NavigationMixin(LightningEleme
     referredBy;
     createEdit = false;
     createNewContact = false;
+    editReferredBy= false;
     connectedCallback() {
         this.init();
     }
@@ -86,6 +87,12 @@ export default class IcyContactsComponent extends NavigationMixin(LightningEleme
         this.createNewContact = true;
     }
 
+    editReferralReferredBy(event) {
+        this.viewMode = false;
+        this.selectedConId = event.target.dataset.id;
+        this.editReferredBy = true;
+    }
+
     /**
      * delete case_document__c
      * @param {*} event 
@@ -103,6 +110,7 @@ export default class IcyContactsComponent extends NavigationMixin(LightningEleme
         this.createEdit = false;
         this.documentId = null;
         this.createNewContact = false;
+        this.editReferredBy= false;
         this.selectedConId = null;
         this.init();
     }
