@@ -1,4 +1,4 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api , track} from 'lwc';
 import upsertNote from '@salesforce/apex/ICY_Notes_Documents_Controller.upsertNote';
 import getNote from '@salesforce/apex/ICY_Notes_Documents_Controller.getNote';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
@@ -14,6 +14,8 @@ export default class icyCreateEditNotes extends LightningElement {
     @api recordId;
     @api objectApiName;
     @api adminNotes = false;
+    @api disableNotes ;
+   
 
     showSpinner = false;
     subjectOptions = [];
@@ -84,6 +86,10 @@ export default class icyCreateEditNotes extends LightningElement {
             {label: 'Outreach', value: 'Outreach'},
             {label: 'Video Conferencing', value: 'Video Conferencing'}
         ]
+    }
+
+    get isNoteEditDisabled(){
+       return this.disableNotes;
     }
     /**
      * Connected Call Back
@@ -226,7 +232,7 @@ export default class icyCreateEditNotes extends LightningElement {
             }
         });
 
-        if(isValid){
+        if ((isValid) || (this.disableNotes)){
             this.handleSave();
         }else{
             const evt = new ShowToastEvent({

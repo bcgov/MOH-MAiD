@@ -34,7 +34,7 @@
                                 <div class="slds-col">
                                     <span>
                                         <div class="slds-p-around_small">
-                                            <lightning-radio-group name="Type__c" label="Document Type"
+                                            <lightning-radio-group name="Document_Type__c" label="Document Type"
                                                 value={documentType} type="button" class="validate" required="true"
                                                 options={documentTypeOptions} onchange={handleChange} tabindex="0">
                                             </lightning-radio-group>
@@ -52,7 +52,7 @@
                                     <span>
                                         <div class="slds-p-around_small">
                                             <lightning-input type="text" label="Document Name" value={document.Name}
-                                                name="Name" class="validate" required="true" onchange={handleChange}>
+                                                name="Name" disabled={isDocEditDisabled} class="validate" required="true" onchange={handleChange}>
                                             </lightning-input>
                                         </div>
                                     </span>
@@ -66,7 +66,7 @@
                                                 <lightning-radio-group name="Category__c" label="Document Category"
                                                     value={document.Category__c} type="button" class="validate"
                                                     required="true" options={categoryValues.data.values}
-                                                    onchange={handleChange} tabindex="0">
+                                                    onchange={handleChange} disabled={isDocEditDisabled} tabindex="0">
                                                 </lightning-radio-group>
                                             </template>
                                         </div>
@@ -80,7 +80,7 @@
                                             <div class="slds-p-around_small">
                                                 <lightning-input type="text" label="Other Document Type"
                                                     value={document.Other_Document_Type__c}
-                                                    name="Other_Document_Type__c" class="validate" required="true"
+                                                    name="Other_Document_Type__c" disabled={isDocEditDisabled} class="validate" required="true"
                                                     onchange={handleChange}>
                                                 </lightning-input>
                                             </div>
@@ -93,7 +93,7 @@
                                     <span>
                                         <div class="slds-p-around_small">
                                             <lightning-textarea name="Description__c" label="Description"
-                                                value={document.Description__c} class="validate" onchange={handleChange}
+                                                value={document.Description__c} disabled={isDocEditDisabled} class="validate" onchange={handleChange}
                                                 tabindex="0"></lightning-textarea>
                                         </div>
                                     </span>
