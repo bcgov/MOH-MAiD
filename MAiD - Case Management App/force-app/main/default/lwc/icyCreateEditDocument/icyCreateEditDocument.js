@@ -80,7 +80,6 @@ export default class IcyCreateEditDocument extends LightningElement {
                 console.log('$$ Result: ', result);
                 if(result){
                     this.document = result;
-                    //this.documentType = result.RecordType.DeveloperName;
                     this.documentType = result.Document_Type__c;
                     if(result.Sub_Category__c){
                         this.note.Category__c = 'Other';

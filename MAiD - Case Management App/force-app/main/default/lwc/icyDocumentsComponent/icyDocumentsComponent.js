@@ -103,7 +103,6 @@ export default class icyDocumentsComponent extends NavigationMixin(LightningElem
      */
     editDocument(event) {
         this.documentId = event.target.dataset.id;
-        //this.createEdit = true;
         this.editDocs = true;
     }
 

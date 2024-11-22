@@ -15,7 +15,6 @@ export default class icyCreateEditNotes extends LightningElement {
     @api objectApiName;
     @api adminNotes = false;
     @api disableNotes ;
-   
 
     showSpinner = false;
     subjectOptions = [];
