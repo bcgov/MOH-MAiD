@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomMetadata xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <label>ICY Qualicum Team PL</label>
+    <label>ICY Nicola-Similkameen Team Non Clinical</label>
     <protected>false</protected>
     <values>
         <field>Assurance_Level__c</field>
@@ -8,7 +8,7 @@
     </values>
     <values>
         <field>External_Provider_Role__c</field>
-        <value xsi:type="xsd:string">[ICY-Qualicum-Team-Program-Leader]</value>
+        <value xsi:type="xsd:string">[ICY-Nicola-Similkameen-Team-1-Non-Clinical-Member]</value>
     </values>
     <values>
         <field>Identity_Provider__c</field>
@@ -28,10 +28,10 @@
     </values>
     <values>
         <field>Salesforce_User_Role__c</field>
-        <value xsi:type="xsd:string">Qualicum Team Program Leader</value>
+        <value xsi:type="xsd:string">Nicola-Similkameen Team Non Clinical Member</value>
     </values>
     <values>
         <field>Sequence__c</field>
-        <value xsi:type="xsd:double">6180.0</value>
+        <value xsi:type="xsd:double">6920.0</value>
     </values>
 </CustomMetadata>
