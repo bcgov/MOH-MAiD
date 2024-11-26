@@ -5,7 +5,7 @@
   @last modified on  : 04-27-2022
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
-<template>
+<template> 
     <div onkeydown={handleKeyDown} class="slds-backdrop slds-backdrop_open">
         <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open  slds-modal_medium"
             aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
@@ -41,7 +41,7 @@
                                             <div class="slds-p-around_small">
                                                 <lightning-radio-group name="Notes_Type__c" label="Notes Type"
                                                     value={noteType} type="button" class="validate" required="true"
-                                                    options={noteTypeOptions} onchange={handleChange} tabindex="0"
+                                                    options={noteTypeOptions} onchange={handleChange} tabindex="0" 
                                                     disabled={noteTypeDisabled}>
                                                 </lightning-radio-group>
                                             </div>
@@ -59,7 +59,7 @@
                                             <div class="slds-p-around_small">
                                                 <lightning-combobox name="Referral_Subject__c" label="Subject"
                                                     value={note.Referral_Subject__c} options={subjectOptions}
-                                                    required="true" class="validate" onchange={handleChange}
+                                                    required="true" disabled={isNoteEditDisabled} class="validate" onchange={handleChange}
                                                     tabindex="0">
                                                 </lightning-combobox>
                                             </div>
@@ -73,7 +73,7 @@
                                                 <div class="slds-p-around_small">
                                                     <lightning-input type="text" label="Other Subject"
                                                         value={note.Other__c} name="Other__c" class="validate"
-                                                        required="true" onchange={handleChange} max-length="32700">
+                                                        required="true" disabled={isNoteEditDisabled} onchange={handleChange} max-length="32700">
                                                     </lightning-input>
                                                 </div>
                                             </span>
@@ -87,7 +87,7 @@
                                                 <div class="slds-p-around_small">
                                                     <lightning-combobox name="Team_Member__c" label="Team Member"
                                                         value={note.Team_Member__c} options={teamMemberOptions}
-                                                        required="true" class="validate" onchange={handleChange}
+                                                        required="true" disabled={isNoteEditDisabled} class="validate" onchange={handleChange}
                                                         tabindex="0">
                                                     </lightning-combobox>
                                                 </div>
@@ -102,7 +102,7 @@
                                                         <lightning-input type="text" label="Other Team Member"
                                                             value={note.Other_Team_Member__c}
                                                             name="Other_Team_Member__c" class="validate" required="true"
-                                                            onchange={handleChange} max-length="32700">
+                                                            onchange={handleChange} disabled={isNoteEditDisabled} max-length="32700">
                                                         </lightning-input>
                                                     </div>
                                                 </span>
@@ -115,7 +115,7 @@
                                                 <div class="slds-p-around_small">
                                                     <lightning-combobox name="Mode_Location__c" label="Mode Location"
                                                         value={note.Mode_Location__c} options={modeLocationOptions}
-                                                        required="true" class="validate" onchange={handleChange}
+                                                        required="true" disabled={isNoteEditDisabled} class="validate" onchange={handleChange}
                                                         tabindex="0">
                                                     </lightning-combobox>
                                                 </div>
@@ -129,7 +129,7 @@
                                     <span>
                                         <div class="slds-p-around_small">
                                             <lightning-textarea name="Description__c" label="Description"
-                                                value={note.Description__c} class="validate" onchange={handleChange}
+                                                value={note.Description__c} disabled={isNoteEditDisabled} class="validate" onchange={handleChange}
                                                 tabindex="0"></lightning-textarea>
                                         </div>
                                     </span>
@@ -154,7 +154,7 @@
                                   <span>
                                       <div class="slds-p-around_small">
                                           <lightning-input name="Attendees__c" label="Attendees"
-                                              value={note.Attendees__c} class="validate" onchange={handleChange}
+                                              value={note.Attendees__c} disabled={isNoteEditDisabled} class="validate" onchange={handleChange}
                                               tabindex="0"></lightning-input>
                                       </div>
                                   </span>
@@ -165,7 +165,7 @@
                                 <span>
                                     <div class="slds-p-around_small">
                                         <lightning-input name="Length_of_Meeting__c" label="Length of Meeting (in minutes)"
-                                            value={note.Length_of_Meeting__c} class="validate" onchange={handleChange}
+                                            value={note.Length_of_Meeting__c} disabled={isNoteEditDisabled}  class="validate" onchange={handleChange}
                                             tabindex="0"></lightning-input>
                                     </div>
                                 </span>
