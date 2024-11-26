@@ -6,7 +6,7 @@
     <externalId>false</externalId>
     <fieldManageability>SubscriberControlled</fieldManageability>
     <label>Salesforce User Role</label>
-    <length>40</length>
+    <length>80</length>
     <required>true</required>
     <type>Text</type>
     <unique>false</unique>
