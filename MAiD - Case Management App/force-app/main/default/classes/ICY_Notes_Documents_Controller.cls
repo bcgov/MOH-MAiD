@@ -24,11 +24,11 @@ public with sharing class ICY_Notes_Documents_Controller {
 
         if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType)
             caseNotes = [SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, 
-                            Description__c, Referral_Subject__c, CreatedDate, CreatedBy.Name,CreatedById, LastModifiedDate, LastModifiedBy.Name,
+                            Description__c,ICY_Meeting_Date__c, Referral_Subject__c, CreatedDate, CreatedBy.Name,CreatedById, LastModifiedDate, LastModifiedBy.Name,
                             Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c
                             FROM ICY_Notes__c WHERE Referral__c = :parentRecordId ORDER BY CreatedDate desc];
         else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType){
-            String caseNotesQuery = 'SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Description__c, Referral_Subject__c,Mode_Location__c,Team_Member__c, CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name, Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Case__c =:parentRecordId';
+            String caseNotesQuery = 'SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Description__c,ICY_Meeting_Date__c, Referral_Subject__c,Mode_Location__c,Team_Member__c, CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name, Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Case__c =:parentRecordId';
             if(adminNotes){
                 caseNotesQuery += ' AND Notes_Type__c = :ADMIN_NOTES_TYPE';
             }else{
@@ -47,7 +47,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         }
         else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType)
             caseNotes = [SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, 
-            Description__c, Referral_Subject__c, CreatedDate, CreatedBy.Name,CreatedById, LastModifiedDate, LastModifiedBy.Name,
+            Description__c,ICY_Meeting_Date__c, Referral_Subject__c, CreatedDate, CreatedBy.Name,CreatedById, LastModifiedDate, LastModifiedBy.Name,
             Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Intake__c = :parentRecordId ORDER BY CreatedDate desc];
 
         for(ICY_Notes__c n: caseNotes){
@@ -67,6 +67,7 @@ public with sharing class ICY_Notes_Documents_Controller {
                     n.Notes_Type__c,
                     n.Referral_Subject__c == 'Other' ? n.Other__c: n.Referral_Subject__c,
                     n.Description__c,
+                    n.ICY_Meeting_Date__c,
                     n.Attendees__c,
                     n.Length_of_Meeting__c,
                     modifiedDate,
@@ -299,7 +300,7 @@ public with sharing class ICY_Notes_Documents_Controller {
      */
     @AuraEnabled
     public static ICY_Notes__c getNote(String recordId){
-        return [SELECT ID, Name, Description__c, Referral_Subject__c,Other__c,Notes_Type__c,Mode_Location__c,Team_Member__c,Other_Team_Member__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Id=:recordId];
+        return [SELECT ID, Name, Description__c,ICY_Meeting_Date__c, Referral_Subject__c,Other__c,Notes_Type__c,Mode_Location__c,Team_Member__c,Other_Team_Member__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Id=:recordId];
     }
 
     /**
@@ -489,6 +490,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public String notesType{get;set;}
         @AuraEnabled public String subject{get;set;}
         @AuraEnabled public String description{get;set;}
+        @AuraEnabled public Date meetingDate{get;set;}
         @AuraEnabled public String attendees{get;set;}
         @AuraEnabled public Decimal lengthOfMeeting{get;set;}
         @AuraEnabled public String createdOn{get;set;}
@@ -503,13 +505,14 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public Boolean canEdit{get;set;}
         
         public Note(String recordId, String name, String notesType, String subject,
-                        String description, String attendees, Decimal lengthOfMeeting, String lastModifiedOn, String lastModifiedBy,
+                        String description, Date meetingDate,String attendees, Decimal lengthOfMeeting, String lastModifiedOn, String lastModifiedBy,
                         String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEdit){
             this.recordId = recordId;
             this.name = name;
             this.notesType = notesType;
             this.subject = subject;
             this.description = description;
+            this.meetingDate= meetingDate;
             this.attendees = attendees;
             this.lengthOfMeeting = lengthOfMeeting;
             this.lastModifiedOn = lastModifiedOn;

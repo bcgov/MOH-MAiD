@@ -28,7 +28,8 @@ export default class icyCreateEditNotes extends LightningElement {
         Other_Team_Member__c:'',
         Mode_Location__c:'',
         Attendees__c:'',
-        Length_of_Meeting__c:''
+        Length_of_Meeting__c:'',
+        ICY_Meeting_Date__c:''
     };
     isCase = false;
     noteType;
@@ -89,6 +90,11 @@ export default class icyCreateEditNotes extends LightningElement {
 
     get isNoteEditDisabled(){
        return this.disableNotes;
+    }
+
+    get today() {
+        var d = new Date();
+        return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate();
     }
     /**
      * Connected Call Back
@@ -161,6 +167,9 @@ export default class icyCreateEditNotes extends LightningElement {
                 case 'Description__c':
                     this.note.Description__c = event.target.value;
                     break;
+                case 'ICY_Meeting_Date__c':
+                    this.note.ICY_Meeting_Date__c = event.target.value;
+                    break;
                 case 'Other__c':
                     this.note.Other__c = event.target.value;
                     break;
@@ -202,7 +211,6 @@ export default class icyCreateEditNotes extends LightningElement {
         this.showSpinner = true;
         if(this.adminNotes) this.noteType = 'Administrative Notes'
         else if(!this.noteType) this.noteType = 'Collaborative';
-
         upsertNote({note: this.note, recordId: this.parentRecordId, noteId: this.recordIds,noteType: this.noteType}).then(result =>{
             if(result)
             this.dispatchEvent(

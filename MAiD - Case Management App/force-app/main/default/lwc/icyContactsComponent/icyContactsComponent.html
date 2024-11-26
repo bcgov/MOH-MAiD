@@ -32,6 +32,12 @@
             contact-rec-id={selectedConId} view-mode={viewMode}>
         </c-yts-add-contact>
     </template>
+    <template if:true={editReferredBy}>
+        <c-yts-add-contact onclosemodal={updateContacts} onclose={closeModal}
+             object-api-name={objectApiName} 
+            contact-rec-id={selectedConId} view-mode={viewMode}>
+        </c-yts-add-contact>
+    </template>
     <template if:true={deleteConfirm}>
         <c-yts-confirmation-modal modal-header-text="Delete Contact"
             modal-confirmation-text="Are you sure you want to delete this Contact?" cancel-btn-lbl="No"
@@ -51,7 +57,7 @@
                     onclick={preview} slot="actions" data-id={referredBy.recordId} class="slds-p-right_x-small">
                 </lightning-button-icon>
                 <lightning-button-icon if:true={referredBy.hasEditAccess} icon-name="utility:edit" alternative-text="Edit"
-                        onclick={editContact} slot="actions" data-id={referredBy.recordId}></lightning-button-icon>
+                        onclick={editReferralReferredBy} slot="actions" data-id={referredBy.recordId}></lightning-button-icon>
                 <div class="slds-p-horizontal_small">
                     <div class="slds-gutters slds-grid">
                         <div class="slds-col slds-size_2-of-6">
