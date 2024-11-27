@@ -24,6 +24,7 @@ export default class icyDocumentsComponent extends NavigationMixin(LightningElem
     documents;
     createEdit = false;
     title = 'Document Details';
+    editDocs  = false;
 
     connectedCallback() {
         this.init();
@@ -102,7 +103,7 @@ export default class icyDocumentsComponent extends NavigationMixin(LightningElem
      */
     editDocument(event) {
         this.documentId = event.target.dataset.id;
-        this.createEdit = true;
+        this.editDocs = true;
     }
 
     /**
@@ -123,6 +124,7 @@ export default class icyDocumentsComponent extends NavigationMixin(LightningElem
 
     closeModal() {
         this.createEdit = false;
+        this.editDocs = false;
         this.documentId = null;
         this.init();
     }
