@@ -27,6 +27,7 @@ export default class IcyCreateEditDocument extends LightningElement {
     @api parentRecordId;
     @api recordId;
     @api objectApiName;
+    @api disableDocs;
     disableSaveButton = false;
     disableUploadButton = false;
     documentType
@@ -37,6 +38,7 @@ export default class IcyCreateEditDocument extends LightningElement {
     isFileUploaded = false;
     missingFile = false;
     contentDocumentId;
+
 
     @track document={
         Name: '',
@@ -63,7 +65,9 @@ export default class IcyCreateEditDocument extends LightningElement {
         return this.recordId?'Edit Document':'Add New Document';
     }
 
-
+    get isDocEditDisabled(){
+        return this.disableDocs;
+     }
     /**
      * Connected Call Back
      */
@@ -76,7 +80,7 @@ export default class IcyCreateEditDocument extends LightningElement {
                 console.log('$$ Result: ', result);
                 if(result){
                     this.document = result;
-                    this.documentType = result.RecordType.DeveloperName;
+                    this.documentType = result.Document_Type__c;
                     if(result.Sub_Category__c){
                         this.note.Category__c = 'Other';
                         this.showOtherSubject = true;
@@ -103,7 +107,7 @@ export default class IcyCreateEditDocument extends LightningElement {
     handleChange(event){
         if(event.target.name){
             switch(event.target.name){
-                case 'Type__c':
+                case 'Document_Type__c':
                     this.documentType = event.target.value;
                     // if(event.target.value == 'Restricted')
                     //     this.typeDesc = RESTRICTED_DESC;
@@ -213,8 +217,7 @@ export default class IcyCreateEditDocument extends LightningElement {
             this.missingFile = true;
             isValid = false;
         }
-
-        if(isValid){
+        if ((isValid) || (this.disableDocs)){
             this.handleSave();
         }
         else{

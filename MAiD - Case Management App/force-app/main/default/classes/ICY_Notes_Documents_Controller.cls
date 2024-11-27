@@ -24,7 +24,7 @@ public with sharing class ICY_Notes_Documents_Controller {
 
         if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType)
             caseNotes = [SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, 
-                            Description__c,ICY_Meeting_Date__c, Referral_Subject__c, CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name,
+                            Description__c,ICY_Meeting_Date__c, Referral_Subject__c, CreatedDate, CreatedBy.Name,CreatedById, LastModifiedDate, LastModifiedBy.Name,
                             Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c
                             FROM ICY_Notes__c WHERE Referral__c = :parentRecordId ORDER BY CreatedDate desc];
         else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType){
@@ -47,7 +47,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         }
         else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType)
             caseNotes = [SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, 
-            Description__c,ICY_Meeting_Date__c, Referral_Subject__c, CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name,
+            Description__c,ICY_Meeting_Date__c, Referral_Subject__c, CreatedDate, CreatedBy.Name,CreatedById, LastModifiedDate, LastModifiedBy.Name,
             Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Intake__c = :parentRecordId ORDER BY CreatedDate desc];
 
         for(ICY_Notes__c n: caseNotes){
@@ -57,6 +57,8 @@ public with sharing class ICY_Notes_Documents_Controller {
             String badgeCSS = n.Notes_Type__c == 'Restricted'?'slds-theme_warning':'slds-theme_success';
             String teamMember = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Team_Member__c:'';
             String modeLocation = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Mode_Location__c:'';
+           // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
+            Boolean canEdit = (((n.CreatedById == UserInfo.getUserId()) ||(YTS_Utility.lookupRole('Program Leader'))) && (n.Notes_Type__c=='Collaborative'))? true : false;
             
             result.add(
                 new Note(
@@ -76,7 +78,8 @@ public with sharing class ICY_Notes_Documents_Controller {
                     teamMember,
                     modeLocation,
                     Schema.sObjectType.ICY_Notes__c.isUpdateable(),
-                    Schema.sObjectType.ICY_Notes__c.isDeletable()
+                    Schema.sObjectType.ICY_Notes__c.isDeletable(),
+                    canEdit
                 )
             );
         }
@@ -97,18 +100,18 @@ public with sharing class ICY_Notes_Documents_Controller {
         
         if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType) {
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
-                                                    LastModifiedDate, LastModifiedBy.Name, Document_Type__c,Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
+                                                    LastModifiedDate, LastModifiedBy.Name, CreatedById,Document_Type__c,Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
                                                     FROM ICY_Document__c Where Referral__c = :parentRecordId  ORDER BY CreatedDate desc]);
             String parentStatus = [select Id, Status__c from Referral__c where id=:parentRecordId].Status__c;
             retData.isParentCompleted = parentStatus != 'Referral';
         }
         else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType)
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
-                                                    LastModifiedDate, LastModifiedBy.Name, Document_Type__c, Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS) 
+                                                    LastModifiedDate, LastModifiedBy.Name, CreatedById,Document_Type__c, Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS) 
                                                     FROM ICY_Document__c Where Case__c = :parentRecordId ORDER BY CreatedDate desc]);
         else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType) {
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
-                                                    LastModifiedDate, LastModifiedBy.Name, Document_Type__c, Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
+                                                    LastModifiedDate, LastModifiedBy.Name,CreatedById,Document_Type__c, Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
                                                     FROM ICY_Document__c Where Intake__c = :parentRecordId ORDER BY CreatedDate desc]);
             String parentStatus = [select Id, Status__c from Intake__c where id=:parentRecordId].Status__c;
             retData.isParentCompleted = parentStatus == 'Complete' || parentStatus == 'Closed';
@@ -133,6 +136,9 @@ public with sharing class ICY_Notes_Documents_Controller {
                 String createdDate = YTS_Utility.dateFormat_eeeeMMMdyyyy(d.CreatedDate);
                 String badgeCSS = d.Document_Type__c == 'Restricted'?'slds-theme_warning':'slds-theme_success';
                 String category = d.Category__c == 'Other'?d.Other_Document_Type__c:d.Category__c;
+                 // To be able to Edit a Document either you are the creator of the doc  or the PL and the Document  type shouldn't be = Restricted
+                Boolean canEditDoc = (((d.CreatedById == UserInfo.getUserId()) ||(YTS_Utility.lookupRole('Program Leader'))) && (d.Document_Type__c=='Collaborative'))? true : false;
+
                 String docId ;
                 List<AllAttachments> attchList = new List<AllAttachments>();
                 if(cdlMap.containsKey(d.Id)){
@@ -166,6 +172,7 @@ public with sharing class ICY_Notes_Documents_Controller {
                         createdDate,
                         d.createdBy.name,
                         badgeCSS,
+                        canEditDoc,
                         Schema.sObjectType.ICY_Document__c.isUpdateable(),
                         Schema.sObjectType.ICY_Document__c.isDeletable(),
                         isAttach,
@@ -495,10 +502,11 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public String modeLocation{get;set;}
         @AuraEnabled public Boolean hasEditAccess{get;set;}
         @AuraEnabled public Boolean hasDeleteAccess{get;set;}
+        @AuraEnabled public Boolean canEdit{get;set;}
         
         public Note(String recordId, String name, String notesType, String subject,
                         String description, Date meetingDate,String attendees, Decimal lengthOfMeeting, String lastModifiedOn, String lastModifiedBy,
-                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,Boolean hasEditAccess, Boolean hasDeleteAccess){
+                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEdit){
             this.recordId = recordId;
             this.name = name;
             this.notesType = notesType;
@@ -516,6 +524,7 @@ public with sharing class ICY_Notes_Documents_Controller {
             this.modeLocation = modeLocation;
             this.hasDeleteAccess = hasDeleteAccess;
             this.hasEditAccess = hasEditAccess;
+            this.canEdit = canEdit;
         }
     }
 
@@ -542,6 +551,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public String lastModifiedOn{get;set;}
         @AuraEnabled public String lastModifiedBy{get;set;}
         @AuraEnabled public String badgeCSS{get;set;}
+        @AuraEnabled public Boolean canEditDoc{get;set;}
         @AuraEnabled public Boolean hasEditAccess{get;set;}
         @AuraEnabled public Boolean hasDeleteAccess{get;set;}
         @AuraEnabled public Boolean isAttachment{get;set;}
@@ -549,7 +559,7 @@ public with sharing class ICY_Notes_Documents_Controller {
 
         public Document(String recordId, String name, String documentType, String category, 
                             String subCategory, String description, String documentId, String lastModifiedOn, 
-                            String lastModifiedBy, String createdOn, String createdBy, String badgeCSS, 
+                            String lastModifiedBy, String createdOn, String createdBy, String badgeCSS,Boolean canEditDoc,
                             Boolean hasEditAccess, Boolean hasDeleteAccess, Boolean isAttachment, List<AllAttachments> attachmentsList){
             this.recordId = recordId;
             this.name = name;
@@ -563,6 +573,7 @@ public with sharing class ICY_Notes_Documents_Controller {
             this.createdBy = createdBy;
             this.documentType = documentType;
             this.badgeCSS = badgeCSS;
+            this.canEditDoc = canEditDoc;
             this.hasDeleteAccess = hasDeleteAccess;
             this.hasEditAccess = hasEditAccess;
             this.isAttachment = isAttachment;
