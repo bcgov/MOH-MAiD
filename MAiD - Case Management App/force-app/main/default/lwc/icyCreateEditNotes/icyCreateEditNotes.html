@@ -141,7 +141,7 @@
                                         <span>
                                             <div class="slds-p-around_small">
                                                 <lightning-input type="date" name="ICY_Meeting_Date__c"
-                                                    label="Meeting Date" value={note.ICY_Meeting_Date__c}
+                                                    label="Meeting Date" value={note.ICY_Meeting_Date__c} disabled={isNoteEditDisabled}
                                                     max={today} message-when-range-overflow="Date of Meeting cannot be a future date"
                                                     onchange={handleChange} class="validate"></lightning-input>
                                             </div>
