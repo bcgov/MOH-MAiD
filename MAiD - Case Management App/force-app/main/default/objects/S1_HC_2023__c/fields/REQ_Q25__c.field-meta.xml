@@ -5,7 +5,7 @@
     <formula>CASE( Form_1634__r.If_Prior_Request_outcome__c ,
 &quot;Assessed and found ineligible&quot;,1,
 &quot;Assessed and found eligible but person withdrew request&quot;,2,
-&quot;Assessed and found eligible but considerable time elaspsed since the assessment&quot;,3,
+&quot;Assessed and found eligible but considerable time elapsed since the assessment&quot;,3,
 &quot;Request not actioned&quot;, 4,
 &quot;Other-specify:&quot;,5,0)</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
