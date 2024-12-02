@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <label>Rationale</label>
     <length>32768</length>
-    <trackHistory>false</trackHistory>
+    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
     <visibleLines>3</visibleLines>

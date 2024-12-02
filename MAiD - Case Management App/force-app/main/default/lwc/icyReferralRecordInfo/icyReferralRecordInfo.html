@@ -77,6 +77,11 @@
                             </lightning-output-field>
                             <!--Josh ends-->
                         </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <label class="slds-form-element__label" for="form-element-01">Current School</label>
+                            <lightning-output-field variant="label-hidden" field-name="Current_School__c">
+                            </lightning-output-field>
+                        </div>
                     </div>
                 </div>
             </lightning-accordion-section>
@@ -169,15 +174,18 @@
                 </div>
             </lightning-accordion-section>
             <lightning-accordion-section name="D" label="Individual Contact Information">
-                <div class="slds-grid">
-                    <div class="slds-col slds-p-around_xx-small">
+                <div class="slds-grid slds-gutters">
+                    <div class="slds-col slds-p-around_xx-small slds-size_1-of-6">
                         <div class="slds-form-element slds-p-around_xx-small">
                             <lightning-output-field variant="standard" field-name="ICY_Preferred_Language__c">
                             </lightning-output-field>
                         </div>
                         <div class="slds-form-element slds-p-around_xx-small">
-                            <lightning-output-field variant="standard" field-name="Individual_Home_Phone_Number__c">
-                            </lightning-output-field>
+                            <br />
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                               <lightning-output-field variant="standard" field-name="Individual_Home_Phone_Number__c">
+                                </lightning-output-field>
                         </div>
                         <div class="slds-form-element slds-p-around_xx-small">
                             <lightning-output-field variant="standard" field-name="Individual_Cell_Phone_Number__c">
@@ -188,11 +196,14 @@
                             </lightning-output-field>
                         </div>
                     </div>
-                    <div class="slds-col slds-p-around_xx-small">
+                    <div class="slds-col slds-p-around_xx-small slds-size_1-of-6">
                         <div class="slds-form-element slds-p-around_xx-small">
                             <lightning-output-field variant="standard" field-name="ICY_Preferred_Method_of_Contact__c">
                             </lightning-output-field>
                         </div>
+                       <!-- <div class="slds-form-element slds-p-around_xx-small">
+                            <br /> 
+                        </div>-->
                         <div class="slds-form-element slds-p-around_xx-small">
                             <lightning-output-field variant="standard"
                                 field-name="ICY_Can_We_Leave_a_Message_On_Home_Phone__c">
@@ -209,6 +220,84 @@
                             </lightning-output-field>
                         </div>
 
+                    </div>
+                    <!-- Show new fields-->
+                    <div class="slds-col slds-size_1-of-4">
+                           <div class="slds-form-element slds-p-around_xx-small">
+                            <br /> 
+                            <br /> 
+                            <br /> 
+                            <br />     
+                            </div>
+                            <div class="slds-form-element slds-p-around_xx-small">
+                                <lightning-output-field variant="standard" field-name="Preferred_Contact_s_Name_Home__c">
+                                </lightning-output-field>
+                            </div>
+                            <div class="slds-form-element slds-p-around_xx-small">
+                                <br /> 
+                            </div>
+                            <div class="slds-form-element slds-p-around_xx-small">
+                                <lightning-output-field variant="standard"
+                                    field-name="Preferred_Contact_s_Name_Cell__c">
+                                </lightning-output-field>
+                            </div>
+                            <div class="slds-form-element slds-p-around_xx-small">
+                                <lightning-output-field variant="standard"
+                                    field-name="Preferred_Contact_s_Name_Other__c">
+                                </lightning-output-field>
+                            </div>
+
+                        
+                    </div>
+                    <!-- END Show new fields-->
+                    <div class="slds-col slds-size_1-of-6">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <br /> 
+                            <br /> 
+                            <br /> 
+                            <br />     
+                            </div>
+                         <div class="slds-form-element slds-p-around_xx-small">
+                             <lightning-output-field variant="standard" field-name="Relationship_to_Individual_Home__c">
+                             </lightning-output-field>
+                         </div>
+                         <div class="slds-form-element slds-p-around_xx-small">
+                            <br /> 
+                        </div>
+                         <div class="slds-form-element slds-p-around_xx-small">
+                             <lightning-output-field variant="standard"
+                                 field-name="Relationship_to_Individual_Cell__c">
+                             </lightning-output-field>
+                         </div>
+                         <div class="slds-form-element slds-p-around_xx-small">
+                             <lightning-output-field variant="standard"
+                                 field-name="Relationship_to_Individual_Other__c">
+                             </lightning-output-field>
+                         </div>                    
+                    </div>
+                    <div class="slds-col slds-size_1-of-4">
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <br /> 
+                            <br /> 
+                            <br /> 
+                            <br />     
+                        </div>
+                     <div class="slds-form-element slds-p-around_xx-small">
+                         <lightning-output-field variant="standard" field-name="Other_Relationship_Home__c">
+                         </lightning-output-field>
+                     </div>
+                     <div class="slds-form-element slds-p-around_xx-small">
+                        <br /> 
+                    </div>
+                     <div class="slds-form-element slds-p-around_xx-small">
+                         <lightning-output-field variant="standard"
+                             field-name="Other_Relationship_Cell__c">
+                         </lightning-output-field>
+                     </div>
+                     <div class="slds-form-element slds-p-around_xx-small">
+                         <lightning-output-field variant="standard" field-name="Other_Relationship_Other__c">
+                         </lightning-output-field>
+                     </div>
                     </div>
                 </div>
             </lightning-accordion-section>
@@ -249,6 +338,10 @@
                                     </lightning-output-field>
                                 </div>
                                 <div class="slds-form-element slds-p-around_xx-small">
+                                    <lightning-output-field variant="standard" field-name="Reason_for_Referral_if_Other__c">
+                                    </lightning-output-field>
+                                </div>
+                                <div class="slds-form-element slds-p-around_xx-small">
                                     <lightning-output-field variant="standard" field-name="ICY_Medication__c">
                                     </lightning-output-field>
                                 </div>
@@ -278,6 +371,10 @@
                             <lightning-output-field variant="standard" field-name="CreatedDate">
                             </lightning-output-field>
                         </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Reopened_Date__c">
+                            </lightning-output-field>
+                        </div>
                     </div>
                     <div class="slds-col slds-p-around_xx-small">
                         <div class="slds-form-element slds-p-around_xx-small">
@@ -287,6 +384,10 @@
                         <div class="slds-form-element slds-p-around_xx-small">
                             <lightning-output-field variant="standard" field-name="LastModifiedDate">
                             </lightning-output-field>
+                        </div>
+                        <div class="slds-form-element slds-p-around_xx-small">
+                            <lightning-output-field variant="standard" field-name="ICY_Closed_Date__c">
+                        </lightning-output-field>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICY_All_Admin_PL_Closed_Referrals</fullName>
+    <columns>NAME</columns>
+    <columns>Individual_First_Name__c</columns>
+    <columns>Individual_Last_Name__c</columns>
+    <columns>Individual_Date_of_Birth__c</columns>
+    <columns>ICY_Date_of_Referral__c</columns>
+    <columns>ICY_Assigned_To__c</columns>
+    <columns>Status__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Closed</value>
+    </filters>
+    <label>ICY All Closed Referrals</label>
+    <sharedTo>
+        <group>All_ICY_Admins</group>
+        <group>ICY_Program_Leaders</group>
+    </sharedTo>
+</ListView>

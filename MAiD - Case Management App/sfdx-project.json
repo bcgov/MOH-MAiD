@@ -4,8 +4,8 @@
             "path": "force-app",
             "default": true,
             "package": "MAiD - Case Management App",
-            "versionName": "Version 2.2.4",
-            "versionNumber": "2.2.4.NEXT"
+            "versionName": "Version 2.2.5",
+            "versionNumber": "2.2.5.NEXT"
         }
     ],
     "namespace": "",
@@ -32,6 +32,7 @@
         "MAiD - Case Management App@2.1.9-2":"04tMm000000A585IAC",
         "MAiD - Case Management App@2.2.3-1":"04tMm000000LhYDIA0",
         "MAiD - Case Management App@2.2.4-1":"04tMm000000NcnlIAC",
+        "MAiD - Case Management App@2.2.5-2":"04tMm000000SiNtIAK"
       
     }
   }

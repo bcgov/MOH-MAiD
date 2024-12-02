@@ -214,6 +214,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Case.Case_Team_Size__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Case.Cell_Phone__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -655,6 +660,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case_Member__c.Referral__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case_Member__c.Report_User_Role__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1129,6 +1139,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Intake__c.ICY_Reopened_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Intake__c.ICY_Verbal_Consent__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1374,6 +1389,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Referral__c.ICY_Closed_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Referral__c.ICY_Current_Supports__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1504,6 +1524,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Referral__c.ICY_Reopened_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Referral__c.ICY_Show_Banner__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1598,6 +1623,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Referral__c.Is_Related_Intake_Closed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Referral__c.Is_Team_member__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Is_stable_housing_a_concern__c</field>
         <readable>true</readable>
@@ -1674,6 +1709,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Referral__c.Other_Relationship_Cell__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Other_Relationship_Home__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Other_Relationship_Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Referral__c.Physical_Address_City__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1699,6 +1749,21 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Referral__c.Preferred_Contact_s_Name_Cell__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Preferred_Contact_s_Name_Home__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Preferred_Contact_s_Name_Other__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Referral__c.Preferred_method_of_contact__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1710,6 +1775,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Primary_Contact_Is_Individual__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Reason_for_Referral_if_Other__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1735,6 +1805,21 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Referring_Organization__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Relationship_to_Individual_Cell__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Relationship_to_Individual_Home__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Relationship_to_Individual_Other__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1775,6 +1860,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Team_Member_Role__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Referral__c.Team_members_Id__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

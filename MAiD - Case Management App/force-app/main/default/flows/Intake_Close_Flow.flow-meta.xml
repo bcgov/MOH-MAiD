@@ -187,6 +187,12 @@
             </value>
         </filters>
         <inputAssignments>
+            <field>Is_Related_Intake_Closed__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
             <field>Status__c</field>
             <value>
                 <stringValue>Closed</stringValue>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_to_Individual_Other__c</fullName>
+    <externalId>false</externalId>
+    <label>Relationship to Individual</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Advocate</fullName>
+                <default>false</default>
+                <label>Advocate</label>
+            </value>
+            <value>
+                <fullName>Child/family support worker</fullName>
+                <default>false</default>
+                <label>Child/family support worker</label>
+            </value>
+            <value>
+                <fullName>Consulting Therapist</fullName>
+                <default>false</default>
+                <label>Consulting Therapist</label>
+            </value>
+            <value>
+                <fullName>Drug and Alcohol Counsellor</fullName>
+                <default>false</default>
+                <label>Drug and Alcohol Counsellor</label>
+            </value>
+            <value>
+                <fullName>Elder</fullName>
+                <default>false</default>
+                <label>Elder</label>
+            </value>
+            <value>
+                <fullName>Family Member</fullName>
+                <default>false</default>
+                <label>Family Member</label>
+            </value>
+            <value>
+                <fullName>Friend</fullName>
+                <default>false</default>
+                <label>Friend</label>
+            </value>
+            <value>
+                <fullName>Multicultural worker</fullName>
+                <default>false</default>
+                <label>Multicultural worker</label>
+            </value>
+            <value>
+                <fullName>Nurse</fullName>
+                <default>false</default>
+                <label>Nurse</label>
+            </value>
+            <value>
+                <fullName>Occupational Therapist</fullName>
+                <default>false</default>
+                <label>Occupational Therapist</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Outreach Worker</fullName>
+                <default>false</default>
+                <label>Outreach Worker</label>
+            </value>
+            <value>
+                <fullName>Parent/Guardian</fullName>
+                <default>false</default>
+                <label>Parent/Guardian</label>
+            </value>
+            <value>
+                <fullName>Pediatrician/Physician</fullName>
+                <default>false</default>
+                <label>Pediatrician/Physician</label>
+            </value>
+            <value>
+                <fullName>Peer Support Worker</fullName>
+                <default>false</default>
+                <label>Peer Support Worker</label>
+            </value>
+            <value>
+                <fullName>Psychiatrist</fullName>
+                <default>false</default>
+                <label>Psychiatrist</label>
+            </value>
+            <value>
+                <fullName>Psychologist</fullName>
+                <default>false</default>
+                <label>Psychologist</label>
+            </value>
+            <value>
+                <fullName>School Administrator</fullName>
+                <default>false</default>
+                <label>School Administrator</label>
+            </value>
+            <value>
+                <fullName>School Counsellor</fullName>
+                <default>false</default>
+                <label>School Counsellor</label>
+            </value>
+            <value>
+                <fullName>Social Worker</fullName>
+                <default>false</default>
+                <label>Social Worker</label>
+            </value>
+            <value>
+                <fullName>Supported Child Development Worker/Consultant</fullName>
+                <default>false</default>
+                <label>Supported Child Development Worker/Consultant</label>
+            </value>
+            <value>
+                <fullName>Therapist</fullName>
+                <default>false</default>
+                <label>Therapist</label>
+            </value>
+            <value>
+                <fullName>Youth Worker</fullName>
+                <default>false</default>
+                <label>Youth Worker</label>
+            </value>
+            <value>
+                <fullName>CLBC (Community Living BC) Worker</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CLBC (Community Living BC) Worker</label>
+            </value>
+            <value>
+                <fullName>Care Giver</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Care Giver</label>
+            </value>
+            <value>
+                <fullName>Family</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Family</label>
+            </value>
+            <value>
+                <fullName>Foster Parent</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Foster Parent</label>
+            </value>
+            <value>
+                <fullName>Guardian</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Guardian</label>
+            </value>
+            <value>
+                <fullName>Support Worker</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Support Worker</label>
+            </value>
+            <value>
+                <fullName>Teacher</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Teacher</label>
+            </value>
+            <value>
+                <fullName>Youth</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Youth</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

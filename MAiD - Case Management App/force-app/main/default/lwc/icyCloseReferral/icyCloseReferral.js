@@ -10,6 +10,7 @@ import ID_FIELD from '@salesforce/schema/Referral__c.Id';
 import REASON_FIELD from '@salesforce/schema/Referral__c.Referral_Close_Reason__c';
 import RATIONALE_FIELD from '@salesforce/schema/Referral__c.ICY_Rationale_For_Closure__c';
 import STATUS_FIELD from '@salesforce/schema/Referral__c.Status__c';
+import CLOSED_DATE_FIELD from '@salesforce/schema/Referral__c.ICY_Closed_Date__c';
 //Custom Labels
 import ICY_ReferralClosedSuccessfully from '@salesforce/label/c.ICY_ReferralClosedSuccessfully';
 import ICY_ReviewTheErrors from '@salesforce/label/c.ICY_ReviewTheErrors';
@@ -86,6 +87,8 @@ export default class IcyCloseReferral extends NavigationMixin(LightningElement) 
 
       fields[REASON_FIELD.fieldApiName] = this.refs.Referral_Close_Reason__c.value;
       fields[RATIONALE_FIELD.fieldApiName] = this.refs.ICY_Rationale_For_Closure__c.value;
+      fields[CLOSED_DATE_FIELD.fieldApiName] = new Date().toISOString().slice(0, 10);
+      
 
       const recordInput = { fields };
 
