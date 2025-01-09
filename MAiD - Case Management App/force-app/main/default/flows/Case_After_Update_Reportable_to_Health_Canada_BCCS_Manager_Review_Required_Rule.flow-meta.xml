@@ -414,7 +414,7 @@
         <isInput>false</isInput>
         <isOutput>false</isOutput>
         <value>
-            <stringValue>Error Log</stringValue>
+            <stringValue>MAiD Error Log</stringValue>
         </value>
     </variables>
     <variables>
