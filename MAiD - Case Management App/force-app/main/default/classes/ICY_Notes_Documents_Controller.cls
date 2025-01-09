@@ -20,6 +20,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         Id parentRecordId = Id.valueOf(recordId);
         List<Note> result = new List<Note>();
         List<ICY_Notes__c> caseNotes = new List<ICY_Notes__c>();
+        Boolean isProgramLeader = false;
         final String ADMIN_NOTES_TYPE = 'Administrative Notes';
 
         if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType)
@@ -50,6 +51,10 @@ public with sharing class ICY_Notes_Documents_Controller {
             Description__c,ICY_Meeting_Date__c, Referral_Subject__c, CreatedDate, CreatedBy.Name,CreatedById, LastModifiedDate, LastModifiedBy.Name,
             Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Intake__c = :parentRecordId ORDER BY CreatedDate desc];
 
+
+        // verify the role for the current running user if he is a Program leader
+        isProgramLeader = YTS_Utility.lookupRole('Program Leader');
+
         for(ICY_Notes__c n: caseNotes){
             String subject = n.Referral_Subject__c == 'Other' ? n.Other__c: n.Referral_Subject__c;
             String modifiedDate = YTS_Utility.dateFormat_eeeeMMMdyyyy(n.LastModifiedDate);
@@ -58,7 +63,7 @@ public with sharing class ICY_Notes_Documents_Controller {
             String teamMember = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Team_Member__c:'';
             String modeLocation = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Mode_Location__c:'';
            // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
-            Boolean canEdit = (((n.CreatedById == UserInfo.getUserId()) ||(YTS_Utility.lookupRole('Program Leader'))) && (n.Notes_Type__c=='Collaborative'))? true : false;
+            Boolean canEdit = (((n.CreatedById == UserInfo.getUserId()) || isProgramLeader ) && (n.Notes_Type__c=='Collaborative'))? true : false;
             
             result.add(
                 new Note(
