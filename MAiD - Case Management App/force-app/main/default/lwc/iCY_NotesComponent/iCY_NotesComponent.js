@@ -20,6 +20,7 @@ export default class iCY_NotesComponent extends LightningElement {
     filtervalue = '';
     //Create Edit Note
     createEdit = false
+    editNotes  = false
     noteId;
     subjectOptions = [];
     isCase = false;
@@ -93,6 +94,7 @@ export default class iCY_NotesComponent extends LightningElement {
      */
     closeModal(){
         this.createEdit = false;
+        this.editNotes = false;
         this.noteId = '';
         this.init();
     }
@@ -117,8 +119,9 @@ export default class iCY_NotesComponent extends LightningElement {
     editNote(event){
         this.noteId = event.target.dataset.recordId;
         console.log('$$ Selected Note id: ', this.noteId);
-        this.createEdit = true;
-    }
+        this.editNotes = true;
+       
+        }
 
     /**
      * Delete Note

@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
     <label>Salesforce Permission Set Group</label>
-    <length>40</length>
+    <length>80</length>
     <required>false</required>
     <type>Text</type>
     <unique>false</unique>

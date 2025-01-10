@@ -65,6 +65,11 @@
             record-id={noteId} object-api-name={objectApiName} case-subject-options={caseSubjectOptions}>
         </c-icy-create-edit-notes>
     </template>
+    <template if:true={editNotes}>
+        <c-icy-create-edit-notes admin-notes={adminNotes} onclose={closeModal} parent-record-id={parentRecordId}
+            record-id={noteId} object-api-name={objectApiName} case-subject-options={caseSubjectOptions} disable-notes = {editNotes}>
+        </c-icy-create-edit-notes>
+    </template>
     <template if:true={deleteConfirm}>
         <c-yts-confirmation-modal modal-header-text="Delete Note"
             modal-confirmation-text="Are you sure you want to delete this Note?" cancel-btn-lbl="No" ok-btn-lbl="Delete"
@@ -85,7 +90,7 @@
                             {n.name}&nbsp;<lightning-badge class={n.badgeCSS} label={n.notesType}></lightning-badge>
                         </h4>
                     </template>
-                    <template if:true={n.hasEditAccess}>
+                    <template if:true={n.canEdit}>
                         <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editNote}
                             slot="actions" data-record-id={n.recordId}>
                         </lightning-button-icon>
@@ -146,6 +151,21 @@
                                             for="text-input-id-47"><b>Description</b></label>
                                         <div class="slds-form-element__control">
                                             <lightning-formatted-text style="word-wrap: break-word;" value={n.description}>
+                                            </lightning-formatted-text>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="slds-gutters slds-grid">
+                            <div class="slds-col slds-size_5-of-6">
+                                <span>
+                                    <div class="slds-form-element">
+                                        <label class="slds-form-element__label"
+                                            for="text-input-id-47"><b>Meeting Date</b></label>
+                                        <div class="slds-form-element__control">
+                                            <lightning-formatted-text style="word-wrap: break-word;" value={n.meetingDate}>
                                             </lightning-formatted-text>
                                         </div>
                                     </div>
