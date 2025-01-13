@@ -51,6 +51,13 @@
         <value>Document updated successfully.</value>
     </labels>
     <labels>
+        <fullName>ICY_DuplicatePHN</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_DuplicatePHN</shortDescription>
+        <value>Duplicate PHN entered - PHN already exists on another record</value>
+    </labels>
+    <labels>
         <fullName>ICY_EitherIndividualHomePhone</fullName>
         <language>en_US</language>
         <protected>false</protected>
