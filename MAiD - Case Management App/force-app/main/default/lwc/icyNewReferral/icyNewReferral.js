@@ -71,6 +71,7 @@ import Current_School__c from '@salesforce/schema/Referral__c.Current_School__c'
 //Custom Labels
 import ICY_NoProgramLeader from '@salesforce/label/c.ICY_NoProgramLeader';
 import ICY_PleaseEnterPostalCode from '@salesforce/label/c.ICY_PleaseEnterPostalCode';
+import ICY_DuplicatePHN from '@salesforce/label/c.ICY_DuplicatePHN';
 
 //Toast
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
@@ -541,6 +542,12 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                     'error'
                 )
 
+            } else if (JSON.stringify(error).includes('An error occurred while trying to update the record. Please try again.')) {
+                this.showToast(
+                    'Error',
+                    ICY_DuplicatePHN,
+                    'error'
+                )
             }
 
         });
