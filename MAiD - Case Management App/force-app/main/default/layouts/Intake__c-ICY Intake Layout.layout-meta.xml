@@ -112,7 +112,7 @@
             <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Intake__c.ICY_Assign_To</actionName>
+            <actionName>Intake__c.ICY_Assign_To_Flow</actionName>
             <actionType>QuickAction</actionType>
             <sortOrder>3</sortOrder>
         </platformActionListItems>
