@@ -50,8 +50,6 @@ export default class IcyReopenIntake extends NavigationMixin(LightningElement)  
          fields['Id'] = this.recordId;
          fields[STATUS_FIELD.fieldApiName] = statusValue;
          fields['ICY_Closed_By__c']= '';
-         fields['Closed_Reason__c']= '';
-         fields['ICY_Rationale__c']= '';
          fields['ICY_Reopened_Date__c']=new Date().toISOString().slice(0, 10);
         
      
