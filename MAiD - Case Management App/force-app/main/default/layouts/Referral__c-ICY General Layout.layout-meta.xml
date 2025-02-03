@@ -350,6 +350,11 @@
             <actionType>StandardButton</actionType>
             <sortOrder>1</sortOrder>
         </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Referral__c.ICY_Assign_To_Flow</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>2</sortOrder>
+        </platformActionListItems>
     </platformActionList>
     <relatedLists>
         <excludeButtons>MassChangeOwner</excludeButtons>

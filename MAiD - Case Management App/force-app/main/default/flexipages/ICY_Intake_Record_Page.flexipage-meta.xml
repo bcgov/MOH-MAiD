@@ -94,18 +94,18 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Intake__c.ICY_Assign_To</value>
+                            <value>Intake__c.ICY_Assign_To_Flow</value>
                             <visibilityRule>
                                 <booleanFilter>1 OR 2</booleanFilter>
                                 <criteria>
                                     <leftValue>{!Record.Status__c}</leftValue>
                                     <operator>EQUAL</operator>
-                                    <rightValue>Not Started</rightValue>
+                                    <rightValue>In Progress</rightValue>
                                 </criteria>
                                 <criteria>
                                     <leftValue>{!Record.Status__c}</leftValue>
                                     <operator>EQUAL</operator>
-                                    <rightValue>In Progress</rightValue>
+                                    <rightValue>Not Started</rightValue>
                                 </criteria>
                             </visibilityRule>
                         </valueListItems>
