@@ -4,7 +4,6 @@
     <description>Used by action button on Referral to Assign Referral to a user</description>
     <environments>Default</environments>
     <interviewLabel>ICY Referral Assign To {!$Flow.CurrentDateTime}</interviewLabel>
-    <isAdditionalPermissionRequiredToRun>true</isAdditionalPermissionRequiredToRun>
     <label>ICY Referral Assign To</label>
     <processMetadataValues>
         <name>BuilderType</name>
