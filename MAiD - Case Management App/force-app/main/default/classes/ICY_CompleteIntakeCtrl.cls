@@ -33,6 +33,7 @@ public without sharing class ICY_CompleteIntakeCtrl {
                                                 Individual_Work_Phone_Number__c,
                                                 Individual_Work_Phone_Number_Extension__c,
                                                 Individual_Cell_Phone_Number__c,
+                                                Individual__c,
                                                 OwnerId FROM Referral__c WHERE Id =: strReferralId];
                 //Create ICY Person Account
                 Account personAccount = new Account();
@@ -64,6 +65,7 @@ public without sharing class ICY_CompleteIntakeCtrl {
                 
                 referral.Case__c = strCaseID;
                 referral.Status__c  = 'Case Created';
+                referral.Individual__c= personAccount.id;
                 Update referral;
                 
                 String personAccountId= personAccount.id;
