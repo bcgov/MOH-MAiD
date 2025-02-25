@@ -558,8 +558,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         const evnt = new ShowToastEvent({
             title: title,
             message: message,
-            variant: variant,
-            mode: 'sticky'
+            variant: variant
         });
 
         this.dispatchEvent(evnt);
