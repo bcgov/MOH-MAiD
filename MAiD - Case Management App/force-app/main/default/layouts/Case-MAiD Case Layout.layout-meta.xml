@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Layout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <excludeButtons>OpenSlackRecordChannel</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
     <layoutSections>
         <customLabel>true</customLabel>
@@ -405,6 +406,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Notes_to_Manager__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Flagged_Case__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
