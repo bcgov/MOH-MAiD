@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllAccounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ACCOUNT.TYPE</columns>
+    <columns>ACCOUNT.PHONE1</columns>
+    <columns>PC_EMAIL</columns>
+    <columns>Notes__pc</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>ACCOUNT.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>PersonAccount.Nurse_Practitioner,PersonAccount.Other_Health_Care_Professionals,PersonAccount.Pharmacist,PersonAccount.Physician</value>
+    </filters>
+    <label>All Accounts</label>
+</ListView>
