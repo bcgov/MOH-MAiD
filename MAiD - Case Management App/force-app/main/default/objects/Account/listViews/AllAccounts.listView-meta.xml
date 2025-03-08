@@ -13,4 +13,8 @@
         <value>PersonAccount.Nurse_Practitioner,PersonAccount.Other_Health_Care_Professionals,PersonAccount.Pharmacist,PersonAccount.Physician</value>
     </filters>
     <label>All Accounts</label>
+    <sharedTo>
+        <group>All_MAiD_Analyst</group>
+        <group>All_MAiD_users</group>
+    </sharedTo>
 </ListView>
