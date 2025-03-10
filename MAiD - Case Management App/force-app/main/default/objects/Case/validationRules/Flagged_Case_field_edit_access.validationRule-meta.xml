@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flagged_Case_field_edit_access</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Flagged_Case__c), 
+    NOT(
+        OR(
+            $UserRole.Name  = &quot;MAiD_Manager&quot;, 
+            $User.Id = OwnerId, 
+            $UserRole.Name = &quot;MAiD_Analyst&quot; &amp;&amp; ISNEW(),
+            $UserRole.Name = &quot;MAiD_Analyst&quot; &amp;&amp; $User.Id = OwnerId
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Only Case Owner and MAiD Manager&apos;s can edit the Flagged Case Field</errorMessage>
+</ValidationRule>

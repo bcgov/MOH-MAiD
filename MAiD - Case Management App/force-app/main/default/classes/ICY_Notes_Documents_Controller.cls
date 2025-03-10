@@ -305,7 +305,7 @@ public with sharing class ICY_Notes_Documents_Controller {
      */
     @AuraEnabled
     public static ICY_Notes__c getNote(String recordId){
-        return [SELECT ID, Name, Description__c,ICY_Meeting_Date__c, Referral_Subject__c,Other__c,Notes_Type__c,Mode_Location__c,Team_Member__c,Other_Team_Member__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Id=:recordId];
+        return [SELECT ID, Name, Description__c,ICY_Meeting_Date__c, Referral_Subject__c,Other__c,Notes_Type__c,Mode_Location__c,Other_Mode_Location__c,Team_Member__c,Other_Team_Member__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Id=:recordId];
     }
 
     /**
