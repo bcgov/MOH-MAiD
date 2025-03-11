@@ -117,6 +117,10 @@
                 <field>Practitioner_College_ID__c</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Education_History__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Type</field>
             </layoutItems>
