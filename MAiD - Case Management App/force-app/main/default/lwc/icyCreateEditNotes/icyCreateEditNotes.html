@@ -122,6 +122,20 @@
                                             </span>
                                         </div>
                                     </div>
+                                    <template if:true={showOtherModeLocation}>
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col">
+                                                <span>
+                                                    <div class="slds-p-around_small">
+                                                        <lightning-input type="text" label="Other Mode Location"
+                                                            value={note.Other_Mode_Location__c} name="Other_Mode_Location__c" class="validate"
+                                                            required="true" disabled={isNoteEditDisabled} onchange={handleChange} max-length="32700">
+                                                        </lightning-input>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </template>
                                 </template>
                             </template>
                             <div class="slds-grid slds-gutters">
