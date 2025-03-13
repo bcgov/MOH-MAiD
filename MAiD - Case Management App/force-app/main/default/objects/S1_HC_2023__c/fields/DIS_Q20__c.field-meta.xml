@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>DIS_Q20__c</fullName>
+    <deprecated>false</deprecated>
     <externalId>false</externalId>
     <formula>CASE( Form_1634__r.Case__r.Length_of_Disability__c ,
 &quot;Years&quot;,TEXT(1),
-&quot;Months&quot;,TEXT(2),
-&quot;Do not know&quot;,TEXT(3),
-&quot;Do not consent&quot;,TEXT(4),
+&quot;Months&quot;,TEXT(1),
+&quot;Do not know&quot;,TEXT(2),
+&quot;Do not consent&quot;,TEXT(3),
 &quot;No Data Disclosed&quot;,&quot;No Data Disclosed&quot;,&quot;&quot;)</formula>
     <label>DIS_Q20</label>
     <required>false</required>
