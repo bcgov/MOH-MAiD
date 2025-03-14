@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Flagging_cannot_be_null</fullName>
+    <active>true</active>
+    <description>If Flagged Case is checked the Reason for Flagging field value cannot be null</description>
+    <errorConditionFormula>AND(
+    Flagged_Case__c = TRUE,
+    ISBLANK(Reason_for_Flagging__c)
+)</errorConditionFormula>
+    <errorMessage>Reason for Flagging case is required to save</errorMessage>
+</ValidationRule>

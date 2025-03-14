@@ -117,10 +117,6 @@
                 <field>Practitioner_College_ID__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
-                <field>Education_History__c</field>
-            </layoutItems>
-            <layoutItems>
                 <behavior>Required</behavior>
                 <field>Type</field>
             </layoutItems>
@@ -413,6 +409,10 @@
             <layoutItems>
                 <behavior>Edit</behavior>
                 <field>Flagged_Case__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Reason_for_Flagging__c</field>
             </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
