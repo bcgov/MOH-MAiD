@@ -301,6 +301,9 @@
                         <valueListItems>
                             <value>If_yes_specify__c</value>
                         </valueListItems>
+                        <valueListItems>
+                            <value>CASES.STATUS</value>
+                        </valueListItems>
                     </valueList>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
