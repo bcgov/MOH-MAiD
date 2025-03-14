@@ -2,10 +2,42 @@
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>61.0</apiVersion>
     <decisions>
+        <name>Check_for_Record_Type</name>
+        <label>Check for Record Type</label>
+        <locationX>446</locationX>
+        <locationY>323</locationY>
+        <defaultConnector>
+            <targetReference>Get_Practitioner_s_Error_Log</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Case</defaultConnectorLabel>
+        <rules>
+            <name>Error_Log</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Record_Type_Name__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Error_Log</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.ParentId</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_Validations</targetReference>
+            </connector>
+            <label>Error Log</label>
+        </rules>
+    </decisions>
+    <decisions>
         <name>Check_Validations</name>
         <label>Check Validations</label>
-        <locationX>558</locationX>
-        <locationY>119</locationY>
+        <locationX>182</locationX>
+        <locationY>431</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Update_main_case</name>
@@ -30,10 +62,40 @@
             <label>Update main case</label>
         </rules>
     </decisions>
-    <description>Updating the was education provided? field to yes/no.</description>
+    <decisions>
+        <name>Education_History_Check</name>
+        <label>Education History Check</label>
+        <locationX>710</locationX>
+        <locationY>539</locationY>
+        <defaultConnector>
+            <targetReference>Update_Education_History2</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Practitioner_has_education</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Practitioner_s_Error_Log</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Education_History</targetReference>
+            </connector>
+            <label>Practitioner has education</label>
+        </rules>
+    </decisions>
+    <description>This flow will be checked if the practitioner has received education on a case in Error logs, It will update the field on a MAiD case. And if the error log has Education provided it will update  &quot;Was education provided? &quot;field to yes/no.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>Create_Date_Reference</name>
+        <dataType>DateTime</dataType>
+        <expression>ADDMONTHS(NOW(), -24)</expression>
+    </formulas>
     <interviewLabel>Update Related Case Record {!$Flow.CurrentDateTime}</interviewLabel>
-    <label>Update Related Case Record</label>
+    <label>MAiD Update Related Case Record</label>
     <processMetadataValues>
         <name>BuilderType</name>
         <value>
@@ -43,7 +105,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>FREE_FORM_CANVAS</stringValue>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -53,11 +115,83 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Get_Practitioner_s_Error_Log</name>
+        <label>Get Practitioner&apos;s Error Log</label>
+        <locationX>710</locationX>
+        <locationY>431</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Education_History_Check</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Error_Log</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Practitioner__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Practitioner_Name__c</elementReference>
+            </value>
+        </filters>
+        <filters>
+            <field>Was_education_provided__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Yes</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Education_Level__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Proactive Education</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CreatedDate</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>Create_Date_Reference</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Case</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Education_History</name>
+        <label>Update Education History</label>
+        <locationX>578</locationX>
+        <locationY>647</locationY>
+        <inputAssignments>
+            <field>Education_History__c</field>
+            <value>
+                <stringValue>Practitioner has Level 1 or higher education on a previous case.</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Education_History2</name>
+        <label>Update Education History2</label>
+        <locationX>842</locationX>
+        <locationY>647</locationY>
+        <inputAssignments>
+            <field>Education_History__c</field>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
     <recordUpdates>
         <name>UpdateCase</name>
         <label>UpdateCase</label>
-        <locationX>783</locationX>
-        <locationY>138</locationY>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -75,19 +209,12 @@
         <object>Case</object>
     </recordUpdates>
     <start>
-        <locationX>54</locationX>
-        <locationY>43</locationY>
+        <locationX>320</locationX>
+        <locationY>0</locationY>
         <connector>
-            <targetReference>Check_Validations</targetReference>
+            <targetReference>Check_for_Record_Type</targetReference>
         </connector>
-        <filterLogic>1 AND (2 OR 3)</filterLogic>
-        <filters>
-            <field>ParentId</field>
-            <operator>IsNull</operator>
-            <value>
-                <booleanValue>false</booleanValue>
-            </value>
-        </filters>
+        <filterLogic>or</filterLogic>
         <filters>
             <field>Record_Type_Name__c</field>
             <operator>EqualTo</operator>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flagged_Case_field_edit_access</fullName>
+    <active>true</active>
+    <description>This validation rule is for Flagged case field where only Case Owner and MAiD Manager can edit once the record is created.</description>
+    <errorConditionFormula>AND(
+    ISCHANGED(Flagged_Case__c), 
+    NOT(
+        OR(
+            $UserRole.DeveloperName  = &quot;MAiD_Manager&quot;, 
+            $User.Id = OwnerId, 
+            $UserRole.DeveloperName = &quot;MAiD_Analyst&quot; &amp;&amp; ISNEW(),
+            $UserRole.DeveloperName = &quot;MAiD_Analyst&quot; &amp;&amp; $User.Id = OwnerId
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Only Case Owner and MAiD Manager can edit the Flagged Case Field</errorMessage>
+</ValidationRule>
