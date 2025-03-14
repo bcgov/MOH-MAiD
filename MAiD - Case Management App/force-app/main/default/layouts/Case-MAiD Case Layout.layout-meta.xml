@@ -414,6 +414,10 @@
                 <behavior>Edit</behavior>
                 <field>Flagged_Case__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Reason_for_Flagging__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>OneColumn</style>
     </layoutSections>

@@ -551,6 +551,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.Reason_for_Flagging__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.Reason_for_re_opening_case__c</field>
         <readable>true</readable>
     </fieldPermissions>
