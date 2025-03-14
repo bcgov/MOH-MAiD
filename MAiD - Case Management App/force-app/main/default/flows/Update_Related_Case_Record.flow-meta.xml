@@ -89,6 +89,11 @@
     </decisions>
     <description>This flow will be checked if the practitioner has received education on a case in Error logs, It will update the field on a MAiD case. And if the error log has Education provided it will update  &quot;Was education provided? &quot;field to yes/no.</description>
     <environments>Default</environments>
+    <formulas>
+        <name>Create_Date_Reference</name>
+        <dataType>DateTime</dataType>
+        <expression>ADDMONTHS(NOW(), -24)</expression>
+    </formulas>
     <interviewLabel>Update Related Case Record {!$Flow.CurrentDateTime}</interviewLabel>
     <label>MAiD Update Related Case Record</label>
     <processMetadataValues>
@@ -146,6 +151,13 @@
             <operator>NotEqualTo</operator>
             <value>
                 <stringValue>Proactive Education</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>CreatedDate</field>
+            <operator>GreaterThan</operator>
+            <value>
+                <elementReference>Create_Date_Reference</elementReference>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
