@@ -19,6 +19,6 @@
     </filters>
     <label>All Closed Errors</label>
     <sharedTo>
-      <group>All_MAiD_users</group>
+        <roleAndSubordinates>MAiD_Manager</roleAndSubordinates>
     </sharedTo>
 </ListView>
