@@ -19,5 +19,5 @@
         )
     )
 )</errorConditionFormula>
-    <errorMessage>Only Case Owner and MAiD Manager can edit the Flagged Case Field</errorMessage>
+    <errorMessage>Only Case Owner and MAiD Manager can edit the Reason for Flagging Case Field</errorMessage>
 </ValidationRule>

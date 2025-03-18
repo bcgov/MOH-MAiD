@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingOwnerRules>
-        <fullName>All_MAiD_Users</fullName>
+        <fullName>All_MAiD_Users2</fullName>
         <accessLevel>Read</accessLevel>
+        <description>All Maid Users can see all the users</description>
         <label>All MAiD Users</label>
         <sharedTo>
-            <group>All_MAiD_users</group>
+            <roleAndSubordinates>MAiD_Manager</roleAndSubordinates>
         </sharedTo>
         <sharedFrom>
-            <group>All_MAiD_users</group>
+            <roleAndSubordinates>MAiD_Manager</roleAndSubordinates>
         </sharedFrom>
     </sharingOwnerRules>
     <sharingOwnerRules>
