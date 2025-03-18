@@ -86,9 +86,9 @@ export default class icyCreateEditNotes extends LightningElement {
             {label: 'Email', value: 'Email'},
             {label: 'Telephone', value: 'Telephone'},
             {label: 'Office', value: 'Office'},
-            {label: 'Other', value: 'Other'},
             {label: 'Outreach', value: 'Outreach'},
-            {label: 'Video Conferencing', value: 'Video Conferencing'}
+            {label: 'Video Conferencing', value: 'Video Conferencing'},
+            {label: 'Other', value: 'Other'}
         ]
     }
 
