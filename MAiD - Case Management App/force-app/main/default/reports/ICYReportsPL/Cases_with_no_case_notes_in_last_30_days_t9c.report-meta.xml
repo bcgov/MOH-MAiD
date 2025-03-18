@@ -18,6 +18,9 @@
     <columns>
         <field>Case.ICY_Last_Case_Note_Date__c</field>
     </columns>
+    <columns>
+        <field>Case.ICY_Geographic_Area__c</field>
+    </columns>
     <filter>
         <criteriaItems>
             <column>STATUS</column>
