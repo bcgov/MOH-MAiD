@@ -2,19 +2,20 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>ADM_Q25__c</fullName>
     <externalId>false</externalId>
-    <formula>IF( 
-    ISNULL ( Form_1634__r.Reasons_for_transfer__c ), 0,
+    <formula>IF(
+    NOT(Form_1634__r.Patient_authorized_to_recieve_second_dos__c) 
+    &amp;&amp; ISBLANK(TEXT(Form_1634__r.Did_the_patient_die_after_self_administ__c)), 
+    &quot;N/A&quot;,
     IF(
-        INCLUDES ( Form_1634__r.Reasons_for_transfer__c, &quot;Other&quot; ),
-        1,2
+        Form_1634__r.Patient_authorized_to_recieve_second_dos__c 
+        &amp;&amp; TEXT(Form_1634__r.Did_the_patient_die_after_self_administ__c) = &quot;1 - Yes&quot;, 
+        &quot;1&quot;,
+        &quot;0&quot;
     )
 )</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>ADM_Q25</label>
-    <precision>18</precision>
     <required>false</required>
-    <scale>0</scale>
     <trackTrending>false</trackTrending>
-    <type>Number</type>
+    <type>Text</type>
     <unique>false</unique>
 </CustomField>
