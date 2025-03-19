@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>58.0</apiVersion>
+    <apiVersion>61.0</apiVersion>
     <description>Updates the datestamp on the User Record of their current acknowledgement of the Privacy Agreement.</description>
     <environments>Default</environments>
     <interviewLabel>Update Privacy Acknowledgement {!$Flow.CurrentDateTime}</interviewLabel>

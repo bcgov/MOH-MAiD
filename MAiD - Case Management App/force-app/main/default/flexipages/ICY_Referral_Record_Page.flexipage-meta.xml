@@ -98,7 +98,7 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
-                            <value>Referral__c.ICY_Assign_To</value>
+                            <value>Referral__c.ICY_Assign_To_Flow</value>
                             <visibilityRule>
                                 <criteria>
                                     <leftValue>{!Record.Status__c}</leftValue>

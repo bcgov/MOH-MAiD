@@ -4,13 +4,13 @@
             "path": "force-app",
             "default": true,
             "package": "MAiD - Case Management App",
-            "versionName": "Version 2.2.7",
-            "versionNumber": "2.2.7.NEXT"
+            "versionName": "Version 2.2.8",
+            "versionNumber": "2.2.8.NEXT"
         }
     ],
     "namespace": "",
     "sfdcLoginUrl": "https://login.salesforce.com",
-    "sourceApiVersion": "59.0",
+    "sourceApiVersion": "61.0",
     "packageAliases": {
         "MAiD - Case Management App": "0Ho5W000000002HSAQ",
         "MAiD - Case Management App@1.1.2-1": "04t5W0000000TgJQAU",
@@ -33,8 +33,9 @@
         "MAiD - Case Management App@2.2.3-1":"04tMm000000LhYDIA0",
         "MAiD - Case Management App@2.2.4-1":"04tMm000000NcnlIAC",
         "MAiD - Case Management App@2.2.5-2":"04tMm000000SiNtIAK",
-        "MAiD - Case Management App@2.2.6-3":"04tMm000000VbEbIAK,
-        "MAiD - Case Management App@2.2.7-1":"04tMm000000afz7IAA"
-      
+        "MAiD - Case Management App@2.2.6-3":"04tMm000000VbEbIAK",
+        "MAiD - Case Management App@2.2.7-1":"04tMm000000afz7IAA",
+        "MAiD - Case Management App@2.2.8-2":"04tMm000000gVYrIAM"
+
     }
-  }
+}

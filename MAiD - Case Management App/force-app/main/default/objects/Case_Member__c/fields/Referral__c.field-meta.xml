@@ -5,7 +5,7 @@
     <externalId>false</externalId>
     <label>Referral</label>
     <referenceTo>Referral__c</referenceTo>
-    <relationshipLabel>Case Members</relationshipLabel>
+    <relationshipLabel>Team Members</relationshipLabel>
     <relationshipName>Case_Members</relationshipName>
     <required>false</required>
     <trackHistory>false</trackHistory>

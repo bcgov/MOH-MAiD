@@ -96,6 +96,61 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Province_or_Territory_that_issued_PHN__c</picklist>
+        <values>
+            <fullName>10 - Newfoundland and Labrador</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>11 - Prince Edward Island</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12 - Nova Scotia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>13 - New Brunswick</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>24 - Quebec</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>35 - Ontario</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>46 - Manitoba</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>47 - Saskatchewan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>48 - Alberta</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>59 - British Columbia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60 - Yukon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>61 - Northwest Territories</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>62 - Nunavut</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Reason</picklist>
         <values>
             <fullName>All safeguard boxes incomplete</fullName>

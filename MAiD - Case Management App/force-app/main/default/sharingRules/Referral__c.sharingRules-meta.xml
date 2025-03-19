@@ -7,7 +7,7 @@
         <sharedTo>
             <group>ICY_Central_Coast_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -18,11 +18,6 @@
             <operation>equals</operation>
             <value>Central Coast</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -32,7 +27,7 @@
         <sharedTo>
             <group>ICY_Coast_Mountains_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -43,11 +38,6 @@
             <operation>equals</operation>
             <value>Coast Mountains Team Hazelton,Coast Mountains Team Terrace</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -57,7 +47,7 @@
         <sharedTo>
             <group>ICY_Comox_Valley_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -68,11 +58,6 @@
             <operation>equals</operation>
             <value>Comox Valley Team 2,Comox Valley Team 1</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -82,7 +67,7 @@
         <sharedTo>
             <group>ICY_Cowichan_Valley_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -93,11 +78,6 @@
             <operation>equals</operation>
             <value>Cowichan Valley</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -107,7 +87,7 @@
         <sharedTo>
             <group>ICY_Delta_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -117,11 +97,6 @@
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
             <value>Delta</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -132,7 +107,7 @@
         <sharedTo>
             <group>ICY_Fraser_Cascades_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -143,11 +118,6 @@
             <operation>equals</operation>
             <value>Fraser Cascades</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -157,7 +127,7 @@
         <sharedTo>
             <group>ICY_Gold_Trail_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -168,11 +138,6 @@
             <operation>equals</operation>
             <value>Gold Trail</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -182,7 +147,7 @@
         <sharedTo>
             <group>ICY_Kootenay_Columbia_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -193,11 +158,6 @@
             <operation>equals</operation>
             <value>Kootenay-Columbia</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -207,7 +167,7 @@
         <sharedTo>
             <group>ICY_Maple_Ridge_Pitt_Meadows_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -218,11 +178,6 @@
             <operation>equals</operation>
             <value>Maple Ridge-Pitt Meadows Team 1,Maple Ridge-Pitt Meadows Team 2,Maple Ridge-Pitt Meadows Team 3</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -232,7 +187,7 @@
         <sharedTo>
             <group>ICY_Mission_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -243,11 +198,6 @@
             <operation>equals</operation>
             <value>Mission Team 1,Mission Team 2</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -257,7 +207,7 @@
         <sharedTo>
             <group>ICY_Nanaimo_Ladysmith_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -268,11 +218,6 @@
             <operation>equals</operation>
             <value>Nanaimo-Ladysmith Team 3,Nanaimo-Ladysmith Team 1,Nanaimo-Ladysmith Team 4,Nanaimo-Ladysmith Team 2</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -282,7 +227,7 @@
         <sharedTo>
             <group>ICY_Nicola_Similkameen_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -293,11 +238,6 @@
             <operation>equals</operation>
             <value>Nicola-Similkameen</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -307,7 +247,7 @@
         <sharedTo>
             <group>ICY_North_Okanagan_Shuswap_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -318,11 +258,6 @@
             <operation>equals</operation>
             <value>North Okanagan Shuswap</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -332,7 +267,7 @@
         <sharedTo>
             <group>ICY_Okanagan_Similkameen_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -343,11 +278,6 @@
             <operation>equals</operation>
             <value>Okanagan-Similkameen</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -357,7 +287,7 @@
         <sharedTo>
             <group>ICY_Pacific_Rim_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -368,11 +298,6 @@
             <operation>equals</operation>
             <value>Pacific Rim</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -382,7 +307,7 @@
         <sharedTo>
             <group>ICY_Peace_River_South_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -393,11 +318,6 @@
             <operation>equals</operation>
             <value>Peace River South</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -407,7 +327,7 @@
         <sharedTo>
             <group>ICY_Qualicum_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -417,11 +337,6 @@
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
             <value>Qualicum</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
@@ -432,7 +347,7 @@
         <sharedTo>
             <group>ICY_Richmond_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -443,11 +358,6 @@
             <operation>equals</operation>
             <value>Richmond Team 3,Richmond Team 1,Richmond Team 4,Richmond Team 2</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -457,7 +367,7 @@
         <sharedTo>
             <group>ICY_Surrey_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -468,11 +378,6 @@
             <operation>equals</operation>
             <value>Surrey</value>
         </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
-        </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
@@ -482,7 +387,7 @@
         <sharedTo>
             <group>ICY_qathet_Powell_River_CL_NCL</group>
         </sharedTo>
-        <booleanFilter>(1 OR 2)  AND 3</booleanFilter>
+        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
             <field>User_Role_Name__c</field>
             <operation>startsWith</operation>
@@ -492,11 +397,6 @@
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
             <value>qathet (Powell River)</value>
-        </criteriaItems>
-        <criteriaItems>
-            <field>Status__c</field>
-            <operation>notEqual</operation>
-            <value>Closed</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
