@@ -314,6 +314,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.ICY_Last_Case_Note_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Case.ICY_Last_Reported_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.ICY_Rationale__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -965,6 +975,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>ICY_Notes__c.Notes_Type__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>ICY_Notes__c.Other_Mode_Location__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -20,6 +20,7 @@ export default class icyCreateEditNotes extends LightningElement {
     subjectOptions = [];
     typeDesc;
     showOtherSubject = false;
+    showOtherModeLocation = false;
     showOtherTeamMember = false;
     note={
         Description__c:'',
@@ -27,6 +28,7 @@ export default class icyCreateEditNotes extends LightningElement {
         Other__c:'',
         Other_Team_Member__c:'',
         Mode_Location__c:'',
+        Other_Mode_Location__c:'',
         Attendees__c:'',
         Length_of_Meeting__c:'',
         ICY_Meeting_Date__c:''
@@ -81,10 +83,12 @@ export default class icyCreateEditNotes extends LightningElement {
 
     get modeLocations(){
         return [
+            {label: 'Email', value: 'Email'},
             {label: 'Telephone', value: 'Telephone'},
             {label: 'Office', value: 'Office'},
             {label: 'Outreach', value: 'Outreach'},
-            {label: 'Video Conferencing', value: 'Video Conferencing'}
+            {label: 'Video Conferencing', value: 'Video Conferencing'},
+            {label: 'Other', value: 'Other'}
         ]
     }
 
@@ -115,6 +119,7 @@ export default class icyCreateEditNotes extends LightningElement {
                  else if(result.Notes_Type__c == 'Collaborative')
                      this.typeDesc = COLLAB_DESC;
                 if(result.Subject__c == 'Other') this.showOtherSubject = true;
+                if(result.Mode_Location__c == 'Other') this.showOtherModeLocation = true;
                 if(result.Team_Member__c == 'Other') this.showOtherTeamMember = true;
                 }).catch(error=>{
                 console.error('$$ Error: ', error);
@@ -182,8 +187,16 @@ export default class icyCreateEditNotes extends LightningElement {
                     this.note.Team_Member__c = event.target.value;
                     break;
                 case 'Mode_Location__c':
+                    if(event.target.value == 'Other'){
+                        this.showOtherModeLocation = true;
+                    }else{
+                        this.showOtherModeLocation = false;
+                    }
                     this.note.Mode_Location__c = event.target.value;
                     break;
+                case 'Other_Mode_Location__c':
+                        this.note.Other_Mode_Location__c = event.target.value;
+                        break;
                 case 'Other_Team_Member__c':
                     this.note.Other_Team_Member__c = event.target.value;
                     break;

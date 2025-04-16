@@ -18,7 +18,8 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>ICY_Email_Templates/Referral_Status_Closed_Template</template>
     </alerts>
     <alerts>
@@ -40,7 +41,8 @@
             <field>ICY_Assigned_To__c</field>
             <type>userLookup</type>
         </recipients>
-        <senderType>CurrentUser</senderType>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
         <template>ICY_Email_Templates/ICY_Referral_Updated_Template</template>
     </alerts>
 </Workflow>

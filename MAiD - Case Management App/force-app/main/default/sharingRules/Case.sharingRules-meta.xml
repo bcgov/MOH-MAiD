@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingCriteriaRules>
-        <fullName>MAiD_Cases_Visibility</fullName>
+        <fullName>MAiD_Flagged_Cases_Visibility</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>MAiD Cases Visibility</label>
+        <label>MAiD Flagged Cases Visibility</label>
         <sharedTo>
-            <group>All_MAiD_users</group>
+            <role>MAiD_Manager</role>
         </sharedTo>
+        <criteriaItems>
+            <field>Flagged_Case__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>MAiD Case</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>MAiD_Unflagged_Case_Visibility</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>MAiD Unflagged Case Visibility</label>
+        <sharedTo>
+            <role>MAiD_Analyst</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Flagged_Case__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </criteriaItems>
         <criteriaItems>
             <field>RecordTypeId</field>
             <operation>equals</operation>
@@ -423,28 +447,6 @@
         </sharedTo>
         <sharedFrom>
             <roleAndSubordinates>ICY</roleAndSubordinates>
-        </sharedFrom>
-    </sharingOwnerRules>
-    <sharingOwnerRules>
-        <fullName>ShareMaidManagerCaseWithMaidManager</fullName>
-        <accessLevel>Edit</accessLevel>
-        <label>ShareMaidManagerCaseWithMaidManager</label>
-        <sharedTo>
-            <role>MAiD_Manager</role>
-        </sharedTo>
-        <sharedFrom>
-            <roleAndSubordinates>MAiD_Manager</roleAndSubordinates>
-        </sharedFrom>
-    </sharingOwnerRules>
-    <sharingOwnerRules>
-        <fullName>ShareMaidManagerCasesWithMaidAnalyst</fullName>
-        <accessLevel>Read</accessLevel>
-        <label>ShareMaidManagerCasesWithMaidAnalyst</label>
-        <sharedTo>
-            <role>MAiD_Analyst</role>
-        </sharedTo>
-        <sharedFrom>
-            <roleAndSubordinates>MAiD_Manager</roleAndSubordinates>
         </sharedFrom>
     </sharingOwnerRules>
 </SharingRules>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reason_for_Flagging_case_Edit</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+    ISCHANGED(Reason_for_Flagging__c),
+    NOT(
+        OR(
+            $UserRole.DeveloperName = &quot;MAiD_Manager&quot;,
+            $User.Id = OwnerId,
+            AND(
+                $UserRole.DeveloperName = &quot;MAiD_Analyst&quot;, 
+                ISNEW()),
+            AND(
+                $UserRole.DeveloperName = &quot;MAiD_Analyst&quot;, 
+                NOT(ISNEW()),
+                $User.Id = OwnerId
+            )
+        )
+    )
+)</errorConditionFormula>
+    <errorMessage>Only Case Owner and MAiD Manager can edit the Reason for Flagging Case Field</errorMessage>
+</ValidationRule>
