@@ -239,12 +239,12 @@
                                             <div class="slds-p-around_small">
                                                 <lightning-input name="Preferred_Pronouns__c" type="text"
                                                     label="Pronouns" value={referral.Individual_Pronouns__c}
+                                                    min-length="0" max-length="100"
                                                     onblur={handleChange} class="validate">
                                                 </lightning-input>
                                             </div>
                                         </span>
                                     </div>
-
                                 </div>
                             </div>
                             <lightning-record-edit-form object-api-name="Referral__c">
