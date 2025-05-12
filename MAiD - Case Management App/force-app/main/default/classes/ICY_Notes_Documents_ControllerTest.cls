@@ -1,5 +1,61 @@
 @isTest
 public class ICY_Notes_Documents_ControllerTest {
+    @isTest
+    static void testNoteWrapper() {
+        // Create Note instance using constructor
+        YTS_Notes_Documents_Controller.Note note = new YTS_Notes_Documents_Controller.Note(
+            '001xx000003DGX1AAO',     // recordId
+            'Sample Note',            // name
+            'Client Note',            // notesType
+            'Follow-up',              // subject
+            'Discussed next steps',   // description
+            '2025-05-08',             // lastModifiedOn
+            'John Doe',               // lastModifiedBy
+            '2025-05-01',             // createdOn
+            'Jane Smith',             // createdBy
+            'badge-blue',             // badgeCSS
+            true,                     // hasEditAccess
+            false                     // hasDeleteAccess
+        );
+
+        // Optional assertions to ensure fields are populated correctly
+        System.assertEquals('Sample Note', note.name);
+        System.assertEquals('Follow-up', note.subject);
+        System.assertEquals(true, note.hasEditAccess);
+        System.assertEquals(false, note.hasDeleteAccess);
+    }
+    @isTest
+    static void testDocumentWrapper() {
+        // Create a list of attachments
+        List<YTS_Notes_Documents_Controller.AllAttachments> attachmentList = new List<YTS_Notes_Documents_Controller.AllAttachments>();
+        attachmentList.add(new YTS_Notes_Documents_Controller.AllAttachments('001xx000003DGX1AAO', 'SampleAttachment.pdf'));
+
+        // Create Document instance
+        YTS_Notes_Documents_Controller.Document doc = new YTS_Notes_Documents_Controller.Document(
+            '001xx000003DGX1AAO',
+            'SampleDoc',
+            'Case File',
+            'Legal',
+            'Initial Review',
+            'This is a test document',
+            '069xx0000001FjKAAU',
+            '2025-05-08',
+            'Test Modifier',
+            '2025-05-07',
+            'Test Creator',
+            'badge-green',
+            true,
+            true,
+            true,
+            attachmentList
+        );
+
+        // Optional assertions to validate field population
+        System.assertEquals('SampleDoc', doc.name);
+        System.assertEquals(true, doc.hasEditAccess);
+        System.assertEquals(1, doc.attachmentsList.size());
+    }
+    
     static testMethod void unitTest(){
         Referral__c obj = new Referral__c();
         obj.RecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Referral__c', 'ICY_General');

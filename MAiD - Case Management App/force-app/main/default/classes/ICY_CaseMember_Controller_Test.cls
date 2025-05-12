@@ -196,4 +196,10 @@ public class ICY_CaseMember_Controller_Test {
         Case_Member__c c = [SELECT ID FROM Case_Member__c LIMIT 1];
         ICY_CaseMember_Controller.revokeCaseTeamMemberAccess(c.Id);
     }
+
+    @isTest
+    private static void delete_TeamMember_test(){
+        Case_Member__c c = [SELECT ID FROM Case_Member__c LIMIT 1];
+       Database.delete(c,false);
+    }
 }
