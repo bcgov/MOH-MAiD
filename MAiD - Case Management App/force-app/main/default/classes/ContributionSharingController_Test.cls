@@ -2,6 +2,20 @@
 private class ContributionSharingController_Test {
 
     static testMethod void myUnitTest() {
+              
+        User u = new User(
+            ProfileId = [SELECT Id FROM Profile WHERE Name ='MoH Standard User'].Id,
+            LastName = 'last',
+            Email = 'testLead@gov.bc.ca',
+            Username = 'testLead@gov.bc.ca' + System.currentTimeMillis(),
+            CompanyName = 'TEST',
+            Title = 'title',
+            Alias = 'alias',
+            TimeZoneSidKey = 'America/Los_Angeles',
+            EmailEncodingKey = 'UTF-8',
+            LanguageLocaleKey = 'en_US',
+            LocaleSidKey = 'en_US'
+        );
 
         Referral__c ref = new Referral__c();
         //ref.OwnerId = usr.id;
@@ -35,7 +49,7 @@ private class ContributionSharingController_Test {
 
       pagereference pageref = Page.ContributionSharingPage;
       test.setCurrentPageReference(pageref);
-      ApexPages.currentPage().getParameters().put('id',cas.id);
+      ApexPages.currentPage().getParameters().put('id',cascon.id);
         Apexpages.standardcontroller sc = new Apexpages.standardcontroller(cas);
         ContributionSharingController obj = new ContributionSharingController (sc);
         system.assertNotEquals(cas.id, null);
