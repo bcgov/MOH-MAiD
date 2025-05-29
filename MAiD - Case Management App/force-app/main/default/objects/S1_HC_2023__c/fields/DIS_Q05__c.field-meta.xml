@@ -7,9 +7,10 @@
     Form_1634__r.Case__r.Requestor_disability_opinion__c,
     &quot;Yes&quot;, TEXT(1),
     &quot;No&quot;, TEXT(2),
-    &quot;Do not know&quot;, &quot;Do not know&quot;,
+    &quot;Do not know&quot;, TEXT(3),
     &quot;Do not consent&quot;, TEXT(4),
     &quot;No Data Disclosed&quot;, &quot;No Data Disclosed&quot;,
+    &quot;Pre 2023 MAiD Request - No data&quot;,&quot;Pre 2023 MAiD Request - No data&quot;,
     TEXT(0)
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>

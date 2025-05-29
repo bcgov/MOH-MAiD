@@ -10,7 +10,7 @@
     &quot;Lives with relatives&quot;, TEXT(3),
     &quot;Lives with non-relatives&quot;, TEXT(4),
     &quot;Other living Arrangement&quot;, TEXT(5),
-    &quot;Do not know&quot;, &quot;Do not know&quot;,
+    &quot;Do not know&quot;, TEXT(6),
     &quot;No Data Disclosed&quot;, &quot;No Data Disclosed&quot;,
     TEXT(0)
 )</formula>
