@@ -1,5 +1,5 @@
 public  class ICY_CaseTriggerHandler {
-    public static void sendClosedCaseEmailNotificationToLead(List<Case> caseList, Map<Id,Case> oldcaseMap){
+    /*public static void sendClosedCaseEmailNotificationToLead(List<Case> caseList, Map<Id,Case> oldcaseMap){
         Id standardCaserecordType = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('ICY_Standard_Case').getRecordTypeId();
         List<Case> casetoProcess= new List<Case>();
         Id orgwideemailId = YTS_Utility.getICYOrgWideEmailAddressId();
@@ -76,5 +76,5 @@ public  class ICY_CaseTriggerHandler {
 
         }
 
-    }
+    }*/
 }
