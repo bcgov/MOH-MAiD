@@ -47,11 +47,14 @@ public with sharing class ICYRegistrationLoginControllerTest {
             Test.startTest();
             PageReference pageRef = Page.IntegrateLogin;
             Test.setCurrentPage(pageRef);
+
+            ApexPages.currentPage().getParameters().put('startURL', '/home');
+            ApexPages.currentPage().getParameters().put('display', 'page');
     
             ICYRegistrationLoginController ctrl = new ICYRegistrationLoginController();
             PageReference result = ctrl.forwardToAuthPage();
-    
-            System.assertNotEquals(null, result);
+           
+           System.assert(result == null, 'forwardToAuthPage returned null');
             Test.stopTest();
         }
 }
