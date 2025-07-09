@@ -26,7 +26,7 @@ public without sharing  class ICY_AlertBannerCtrl {
                             ((String.isNotBlank(intake.Referral__r.ICY_Assigned_To__c) &&
                              intake.Referral__r.ICY_Assigned_To__c == currentUser) ||
                             (String.isNotBlank(intake.Referral__r.ICY_Geographic_Area__c) && 
-                            getProgramLeaders(intake.Referral__r.ICY_Geographic_Area__c).contains(currentUser)))
+                            getMembersFromGeographicalRegion(intake.Referral__r.ICY_Geographic_Area__c).contains(currentUser)))
                             ){
                             ((Intake__c) obj).Referral__r.ICY_Show_Banner__c = true;  
                         }else if(intake.Referral__r.ICY_Show_Banner__c && getCaseTeamMembers(intake.Referral__c).contains(currentUser)){
@@ -50,7 +50,7 @@ public without sharing  class ICY_AlertBannerCtrl {
                             ((String.isNotBlank(ref.ICY_Assigned_To__c) &&
                              ref.ICY_Assigned_To__c == currentUser) ||
                             (String.isNotBlank(ref.ICY_Geographic_Area__c) && 
-                            getProgramLeaders(ref.ICY_Geographic_Area__c).contains(currentUser)))
+                            getMembersFromGeographicalRegion(ref.ICY_Geographic_Area__c).contains(currentUser)))
                             ){
                             ((Referral__c) obj).ICY_Show_Banner__c = true;  
                         }else if(ref.ICY_Show_Banner__c && getCaseTeamMembers(ref.Id).contains(currentUser)){
@@ -120,39 +120,24 @@ public without sharing  class ICY_AlertBannerCtrl {
         return null;
     }
     @TestVisible
-    private static Set<Id> getProgramLeaders(String geoLocation){
+    private static Set<Id> getMembersFromGeographicalRegion(String geoLocation) {
         Set<Id> userid = new Set<Id>();
-        For(User u: [SELECT Id,Name, email FROM User WHERE userrole.Name like'%Leader' AND isActive = true]){
-            userid.add(u.Id);
+        if (String.isNotBlank(geoLocation)) {
+            String rolePrefix = geoLocation + '%';
+            
+            for (User u : [
+                SELECT Id 
+                FROM User 
+                WHERE IsActive = true 
+                AND UserRole.Name LIKE :rolePrefix
+            ]) {
+                userid.add(u.Id);
+            }
         }
-        /*if(String.isNotBlank(geoLocation)){
-            String queueName='%'+geoLocation;
-            List<String> toAddressess = new List<String>();
-            Set<Id> groupOrQueuId = new Set<Id>();
-            Set<Id> roleId = new Set<Id>();
-            For(GroupMember gm: [SELECT UserOrGroupId FROM GroupMember WHERE Group.Type = 'Queue' AND Group.Name LIKE :queueName]){
-               if((String.valueOf(gm.UserOrGroupId)).startsWithIgnoreCase('00G')){
-                    groupOrQueuId.add(gm.UserOrGroupId);
-                }else{
-                    userid.add(gm.UserOrGroupId);
-                }
-            }
-            if(!groupOrQueuId.isEmpty()){
-                For(Group gm: [SELECT RelatedId,Type,DeveloperName FROM group WHERE Id IN:groupOrQueuId AND Type = 'Role']){
-                    if(gm.Type=='Role'){
-                        roleId.add(gm.RelatedId);
-                    }
-                }
-            }
-            user whoClosed; 
-            if(!roleId.isEmpty()){
-                For(User u: [SELECT Id,Name, email FROM User WHERE (UserRoleId =: roleId OR userrole.Name like'%Leader') AND isActive = true]){
-                    userid.add(u.Id);
-                }
-            }
-        }*/
         return userid;
     }
+
+
     @TestVisible
 	Private static set<Id> getCaseTeamMembers(String refId){
         Set<Id> userIds= new Set<id>();
