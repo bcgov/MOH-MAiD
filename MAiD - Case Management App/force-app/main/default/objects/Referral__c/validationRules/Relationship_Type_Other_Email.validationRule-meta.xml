@@ -3,6 +3,6 @@
     <fullName>Relationship_Type_Other_Email</fullName>
     <active>true</active>
     <errorConditionFormula>AND( ISBLANK(Other_Relationship_Email__c) , ISPICKVAL( Relationship_to_Individual_Email__c, &apos;Other&apos;))</errorConditionFormula>
-    <errorDisplayField>Other_Relationship_Home__c</errorDisplayField>
+    <errorDisplayField>Other_Relationship_Email__c</errorDisplayField>
     <errorMessage>Please specify the Other Relationship</errorMessage>
 </ValidationRule>
