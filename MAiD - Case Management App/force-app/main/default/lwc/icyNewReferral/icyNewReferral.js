@@ -41,6 +41,7 @@ import ICY_Medical_Referral_Reason__c from '@salesforce/schema/Referral__c.ICY_M
 import ICY_Can_We_Leave_a_Message_On_Cell__c from '@salesforce/schema/Referral__c.ICY_Can_We_Leave_a_Message_On_Cell__c';
 import ICY_Leave_a_Message_On_other_Phone__c from '@salesforce/schema/Referral__c.ICY_Leave_a_Message_On_other_Phone__c';
 import ICY_Can_We_Leave_a_Message_On_Home_Phone__c from '@salesforce/schema/Referral__c.ICY_Can_We_Leave_a_Message_On_Home_Phone__c';
+import ICY_Can_We_Leave_a_Message_On_Email__c from '@salesforce/schema/Referral__c.ICY_Can_We_Leave_a_Message_On_Email__c';
 
 import Preferred_Contact_s_Name_Cell__c from '@salesforce/schema/Referral__c.Preferred_Contact_s_Name_Cell__c';
 import Preferred_Contact_s_Name_Home__c from '@salesforce/schema/Referral__c.Preferred_Contact_s_Name_Home__c';
@@ -163,6 +164,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         ICY_Medical_Referral_Reason__c: '',
         Individual_Preferred_Name__c: '',
         ICY_Can_We_Leave_a_Message_On_Cell__c: false,
+        ICY_Can_We_Leave_a_Message_On_Email__c: false,
         ICY_Can_We_Leave_a_Message_On_Home_Phone__c: false,
         ICY_Leave_a_Message_On_other_Phone__c: false,
         ICY_CYMH__c: '',
@@ -487,6 +489,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         fields[ICY_Can_We_Leave_a_Message_On_Cell__c.fieldApiName] = this.referral.ICY_Can_We_Leave_a_Message_On_Cell__c
         fields[ICY_Can_We_Leave_a_Message_On_Home_Phone__c.fieldApiName] = this.referral.ICY_Can_We_Leave_a_Message_On_Home_Phone__c
         fields[ICY_Leave_a_Message_On_other_Phone__c.fieldApiName] = this.referral.ICY_Leave_a_Message_On_other_Phone__c
+        fields[ICY_Can_We_Leave_a_Message_On_Email__c.fieldApiName] = this.referral.ICY_Can_We_Leave_a_Message_On_Email__c
         fields[ICY_Referral_Source__c.fieldApiName] = this.referral.ICY_Referral_Source__c;
         fields[ICY_Priority__c.fieldApiName] = this.referral.ICY_Priority__c;
         fields[ICY_CYMH__c.fieldApiName] = this.referral.ICY_CYMH__c;
@@ -778,6 +781,9 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                     break;
                 case 'ICY_Can_We_Leave_a_Message_On_Cell__c':
                     this.referral.ICY_Can_We_Leave_a_Message_On_Cell__c = event.target.checked;
+                    break;
+                case 'ICY_Can_We_Leave_a_Message_On_Email__c':
+                    this.referral.ICY_Can_We_Leave_a_Message_On_Email__c = event.target.checked;
                     break;
                 case 'Preferred_Contact_s_Name_Cell__c':
                     this.referral.Preferred_Contact_s_Name_Cell__c = event.target.value;

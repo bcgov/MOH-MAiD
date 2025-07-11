@@ -362,6 +362,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Referral__c.ICY_Can_We_Leave_a_Message_On_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Referral__c.ICY_Can_We_Leave_a_Message_On_Home_Phone__c</field>
         <readable>true</readable>
     </fieldPermissions>

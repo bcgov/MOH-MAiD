@@ -684,6 +684,7 @@
                                                         name="Individual_Email_Address__c"
                                                         label="Email"
                                                         value={referral.Individual_Email_Address__c}
+                                                        field-level-help="child/youth’s email (if not the Preferred Contact’s email)"
                                                         pattern=".+@.+\..+"
                                                         message-when-pattern-mismatch="Please enter a valid email address."
                                                         onchange={handleChange}
@@ -694,7 +695,7 @@
                                             </div>
                                             <div class="slds-col slds-size_1-of-6">
                                                 <br />
-                                                <!--span>
+                                                <span>
                                                     <div class="slds-p-around_xx-small">
                                                         <div class="slds-form-element">
                                                             <label class="slds-checkbox_toggle slds-grid">
@@ -702,9 +703,9 @@
                                                                     Can we leave a message?
                                                                 </span>
                                                                 <input type="checkbox"
-                                                                    name="ICY_Can_We_Leave_a_Message_On_Cell__c"
+                                                                    name="ICY_Can_We_Leave_a_Message_On_Email__c"
                                                                     aria-describedby="support-need"
-                                                                    checked={referral.ICY_Can_We_Leave_a_Message_On_Cell__c}
+                                                                    checked={referral.ICY_Can_We_Leave_a_Message_On_Email__c}
                                                                     onchange={handleChange} tabindex="0" />
                                                                 <span id="Leave_Message__c3"
                                                                     class="slds-checkbox_faux_container"
@@ -716,14 +717,14 @@
                                                             </label>
                                                         </div>
                                                     </div>
-                                                </span-->
+                                                </span>
                                             </div>
                                             <div class="slds-col slds-size_1-of-4">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
                                                          <lightning-input type="text" label="Preferred Contact’s Name" name="Preferred_Contact_s_Name_Email__c"
                                                             value={referral.Preferred_Contact_s_Name_Email__c} variant="label-stacked"
-                                                            field-level-help="Preferred Contact’s Name Email (if not the child/youth’s own Email)"
+                                                            field-level-help="Preferred Contact’s Name (if not the child/youth’s own Email)"
                                                             onchange={handleChange} tabindex="0">
                                                         </lightning-input>
                                                     </div>
