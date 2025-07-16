@@ -16492,6 +16492,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Referral__c.ICY_Can_We_Leave_a_Message_On_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Referral__c.ICY_Can_We_Leave_a_Message_On_Home_Phone__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16802,6 +16807,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Referral__c.Other_Relationship_Email__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Referral__c.Other_Relationship_Home__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -16838,6 +16848,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Preferred_Contact_s_Name_Cell__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Preferred_Contact_s_Name_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -16893,6 +16908,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Relationship_to_Individual_Cell__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Relationship_to_Individual_Email__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -20,6 +20,7 @@ import Physical_Address_Province__c from '@salesforce/schema/Referral__c.Physica
 import Physical_Address_City__c from '@salesforce/schema/Referral__c.Physical_Address_City__c';
 import Individual_Home_Phone_Number__c from '@salesforce/schema/Referral__c.Individual_Home_Phone_Number__c';
 import Individual_Cell_Phone_Number__c from '@salesforce/schema/Referral__c.Individual_Cell_Phone_Number__c';
+import Individual_Email_Address__c from '@salesforce/schema/Referral__c.Individual_Email_Address__c';
 import Referral_Notes__c from '@salesforce/schema/Referral__c.Referral_Notes__c';
 import Status__c from '@salesforce/schema/Referral__c.Status__c';
 import ICY_Referred_By__c from '@salesforce/schema/Referral__c.ICY_Referred_By__c';
@@ -40,19 +41,22 @@ import ICY_Medical_Referral_Reason__c from '@salesforce/schema/Referral__c.ICY_M
 import ICY_Can_We_Leave_a_Message_On_Cell__c from '@salesforce/schema/Referral__c.ICY_Can_We_Leave_a_Message_On_Cell__c';
 import ICY_Leave_a_Message_On_other_Phone__c from '@salesforce/schema/Referral__c.ICY_Leave_a_Message_On_other_Phone__c';
 import ICY_Can_We_Leave_a_Message_On_Home_Phone__c from '@salesforce/schema/Referral__c.ICY_Can_We_Leave_a_Message_On_Home_Phone__c';
+import ICY_Can_We_Leave_a_Message_On_Email__c from '@salesforce/schema/Referral__c.ICY_Can_We_Leave_a_Message_On_Email__c';
 
 import Preferred_Contact_s_Name_Cell__c from '@salesforce/schema/Referral__c.Preferred_Contact_s_Name_Cell__c';
 import Preferred_Contact_s_Name_Home__c from '@salesforce/schema/Referral__c.Preferred_Contact_s_Name_Home__c';
+import Preferred_Contact_s_Name_Email__c from '@salesforce/schema/Referral__c.Preferred_Contact_s_Name_Email__c';
 import Preferred_Contact_s_Name_Other__c from '@salesforce/schema/Referral__c.Preferred_Contact_s_Name_Other__c';
 
 import Relationship_to_Individual_Cell__c from '@salesforce/schema/Referral__c.Relationship_to_Individual_Cell__c';
 import Relationship_to_Individual_Home__c from '@salesforce/schema/Referral__c.Relationship_to_Individual_Home__c';
 import Relationship_to_Individual_Other__c from '@salesforce/schema/Referral__c.Relationship_to_Individual_Other__c';
+import Relationship_to_Individual_Email__c from '@salesforce/schema/Referral__c.Relationship_to_Individual_Email__c';
 
 import Other_Relationship_Cell__c from '@salesforce/schema/Referral__c.Other_Relationship_Cell__c';
 import Other_Relationship_Home__c from '@salesforce/schema/Referral__c.Other_Relationship_Home__c';
 import Other_Relationship_Other__c from '@salesforce/schema/Referral__c.Other_Relationship_Other__c';
-
+import Other_Relationship_Email__c from '@salesforce/schema/Referral__c.Other_Relationship_Email__c';
 
 import ICY_Referral_For__c from '@salesforce/schema/Referral__c.ICY_Referral_For__c';
 import ICY_CYMH__c from '@salesforce/schema/Referral__c.ICY_CYMH__c';
@@ -144,6 +148,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         ICY_Other_Phone__c: '',
         Individual_Home_Phone_Number__c: '',
         Individual_Cell_Phone_Number__c: '',
+        Individual_Email_Address__c :'',
         ICY_If_Parent_Guardian_is_aware__c: '',
         ICY_CHILD_YOUTH_Aware__c: false,
         ICY_Reason_for_Referral__c: '',
@@ -159,6 +164,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         ICY_Medical_Referral_Reason__c: '',
         Individual_Preferred_Name__c: '',
         ICY_Can_We_Leave_a_Message_On_Cell__c: false,
+        ICY_Can_We_Leave_a_Message_On_Email__c: false,
         ICY_Can_We_Leave_a_Message_On_Home_Phone__c: false,
         ICY_Leave_a_Message_On_other_Phone__c: false,
         ICY_CYMH__c: '',
@@ -172,10 +178,12 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         OwnerId: '',
         Preferred_Contact_s_Name_Cell__c: '',
         Preferred_Contact_s_Name_Home__c: '',
+        Preferred_Contact_s_Name_Email__c : '',
         Preferred_Contact_s_Name_Other__c: '',
         Relationship_to_Individual_Cell__c: '',
         Relationship_to_Individual_Home__c: '',
         Relationship_to_Individual_Other__c: '',
+        Relationship_to_Individual_Email__c:'',
         Other_Relationship_Cell__c: '',
         Other_Relationship_Home__c: ''
 
@@ -184,6 +192,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
     @track isFieldOtherCellRequired = false;
     @track isFieldOtherHomeRequired = false;
     @track isFieldOtherRequired = false;
+     @track isFieldEmailRequired = false;
     @track isFieldReasonForReferralifOtherRequired = false;
     @track isFieldRefSourceDescRequired = false;
 
@@ -458,6 +467,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         fields[Physical_Address_City__c.fieldApiName] = this.referral.Physical_Address_City__c
         fields[Individual_Home_Phone_Number__c.fieldApiName] = this.referral.Individual_Home_Phone_Number__c
         fields[Individual_Cell_Phone_Number__c.fieldApiName] = this.referral.Individual_Cell_Phone_Number__c
+        fields[Individual_Email_Address__c.fieldApiName] = this.referral.Individual_Email_Address__c
         fields[Referral_Notes__c.fieldApiName] = this.referral.Referral_Notes__c
         if (referralFor) fields[ICY_Referral_For__c.fieldApiName] = referralFor;
         fields[Status__c.fieldApiName] = 'Referral'
@@ -479,6 +489,7 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         fields[ICY_Can_We_Leave_a_Message_On_Cell__c.fieldApiName] = this.referral.ICY_Can_We_Leave_a_Message_On_Cell__c
         fields[ICY_Can_We_Leave_a_Message_On_Home_Phone__c.fieldApiName] = this.referral.ICY_Can_We_Leave_a_Message_On_Home_Phone__c
         fields[ICY_Leave_a_Message_On_other_Phone__c.fieldApiName] = this.referral.ICY_Leave_a_Message_On_other_Phone__c
+        fields[ICY_Can_We_Leave_a_Message_On_Email__c.fieldApiName] = this.referral.ICY_Can_We_Leave_a_Message_On_Email__c
         fields[ICY_Referral_Source__c.fieldApiName] = this.referral.ICY_Referral_Source__c;
         fields[ICY_Priority__c.fieldApiName] = this.referral.ICY_Priority__c;
         fields[ICY_CYMH__c.fieldApiName] = this.referral.ICY_CYMH__c;
@@ -491,14 +502,16 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
         fields[OWNERID.fieldApiName] = this.referral.OwnerId;
         fields[Preferred_Contact_s_Name_Cell__c.fieldApiName] = this.referral.Preferred_Contact_s_Name_Cell__c;
         fields[Preferred_Contact_s_Name_Home__c.fieldApiName] = this.referral.Preferred_Contact_s_Name_Home__c;
+        fields[Preferred_Contact_s_Name_Email__c.fieldApiName] = this.referral.Preferred_Contact_s_Name_Email__c;
         fields[Preferred_Contact_s_Name_Other__c.fieldApiName] = this.referral.Preferred_Contact_s_Name_Other__c;
         fields[Relationship_to_Individual_Cell__c.fieldApiName] = this.referral.Relationship_to_Individual_Cell__c;
         fields[Relationship_to_Individual_Home__c.fieldApiName] = this.referral.Relationship_to_Individual_Home__c;
         fields[Relationship_to_Individual_Other__c.fieldApiName] = this.referral.Relationship_to_Individual_Other__c;
+        fields[Relationship_to_Individual_Email__c.fieldApiName] = this.referral.Relationship_to_Individual_Email__c;
         fields[Other_Relationship_Cell__c.fieldApiName] = this.referral.Other_Relationship_Cell__c;
         fields[Other_Relationship_Home__c.fieldApiName] = this.referral.Other_Relationship_Home__c;
         fields[Other_Relationship_Other__c.fieldApiName] = this.referral.Other_Relationship_Other__c;
-
+        fields[Other_Relationship_Email__c	.fieldApiName] = this.referral.Other_Relationship_Email__c;
         if (this.referralType == 'Professional Referral') fields[RecordTypeId.fieldApiName] = this.medicalRecordTypeId;
         else fields[RecordTypeId.fieldApiName] = this.generalRecordTypeId;
 
@@ -681,6 +694,9 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                 case 'Other_Phone__c':
                     this.referral.ICY_Other_Phone__c = this.formatPhone(event.target.value);
                     break;
+                case 'Individual_Email_Address__c':
+                    this.referral.Individual_Email_Address__c =  event.target.value;
+                    break;
                 case 'ICY_If_Parent_Guardian_is_aware__c':
                     this.referral.ICY_If_Parent_Guardian_is_aware__c = event.target.value;
                     if (event.target.value == 'Yes') this.showPrimaryContact = true;
@@ -766,11 +782,17 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                 case 'ICY_Can_We_Leave_a_Message_On_Cell__c':
                     this.referral.ICY_Can_We_Leave_a_Message_On_Cell__c = event.target.checked;
                     break;
+                case 'ICY_Can_We_Leave_a_Message_On_Email__c':
+                    this.referral.ICY_Can_We_Leave_a_Message_On_Email__c = event.target.checked;
+                    break;
                 case 'Preferred_Contact_s_Name_Cell__c':
                     this.referral.Preferred_Contact_s_Name_Cell__c = event.target.value;
                     break;
                 case 'Preferred_Contact_s_Name_Home__c':
                     this.referral.Preferred_Contact_s_Name_Home__c = event.target.value;
+                    break;
+                case 'Preferred_Contact_s_Name_Email__c':
+                    this.referral.Preferred_Contact_s_Name_Email__c = event.target.value;
                     break;
                 case 'Preferred_Contact_s_Name_Other__c':
                     this.referral.Preferred_Contact_s_Name_Other__c = event.target.value;
@@ -792,7 +814,13 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                     this.isFieldOtherRequired= false;
                     if (this.referral.Relationship_to_Individual_Other__c=='Other')
                         this.isFieldOtherRequired= true;
-                    break;  
+                    break;
+                case 'Relationship_to_Individual_Email__c':
+                    this.referral.Relationship_to_Individual_Email__c = event.target.value;
+                    this.isFieldEmailRequired= false;
+                    if (this.referral.Relationship_to_Individual_Email__c=='Other')
+                        this.isFieldEmailRequired= true;
+                    break;   
                 case 'Other_Relationship_Cell__c':
                     this.referral.Other_Relationship_Cell__c = event.target.value;
                     break;
@@ -801,6 +829,9 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                     break;
                 case 'Other_Relationship_Other__c':
                     this.referral.Other_Relationship_Other__c = event.target.value;
+                    break;
+                case 'Other_Relationship_Email__c':
+                    this.referral.Other_Relationship_Email__c = event.target.value;
                     break;
                 case 'Individual_Middle_Name__c':
                     this.referral.Individual_Middle_Name__c = event.target.value;

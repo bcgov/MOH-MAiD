@@ -675,6 +675,83 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="slds-col">
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col slds-size_1-of-8">
+                                                <div class="slds-p-around_xx-small">
+                                                     <lightning-input
+                                                        type="email"
+                                                        name="Individual_Email_Address__c"
+                                                        label="Email"
+                                                        value={referral.Individual_Email_Address__c}
+                                                        field-level-help="Child/Youth’s email (if not the Preferred Contact’s email)"
+                                                        pattern=".+@.+\..+"
+                                                        message-when-pattern-mismatch="Please enter a valid email address."
+                                                        onchange={handleChange}
+                                                        tabindex="0"
+                                                        class="validate">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-6">
+                                                <br />
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                        <div class="slds-form-element">
+                                                            <label class="slds-checkbox_toggle slds-grid">
+                                                                <span class="slds-p-around_xx-small slds-m-bottom_none">
+                                                                    Can we leave a message via email?
+                                                                </span>
+                                                                <input type="checkbox"
+                                                                    name="ICY_Can_We_Leave_a_Message_On_Email__c"
+                                                                    aria-describedby="support-need"
+                                                                    checked={referral.ICY_Can_We_Leave_a_Message_On_Email__c}
+                                                                    onchange={handleChange} tabindex="0" />
+                                                                <span id="Leave_Message__c3"
+                                                                    class="slds-checkbox_faux_container"
+                                                                    aria-live="assertive">
+                                                                    <span class="slds-checkbox_faux"></span>
+                                                                    <span class="slds-checkbox_on">Yes</span>
+                                                                    <span class="slds-checkbox_off">No</span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                         <lightning-input type="text" label="Preferred Contact’s Name" name="Preferred_Contact_s_Name_Email__c"
+                                                            value={referral.Preferred_Contact_s_Name_Email__c} variant="label-stacked"
+                                                            field-level-help="Preferred Contact’s Name (if not the child/youth’s own email)"
+                                                            onchange={handleChange} tabindex="0">
+                                                        </lightning-input>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-6">
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                        <lightning-input-field field-name="Relationship_to_Individual_Email__c"
+                                                            onchange={handleChange} value={referral.Relationship_to_Individual_Email__c}
+                                                            name="Relationship_to_Individual_Email__c" variant="label-stacked">
+                                                        </lightning-input-field>                                                 
+                                                    </div>
+                                                </span>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                         <lightning-input type="text" label="Relationship to Individual (if other)" name="Other_Relationship_Email__c"
+                                                            value={referral.Other_Relationship_Email__c} required={isFieldEmailRequired} class="validate"
+                                                            onchange={handleChange} tabindex="0" variant="label-stacked">
+                                                        </lightning-input>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </lightning-record-edit-form>
                                 </div>
                             </div>
