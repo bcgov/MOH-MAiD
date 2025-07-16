@@ -684,9 +684,9 @@
                                                         name="Individual_Email_Address__c"
                                                         label="Email"
                                                         value={referral.Individual_Email_Address__c}
-                                                        field-level-help="Child/Youth’s email (if not the Preferred Contact’s email)"
+                                                        field-level-help= {ICYChildYouthEmailTooltip}
                                                         pattern=".+@.+\..+"
-                                                        message-when-pattern-mismatch="Please enter a valid email address."
+                                                        message-when-pattern-mismatch= {ICYEmailValidationError}
                                                         onchange={handleChange}
                                                         tabindex="0"
                                                         class="validate">
@@ -700,7 +700,8 @@
                                                         <div class="slds-form-element">
                                                             <label class="slds-checkbox_toggle slds-grid">
                                                                 <span class="slds-p-around_xx-small slds-m-bottom_none">
-                                                                    Can we leave a message via email?
+                                                                    Can we leave a message<span style="opacity: 0;">?</span>
+                                                                    <span style="display: block;">via email?</span>
                                                                 </span>
                                                                 <input type="checkbox"
                                                                     name="ICY_Can_We_Leave_a_Message_On_Email__c"

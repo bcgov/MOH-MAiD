@@ -88,6 +88,8 @@ import getRecordTypeId from '@salesforce/apex/ICY_Referral_Controller.getRecordT
 import getICYQueueId from '@salesforce/apex/ICY_Referral_Controller.getICYQueueId'
 import checkIfHealthNumberIsUnique from '@salesforce/apex/ICY_Referral_Controller.checkIfHealthNumberIsUnique'
 import createPrimaryContact from '@salesforce/apex/ICY_Referral_Controller.createPrimaryContact'
+import ICY_ChildYouth_Email_Tooltip from '@salesforce/label/c.ICY_Child_Youth_Email_Tooltip';
+import ICY_Email_Validation_Error from '@salesforce/label/c.ICY_Email_Validation_Error';
 
 export default class IcyNewReferral extends NavigationMixin(LightningElement) {
     openModal = false;
@@ -115,6 +117,8 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
     ytsContactRecordTypeId;
     referralRecordId;
     ICY_Personal_Health_Number='';
+    ICYChildYouthEmailTooltip = ICY_ChildYouth_Email_Tooltip;
+    ICYEmailValidationError = ICY_Email_Validation_Error ;
 
 
 
