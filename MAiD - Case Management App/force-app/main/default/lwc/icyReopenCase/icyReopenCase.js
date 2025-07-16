@@ -1,6 +1,5 @@
 import { LightningElement,api,wire } from 'lwc';
 import checkClosedDate from '@salesforce/apex/ICY_ReopenCaseCtrl.checkClosedDate';
-import getReferralRelatedToCase from '@salesforce/apex/ICY_ReopenCaseCtrl.getReferralDetails';
 import notifyManagerONcaseReopening from '@salesforce/apex/ICY_ReopenCaseCtrl.sendEmailNotificationToLocationManager';
 import {createRecord,updateRecord } from 'lightning/uiRecordApi';
 import INTAKE_OBJECT from '@salesforce/schema/Intake__c';
@@ -15,7 +14,7 @@ import ICY_SomethingWentWrong from '@salesforce/label/c.ICY_SomethingWentWrong';
 export default class IcyReopenCase extends NavigationMixin(LightningElement)  {
 
     @api recordId
-    past91Days;
+    canCaseBeReopened;
     showMsg;
     referralObj;
     intakeId =null;
@@ -23,15 +22,13 @@ export default class IcyReopenCase extends NavigationMixin(LightningElement)  {
     @wire( checkClosedDate, ({ caseId : '$recordId' }))
     wiredRecord({ data, error }) {
         if ( data ) {
-            this.past91Days = data;
-            if(this.past91Days == 'Yes') {
-                this.getRefDetails();
-            }else{
-                this.updateCaseStatus();
-            }
+            this.canCaseBeReopened = data;
+            if(this.canCaseBeReopened == 'Yes') {
+                this.updateCaseStatus();;
+            } 
         }else if(error) {
             console.log(JSON.stringify(error))
-            this.past91Days = 'No';
+            this.canCaseBeReopened = 'No';
         }
     }
 
@@ -48,20 +45,6 @@ export default class IcyReopenCase extends NavigationMixin(LightningElement)  {
             }
         }
         return recordTypeId;
-    }
-
-    createIntake(){
-        let inTakefields = { 'RecordTypeId': this.getRecordTypeId('ICY Intake'),
-                            'Case__c': this.recordId,
-                            'Referral__c':this.referralObj.Id
-                            };
-        let objInTake = { 'apiName': 'Intake__c', fields: inTakefields };
-        createRecord(objInTake).then(response => {
-            this.sendEmailNotification();
-            this.intakeId = response.id;            
-        }).catch(error => {
-            alert('Error: ' + JSON.stringify(error.message));
-        })
     }
 
     updateCaseStatus(){
@@ -96,26 +79,7 @@ export default class IcyReopenCase extends NavigationMixin(LightningElement)  {
             },
         });
     }
-
-    getRefDetails(){
-        getReferralRelatedToCase({caseId: this.recordId})        
-            .then(result => {
-                this.referralObj= result;
-                if(this.referralObj){
-                    this.createIntake();
-                }
-            }).catch(error => {
-                this.dispatchEvent(
-                    new ShowToastEvent({
-                        title: 'Error!',
-                        message: ICY_SomethingWentWrong +JSON.stringify(error.message),
-                        variant: 'error'
-                    })
-                )
-                console.log('error',error);
-            });
-    }
-        
+ 
     sendEmailNotification(){
         notifyManagerONcaseReopening({caseId: this.recordId})        
         .then(result => {

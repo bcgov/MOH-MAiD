@@ -4,10 +4,9 @@ public class ICY_ReopenCaseCtrl {
         if(string.isNotBlank(caseId)) {
             Case objCase = [SELECT Id, ClosedDate FROM Case Where ID=: caseId];
             if(objCase.ClosedDate != null){
-                Integer daysBtwn = (Date.valueOf(objCase.ClosedDate)).daysBetween(System.today());
-                return daysBtwn > 91 ? 'Yes' : 'No';
+                // Always return Yes if closeddate is not null                
+                return 'Yes';
             }
-
         }
       return 'No';
     }
