@@ -23,6 +23,14 @@
         <value>Case Member removed successfully.</value>
     </labels>
     <labels>
+        <fullName>ICY_ConsentToEvaluation_Tooltip</fullName>
+        <categories>ICY Accepting Intakes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>used to dsiplay tooltip on the consent to evaluation field</shortDescription>
+        <value>The child/youth has consented to being contacted for a brief survey for evaluation purposes up to 12 months after they stop receiving ICY services</value>
+    </labels>
+    <labels>
         <fullName>ICY_DaysForInactiveNotes</fullName>
         <language>en_US</language>
         <protected>false</protected>

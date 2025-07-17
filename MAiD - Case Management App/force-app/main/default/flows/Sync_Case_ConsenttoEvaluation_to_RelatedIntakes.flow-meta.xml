@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>64.0</apiVersion>
+    <assignments>
+        <description>Adding the updated intake to the collection for update.</description>
+        <name>Adding_Updated_IntakeRecord_to_the_Collection</name>
+        <label>Adding Updated IntakeRecord to the Collection</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>IntakeRecordsToUpdate</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Related_Intake_Records</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Related_Intake_Records</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <description>Assign (consent to evaluation) field value from case to  related intake to keep in sync</description>
+        <name>Assign_ConsentToEvaluation_Value_From_CasetoRelatedIntake</name>
+        <label>Assign ConsentToEvaluation Value From CasetoRelatedIntake</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignmentItems>
+            <assignToReference>Related_Intake_Records.Consent_to_Evaluation__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$Record.Consent_to_Evaluation__c</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Adding_Updated_IntakeRecord_to_the_Collection</targetReference>
+        </connector>
+    </assignments>
+    <constants>
+        <description>ICY Standard Record type</description>
+        <name>ICY_STANDARD_RECORDTYPE</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>ICY Standard Case</stringValue>
+        </value>
+    </constants>
+    <decisions>
+        <description>used to check if there is atleast one related intake present</description>
+        <name>Check_If_Related_Intake_Is_Present</name>
+        <label>Check If Related Intake Is Present</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>If_Related_Intake_is_Present</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Related_Intake_Records</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Get_Related_Intake_Records</leftValueReference>
+                <operator>IsEmpty</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Related_Intake_Records</targetReference>
+            </connector>
+            <label>If Related Intake is Present</label>
+        </rules>
+    </decisions>
+    <description>used to sync the (consent to evaluation)  field value on to the related intake records</description>
+    <environments>Default</environments>
+    <interviewLabel>Sync_Case_ConsenttoEvaluation_to_RelatedIntakes {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Sync Case ConsenttoEvaluation to RelatedIntakes</label>
+    <loops>
+        <description>used to sync the consent to evaluation field value to the related intake records</description>
+        <name>Related_Intake_Records</name>
+        <label>Related Intake Records</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <collectionReference>Get_Related_Intake_Records</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Assign_ConsentToEvaluation_Value_From_CasetoRelatedIntake</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Update_Intakes_List</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <description>get the related intake record for the case.</description>
+        <name>Get_Related_Intake_Records</name>
+        <label>Get Related Intake Records</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Check_If_Related_Intake_Is_Present</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Case__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Intake__c</object>
+        <sortField>CreatedDate</sortField>
+        <sortOrder>Asc</sortOrder>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <description>update the intakes</description>
+        <name>Update_Intakes_List</name>
+        <label>Update Intakes List</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputReference>IntakeRecordsToUpdate</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Related_Intake_Records</targetReference>
+        </connector>
+        <filterLogic>(1 OR 2) AND (3 OR 4)</filterLogic>
+        <filters>
+            <field>Consent_to_Evaluation__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Consent_to_Evaluation__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>ICY_Standard_Case</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Record_Type_Name__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>ICY_Close_Case</stringValue>
+            </value>
+        </filters>
+        <object>Case</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <description>Intake Records To Update</description>
+        <name>IntakeRecordsToUpdate</name>
+        <dataType>SObject</dataType>
+        <isCollection>true</isCollection>
+        <isInput>true</isInput>
+        <isOutput>false</isOutput>
+        <objectType>Intake__c</objectType>
+    </variables>
+</Flow>
