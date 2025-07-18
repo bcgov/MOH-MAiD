@@ -217,6 +217,10 @@
         <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
         <lookupPhoneDialogsAdditionalFields>CASES.STATUS</lookupPhoneDialogsAdditionalFields>
         <searchResultsAdditionalFields>CASES.CASE_NUMBER</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ICY_Ref_Ind_First_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ICY_Ref_Ind_Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ICY_Ref_Ind_Preferred_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ICY_Searchable_DOB__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CASES.SUBJECT</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CASES.STATUS</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>CASES.CREATED_DATE</searchResultsAdditionalFields>
