@@ -238,6 +238,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.Consent_to_Evaluation__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Case.ContactId</field>
         <readable>true</readable>
@@ -1115,6 +1120,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Intake__c.Closed_Reason__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Intake__c.Consent_to_Evaluation__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -99,6 +99,15 @@
                             </div>
                         </div>
                     </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                            <lightning-input 
+                                type="checkbox" 
+                                label="Child/Youth consents to post-ICY survey" 
+                                checked={isConsentToEvaluationSelected} 
+                                onchange={handleCheckboxChange}
+                                field-level-help={displayTooltipOnCOnsentToEvaluation}>
+                            </lightning-input>
+                    </lightning-layout-item>
 
                 </lightning-layout>
             </div>

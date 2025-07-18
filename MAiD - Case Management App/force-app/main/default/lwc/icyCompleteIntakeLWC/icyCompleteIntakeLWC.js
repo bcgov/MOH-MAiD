@@ -10,6 +10,8 @@ import CASE_OBJECT from '@salesforce/schema/Case';
 import createPersonAcct from '@salesforce/apex/ICY_CompleteIntakeCtrl.createPersonAcc';
 import { NavigationMixin } from 'lightning/navigation';
 import { deleteRecord } from 'lightning/uiRecordApi';
+import ICY_ConsentToEvaluation__Tooltip from '@salesforce/label/c.ICY_ConsentToEvaluation_Tooltip';
+
 
 //Custom Labels
 import ICY_IntakeCompletedSuccessfully from '@salesforce/label/c.ICY_IntakeCompletedSuccessfully';
@@ -43,6 +45,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     signedFileName;
     documentType;
     documentTypeSigned;
+    isConsentToEvaluationSelected = false;
+    displayTooltipOnCOnsentToEvaluation = ICY_ConsentToEvaluation__Tooltip ;
 
     get acceptedFormats() {
         return ['.pdf', '.png', '.txt', '.xlsx', '.doc', '.docx'];
@@ -117,6 +121,11 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
             this.showScreen1 = false;
             this.showScreen2 = true;
     }
+
+    handleCheckboxChange(event) {
+    this.isConsentToEvaluationSelected = event.target.checked;
+    }
+
     /**
      * Handle Chnage
      */
@@ -187,7 +196,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                                 'ICY_Date_Intake_Happened__c': this.inTakeRec.fields.CreatedDate.value,
                                 'ICY_Referral_Date__c': this.inTakeRec.fields.Referral__r.value.fields.CreatedDate.value,
                                 'ICY_Geographic_Area__c':this.inTakeRec.fields.Referral__r.value.fields.ICY_Geographic_Area__c.value,
-                                'Referral__c':this.inTakeRec.fields.Referral__r.value.fields.Id.value
+                                'Referral__c':this.inTakeRec.fields.Referral__r.value.fields.Id.value,
+                                'Consent_to_Evaluation__c': this.isConsentToEvaluationSelected
                                 };
 
             // Record details to pass to create method with api name of Object.
@@ -205,8 +215,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                             'ICY_Consent_Provided__c': true,
                             'Status__c': 'Complete',
                             'ICY_Rationale__c': this.rationale, //Josh
-                            'Case__c': response.id
-
+                            'Case__c': response.id,
+                            'Consent_to_Evaluation__c' : this.isConsentToEvaluationSelected
                         }
                         var objIntake = { fields: inTakefields };
 

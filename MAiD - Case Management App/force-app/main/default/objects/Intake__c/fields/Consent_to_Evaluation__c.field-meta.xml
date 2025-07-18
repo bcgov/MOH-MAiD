@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Consent_to_Evaluation__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Child/Youth Consent for Post-ICY Survey (for Evaluation Purposes)</description>
+    <inlineHelpText>The child/youth has consented to being contacted for a brief survey for evaluation purposes up to 12 months after they stop receiving ICY services</inlineHelpText>
+    <label>Consent to Evaluation</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>
