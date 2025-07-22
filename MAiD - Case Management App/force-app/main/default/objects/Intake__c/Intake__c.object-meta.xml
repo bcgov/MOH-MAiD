@@ -173,7 +173,10 @@
         <excludedStandardButtons>Import</excludedStandardButtons>
         <excludedStandardButtons>MassChangeOwner</excludedStandardButtons>
         <excludedStandardButtons>Accept</excludedStandardButtons>
-        <searchResultsAdditionalFields>Individual_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ICY_REF_Indi_First_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ICY_REF_Indi_Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Individual_Preferred_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Individual_Date_of_Birth__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ICY_Assigned_To__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Referral__c</searchResultsAdditionalFields>

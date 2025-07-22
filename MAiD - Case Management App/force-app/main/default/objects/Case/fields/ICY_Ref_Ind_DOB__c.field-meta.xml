@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ICY_Ref_Ind_DOB__c</fullName>
+    <description>This field is created to be in the backend for the global search functionality</description>
+    <encryptionScheme>None</encryptionScheme>
+    <label>ICY Ref Ind DOB</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>
