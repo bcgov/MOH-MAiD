@@ -177,6 +177,8 @@
         <members>ICYSharedIndicatorsReports/d_Referrals_Indigenous_Last_Month_mGG</members>
         <members>ICYSharedIndicatorsReports/draft_ICY_Referral_Sources_zlG</members>
         <members>MAiDCaseManagementReports/Pharmacist_Report_PoF</members>
+        <members>ICY_Evaluation/ClosedCasesCheckedLast12Months_Ipc</members>
+        <members>ICY_Evaluation/Open_Cases_with_Checkbox_Checked_MFp</members>
         <!--<members>MAiDCaseManagementReports/S1_2023_HC_Report_IV_and_IV_and_Oral</members>
         <members>MAiDCaseManagementReports/S1_Admin_Substance_HC_2023Report</members>
         <members>MAiDCaseManagementReports/S2_2023_HC_ReportOral_MAiD_P8M</members>
