@@ -2,6 +2,6 @@
 trigger userTrigger on User (After Insert, After Update) {
 
  for (User u : Trigger.new) {
-        userRegistrationHandler.assignRolesMatchingPublicGroupsToUser(u.Id);
+        ICY_UserRegistrationHandler.assignRolesMatchingPublicGroupsToUser(u.Id);
     }
 }

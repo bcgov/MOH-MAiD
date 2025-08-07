@@ -22,7 +22,26 @@
     <members>Referral__c.ShareOpenReferralWithSurreyCLNonCL</members>
     <members>Referral__c.ShareOpenReferralWithqathetPowellRiverCLNonCL</members>
     <members>Referral__c.ShareReferralWithICYBusinessAdministrator</members>
-       <name>SharingCriteriaRule</name>
+    <members>Case.ShareICYCaseWithCentralCoastAdmin</members>
+    <members>Case.ShareICYCaseWithCowichanValleyAdmin</members>
+    <members>Case.ShareICYCaseWithDeltaAdmin</members>
+    <members>Case.ShareICYCaseWithGoldTrailAdmin</members>
+    <members>Case.ShareICYCaseWithNicolaSimilkameenAdmin</members>
+    <members>Case.ShareICYCaseWithPeaceRiverSouthAdmin</members>
+    <members>Case.ShareICYCaseWithQualicumAdmin</members>
+    <members>Case.ShareICYCaseWithSurrey_Admin</members>
+    <members>Case.ShareICYCasesWithCoastMountainsAdmin</members>
+    <members>Case.ShareICYCasesWithComoxValleyAdmin</members>
+    <members>Case.ShareICYCasesWithFraserCascadesAdmin</members>
+    <members>Case.ShareICYCasesWithKootenayColumbiaAdmin</members>
+    <members>Case.ShareICYCasesWithMapleRidgePittMeadowsAdmin</members>
+    <members>Case.ShareICYCasesWithMissionAdmin</members>
+    <members>Case.ShareICYCasesWithNanaimoLadysmithAdmin</members>
+    <members>Case.ShareICYCasesWithNorthOkanaganShuswapAdmin</members>
+    <members>Case.ShareICYCasesWithOkanaganSimilkameenAdmin</members>
+    <members>Case.ShareICYCasesWithPacificRimAdmin</members>
+    <members>Case.ShareICYCasesWithRichmondAdmin</members>
+    <name>sharingCriteriaRules</name>
     </types>
 
      <types>
