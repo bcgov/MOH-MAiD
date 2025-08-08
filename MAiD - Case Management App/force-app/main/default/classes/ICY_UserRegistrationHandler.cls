@@ -12,7 +12,7 @@ public without sharing class ICY_UserRegistrationHandler {
         system.debug(u.Keycloak_Roles__c);
         if (String.isBlank(u.Keycloak_Roles__c)) 
             {
-                return;
+                return null;
             }
         return parseRoles(u.Keycloak_Roles__c);
     }
@@ -43,7 +43,7 @@ public without sharing class ICY_UserRegistrationHandler {
     	Set<String> userRoles = getAllKeycloakAssignedRoles(userId);
 
     	if (!userRoles.isEmpty() &&
-            (userRoles.contains('ICY_Program_Leader') || userRoles.contains('ICY_Team_Admin'))) {
+            (userRoles.contains('ICY_Program_Leader') || userRoles.contains('ICY_Admin'))) {
         
             Set<String> groupNames = new Set<String>();
             for (String role : userRoles) {
