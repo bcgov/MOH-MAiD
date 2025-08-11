@@ -20,22 +20,28 @@ public without sharing class ICY_UserRegistrationHandler {
 
     // Parse the payload populated in the keycloakRoles
     public static Set<String> parseRoles(String keycloakRoles) {
-        system.debug(keycloakRoles);
+        System.debug('Input: ' + keycloakRoles);
         Set<String> result = new Set<String>();
+
         if (String.isBlank(keycloakRoles)) {
             return result;
         }
-        for (String part : keycloakRoles.split(' ')) {
-            if (part.startsWith('[') && part.endsWith(']')) {
-                String role = part.substring(1, part.length() - 1);
+        // Find all bracketed sections using a regex
+        Pattern p = Pattern.compile('\\[([^\\]]+)\\]');
+        Matcher m = p.matcher(keycloakRoles);
+
+        while (m.find()) {
+            String insideBrackets = m.group(1); // gets what's inside the brackets
+            for (String role : insideBrackets.split(',')) {
                 if (!String.isBlank(role)) {
                     result.add(role.trim());
-                    System.debug(role);
+                    System.debug('Parsed Role: ' + role.trim());
                 }
             }
         }
+
         return result;
-	}
+    }
 
     // Assign the Public Groups based on the matching keycloak roles.
     public static void assignRolesMatchingPublicGroupsToUser(Id userId) {
