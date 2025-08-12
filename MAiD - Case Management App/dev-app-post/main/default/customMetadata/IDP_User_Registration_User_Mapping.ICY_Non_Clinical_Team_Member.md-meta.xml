@@ -16,7 +16,7 @@
     </values>
     <values>
         <field>External_Provider_Role__c</field>
-        <value xsi:type="xsd:string">[ ICY_Non_Clinical _Team_Member]</value>
+        <value xsi:type="xsd:string">[ICY_Non_Clinical _Team_Member]</value>
     </values>
     <values>
         <field>Flow_User__c</field>
