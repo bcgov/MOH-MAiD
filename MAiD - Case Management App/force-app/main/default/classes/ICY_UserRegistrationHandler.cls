@@ -46,27 +46,29 @@ public without sharing class ICY_UserRegistrationHandler {
     // Assign the Public Groups based on the matching keycloak roles.
     public static void assignRolesMatchingPublicGroupsToUser(Id userId) {
         Set<GroupMember> membersToInsert = new Set<GroupMember>();
-    	Set<String> userRoles = getAllKeycloakAssignedRoles(userId);
+        Set<String> userRoles = new Set<String>();
+    	userRoles = getAllKeycloakAssignedRoles(userId);
 
-    	if (!userRoles.isEmpty() &&
-            (userRoles.contains('ICY_Program_Leader') || userRoles.contains('ICY_Admin'))) {
+    	if (userRoles != null && !userRoles.isEmpty()) {
+            if (userRoles.contains('ICY_Program_Leader') || userRoles.contains('ICY_Admin')) {
         
-            Set<String> groupNames = new Set<String>();
-            for (String role : userRoles) {
-                if (role != 'ICY_Program_Leader' && role != 'ICY_Admin') {
-                    groupNames.add(role + '_PL');
+                Set<String> groupNames = new Set<String>();
+                for (String role : userRoles) {
+                    if (role != 'ICY_Program_Leader' && role != 'ICY_Admin') {
+                        groupNames.add(role + '_PL');
+                    }
                 }
-            }
-                system.debug(groupNames);
+                    system.debug(groupNames);
 
-            if (!groupNames.isEmpty()) {
-                List<Group> matchingGroups = [
-                    SELECT Id FROM Group
-                    WHERE Type = 'Regular' AND DeveloperName IN :groupNames
-                ];
+                if (!groupNames.isEmpty()) {
+                    List<Group> matchingGroups = [
+                        SELECT Id FROM Group
+                        WHERE Type = 'Regular' AND DeveloperName IN :groupNames
+                    ];
 
-                for (Group g : matchingGroups) {
-                    membersToInsert.add(new GroupMember(GroupId = g.Id, UserOrGroupId = userId));
+                    for (Group g : matchingGroups) {
+                        membersToInsert.add(new GroupMember(GroupId = g.Id, UserOrGroupId = userId));
+                    }
                 }
             }
         }
