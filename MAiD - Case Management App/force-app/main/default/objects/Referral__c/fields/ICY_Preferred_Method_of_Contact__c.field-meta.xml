@@ -24,9 +24,14 @@
                 <label>Home Phone</label>
             </value>
             <value>
-                <fullName>Other</fullName>
+                <fullName>Other Phone</fullName>
                 <default>false</default>
-                <label>Other</label>
+                <label>Other Phone</label>
+            </value>
+            <value>
+                <fullName>Email</fullName>
+                <default>false</default>
+                <label>Email</label>
             </value>
         </valueSetDefinition>
     </valueSet>

@@ -503,7 +503,7 @@
                                             <div class="slds-col slds-size_1-of-4">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Preferred Contact’s Name" name="Preferred_Contact_s_Name_Cell__c"
+                                                        <lightning-input type="text" label="Preferred Contact's Name for Cell Phone" name="Preferred_Contact_s_Name_Cell__c"
                                                             value={referral.Preferred_Contact_s_Name_Cell__c}  variant="label-stacked"
                                                             field-level-help="Preferred Contact’s Name (if not the child/youth’s own phone number)"
                                                             onchange={handleChange} tabindex="0">
@@ -511,7 +511,7 @@
                                                     </div>
                                                 </span>
                                             </div>
-                                            <div class="slds-col slds-size_1-of-6">
+                                            <div class="slds-col slds-size_1-of-5">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
                                                         <lightning-input-field field-name="Relationship_to_Individual_Cell__c"
@@ -524,7 +524,7 @@
                                             <div class="slds-col slds-size_1-of-4">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Relationship to Individual (if other)" name="Other_Relationship_Cell__c"
+                                                        <lightning-input type="text" label="Relationship (if Other) for Cell Phone" name="Other_Relationship_Cell__c"
                                                             value={referral.Other_Relationship_Cell__c} required={isFieldOtherCellRequired} class="validate"
                                                             onchange={handleChange} tabindex="0" variant="label-stacked">
                                                         </lightning-input>
@@ -573,7 +573,7 @@
                                             <div class="slds-col slds-size_1-of-4">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Preferred Contact’s Name" name="Preferred_Contact_s_Name_Home__c"
+                                                        <lightning-input type="text" label="Preferred Contact's Name for Home Phone" name="Preferred_Contact_s_Name_Home__c"
                                                             value={referral.Preferred_Contact_s_Name_Home__c} variant="label-stacked"
                                                             field-level-help="Preferred Contact’s Name (if not the child/youth’s own phone number)"
                                                             onchange={handleChange} tabindex="0">
@@ -581,7 +581,7 @@
                                                     </div>
                                                 </span>
                                             </div>
-                                            <div class="slds-col slds-size_1-of-6">
+                                            <div class="slds-col slds-size_1-of-5">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
                                                         <div class="slds-p-around_xx-small">
@@ -596,7 +596,7 @@
                                             <div class="slds-col slds-size_1-of-4">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Relationship to Individual (if other)" name="Other_Relationship_Home__c"
+                                                        <lightning-input type="text" label="Relationship (if Other) for Home Phone" name="Other_Relationship_Home__c"
                                                             value={referral.Other_Relationship_Home__c} required={isFieldOtherHomeRequired} class="validate"
                                                             onchange={handleChange} tabindex="0" variant="label-stacked">
                                                         </lightning-input>
@@ -645,7 +645,7 @@
                                             <div class="slds-col slds-size_1-of-4">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Preferred Contact’s Name" name="Preferred_Contact_s_Name_Other__c"
+                                                        <lightning-input type="text" label="Preferred Contact's Name for Other Phone" name="Preferred_Contact_s_Name_Other__c"
                                                             value={referral.Preferred_Contact_s_Name_Other__c}  variant="label-stacked"
                                                             field-level-help="Preferred Contact’s Name (if not the child/youth’s own phone number)"
                                                             onchange={handleChange} tabindex="0">
@@ -653,7 +653,7 @@
                                         </div>
                                                 </span>
                                     </div>
-                                            <div class="slds-col slds-size_1-of-6">
+                                            <div class="slds-col slds-size_1-of-5">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
                                                         <lightning-input-field field-name="Relationship_to_Individual_Other__c"
@@ -666,8 +666,86 @@
                                             <div class="slds-col slds-size_1-of-4">
                                                 <span>
                                                     <div class="slds-p-around_xx-small">
-                                                        <lightning-input type="text" label="Relationship to Individual (if other)" name="Other_Relationship_Other__c"
+                                                        <lightning-input type="text" label="Relationship (if Other) for Other Phone" name="Other_Relationship_Other__c"
                                                             value={referral.Other_Relationship_Other__c} required={isFieldOtherRequired} class="validate"
+                                                            onchange={handleChange} tabindex="0" variant="label-stacked">
+                                                        </lightning-input>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slds-col">
+                                        <div class="slds-grid slds-gutters">
+                                            <div class="slds-col slds-size_1-of-8">
+                                                <div class="slds-p-around_xx-small">
+                                                     <lightning-input
+                                                        type="email"
+                                                        name="Individual_Email_Address__c"
+                                                        label="Email"
+                                                        value={referral.Individual_Email_Address__c}
+                                                        field-level-help= {ICYChildYouthEmailTooltip}
+                                                        pattern=".+@.+\..+"
+                                                        message-when-pattern-mismatch= {ICYEmailValidationError}
+                                                        onchange={handleChange}
+                                                        tabindex="0"
+                                                        class="validate">
+                                                    </lightning-input>
+                                                </div>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-6">
+                                                <br />
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                        <div class="slds-form-element">
+                                                            <label class="slds-checkbox_toggle slds-grid">
+                                                                <span class="slds-p-around_xx-small slds-m-bottom_none">
+                                                                    Can we leave a message<span style="opacity: 0;">?</span>
+                                                                    <span style="display: block;">via email?</span>
+                                                                </span>
+                                                                <input type="checkbox"
+                                                                    name="ICY_Can_We_Leave_a_Message_On_Email__c"
+                                                                    aria-describedby="support-need"
+                                                                    checked={referral.ICY_Can_We_Leave_a_Message_On_Email__c}
+                                                                    onchange={handleChange} tabindex="0" />
+                                                                <span id="Leave_Message__c3"
+                                                                    class="slds-checkbox_faux_container"
+                                                                    aria-live="assertive">
+                                                                    <span class="slds-checkbox_faux"></span>
+                                                                    <span class="slds-checkbox_on">Yes</span>
+                                                                    <span class="slds-checkbox_off">No</span>
+                                                                </span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                         <lightning-input type="text" label="Preferred Contact's Name for Email" name="Preferred_Contact_s_Name_Email__c"
+                                                            value={referral.Preferred_Contact_s_Name_Email__c} variant="label-stacked"
+                                                            field-level-help="Preferred Contact’s Name (if not the child/youth’s own email)"
+                                                            onchange={handleChange} tabindex="0">
+                                                        </lightning-input>
+                                                    </div>
+                                                </span>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-5">
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                        <lightning-input-field field-name="Relationship_to_Individual_Email__c"
+                                                            onchange={handleChange} value={referral.Relationship_to_Individual_Email__c}
+                                                            name="Relationship_to_Individual_Email__c" variant="label-stacked">
+                                                        </lightning-input-field>                                                 
+                                                    </div>
+                                                </span>
+                                            </div>
+                                            <div class="slds-col slds-size_1-of-4">
+                                                <span>
+                                                    <div class="slds-p-around_xx-small">
+                                                         <lightning-input type="text" label="Relationship (if Other) for Email" name="Other_Relationship_Email__c"
+                                                            value={referral.Other_Relationship_Email__c} required={isFieldEmailRequired} class="validate"
                                                             onchange={handleChange} tabindex="0" variant="label-stacked">
                                                         </lightning-input>
                                                     </div>

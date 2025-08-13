@@ -23,6 +23,22 @@
         <value>Case Member removed successfully.</value>
     </labels>
     <labels>
+        <fullName>ICY_Child_Youth_Email_Tooltip</fullName>
+        <categories>ICY Communication with Patient Category</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>this is a tooltip used on email field</shortDescription>
+        <value>Child/Youth’s email (if not the Preferred Contact’s email)</value>
+    </labels>
+    <labels>
+        <fullName>ICY_ConsentToEvaluation_Tooltip</fullName>
+        <categories>ICY Accepting Intakes</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>used to dsiplay tooltip on the consent to evaluation field</shortDescription>
+        <value>The child/youth has consented to being contacted for a brief survey for evaluation purposes up to 12 months after they stop receiving ICY services</value>
+    </labels>
+    <labels>
         <fullName>ICY_DaysForInactiveNotes</fullName>
         <language>en_US</language>
         <protected>false</protected>
@@ -63,6 +79,14 @@
         <protected>false</protected>
         <shortDescription>ICY_EitherIndividualHomePhone</shortDescription>
         <value>Either Individual Home Phone or Email must be provided.</value>
+    </labels>
+    <labels>
+        <fullName>ICY_Email_Validation_Error</fullName>
+        <categories>Email validation</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>error message used for email validation</shortDescription>
+        <value>Please enter a valid email address.</value>
     </labels>
     <labels>
         <fullName>ICY_ErrorClosingReferral</fullName>

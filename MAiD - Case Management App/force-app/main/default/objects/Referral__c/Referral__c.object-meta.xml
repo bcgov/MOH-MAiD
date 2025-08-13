@@ -191,8 +191,10 @@
         <lookupDialogsAdditionalFields>Type_of_Referral__c</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>OWNER.ALIAS</lookupDialogsAdditionalFields>
         <lookupDialogsAdditionalFields>CREATED_DATE</lookupDialogsAdditionalFields>
-        <searchResultsAdditionalFields>Individual_Name_formula__c</searchResultsAdditionalFields>
-        <searchResultsAdditionalFields>Individual_Date_of_Birth__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Individual_First_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Individual_Last_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Individual_Preferred_Name__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ICY_Searchable_DOB__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ICY_Date_of_Referral__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>ICY_Assigned_To__c</searchResultsAdditionalFields>
         <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
