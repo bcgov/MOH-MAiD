@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <types>
+        <members>UserRegistrationException</members>
+        <members>UserRegistrationService</members>
+        <members>UserRegistrationCustomMetadataUtility</members>
+        <members>KeycloakRegistrationHandlerTest</members>
+        <members>KeycloakRegistrationHandler</members>
+        <members>KeycloakSchedulerService</members>
+        <members>KeycloakScheduler</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>IDP_User_Registration_Permission_Set__mdt</members>
+        <members>IDP_User_Registration_User_Mapping__mdt</members>
+        <name>CustomObject</name>
+    </types>
+
+
+</Package>
