@@ -1183,6 +1183,16 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>false</editable>
+        <field>Intake__c.ICY_Geographical_Region__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Intake__c.ICY_Geographical_Region_Text__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>true</editable>
         <field>Intake__c.ICY_Intake_Close_Date__c</field>
         <readable>true</readable>
@@ -2020,6 +2030,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>User.Privacy_Statement_Accepted__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+     <fieldPermissions>
+        <editable>false</editable>
+        <field>User.Keycloak_Roles__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
