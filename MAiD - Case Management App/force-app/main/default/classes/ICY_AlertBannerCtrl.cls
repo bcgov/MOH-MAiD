@@ -2,70 +2,34 @@ public without sharing  class ICY_AlertBannerCtrl {
     @AuraEnabled(cacheable=true)
     public static SObject fetchBannerDetails(String strRecId, String strSobject) {
         sObject sobj;
+      //  sObject obj;
         if(String.isNotBlank(strRecId) && String.isNotBlank(strSobject)){
             String strQuery;
             if(strSobject == 'Referral__c'){
-                strQuery = 'SELECT ownerid, createdByid, ICY_Geographic_Area__c,ICY_Assigned_To__c,ICY_Alert_Banner_Text__c , ICY_Show_Banner__c FROM Referral__c WHERE ID =:strRecId LIMIT 1';
+                strQuery = 'SELECT ICY_Alert_Banner_Text__c,ICY_Show_Banner__c FROM Referral__c WHERE ID =:strRecId LIMIT 1';
             } else if (strSobject == 'Intake__c') {
-               strQuery = 'SELECT ownerid, createdByid, Referral__r.ICY_Geographic_Area__c, Referral__r.ICY_Assigned_To__c,Referral__c, Referral__r.ICY_Alert_Banner_Text__c , Referral__r.ICY_Show_Banner__c FROM Intake__c WHERE ID =:strRecId LIMIT 1'; 
+               strQuery = 'SELECT  Referral__r.ICY_Alert_Banner_Text__c,Referral__c,Referral__r.ICY_Show_Banner__c FROM Intake__c WHERE ID =:strRecId LIMIT 1'; 
             } else if (strSobject == 'Case') {
-               strQuery = 'SELECT ownerid, createdByid, ICY_Geographic_Area__c, ICY_Assigned_To__c,ICY_Alert_Banner_Text__c , ICY_Show_Banner__c FROM Referral__c WHERE Case__c =:strRecId LIMIT 1'; 
+               strQuery = 'SELECT ICY_Alert_Banner_Text__c,ICY_Show_Banner__c FROM Referral__c WHERE Case__c =:strRecId LIMIT 1'; 
             }
             for(sObject obj: Database.query(strQuery)){
                 Id currentUser = userInfo.getuserId();
                 Id currentUserProfileId = userInfo.getProfileId();
                 String profileName = [Select id, Name from profile where Id=:currentUserProfileId].Name;
-                if(obj instanceof Intake__c){
+                if(strSobject == 'Intake__c'){
                     Intake__c intake = (Intake__c) obj;
-                    if(intake.Referral__r.ICY_Show_Banner__c && (profileName=='System Administrator' || 
-                        intake.ownerid==UserInfo.getUserId() || 
-                        intake.createdById ==UserInfo.getUserId())){
-                        ((Intake__c) obj).Referral__r.ICY_Show_Banner__c = true;  
-                    }else{
-                        if(intake.Referral__r.ICY_Show_Banner__c && 
-                            ((String.isNotBlank(intake.Referral__r.ICY_Assigned_To__c) &&
-                             intake.Referral__r.ICY_Assigned_To__c == currentUser) ||
-                            (String.isNotBlank(intake.Referral__r.ICY_Geographic_Area__c) && 
-                            getProgramLeaders(intake.Referral__r.ICY_Geographic_Area__c).contains(currentUser)))
-                            ){
-                            ((Intake__c) obj).Referral__r.ICY_Show_Banner__c = true;  
-                        }else if(intake.Referral__r.ICY_Show_Banner__c && getCaseTeamMembers(intake.Referral__c).contains(currentUser)){
-                            ((Intake__c) obj).Referral__r.ICY_Show_Banner__c = true;  
-                        }else{
-                            ((Intake__c) obj).Referral__r.ICY_Show_Banner__c = false;  
-                        }
-                    }
-                    sobj = obj;
-                    break;
-                }else{
+                     ((Intake__c) obj).Referral__r.ICY_Show_Banner__c = intake.Referral__r.ICY_Show_Banner__c;
+                      sobj = obj;
+                 }else{
                     Referral__c ref = (Referral__c) obj;
-                    if(ref.ICY_Show_Banner__c  && (profileName=='System Administrator' || 
-                        ref.ownerid==UserInfo.getUserId() || 
-                        ref.createdById ==UserInfo.getUserId())){
-                        ((Referral__c) obj).ICY_Show_Banner__c = true;  
-                    }else if(ref.ICY_Show_Banner__c && ref.ownerid==UserInfo.getUserId()){
-                        ((Referral__c) obj).ICY_Show_Banner__c = true;  
-                    }else{
-                        if(ref.ICY_Show_Banner__c && 
-                            ((String.isNotBlank(ref.ICY_Assigned_To__c) &&
-                             ref.ICY_Assigned_To__c == currentUser) ||
-                            (String.isNotBlank(ref.ICY_Geographic_Area__c) && 
-                            getProgramLeaders(ref.ICY_Geographic_Area__c).contains(currentUser)))
-                            ){
-                            ((Referral__c) obj).ICY_Show_Banner__c = true;  
-                        }else if(ref.ICY_Show_Banner__c && getCaseTeamMembers(ref.Id).contains(currentUser)){
-                            ((Referral__c) obj).ICY_Show_Banner__c = true;  
-                        }else{
-                            ((Referral__c) obj).ICY_Show_Banner__c = false;  
-                        }
-                    }
-                    sobj = obj;
-                    break;
+                     ((Referral__c) obj).ICY_Show_Banner__c = ref.ICY_Show_Banner__c; 
+                      sobj = obj;
+                 }
                 }
+              
+                }
+                return sobj;
             }
-        }
-        return sobj;
-    }
         
     @AuraEnabled
     public static String UpdateBannerDetails(String strRecId, String strSobject, String strBannerMSg) {
@@ -125,32 +89,7 @@ public without sharing  class ICY_AlertBannerCtrl {
         For(User u: [SELECT Id,Name, email FROM User WHERE userrole.Name like'%Leader' AND isActive = true]){
             userid.add(u.Id);
         }
-        /*if(String.isNotBlank(geoLocation)){
-            String queueName='%'+geoLocation;
-            List<String> toAddressess = new List<String>();
-            Set<Id> groupOrQueuId = new Set<Id>();
-            Set<Id> roleId = new Set<Id>();
-            For(GroupMember gm: [SELECT UserOrGroupId FROM GroupMember WHERE Group.Type = 'Queue' AND Group.Name LIKE :queueName]){
-               if((String.valueOf(gm.UserOrGroupId)).startsWithIgnoreCase('00G')){
-                    groupOrQueuId.add(gm.UserOrGroupId);
-                }else{
-                    userid.add(gm.UserOrGroupId);
-                }
-            }
-            if(!groupOrQueuId.isEmpty()){
-                For(Group gm: [SELECT RelatedId,Type,DeveloperName FROM group WHERE Id IN:groupOrQueuId AND Type = 'Role']){
-                    if(gm.Type=='Role'){
-                        roleId.add(gm.RelatedId);
-                    }
-                }
-            }
-            user whoClosed; 
-            if(!roleId.isEmpty()){
-                For(User u: [SELECT Id,Name, email FROM User WHERE (UserRoleId =: roleId OR userrole.Name like'%Leader') AND isActive = true]){
-                    userid.add(u.Id);
-                }
-            }
-        }*/
+        
         return userid;
     }
     @TestVisible
