@@ -2,7 +2,6 @@ public without sharing  class ICY_AlertBannerCtrl {
     @AuraEnabled(cacheable=true)
     public static SObject fetchBannerDetails(String strRecId, String strSobject) {
         sObject sobj;
-      //  sObject obj;
         if(String.isNotBlank(strRecId) && String.isNotBlank(strSobject)){
             String strQuery;
             if(strSobject == 'Referral__c'){
