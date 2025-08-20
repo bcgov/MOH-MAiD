@@ -170,6 +170,8 @@
         <members>IDP_User_Registration_User_Mapping.ICY_Qualicum_Team_PL</members>
         <members>IDP_User_Registration_User_Mapping.ICY_Nanaimo_Ladysmith_1_Admin</members>
         <members>IDP_User_Registration_User_Mapping.ICY_Coast_Mountains_Terrace_Clinical</members>
+        <members>IDP_User_Registration_Permission_Set.ICY_Delta_Team_Non_Clinical</members>
+        <members>IDP_User_Registration_Permission_Set.ICY_Nanaimo_Ladysmith_3_Non_Clinical</members>
         <members>IDP_User_Registration_Permission_Set.ICY_Pacific_Rim_Team_1_Clinical</members>
         <members>IDP_User_Registration_Permission_Set.ICY_Fraser_Cascades_Team_1_Non_Clinical</members>
         <members>IDP_User_Registration_Permission_Set.ICY_Surrey_Team_PL</members>
@@ -400,7 +402,6 @@
         <members>ICY_Program_Leaders</members>
         <members>ICY_qathet_Powell_River_CL_NCL</members>
         <members>ICY_Qualicum_CL_NCL</members>
-        <members>ICY_Restricted_Data</members>
         <members>ICY_Richmond_CL_NCL</members>
         <members>ICY_Surrey_CL_NCL</members>
         <name>Group</name>
