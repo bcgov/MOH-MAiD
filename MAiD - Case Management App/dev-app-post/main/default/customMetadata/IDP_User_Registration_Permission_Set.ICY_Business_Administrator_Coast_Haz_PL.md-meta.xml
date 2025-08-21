@@ -20,7 +20,7 @@
     </values>
     <values>
         <field>Salesforce_Public_Group__c</field>
-        <value xsi:type="xsd:string">ICY_ACCESS_Coast_Mountain_Hazelton_PL</value>
+        <value xsi:type="xsd:string">ICY_ACCESS_Coast_Mountains_Hazelton_PL</value>
     </values>
     <values>
         <field>Salesforce_Queue__c</field>

@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>ICY Non Clinical Team Member</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>ICY_Team_Admin</parentRole>
+    <parentRole>ICY_Admin</parentRole>
 </Role>
