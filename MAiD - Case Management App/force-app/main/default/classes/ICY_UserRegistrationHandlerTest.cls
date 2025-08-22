@@ -69,8 +69,8 @@ public class ICY_UserRegistrationHandlerTest {
             actualGroupNames.add(g.DeveloperName);
         }
 
-        System.assert(!members.size());
-        //System.assertEquals(2, members.size(), 'Should assign 2 region-specific _PL public groups');
+        
+        System.assertEquals(2, members.size(), 'Should assign 2 region-specific _PL public groups');
     }
 
     @isTest
