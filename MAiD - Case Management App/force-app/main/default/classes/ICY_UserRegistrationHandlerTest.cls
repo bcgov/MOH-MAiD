@@ -20,7 +20,7 @@ public class ICY_UserRegistrationHandlerTest {
             LocaleSidKey = 'en_US',
             TimeZoneSidKey = 'America/Los_Angeles',
             ProfileId = stdProfile.Id,
-            Keycloak_Roles__c = '[ICY_Program_Leader] [Comox_Valley] [Delta]'
+            Keycloak_Roles__c = '[ICY_Program_Leader,Comox_Valley,Delta]'
         );
 
         // User with no roles
