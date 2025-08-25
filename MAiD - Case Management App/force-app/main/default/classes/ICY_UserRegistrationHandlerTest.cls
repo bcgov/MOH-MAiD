@@ -38,7 +38,7 @@ public class ICY_UserRegistrationHandlerTest {
         );
 
         insert new List<User>{ userWithRoles, userWithoutRoles };
-   
+    }   
 
     @isTest
     static void test_assignRolesMatchingPublicGroupsToUser_noRoles() {
