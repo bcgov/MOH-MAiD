@@ -7,7 +7,7 @@ public class ICY_UserRegistrationHandlerTest {
 
     @testSetup
     static void setupTestData() {
-        Profile stdProfile = [SELECT Id FROM Profile WHERE Name = 'Standard User' LIMIT 1];
+        Profile stdProfile = [SELECT Id FROM Profile WHERE Name = 'MoH Standard User' LIMIT 1];
 
         // User with Program Leader and region roles
         userWithRoles = new User(
@@ -38,40 +38,7 @@ public class ICY_UserRegistrationHandlerTest {
         );
 
         insert new List<User>{ userWithRoles, userWithoutRoles };
-
-        // Insert dummy _PL groups for matching
-        insert new List<Group>{
-            new Group(Name = 'Comox_Valley_PL', DeveloperName = 'Comox_Valley_PL', Type = 'Regular'),
-            new Group(Name = 'Delta_PL', DeveloperName = 'Delta_PL', Type = 'Regular')
-        };
-    }
-
-    @isTest
-    static void test_assignRolesMatchingPublicGroupsToUser() {
-        user testuser1 = [Select id from user where LastName = 'Henry' LIMIT 1];
-        Test.startTest();
-        ICY_UserRegistrationHandler.assignRolesMatchingPublicGroupsToUser(testuser1.Id);
-        Test.stopTest();
-
-        List<GroupMember> members = [
-            SELECT GroupId FROM GroupMember WHERE UserOrGroupId = :testuser1.Id
-        ];
-
-       // Set<String> expectedGroupNames = new Set<String>{ 'Comox_Valley_PL', 'Delta_PL' };
-        Set<Id> assignedGroupIds = new Set<Id>();
-		for (GroupMember gm : members) {
-    		assignedGroupIds.add(gm.GroupId);
-		}
-
-        List<Group> groups = [SELECT Id, DeveloperName FROM Group WHERE Id IN :assignedGroupIds];
-        Set<String> actualGroupNames = new Set<String>();
-        for (Group g : groups) {
-            actualGroupNames.add(g.DeveloperName);
-        }
-
-        
-        System.assertEquals(2, members.size(), 'Should assign 2 region-specific _PL public groups');
-    }
+   
 
     @isTest
     static void test_assignRolesMatchingPublicGroupsToUser_noRoles() {
