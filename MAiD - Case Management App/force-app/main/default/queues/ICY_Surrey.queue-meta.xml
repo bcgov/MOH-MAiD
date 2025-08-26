@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY Surrey</name>
     <queueMembers>
-        <roles>
-            <role>Surrey_Team_Admin</role>
-            <role>Surrey_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Surrey_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

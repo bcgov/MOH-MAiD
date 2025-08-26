@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>true</doesSendEmailToMembers>
     <name>ICY Maple Ridge Pitt Meadows Team 2</name>
     <queueMembers>
-        <roles>
-            <role>Maple_Ridge_Pitt_Meadows_Team_Admin</role>
-            <role>Maple_Ridge_Pitt_Meadows_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Maple_Ridge_Pitt_Meadows_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

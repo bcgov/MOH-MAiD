@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY Pacific Rim</name>
     <queueMembers>
-        <roles>
-            <role>Pacific_Rim_Team_Admin</role>
-            <role>Pacific_Rim_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Pacific_Rim_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

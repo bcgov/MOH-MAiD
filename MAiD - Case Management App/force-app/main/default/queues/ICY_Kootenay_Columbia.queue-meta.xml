@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY Kootenay Columbia</name>
     <queueMembers>
-        <roles>
-            <role>Kootenay_Columbia_Team_Admin</role>
-            <role>Kootenay_Columbia_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Kootenay_Columbia_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>
