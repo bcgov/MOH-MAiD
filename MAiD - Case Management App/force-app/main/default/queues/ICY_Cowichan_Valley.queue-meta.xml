@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY Cowichan Valley</name>
     <queueMembers>
-        <roles>
-            <role>Cowichan_Valley_Team_Program_Leader</role>
-            <role>Cowichan_Valley_Team_Admin</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Cowichan_Valley_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

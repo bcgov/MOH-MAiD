@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>true</doesSendEmailToMembers>
     <name>ICY Okanagan Similkameen</name>
     <queueMembers>
-        <roles>
-            <role>Okanagan_Similkameen_Team_Admin</role>
-            <role>Okanagan_Similkameen_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Okanagan_Similkameen_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY Nanaimo Ladysmith Team 3</name>
     <queueMembers>
-        <roles>
-            <role>Nanaimo_Ladysmith_Team_Admin</role>
-            <role>Nanaimo_Ladysmith_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Nanaimo_Ladysmith_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

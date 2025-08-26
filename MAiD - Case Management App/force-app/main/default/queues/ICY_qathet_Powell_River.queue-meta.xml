@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY qathet (Powell River)</name>
     <queueMembers>
-        <roles>
-            <role>qathet_Powell_River_Team_Admin</role>
-            <role>qathet_Powell_River_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Qathet_Powell_River_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>
