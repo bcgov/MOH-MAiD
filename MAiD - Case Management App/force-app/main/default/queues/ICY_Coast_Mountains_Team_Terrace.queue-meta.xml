@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>true</doesSendEmailToMembers>
     <name>ICY Coast Mountains Team Terrace</name>
     <queueMembers>
-        <roles>
-            <role>Coast_Mountains_Team_Admin</role>
-            <role>Coast_Mountains_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Coast_Mountains_Terrace_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

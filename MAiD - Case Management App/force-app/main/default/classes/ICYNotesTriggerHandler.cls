@@ -25,7 +25,7 @@ public with sharing class ICYNotesTriggerHandler{
             if(String.isNotBlank(obj.ICY_Geographic_Area__c)){  
                 String queueName = '%'+obj.ICY_Geographic_Area__c.replace('-', ' ')+'%';
                 Set<Id> groupOrQueuId = new Set<Id>();
-                Set<Id> roleId = new Set<Id>();
+                Set<Id> useridInGroup = new Set<Id>();
                 Set<Id> userid = new Set<Id>();
             For(GroupMember gm: [SELECT UserOrGroupId FROM GroupMember WHERE Group.Type = 'Queue' AND Group.Name LIKE :queueName]){
                 if((String.valueOf(gm.UserOrGroupId)).startsWithIgnoreCase('00G')){
@@ -34,21 +34,29 @@ public with sharing class ICYNotesTriggerHandler{
                     userid.add(gm.UserOrGroupId);
                 }
             }
-            if(!groupOrQueuId.isEmpty()){
-                For(Group gm: [SELECT RelatedId,Type,DeveloperName FROM group WHERE Id IN:groupOrQueuId AND Type = 'Role'and (DeveloperName  like '%Program_Leader%' OR  DeveloperName  like '%Admin%')]){
-                    roleId.add(gm.RelatedId);
+             if(!groupOrQueuId.isEmpty()){
+                    For (GroupMember gm : [SELECT UserOrGroupId FROM GroupMember WHERE GroupId IN:groupOrQueuId AND UserOrGroupId IN (SELECT Id FROM User)]) {
+                         useridInGroup.add(gm.UserOrGroupId);
+                   }
                 }
-            }
-            
-            if(!roleId.isEmpty() || !userid.isEmpty()){
-                For(User u: [SELECT Id,Name, email FROM User WHERE (UserRoleId =: roleId OR ID IN:userid ) AND isActive = true]){
-                        if(mapOfCaseIdVsUserIds.containsKey(obj.id) ){
+                if(!useridInGroup.isEmpty()){
+                    For(User usr: [SELECT id FROM user WHERE Id IN:useridInGroup AND UserRole.DeveloperName  like '%Program_Leader%']){
+                        userid.add(usr.id);
+                    }
+                }
+                
+                if(!userid.isEmpty()){
+                    For(User u: [SELECT Id,Name, email FROM User WHERE ID IN:userid AND isActive = true]){
+                           // toAddressess.add(u.email);
+                      //  }
+                      if(mapOfCaseIdVsUserIds.containsKey(obj.id) ){
                             userIds = mapOfCaseIdVsUserIds.get(obj.id);
                         }
                         userIds.add(u.email);
-                        mapOfCaseIdVsUserIds.put(obj.id,userIds);
-                    }
+                        mapOfCaseIdVsUserIds.put(obj.id,userIds);   
+                  }
                 }
+         
             }
         }
 

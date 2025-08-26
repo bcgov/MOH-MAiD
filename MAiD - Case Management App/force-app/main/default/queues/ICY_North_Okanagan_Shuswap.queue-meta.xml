@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY North Okanagan Shuswap</name>
     <queueMembers>
-        <roles>
-            <role>North_Okanagan_Shuswap_Team_Admin</role>
-            <role>North_Okanagan_Shuswap_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_North_Okanagan_Shuswap_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

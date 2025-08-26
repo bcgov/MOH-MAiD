@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY Delta</name>
     <queueMembers>
-        <roles>
-            <role>Delta_Team_Admin</role>
-            <role>Delta_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Delta_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

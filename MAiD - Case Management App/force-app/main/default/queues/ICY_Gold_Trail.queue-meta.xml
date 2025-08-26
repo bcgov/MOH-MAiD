@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY Gold Trail</name>
     <queueMembers>
-        <roles>
-            <role>Gold_Trail_Team_Admin</role>
-            <role>Gold_Trail_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Gold_Trail_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>
