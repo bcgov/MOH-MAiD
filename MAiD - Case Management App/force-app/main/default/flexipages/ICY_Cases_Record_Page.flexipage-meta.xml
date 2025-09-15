@@ -53,7 +53,7 @@
                                 <criteria>
                                     <leftValue>{!$User.UserRole.Name}</leftValue>
                                     <operator>CONTAINS</operator>
-                                    <rightValue>Team Admin</rightValue>
+                                    <rightValue>Admin</rightValue>
                                 </criteria>
                                 <criteria>
                                     <leftValue>{!$User.UserRole.Name}</leftValue>
