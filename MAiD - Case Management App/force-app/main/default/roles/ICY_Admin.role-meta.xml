@@ -5,5 +5,5 @@
     <mayForecastManagerShare>false</mayForecastManagerShare>
     <name>ICY Admin</name>
     <opportunityAccessLevel>Edit</opportunityAccessLevel>
-    <parentRole>ICY_Program_Leader</parentRole>
+    <parentRole>ICY</parentRole>
 </Role>

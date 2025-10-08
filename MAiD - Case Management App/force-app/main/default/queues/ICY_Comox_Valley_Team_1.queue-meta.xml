@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>true</doesSendEmailToMembers>
     <name>ICY Comox Valley Team 1</name>
     <queueMembers>
-        <roles>
-            <role>Comox_Valley_Team_Admin</role>
-            <role>Comox_Valley_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Comox_Valley_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

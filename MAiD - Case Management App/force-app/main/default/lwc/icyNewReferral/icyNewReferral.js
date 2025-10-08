@@ -565,6 +565,16 @@ export default class IcyNewReferral extends NavigationMixin(LightningElement) {
                     ICY_DuplicatePHN,
                     'error'
                 )
+            } else  {
+                this.showToast(
+                    'Warning',
+                    'Referral was created sucessfully outside your region',
+                    'warning'
+                )
+                this.page1 = true;
+                this.page3 = false;
+                this.page2 = false;
+                this.page4 = false;
             }
 
         });

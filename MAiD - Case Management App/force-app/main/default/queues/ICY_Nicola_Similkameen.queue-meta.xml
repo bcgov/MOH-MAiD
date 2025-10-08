@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY Nicola Similkameen</name>
     <queueMembers>
-        <roles>
-            <role>Nicola_Similkameen_Team_Admin</role>
-            <role>Nicola_Similkameen_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Nicola_Similkameen_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>
