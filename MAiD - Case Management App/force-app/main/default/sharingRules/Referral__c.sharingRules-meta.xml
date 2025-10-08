@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithCentralCoastCLNonCL</fullName>
+        <fullName>ShareReferralWithCentralCoast</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithCentralCoastCLNonCL</label>
+        <label>ShareReferralWithCentralCoast</label>
         <sharedTo>
-            <group>ICY_Central_Coast_CL_NCL</group>
+            <group>ICY_ACCESS_Central_Coast</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Central_Coast</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -21,38 +15,40 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithCoastMoutainsCLNonCL</fullName>
+        <fullName>ShareReferralWithCoastMountainHazelton</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithCoastMoutainsCLNonCL</label>
+        <label>ShareReferralWithCoastMountainHazelton</label>
         <sharedTo>
-            <group>ICY_Coast_Mountains_CL_NCL</group>
+            <group>ICY_ACCESS_Coast_Mountains_Hazelton</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Coast_Mountains</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
-            <value>Coast Mountains Team Hazelton,Coast Mountains Team Terrace</value>
+            <value>Coast Mountains Team Hazelton</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithComoxValleyCLNonCL</fullName>
+        <fullName>ShareReferralWithCoastMountainTerrace</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithComoxValleyCLNonCL</label>
+        <label>ShareReferralWithCoastMountainTerrace</label>
         <sharedTo>
-            <group>ICY_Comox_Valley_CL_NCL</group>
+            <group>ICY_ACCESS_Coast_Mountains_Terrace</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
         <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Comox_Valley</value>
+            <field>ICY_Geographic_Area__c</field>
+            <operation>equals</operation>
+            <value>Coast Mountains Team Terrace</value>
         </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>ShareReferralWithComoxValley</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>ShareReferralWithComoxValley</label>
+        <sharedTo>
+            <group>ICY_ACCESS_Comox_Valley</group>
+        </sharedTo>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -61,18 +57,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithCowichanValleyCLNonCL</fullName>
+        <fullName>ShareReferralWithCowichanValley</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithCowichanValleyCLNonCL</label>
+        <label>ShareReferralWithCowichanValley</label>
         <sharedTo>
-            <group>ICY_Cowichan_Valley_CL_NCL</group>
+            <group>ICY_ACCESS_Cowichan_Valley</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Cowichan_Valley</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -81,18 +71,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithDeltaCLNonCL</fullName>
+        <fullName>ShareReferralWithDelta</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithDeltaCLNonCL</label>
+        <label>ShareReferralWithDelta</label>
         <sharedTo>
-            <group>ICY_Delta_CL_NCL</group>
+            <group>ICY_ACCESS_Delta</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Delta</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -101,18 +85,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithFraserCascadesCLNonCL</fullName>
+        <fullName>ShareReferralWithFraserCascades</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithFraserCascadesCLNonCL</label>
+        <label>ShareReferralWithFraserCascades</label>
         <sharedTo>
-            <group>ICY_Fraser_Cascades_CL_NCL</group>
+            <group>ICY_ACCESS_Fraser_Cascades</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Fraser_Cascades</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -121,18 +99,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithGoldTrailCLNonCL</fullName>
+        <fullName>ShareReferralWithGoldTrail</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithGoldTrailCLNonCL</label>
+        <label>ShareReferralWithGoldTrail</label>
         <sharedTo>
-            <group>ICY_Gold_Trail_CL_NCL</group>
+            <group>ICY_ACCESS_Gold_Trail</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Gold_Trail</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -141,18 +113,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithKootenayColumbiaCLNonCL</fullName>
+        <fullName>ShareReferralWithKootenayColumbia</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithKootenayColumbiaCLNonCL</label>
+        <label>ShareReferralWithKootenayColumbia</label>
         <sharedTo>
-            <group>ICY_Kootenay_Columbia_CL_NCL</group>
+            <group>ICY_ACCESS_Kootenay_Columbia</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Kootenay_Columbia</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -161,18 +127,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithMapleRidgeMeadowsCLNonCL</fullName>
+        <fullName>ShareReferralWithMapleRidgePittMeadows</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithMapleRidgeMeadowsCLNonCL</label>
+        <label>ShareReferralWithMapleRidgePittMeadows</label>
         <sharedTo>
-            <group>ICY_Maple_Ridge_Pitt_Meadows_CL_NCL</group>
+            <group>ICY_ACCESS_Maple_Ridge_Pitt_Meadows</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Maple_Ridge_Pitt_Meadows</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -181,18 +141,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithMissionCLNonCL</fullName>
+        <fullName>ShareReferralWithMission</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithMissionCLNonCL</label>
+        <label>ShareReferralWithMission</label>
         <sharedTo>
-            <group>ICY_Mission_CL_NCL</group>
+            <group>ICY_ACCESS_Mission</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Mission</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -201,18 +155,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithNanaimoLadysmithCLNonCL</fullName>
+        <fullName>ShareReferralWithNanaimoLadysmith</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithNanaimoLadysmithCLNonCL</label>
+        <label>ShareReferralWithNanaimoLadysmith</label>
         <sharedTo>
-            <group>ICY_Nanaimo_Ladysmith_CL_NCL</group>
+            <group>ICY_ACCESS_Nanaimo_Ladysmith</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Nanaimo_Ladysmith</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -221,18 +169,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithNicolaSimilkameenCLNonCL</fullName>
+        <fullName>ShareReferralWithNicolaSimilkameen</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithNicolaSimilkameenCLNonCL</label>
+        <label>ShareReferralWithNicolaSimilkameen</label>
         <sharedTo>
-            <group>ICY_Nicola_Similkameen_CL_NCL</group>
+            <group>ICY_ACCESS_Nicola_Similkameen</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Nicola_Similkameen</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -241,18 +183,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithNorthOkanaganShuswapCLNonCL</fullName>
+        <fullName>ShareReferralWithNorthOkanaganShuswap</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithNorthOkanaganShuswapCLNonCL</label>
+        <label>ShareReferralWithNorthOkanaganShuswap</label>
         <sharedTo>
-            <group>ICY_North_Okanagan_Shuswap_CL_NCL</group>
+            <group>ICY_ACCESS_North_Okanagan_Shuswap</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>North_Okanagan_Shuswap</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -261,18 +197,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithOkanaganSimilkameenCLNonCL</fullName>
+        <fullName>ShareReferralWithOkanaganSimilkameen</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithOkanaganSimilkameenCLNonCL</label>
+        <label>ShareReferralWithOkanaganSimilkameen</label>
         <sharedTo>
-            <group>ICY_Okanagan_Similkameen_CL_NCL</group>
+            <group>ICY_ACCESS_Okanagan_Similkameen</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Okanagan_Similkameen</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -281,18 +211,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithPacificRimCLNonCL</fullName>
+        <fullName>ShareReferralWithPacificRim</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithPacificRimCLNonCL</label>
+        <label>ShareReferralWithPacificRim</label>
         <sharedTo>
-            <group>ICY_Pacific_Rim_CL_NCL</group>
+            <group>ICY_ACCESS_Pacific_Rim</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Pacific_Rim</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -301,18 +225,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithPeaceRiverSouthCLNonCL</fullName>
+        <fullName>ShareReferralWithPeaceRiverSouth</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithPeaceRiverSouthCLNonCL</label>
+        <label>ShareReferralWithPeaceRiverSouth</label>
         <sharedTo>
-            <group>ICY_Peace_River_South_CL_NCL</group>
+            <group>ICY_ACCESS_Peace_River_South</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Peace_River_South</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -321,18 +239,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithQualicumCLNonCL</fullName>
+        <fullName>ShareReferralWithQualicum</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithQualicumCLNonCL</label>
+        <label>ShareReferralWithQualicum</label>
         <sharedTo>
-            <group>ICY_Qualicum_CL_NCL</group>
+            <group>ICY_ACCESS_Qualicum</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Qualicum</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -341,18 +253,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithRichmondTeamCLNonCL</fullName>
+        <fullName>ShareReferralWithRichmond</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithRichmondTeamCLNonCL</label>
+        <label>ShareReferralWithRichmond</label>
         <sharedTo>
-            <group>ICY_Richmond_CL_NCL</group>
+            <group>ICY_ACCESS_Richmond</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Richmond</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -361,18 +267,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithSurreyCLNonCL</fullName>
+        <fullName>ShareReferralWithSurrey</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithSurreyCLNonCL</label>
+        <label>ShareReferralWithSurrey</label>
         <sharedTo>
-            <group>ICY_Surrey_CL_NCL</group>
+            <group>ICY_ACCESS_Surrey</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>Surrey </value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
@@ -381,18 +281,12 @@
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>
     <sharingCriteriaRules>
-        <fullName>ShareOpenReferralWithqathetPowellRiverCLNonCL</fullName>
+        <fullName>ShareReferralWithqathetPowellRiver</fullName>
         <accessLevel>Edit</accessLevel>
-        <label>ShareOpenReferralWithqathetPowellRiverCLNonCL</label>
+        <label>ShareReferralWithqathetPowellRiver</label>
         <sharedTo>
-            <group>ICY_qathet_Powell_River_CL_NCL</group>
+            <group>ICY_ACCESS_Qathet_Powell_River</group>
         </sharedTo>
-        <booleanFilter>1 OR 2</booleanFilter>
-        <criteriaItems>
-            <field>User_Role_Name__c</field>
-            <operation>startsWith</operation>
-            <value>qathet_Powell_River</value>
-        </criteriaItems>
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>

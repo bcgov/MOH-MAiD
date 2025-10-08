@@ -3,10 +3,9 @@
     <doesSendEmailToMembers>false</doesSendEmailToMembers>
     <name>ICY Fraser Cascades</name>
     <queueMembers>
-        <roles>
-            <role>Fraser_Cascades_Team_Admin</role>
-            <role>Fraser_Cascades_Team_Program_Leader</role>
-        </roles>
+        <publicGroups>
+            <publicGroup>ICY_ACCESS_Fraser_Cascades_PL</publicGroup>
+        </publicGroups>
     </queueMembers>
     <queueSobject>
         <sobjectType>Case</sobjectType>

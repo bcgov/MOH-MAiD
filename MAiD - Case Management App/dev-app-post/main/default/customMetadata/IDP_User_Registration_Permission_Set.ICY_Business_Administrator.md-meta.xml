@@ -12,10 +12,22 @@
     </values>
     <values>
         <field>Salesforce_Permission_Set_Group__c</field>
-        <value xsi:type="xsd:string">ICY_Program_Leader_Permission_Set_Group</value>
+        <value xsi:type="xsd:string">ICY_Business_Administrator_PSG</value>
     </values>
     <values>
         <field>Salesforce_Permission_Set__c</field>
         <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Salesforce_Public_Group__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>Salesforce_Queue__c</field>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>is_Beta_Only_User__c</field>
+        <value xsi:type="xsd:boolean">false</value>
     </values>
 </CustomMetadata>
