@@ -10,7 +10,7 @@ public without sharing class ICY_CaseMember_Controller {
         String profileName = [SELECT Profile.Name FROM USER WHERE ID=:UserInfo.getUserId()].Profile.Name;
        // if(profileName == 'ICY Program Leader' || profileName == 'System Administrator') hasRevokeAccess = true;
 
-        if (YTS_Utility.lookupRole('Program Leader') || YTS_Utility.lookupRole('Team Admin') || profileName == 'System Administrator') hasRevokeAccess = true;
+        if (YTS_Utility.lookupRole('Program Leader') || YTS_Utility.lookupRole('Admin') || profileName == 'System Administrator') hasRevokeAccess = true;
 
         if(parentRecId.getSObjectType() == Schema.Referral__c.SObjectType){
             cmList = [SELECT Id, CreatedDate, ICY_Category_Assignment__c, ICY_End_Date__c, ICY_Status__c,ICY_User__r.Name,ICY_User__r.CompanyName, ICY_User__r.title, ICY_Case_Contact__r.Contact_Full_Name__c,ICY_Case_Contact__r.Profession_Role__c,ICY_Case_Contact__r.Contact_Person_Profession_Role__c,ICY_Case_Contact__r.Relationship_Subtype__c,ICY_Case_Contact__r.Other_Relationship__c, ICY_Team_Member__c, CreatedBy.Name FROM Case_Member__c WHERE  Referral__c = :parentRecId ORDER By ICY_Status__c asc];
@@ -110,7 +110,7 @@ public without sharing class ICY_CaseMember_Controller {
 
        if(cmList != null && cmList.size() > 0) {
         String profileName = [SELECT Profile.Name FROM USER WHERE ID=:UserInfo.getUserId()].Profile.Name;
-        if (YTS_Utility.lookupRole('Program Leader') || YTS_Utility.lookupRole('Team Admin') || profileName == 'System Administrator')
+        if (YTS_Utility.lookupRole('Program Leader') || YTS_Utility.lookupRole('Admin') || profileName == 'System Administrator')
            revokeCaseTeamMemberAccess(cmList[0].id);
         else
            return System.label.ICY_TeamMemberExits ;
