@@ -165,7 +165,7 @@
                 <field>Date_of_MAiD__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Edit</behavior>
+                <behavior>Readonly</behavior>
                 <field>Reportable_to_Health_Canada__c</field>
             </layoutItems>
             <layoutItems>
