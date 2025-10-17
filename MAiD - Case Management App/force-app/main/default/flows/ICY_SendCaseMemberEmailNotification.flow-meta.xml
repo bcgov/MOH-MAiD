@@ -17,7 +17,7 @@
         <nameSegment>ICY_CaseMemberTriggerHandler</nameSegment>
         <versionSegment>1</versionSegment>
     </actionCalls>
-    <apiVersion>61.0</apiVersion>
+    <apiVersion>62.0</apiVersion>
     <decisions>
         <name>Case_Member_is_added_other_than_current</name>
         <label>Case Member is added other than current user</label>
