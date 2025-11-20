@@ -5,7 +5,7 @@
         <name>Check_Case_Status</name>
         <label>Check Case Status</label>
         <locationX>1106</locationX>
-        <locationY>539</locationY>
+        <locationY>431</locationY>
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Case_Status_is_Closed</name>
@@ -42,7 +42,7 @@
         <name>Check_For_Case_Record_Type</name>
         <label>Check For Case Record Type</label>
         <locationX>974</locationX>
-        <locationY>431</locationY>
+        <locationY>323</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>ICY_Case</name>
@@ -93,7 +93,7 @@
         <name>Check_ICY_Case_Status</name>
         <label>Check ICY Case Status</label>
         <locationX>314</locationX>
-        <locationY>539</locationY>
+        <locationY>431</locationY>
         <defaultConnectorLabel>Default</defaultConnectorLabel>
         <rules>
             <name>Case_Status_is_Closed_0</name>
@@ -106,7 +106,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>ICY_Case_Close_Record_Type</targetReference>
+                <targetReference>Create_Case_note</targetReference>
             </connector>
             <label>Case Status is Closed</label>
         </rules>
@@ -153,10 +153,10 @@
         <description>create a note with rationale closure details</description>
         <name>Create_Case_note</name>
         <label>Create Case note</label>
-        <locationX>974</locationX>
-        <locationY>323</locationY>
+        <locationX>50</locationX>
+        <locationY>539</locationY>
         <connector>
-            <targetReference>Check_For_Case_Record_Type</targetReference>
+            <targetReference>ICY_Case_Close_Record_Type</targetReference>
         </connector>
         <inputAssignments>
             <field>Case__c</field>
@@ -201,7 +201,7 @@
         <name>Case_Close_Record_Type_0</name>
         <label>Case Close Record Type</label>
         <locationX>842</locationX>
-        <locationY>647</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Case_RecordType_to_Closed</targetReference>
@@ -229,7 +229,7 @@
         <name>Get_ICY_Case_Standard_RecordType_Id</name>
         <label>Get ICY Case Standard RecordType Id</label>
         <locationX>314</locationX>
-        <locationY>647</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Case_RecordType_to_ICY_Standard_Case</targetReference>
@@ -257,7 +257,7 @@
         <name>Get_Standard_RecordType_Id_0</name>
         <label>Get Standard RecordType Id</label>
         <locationX>1106</locationX>
-        <locationY>647</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_Case_Record_Type_To_Standard_0</targetReference>
@@ -313,7 +313,7 @@
         <name>Update_Case_Record_Type_To_Standard_0</name>
         <label>Update Case Record Type To Standard</label>
         <locationX>1106</locationX>
-        <locationY>755</locationY>
+        <locationY>647</locationY>
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
@@ -326,7 +326,7 @@
         <name>Update_Case_RecordType_to_Closed</name>
         <label>Update Case RecordType to Closed</label>
         <locationX>842</locationX>
-        <locationY>755</locationY>
+        <locationY>647</locationY>
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
@@ -352,7 +352,7 @@
         <name>Update_Case_RecordType_to_ICY_Standard_Case</name>
         <label>Update Case RecordType to ICY Standard Case</label>
         <locationX>314</locationX>
-        <locationY>755</locationY>
+        <locationY>647</locationY>
         <inputAssignments>
             <field>RecordTypeId</field>
             <value>
@@ -365,7 +365,7 @@
         <locationX>848</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Create_Case_note</targetReference>
+            <targetReference>Check_For_Case_Record_Type</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
