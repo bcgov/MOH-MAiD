@@ -3,8 +3,9 @@ global class CreateCaseNotesBatch implements Database.Batchable<SObject>, Databa
 
    
     global CreateCaseNotesBatch() {
-       
-        query = 'Select ICY_Rationale__c,Case_Closed_Reason__c from case where status = \'Closed\' and recordtypeId=\'012Mm000000pyLWIAY\'';
+        Id iRecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Case', 'ICY_Close_Case');
+        query = 'Select ICY_Rationale__c,Case_Closed_Reason__c from case where status = \'Closed\' and recordtypeId=\'' + iRecordTypeId + '\'';
+        System.debug('query: ' + query);
     }
 
      global Database.QueryLocator start(Database.BatchableContext bc) {
