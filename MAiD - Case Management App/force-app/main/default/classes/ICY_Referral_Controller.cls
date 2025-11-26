@@ -79,7 +79,6 @@ public without sharing class ICY_Referral_Controller {
             i.Referral__c = referralId;
             if(String.isNotBlank(assignedTo)) i.ICY_Assigned_To__c = assignedTo;
             INSERT i;
-
             
             r.Status__c = 'Ready for Intake';
             UPDATE r;
