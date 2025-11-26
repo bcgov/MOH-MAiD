@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
     <apiVersion>63.0</apiVersion>
-    <description>Used by action button on Intake to Assign intake to a user</description>
+    <constants>
+        <name>INTAKE_STATUS_IN_PROGRESS</name>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>In Progress</stringValue>
+        </value>
+    </constants>
+    <description> Intake status update from Not started to In Progress</description>
     <environments>Default</environments>
     <interviewLabel>ICY Intake Assign To {!$Flow.CurrentDateTime}</interviewLabel>
     <label>ICY Intake Assign To</label>
@@ -41,6 +48,12 @@
             <field>ICY_Assigned_To__c</field>
             <value>
                 <elementReference>var.ICY_Assigned_To__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status__c</field>
+            <value>
+                <elementReference>INTAKE_STATUS_IN_PROGRESS</elementReference>
             </value>
         </inputAssignments>
         <object>Intake__c</object>
