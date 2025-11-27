@@ -28,6 +28,9 @@ export default class IcyCreateEditDocument extends LightningElement {
     @api recordId;
     @api objectApiName;
     @api disableDocs;
+    @api disableDoctype;
+    @api disableDocname;
+
     disableSaveButton = false;
     disableUploadButton = false;
     documentType
@@ -66,7 +69,11 @@ export default class IcyCreateEditDocument extends LightningElement {
     }
 
     get isDocEditDisabled(){
-        return this.disableDocs;
+        return this.disableDoctype;
+     }
+
+    get isDocNameEditDisabled(){
+       return this.disableDocname;
      }
     /**
      * Connected Call Back
@@ -217,7 +224,7 @@ export default class IcyCreateEditDocument extends LightningElement {
             this.missingFile = true;
             isValid = false;
         }
-        if ((isValid) || (this.disableDocs)){
+        if ((isValid) || (this.disableDoctype) ||(disableDocname)){
             this.handleSave();
         }
         else{
