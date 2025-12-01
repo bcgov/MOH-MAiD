@@ -51,7 +51,7 @@
                 <field>OwnerId</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>ICY_Assigned_To__c</field>
             </layoutItems>
             <layoutItems>

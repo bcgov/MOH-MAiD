@@ -13,7 +13,7 @@
         <name>Check_Record_Type_Of_Intake</name>
         <label>Check Record Type Of Intake</label>
         <locationX>314</locationX>
-        <locationY>335</locationY>
+        <locationY>431</locationY>
         <defaultConnector>
             <targetReference>Update_Referral_Status</targetReference>
         </defaultConnector>
@@ -77,6 +77,8 @@
             <label>ICY Intake</label>
         </rules>
     </decisions>
+    <description>Added Notes creation when intake is closed</description>
+    <environments>Default</environments>
     <interviewLabel>Intake Close Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Intake Close Flow</label>
     <processMetadataValues>
@@ -98,12 +100,60 @@
         </value>
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>create a note with rationale closure details</description>
+        <name>Create_Intake_Notes</name>
+        <label>Create Intake Notes</label>
+        <locationX>314</locationX>
+        <locationY>323</locationY>
+        <connector>
+            <targetReference>Check_Record_Type_Of_Intake</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Description__c</field>
+            <value>
+                <elementReference>$Record.ICY_Rationale__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Intake__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Notes_Type__c</field>
+            <value>
+                <stringValue>Collaborative</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Other__c</field>
+            <value>
+                <elementReference>$Record.Closed_Reason__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Referral_Subject__c</field>
+            <value>
+                <stringValue>Other</stringValue>
+            </value>
+        </inputAssignments>
+        <object>ICY_Notes__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
     <recordLookups>
         <description>ICY Read Only Record Type ID</description>
         <name>ICY_Intake_Readonly_Record_Type</name>
         <label>ICY Intake Readonly Record Type</label>
         <locationX>314</locationX>
-        <locationY>455</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_ICY_Record_Type_Of_Intake</targetReference>
@@ -132,7 +182,7 @@
         <name>YTS_Intake_Readonly_Record_Type</name>
         <label>YTS Intake Readonly Record Type</label>
         <locationX>50</locationX>
-        <locationY>455</locationY>
+        <locationY>539</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>YTS_Update_Record_Type_Of_Intake</targetReference>
@@ -161,7 +211,7 @@
         <name>Update_ICY_Record_Type_Of_Intake</name>
         <label>Update ICY Record Type Of Intake</label>
         <locationX>314</locationX>
-        <locationY>575</locationY>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Update_Referral_Status</targetReference>
         </connector>
@@ -177,7 +227,7 @@
         <name>Update_Referral_Status</name>
         <label>Update Referral Status</label>
         <locationX>314</locationX>
-        <locationY>791</locationY>
+        <locationY>839</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -211,7 +261,7 @@
         <name>YTS_Update_Record_Type_Of_Intake</name>
         <label>YTS Update Record Type Of Intake</label>
         <locationX>50</locationX>
-        <locationY>575</locationY>
+        <locationY>647</locationY>
         <connector>
             <targetReference>Update_Referral_Status</targetReference>
         </connector>
@@ -227,7 +277,7 @@
         <locationX>188</locationX>
         <locationY>0</locationY>
         <connector>
-            <targetReference>Check_Record_Type_Of_Intake</targetReference>
+            <targetReference>Create_Intake_Notes</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -235,6 +285,13 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>Closed</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
             </value>
         </filters>
         <object>Intake__c</object>
