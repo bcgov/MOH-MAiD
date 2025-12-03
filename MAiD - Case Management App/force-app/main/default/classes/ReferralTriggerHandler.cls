@@ -2,8 +2,11 @@ public class ReferralTriggerHandler {
 
     public static void handleAfterInsertOrUpdate(List<Referral__c> referralList) {
         Set<Id> referralIds = new Set<Id>();
+        Map<Id,Referral__c> personAccIdRefIdMap = new Map<Id,Referral__c>();
         for (Referral__c ref : referralList) {
             referralIds.add(ref.Id);
+            if (ref.Individual__c != null)
+               personAccIdRefIdMap.put(ref.Individual__c, ref);
         }
 
         Map<Id, Referral__c> refMap = new Map<Id, Referral__c>(
@@ -21,6 +24,7 @@ public class ReferralTriggerHandler {
         List<Referral__c> referralsToUpdate = new List<Referral__c>();
         List<Intake__c> intakesToUpdate = new List<Intake__c>();
         List<Case> casesToUpdate = new List<Case>();
+         List<Account> accountsToUpdate = new List<Account>();
 
         // Update ICY_Searchable_DOB__c on Referral__c
         for (Referral__c ref : refMap.values()) {
@@ -89,5 +93,24 @@ public class ReferralTriggerHandler {
         if (!casesToUpdate.isEmpty()) {
             update casesToUpdate;
         }
-    }
+
+         // Update related person account
+        List<Account> accList = [
+            SELECT Id 
+            FROM account
+            WHERE id IN :personAccIdRefIdMap.keySet()
+        ];
+
+        for (Account accRec : accList) {
+            Referral__c ref = personAccIdRefIdMap.get(accRec.Id);
+            if (ref != null) {       
+                accRec.Individual_Preferred_Name__pc = ref.Individual_Preferred_Name__c;   
+                accountsToUpdate.add(accRec);
+            }
+        }
+
+        if (!accountsToUpdate.isEmpty()) {
+            update accountsToUpdate;
+        }
+  }
 }

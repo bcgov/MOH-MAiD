@@ -3,6 +3,18 @@ public class ReferralTriggerTest {
 
     @testSetup
     static void setupData() {
+         Id personAccRecordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Account', 'ICY_Person_Account');
+         //Create ICY Person Account
+                Account personAccount = new Account();
+                personAccount.RecordTypeId = personAccRecordTypeId;
+                personAccount.LastName = 'Test';
+                personAccount.FirstName =  'Test';
+                personAccount.Individual_Preferred_Name__pc =  'Test';
+                
+                //Insert Account
+                INSERT personAccount;
+
+
         // Create Referral record
         Referral__c ref = new Referral__c(
             Type_of_Referral__c = 'General Referral',
@@ -13,7 +25,8 @@ public class ReferralTriggerTest {
             Individual_Date_of_Birth__c = Date.newInstance(1990, 1, 1),
             ICY_Personal_Health_Number__c = '1234567890',
             ICY_Referral_Source__c = 'Indigenous services',
-            ICY_Geographic_Area__c = 'Central Coast'
+            ICY_Geographic_Area__c = 'Central Coast',
+            Individual__c = personAccount.Id
         );
         insert ref;
 
