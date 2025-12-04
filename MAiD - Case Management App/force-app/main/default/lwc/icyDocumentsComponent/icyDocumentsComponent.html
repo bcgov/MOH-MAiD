@@ -40,7 +40,12 @@
     </template>
     <template if:true={editDocs}>
         <c-icy-create-edit-document onclose={closeModal}
-            parent-record-id={parentRecordId} record-id={documentId} disable-docs = {editDocs}>
+            parent-record-id={parentRecordId} record-id={documentId} disable-doctype = {editDocName} disable-docname = {editDocName}>
+        </c-icy-create-edit-document>
+    </template>
+     <template if:true={editDocName}>
+        <c-icy-create-edit-document onclose={closeModal}
+           parent-record-id={parentRecordId} record-id={documentId} disable-doctype = {editDocName} disable-docname = {editDocs}>
         </c-icy-create-edit-document>
     </template>
     <template if:true={deleteConfirm}>
@@ -73,6 +78,11 @@
                     <template if:true={d.canEditDoc}>
                         <lightning-button-icon icon-name="utility:edit" alternative-text="Edit"
                             onclick={editDocument} slot="actions" data-id={d.recordId}>
+                        </lightning-button-icon>
+                    </template>
+                    <template if:true={d.canEditDocName}>
+                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit"
+                            onclick={editDocumentName} slot="actions" data-id={d.recordId}>
                         </lightning-button-icon>
                     </template>
                     <template if:true={d.hasDeleteAccess}>
