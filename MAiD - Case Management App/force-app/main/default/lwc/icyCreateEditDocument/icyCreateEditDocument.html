@@ -36,7 +36,7 @@
                                         <div class="slds-p-around_small">
                                             <lightning-radio-group name="Document_Type__c" label="Document Type"
                                                 value={documentType} type="button" class="validate" required="true"
-                                                options={documentTypeOptions} onchange={handleChange} tabindex="0">
+                                                options={documentTypeOptions} onchange={handleChange} disabled={isDocEditDisabled} tabindex="0">
                                             </lightning-radio-group>
                                         </div>
                                         <div class="slds-p-left_medium">
@@ -47,12 +47,12 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="slds-grid slds-gutters">
+                            <div class="slds-grid slds-gutters"> 
                                 <div class="slds-col">
                                     <span>
                                         <div class="slds-p-around_small">
                                             <lightning-input type="text" label="Document Name" value={document.Name}
-                                                name="Name" disabled={isDocEditDisabled} class="validate" required="true" onchange={handleChange}>
+                                                name="Name"  class="validate" required="true" onchange={handleChange} disabled={isDocNameEditDisabled}>
                                             </lightning-input>
                                         </div>
                                     </span>
