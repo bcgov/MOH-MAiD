@@ -21,7 +21,7 @@ private class CreateIntakeNotesBatchTest {
         System.assertEquals(1, notes.size(), 'Only one note should be created for the closed intake');
         ICY_Notes__c n = notes[0];
         System.assertEquals(intakes[0].Id, n.Intake__c);
-        System.assertEquals('Rationale 1', n.Description__c);
-        System.assertEquals('Reason A', n.Other__c);
+        System.assertEquals('Rationale - Rationale 1', n.Description__c);
+        System.assertEquals('Intake Closed Reason - Reason A', n.Other__c);
     }
 }

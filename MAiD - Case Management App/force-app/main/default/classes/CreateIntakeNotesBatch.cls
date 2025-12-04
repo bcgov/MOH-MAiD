@@ -20,11 +20,11 @@ global class CreateIntakeNotesBatch implements Database.Batchable<SObject>, Data
           if (i.ICY_Rationale__c != null){
                 
             ICY_Notes__c n = new ICY_Notes__c();
-            n.Description__c = i.ICY_Rationale__c;
+            n.Description__c = 'Rationale - ' + i.ICY_Rationale__c;
             n.Intake__c = i.Id;
             n.Name = 'Other';
             n.Notes_Type__c = 'Collaborative';
-            n.Other__c = i.Closed_Reason__c;
+            n.Other__c ='Intake Closed Reason - ' +  i.Closed_Reason__c;
             n.Referral_Subject__c = 'Other';
             toInsert.add(n);
         }
