@@ -21,11 +21,11 @@ global class CreateCaseNotesBatch implements Database.Batchable<SObject>, Databa
           if (c.ICY_Rationale__c != null){
                 
             ICY_Notes__c n = new ICY_Notes__c();
-            n.Description__c = c.ICY_Rationale__c;
+            n.Description__c = 'Rationale - ' + c.ICY_Rationale__c;
             n.Case__c = c.Id;
             n.Name = 'Other';
             n.Notes_Type__c = 'Collaborative';
-            n.Other__c = c.Case_Closed_Reason__c;
+            n.Other__c = 'Case Closed Reason - ' + c.Case_Closed_Reason__c;
             n.Referral_Subject__c = 'Other';
             toInsert.add(n);
         }
