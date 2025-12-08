@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <decisions>
+        <name>Intake_Status</name>
+        <label>Intake Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Not_Started</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Not Started</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Not_Started_Status</targetReference>
+            </connector>
+            <label>Not Started</label>
+        </rules>
+        <rules>
+            <name>In_Progress</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>In Progress</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>In_Progress_Status</targetReference>
+            </connector>
+            <label>In Progress</label>
+        </rules>
+        <rules>
+            <name>Complete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Complete_Status</targetReference>
+            </connector>
+            <label>Complete</label>
+        </rules>
+        <rules>
+            <name>Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Closed_Status</targetReference>
+            </connector>
+            <label>Closed</label>
+        </rules>
+    </decisions>
+    <description>v3</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>ClosedDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    AND(
+        TEXT($Record.Status__c) = &quot;Closed&quot;,
+        TEXT($Record__Prior.Status__c) = &quot;In Progress&quot;
+    ),
+    DATEVALUE($Record.LastModifiedDate),    
+    $Record__Prior.ICY_Intake_Close_Date__c    
+)</expression>
+    </formulas>
+    <formulas>
+        <name>CompleteDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    AND(
+        TEXT($Record.Status__c) = &quot;Complete&quot;,
+        TEXT($Record__Prior.Status__c) = &quot;In Progress&quot;
+    ),
+    DATEVALUE($Record.LastModifiedDate),    
+    $Record__Prior.Complete_Date__c    
+)</expression>
+    </formulas>
+    <formulas>
+        <name>InProgressFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    AND(
+        TEXT($Record.Status__c) = &quot;In Progress&quot;,
+        TEXT($Record__Prior.Status__c) = &quot;Not Started&quot;
+    ),
+    DATEVALUE($Record.LastModifiedDate),    
+    $Record__Prior.In_Progress_Date__c    
+)</expression>
+    </formulas>
+    <interviewLabel>Intake Report Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Intake Report Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Closed_Status</name>
+        <label>Closed Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>ICY_Intake_Close_Date__c</field>
+            <value>
+                <elementReference>ClosedDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Complete_Status</name>
+        <label>Complete Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Complete_Date__c</field>
+            <value>
+                <elementReference>CompleteDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>In_Progress_Status</name>
+        <label>In Progress Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>In_Progress_Date__c</field>
+            <value>
+                <elementReference>InProgressFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Not_Started_Status</name>
+        <label>Not Started Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Not_Started_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Not_Started_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Intake_Status</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Not Started</stringValue>
+            </value>
+        </filters>
+        <object>Intake__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>65.0</apiVersion>
+    <decisions>
+        <name>Referral_Status</name>
+        <label>Referral Status</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Referral</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Referral</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Referral_Date</targetReference>
+            </connector>
+            <label>Referral</label>
+        </rules>
+        <rules>
+            <name>Ready_for_Intake</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Ready for Intake</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Ready_for_Intake_Date</targetReference>
+            </connector>
+            <label>Ready for Intake</label>
+        </rules>
+        <rules>
+            <name>Intake_Complete</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Intake Complete</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Intake_Completed_Date</targetReference>
+            </connector>
+            <label>Intake Complete</label>
+        </rules>
+        <rules>
+            <name>Case_Created</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Case Created</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Case_Created_Date</targetReference>
+            </connector>
+            <label>Case Created</label>
+        </rules>
+        <rules>
+            <name>Closed</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Closed</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Closed_Referral</targetReference>
+            </connector>
+            <label>Closed</label>
+        </rules>
+    </decisions>
+    <description>This is for for the Referral Reports</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>CaseCreatedDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    AND(
+        TEXT($Record.Status__c) = &quot;Case Created&quot;,
+OR(
+            TEXT($Record__Prior.Status__c) = &quot;Ready for Intake&quot;,
+            TEXT($Record__Prior.Status__c) = &quot;Intake Complete&quot;
+        )
+    ),
+    DATEVALUE($Record.LastModifiedDate),    
+    $Record__Prior.Case_Created_Date__c    
+)</expression>
+    </formulas>
+    <formulas>
+        <name>ClosedDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    AND(
+        TEXT($Record.Status__c) = &quot;Closed&quot;,
+        OR(
+            TEXT($Record__Prior.Status__c) = &quot;Case Created&quot;,
+            TEXT($Record__Prior.Status__c) = &quot;Ready for Intake&quot;,
+            TEXT($Record__Prior.Status__c) = &quot;Referral&quot;
+        )
+    ),
+    DATEVALUE($Record.LastModifiedDate),
+    $Record__Prior.Closed_Date__c
+)</expression>
+    </formulas>
+    <formulas>
+        <name>IntakeCompletedDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    AND(
+        TEXT($Record.Status__c) = &quot;Intake Complete&quot;,
+        TEXT($Record__Prior.Status__c) = &quot;Ready for Intake&quot;
+    ),
+    DATEVALUE($Record.LastModifiedDate),    
+    $Record__Prior.Intake_Complete_Date__c    
+)</expression>
+    </formulas>
+    <formulas>
+        <name>ReadyforIntakeDateFormula</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+    AND(
+        TEXT($Record.Status__c) = &quot;Ready for Intake&quot;,
+        TEXT($Record__Prior.Status__c) = &quot;Referral&quot;
+    ),
+    DATEVALUE($Record.LastModifiedDate),    
+    $Record__Prior.Ready_for_Intake_Date__c    
+)</expression>
+    </formulas>
+    <interviewLabel>Referral Report Flow {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Referral Report Flow</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Case_Created_Date</name>
+        <label>Case Created Date</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Case_Created_Date__c</field>
+            <value>
+                <elementReference>CaseCreatedDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Closed_Referral</name>
+        <label>Closed Referral</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Closed_Date__c</field>
+            <value>
+                <elementReference>ClosedDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Intake_Completed_Date</name>
+        <label>Intake Completed Date</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Intake_Complete_Date__c</field>
+            <value>
+                <elementReference>IntakeCompletedDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Ready_for_Intake_Date</name>
+        <label>Ready for Intake Date</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Ready_for_Intake_Date__c</field>
+            <value>
+                <elementReference>ReadyforIntakeDateFormula</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Referral_Date</name>
+        <label>Referral Date</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Referral_Created_Date__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>Referral_Created_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDateTime</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Referral_Status</targetReference>
+        </connector>
+        <filterLogic>or</filterLogic>
+        <filters>
+            <field>Status__c</field>
+            <operator>IsChanged</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Status__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Referral</stringValue>
+            </value>
+        </filters>
+        <object>Referral__c</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>
