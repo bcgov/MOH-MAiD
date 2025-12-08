@@ -9,7 +9,7 @@ public with sharing class ICY_CaseNotesBackfillBatch implements Database.Batchab
     }
 
     public Database.QueryLocator start(Database.BatchableContext bc) {
-        // Process all Cases. Add filters if you want to narrow the run.
+        // Process all Cases. 
         return Database.getQueryLocator([
             SELECT Id
             FROM Case
@@ -22,7 +22,7 @@ public with sharing class ICY_CaseNotesBackfillBatch implements Database.Batchab
         Set<Id> caseIds = new Set<Id>();
         for (Case c : scope) caseIds.add(c.Id);
 
-        // Each Case has exactly one Referral__c and one Intake__c (per user confirmation).
+        // Each Case has exactly one Referral__c and one Intake__c 
         // Query referrals by Case
         Map<Id, Referral__c> caseIdToReferral = new Map<Id, Referral__c>();
         for (Referral__c ref : [
@@ -97,6 +97,7 @@ public with sharing class ICY_CaseNotesBackfillBatch implements Database.Batchab
             }
         }
 
+        System.debug('ICY_Notes__c to update :' + toUpdate);
         if (!toUpdate.isEmpty()) {
             Database.SaveResult[] srList = Database.update(toUpdate, false);
             for (Integer i = 0; i < srList.size(); i++) {
