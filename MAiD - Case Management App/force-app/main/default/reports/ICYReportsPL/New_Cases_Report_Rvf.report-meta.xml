@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
+        <field>CASE_NUMBER</field>
+    </columns>
+    <columns>
+        <field>STATUS</field>
+    </columns>
+    <columns>
         <field>OWNER</field>
     </columns>
     <columns>
-        <field>ACCOUNT.NAME</field>
-    </columns>
-    <columns>
         <field>CREATED_DATE</field>
-    </columns>
-    <columns>
-        <field>AGE</field>
     </columns>
     <columns>
         <field>OPEN</field>
@@ -25,14 +25,14 @@
         <field>Case.Case_Closed_Date__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Sum</aggregateTypes>
+        <aggregateTypes>Average</aggregateTypes>
         <field>Case.Days_from_Created_to_Closed__c</field>
     </columns>
     <format>Tabular</format>
     <name>Case Statuses Duration</name>
     <params>
         <name>units</name>
-        <value>h</value>
+        <value>d</value>
     </params>
     <params>
         <name>co</name>
@@ -43,6 +43,8 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
+    <sortColumn>CASE_NUMBER</sortColumn>
+    <sortOrder>Desc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CREATED_DATEONLY</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>

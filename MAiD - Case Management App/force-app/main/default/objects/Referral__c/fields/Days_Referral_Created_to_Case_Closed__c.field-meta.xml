@@ -5,16 +5,16 @@
     <formula>IF(
 AND(
 NOT(ISBLANK(Referral_Created_Date__c)),
-NOT(ISBLANK(Case_Created_Date__c))
+NOT(ISBLANK(Closed_Date__c))
 ),
-Closed_Date__c - Referral_Created_Date__c,
+(Closed_Date__c) - (Referral_Created_Date__c),
 NULL
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Days-Referral Created to Referral Closed</label>
     <precision>18</precision>
     <required>false</required>
-    <scale>2</scale>
+    <scale>0</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Number</type>

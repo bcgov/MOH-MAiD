@@ -1,58 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
     <columns>
-        <field>CUST_NAME</field>
+        <field>Referral__c$Name</field>
     </columns>
     <columns>
-        <field>Intake__c.Status__c</field>
+        <field>Referral__c$Status__c</field>
     </columns>
     <columns>
-        <field>Intake__c.Not_Started_Date__c</field>
+        <field>Referral__c$Referral_Created_Date__c</field>
     </columns>
     <columns>
-        <field>Intake__c.In_Progress_Date__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Average</aggregateTypes>
-        <field>Intake__c.Days_From_NotStarted_to_InProgress__c</field>
-    </columns>
-    <columns>
-        <field>Intake__c.Complete_Date__c</field>
+        <field>Referral__c$Ready_for_Intake_Date__c</field>
     </columns>
     <columns>
         <aggregateTypes>Average</aggregateTypes>
-        <field>Intake__c.Days_Not_Started_to_Complete__c</field>
+        <field>Referral__c$Days_Referral_Created_to_Intake_Created__c</field>
+    </columns>
+    <columns>
+        <field>Referral__c$Case_Created_Date__c</field>
     </columns>
     <columns>
         <aggregateTypes>Average</aggregateTypes>
-        <field>Intake__c.Days_from_InProgress_to_Complete__c</field>
+        <field>Referral__c$Days_Referral_Created_to_Case_Created__c</field>
     </columns>
     <columns>
-        <field>Intake__c.ICY_Intake_Close_Date__c</field>
-    </columns>
-    <columns>
-        <aggregateTypes>Average</aggregateTypes>
-        <field>Intake__c.Days_from_InProgress_to_Closed__c</field>
+        <field>Referral__c$Closed_Date__c</field>
     </columns>
     <columns>
         <aggregateTypes>Average</aggregateTypes>
-        <field>Intake__c.Days_Not_Started_to_ClosedDate__c</field>
+        <field>Referral__c$Days_Referral_Created_to_Case_Closed__c</field>
+    </columns>
+    <columns>
+        <field>Referral__c.Cases__r$Case_Closed_Date__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
+        <field>Referral__c$Days_Referral_Created_to_Case_ClosedDate__c</field>
     </columns>
     <format>Tabular</format>
-    <name>Intake Statuses Duration</name>
+    <name>Referral Statuses Duration</name>
     <params>
         <name>co</name>
         <value>1</value>
     </params>
-    <reportType>CustomEntity$Intake__c</reportType>
+    <reportType>Referral_with_Case__c</reportType>
     <scope>organization</scope>
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <sortColumn>CUST_NAME</sortColumn>
+    <sortColumn>Referral__c$Name</sortColumn>
     <sortOrder>Desc</sortOrder>
     <timeFrameFilter>
-        <dateColumn>Intake__c.Complete_Date__c</dateColumn>
+        <dateColumn>Referral__c$CreatedDate</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
     </timeFrameFilter>
 </Report>
