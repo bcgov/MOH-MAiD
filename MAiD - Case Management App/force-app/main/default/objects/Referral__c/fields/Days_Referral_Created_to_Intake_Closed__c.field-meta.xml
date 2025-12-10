@@ -3,20 +3,19 @@
     <fullName>Days_Referral_Created_to_Intake_Closed__c</fullName>
     <description>This sis from Referral creation date to Intake Close date</description>
     <externalId>false</externalId>
-    <formula>IF(
-    AND(
-        NOT(ISBLANK(Intake__c)),
-        NOT(ISBLANK(Intake__r.ICY_Intake_Close_Date__c)),
-        NOT(ISBLANK(Referral_Created_Date__c))
-    ),
-    Intake__r.ICY_Intake_Close_Date__c - Referral_Created_Date__c,
-    NULL
+    <formula>If(
+AND(
+NOT(ISBLANK(Intake__c)),
+NOT(ISBLANK(Intake__r.ICY_Intake_Close_Date__c)),
+NOT(ISBLANK(Referral_Created_Date__c))),
+Intake__r.ICY_Intake_Close_Date__c-Referral_Created_Date__c,
+NULL
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Days-Referral Created to Intake Closed</label>
     <precision>18</precision>
     <required>false</required>
-    <scale>0</scale>
+    <scale>2</scale>
     <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Number</type>

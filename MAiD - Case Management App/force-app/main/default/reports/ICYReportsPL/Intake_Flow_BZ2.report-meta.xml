@@ -4,38 +4,35 @@
         <field>CUST_NAME</field>
     </columns>
     <columns>
-        <field>Intake__c.Status__c</field>
-    </columns>
-    <columns>
         <field>Intake__c.Not_Started_Date__c</field>
     </columns>
     <columns>
         <field>Intake__c.In_Progress_Date__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Average</aggregateTypes>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>Intake__c.Days_From_NotStarted_to_InProgress__c</field>
     </columns>
     <columns>
         <field>Intake__c.Complete_Date__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Average</aggregateTypes>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>Intake__c.Days_Not_Started_to_Complete__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Average</aggregateTypes>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>Intake__c.Days_from_InProgress_to_Complete__c</field>
     </columns>
     <columns>
         <field>Intake__c.ICY_Intake_Close_Date__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Average</aggregateTypes>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>Intake__c.Days_from_InProgress_to_Closed__c</field>
     </columns>
     <columns>
-        <aggregateTypes>Average</aggregateTypes>
+        <aggregateTypes>Sum</aggregateTypes>
         <field>Intake__c.Days_Not_Started_to_ClosedDate__c</field>
     </columns>
     <format>Tabular</format>
@@ -49,8 +46,6 @@
     <showDetails>true</showDetails>
     <showGrandTotal>true</showGrandTotal>
     <showSubTotals>true</showSubTotals>
-    <sortColumn>CUST_NAME</sortColumn>
-    <sortOrder>Desc</sortOrder>
     <timeFrameFilter>
         <dateColumn>Intake__c.Complete_Date__c</dateColumn>
         <interval>INTERVAL_CUSTOM</interval>
