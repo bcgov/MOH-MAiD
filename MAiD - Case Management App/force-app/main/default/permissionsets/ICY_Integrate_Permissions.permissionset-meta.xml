@@ -208,18 +208,8 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Case_Closed_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Case.Case_Closed_Reason__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Case_Created_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -280,11 +270,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Case.Date_referral_accepted__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Case.Days_from_Created_to_Closed__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1168,11 +1153,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Intake__c.Complete_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Intake__c.Consent_to_Evaluation__c</field>
         <readable>true</readable>
@@ -1180,31 +1160,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Intake__c.Date_of_Interview__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Intake__c.Days_From_NotStarted_to_InProgress__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Intake__c.Days_Not_Started_to_ClosedDate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Intake__c.Days_Not_Started_to_Complete__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Intake__c.Days_from_InProgress_to_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Intake__c.Days_from_InProgress_to_Complete__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1229,12 +1184,12 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Intake__c.ICY_Geographical_Region_Text__c</field>
+        <field>Intake__c.ICY_Geographical_Region__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Intake__c.ICY_Geographical_Region__c</field>
+        <field>Intake__c.ICY_Geographical_Region_Text__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1299,11 +1254,6 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>Intake__c.In_Progress_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>Intake__c.Individual_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1330,11 +1280,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Intake__c.Name_of_Person_Interviewed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Intake__c.Not_Started_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1433,11 +1378,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Case_Created_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Case__c</field>
         <readable>true</readable>
@@ -1445,11 +1385,6 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Referral__c.Catchment__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Closed_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1480,31 +1415,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.DAA_or_other_cultural_or_spiritual_repre__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Days_Referral_Created_to_Case_ClosedDate__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Days_Referral_Created_to_Case_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Days_Referral_Created_to_Case_Created__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Days_Referral_Created_to_Intake_Closed__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Days_Referral_Created_to_Intake_Created__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1813,16 +1723,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Intake_Complete_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Intake__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Interview_Date__c</field>
         <readable>true</readable>
@@ -1998,11 +1898,6 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Ready_for_Intake_Date__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Reason_for_Referral_if_Other__c</field>
         <readable>true</readable>
@@ -2015,11 +1910,6 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Referral_Close_Reason__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
-        <field>Referral__c.Referral_Created_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -2134,17 +2024,17 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
-        <field>User.Keycloak_Roles__c</field>
-        <readable>true</readable>
-    </fieldPermissions>
-    <fieldPermissions>
-        <editable>false</editable>
         <field>User.Privacy_Acknowledgement__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>User.Privacy_Statement_Accepted__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+     <fieldPermissions>
+        <editable>false</editable>
+        <field>User.Keycloak_Roles__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
