@@ -69,11 +69,9 @@ public without sharing class ICY_Referral_Controller {
     @AuraEnabled
     public static string createICYIntakeRecord(String referralId){
         try {
-            String currentUserProfileName = [SELECT Id, Profile.Name from user where id=:UserInfo.getUserId()].Profile.Name;
-            
             Referral__c r = [SELECT Id, Status__c, OwnerId,ICY_Assigned_To__c  FROM Referral__c WHERE ID=:referralId];
-            r.Status__c = 'Ready for Intake';
-            UPDATE r;
+            
+            String currentUserProfileName = [SELECT Id, Profile.Name from user where id=:UserInfo.getUserId()].Profile.Name;
             String assignedTo = currentUserProfileName != 'System Administrator'?UserInfo.getUserId():'';
             Intake__c i = new Intake__c();
             i.recordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Intake__c', 'ICY_Intake');
@@ -81,6 +79,9 @@ public without sharing class ICY_Referral_Controller {
             i.Referral__c = referralId;
             if(String.isNotBlank(assignedTo)) i.ICY_Assigned_To__c = assignedTo;
             INSERT i;
+            
+            r.Status__c = 'Ready for Intake';
+            UPDATE r;
             
             List<ICY_Document__c> docsToUpdate = new List<ICY_Document__c>();
             List<Case_Contact__c> consToUpdate = new List<Case_Contact__c>();

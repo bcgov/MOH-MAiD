@@ -106,8 +106,8 @@ private class CreateCaseNotesBatchTest {
         System.assertEquals(1, notes.size(), 'Only one note should be created for the closed case');
         ICY_Notes__c n = notes[0];
         System.assertEquals(cases[0].Id, n.Case__c);
-        System.assertEquals('Rationale 1', n.Description__c);
-        System.assertEquals('Reason A', n.Other__c);
+        System.assertEquals('Rationale - Rationale 1', n.Description__c);
+        System.assertEquals('Case Closed Reason - Reason A', n.Other__c);
 
 
     }

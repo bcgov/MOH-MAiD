@@ -12,8 +12,8 @@
         <description>If Record Type of Intake is ICY Intake</description>
         <name>Check_Record_Type_Of_Intake</name>
         <label>Check Record Type Of Intake</label>
-        <locationX>314</locationX>
-        <locationY>431</locationY>
+        <locationX>776</locationX>
+        <locationY>479</locationY>
         <defaultConnector>
             <targetReference>Update_Referral_Status</targetReference>
         </defaultConnector>
@@ -79,6 +79,16 @@
     </decisions>
     <description>Added Notes creation when intake is closed</description>
     <environments>Default</environments>
+    <formulas>
+        <name>IntakeClosedReasonText</name>
+        <dataType>String</dataType>
+        <expression>&apos;Intake Closed Reason - &apos; &amp; TEXT($Record.Closed_Reason__c)</expression>
+    </formulas>
+    <formulas>
+        <name>RationaleText</name>
+        <dataType>String</dataType>
+        <expression>&apos;Rationale - &apos; &amp; {!$Record.ICY_Rationale__c}</expression>
+    </formulas>
     <interviewLabel>Intake Close Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Intake Close Flow</label>
     <processMetadataValues>
@@ -90,7 +100,7 @@
     <processMetadataValues>
         <name>CanvasMode</name>
         <value>
-            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
         </value>
     </processMetadataValues>
     <processMetadataValues>
@@ -104,15 +114,15 @@
         <description>create a note with rationale closure details</description>
         <name>Create_Intake_Notes</name>
         <label>Create Intake Notes</label>
-        <locationX>314</locationX>
-        <locationY>323</locationY>
+        <locationX>776</locationX>
+        <locationY>371</locationY>
         <connector>
             <targetReference>Check_Record_Type_Of_Intake</targetReference>
         </connector>
         <inputAssignments>
             <field>Description__c</field>
             <value>
-                <elementReference>$Record.ICY_Rationale__c</elementReference>
+                <elementReference>RationaleText</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -136,7 +146,7 @@
         <inputAssignments>
             <field>Other__c</field>
             <value>
-                <elementReference>$Record.Closed_Reason__c</elementReference>
+                <elementReference>IntakeClosedReasonText</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -152,8 +162,8 @@
         <description>ICY Read Only Record Type ID</description>
         <name>ICY_Intake_Readonly_Record_Type</name>
         <label>ICY Intake Readonly Record Type</label>
-        <locationX>314</locationX>
-        <locationY>539</locationY>
+        <locationX>776</locationX>
+        <locationY>587</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_ICY_Record_Type_Of_Intake</targetReference>
@@ -181,8 +191,8 @@
         <description>Read Only Record Type ID</description>
         <name>YTS_Intake_Readonly_Record_Type</name>
         <label>YTS Intake Readonly Record Type</label>
-        <locationX>50</locationX>
-        <locationY>539</locationY>
+        <locationX>512</locationX>
+        <locationY>587</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>YTS_Update_Record_Type_Of_Intake</targetReference>
@@ -210,8 +220,8 @@
         <description>Change the record Type To ICY Intake Read Only when an ICY intake is closed</description>
         <name>Update_ICY_Record_Type_Of_Intake</name>
         <label>Update ICY Record Type Of Intake</label>
-        <locationX>314</locationX>
-        <locationY>647</locationY>
+        <locationX>776</locationX>
+        <locationY>695</locationY>
         <connector>
             <targetReference>Update_Referral_Status</targetReference>
         </connector>
@@ -226,8 +236,8 @@
     <recordUpdates>
         <name>Update_Referral_Status</name>
         <label>Update Referral Status</label>
-        <locationX>314</locationX>
-        <locationY>839</locationY>
+        <locationX>776</locationX>
+        <locationY>887</locationY>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Id</field>
@@ -260,8 +270,8 @@
         <description>Change the record Type To YTS Intake Read Only when an intake is closed</description>
         <name>YTS_Update_Record_Type_Of_Intake</name>
         <label>YTS Update Record Type Of Intake</label>
-        <locationX>50</locationX>
-        <locationY>647</locationY>
+        <locationX>512</locationX>
+        <locationY>695</locationY>
         <connector>
             <targetReference>Update_Referral_Status</targetReference>
         </connector>
@@ -274,8 +284,8 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>188</locationX>
-        <locationY>0</locationY>
+        <locationX>650</locationX>
+        <locationY>48</locationY>
         <connector>
             <targetReference>Create_Intake_Notes</targetReference>
         </connector>
