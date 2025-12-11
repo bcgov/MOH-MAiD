@@ -128,6 +128,16 @@
     </decisions>
     <description>Create Note with Rationale when Case is closed</description>
     <environments>Default</environments>
+    <formulas>
+        <name>ClosedReasonText</name>
+        <dataType>String</dataType>
+        <expression>&apos;Case Closed Reason - &apos; &amp; TEXT($Record.Case_Closed_Reason__c)</expression>
+    </formulas>
+    <formulas>
+        <name>RationaleText</name>
+        <dataType>String</dataType>
+        <expression>&apos;Rationale - &apos; &amp; {!$Record.ICY_Rationale__c}</expression>
+    </formulas>
     <interviewLabel>Case Close Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Case Close Flow</label>
     <processMetadataValues>
@@ -167,7 +177,7 @@
         <inputAssignments>
             <field>Description__c</field>
             <value>
-                <elementReference>$Record.ICY_Rationale__c</elementReference>
+                <elementReference>RationaleText</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -185,7 +195,7 @@
         <inputAssignments>
             <field>Other__c</field>
             <value>
-                <elementReference>$Record.Case_Closed_Reason__c</elementReference>
+                <elementReference>ClosedReasonText</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

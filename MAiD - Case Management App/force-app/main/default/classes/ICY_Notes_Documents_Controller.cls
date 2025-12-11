@@ -148,6 +148,7 @@ public with sharing class ICY_Notes_Documents_Controller {
                 String category = d.Category__c == 'Other'?d.Other_Document_Type__c:d.Category__c;
                  // To be able to Edit a Document either you are the creator of the doc  or the PL and the Document  type shouldn't be = Restricted
                 Boolean canEditDoc = (((d.CreatedById == UserInfo.getUserId()) ||(YTS_Utility.lookupRole('Program Leader'))) && (d.Document_Type__c=='Collaborative'))? true : false;
+                Boolean canEditDocName = (((d.CreatedById == UserInfo.getUserId()) ||(YTS_Utility.lookupRole('Program Leader'))) && (d.Document_Type__c=='Restricted'))? true : false;
 
                 String docId ;
                 List<AllAttachments> attchList = new List<AllAttachments>();
@@ -183,6 +184,7 @@ public with sharing class ICY_Notes_Documents_Controller {
                         d.createdBy.name,
                         badgeCSS,
                         canEditDoc,
+                        canEditDocName,
                         Schema.sObjectType.ICY_Document__c.isUpdateable(),
                         Schema.sObjectType.ICY_Document__c.isDeletable(),
                         isAttach,
@@ -566,6 +568,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public String lastModifiedBy{get;set;}
         @AuraEnabled public String badgeCSS{get;set;}
         @AuraEnabled public Boolean canEditDoc{get;set;}
+        @AuraEnabled public Boolean canEditDocName{get;set;}
         @AuraEnabled public Boolean hasEditAccess{get;set;}
         @AuraEnabled public Boolean hasDeleteAccess{get;set;}
         @AuraEnabled public Boolean isAttachment{get;set;}
@@ -573,7 +576,7 @@ public with sharing class ICY_Notes_Documents_Controller {
 
         public Document(String recordId, String name, String documentType, String category, 
                             String subCategory, String description, String documentId, String lastModifiedOn, 
-                            String lastModifiedBy, String createdOn, String createdBy, String badgeCSS,Boolean canEditDoc,
+                            String lastModifiedBy, String createdOn, String createdBy, String badgeCSS,Boolean canEditDoc,Boolean canEditDocName,
                             Boolean hasEditAccess, Boolean hasDeleteAccess, Boolean isAttachment, List<AllAttachments> attachmentsList){
             this.recordId = recordId;
             this.name = name;
@@ -588,6 +591,7 @@ public with sharing class ICY_Notes_Documents_Controller {
             this.documentType = documentType;
             this.badgeCSS = badgeCSS;
             this.canEditDoc = canEditDoc;
+            this.canEditDocName = canEditDocName;
             this.hasDeleteAccess = hasDeleteAccess;
             this.hasEditAccess = hasEditAccess;
             this.isAttachment = isAttachment;
