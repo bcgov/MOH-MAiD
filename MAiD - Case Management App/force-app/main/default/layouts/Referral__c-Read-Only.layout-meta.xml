@@ -95,10 +95,6 @@
                 <behavior>Edit</behavior>
                 <field>Other_Relationship_Email__c</field>
             </layoutItems>
-            <layoutItems>
-                <behavior>Edit</behavior>
-                <field>Priority__c</field>
-            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -167,6 +163,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Current_School__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Priority__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
