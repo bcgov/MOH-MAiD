@@ -3,6 +3,7 @@
  */
 trigger YTS_Case_Trigger on Case (after insert, after update) {
   Boolean isTriggerActive = YTS_Trigger_Handler__mdt.getInstance('Case').active__c;
+  List<Case> newCases= new List<Case>();
   //Create Transition Plans When a Case is Created
   if(Trigger.isAfter && Trigger.isInsert){
       if(isTriggerActive){
@@ -10,9 +11,11 @@ trigger YTS_Case_Trigger on Case (after insert, after update) {
           Set<Id> newCaseIds = new Set<Id>();
           for (Case c: ICYCsNew ){
               newCaseIds.add(c.Id);
+              newCases.add(c);
           }
           if (!newCaseIds.isEmpty()) {
             YTS_Case_Helper.createCaseTransitionPlans(newCaseIds);
+            ICY_CaseNotesHandler.afterInsert(newCases);
           }
       }
   }
