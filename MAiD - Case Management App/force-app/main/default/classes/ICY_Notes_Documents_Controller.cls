@@ -66,7 +66,17 @@ public with sharing class ICY_Notes_Documents_Controller {
             String noteSource = String.isBlank(n.Note_Source__c) ?'Case':n.Note_Source__c;
            
            // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
-            Boolean canEdit = (((n.CreatedById == UserInfo.getUserId()) || isProgramLeader ) && (n.Notes_Type__c=='Collaborative'))? true : false;
+           // Boolean canEdit = (((n.CreatedById == UserInfo.getUserId()) || isProgramLeader ) && (n.Notes_Type__c=='Collaborative'))? true : false;
+
+            // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
+            // Allow owners to edit all the fields for (Referral/Intakes/Case Notes) within 24 hours of creation date
+            //If the note type is restricted, All the fields should be editable except note type
+            //Keep the current implementation of editing the notes type by Owner and PL even after 24 hours
+            Boolean isRecent = n.CreatedDate >= Datetime.now().addHours(-24);
+          
+            Boolean canEditNoteTypePL = (((n.CreatedById == UserInfo.getUserId() && !(isRecent)) || (isProgramLeader && n.CreatedById != UserInfo.getUserId()) ) && (n.Notes_Type__c=='Collaborative'))? true : false;
+            Boolean canEditAllAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Collaborative'))? true : false;
+            Boolean canEditOtherAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted'))? true : false;
             
             result.add(
                 new Note(
@@ -89,7 +99,10 @@ public with sharing class ICY_Notes_Documents_Controller {
                     noteSource,
                     Schema.sObjectType.ICY_Notes__c.isUpdateable(),
                     Schema.sObjectType.ICY_Notes__c.isDeletable(),
-                    canEdit
+                   // canEdit
+                   canEditNoteTypePL,
+                   canEditAllAsOwner,
+                   canEditOtherAsOwner
                 )
             );
         }
@@ -516,11 +529,14 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public String noteSource{get;set;}
         @AuraEnabled public Boolean hasEditAccess{get;set;}
         @AuraEnabled public Boolean hasDeleteAccess{get;set;}
-        @AuraEnabled public Boolean canEdit{get;set;}
+       // @AuraEnabled public Boolean canEdit{get;set;}
+        @AuraEnabled public Boolean canEditNoteTypePL{get;set;}
+        @AuraEnabled public Boolean canEditAllAsOwner{get;set;}
+        @AuraEnabled public Boolean canEditOtherAsOwner{get;set;}
         
         public Note(String recordId, String name, String notesType, String subject,
                         String description, Date meetingDate,String attendees, Decimal lengthOfMeeting, String lastModifiedOn, String lastModifiedBy,
-                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,String othermodeLocation,String noteSource,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEdit){
+                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,String othermodeLocation,String noteSource,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEditNoteTypePL,Boolean canEditAllAsOwner,Boolean canEditOtherAsOwner){
             this.recordId = recordId;
             this.name = name;
             this.notesType = notesType;
@@ -540,7 +556,9 @@ public with sharing class ICY_Notes_Documents_Controller {
             this.noteSource= noteSource;
             this.hasDeleteAccess = hasDeleteAccess;
             this.hasEditAccess = hasEditAccess;
-            this.canEdit = canEdit;
+            this.canEditNoteTypePL = canEditNoteTypePL;
+            this.canEditAllAsOwner = canEditAllAsOwner;
+            this.canEditOtherAsOwner = canEditOtherAsOwner;
         }
     }
 

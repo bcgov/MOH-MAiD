@@ -14,7 +14,10 @@ export default class icyCreateEditNotes extends LightningElement {
     @api recordId;
     @api objectApiName;
     @api adminNotes = false;
-    @api disableNotes ;
+  //  @api disableNotes ;
+    @api enableNotes ;
+    @api enableNoteType ;
+
 
     showSpinner = false;
     subjectOptions = [];
@@ -93,8 +96,14 @@ export default class icyCreateEditNotes extends LightningElement {
     }
 
     get isNoteEditDisabled(){
-       return this.disableNotes;
+        //return this.disableNotes;
+      return !this.enableNotes;
     }
+     get isNoteTypetDisabled(){
+        //return this.disableNotes;
+      return !this.enableNoteType;
+    }
+
 
     get today() {
         var d = new Date();
@@ -252,7 +261,9 @@ export default class icyCreateEditNotes extends LightningElement {
             }
         });
 
-        if ((isValid) || (this.disableNotes)){
+       // if ((isValid) || (this.disableNotes)){
+        // if ((isValid) || (!this.enableNotes) || (!this.enableNoteType)){
+        if (isValid){
             this.handleSave();
         }else{
             const evt = new ShowToastEvent({
