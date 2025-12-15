@@ -34,6 +34,13 @@ export default class iCY_NotesComponent extends LightningElement {
         {label:'Supervision Note' , value: 'Supervision Note'},
         {label:'Critical Incident' , value: 'Critical Incident'},
         {label:'Other' , value: 'Other'},
+        {label:'Contact with referring partner' , value: 'Contact with referring partner'},
+        {label:'Contact with parent/caregiver/guardian:' , value: 'Contact with parent/caregiver/guardian:'},
+        {label:'Contact with child/youth' , value: 'Contact with child/youth'},
+        {label:'Contact with ICY team member organization' , value: 'Contact with ICY team member organization'},
+        {label:'External referrals' , value: 'External referrals'},
+        {label:'Contact with external organization' , value: 'Contact with external organization'},
+        {label:'ICY intake/waitlist' , value: 'ICY intake/waitlist'}
     ];
 
     get newNoteLabel(){

@@ -68,7 +68,7 @@
             <label>Closed</label>
         </rules>
     </decisions>
-    <description>v3</description>
+    <description>Updated the scenarios</description>
     <environments>Default</environments>
     <formulas>
         <name>ClosedDateFormula</name>
@@ -76,7 +76,11 @@
         <expression>IF(
     AND(
         TEXT($Record.Status__c) = &quot;Closed&quot;,
-        TEXT($Record__Prior.Status__c) = &quot;In Progress&quot;
+        OR(
+            TEXT($Record__Prior.Status__c) = &quot;Not Started&quot;,
+            TEXT($Record__Prior.Status__c) = &quot;In Progress&quot;,
+            TEXT($Record__Prior.Status__c) = &quot;Complete&quot;
+        )
     ),
     DATEVALUE($Record.LastModifiedDate),    
     $Record__Prior.ICY_Intake_Close_Date__c    
@@ -88,7 +92,10 @@
         <expression>IF(
     AND(
         TEXT($Record.Status__c) = &quot;Complete&quot;,
-        TEXT($Record__Prior.Status__c) = &quot;In Progress&quot;
+OR(
+            TEXT($Record__Prior.Status__c) = &quot;Not Started&quot;,
+            TEXT($Record__Prior.Status__c) = &quot;In Progress&quot;
+        )
     ),
     DATEVALUE($Record.LastModifiedDate),    
     $Record__Prior.Complete_Date__c    
