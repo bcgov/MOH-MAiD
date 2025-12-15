@@ -73,6 +73,10 @@
                 <behavior>Edit</behavior>
                 <field>Consent_to_Evaluation__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Priority__c</field>
+            </layoutItems>
         </layoutColumns>
         <style>TwoColumnsLeftToRight</style>
     </layoutSections>
