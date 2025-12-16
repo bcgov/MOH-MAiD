@@ -294,18 +294,45 @@ public with sharing class ICY_Notes_Documents_Controller {
     @AuraEnabled
     public static String upsertNote(ICY_Notes__c note, String recordId, String noteId,String noteType){
         Id parentRecordId = Id.valueOf(recordId);
-        if(String.isNotBlank(noteId)) note.Id = noteId;
-        if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType)
-            note.Referral__c = parentRecordId;
-        else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType)
+        // Set parent context lookups based on recordId
+       if (parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType) {
+        note.Referral__c = parentRecordId;
+        List<Case> casesByReferral = [
+            SELECT Id
+            FROM Case
+            WHERE Referral__c = :note.Referral__c
+            ORDER BY CreatedDate DESC
+            LIMIT 1
+        ];
+        if (!casesByReferral.isEmpty()) {
+            note.Case__c = casesByReferral[0].Id;
+            note.Note_Source__c = 'Referral';
+        }
+
+        } else if (parentRecordId.getSobjectType() == Schema.Case.SObjectType) {
             note.Case__c = parentRecordId;
-        else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType)
+
+        } else if (parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType) {
             note.Intake__c = parentRecordId;
-        note.Name = String.isBlank(note.Referral_Subject__c)?noteType:note.Referral_Subject__c;
+            List<Intake__c> intakeRows = [
+                SELECT Case__c
+                FROM Intake__c
+                WHERE Id = :note.Intake__c
+                LIMIT 1
+            ];
+            if (!intakeRows.isEmpty() && intakeRows[0].Case__c != null) {
+                note.Case__c = intakeRows[0].Case__c;
+                note.Note_Source__c = 'Intake';
+            }
+        }
+
+        note.Name = String.isBlank(note.Referral_Subject__c) ? noteType : note.Referral_Subject__c;
         note.Notes_Type__c = noteType;
-        UPSERT note;
+
+        upsert note;
         return note.Id;
     }
+
 
     /**
      * Query note based on record Id
