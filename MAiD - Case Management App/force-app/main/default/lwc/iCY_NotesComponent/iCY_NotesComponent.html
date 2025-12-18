@@ -99,10 +99,7 @@
                             <lightning-icon icon-name="doctype:gform" size="small"></lightning-icon>&nbsp;&nbsp;
                             {n.name}&nbsp;<lightning-badge class={n.badgeCSS} label={n.notesType}></lightning-badge>
                         </h4>
-                    </template> {n.canEditNoteTypePL}
-                    {n.canEditAllAsOwner}
-                    {n.canEditOtherAsOwner}
-
+                    </template> 
                     <template if:true={n.canEditNoteTypePL}>
                         <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editNoteTypePL}
                             slot="actions" data-record-id={n.recordId}>
