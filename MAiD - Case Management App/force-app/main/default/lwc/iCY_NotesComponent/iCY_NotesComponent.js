@@ -20,7 +20,6 @@ export default class iCY_NotesComponent extends LightningElement {
     filtervalue = '';
     //Create Edit Note
     createEdit = false
-  //  editNotes  = false
     editNoteType = false
     editAllAsOwner  = false
     editOtherAsOwner  = false
@@ -104,7 +103,6 @@ export default class iCY_NotesComponent extends LightningElement {
      */
     closeModal(){
         this.createEdit = false;
-       // this.editNotes = false;
         this.editNoteType = false
         this.editAllAsOwner  = false
         this.editOtherAsOwner  = false
@@ -135,10 +133,9 @@ export default class iCY_NotesComponent extends LightningElement {
     editNoteTypePL(event){
         this.noteId = event.target.dataset.recordId;
         console.log('$$ Selected Note id: ', this.noteId);
-       // this.editNotes = true;
-       this.editNoteType = true ;
-       this.editAllAsOwner  = false
-       this.editOtherAsOwner  = false
+        this.editNoteType = true ;
+        this.editAllAsOwner  = false
+        this.editOtherAsOwner  = false
        
         }
 

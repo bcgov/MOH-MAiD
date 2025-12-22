@@ -99,10 +99,9 @@ public with sharing class ICY_Notes_Documents_Controller {
                     noteSource,
                     Schema.sObjectType.ICY_Notes__c.isUpdateable(),
                     Schema.sObjectType.ICY_Notes__c.isDeletable(),
-                   // canEdit
-                   canEditNoteTypePL,
-                   canEditAllAsOwner,
-                   canEditOtherAsOwner
+                    canEditNoteTypePL,
+                    canEditAllAsOwner,
+                    canEditOtherAsOwner
                 )
             );
         }

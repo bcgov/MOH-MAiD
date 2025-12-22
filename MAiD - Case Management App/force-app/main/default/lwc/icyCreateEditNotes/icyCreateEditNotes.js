@@ -13,8 +13,7 @@ export default class icyCreateEditNotes extends LightningElement {
     @api windowTitle;
     @api recordId;
     @api objectApiName;
-    @api adminNotes = false;
-  //  @api disableNotes ;
+    @api adminNotes = false;a
     @api enableNotes ;
     @api enableNoteType ;
 
@@ -96,7 +95,7 @@ export default class icyCreateEditNotes extends LightningElement {
     }
 
     get isNoteEditDisabled(){
-        //return this.disableNotes;
+        
       return !this.enableNotes;
     }
      get isNoteTypetDisabled(){
