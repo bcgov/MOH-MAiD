@@ -56,6 +56,25 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very High</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Relationship_to_Youth__c</picklist>
         <values>
             <fullName>CLBC %28Community Living BC%29 Worker</fullName>

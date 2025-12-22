@@ -31,7 +31,7 @@ export default class iCY_NotesComponent extends LightningElement {
     notes;
     isSupervisor = false;
 
-    caseSubjectOptions = [
+    caseSubjectFilterOptions = [
         {label:'Session Note' , value: 'Session Note'},
         {label:'Supervision Note' , value: 'Supervision Note'},
         {label:'Critical Incident' , value: 'Critical Incident'},
@@ -44,6 +44,14 @@ export default class iCY_NotesComponent extends LightningElement {
         {label:'Contact with external organization' , value: 'Contact with external organization'},
         {label:'ICY intake/waitlist' , value: 'ICY intake/waitlist'}
     ];
+
+     caseSubjectOptions = [
+        {label:'Session Note' , value: 'Session Note'},
+        {label:'Supervision Note' , value: 'Supervision Note'},
+        {label:'Critical Incident' , value: 'Critical Incident'},
+        {label:'Other' , value: 'Other'}
+    ];
+
 
     get newNoteLabel(){
         return this.adminNotes?'New Admin Note':'New Note';

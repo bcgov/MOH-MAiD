@@ -1343,6 +1343,11 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
+        <editable>true</editable>
+        <field>Intake__c.Priority__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
         <editable>false</editable>
         <field>Intake__c.Physical_Address_City__c</field>
         <readable>true</readable>
@@ -2000,6 +2005,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Primary_Contact_Is_Individual__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
