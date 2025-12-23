@@ -13,7 +13,7 @@ export default class icyCreateEditNotes extends LightningElement {
     @api windowTitle;
     @api recordId;
     @api objectApiName;
-    @api adminNotes = false;a
+    @api adminNotes = false;
     @api enableNotes ;
     @api enableNoteType ;
 
