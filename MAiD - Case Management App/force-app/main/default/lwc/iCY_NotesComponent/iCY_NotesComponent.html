@@ -65,9 +65,19 @@
             record-id={noteId} object-api-name={objectApiName} case-subject-options={caseSubjectOptions}>
         </c-icy-create-edit-notes>
     </template>
-    <template if:true={editNotes}>
+    <template if:true={editNoteType}>
         <c-icy-create-edit-notes admin-notes={adminNotes} onclose={closeModal} parent-record-id={parentRecordId}
-            record-id={noteId} object-api-name={objectApiName} case-subject-options={caseSubjectOptions} disable-notes = {editNotes}>
+            record-id={noteId} object-api-name={objectApiName} case-subject-options={caseSubjectOptions} enable-notes = {editOtherAsOwner} enable-note-type={editNoteType}>
+        </c-icy-create-edit-notes>
+    </template>
+      <template if:true={editAllAsOwner}>
+        <c-icy-create-edit-notes admin-notes={adminNotes} onclose={closeModal} parent-record-id={parentRecordId}
+            record-id={noteId} object-api-name={objectApiName} case-subject-options={caseSubjectOptions} enable-notes = {editAllAsOwner} enable-note-type={editAllAsOwner}>
+        </c-icy-create-edit-notes>
+    </template>
+     <template if:true={editOtherAsOwner}>
+        <c-icy-create-edit-notes admin-notes={adminNotes} onclose={closeModal} parent-record-id={parentRecordId}
+            record-id={noteId} object-api-name={objectApiName} case-subject-options={caseSubjectOptions} enable-notes = {editOtherAsOwner} enable-note-type={editNoteType}>
         </c-icy-create-edit-notes>
     </template>
     <template if:true={deleteConfirm}>
@@ -89,9 +99,19 @@
                             <lightning-icon icon-name="doctype:gform" size="small"></lightning-icon>&nbsp;&nbsp;
                             {n.name}&nbsp;<lightning-badge class={n.badgeCSS} label={n.notesType}></lightning-badge>
                         </h4>
+                    </template> 
+                    <template if:true={n.canEditNoteTypePL}>
+                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editNoteTypePL}
+                            slot="actions" data-record-id={n.recordId}>
+                        </lightning-button-icon>
                     </template>
-                    <template if:true={n.canEdit}>
-                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editNote}
+                    <template if:true={n.canEditAllAsOwner}>
+                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editAllAsOwnerE}
+                            slot="actions" data-record-id={n.recordId}>
+                        </lightning-button-icon>
+                    </template>
+                    <template if:true={n.canEditOtherAsOwner}>
+                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editOtherAsOwnerE}
                             slot="actions" data-record-id={n.recordId}>
                         </lightning-button-icon>
                     </template>
