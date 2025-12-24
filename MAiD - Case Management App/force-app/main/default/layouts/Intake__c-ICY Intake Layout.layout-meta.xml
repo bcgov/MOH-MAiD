@@ -29,7 +29,7 @@
                 <field>ICY_Who_Is_Doing__c</field>
             </layoutItems>
             <layoutItems>
-                <behavior>Readonly</behavior>
+                <behavior>Edit</behavior>
                 <field>ICY_Assigned_To__c</field>
             </layoutItems>
         </layoutColumns>
