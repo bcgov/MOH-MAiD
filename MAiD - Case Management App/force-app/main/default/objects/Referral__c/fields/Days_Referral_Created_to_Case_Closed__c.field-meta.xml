@@ -4,13 +4,12 @@
     <externalId>false</externalId>
     <formula>IF(
 AND(
-NOT(ISBLANK(Referral_Created_Date__c)),
+NOT(ISBLANK(CreatedDate)),
 NOT(ISBLANK(Closed_Date__c))
 ),
-(Closed_Date__c) - (Referral_Created_Date__c),
+(Closed_Date__c) - DATEVALUE(CreatedDate),
 NULL
 )</formula>
-    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
     <label>Days-Referral Created to Referral Closed</label>
     <precision>18</precision>
     <required>false</required>

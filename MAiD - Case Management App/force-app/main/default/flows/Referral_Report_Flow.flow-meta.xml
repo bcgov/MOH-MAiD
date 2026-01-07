@@ -83,7 +83,7 @@
             <label>Closed</label>
         </rules>
     </decisions>
-    <description>This is for for the Referral Reports with latest changes</description>
+    <description>This is for for the Referral Reports with Created Date changes</description>
     <environments>Default</environments>
     <formulas>
         <name>CaseCreatedDateFormula</name>
@@ -145,6 +145,11 @@ OR(
     DATEVALUE($Record.LastModifiedDate),    
     $Record__Prior.Ready_for_Intake_Date__c    
 )</expression>
+    </formulas>
+    <formulas>
+        <name>ReferralCreatedDate_Date</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE($Record.CreatedDate)</expression>
     </formulas>
     <interviewLabel>Referral Report Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Referral Report Flow</label>
@@ -235,7 +240,7 @@ OR(
         <inputAssignments>
             <field>Referral_Created_Date__c</field>
             <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
+                <elementReference>ReferralCreatedDate_Date</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
@@ -263,7 +268,7 @@ OR(
         </filters>
         <object>Referral__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
-        <triggerType>RecordBeforeSave</triggerType>
+        <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
 </Flow>
