@@ -68,7 +68,7 @@
             <label>Closed</label>
         </rules>
     </decisions>
-    <description>Updated the scenarios</description>
+    <description>Updated the flow type and the created date with referral to intake</description>
     <environments>Default</environments>
     <formulas>
         <name>ClosedDateFormula</name>
@@ -112,6 +112,12 @@ OR(
     DATEVALUE($Record.LastModifiedDate),    
     $Record__Prior.In_Progress_Date__c    
 )</expression>
+    </formulas>
+    <formulas>
+        <description>This field gives the value of the Intake created and the status is Not Started</description>
+        <name>IntakeCreatedDate</name>
+        <dataType>Date</dataType>
+        <expression>DATEVALUE($Record.CreatedDate)</expression>
     </formulas>
     <interviewLabel>Intake Report Flow {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Intake Report Flow</label>
@@ -178,6 +184,9 @@ OR(
         <label>Not Started Status</label>
         <locationX>0</locationX>
         <locationY>0</locationY>
+        <connector>
+            <targetReference>Referral_Record_Update</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Not_Started_Date__c</field>
@@ -189,10 +198,24 @@ OR(
         <inputAssignments>
             <field>Not_Started_Date__c</field>
             <value>
-                <elementReference>$Flow.CurrentDateTime</elementReference>
+                <elementReference>IntakeCreatedDate</elementReference>
             </value>
         </inputAssignments>
         <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <description>We are updating the Referral Record with Intake record ID</description>
+        <name>Referral_Record_Update</name>
+        <label>Referral Record Update</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Intake__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Referral__r</inputReference>
     </recordUpdates>
     <start>
         <locationX>0</locationX>
@@ -217,7 +240,7 @@ OR(
         </filters>
         <object>Intake__c</object>
         <recordTriggerType>CreateAndUpdate</recordTriggerType>
-        <triggerType>RecordBeforeSave</triggerType>
+        <triggerType>RecordAfterSave</triggerType>
     </start>
     <status>Active</status>
 </Flow>
