@@ -35,6 +35,10 @@
     </columns>
     <columns>
         <aggregateTypes>Average</aggregateTypes>
+        <field>Referral__c$Days_Referral_Created_to_Intake_Closed__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Average</aggregateTypes>
         <field>Referral__c$Days_Referral_Created_to_Case_ClosedDate__c</field>
     </columns>
     <format>Tabular</format>
