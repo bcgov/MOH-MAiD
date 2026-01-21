@@ -77,7 +77,7 @@
         <field>Referral__c.ICY_Referral_For__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Supporting Family/Parent/Caregiver</name>
+    <name>Supporting Family/Parent/Caregiver Refer</name>
     <params>
         <name>co</name>
         <value>1</value>
