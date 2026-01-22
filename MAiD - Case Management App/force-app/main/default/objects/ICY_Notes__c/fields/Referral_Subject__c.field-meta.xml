@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Referral_Subject__c</fullName>
-    <externalId>false</externalId>
+    <deprecated>false</deprecated>
     <label>Subject</label>
     <required>false</required>
     <trackHistory>false</trackHistory>
@@ -65,6 +65,11 @@
                 <fullName>Critical Incident</fullName>
                 <default>false</default>
                 <label>Critical Incident</label>
+            </value>
+            <value>
+                <fullName>Supporting Family/Parent/Caregiver Note</fullName>
+                <default>false</default>
+                <label>Supporting Family/Parent/Caregiver Note</label>
             </value>
         </valueSetDefinition>
     </valueSet>
