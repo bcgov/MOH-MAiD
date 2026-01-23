@@ -65,18 +65,15 @@ public with sharing class ICY_Notes_Documents_Controller {
             String otherModeLocation = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Other_Mode_Location__c:'';
             String noteSource = String.isBlank(n.Note_Source__c) ?'Case':n.Note_Source__c;
            
-           // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
-           // Boolean canEdit = (((n.CreatedById == UserInfo.getUserId()) || isProgramLeader ) && (n.Notes_Type__c=='Collaborative'))? true : false;
-
-            // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
-            // Allow owners to edit all the fields for (Referral/Intakes/Case Notes) within 24 hours of creation date
-            //If the note type is restricted, All the fields should be editable except note type
-            //Keep the current implementation of editing the notes type by Owner and PL even after 24 hours
+            //BCMOHAD-30685
+            // To be able to Edit a Case note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
+            // Allow OWNERS to edit all the fields for Case Notes only (BCMOHAD-30961) within 24 hours of creation date except note Type if it's restricted
+            //Keep the current implementation of editing the Note Type by Owner and PL even after 24 hours
             Boolean isRecent = n.CreatedDate >= Datetime.now().addHours(-24);
           
-            Boolean canEditNoteTypePL = (((n.CreatedById == UserInfo.getUserId() && !(isRecent)) || (isProgramLeader && n.CreatedById != UserInfo.getUserId()) ) && (n.Notes_Type__c=='Collaborative'))? true : false;
-            Boolean canEditAllAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Collaborative'))? true : false;
-            Boolean canEditOtherAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted'))? true : false;
+            Boolean canEditNoteTypePL = (((n.CreatedById == UserInfo.getUserId() && !(isRecent)) || (isProgramLeader && n.CreatedById != UserInfo.getUserId()) ) && (n.Notes_Type__c=='Collaborative') &&  (String.isBlank(n.Note_Source__c)))? true : false;
+            Boolean canEditAllAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Collaborative') && ( String.isBlank(n.Note_Source__c)))? true : false;
+            Boolean canEditOtherAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted') && ( String.isBlank(n.Note_Source__c)))? true : false;
             
             result.add(
                 new Note(
