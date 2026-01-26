@@ -15,7 +15,7 @@
             </value>
         </inputParameters>
         <nameSegment>Intake__c.ICY_Intake_Assignment_Notification_Alert</nameSegment>
-        <offset>0</offset>
+        <versionSegment>1</versionSegment>
     </actionCalls>
     <apiVersion>62.0</apiVersion>
     <decisions>
