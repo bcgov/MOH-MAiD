@@ -331,6 +331,7 @@
                                     </span>
                                 </div>
                         </div>
+                        <div class="slds-grid slds-gutters">
                             <div class="slds-col slds-size_1-of-3">
                                 <span>
                                     <div class="slds-p-around_medium">
@@ -343,6 +344,20 @@
                                     </div>
                                 </span>
                             </div>
+                            <div class="slds-col slds-size_1-of-3">
+                                <lightning-record-edit-form object-api-name="Referral__c">
+                                    <div class="slds-p-around_medium">
+                                        <lightning-input-field
+                                            field-name="Priority__c"
+                                            onchange={handleChange}
+                                            value={referral.Priority__c}
+                                            name="Priority__c"
+                                            variant="label-stacked">
+                                        </lightning-input-field>
+                                    </div>
+                                </lightning-record-edit-form>
+                            </div>
+                        </div>
                             <div class="slds-col  slds-size_1-of-6">
                                 <span>
                                     <div class="slds-p-around_xx-small">

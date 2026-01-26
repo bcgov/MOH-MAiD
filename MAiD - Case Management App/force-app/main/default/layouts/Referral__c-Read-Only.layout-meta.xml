@@ -166,6 +166,10 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Readonly</behavior>
+                <field>Priority__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
                 <field>Is_the_individual_being_supported_by_CFD__c</field>
             </layoutItems>
             <layoutItems>

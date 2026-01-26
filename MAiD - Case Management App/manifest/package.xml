@@ -155,6 +155,10 @@
         <members>ICYMMHAReports/ICY_Touch_points_with_youth_CO_L7b</members>
         <members>ICYMMHAReports/ICY_Touch_points_with_youth_OKANAGAN_0uf</members>
         <members>ICYReports/Case_with_Case_Members_Report_8QF</members>
+        <members>ICYReportsPL/Intake_Flow_BZ2</members>
+        <members>ICYReportsPL/Cases_with_no_case_notes_in_last_30_days_t9c</members>
+        <members>ICYReportsPL/New_Cases_Report_Rvf</members>
+        <members>ICYReportsPL/Referral_Statuses_Duration_BJD</members>
         <members>ICYReports/ICY_Cases_with_Contacts</members>
         <members>ICYReports/Referrals_Report_BoK</members>
         <members>ICYSharedIndicatorsReports/CY_being_seen_1_Members_fzC</members>
@@ -249,6 +253,7 @@
     </types>
     <types>
         <members>ICY_Case_with_CaseMembers</members>
+        <members>Referral_with_Case</members>
         <name>ReportType</name>
     </types>
     <version>61.0</version>
