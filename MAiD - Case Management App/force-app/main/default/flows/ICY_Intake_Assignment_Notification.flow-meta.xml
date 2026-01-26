@@ -15,9 +15,9 @@
             </value>
         </inputParameters>
         <nameSegment>Intake__c.ICY_Intake_Assignment_Notification_Alert</nameSegment>
-        <versionSegment>1</versionSegment>
+        <offset>0</offset>
     </actionCalls>
-    <apiVersion>62.0</apiVersion>
+    <apiVersion>61.0</apiVersion>
     <decisions>
         <name>Met_Conditions</name>
         <label>Met Conditions?</label>
@@ -27,13 +27,6 @@
         <rules>
             <name>Yes</name>
             <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.ICY_Assigned_To__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
             <conditions>
                 <leftValueReference>$Record.ICY_Assigned_To__c</leftValueReference>
                 <operator>IsChanged</operator>
