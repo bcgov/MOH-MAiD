@@ -15,12 +15,12 @@
                 <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
                 <componentType>RichText</componentType>
                 <dashboardComponentContents>
-                    <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Shared Indicators - Integrate Data - For the Last Month\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;center\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Description\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;: Allows monthly Shared Indicator data to be easily found in one place as long as it has been input into \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;italic\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Integrate\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;. This Dashboard can be used to pair with records\/data stored outside of \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;italic\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Integrate \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;to support monthly reporting.\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;left\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;underline\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Please Note\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;: This is an early version and we are working on enhancing \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;italic\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Integrate \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;with greater functionality for pulling data into the Dashboard.\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;left\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
+                    <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Shared Indicators - Integrate Data - For the Last Month\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;center\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Description\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;: Allows monthly Shared Indicator data to be easily found in one place as long as it has been input into \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;italic\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Integrate\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;. This Dashboard can be used to pair with records\/data stored outside of \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;italic\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Integrate \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;to support monthly reporting.\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;left\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;underline\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Please Note\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;: This is an early version and we are working on enhancing \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;,\&amp;quot;italic\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Integrate \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;16px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;with greater functionality for pulling data into the Dashboard.\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;left\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#e74340\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;NOT AVAILABLE :\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;center\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;Q4: Group Sessions \&amp;quot;},{\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;Q6. Access Points       \&amp;quot;},{\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
             <rowIndex>0</rowIndex>
-            <rowSpan>3</rowSpan>
+            <rowSpan>6</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>7</colSpan>
@@ -33,7 +33,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>3</rowIndex>
+            <rowIndex>6</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -68,7 +68,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>5</rowIndex>
+            <rowIndex>8</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -92,11 +92,25 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>true</useReportChart>
             </dashboardComponent>
-            <rowIndex>5</rowIndex>
+            <rowIndex>8</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>7</colSpan>
+            <columnIndex>1</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+                <componentType>RichText</componentType>
+                <dashboardComponentContents>
+                    <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;Q1B: For the reporting month, TOTAL # of family members (defined as parents\/caregivers\/guardians\/support circle members) receiving ICY services:\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;left\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
+                </dashboardComponentContents>
+                <groupingSortProperties/>
+            </dashboardComponent>
+            <rowIndex>16</rowIndex>
+            <rowSpan>2</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>4</colSpan>
             <columnIndex>1</columnIndex>
             <dashboardComponent>
                 <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
@@ -119,7 +133,7 @@
                         <sortOrder>a</sortOrder>
                     </groupingSorts>
                 </groupingSortProperties>
-                <header>Q1B: For the reporting month,TOTAL # of family members receiving ICY services:</header>
+                <header>ICY Referrals for Supporting Family/Parent/Caregiver</header>
                 <legendPosition>Right</legendPosition>
                 <maxValuesDisplayed>6</maxValuesDisplayed>
                 <report>ICYSharedIndicatorsReports/Supporting_FamilyParentCaregiver_Refer_IB5</report>
@@ -127,10 +141,33 @@
                 <showTotal>true</showTotal>
                 <showValues>true</showValues>
                 <sortBy>RowLabelAscending</sortBy>
-                <title>Family/Parent/Caregiver Support</title>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>13</rowIndex>
+            <rowIndex>18</rowIndex>
+            <rowSpan>8</rowSpan>
+        </dashboardGridComponents>
+        <dashboardGridComponents>
+            <colSpan>3</colSpan>
+            <columnIndex>5</columnIndex>
+            <dashboardComponent>
+                <autoselectColumnsFromReport>false</autoselectColumnsFromReport>
+                <chartSummary>
+                    <column>RowCount</column>
+                </chartSummary>
+                <componentType>Metric</componentType>
+                <decimalPrecision>-1</decimalPrecision>
+                <displayUnits>Auto</displayUnits>
+                <groupingSortProperties/>
+                <header>ICY Case Notes for Supporting Family/Parent/Caregiver</header>
+                <indicatorBreakpoint1>33.0</indicatorBreakpoint1>
+                <indicatorBreakpoint2>67.0</indicatorBreakpoint2>
+                <indicatorHighColor>#00716B</indicatorHighColor>
+                <indicatorLowColor>#C23934</indicatorLowColor>
+                <indicatorMiddleColor>#CA8501</indicatorMiddleColor>
+                <report>ICYSharedIndicatorsReports/Supporting_FamilyParentCaregiver_Cases</report>
+                <showRange>false</showRange>
+            </dashboardComponent>
+            <rowIndex>18</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -144,7 +181,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>21</rowIndex>
+            <rowIndex>26</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -158,7 +195,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>23</rowIndex>
+            <rowIndex>28</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -195,7 +232,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>25</rowIndex>
+            <rowIndex>30</rowIndex>
             <rowSpan>10</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -209,7 +246,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>35</rowIndex>
+            <rowIndex>40</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -246,7 +283,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>37</rowIndex>
+            <rowIndex>42</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -283,7 +320,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>37</rowIndex>
+            <rowIndex>42</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -297,7 +334,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>45</rowIndex>
+            <rowIndex>50</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -334,7 +371,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>47</rowIndex>
+            <rowIndex>52</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -358,7 +395,7 @@
                 <report>ICYSharedIndicatorsReports/ICY_Intakes_accepted_by_month</report>
                 <showRange>false</showRange>
             </dashboardComponent>
-            <rowIndex>47</rowIndex>
+            <rowIndex>52</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -372,7 +409,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>55</rowIndex>
+            <rowIndex>60</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -409,7 +446,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>57</rowIndex>
+            <rowIndex>62</rowIndex>
             <rowSpan>8</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -423,7 +460,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>65</rowIndex>
+            <rowIndex>70</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -463,7 +500,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>67</rowIndex>
+            <rowIndex>72</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -500,7 +537,7 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>67</rowIndex>
+            <rowIndex>72</rowIndex>
             <rowSpan>9</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -514,7 +551,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>76</rowIndex>
+            <rowIndex>81</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -549,22 +586,8 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>78</rowIndex>
+            <rowIndex>83</rowIndex>
             <rowSpan>8</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>7</colSpan>
-            <columnIndex>1</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
-                <componentType>RichText</componentType>
-                <dashboardComponentContents>
-                    <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;,\&amp;quot;color\&amp;quot;:\&amp;quot;#e74340\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;NOT AVAILABLE\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;center\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;Q4: Group Sessions (if relevant)\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;left\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;,\&amp;quot;underline\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Please note\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;: this may not be practicable to include in \&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;,\&amp;quot;italic\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;Integrate\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;.\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;center\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
-                </dashboardComponentContents>
-                <groupingSortProperties/>
-            </dashboardComponent>
-            <rowIndex>86</rowIndex>
-            <rowSpan>3</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
             <colSpan>7</colSpan>
@@ -577,7 +600,7 @@
                 </dashboardComponentContents>
                 <groupingSortProperties/>
             </dashboardComponent>
-            <rowIndex>89</rowIndex>
+            <rowIndex>91</rowIndex>
             <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <dashboardGridComponents>
@@ -614,22 +637,8 @@
                 <sortBy>RowLabelAscending</sortBy>
                 <useReportChart>false</useReportChart>
             </dashboardComponent>
-            <rowIndex>91</rowIndex>
+            <rowIndex>93</rowIndex>
             <rowSpan>10</rowSpan>
-        </dashboardGridComponents>
-        <dashboardGridComponents>
-            <colSpan>7</colSpan>
-            <columnIndex>1</columnIndex>
-            <dashboardComponent>
-                <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
-                <componentType>RichText</componentType>
-                <dashboardComponentContents>
-                    <richTextContent>[{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;,\&amp;quot;color\&amp;quot;:\&amp;quot;#e74340\&amp;quot;,\&amp;quot;bold\&amp;quot;:true},\&amp;quot;insert\&amp;quot;:\&amp;quot;NOT AVAILABLE AT THIS TIME\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;center\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;color\&amp;quot;:\&amp;quot;#091a3e\&amp;quot;,\&amp;quot;size\&amp;quot;:\&amp;quot;18px\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;Q6. Access Points\&amp;quot;},{\&amp;quot;attributes\&amp;quot;:{\&amp;quot;align\&amp;quot;:\&amp;quot;left\&amp;quot;},\&amp;quot;insert\&amp;quot;:\&amp;quot;\\n\&amp;quot;}]</richTextContent>
-                </dashboardComponentContents>
-                <groupingSortProperties/>
-            </dashboardComponent>
-            <rowIndex>101</rowIndex>
-            <rowSpan>2</rowSpan>
         </dashboardGridComponents>
         <numberOfColumns>9</numberOfColumns>
         <rowHeight>36</rowHeight>
