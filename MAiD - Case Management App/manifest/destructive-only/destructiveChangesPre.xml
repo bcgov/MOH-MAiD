@@ -421,6 +421,8 @@
     </types>
      <types>
         <members>Referred_date_timestamp</members>
+        <members>ICY_Case_Update_User_Role_Name</members>
+        <members>ICY_Referral_Update_User_Role_Name</members>
         <name>Flow</name>
     </types>
 </Package>
