@@ -180,6 +180,8 @@
         <members>ICYSharedIndicatorsReports/d_Intakes_Closed_Last_month_GUt</members>
         <members>ICYSharedIndicatorsReports/d_Referrals_Indigenous_Last_Month_mGG</members>
         <members>ICYSharedIndicatorsReports/draft_ICY_Referral_Sources_zlG</members>
+        <members>ICYSharedIndicatorsReports/Supporting_FamilyParentCaregiver_Cases</members>
+        <members>ICYSharedIndicatorsReports/Supporting_FamilyParentCaregiver_Refer_IB5</members>
         <members>MAiDCaseManagementReports/Pharmacist_Report_PoF</members>
         <members>ICY_Evaluation/ClosedCasesCheckedLast12Months_Ipc</members>
         <members>ICY_Evaluation/Open_Cases_with_Checkbox_Checked_MFp</members>
