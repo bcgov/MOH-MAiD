@@ -35,13 +35,6 @@
                 </rightValue>
             </conditions>
             <conditions>
-                <leftValueReference>$Record.ICY_Assigned_To__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <conditions>
                 <leftValueReference>$Record.ICY_Assigned_To__r.Username</leftValueReference>
                 <operator>NotEqualTo</operator>
                 <rightValue>
