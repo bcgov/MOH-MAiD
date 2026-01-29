@@ -1,0 +1,47 @@
+<template>
+    <lightning-card title="Re-referral">
+        <div class="slds-p-around_medium">
+
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                onsuccess={handleSuccess}>
+
+                <!-- Checkbox -->
+                <lightning-input-field
+                    field-name="Re_Referral__c"
+                    onchange={handleCheckboxChange}>
+                </lightning-input-field>
+
+                <!-- Datetime field -->
+                <template if:true={showDate}>
+                    <div class="slds-m-top_medium">
+                        <lightning-input-field
+                            field-name="Re_Referral_Date__c"
+                            value={defaultDate}
+                            required>
+                        </lightning-input-field>
+                    </div>
+                </template>
+
+                <!-- Footer buttons -->
+                <div class="slds-m-top_large slds-grid slds-grid_align-end">
+                    <lightning-button
+                        label="Cancel"
+                        variant="neutral"
+                        onclick={handleCancel}>
+                    </lightning-button>
+
+                    <lightning-button
+                        class="slds-m-left_small"
+                        type="submit"
+                        label="Save"
+                        variant="brand">
+                    </lightning-button>
+                </div>
+
+            </lightning-record-edit-form>
+
+        </div>
+    </lightning-card>
+</template>
