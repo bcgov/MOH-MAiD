@@ -42,9 +42,6 @@
         <field>Referral__c.ICY_Geographic_Area__c</field>
     </columns>
     <columns>
-        <field>Referral__c.ICY_Referred_By__c</field>
-    </columns>
-    <columns>
         <field>Referral__c.ICY_Referred_By_Name__c</field>
     </columns>
     <filter>
@@ -77,7 +74,7 @@
         <field>Referral__c.ICY_Referral_For__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
-    <name>Supporting Family/Parent/Caregiver Refer</name>
+    <name>Supporting Family/Parent/Caregiver Ref</name>
     <params>
         <name>co</name>
         <value>1</value>
