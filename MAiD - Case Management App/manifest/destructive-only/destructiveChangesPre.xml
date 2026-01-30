@@ -425,4 +425,8 @@
         <members>ICY_Referral_Update_User_Role_Name</members>
         <name>Flow</name>
     </types>
+    <types>
+        <members>InactiveStartDateUpdate</members>
+        <name>Trigger</name>
+    </types>
 </Package>
