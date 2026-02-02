@@ -1,31 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Report xmlns="http://soap.sforce.com/2006/04/metadata">
-    <chart>
-        <backgroundColor1>#FFFFFF</backgroundColor1>
-        <backgroundColor2>#FFFFFF</backgroundColor2>
-        <backgroundFadeDir>Diagonal</backgroundFadeDir>
-        <chartSummaries>
-            <axisBinding>y</axisBinding>
-            <column>RowCount</column>
-        </chartSummaries>
-        <chartType>Donut</chartType>
-        <enableHoverLabels>false</enableHoverLabels>
-        <expandOthers>false</expandOthers>
-        <groupingColumn>CUST_NAME</groupingColumn>
-        <legendPosition>Right</legendPosition>
-        <location>CHART_BOTTOM</location>
-        <showAxisLabels>true</showAxisLabels>
-        <showPercentage>false</showPercentage>
-        <showTotal>true</showTotal>
-        <showValues>false</showValues>
-        <size>Medium</size>
-        <summaryAxisRange>Auto</summaryAxisRange>
-        <textColor>#000000</textColor>
-        <textSize>12</textSize>
-        <title>Case Notes for Supporting Family/Parent/</title>
-        <titleColor>#000000</titleColor>
-        <titleSize>18</titleSize>
-    </chart>
     <columns>
         <field>FK_NAME</field>
     </columns>
@@ -48,9 +22,6 @@
         <field>FK_$Case.ICY_Geographic_Area__c</field>
     </columns>
     <columns>
-        <field>ICY_Notes__c.Referral_Subject__c</field>
-    </columns>
-    <columns>
         <field>ICY_Notes__c.ICY_Meeting_Date__c</field>
     </columns>
     <columns>
@@ -61,6 +32,9 @@
     </columns>
     <columns>
         <field>CUST_CREATED_DATE</field>
+    </columns>
+    <columns>
+        <field>ICY_Notes__c.Attendees__c</field>
     </columns>
     <filter>
         <criteriaItems>
@@ -81,7 +55,7 @@
     <format>Summary</format>
     <groupingsDown>
         <dateGranularity>Day</dateGranularity>
-        <field>CUST_NAME</field>
+        <field>ICY_Notes__c.Referral_Subject__c</field>
         <sortOrder>Asc</sortOrder>
     </groupingsDown>
     <name>Supporting Family/Parent/Caregiver Cases</name>
@@ -94,8 +68,6 @@
     <showDetails>true</showDetails>
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
-    <sortColumn>CUST_CREATED_DATE</sortColumn>
-    <sortOrder>Desc</sortOrder>
     <timeFrameFilter>
         <dateColumn>CUST_CREATED_DATE</dateColumn>
         <interval>INTERVAL_LASTMONTH</interval>
