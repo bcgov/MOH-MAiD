@@ -1009,6 +1009,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>ICY_Notes__c.Note_Source__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>ICY_Notes__c.Notes_Type__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -1280,6 +1285,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Intake__c.Name_of_Person_Interviewed__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Intake__c.Not_Started_Date__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Intake__c.Priority__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1895,6 +1910,16 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Referral__c.Primary_Contact_Is_Individual__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Referral__c.Priority__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
+        <field>Referral__c.Ready_for_Intake_Date__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

@@ -20,7 +20,9 @@ export default class iCY_NotesComponent extends LightningElement {
     filtervalue = '';
     //Create Edit Note
     createEdit = false
-    editNotes  = false
+    editNoteType = false
+    editAllAsOwner  = false
+    editOtherAsOwner  = false
     noteId;
     subjectOptions = [];
     isCase = false;
@@ -29,12 +31,27 @@ export default class iCY_NotesComponent extends LightningElement {
     notes;
     isSupervisor = false;
 
-    caseSubjectOptions = [
+    caseSubjectFilterOptions = [
         {label:'Session Note' , value: 'Session Note'},
         {label:'Supervision Note' , value: 'Supervision Note'},
         {label:'Critical Incident' , value: 'Critical Incident'},
         {label:'Other' , value: 'Other'},
+        {label:'Contact with referring partner' , value: 'Contact with referring partner'},
+        {label:'Contact with parent/caregiver/guardian:' , value: 'Contact with parent/caregiver/guardian:'},
+        {label:'Contact with child/youth' , value: 'Contact with child/youth'},
+        {label:'Contact with ICY team member organization' , value: 'Contact with ICY team member organization'},
+        {label:'External referrals' , value: 'External referrals'},
+        {label:'Contact with external organization' , value: 'Contact with external organization'},
+        {label:'ICY intake/waitlist' , value: 'ICY intake/waitlist'}
     ];
+
+     caseSubjectOptions = [
+        {label:'Session Note' , value: 'Session Note'},
+        {label:'Supervision Note' , value: 'Supervision Note'},
+        {label:'Critical Incident' , value: 'Critical Incident'},
+        {label:'Other' , value: 'Other'}
+    ];
+
 
     get newNoteLabel(){
         return this.adminNotes?'New Admin Note':'New Note';
@@ -94,7 +111,9 @@ export default class iCY_NotesComponent extends LightningElement {
      */
     closeModal(){
         this.createEdit = false;
-        this.editNotes = false;
+        this.editNoteType = false
+        this.editAllAsOwner  = false
+        this.editOtherAsOwner  = false
         this.noteId = '';
         this.init();
     }
@@ -104,6 +123,9 @@ export default class iCY_NotesComponent extends LightningElement {
      */
     addNote(){
         this.createEdit = true;
+        this.editNoteType = true
+        this.editAllAsOwner  = true
+        this.editOtherAsOwner  = true
     }
 
     /**
@@ -116,13 +138,40 @@ export default class iCY_NotesComponent extends LightningElement {
     /**
      * Edit Note
      */
-    editNote(event){
+    editNoteTypePL(event){
         this.noteId = event.target.dataset.recordId;
         console.log('$$ Selected Note id: ', this.noteId);
-        this.editNotes = true;
+        this.editNoteType = true ;
+        this.editAllAsOwner  = false
+        this.editOtherAsOwner  = false
        
         }
 
+      /**
+     * Edit Note
+     */
+    editAllAsOwnerE(event){
+        this.noteId = event.target.dataset.recordId;
+        console.log('$$ Selected Note id: ', this.noteId);
+       // this.editNotes = true;
+       this.editNoteType = false ;
+       this.editAllAsOwner  = true
+       this.editOtherAsOwner  = false
+       
+        }
+
+          /**
+     * Edit Note
+     */
+    editOtherAsOwnerE(event){
+        this.noteId = event.target.dataset.recordId;
+        console.log('$$ Selected Note id: ', this.noteId);
+       // this.editNotes = true;
+       this.editNoteType = false ;
+       this.editAllAsOwner  = false
+       this.editOtherAsOwner  = true
+       
+        }
     /**
      * Delete Note
      * @param {*} event

@@ -69,7 +69,7 @@ public without sharing class ICY_Referral_Controller {
     @AuraEnabled
     public static string createICYIntakeRecord(String referralId){
         try {
-            Referral__c r = [SELECT Id, Status__c, OwnerId,ICY_Assigned_To__c  FROM Referral__c WHERE ID=:referralId];
+            Referral__c r = [SELECT Id, Status__c, OwnerId,ICY_Assigned_To__c, Priority__c  FROM Referral__c WHERE ID=:referralId];
             
             String currentUserProfileName = [SELECT Id, Profile.Name from user where id=:UserInfo.getUserId()].Profile.Name;
             String assignedTo = currentUserProfileName != 'System Administrator'?UserInfo.getUserId():'';
@@ -77,6 +77,7 @@ public without sharing class ICY_Referral_Controller {
             i.recordTypeId = YTS_Utility.getRecordTypeIdByDeveloperName('Intake__c', 'ICY_Intake');
             i.ownerId = r.OwnerId;
             i.Referral__c = referralId;
+            i.Priority__c = r.Priority__c;
             if(String.isNotBlank(assignedTo)) i.ICY_Assigned_To__c = assignedTo;
             INSERT i;
             

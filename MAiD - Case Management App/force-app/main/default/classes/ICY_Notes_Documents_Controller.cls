@@ -26,10 +26,10 @@ public with sharing class ICY_Notes_Documents_Controller {
         if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType)
             caseNotes = [SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, 
                             Description__c,ICY_Meeting_Date__c, Referral_Subject__c, CreatedDate, CreatedBy.Name,CreatedById, LastModifiedDate, LastModifiedBy.Name,
-                            Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c
+                            Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c,Note_source__c
                             FROM ICY_Notes__c WHERE Referral__c = :parentRecordId ORDER BY CreatedDate desc];
         else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType){
-            String caseNotesQuery = 'SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Description__c,ICY_Meeting_Date__c, Referral_Subject__c,Mode_Location__c,Other_Mode_Location__c,Team_Member__c, CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name, Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c FROM ICY_Notes__c WHERE Case__c =:parentRecordId';
+            String caseNotesQuery = 'SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Description__c,ICY_Meeting_Date__c, Referral_Subject__c,Mode_Location__c,Other_Mode_Location__c,Team_Member__c, CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name, Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c,Note_Source__c FROM ICY_Notes__c WHERE Case__c =:parentRecordId';
             if(adminNotes){
                 caseNotesQuery += ' AND Notes_Type__c = :ADMIN_NOTES_TYPE';
             }else{
@@ -49,7 +49,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType)
             caseNotes = [SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, 
             Description__c,ICY_Meeting_Date__c, Referral_Subject__c, CreatedDate, CreatedBy.Name,CreatedById, LastModifiedDate, LastModifiedBy.Name,
-            Notes_Type__c,Other__c, Attendees__c,Length_of_Meeting__c FROM ICY_Notes__c WHERE Intake__c = :parentRecordId ORDER BY CreatedDate desc];
+            Notes_Type__c,Other__c, Attendees__c,Length_of_Meeting__c,Note_Source__c FROM ICY_Notes__c WHERE Intake__c = :parentRecordId ORDER BY CreatedDate desc];
 
 
         // verify the role for the current running user if he is a Program leader
@@ -63,8 +63,20 @@ public with sharing class ICY_Notes_Documents_Controller {
             String teamMember = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Team_Member__c:'';
             String modeLocation = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Mode_Location__c:'';
             String otherModeLocation = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Other_Mode_Location__c:'';
+            String noteSource = String.isBlank(n.Note_Source__c) ?'Case':n.Note_Source__c;
+           
            // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
-            Boolean canEdit = (((n.CreatedById == UserInfo.getUserId()) || isProgramLeader ) && (n.Notes_Type__c=='Collaborative'))? true : false;
+           // Boolean canEdit = (((n.CreatedById == UserInfo.getUserId()) || isProgramLeader ) && (n.Notes_Type__c=='Collaborative'))? true : false;
+
+            // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
+            // Allow owners to edit all the fields for (Referral/Intakes/Case Notes) within 24 hours of creation date
+            //If the note type is restricted, All the fields should be editable except note type
+            //Keep the current implementation of editing the notes type by Owner and PL even after 24 hours
+            Boolean isRecent = n.CreatedDate >= Datetime.now().addHours(-24);
+          
+            Boolean canEditNoteTypePL = (((n.CreatedById == UserInfo.getUserId() && !(isRecent)) || (isProgramLeader && n.CreatedById != UserInfo.getUserId()) ) && (n.Notes_Type__c=='Collaborative'))? true : false;
+            Boolean canEditAllAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Collaborative'))? true : false;
+            Boolean canEditOtherAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted'))? true : false;
             
             result.add(
                 new Note(
@@ -84,9 +96,12 @@ public with sharing class ICY_Notes_Documents_Controller {
                     teamMember,
                     modeLocation,
                     otherModeLocation,
+                    noteSource,
                     Schema.sObjectType.ICY_Notes__c.isUpdateable(),
                     Schema.sObjectType.ICY_Notes__c.isDeletable(),
-                    canEdit
+                    canEditNoteTypePL,
+                    canEditAllAsOwner,
+                    canEditOtherAsOwner
                 )
             );
         }
@@ -291,18 +306,45 @@ public with sharing class ICY_Notes_Documents_Controller {
     @AuraEnabled
     public static String upsertNote(ICY_Notes__c note, String recordId, String noteId,String noteType){
         Id parentRecordId = Id.valueOf(recordId);
-        if(String.isNotBlank(noteId)) note.Id = noteId;
-        if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType)
-            note.Referral__c = parentRecordId;
-        else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType)
+        // Set parent context lookups based on recordId
+       if (parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType) {
+        note.Referral__c = parentRecordId;
+        List<Case> casesByReferral = [
+            SELECT Id
+            FROM Case
+            WHERE Referral__c = :note.Referral__c
+            ORDER BY CreatedDate DESC
+            LIMIT 1
+        ];
+        if (!casesByReferral.isEmpty()) {
+            note.Case__c = casesByReferral[0].Id;
+            note.Note_Source__c = 'Referral';
+        }
+
+        } else if (parentRecordId.getSobjectType() == Schema.Case.SObjectType) {
             note.Case__c = parentRecordId;
-        else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType)
+
+        } else if (parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType) {
             note.Intake__c = parentRecordId;
-        note.Name = String.isBlank(note.Referral_Subject__c)?noteType:note.Referral_Subject__c;
+            List<Intake__c> intakeRows = [
+                SELECT Case__c
+                FROM Intake__c
+                WHERE Id = :note.Intake__c
+                LIMIT 1
+            ];
+            if (!intakeRows.isEmpty() && intakeRows[0].Case__c != null) {
+                note.Case__c = intakeRows[0].Case__c;
+                note.Note_Source__c = 'Intake';
+            }
+        }
+
+        note.Name = String.isBlank(note.Referral_Subject__c) ? noteType : note.Referral_Subject__c;
         note.Notes_Type__c = noteType;
-        UPSERT note;
+
+        upsert note;
         return note.Id;
     }
+
 
     /**
      * Query note based on record Id
@@ -510,13 +552,17 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public String teamMember{get;set;}
         @AuraEnabled public String modeLocation{get;set;}
         @AuraEnabled public String otherModeLocation{get;set;}
+        @AuraEnabled public String noteSource{get;set;}
         @AuraEnabled public Boolean hasEditAccess{get;set;}
         @AuraEnabled public Boolean hasDeleteAccess{get;set;}
-        @AuraEnabled public Boolean canEdit{get;set;}
+       // @AuraEnabled public Boolean canEdit{get;set;}
+        @AuraEnabled public Boolean canEditNoteTypePL{get;set;}
+        @AuraEnabled public Boolean canEditAllAsOwner{get;set;}
+        @AuraEnabled public Boolean canEditOtherAsOwner{get;set;}
         
         public Note(String recordId, String name, String notesType, String subject,
                         String description, Date meetingDate,String attendees, Decimal lengthOfMeeting, String lastModifiedOn, String lastModifiedBy,
-                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,String othermodeLocation,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEdit){
+                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,String othermodeLocation,String noteSource,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEditNoteTypePL,Boolean canEditAllAsOwner,Boolean canEditOtherAsOwner){
             this.recordId = recordId;
             this.name = name;
             this.notesType = notesType;
@@ -533,9 +579,12 @@ public with sharing class ICY_Notes_Documents_Controller {
             this.teamMember = teamMember;
             this.modeLocation = modeLocation;
             this.otherModeLocation = otherModeLocation;
+            this.noteSource= noteSource;
             this.hasDeleteAccess = hasDeleteAccess;
             this.hasEditAccess = hasEditAccess;
-            this.canEdit = canEdit;
+            this.canEditNoteTypePL = canEditNoteTypePL;
+            this.canEditAllAsOwner = canEditAllAsOwner;
+            this.canEditOtherAsOwner = canEditOtherAsOwner;
         }
     }
 

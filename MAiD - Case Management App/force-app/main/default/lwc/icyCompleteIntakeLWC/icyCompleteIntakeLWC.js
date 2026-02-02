@@ -18,7 +18,7 @@ import ICY_IntakeCompletedSuccessfully from '@salesforce/label/c.ICY_IntakeCompl
 import ICY_IntakeIntakeCannotBeCompleted from '@salesforce/label/c.ICY_IntakeIntakeCannotBeCompleted';
 
 const fields = [CONSENT_FIELD, STATUS_FIELD, VERBAL_FIELD];
-const InTakeRECFIELDS = ['Intake__c.CreatedDate', 'Intake__c.Referral__r.CreatedDate','Intake__c.Referral__r.ICY_Geographic_Area__c','Intake__c.Referral__r.Id'];
+const InTakeRECFIELDS = ['Intake__c.CreatedDate', 'Intake__c.Referral__r.CreatedDate','Intake__c.Referral__r.ICY_Geographic_Area__c','Intake__c.Referral__r.Id', 'Intake__c.Priority__c'];
 const RESTRICTED_DESC = 'Restricted Case Documents will only be shared with the Navigator and the user who added the document. Any documents containing sensitive information should be uploaded as Restricted.';
 const COLLAB_DESC = 'Collaborative Case Documents will be shared with all support team members for this individual\'s case. Collaborative documents should be relevant to assist others in picture and planning activities.';
 
@@ -197,7 +197,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                                 'ICY_Referral_Date__c': this.inTakeRec.fields.Referral__r.value.fields.CreatedDate.value,
                                 'ICY_Geographic_Area__c':this.inTakeRec.fields.Referral__r.value.fields.ICY_Geographic_Area__c.value,
                                 'Referral__c':this.inTakeRec.fields.Referral__r.value.fields.Id.value,
-                                'Consent_to_Evaluation__c': this.isConsentToEvaluationSelected
+                                'Consent_to_Evaluation__c': this.isConsentToEvaluationSelected,
+                                'Priority': this.inTakeRec.fields.Priority__c.value
                                 };
 
             // Record details to pass to create method with api name of Object.
