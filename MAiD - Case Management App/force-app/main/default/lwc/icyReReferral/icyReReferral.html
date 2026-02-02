@@ -1,26 +1,49 @@
 <template>
-    <lightning-card title="Re-referral">
-        <div class="slds-p-around_medium">
+    <lightning-card>
+        <div class="slds-p-around_large">
+
+            <!-- Custom centered header with separator -->
+            <div class="header-container">
+                <h2 class="header-title">Re-Referral</h2>
+                <div class="header-divider"></div>
+            </div>
 
             <lightning-record-edit-form
                 object-api-name={objectApiName}
                 record-id={recordId}
-                onsuccess={handleSuccess}>
+                onload={handleLoad}
+                onsubmit={handleSubmit}
+                onsuccess={handleSuccess}
+                onerror={handleError}>
 
-                <!-- Checkbox -->
-                <lightning-input-field
-                    field-name="Re_Referral__c"
+                <!-- Toggle (controlled) -->
+                <lightning-input
+                    type="toggle"
+                    name="Re_Referral__c"
+                    label="Is this a Re-Referral?"
+                    checked={checkboxValue}
                     onchange={handleCheckboxChange}>
-                </lightning-input-field>
+                </lightning-input>
 
                 <!-- Datetime field -->
                 <template if:true={showDate}>
-                    <div class="slds-m-top_medium">
-                        <lightning-input-field
-                            field-name="Re_Referral_Date__c"
-                            value={defaultDate}
-                            required>
-                        </lightning-input-field>
+                    <div class="slds-m-top_medium date-field-container">
+                        <lightning-input
+                            label="Re Referral Date"
+                            type="date"
+                            name="Re_Referral_Date__c"
+                            value={dateValue}
+                            onchange={handleDateChange}
+                            required={referralDateRequired}>
+                        </lightning-input>
+                    </div>
+                </template>
+
+                <!-- Spinner -->
+                <template if:true={isSubmitting}>
+                    <div class="spinner-container">
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                        <p class="spinner-text">Saving...</p>
                     </div>
                 </template>
 
@@ -36,7 +59,8 @@
                         class="slds-m-left_small"
                         type="submit"
                         label="Save"
-                        variant="brand">
+                        variant="brand"
+                        disabled={isSubmitting}>
                     </lightning-button>
                 </div>
 

@@ -40,7 +40,7 @@ export default class IcyContactsComponent extends NavigationMixin(LightningEleme
             if (result) {
                 this.contacts = [];
                 this.contacts = result.lstContacts;
-                this.showAddBtn = result.isParentCompleted;
+                this.showAddBtn = result.isParentCompleted && result.isNotReReferralCon;
             }
         }).catch(error => {
             this.showSpinner = false;
