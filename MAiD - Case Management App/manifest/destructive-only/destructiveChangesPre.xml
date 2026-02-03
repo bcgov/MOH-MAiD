@@ -427,6 +427,7 @@
     </types>
     <types>
         <members>InactiveStartDateUpdate</members>
+        <members>YTS_Case_Trigger</members>
         <name>Trigger</name>
     </types>
 </Package>
