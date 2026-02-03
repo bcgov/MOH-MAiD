@@ -69,11 +69,16 @@ public with sharing class ICY_Notes_Documents_Controller {
             // To be able to Edit a Case note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
             // Allow OWNERS to edit all the fields for Case Notes only (BCMOHAD-30961) within 24 hours of creation date except note Type if it's restricted
             //Keep the current implementation of editing the Note Type by Owner and PL even after 24 hours
+            //Same rules applies for Intake Note and referral Notes but cannot be edited from Case Notes section only from their respective Object
             Boolean isRecent = n.CreatedDate >= Datetime.now().addHours(-24);
           
-            Boolean canEditNoteTypePL = (((n.CreatedById == UserInfo.getUserId() && !(isRecent)) || (isProgramLeader && n.CreatedById != UserInfo.getUserId()) ) && (n.Notes_Type__c=='Collaborative') &&  (String.isBlank(n.Note_Source__c)))? true : false;
-            Boolean canEditAllAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Collaborative') && ( String.isBlank(n.Note_Source__c)))? true : false;
-            Boolean canEditOtherAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted') && ( String.isBlank(n.Note_Source__c)))? true : false;
+            Boolean canEditNoteTypePLCs = (((n.CreatedById == UserInfo.getUserId() && !(isRecent)) || (isProgramLeader && n.CreatedById != UserInfo.getUserId()) ) && (n.Notes_Type__c=='Collaborative') &&  (String.isBlank(n.Note_Source__c)))? true : false;
+            Boolean canEditAllAsOwnerCs = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Collaborative') && ( String.isBlank(n.Note_Source__c)))? true : false;
+            Boolean canEditOtherAsOwnerCs = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted') && ( String.isBlank(n.Note_Source__c)))? true : false;
+
+            Boolean canEditNoteTypePL = (((n.CreatedById == UserInfo.getUserId() && !(isRecent)) || (isProgramLeader && n.CreatedById != UserInfo.getUserId()) ) && (n.Notes_Type__c=='Collaborative'))? true : false;
+            Boolean canEditAllAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Collaborative'))? true : false;
+            Boolean canEditOtherAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted') )? true : false;
             
             result.add(
                 new Note(
@@ -98,7 +103,10 @@ public with sharing class ICY_Notes_Documents_Controller {
                     Schema.sObjectType.ICY_Notes__c.isDeletable(),
                     canEditNoteTypePL,
                     canEditAllAsOwner,
-                    canEditOtherAsOwner
+                    canEditOtherAsOwner,
+                    canEditNoteTypePLCs,
+                    canEditAllAsOwnerCs,
+                    canEditOtherAsOwnerCs
                 )
             );
         }
@@ -556,10 +564,13 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public Boolean canEditNoteTypePL{get;set;}
         @AuraEnabled public Boolean canEditAllAsOwner{get;set;}
         @AuraEnabled public Boolean canEditOtherAsOwner{get;set;}
+        @AuraEnabled public Boolean canEditNoteTypePLCs{get;set;}
+        @AuraEnabled public Boolean canEditAllAsOwnerCs{get;set;}
+        @AuraEnabled public Boolean canEditOtherAsOwnerCs{get;set;}
         
         public Note(String recordId, String name, String notesType, String subject,
                         String description, Date meetingDate,String attendees, Decimal lengthOfMeeting, String lastModifiedOn, String lastModifiedBy,
-                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,String othermodeLocation,String noteSource,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEditNoteTypePL,Boolean canEditAllAsOwner,Boolean canEditOtherAsOwner){
+                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,String othermodeLocation,String noteSource,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEditNoteTypePL,Boolean canEditAllAsOwner,Boolean canEditOtherAsOwner,Boolean canEditNoteTypePLCs,Boolean canEditAllAsOwnerCs,Boolean canEditOtherAsOwnerCs){
             this.recordId = recordId;
             this.name = name;
             this.notesType = notesType;
@@ -582,6 +593,9 @@ public with sharing class ICY_Notes_Documents_Controller {
             this.canEditNoteTypePL = canEditNoteTypePL;
             this.canEditAllAsOwner = canEditAllAsOwner;
             this.canEditOtherAsOwner = canEditOtherAsOwner;
+             this.canEditNoteTypePLCs = canEditNoteTypePLCs;
+            this.canEditAllAsOwnerCs = canEditAllAsOwnerCs;
+            this.canEditOtherAsOwnerCs = canEditOtherAsOwnerCs;
         }
     }
 
