@@ -12,41 +12,12 @@
         <description>If Record Type of Intake is ICY Intake</description>
         <name>Check_Record_Type_Of_Intake</name>
         <label>Check Record Type Of Intake</label>
-        <locationX>776</locationX>
+        <locationX>775</locationX>
         <locationY>479</locationY>
         <defaultConnector>
             <targetReference>Update_Referral_Status</targetReference>
         </defaultConnector>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
-        <rules>
-            <name>YTS_Intake</name>
-            <conditionLogic>and</conditionLogic>
-            <conditions>
-                <leftValueReference>$Record.RecordType.DeveloperName</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Referral_Intake</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Status__c</leftValueReference>
-                <operator>EqualTo</operator>
-                <rightValue>
-                    <stringValue>Closed</stringValue>
-                </rightValue>
-            </conditions>
-            <conditions>
-                <leftValueReference>$Record.Status__c</leftValueReference>
-                <operator>IsChanged</operator>
-                <rightValue>
-                    <booleanValue>true</booleanValue>
-                </rightValue>
-            </conditions>
-            <connector>
-                <targetReference>YTS_Intake_Readonly_Record_Type</targetReference>
-            </connector>
-            <label>YTS Intake</label>
-        </rules>
         <rules>
             <name>ICY_Intake</name>
             <conditionLogic>and</conditionLogic>
@@ -77,7 +48,7 @@
             <label>ICY Intake</label>
         </rules>
     </decisions>
-    <description>Added Notes creation when intake is closed</description>
+    <description>Added Notes creation when intake is closed - Remove YTS_Intake Condition</description>
     <environments>Default</environments>
     <formulas>
         <name>IntakeClosedReasonText</name>
@@ -162,8 +133,8 @@
         <description>ICY Read Only Record Type ID</description>
         <name>ICY_Intake_Readonly_Record_Type</name>
         <label>ICY Intake Readonly Record Type</label>
-        <locationX>776</locationX>
-        <locationY>587</locationY>
+        <locationX>773</locationX>
+        <locationY>588</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
             <targetReference>Update_ICY_Record_Type_Of_Intake</targetReference>
@@ -181,35 +152,6 @@
             <operator>EqualTo</operator>
             <value>
                 <stringValue>ICY_Intake_Read_Only</stringValue>
-            </value>
-        </filters>
-        <getFirstRecordOnly>true</getFirstRecordOnly>
-        <object>RecordType</object>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
-    </recordLookups>
-    <recordLookups>
-        <description>Read Only Record Type ID</description>
-        <name>YTS_Intake_Readonly_Record_Type</name>
-        <label>YTS Intake Readonly Record Type</label>
-        <locationX>512</locationX>
-        <locationY>587</locationY>
-        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
-        <connector>
-            <targetReference>YTS_Update_Record_Type_Of_Intake</targetReference>
-        </connector>
-        <filterLogic>and</filterLogic>
-        <filters>
-            <field>SobjectType</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Intake__c</stringValue>
-            </value>
-        </filters>
-        <filters>
-            <field>DeveloperName</field>
-            <operator>EqualTo</operator>
-            <value>
-                <stringValue>Intake_Read_Only</stringValue>
             </value>
         </filters>
         <getFirstRecordOnly>true</getFirstRecordOnly>
@@ -265,23 +207,6 @@
             </value>
         </inputAssignments>
         <object>Referral__c</object>
-    </recordUpdates>
-    <recordUpdates>
-        <description>Change the record Type To YTS Intake Read Only when an intake is closed</description>
-        <name>YTS_Update_Record_Type_Of_Intake</name>
-        <label>YTS Update Record Type Of Intake</label>
-        <locationX>512</locationX>
-        <locationY>695</locationY>
-        <connector>
-            <targetReference>Update_Referral_Status</targetReference>
-        </connector>
-        <inputAssignments>
-            <field>RecordTypeId</field>
-            <value>
-                <elementReference>YTS_Intake_Readonly_Record_Type.Id</elementReference>
-            </value>
-        </inputAssignments>
-        <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
         <locationX>650</locationX>
