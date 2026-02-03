@@ -433,10 +433,11 @@
          <members>Case_transitionNeedAddSteps</members>
          <members>Case_TransitionPlan</members>
          <members>Case_Contacts_AI</members>
-        <name>Trigger</name>
+         <members>InactiveStartDateUpdate</members>
+        <name>ApexTrigger</name>
      </types>
      <types>
         <members>ContributionSharingPage</members>
-        <name>page</name> 
+        <name>ApexPage</name> 
     </types>
 </Package>
