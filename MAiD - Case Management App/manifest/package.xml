@@ -256,6 +256,7 @@
     <types>
         <members>ICY_Case_with_CaseMembers</members>
         <members>Referral_with_Case</members>
+        <members>Cases_including_Accounts_Form_1633_and_Form_1634</members>
         <name>ReportType</name>
     </types>
     <version>61.0</version>
