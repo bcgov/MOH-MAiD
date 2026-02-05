@@ -292,4 +292,9 @@ public with sharing class YTS_Notes_Documents_Controller {
         @AuraEnabled public String intakeStatus {get;set;}
         @AuraEnabled public String suggestedServiceResp {get;set;}
     }
+
+    @AuraEnabled(cacheable=true)
+    public static String getSobjectTypeFromId(String recordId) {
+    return ((Id)recordId).getSobjectType().getDescribe().getName();
+}
 }
