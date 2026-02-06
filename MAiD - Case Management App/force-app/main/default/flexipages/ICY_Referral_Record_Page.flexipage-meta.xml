@@ -42,6 +42,9 @@
                             </visibilityRule>
                         </valueListItems>
                         <valueListItems>
+                            <value>Referral__c.Re_Referral</value>
+                        </valueListItems>
+                        <valueListItems>
                             <value>Referral__c.ICY_Reopen_Referral</value>
                             <visibilityRule>
                                 <booleanFilter>(1 OR 2) AND 3 AND 4</booleanFilter>
@@ -431,42 +434,6 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
-        <name>Facet-d1a7c101-e76b-4093-b518-e7f9792a8779</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>active</name>
-                    <value>true</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>body</name>
-                    <value>Facet-d1a7c101-e76b-4093-b518-e7f9792a8779</value>
-                </componentInstanceProperties>
-                <componentInstanceProperties>
-                    <name>title</name>
-                    <value>Standard.Tab.relatedLists</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tab</componentName>
-                <identifier>relatedListsTab</identifier>
-            </componentInstance>
-        </itemInstances>
-        <name>Facet-635a4997-81b1-40e1-bae9-aa64e507adb9</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
-        <itemInstances>
-            <componentInstance>
-                <componentInstanceProperties>
-                    <name>tabs</name>
-                    <value>Facet-635a4997-81b1-40e1-bae9-aa64e507adb9</value>
-                </componentInstanceProperties>
-                <componentName>flexipage:tabset</componentName>
-                <identifier>flexipage_tabset2</identifier>
-            </componentInstance>
-        </itemInstances>
         <itemInstances>
             <componentInstance>
                 <componentInstanceProperties>
