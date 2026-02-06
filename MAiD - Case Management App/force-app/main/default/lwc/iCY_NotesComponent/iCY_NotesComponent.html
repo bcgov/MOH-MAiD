@@ -100,20 +100,39 @@
                             {n.name}&nbsp;<lightning-badge class={n.badgeCSS} label={n.notesType}></lightning-badge>
                         </h4>
                     </template> 
-                    <template if:true={n.canEditNoteTypePL}>
-                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editNoteTypePL}
-                            slot="actions" data-record-id={n.recordId}>
-                        </lightning-button-icon>
+                    <template if:true={isCase}>
+                        <template if:true={n.canEditNoteTypePLCs}>
+                            <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editNoteTypePL}
+                                slot="actions" data-record-id={n.recordId}>
+                            </lightning-button-icon>
+                        </template>
+                        <template if:true={n.canEditAllAsOwnerCs}>
+                            <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editAllAsOwnerE}
+                                slot="actions" data-record-id={n.recordId}>
+                            </lightning-button-icon>
+                        </template>
+                        <template if:true={n.canEditOtherAsOwnerCs}>
+                            <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editOtherAsOwnerE}
+                                slot="actions" data-record-id={n.recordId}>
+                            </lightning-button-icon>
+                        </template>
                     </template>
-                    <template if:true={n.canEditAllAsOwner}>
-                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editAllAsOwnerE}
-                            slot="actions" data-record-id={n.recordId}>
-                        </lightning-button-icon>
-                    </template>
-                    <template if:true={n.canEditOtherAsOwner}>
-                        <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editOtherAsOwnerE}
-                            slot="actions" data-record-id={n.recordId}>
-                        </lightning-button-icon>
+                     <template if:false={isCase}>
+                        <template if:true={n.canEditNoteTypePL}>
+                            <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editNoteTypePL}
+                                slot="actions" data-record-id={n.recordId}>
+                            </lightning-button-icon>
+                        </template>
+                        <template if:true={n.canEditAllAsOwner}>
+                            <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editAllAsOwnerE}
+                                slot="actions" data-record-id={n.recordId}>
+                            </lightning-button-icon>
+                        </template>
+                        <template if:true={n.canEditOtherAsOwner}>
+                            <lightning-button-icon icon-name="utility:edit" alternative-text="Edit Note" onclick={editOtherAsOwnerE}
+                                slot="actions" data-record-id={n.recordId}>
+                            </lightning-button-icon>
+                        </template>
                     </template>
                     <template if:true={n.hasDeleteAccess}>
                         <lightning-button-icon variant="inverse" icon-name="utility:delete" alternative-text="Delete"
