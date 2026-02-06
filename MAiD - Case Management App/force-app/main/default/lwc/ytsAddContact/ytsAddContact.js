@@ -58,13 +58,16 @@ export default class YtsAddContact extends LightningElement {
 
     connectedCallback(){
        this.showSpinner = true;
-       if(this.recordId && this.objectApiName == 'Referral__c')
-            this.referralId = this.recordId;
-        else if(this.recordId && this.objectApiName == 'Intake__c')
-            this.IntakeId = this.recordId;
-        else if(this.recordId && this.objectApiName == 'Case')
-            this.caseId = this.recordId;
-        this.showSpinner = false;
+       // Only set parent record IDs when creating a new contact (contactRecId is empty)
+       if (!this.contactRecId) {
+           if(this.recordId && this.objectApiName == 'Referral__c'){
+                this.referralId = this.recordId;
+           }else if(this.recordId && this.objectApiName == 'Intake__c')
+                this.IntakeId = this.recordId;
+            else if(this.recordId && this.objectApiName == 'Case')
+                this.caseId = this.recordId;
+       }
+       this.showSpinner = false;
 
     }
 
@@ -108,4 +111,15 @@ export default class YtsAddContact extends LightningElement {
         this.disabled = false;
         this.dispatchEvent(new CustomEvent('close',{ detail : event.detail.id }));
      }
+
+    handleError(event) {
+        this.disabled = false;
+        console.error('Form Error:', JSON.stringify(event.detail));
+        const evt = new ShowToastEvent({
+            title: 'Error Saving Record',
+            message: 'An error occurred while saving the record. Please try again.',
+            variant: 'error'
+        });
+        this.dispatchEvent(evt);
+    }
 }
