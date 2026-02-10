@@ -1,0 +1,71 @@
+<template>
+    <lightning-card>
+        <div class="slds-p-around_large">
+
+            <!-- Custom centered header with separator -->
+            <div class="header-container">
+                <h2 class="header-title">Re-Referral</h2>
+                <div class="header-divider"></div>
+            </div>
+
+            <lightning-record-edit-form
+                object-api-name={objectApiName}
+                record-id={recordId}
+                onload={handleLoad}
+                onsubmit={handleSubmit}
+                onsuccess={handleSuccess}
+                onerror={handleError}>
+
+                <!-- Toggle (controlled) -->
+                <lightning-input
+                    type="toggle"
+                    name="Re_Referral__c"
+                    label="Is this a Re-Referral?"
+                    checked={checkboxValue}
+                    onchange={handleCheckboxChange}>
+                </lightning-input>
+
+                <!-- Datetime field -->
+                <template if:true={showDate}>
+                    <div class="slds-m-top_medium date-field-container">
+                        <lightning-input
+                            label="Re Referral Date"
+                            type="date"
+                            name="Re_Referral_Date__c"
+                            value={dateValue}
+                            onchange={handleDateChange}
+                            required={referralDateRequired}>
+                        </lightning-input>
+                    </div>
+                </template>
+
+                <!-- Spinner -->
+                <template if:true={isSubmitting}>
+                    <div class="spinner-container">
+                        <lightning-spinner alternative-text="Loading" size="small"></lightning-spinner>
+                        <p class="spinner-text">Saving...</p>
+                    </div>
+                </template>
+
+                <!-- Footer buttons -->
+                <div class="slds-m-top_large slds-grid slds-grid_align-end">
+                    <lightning-button
+                        label="Cancel"
+                        variant="neutral"
+                        onclick={handleCancel}>
+                    </lightning-button>
+
+                    <lightning-button
+                        class="slds-m-left_small"
+                        type="submit"
+                        label="Save"
+                        variant="brand"
+                        disabled={isSubmitting}>
+                    </lightning-button>
+                </div>
+
+            </lightning-record-edit-form>
+
+        </div>
+    </lightning-card>
+</template>

@@ -127,10 +127,17 @@ public with sharing class ICY_Notes_Documents_Controller {
         
         if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType) {
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
-                                                    LastModifiedDate, LastModifiedBy.Name, CreatedById,Document_Type__c,Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
+                                                    LastModifiedDate,LastModifiedBy.Name, CreatedById,Document_Type__c,Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
                                                     FROM ICY_Document__c Where Referral__c = :parentRecordId  ORDER BY CreatedDate desc]);
-            String parentStatus = [select Id, Status__c from Referral__c where id=:parentRecordId].Status__c;
+          
+            Referral__c parentRef = [ SELECT Id, Status__c, Re_Referral__c FROM Referral__c WHERE Id = :parentRecordId WITH SECURITY_ENFORCED LIMIT 1 ];
+
+            String parentStatus = parentRef != null ? parentRef.Status__c : null; 
+            Boolean isReReferral = parentRef != null ? parentRef.Re_Referral__c : null;
+
             retData.isParentCompleted = parentStatus != 'Referral';
+            retData.isNotReReferral = !isReReferral;
+
         }
         else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType)
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
@@ -140,8 +147,14 @@ public with sharing class ICY_Notes_Documents_Controller {
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
                                                     LastModifiedDate, LastModifiedBy.Name,CreatedById,Document_Type__c, Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
                                                     FROM ICY_Document__c Where Intake__c = :parentRecordId ORDER BY CreatedDate desc]);
-            String parentStatus = [select Id, Status__c from Intake__c where id=:parentRecordId].Status__c;
+         
+            Intake__c parentIntake = [ SELECT Id, Status__c, Referral__r.Re_Referral__c FROM Intake__c WHERE Id = :parentRecordId WITH SECURITY_ENFORCED LIMIT 1 ];
+
+            String parentStatus = parentIntake != null ? parentIntake.Status__c : null; 
+            Boolean isReReferral = (parentIntake != null && parentIntake.Referral__r != null) ? parentIntake.Referral__r.Re_Referral__c : null;
+
             retData.isParentCompleted = parentStatus == 'Complete' || parentStatus == 'Closed';
+            retData.isNotReReferral = !isReReferral;
         }
         
         Map<Id, Id> cdlMap = new Map<Id, Id>();
@@ -604,6 +617,7 @@ public with sharing class ICY_Notes_Documents_Controller {
      */
     public class ParentwithDocument{
         @auraEnabled public Boolean isParentCompleted {get;set;}
+        @auraEnabled public Boolean isNotReReferral {get;set;}
         @auraenabled public List<Document> lstDocument  {get; set;}
     }
     /**
