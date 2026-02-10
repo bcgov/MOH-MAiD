@@ -9,6 +9,7 @@
     <columns>ICY_Date_of_Referral__c</columns>
     <columns>ICY_Assigned_To__c</columns>
     <columns>Status__c</columns>
+    <columns>Priority__c</columns>
     <columns>CREATED_DATE</columns>
     <columns>OWNER.ALIAS</columns>
     <filterScope>Everything</filterScope>
