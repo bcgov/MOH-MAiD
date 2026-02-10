@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject>Referral__c</baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>This is for the Referral Report which includes Intake and Case details</description>
+    <label>Referral With Intake and Cases</label>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Name</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Individual_First_Name__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Individual_Last_Name__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referral Status</displayNameOverride>
+            <field>Status__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Referral_Created_Date__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Closed_Date__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ICY_Geographic_Area__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Referral Source</displayNameOverride>
+            <field>ICY_Referral_Source__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Indigenous</displayNameOverride>
+            <field>ICY_Indigenous__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>ICY_Personal_Health_Number__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <masterLabel>Referral</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Intake Name</displayNameOverride>
+            <field>Intake__c.Name</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Intake Status</displayNameOverride>
+            <field>Intake__c.Status__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Intake Created Date</displayNameOverride>
+            <field>Intake__c.CreatedDate</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Intake Complete Date</displayNameOverride>
+            <field>Intake__c.Complete_Date__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Intake Close Date</displayNameOverride>
+            <field>Intake__c.ICY_Intake_Close_Date__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <masterLabel>Intake</masterLabel>
+    </sections>
+    <sections>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Case Number</displayNameOverride>
+            <field>Case__c.CaseNumber</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <field>Case__c.Account</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Case Status</displayNameOverride>
+            <field>Case__c.Status</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Case Created Date</displayNameOverride>
+            <field>Case__c.Case_Created_Date__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <columns>
+            <checkedByDefault>false</checkedByDefault>
+            <displayNameOverride>Case Close Date</displayNameOverride>
+            <field>Case__c.ICY_Case_Close_Date__c</field>
+            <table>Referral__c</table>
+        </columns>
+        <masterLabel>Case</masterLabel>
+    </sections>
+</ReportType>
