@@ -40,7 +40,7 @@ export default class icyDocumentsComponent extends NavigationMixin(LightningElem
             this.showSpinner = false;
             console.log('$$ Result', result);
             if (result) {
-                this.showAddBtn = result.isParentCompleted;
+                this.showAddBtn = result.isParentCompleted && result.isNotReReferral;
                 if(result.hasOwnProperty('lstDocument')){
                     this.documents = [];
                     this.documents = result.lstDocument;
