@@ -40,8 +40,14 @@ public with sharing class YTS_Notes_Documents_Controller {
                             Contact_Person_Work_Phone_Extension__c, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess,
                             CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name,Inactive__c
                             FROM Case_Contact__c WHERE Referral__c = :parentRecordId ORDER BY Inactive__c,Contact_Type__c,CreatedDate desc];
-            String parentStatus = [select Id, Status__c from Referral__c where id=:parentRecordId].Status__c;
+           
+            Referral__c parentRef = [ SELECT Id, Status__c, Re_Referral__c FROM Referral__c WHERE Id = :parentRecordId  LIMIT 1 ];
+
+            String parentStatus = parentRef != null ? parentRef.Status__c : null; 
+            Boolean isReReferral = parentRef != null ? parentRef.Re_Referral__c : null;
+
             retData.isParentCompleted = parentStatus != 'Referral';
+            retData.isNotReReferralCon = !isReReferral;
         }
         else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType){
             caseContacts = [SELECT Id, Contact_Full_Name__c, Contact_Type__c, Contact_Subtype__c, Contact_Person_Profession_Role__c, Profession_Role__c,
@@ -60,8 +66,15 @@ public with sharing class YTS_Notes_Documents_Controller {
                             Contact_Person_Work_Phone_Extension__c, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess,
                             CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name,Inactive__c
                             FROM Case_Contact__c WHERE Intake__c = :parentRecordId ORDER BY Inactive__c,Contact_Type__c,CreatedDate desc];
-            String parentStatus = [select Id, Status__c from Intake__c where id=:parentRecordId].Status__c;
+         
+            Intake__c parentIntake = [ SELECT Id, Status__c, referral__r.re_referral__c FROM Intake__c WHERE Id = :parentRecordId  LIMIT 1 ];
+
+            String parentStatus = parentIntake != null ? parentIntake.Status__c : null; 
+            Boolean isReReferral = parentIntake != null ? parentIntake.referral__r.re_referral__c : null;
+
             retData.isParentCompleted = parentStatus == 'Complete' || parentStatus == 'Closed';
+            retData.isNotReReferralCon = !isReReferral;
+
         }
 
         for(Case_Contact__c c: caseContacts){
@@ -144,6 +157,7 @@ public with sharing class YTS_Notes_Documents_Controller {
      */
     public class ParentwithContact{
         @auraEnabled public Boolean isParentCompleted {get;set;}
+        @auraEnabled public Boolean isNotReReferralCon {get;set;}
         @auraenabled public List<RelatedContact> lstContacts  {get; set;}
     }
     /**
@@ -278,4 +292,9 @@ public with sharing class YTS_Notes_Documents_Controller {
         @AuraEnabled public String intakeStatus {get;set;}
         @AuraEnabled public String suggestedServiceResp {get;set;}
     }
+
+    @AuraEnabled(cacheable=true)
+    public static String getSobjectTypeFromId(String recordId) {
+    return ((Id)recordId).getSobjectType().getDescribe().getName();
+}
 }

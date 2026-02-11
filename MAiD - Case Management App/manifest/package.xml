@@ -199,6 +199,7 @@
         <members>MAiDCaseManagementReports/S5_Found_Ineligible_for_MAiD_vy5</members>
         <members>MAiDCaseManagementReports/S6_Died_of_Other_Cause_6PU</members>
         <members>MAiDCaseManagementReports/X1641_2023_Pharmacist_Report_Y6x</members>
+        <members>ICY_Evaluation/ICY_Referrals_with_Intakes_and_Cases_bYq</members>
         <name>Report</name>
     </types>
     <types>
@@ -262,6 +263,7 @@
         <members>ICY_Case_with_CaseMembers</members>
         <members>Referral_with_Case</members>
         <members>Cases_including_Accounts_Form_1633_and_Form_1634</members>
+        <members>Referral_With_Intake_and_Cases</members>
         <name>ReportType</name>
     </types>
     <version>61.0</version>
