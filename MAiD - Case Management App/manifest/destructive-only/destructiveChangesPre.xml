@@ -439,6 +439,6 @@
     </types>
     <types>
         <members>ContributionSharingPage</members>
-        <name>Apexpage</name> 
+        <name>ApexPage</name> 
     </types>
 </Package>
