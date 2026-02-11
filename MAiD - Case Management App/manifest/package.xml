@@ -161,6 +161,7 @@
         <members>ICYReportsPL/Referral_Statuses_Duration_BJD</members>
         <members>ICYReports/ICY_Cases_with_Contacts</members>
         <members>ICYReports/Referrals_Report_BoK</members>
+        <members>ICYReports/ICY_Re_Referrals</members>
         <members>ICYSharedIndicatorsReports/CY_being_seen_1_Members_fzC</members>
         <members>ICYSharedIndicatorsReports/Cases_assigned_Last_Month_mUs</members>
         <members>ICYSharedIndicatorsReports/Copy_of_ICY_being_seen_1_Members_b51</members>
@@ -199,6 +200,10 @@
         <members>MAiDCaseManagementReports/S6_Died_of_Other_Cause_6PU</members>
         <members>MAiDCaseManagementReports/X1641_2023_Pharmacist_Report_Y6x</members>
         <name>Report</name>
+    </types>
+    <types>
+        <members>ICYSharedIndicatorsDashboard/dashbHmaHZUxiushsYZNnKSDrLjsAEZWPjZ</members>
+        <name>Dashboard</name>
     </types>
     <types>
         <members>*</members>
