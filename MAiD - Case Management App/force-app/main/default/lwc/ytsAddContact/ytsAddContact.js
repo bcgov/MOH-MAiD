@@ -4,6 +4,11 @@ import { CurrentPageReference } from 'lightning/navigation';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 //Update Contact Record TYpe
 import getCurrentUserRecordTypeId from '@salesforce/apex/YTS_Referral_Controller.getCaseContactRecordTypeId';
+import getRelatedIntakeId from '@salesforce/apex/YTS_Referral_Controller.getRelatedIntakeId';
+import getRelatedCaseId from '@salesforce/apex/YTS_Referral_Controller.getRelatedCaseId';
+import getReferralIdFromIntake from '@salesforce/apex/YTS_Referral_Controller.getReferralIdFromIntake';
+import getReferralIdFromCase from '@salesforce/apex/YTS_Referral_Controller.getReferralIdFromCase';
+import getIntakeIdFromCase from '@salesforce/apex/YTS_Referral_Controller.getIntakeIdFromCase';
 
 export default class YtsAddContact extends LightningElement {
     @wire(CurrentPageReference) pageReference;
@@ -58,14 +63,74 @@ export default class YtsAddContact extends LightningElement {
 
     connectedCallback(){
        this.showSpinner = true;
-       if(this.recordId && this.objectApiName == 'Referral__c')
+       if(this.recordId && this.objectApiName == 'Referral__c'){ 
             this.referralId = this.recordId;
-        else if(this.recordId && this.objectApiName == 'Intake__c')
+            // Auto-populate Intake__c field if related Intake__c record exists
+            getRelatedIntakeId({ referralId: this.recordId })
+                .then(result => {
+                    if(result) {
+                        this.IntakeId = result;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching related intake: ', error);
+                });
+            // Auto-populate Case__c field if related Case record exists
+            getRelatedCaseId({ referralId: this.recordId })
+                .then(result => {
+                    if(result) {
+                        this.caseId = result;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching related case: ', error);
+                });
+        } else if(this.recordId && this.objectApiName == 'Intake__c') {
             this.IntakeId = this.recordId;
-        else if(this.recordId && this.objectApiName == 'Case')
+            // Get the Referral ID from the Intake record
+            getReferralIdFromIntake({ intakeId: this.recordId })
+                .then(referralId => {
+                    if(referralId) {
+                        this.referralId = referralId;
+                        // Auto-populate Case__c field if related Case record exists for this referral
+                        getRelatedCaseId({ referralId: referralId })
+                            .then(caseId => {
+                                if(caseId) {
+                                    this.caseId = caseId;
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error fetching related case: ', error);
+                            });
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching referral from intake: ', error);
+                });
+        } else if(this.recordId && this.objectApiName == 'Case') {
             this.caseId = this.recordId;
+            // Get the Referral ID from the Case record
+            getReferralIdFromCase({ caseId: this.recordId })
+                .then(referralId => {
+                    if(referralId) {
+                      this.referralId = referralId;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching referral from case: ', error);
+                });
+            // Get the Intake ID from the Case record
+            getIntakeIdFromCase({ caseId: this.recordId })
+                .then(intakeId => {
+                    if(intakeId) {
+                        this.IntakeId = intakeId;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching intake from case: ', error);
+                });
+        }
         this.showSpinner = false;
-
     }
 
     closeModal() {
