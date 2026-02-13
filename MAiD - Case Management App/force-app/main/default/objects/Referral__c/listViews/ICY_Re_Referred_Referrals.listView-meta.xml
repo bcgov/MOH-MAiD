@@ -8,7 +8,7 @@
     <columns>ICY_Date_of_Referral__c</columns>
     <columns>ICY_Assigned_To__c</columns>
     <columns>Status__c</columns>
-    <columns>ICY_Priority__c</columns>
+    <columns>Priority__c</columns>
     <columns>CREATED_DATE</columns>
     <columns>Re_Referral_Date__c</columns>
     <columns>OWNER.ALIAS</columns>

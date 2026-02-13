@@ -390,12 +390,58 @@ public with sharing class ICY_Notes_Documents_Controller {
                                             String recordTypeDeveloperName, String contentDocumentId){
         Id parentRecordId = Id.valueOf(recordId);
         if(String.isNotBlank(documentId)) document.Id = documentId;
-        if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType)
+        if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType){
             document.Referral__c = parentRecordId;
-        else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType)
+
+            List<Intake__c> intakeReferral = [
+            SELECT Id,case__c
+            FROM Intake__c
+            WHERE Referral__c = :parentRecordId
+            ORDER BY CreatedDate DESC
+            LIMIT 1
+        ];
+        if (!intakeReferral.isEmpty()) {
+            document.Intake__c = intakeReferral[0].Id;
+            if (intakeReferral[0].Case__c != null) {
+               document.Case__c = intakeReferral[0].case__c;  
+           }
+        }
+        } else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType){
             document.Case__c = parentRecordId;
-        else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType)
+            
+            List<Intake__c> casesByIntake = [
+            SELECT Id,Case__c,Referral__c
+            FROM Intake__c
+            WHERE Case__c = :parentRecordId
+            ORDER BY CreatedDate DESC
+            LIMIT 1
+        ];
+        if (!casesByIntake.isEmpty()) {
+            document.Intake__c = casesByIntake[0].Id;
+            if (casesByIntake[0].Case__c != null)
+               document.Case__c = casesByIntake[0].Case__c;
+            if (casesByIntake[0].Referral__c != null)
+               document.Referral__c = casesByIntake[0].Referral__c;
+        }
+       }
+
+        else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType){
             document.Intake__c = parentRecordId;
+
+            List<Intake__c> casesByIntake = [
+            SELECT Case__c,Referral__c
+            FROM Intake__c
+            WHERE Id = :parentRecordId
+            ORDER BY CreatedDate DESC
+            LIMIT 1
+        ];
+        if (!casesByIntake.isEmpty()) {
+            if (casesByIntake[0].Case__c != null)
+               document.Case__c = casesByIntake[0].Case__c;
+            if (casesByIntake[0].Referral__c != null)
+               document.Referral__c = casesByIntake[0].Referral__c;
+        }
+       }
         
         document.Document_Type__c = recordTypeDeveloperName;
 
@@ -411,6 +457,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         }
         return document;
     }
+
 
     /**
      * Content Distribution For File Download
