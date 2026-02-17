@@ -43,6 +43,29 @@
                         </valueListItems>
                         <valueListItems>
                             <value>Referral__c.Re_Referral</value>
+                            <visibilityRule>
+                                <booleanFilter>(1 OR 2) AND ( 3 OR 4)</booleanFilter>
+                                <criteria>
+                                    <leftValue>{!$User.UserRole.Name}</leftValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>Admin</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!$User.UserRole.Name}</leftValue>
+                                    <operator>CONTAINS</operator>
+                                    <rightValue>Program Leader</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Status__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Ready for Intake</rightValue>
+                                </criteria>
+                                <criteria>
+                                    <leftValue>{!Record.Status__c}</leftValue>
+                                    <operator>EQUAL</operator>
+                                    <rightValue>Case Created</rightValue>
+                                </criteria>
+                            </visibilityRule>
                         </valueListItems>
                         <valueListItems>
                             <value>Referral__c.ICY_Reopen_Referral</value>

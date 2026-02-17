@@ -410,6 +410,74 @@ public with sharing class YTS_Referral_Controller {
         UPDATE c;
     }
 
+    /**
+     * Get related Intake__c record for a given Referral__c
+     * @param referralId The ID of the Referral__c record
+     * @return The ID of the related Intake__c record, or null if not found
+     */
+    @AuraEnabled
+    public static String getRelatedIntakeId(String referralId){
+        List<Intake__c> intakes = [SELECT Id FROM Intake__c WHERE Referral__c = :referralId LIMIT 1];
+        if(intakes != null && intakes.size() > 0){
+            return intakes[0].Id;
+        }
+        return null;
+    }
+
+    /**
+     * Get Referral__c from an Intake__c record
+     * @param intakeId The ID of the Intake__c record
+     * @return The ID of the related Referral__c record, or null if not found
+     */
+    @AuraEnabled
+    public static String getReferralIdFromIntake(String intakeId){
+        List<Intake__c> intakes = [SELECT Referral__c FROM Intake__c WHERE Id = :intakeId LIMIT 1];
+        if(intakes != null && intakes.size() > 0 && intakes[0].Referral__c != null){
+            return intakes[0].Referral__c;
+        }
+        return null;
+    }
+  /**
+     * Get related case record for a given Referral__c
+     * @param referralId The ID of the Referral__c record
+     * @return The ID of the related case record, or null if not found
+     */
+    @AuraEnabled
+    public static String getRelatedCaseId(String referralId){
+        List<Case> cases = [SELECT Id FROM Case WHERE Referral__c = :referralId LIMIT 1];
+        if(cases != null && cases.size() > 0){
+             return cases[0].Id;
+        }
+        return null;
+    }
+
+    /**
+     * Get Referral__c from a Case record
+     * @param caseId The ID of the Case record
+     * @return The ID of the related Referral__c record, or null if not found
+     */
+    @AuraEnabled
+    public static String getReferralIdFromCase(String caseId){
+        List<Case> cases = [SELECT Referral__c FROM Case WHERE Id = :caseId LIMIT 1];
+        if(cases != null && cases.size() > 0 && cases[0].Referral__c != null){
+            return cases[0].Referral__c;
+        }
+        return null;
+    }
+
+    /**
+     * Get Intake__c from a Case record
+     * @param caseId The ID of the Case record
+     * @return The ID of the related Intake__c record, or null if not found
+     */
+    @AuraEnabled
+    public static String getIntakeIdFromCase(String caseId){
+        List<Intake__c> intk = [SELECT Id FROM Intake__c WHERE case__c = :caseId LIMIT 1];
+        if(intk != null && intk.size() > 0 ){
+            return intk[0].Id;
+        }
+        return null;
+    }
 
 
     /**
