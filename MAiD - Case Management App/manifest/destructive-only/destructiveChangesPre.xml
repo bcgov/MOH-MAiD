@@ -8,6 +8,11 @@
         <members>KeycloakRegistrationHandler</members>
         <members>KeycloakSchedulerService</members>
         <members>KeycloakScheduler</members>
+        <members>ytsCaseTriggerHandler</members>
+        <members>ytsCaseTriggerHandlerTest</members>
+        <members>ContributionLogHelper</members>
+        <members>ContributionSharingController</members>
+        <members>ContributionSharingController_Test</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -427,6 +432,13 @@
     </types>
     <types>
         <members>InactiveStartDateUpdate</members>
-        <name>Trigger</name>
+         <members>Case_transitionNeedAddSteps</members>
+         <members>Case_TransitionPlan</members>
+         <members>Case_Contacts_AI</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>ContributionSharingPage</members>
+        <name>ApexPage</name> 
     </types>
 </Package>
