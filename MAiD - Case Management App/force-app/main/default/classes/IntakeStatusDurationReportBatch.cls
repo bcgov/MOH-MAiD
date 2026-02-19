@@ -2,16 +2,10 @@ global class IntakeStatusDurationReportBatch implements Database.Batchable<SObje
 	global Database.QueryLocator start(Database.BatchableContext bc) {
         return Database.getQueryLocator(
             'SELECT Id, Individual_Name__c, ' +
-            'Case__r.CreatedDate, Not_Started_Date__c , Complete_Date__c , ICY_Intake_Close_Date__c, Status__c, LastModifiedDate, CreatedDate ' +
-            'FROM Intake__c ' +
-            'WHERE CreatedDate < 2026-01-22T00:00:00Z ' +
-            'AND ( ' +
-                '(Case__r.RecordType.DeveloperName = \'ICY_Close_Case\' ' +
-                 'AND Case__r.Status = \'Closed\') ' +
-                'OR ' +
-                '(Case__r.RecordType.DeveloperName = \'ICY_Standard_Case\' ' +
-                 'AND Case__r.Status = \'Open\') ' +
-            ')'
+               'Case__r.CreatedDate, Not_Started_Date__c, Complete_Date__c, ' +
+               'ICY_Intake_Close_Date__c, Status__c, LastModifiedDate, CreatedDate ' +
+               'FROM Intake__c ' +
+               'WHERE CreatedDate < 2026-01-22T00:00:00Z '
         );
     }
     global void execute(Database.BatchableContext bc, List<Intake__c> scope) {
