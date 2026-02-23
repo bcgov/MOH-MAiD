@@ -18,6 +18,12 @@
     <columns>
         <field>Referral__c.ICY_Referred_By_Name__c</field>
     </columns>
+    <columns>
+        <field>Referral__c.ICY_Assigned_To__c</field>
+    </columns>
+    <columns>
+        <field>CUST_CREATED_NAME</field>
+    </columns>
     <filter>
         <booleanFilter>1 AND 2 AND 3</booleanFilter>
         <criteriaItems>
