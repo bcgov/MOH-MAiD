@@ -13,6 +13,12 @@
         <members>ContributionLogHelper</members>
         <members>ContributionSharingController</members>
         <members>ContributionSharingController_Test</members>
+        <members>CreateCaseNotesBatch</members>
+        <members>CreateCaseNotesBatchTest</members>
+        <members>CreateIntakeNotesBatch</members>
+        <members>CreateIntakeNotesBatchTest</members>
+        <members>ICY_CaseNotesBackfillBatch</members>
+        <members>ICY_CaseNotesBackfillBatchTest</members>
         <name>ApexClass</name>
     </types>
     <types>
