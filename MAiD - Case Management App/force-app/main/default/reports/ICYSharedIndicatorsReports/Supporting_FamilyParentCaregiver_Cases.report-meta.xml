@@ -69,7 +69,7 @@
     <showGrandTotal>false</showGrandTotal>
     <showSubTotals>false</showSubTotals>
     <timeFrameFilter>
-        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <dateColumn>ICY_Notes__c.ICY_Meeting_Date__c</dateColumn>
         <interval>INTERVAL_LASTMONTH</interval>
     </timeFrameFilter>
 </Report>
