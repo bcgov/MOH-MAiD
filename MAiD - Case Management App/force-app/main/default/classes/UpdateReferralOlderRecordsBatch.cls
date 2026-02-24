@@ -5,7 +5,7 @@ global class UpdateReferralOlderRecordsBatch implements Database.Batchable<SObje
             'SELECT Id, CreatedDate, Ready_for_Intake_Date__c, Referral_Created_Date__c, Closed_Date__c, Status__c, LastModifiedDate, ' +
             ' Case_Created_Date__c, Intake__r.CreatedDate, Case__r.CreatedDate, Case__r.Status ,Case__r.Case_Closed_Date__c, Case__r.Case_Created_Date__c, Case__r.LastModifiedDate ' +
             'FROM Referral__c ' +
-            'WHERE CreatedDate < 2026-01-22T00:00:00Z '
+            'WHERE CreatedDate < 2026-01-23T00:00:00Z '
         );
     }
 
@@ -21,6 +21,7 @@ global class UpdateReferralOlderRecordsBatch implements Database.Batchable<SObje
         }
         
         Map<Id, Date> childIntakeDateMap = new Map<Id, Date>();
+        Map<Id, Id> referralVsIntakeMap = new Map<Id, Id>();
 
         for (Intake__c intake : [
             SELECT Id, Referral__c, CreatedDate
@@ -31,6 +32,7 @@ global class UpdateReferralOlderRecordsBatch implements Database.Batchable<SObje
                 intake.Referral__c,
                 intake.CreatedDate.date()
             );
+            referralVsIntakeMap.put(intake.Referral__c,intake.Id);
         }
         
         
@@ -50,6 +52,10 @@ global class UpdateReferralOlderRecordsBatch implements Database.Batchable<SObje
         
         for (Referral__c ref : scope) {
             Boolean isUpdated = false;
+            if(ref.Intake__c==null && referralVsIntakeMap.containsKey(ref.Id)){
+                ref.Intake__c = referralVsIntakeMap.get(ref.Id);
+                isUpdated = true;
+            }
 			if(ref.Closed_Date__c==null && ref.Status__c=='Closed'){
                 ref.Closed_Date__c = ref.LastModifiedDate.date();
                 isUpdated = true;
@@ -66,6 +72,7 @@ global class UpdateReferralOlderRecordsBatch implements Database.Batchable<SObje
                 ref.Case_Created_Date__c = ref.Case__r.CreatedDate.date();
                 isUpdated = true;
             }
+            
             if (ref.Case__r != null) {
                 Case c;
     
