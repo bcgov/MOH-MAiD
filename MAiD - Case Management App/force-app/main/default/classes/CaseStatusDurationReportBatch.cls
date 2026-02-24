@@ -4,7 +4,7 @@ global class CaseStatusDurationReportBatch implements Database.Batchable<SObject
             'SELECT Id, Case_Created_Date__c, Case_Closed_Date__c, Status, CreatedDate, LastModifiedDate ' +
             'FROM Case ' +
             'WHERE RecordType.DeveloperName IN (\'ICY_Standard_Case\', \'ICY_Close_Case\') ' +
-            'AND CreatedDate <= 2026-01-22T00:00:00Z'
+            'AND CreatedDate <= 2026-01-23T00:00:00Z'
         );
 
     }
