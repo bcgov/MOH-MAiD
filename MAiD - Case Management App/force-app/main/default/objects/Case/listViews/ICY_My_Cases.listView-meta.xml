@@ -7,7 +7,7 @@
     <columns>CASES.STATUS</columns>
     <columns>CASES.PRIORITY</columns>
     <columns>ICY_Waitlisted__c</columns>
-    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.CREATED_DATE_DATE_ONLY</columns>
     <columns>ICY_Geographic_Area__c</columns>
     <columns>ICY_Case_Owner__c</columns>
     <filterScope>Mine</filterScope>
