@@ -66,6 +66,11 @@
                 <default>false</default>
                 <label>Critical Incident</label>
             </value>
+            <value>
+                <fullName>Supporting Family/Parent/Caregiver Note</fullName>
+                <default>false</default>
+                <label>Supporting Family/Parent/Caregiver Note</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

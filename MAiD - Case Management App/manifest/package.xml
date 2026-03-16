@@ -161,6 +161,7 @@
         <members>ICYReportsPL/Referral_Statuses_Duration_BJD</members>
         <members>ICYReports/ICY_Cases_with_Contacts</members>
         <members>ICYReports/Referrals_Report_BoK</members>
+        <members>ICYReports/ICY_Re_Referrals</members>
         <members>ICYSharedIndicatorsReports/CY_being_seen_1_Members_fzC</members>
         <members>ICYSharedIndicatorsReports/Cases_assigned_Last_Month_mUs</members>
         <members>ICYSharedIndicatorsReports/Copy_of_ICY_being_seen_1_Members_b51</members>
@@ -180,6 +181,8 @@
         <members>ICYSharedIndicatorsReports/d_Intakes_Closed_Last_month_GUt</members>
         <members>ICYSharedIndicatorsReports/d_Referrals_Indigenous_Last_Month_mGG</members>
         <members>ICYSharedIndicatorsReports/draft_ICY_Referral_Sources_zlG</members>
+        <members>ICYSharedIndicatorsReports/Supporting_FamilyParentCaregiver_Cases</members>
+        <members>ICYSharedIndicatorsReports/Supporting_FamilyParentCaregiver_Refer_IB5</members>
         <members>MAiDCaseManagementReports/Pharmacist_Report_PoF</members>
         <members>ICY_Evaluation/ClosedCasesCheckedLast12Months_Ipc</members>
         <members>ICY_Evaluation/Open_Cases_with_Checkbox_Checked_MFp</members>
@@ -196,7 +199,12 @@
         <members>MAiDCaseManagementReports/S5_Found_Ineligible_for_MAiD_vy5</members>
         <members>MAiDCaseManagementReports/S6_Died_of_Other_Cause_6PU</members>
         <members>MAiDCaseManagementReports/X1641_2023_Pharmacist_Report_Y6x</members>
+        <members>ICY_Evaluation/ICY_Referrals_with_Intakes_and_Cases_bYq</members>
         <name>Report</name>
+    </types>
+    <types>
+        <members>ICYSharedIndicatorsDashboard/HmaHZUxiushsYZNnKSDrLjsAEZWPjZ</members>
+        <name>Dashboard</name>
     </types>
     <types>
         <members>*</members>
@@ -254,6 +262,7 @@
     <types>
         <members>ICY_Case_with_CaseMembers</members>
         <members>Referral_with_Case</members>
+        <members>Referral_With_Intake_and_Cases</members>
         <name>ReportType</name>
     </types>
     <version>61.0</version>

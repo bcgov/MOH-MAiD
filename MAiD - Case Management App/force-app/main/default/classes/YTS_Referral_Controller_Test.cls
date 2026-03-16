@@ -76,6 +76,13 @@ public with sharing class YTS_Referral_Controller_Test {
         List<Case_Contact__c> listOfReferralContacts = YTS_Referral_Controller.referralContacts(RefRecord.Id);
 
         String caseContactString = YTS_Referral_Controller.getCaseContactRecordTypeId();
+        
+        Id refId=YTS_Referral_Controller.getReferralIdFromCase(cas.Id);
+        id csId=YTS_Referral_Controller.getRelatedCaseId(RefRecord.Id);
+        Id intakeId= YTS_Referral_Controller.getIntakeIdFromCase(cas.Id);
+        refId=YTS_Referral_Controller.getReferralIdFromIntake(intke.Id);
+        intakeId= YTS_Referral_Controller.getRelatedIntakeId(RefRecord.Id);
+        Id accId = YTS_Referral_Controller.getCaseAccountId(cas.Id);
     }
 
     @isTest static void test_InactiveStartDateUpdate() {

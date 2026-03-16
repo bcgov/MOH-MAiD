@@ -365,6 +365,10 @@
                 <behavior>Readonly</behavior>
                 <field>ICY_Reopened_Date__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Re_Referral__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -374,6 +378,10 @@
             <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>ICY_Closed_Date__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Readonly</behavior>
+                <field>Re_Referral_Date__c</field>
             </layoutItems>
         </layoutColumns>
         <style>TwoColumnsTopToBottom</style>

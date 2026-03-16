@@ -8,6 +8,17 @@
         <members>KeycloakRegistrationHandler</members>
         <members>KeycloakSchedulerService</members>
         <members>KeycloakScheduler</members>
+        <members>ytsCaseTriggerHandler</members>
+        <members>ytsCaseTriggerHandlerTest</members>
+        <members>ContributionLogHelper</members>
+        <members>ContributionSharingController</members>
+        <members>ContributionSharingController_Test</members>
+        <members>CreateCaseNotesBatch</members>
+        <members>CreateCaseNotesBatchTest</members>
+        <members>CreateIntakeNotesBatch</members>
+        <members>CreateIntakeNotesBatchTest</members>
+        <members>ICY_CaseNotesBackfillBatch</members>
+        <members>ICY_CaseNotesBackfillBatchTest</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -421,6 +432,19 @@
     </types>
      <types>
         <members>Referred_date_timestamp</members>
+        <members>ICY_Case_Update_User_Role_Name</members>
+        <members>ICY_Referral_Update_User_Role_Name</members>
         <name>Flow</name>
+    </types>
+    <types>
+        <members>InactiveStartDateUpdate</members>
+         <members>Case_transitionNeedAddSteps</members>
+         <members>Case_TransitionPlan</members>
+         <members>Case_Contacts_AI</members>
+        <name>ApexTrigger</name>
+    </types>
+    <types>
+        <members>ContributionSharingPage</members>
+        <name>ApexPage</name> 
     </types>
 </Package>

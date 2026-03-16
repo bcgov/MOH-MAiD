@@ -8,14 +8,10 @@ public class ICY_Referral_ControllerTest {
     }
 
     @isTest static void testMethods(){
-
-
-       // user u = [Select Id,Name from User Limit 1];
-        //System.runAs(u) {
-        Referral__c ref = [Select Id,Name,ICY_Personal_Health_Number__c, Priority__c From Referral__c Limit 1];
+        Referral__c ref = new Referral__c();
         ref.ICY_Personal_Health_Number__c = '9999999999';
         ref.Priority__c = 'High';
-        update ref;
+        insert ref;
 
         Case_Contact__c cs = [Select Id,Name From Case_Contact__c LIMIT 1];
         cs.Id = null;
@@ -40,7 +36,7 @@ public class ICY_Referral_ControllerTest {
         ICY_Referral_Controller.createICYIntakeRecord(ref.Id);
         Test.stopTest();
 
-        Intake__c intake= [SELECT Id, Name, Referral__c, Priority__c FROM Intake__c WHERE Referral__c = :ref.Id];
+        Intake__c intake= [SELECT Id, Name, Referral__c, Priority__c FROM Intake__c WHERE Referral__c = :ref.Id limit 1];
         System.assertEquals(ref.Priority__c, intake.Priority__c);
 
     }

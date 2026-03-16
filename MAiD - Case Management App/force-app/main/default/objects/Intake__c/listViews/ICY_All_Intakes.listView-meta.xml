@@ -4,6 +4,7 @@
     <columns>NAME</columns>
     <columns>Individual_Name__c</columns>
     <columns>Status__c</columns>
+    <columns>Priority__c</columns>
     <columns>ICY_Assigned_To__c</columns>
     <columns>Referral__c</columns>
     <columns>CREATED_DATE</columns>

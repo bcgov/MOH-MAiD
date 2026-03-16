@@ -35,6 +35,7 @@ export default class iCY_NotesComponent extends LightningElement {
         {label:'Session Note' , value: 'Session Note'},
         {label:'Supervision Note' , value: 'Supervision Note'},
         {label:'Critical Incident' , value: 'Critical Incident'},
+        {label:'Supporting Family/Parent/Caregiver Note' , value: 'Supporting Family/Parent/Caregiver Note'},
         {label:'Other' , value: 'Other'},
         {label:'Contact with referring partner' , value: 'Contact with referring partner'},
         {label:'Contact with parent/caregiver/guardian:' , value: 'Contact with parent/caregiver/guardian:'},
@@ -49,6 +50,7 @@ export default class iCY_NotesComponent extends LightningElement {
         {label:'Session Note' , value: 'Session Note'},
         {label:'Supervision Note' , value: 'Supervision Note'},
         {label:'Critical Incident' , value: 'Critical Incident'},
+        {label:'Supporting Family/Parent/Caregiver Note' , value: 'Supporting Family/Parent/Caregiver Note'},
         {label:'Other' , value: 'Other'}
     ];
 

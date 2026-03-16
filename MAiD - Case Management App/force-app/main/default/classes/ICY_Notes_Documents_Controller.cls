@@ -65,18 +65,20 @@ public with sharing class ICY_Notes_Documents_Controller {
             String otherModeLocation = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Other_Mode_Location__c:'';
             String noteSource = String.isBlank(n.Note_Source__c) ?'Case':n.Note_Source__c;
            
-           // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
-           // Boolean canEdit = (((n.CreatedById == UserInfo.getUserId()) || isProgramLeader ) && (n.Notes_Type__c=='Collaborative'))? true : false;
-
-            // To be able to Edit a note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
-            // Allow owners to edit all the fields for (Referral/Intakes/Case Notes) within 24 hours of creation date
-            //If the note type is restricted, All the fields should be editable except note type
-            //Keep the current implementation of editing the notes type by Owner and PL even after 24 hours
+            //BCMOHAD-30685
+            // To be able to Edit a Case note either you are the creator of the notes or the PL and the note type shouldn't be = Restricted
+            // Allow OWNERS to edit all the fields for Case Notes only (BCMOHAD-30961) within 24 hours of creation date except note Type if it's restricted
+            //Keep the current implementation of editing the Note Type by Owner and PL even after 24 hours
+            //Same rules applies for Intake Note and referral Notes but cannot be edited from Case Notes section only from their respective Object
             Boolean isRecent = n.CreatedDate >= Datetime.now().addHours(-24);
           
+            Boolean canEditNoteTypePLCs = (((n.CreatedById == UserInfo.getUserId() && !(isRecent)) || (isProgramLeader && n.CreatedById != UserInfo.getUserId()) ) && (n.Notes_Type__c=='Collaborative') &&  (String.isBlank(n.Note_Source__c)))? true : false;
+            Boolean canEditAllAsOwnerCs = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Collaborative') && ( String.isBlank(n.Note_Source__c)))? true : false;
+            Boolean canEditOtherAsOwnerCs = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted') && ( String.isBlank(n.Note_Source__c)))? true : false;
+
             Boolean canEditNoteTypePL = (((n.CreatedById == UserInfo.getUserId() && !(isRecent)) || (isProgramLeader && n.CreatedById != UserInfo.getUserId()) ) && (n.Notes_Type__c=='Collaborative'))? true : false;
             Boolean canEditAllAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Collaborative'))? true : false;
-            Boolean canEditOtherAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted'))? true : false;
+            Boolean canEditOtherAsOwner = ((n.CreatedById == UserInfo.getUserId())  && (isRecent)&& (n.Notes_Type__c=='Restricted') )? true : false;
             
             result.add(
                 new Note(
@@ -101,7 +103,10 @@ public with sharing class ICY_Notes_Documents_Controller {
                     Schema.sObjectType.ICY_Notes__c.isDeletable(),
                     canEditNoteTypePL,
                     canEditAllAsOwner,
-                    canEditOtherAsOwner
+                    canEditOtherAsOwner,
+                    canEditNoteTypePLCs,
+                    canEditAllAsOwnerCs,
+                    canEditOtherAsOwnerCs
                 )
             );
         }
@@ -122,10 +127,17 @@ public with sharing class ICY_Notes_Documents_Controller {
         
         if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType) {
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
-                                                    LastModifiedDate, LastModifiedBy.Name, CreatedById,Document_Type__c,Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
+                                                    LastModifiedDate,LastModifiedBy.Name, CreatedById,Document_Type__c,Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
                                                     FROM ICY_Document__c Where Referral__c = :parentRecordId  ORDER BY CreatedDate desc]);
-            String parentStatus = [select Id, Status__c from Referral__c where id=:parentRecordId].Status__c;
+          
+            Referral__c parentRef = [ SELECT Id, Status__c, Re_Referral__c FROM Referral__c WHERE Id = :parentRecordId WITH SECURITY_ENFORCED LIMIT 1 ];
+
+            String parentStatus = parentRef != null ? parentRef.Status__c : null; 
+            Boolean isReReferral = parentRef != null ? parentRef.Re_Referral__c : null;
+
             retData.isParentCompleted = parentStatus != 'Referral';
+            retData.isNotReReferral = !isReReferral;
+
         }
         else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType)
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
@@ -135,8 +147,14 @@ public with sharing class ICY_Notes_Documents_Controller {
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
                                                     LastModifiedDate, LastModifiedBy.Name,CreatedById,Document_Type__c, Other_Document_Type__c, (SELECT Id, Name FROM ATTACHMENTS)  
                                                     FROM ICY_Document__c Where Intake__c = :parentRecordId ORDER BY CreatedDate desc]);
-            String parentStatus = [select Id, Status__c from Intake__c where id=:parentRecordId].Status__c;
+         
+            Intake__c parentIntake = [ SELECT Id, Status__c, Referral__r.Re_Referral__c FROM Intake__c WHERE Id = :parentRecordId WITH SECURITY_ENFORCED LIMIT 1 ];
+
+            String parentStatus = parentIntake != null ? parentIntake.Status__c : null; 
+            Boolean isReReferral = (parentIntake != null && parentIntake.Referral__r != null) ? parentIntake.Referral__r.Re_Referral__c : null;
+
             retData.isParentCompleted = parentStatus == 'Complete' || parentStatus == 'Closed';
+            retData.isNotReReferral = !isReReferral;
         }
         
         Map<Id, Id> cdlMap = new Map<Id, Id>();
@@ -372,12 +390,58 @@ public with sharing class ICY_Notes_Documents_Controller {
                                             String recordTypeDeveloperName, String contentDocumentId){
         Id parentRecordId = Id.valueOf(recordId);
         if(String.isNotBlank(documentId)) document.Id = documentId;
-        if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType)
+        if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType){
             document.Referral__c = parentRecordId;
-        else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType)
+
+            List<Intake__c> intakeReferral = [
+            SELECT Id,case__c
+            FROM Intake__c
+            WHERE Referral__c = :parentRecordId
+            ORDER BY CreatedDate DESC
+            LIMIT 1
+        ];
+        if (!intakeReferral.isEmpty()) {
+            document.Intake__c = intakeReferral[0].Id;
+            if (intakeReferral[0].Case__c != null) {
+               document.Case__c = intakeReferral[0].case__c;  
+           }
+        }
+        } else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType){
             document.Case__c = parentRecordId;
-        else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType)
+            
+            List<Intake__c> casesByIntake = [
+            SELECT Id,Case__c,Referral__c
+            FROM Intake__c
+            WHERE Case__c = :parentRecordId
+            ORDER BY CreatedDate DESC
+            LIMIT 1
+        ];
+        if (!casesByIntake.isEmpty()) {
+            document.Intake__c = casesByIntake[0].Id;
+            if (casesByIntake[0].Case__c != null)
+               document.Case__c = casesByIntake[0].Case__c;
+            if (casesByIntake[0].Referral__c != null)
+               document.Referral__c = casesByIntake[0].Referral__c;
+        }
+       }
+
+        else if(parentRecordId.getSobjectType() == Schema.Intake__c.SObjectType){
             document.Intake__c = parentRecordId;
+
+            List<Intake__c> casesByIntake = [
+            SELECT Case__c,Referral__c
+            FROM Intake__c
+            WHERE Id = :parentRecordId
+            ORDER BY CreatedDate DESC
+            LIMIT 1
+        ];
+        if (!casesByIntake.isEmpty()) {
+            if (casesByIntake[0].Case__c != null)
+               document.Case__c = casesByIntake[0].Case__c;
+            if (casesByIntake[0].Referral__c != null)
+               document.Referral__c = casesByIntake[0].Referral__c;
+        }
+       }
         
         document.Document_Type__c = recordTypeDeveloperName;
 
@@ -393,6 +457,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         }
         return document;
     }
+
 
     /**
      * Content Distribution For File Download
@@ -559,10 +624,13 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public Boolean canEditNoteTypePL{get;set;}
         @AuraEnabled public Boolean canEditAllAsOwner{get;set;}
         @AuraEnabled public Boolean canEditOtherAsOwner{get;set;}
+        @AuraEnabled public Boolean canEditNoteTypePLCs{get;set;}
+        @AuraEnabled public Boolean canEditAllAsOwnerCs{get;set;}
+        @AuraEnabled public Boolean canEditOtherAsOwnerCs{get;set;}
         
         public Note(String recordId, String name, String notesType, String subject,
                         String description, Date meetingDate,String attendees, Decimal lengthOfMeeting, String lastModifiedOn, String lastModifiedBy,
-                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,String othermodeLocation,String noteSource,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEditNoteTypePL,Boolean canEditAllAsOwner,Boolean canEditOtherAsOwner){
+                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,String othermodeLocation,String noteSource,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEditNoteTypePL,Boolean canEditAllAsOwner,Boolean canEditOtherAsOwner,Boolean canEditNoteTypePLCs,Boolean canEditAllAsOwnerCs,Boolean canEditOtherAsOwnerCs){
             this.recordId = recordId;
             this.name = name;
             this.notesType = notesType;
@@ -585,6 +653,9 @@ public with sharing class ICY_Notes_Documents_Controller {
             this.canEditNoteTypePL = canEditNoteTypePL;
             this.canEditAllAsOwner = canEditAllAsOwner;
             this.canEditOtherAsOwner = canEditOtherAsOwner;
+             this.canEditNoteTypePLCs = canEditNoteTypePLCs;
+            this.canEditAllAsOwnerCs = canEditAllAsOwnerCs;
+            this.canEditOtherAsOwnerCs = canEditOtherAsOwnerCs;
         }
     }
 
@@ -593,6 +664,7 @@ public with sharing class ICY_Notes_Documents_Controller {
      */
     public class ParentwithDocument{
         @auraEnabled public Boolean isParentCompleted {get;set;}
+        @auraEnabled public Boolean isNotReReferral {get;set;}
         @auraenabled public List<Document> lstDocument  {get; set;}
     }
     /**

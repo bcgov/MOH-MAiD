@@ -5,6 +5,7 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import { encodeDefaultFieldValues } from 'lightning/pageReferenceUtils';
 
 //Apex Class Controllers
+ import getSobjectTypeFromId from '@salesforce/apex/YTS_Notes_Documents_Controller.getSobjectTypeFromId';
 import getRelatedContacts from '@salesforce/apex/YTS_Notes_Documents_Controller.getRelatedContacts';
 import getReferredByContact from '@salesforce/apex/ICY_Notes_Documents_Controller.getReferredByContact';
 
@@ -24,6 +25,8 @@ export default class IcyContactsComponent extends NavigationMixin(LightningEleme
     createEdit = false;
     createNewContact = false;
     editReferredBy= false;
+    sObjectType = null;
+
     connectedCallback() {
         this.init();
     }
@@ -31,32 +34,45 @@ export default class IcyContactsComponent extends NavigationMixin(LightningEleme
     /**
      * Component Initialize
      */
-    init() {
-                console.log('this.parentRecordId:::',JSON.stringify(this.parentRecordId));
-        this.showSpinner = true;
-        getRelatedContacts({ recordId: this.parentRecordId }).then(result => {
+init() {
+    console.log('this.parentRecordId:::', JSON.stringify(this.parentRecordId));
+    this.showSpinner = true;
+    
+    // Get the SObject type
+    getSobjectTypeFromId({ recordId: this.parentRecordId }).then(sObjectType => {
+        console.log('SObject Type:', sObjectType);
+        
+        // Fetch contacts
+        return getRelatedContacts({ recordId: this.parentRecordId }).then(result => {
             this.showSpinner = false;
-            console.log('$$ Result', result);
             if (result) {
-                this.contacts = [];
                 this.contacts = result.lstContacts;
-                this.showAddBtn = result.isParentCompleted;
+                if (sObjectType === 'Case') {
+                    console.log('in case');
+                    this.showAddBtn = result.isParentCompleted;
+                     console.log('Show Add Btn: ' + this.showAddBtn);
+                } else {
+                    console.log('not in case');
+                    console.log('isParentCompleted: ' + result.isParentCompleted);
+                    console.log('isNotReReferral: ' + result.isNotReReferralCon);
+                    this.showAddBtn = result.isParentCompleted && result.isNotReReferralCon;
+                    console.log('Show Add Btn: ' + this.showAddBtn);
+                }
             }
-        }).catch(error => {
-            this.showSpinner = false;
-            console.error('$$ Error Retrieving Contacts: ', error);
         });
+    }).catch(error => {
+        this.showSpinner = false;
+        console.error('Error: ', error);
+    });
 
-        
-        getReferredByContact({recordId: this.parentRecordId}).then(result=>{
-            console.log('$$ Referred  By: '+result);
-            if(result) this.referredBy = result;
-        }).catch(error=>{
-            console.error('$$ Error Retrieving referral Contacts: ', error);
-        })
-        
+    getReferredByContact({recordId: this.parentRecordId}).then(result=>{
+        console.log('Referred By: '+result);
+        if(result) this.referredBy = result;
+    }).catch(error=>{
+        console.error('Error Retrieving referral Contacts: ', error);
+    })
+}
 
-    }
 
 
     /**
