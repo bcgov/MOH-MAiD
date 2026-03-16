@@ -356,7 +356,7 @@
                                 <td bgcolor="#CCCCCC" class="rightColumnLinksBold">&raquo;</td>
                                 <td bgcolor="#CCCCCC"> <div class="rightColumnLinks" >
                                <a id="displayText" href="javascript:toggle();" style="color:black; text-decoration: none" >Contact PSO</a>
-                                <div id="toggleText" style="display: none"><p><b>Email:</b> <a href='mailto:PSO.IntegrateSupport@gov.bc.ca'>PSO.IntegrateSupport@gov.bc.ca</a> <br></br><!--br> <b>Phone:</b> 1-855-356-5609 </br--> </p>
+                                <div id="toggleText" style="display: none"><p><b>Email:</b> <a href='mailto:notifications@integratesupport.gov.bc.ca'>notifications@integratesupport.gov.bc.ca</a> <br></br><!--br> <b>Phone:</b> 1-855-356-5609 </br--> </p>
                                     </div> </div>
                                     </td>
                                     </tr>
