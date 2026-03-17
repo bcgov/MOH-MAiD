@@ -108,6 +108,14 @@
                                 field-level-help={displayTooltipOnCOnsentToEvaluation}>
                             </lightning-input>
                     </lightning-layout-item>
+                        <lightning-layout-item flexibility="auto" padding="around-small" size="12">
+                            <lightning-input 
+                                type="checkbox" 
+                                label="Child/Youth to be added to a waitlist" 
+                                checked={isWaitlistSelected} 
+                                onchange={handleWaitlistcheckboxChange}>
+                            </lightning-input>
+                    </lightning-layout-item>
 
                 </lightning-layout>
             </div>
