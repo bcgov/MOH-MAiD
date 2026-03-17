@@ -124,6 +124,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         List<Document> result  = new List<Document>();
         Map<Id, ICY_Document__c> docs = new Map<Id, ICY_Document__c>();
         ParentwithDocument retData = new ParentwithDocument();
+        Boolean isProgramLeader = false;
         
         if(parentRecordId.getSobjectType() == Schema.Referral__c.SObjectType) {
             docs = new Map<Id, ICY_Document__c>([SELECT Id, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Category__c, Sub_Category__c, Description__c, Document_Key_Words__c, CreatedDate, CreatedBy.Name, 
@@ -170,6 +171,9 @@ public with sharing class ICY_Notes_Documents_Controller {
                 attachmentMap.put(a.ParentId, a);
             }
 
+            // verify the role for the current running user if he is a Program leader
+            isProgramLeader = YTS_Utility.lookupRole('Program Leader');
+
             for(ICY_Document__c d: docs.values()){
                 Boolean isAttach = false;
                 String modifiedDate = YTS_Utility.dateFormat_eeeeMMMdyyyy(d.LastModifiedDate);
@@ -177,8 +181,8 @@ public with sharing class ICY_Notes_Documents_Controller {
                 String badgeCSS = d.Document_Type__c == 'Restricted'?'slds-theme_warning':'slds-theme_success';
                 String category = d.Category__c == 'Other'?d.Other_Document_Type__c:d.Category__c;
                  // To be able to Edit a Document either you are the creator of the doc  or the PL and the Document  type shouldn't be = Restricted
-                Boolean canEditDoc = (((d.CreatedById == UserInfo.getUserId()) ||(YTS_Utility.lookupRole('Program Leader'))) && (d.Document_Type__c=='Collaborative'))? true : false;
-                Boolean canEditDocName = (((d.CreatedById == UserInfo.getUserId()) ||(YTS_Utility.lookupRole('Program Leader'))) && (d.Document_Type__c=='Restricted'))? true : false;
+                Boolean canEditDoc = (((d.CreatedById == UserInfo.getUserId()) ||(isProgramLeader)) && (d.Document_Type__c=='Collaborative'))? true : false;
+                Boolean canEditDocName = (((d.CreatedById == UserInfo.getUserId()) ||(isProgramLeader)) && (d.Document_Type__c=='Restricted'))? true : false;
 
                 String docId ;
                 List<AllAttachments> attchList = new List<AllAttachments>();
