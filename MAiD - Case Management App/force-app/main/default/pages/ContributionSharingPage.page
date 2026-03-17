@@ -1,7 +1,0 @@
-<apex:page Standardcontroller="Contribution__c" extensions="ContributionSharingController" tabStyle="Contribution__c" id="thepage">
-
-
-    <apex:pageMessages />
-    <apex:detail subject="{!id}" rendered="{!rend}"/>
-
-</apex:page>
