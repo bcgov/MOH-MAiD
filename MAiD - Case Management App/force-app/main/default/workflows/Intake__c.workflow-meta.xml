@@ -8,7 +8,7 @@
             <field>ICY_Assigned_To__c</field>
             <type>userLookup</type>
         </recipients>
-        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
+        <senderAddress>notifications@integratesupport.gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>ICY_Email_Templates/ICY_Intake_Assignment_Notification_Latest</template>
     </alerts>
@@ -19,7 +19,7 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
+        <senderAddress>notifications@integratesupport.gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>ICY_Email_Templates/Intake_Ownership_Transfer</template>
     </alerts>
