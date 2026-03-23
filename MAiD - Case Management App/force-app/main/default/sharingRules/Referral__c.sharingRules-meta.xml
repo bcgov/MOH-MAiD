@@ -150,7 +150,7 @@
         <criteriaItems>
             <field>ICY_Geographic_Area__c</field>
             <operation>equals</operation>
-            <value>Mission Team 1,Mission Team 2</value>
+            <value>Mission Team 1,Mission Team 2,Mission Team 3</value>
         </criteriaItems>
         <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
     </sharingCriteriaRules>

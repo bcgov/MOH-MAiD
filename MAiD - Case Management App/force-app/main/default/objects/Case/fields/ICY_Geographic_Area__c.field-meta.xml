@@ -89,6 +89,11 @@
                 <label>Mission Team 2</label>
             </value>
             <value>
+                <fullName>Mission Team 3</fullName>
+                <default>false</default>
+                <label>Mission Team 3</label>
+            </value>
+            <value>
                 <fullName>Nanaimo-Ladysmith Team 1</fullName>
                 <default>false</default>
                 <label>Nanaimo-Ladysmith Team 1</label>
