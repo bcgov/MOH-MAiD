@@ -7,7 +7,7 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderAddress>notifications@integratesupport.gov.bc.ca</senderAddress>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>ICY_Email_Templates/Referral_Ownership_Transfer</template>
     </alerts>
@@ -18,7 +18,7 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderAddress>notifications@integratesupport.gov.bc.ca</senderAddress>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>ICY_Email_Templates/Referral_Status_Closed_Template</template>
     </alerts>
@@ -29,7 +29,7 @@
         <recipients>
             <type>owner</type>
         </recipients>
-        <senderAddress>notifications@integratesupport.gov.bc.ca</senderAddress>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>ICY_Email_Templates/Referral_Owner_Email_Template</template>
     </alerts>
@@ -41,7 +41,7 @@
             <field>ICY_Assigned_To__c</field>
             <type>userLookup</type>
         </recipients>
-        <senderAddress>notifications@integratesupport.gov.bc.ca</senderAddress>
+        <senderAddress>pso.integratesupport@gov.bc.ca</senderAddress>
         <senderType>OrgWideEmailAddress</senderType>
         <template>ICY_Email_Templates/ICY_Referral_Updated_Template</template>
     </alerts>
