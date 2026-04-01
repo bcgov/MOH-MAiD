@@ -1,7 +1,7 @@
 trigger ICY_SystemAccessRequestEmailTrigger on System_Access_Request__c (after insert) {
   List<Messaging.SingleEmailMessage> messageList = new List<Messaging.SingleEmailMessage>();
   OrgWideEmailAddress owea = new OrgWideEmailAddress();
-  owea=[select id,Address from OrgWideEmailAddress where displayname ='Integrate Support'];
+  owea=[select id,Address from OrgWideEmailAddress where displayname ='Integrate Notifications'];
   List<string> toAddress = new List<string>();
   toAddress.add(owea.Address);
   string emailTemplateName = 'ICY_Portal_Registration_Notification';

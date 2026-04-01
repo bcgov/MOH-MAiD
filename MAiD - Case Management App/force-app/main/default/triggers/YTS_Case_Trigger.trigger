@@ -29,6 +29,15 @@ trigger YTS_Case_Trigger on Case (before update, after insert, after update) {
           } else if (c.Activity_Status_Start_Date__c == null) {
               c.Activity_Status_Start_Date__c = System.today();
           }
+          // If ICY_Waitlisted__c is unchecked (changed from true to false), update removal date to today
+          if (oldCase.ICY_Waitlisted__c == true && c.ICY_Waitlisted__c == false) {
+              c.ICY_Child_Youth_removed_from_waitlist__c = System.today();
+          }
+
+           // If ICY_Waitlisted__c is checked  (changed from false to true), update ICY_Child_Youth_added_to_waitlist__c to today
+           if (oldCase.ICY_Waitlisted__c == false && c.ICY_Waitlisted__c == true) {
+              c.ICY_Child_Youth_added_to_waitlist__c = System.today();
+          }
       }
   }
 

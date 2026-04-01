@@ -6,9 +6,9 @@
     <formula>IF(
 AND(
 NOT(ISBLANK(Case_Created_Date__c)),
-NOT(ISBLANK(Case_Closed_Date__c))
+NOT(ISBLANK(ICY_Case_Close_Date__c))
 ),
-Case_Closed_Date__c - Case_Created_Date__c,
+ICY_Case_Close_Date__c- Case_Created_Date__c,
 NULL
 )</formula>
     <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
