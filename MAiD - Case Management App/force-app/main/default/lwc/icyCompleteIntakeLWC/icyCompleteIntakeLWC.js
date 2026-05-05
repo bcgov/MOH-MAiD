@@ -46,6 +46,7 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     documentType;
     documentTypeSigned;
     isConsentToEvaluationSelected = false;
+    isWaitlistSelected = false;
     displayTooltipOnCOnsentToEvaluation = ICY_ConsentToEvaluation__Tooltip ;
 
     get acceptedFormats() {
@@ -125,6 +126,10 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     handleCheckboxChange(event) {
     this.isConsentToEvaluationSelected = event.target.checked;
     }
+    
+    handleWaitlistcheckboxChange(event) {
+       this.isWaitlistSelected=event.target.checked;
+    }
 
     /**
      * Handle Chnage
@@ -190,7 +195,7 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
     handleSubmit() {
             this.showSpinner = true
             var caseId;
-
+            
             let casefields = { 'Status': 'Open', 'ICY_Consent__c': true,
                                 'RecordTypeId': this.getRecordTypeId('ICY Standard Case'),
                                 'ICY_Date_Intake_Happened__c': this.inTakeRec.fields.CreatedDate.value,
@@ -198,8 +203,15 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                                 'ICY_Geographic_Area__c':this.inTakeRec.fields.Referral__r.value.fields.ICY_Geographic_Area__c.value,
                                 'Referral__c':this.inTakeRec.fields.Referral__r.value.fields.Id.value,
                                 'Consent_to_Evaluation__c': this.isConsentToEvaluationSelected,
+                                'ICY_Waitlisted__c':this.isWaitlistSelected,    
                                 'Priority': this.inTakeRec.fields.Priority__c.value
                                 };
+            
+            // Set waitlist date when waitlist is selected
+            if (this.isWaitlistSelected) {
+                const today = new Date().toISOString().split('T')[0];
+                casefields['ICY_Child_Youth_added_to_waitlist__c'] = today;
+            }
 
             // Record details to pass to create method with api name of Object.
             let objCase = { 'apiName': 'Case', fields: casefields };
@@ -217,7 +229,8 @@ export default class IcyCompleteIntakeLWC extends NavigationMixin(LightningEleme
                             'Status__c': 'Complete',
                             'ICY_Rationale__c': this.rationale, //Josh
                             'Case__c': response.id,
-                            'Consent_to_Evaluation__c' : this.isConsentToEvaluationSelected
+                            'Consent_to_Evaluation__c' : this.isConsentToEvaluationSelected,
+                            'Waitlisted__c': this.isWaitlistSelected
                         }
                         var objIntake = { fields: inTakefields };
 

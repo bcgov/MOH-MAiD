@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Waitlisted__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BCMOHAD-31105 Child/Youth to be added to a waitlist</description>
+    <label>Child/Youth to be added to a waitlist</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

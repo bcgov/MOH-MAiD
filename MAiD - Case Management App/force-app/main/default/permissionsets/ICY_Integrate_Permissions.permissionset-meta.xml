@@ -314,6 +314,16 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
+        <field>Case.ICY_Child_Youth_added_to_waitlist__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.ICY_Child_Youth_removed_from_waitlist__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
         <field>Case.ICY_Closed_By__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -380,6 +390,11 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Case.ICY_Searchable_DOB__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Case.ICY_Waitlisted__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
@@ -1410,6 +1425,11 @@
     <fieldPermissions>
         <editable>true</editable>
         <field>Intake__c.Suggested_Service_Response__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Intake__c.Waitlisted__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>

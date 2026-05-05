@@ -89,6 +89,18 @@
                 <field>Priority</field>
             </layoutItems>
             <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ICY_Waitlisted__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ICY_Child_Youth_added_to_waitlist__c</field>
+            </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>ICY_Child_Youth_removed_from_waitlist__c</field>
+            </layoutItems>
+            <layoutItems>
                 <behavior>Readonly</behavior>
                 <field>Description</field>
             </layoutItems>
