@@ -4,7 +4,7 @@
     <assignments>
         <name>Assign_Owner_Central_Coast</name>
         <label>Assign Owner Central Coast</label>
-        <locationX>6122</locationX>
+        <locationX>6386</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -56,7 +56,7 @@
     <assignments>
         <name>Assign_Owner_Cowichan_Valley</name>
         <label>Assign Owner Cowichan Valley</label>
-        <locationX>6386</locationX>
+        <locationX>6650</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -69,7 +69,7 @@
     <assignments>
         <name>Assign_Owner_Delta</name>
         <label>Assign Owner Delta</label>
-        <locationX>6650</locationX>
+        <locationX>6914</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -82,7 +82,7 @@
     <assignments>
         <name>Assign_Owner_Fraser_Cascades</name>
         <label>Assign Owner Fraser Cascades</label>
-        <locationX>5858</locationX>
+        <locationX>6122</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -108,7 +108,7 @@
     <assignments>
         <name>Assign_Owner_Gold_Trail</name>
         <label>Assign Owner Gold Trail</label>
-        <locationX>6914</locationX>
+        <locationX>7178</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -121,7 +121,7 @@
     <assignments>
         <name>Assign_Owner_Kootenay_Columbia</name>
         <label>Assign Owner Kootenay-Columbia</label>
-        <locationX>5594</locationX>
+        <locationX>5858</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -197,6 +197,19 @@
         </assignmentItems>
     </assignments>
     <assignments>
+        <name>Assign_Owner_Mission_Team3</name>
+        <label>Assign Owner Mission Team3</label>
+        <locationX>4802</locationX>
+        <locationY>611</locationY>
+        <assignmentItems>
+            <assignToReference>$Record.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_record_Mission_Team3.Id</elementReference>
+            </value>
+        </assignmentItems>
+    </assignments>
+    <assignments>
         <name>Assign_Owner_Nanaimo_Ladysmith_Team1</name>
         <label>Assign Owner Nanaimo-Ladysmith Team1</label>
         <locationX>3218</locationX>
@@ -251,7 +264,7 @@
     <assignments>
         <name>Assign_Owner_Nicola_Similkameen</name>
         <label>Assign Owner  Nicola Similkameen</label>
-        <locationX>7178</locationX>
+        <locationX>7442</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -264,7 +277,7 @@
     <assignments>
         <name>Assign_Owner_North_Okanagan_Shuswap</name>
         <label>Assign Owner North Okanagan Shuswap</label>
-        <locationX>5330</locationX>
+        <locationX>5594</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -290,7 +303,7 @@
     <assignments>
         <name>Assign_Owner_Pacific_Rim</name>
         <label>Assign Owner Pacific Rim</label>
-        <locationX>5066</locationX>
+        <locationX>5330</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -303,7 +316,7 @@
     <assignments>
         <name>Assign_Owner_Peace_River_South</name>
         <label>Assign Owner Peace River South</label>
-        <locationX>7442</locationX>
+        <locationX>7706</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -316,7 +329,7 @@
     <assignments>
         <name>Assign_Owner_qathet_Powell_River</name>
         <label>Assign Owner qathet(Powell River)</label>
-        <locationX>4802</locationX>
+        <locationX>5066</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -329,7 +342,7 @@
     <assignments>
         <name>Assign_Owner_Qualicum</name>
         <label>Assign Owner Qualicum</label>
-        <locationX>7706</locationX>
+        <locationX>7970</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -394,7 +407,7 @@
     <assignments>
         <name>Assign_Owner_Surrey</name>
         <label>Assign Owner Surrey</label>
-        <locationX>7970</locationX>
+        <locationX>8234</locationX>
         <locationY>611</locationY>
         <assignmentItems>
             <assignToReference>$Record.OwnerId</assignToReference>
@@ -407,7 +420,7 @@
     <decisions>
         <name>Check_If_Referral_is_ICY</name>
         <label>Check If Referral is ICY</label>
-        <locationX>4934</locationX>
+        <locationX>6518</locationX>
         <locationY>287</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -436,7 +449,7 @@
     <decisions>
         <name>Update_Referral_Owner_Id</name>
         <label>Update Referral Owner Id</label>
-        <locationX>3218</locationX>
+        <locationX>4274</locationX>
         <locationY>395</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -708,6 +721,21 @@
                 <targetReference>Get_record_Mission_Team2</targetReference>
             </connector>
             <label>Mission Team 2</label>
+        </rules>
+        <rules>
+            <name>Mission_Team_3</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.ICY_Geographic_Area__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Mission Team 3</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Get_record_Mission_Team3</targetReference>
+            </connector>
+            <label>Mission Team 3</label>
         </rules>
         <rules>
             <name>qathet_Powell_River</name>
@@ -1014,7 +1042,7 @@
     <recordLookups>
         <name>Get_record_Fraser_Cascades</name>
         <label>Get record Fraser Cascades</label>
-        <locationX>5858</locationX>
+        <locationX>6122</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1035,7 +1063,7 @@
     <recordLookups>
         <name>Get_record_Kootenay_Columbia</name>
         <label>Get record Kootenay-Columbia</label>
-        <locationX>5594</locationX>
+        <locationX>5858</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1159,6 +1187,27 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_record_Mission_Team3</name>
+        <label>Get record Mission Team3</label>
+        <locationX>4802</locationX>
+        <locationY>503</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_Owner_Mission_Team3</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>ICYMissionTeam3</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <name>Get_record_Nanaimo_Ladysmith_Team1</name>
         <label>Get record Nanaimo-Ladysmith Team1</label>
         <locationX>3218</locationX>
@@ -1245,7 +1294,7 @@
     <recordLookups>
         <name>Get_record_North_Okanagan_Shuswap</name>
         <label>Get record North Okanagan Shuswap</label>
-        <locationX>5330</locationX>
+        <locationX>5594</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1287,7 +1336,7 @@
     <recordLookups>
         <name>Get_record_Pacific_Rim</name>
         <label>Get record Pacific Rim</label>
-        <locationX>5066</locationX>
+        <locationX>5330</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1308,7 +1357,7 @@
     <recordLookups>
         <name>Get_record_qathet_Powell_River</name>
         <label>Get record qathet(Powell River)</label>
-        <locationX>4802</locationX>
+        <locationX>5066</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1413,7 +1462,7 @@
     <recordLookups>
         <name>Get_Records_Central_Coast</name>
         <label>Get Records Central Coast</label>
-        <locationX>6122</locationX>
+        <locationX>6386</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1434,7 +1483,7 @@
     <recordLookups>
         <name>Get_Records_Cowichan_Valley</name>
         <label>Get Records Cowichan Valley</label>
-        <locationX>6386</locationX>
+        <locationX>6650</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1455,7 +1504,7 @@
     <recordLookups>
         <name>Get_Records_Delta</name>
         <label>Get Records Delta</label>
-        <locationX>6650</locationX>
+        <locationX>6914</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1476,7 +1525,7 @@
     <recordLookups>
         <name>Get_Records_Gold_Trail</name>
         <label>Get Records Gold Trail</label>
-        <locationX>6914</locationX>
+        <locationX>7178</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1497,7 +1546,7 @@
     <recordLookups>
         <name>Get_Records_Nicola_Similkameen</name>
         <label>Get Records Nicola Similkameen</label>
-        <locationX>7178</locationX>
+        <locationX>7442</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1518,7 +1567,7 @@
     <recordLookups>
         <name>Get_Records_Peace_River_South</name>
         <label>Get Records Peace River South</label>
-        <locationX>7442</locationX>
+        <locationX>7706</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1539,7 +1588,7 @@
     <recordLookups>
         <name>Get_Records_Qualicum</name>
         <label>Get Records Qualicum</label>
-        <locationX>7706</locationX>
+        <locationX>7970</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1560,7 +1609,7 @@
     <recordLookups>
         <name>Get_Records_Surrey</name>
         <label>Get Records Surrey</label>
-        <locationX>7970</locationX>
+        <locationX>8234</locationX>
         <locationY>503</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1579,7 +1628,7 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <start>
-        <locationX>4808</locationX>
+        <locationX>6392</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Check_If_Referral_is_ICY</targetReference>
@@ -1712,6 +1761,16 @@
         <isOutput>false</isOutput>
         <value>
             <stringValue>ICY_Mission_Team_2</stringValue>
+        </value>
+    </variables>
+    <variables>
+        <name>ICYMissionTeam3</name>
+        <dataType>String</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <value>
+            <stringValue>ICY_Mission_Team_3</stringValue>
         </value>
     </variables>
     <variables>
