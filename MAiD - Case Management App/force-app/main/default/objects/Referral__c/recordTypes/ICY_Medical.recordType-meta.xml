@@ -346,6 +346,10 @@
             <default>false</default>
         </values>
         <values>
+            <fullName>Mission Team 3</fullName>
+            <default>false</default>
+        </values>
+        <values>
             <fullName>Nanaimo-Ladysmith Team 1</fullName>
             <default>false</default>
         </values>
