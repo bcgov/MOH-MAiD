@@ -51,4 +51,53 @@ public with sharing class ICY_CaseNotesHandler {
             update notesByReferral;
         }
     }
+
+    /**
+     * Returns the active Program Leader email addresses for the provided Geographic Area.
+     * 
+     * The method finds the queue matching the Geographic Area, gets the Public Group
+     * assigned to that queue, and returns the active user email addresses from that
+     * Public Group.
+     *
+     * @param geoArea Geographic Area value from the Case.
+     * @return List of active Program Leader email addresses for the matching queue Public Group.
+    */
+    
+    public static List<String> getProgramLeaderEmailsByGeoArea(String geoArea) {
+        if(String.isBlank(geoArea)) { 
+            return new List<String>();
+        }
+
+         String queueName = '%' + geoArea;
+
+        Set<Id> groupIds = new Set<Id>();
+        for(GroupMember gm : [
+            SELECT UserOrGroupId
+            FROM GroupMember
+            WHERE Group.Type = 'Queue'
+            AND Group.Name LIKE :queueName
+        ]) {
+            groupIds.add(gm.UserOrGroupId);
+        }
+
+        if(groupIds.isEmpty()) {
+             return new List<String>();
+        }
+        Set<String> emails = new Set<String>();
+        for(User u : [
+            SELECT Email
+            FROM User
+            WHERE IsActive = true
+            AND Email != null
+            AND Id IN (
+                SELECT UserOrGroupId
+                FROM GroupMember
+                WHERE GroupId IN :groupIds
+            )
+        ]) {
+            emails.add(u.Email);
+        }
+
+        return new List<String>(emails);
+    }
 }
