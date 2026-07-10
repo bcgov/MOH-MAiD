@@ -16,6 +16,7 @@ global class ICY_BatchToSendInactiveCaseNotes implements Database.Batchable<SObj
         'SELECT Id, OwnerId, CaseNumber, ICY_Geographic_Area__c ' +
         'FROM Case ' +
         'WHERE ICY_Last_Case_Note_Date__c < LAST_N_DAYS:' + daysToCountInactiveNotes +
+        ' AND Status != \'Closed\' ' +
         ' ORDER BY ICY_Geographic_Area__c';
 
     return Database.getQueryLocator(query);
