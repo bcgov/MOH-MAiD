@@ -30,7 +30,7 @@ public without sharing class ICY_CaseMemberTriggerHandler {
                         String emailId = [SELECT Email FROM USER WHERE ID=:teamMemberUserId].Email;
                         Messaging.SingleEmailMessage semail = new Messaging.SingleEmailMessage();
                         semail.setToAddresses(new List<String>{emailId});
-                        // if(orgwideEmailId != null) semail.setOrgWideEmailAddressId(orgwideEmailId);
+                        if(orgwideEmailId != null) semail.setOrgWideEmailAddressId(orgwideEmailId);
                         semail.setSubject('Case Assignment Notification');
                         String htmlBody = 'Hello,<br/>' + 'You have been added to case <a href="'+URL.getSalesforceBaseUrl().toExternalForm()+'/'+objCaseMember.ICY_Case__c+'">'+ref.Case__r.casenumber+'</a>.'+'</br> Please follow this link for details. <br/>' + 'Thank you';
                         semail.setHtmlBody(htmlBody);
