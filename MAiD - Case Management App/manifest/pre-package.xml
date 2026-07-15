@@ -11,5 +11,5 @@
         <members>TaskSubject</members>
         <name>StandardValueSet</name>
     </types>
-    <version>61.0</version>
+    <version>65.0</version>
 </Package>
