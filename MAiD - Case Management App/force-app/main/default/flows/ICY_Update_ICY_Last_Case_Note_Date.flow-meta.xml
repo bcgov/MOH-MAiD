@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Flow xmlns="http://soap.sforce.com/2006/04/metadata">
-    <apiVersion>63.0</apiVersion>
+    <apiVersion>65.0</apiVersion>
     <description>version 2- bypassing the flow updates for the closed cases</description>
     <environments>Default</environments>
     <interviewLabel>ICY Update ICY Last Case Note Date {!$Flow.CurrentDateTime}</interviewLabel>
