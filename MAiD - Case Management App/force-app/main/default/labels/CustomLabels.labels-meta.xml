@@ -439,4 +439,11 @@ Supplemental</value>
         <shortDescription>YTS_Interview_Generic_Validation_Msg</shortDescription>
         <value>Please complete required fields.</value>
     </labels>
+    <labels>
+        <fullName>ICY_User_Role</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ICY_User_Role</shortDescription>
+        <value>ICY</value>
+    </labels>
 </CustomLabels>
