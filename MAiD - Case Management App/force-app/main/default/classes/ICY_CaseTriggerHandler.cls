@@ -31,8 +31,6 @@ public class ICY_CaseTriggerHandler {
                 caseObject.ICY_Geographic_Area__c
             );
 
-            System.debug('plGroupName'+plGroupName);
-
             Set<Id> recipientUserIds = new Set<Id>();
 
             // Add only direct User members. Ignore all 00G members.
@@ -80,7 +78,7 @@ public class ICY_CaseTriggerHandler {
                 }
 
                 // Exclude users assigned to the ICY role.
-                Boolean hasExcludedRole = userObject.UserRoleId != null && userObject.UserRole.DeveloperName == 'ICY';
+                Boolean hasExcludedRole = userObject.UserRoleId != null && userObject.UserRole.DeveloperName == System.Label.ICY_User_Role;
 
                 if(recipientUserIds.contains(userObject.Id) &&
                    !hasExcludedRole &&
@@ -88,8 +86,6 @@ public class ICY_CaseTriggerHandler {
                     toAddresses.add(userObject.Email);
                 }
             }
-
-            System.debug('toAddresses'+toAddresses);
 
             if(toAddresses.isEmpty()){
                 continue;
