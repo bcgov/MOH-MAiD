@@ -28,11 +28,11 @@ public class ICY_CaseTriggerHandler {
 
             String plGroupName =
                 getPLGroupDeveloperName(
-                    caseObject.ICY_Geographic_Area__c
-                );
-		
+                caseObject.ICY_Geographic_Area__c
+            );
+
             System.debug('plGroupName'+plGroupName);
-            
+
             Set<Id> recipientUserIds = new Set<Id>();
 
             // Add only direct User members. Ignore all 00G members.
@@ -73,20 +73,24 @@ public class ICY_CaseTriggerHandler {
             User whoClosed;
 
             for(User userObject : [
-                SELECT Id, Name, Email FROM User  WHERE Id IN :userIdsToQuery AND IsActive = true
+                SELECT Id, Name, Email, UserRoleId, UserRole.DeveloperName FROM User  WHERE Id IN :userIdsToQuery AND IsActive = true
             ]){
                 if(userObject.Id == closedById){
                     whoClosed = userObject;
                 }
 
+                // Exclude users assigned to the ICY role.
+                Boolean hasExcludedRole = userObject.UserRoleId != null && userObject.UserRole.DeveloperName == 'ICY';
+
                 if(recipientUserIds.contains(userObject.Id) &&
+                   !hasExcludedRole &&
                    String.isNotBlank(userObject.Email)){
                     toAddresses.add(userObject.Email);
                 }
             }
-			
+
             System.debug('toAddresses'+toAddresses);
-            
+
             if(toAddresses.isEmpty()){
                 continue;
             }
@@ -114,7 +118,7 @@ public class ICY_CaseTriggerHandler {
         }
     }
 	
-	
+
     private static String getPLGroupDeveloperName(
         String geographicArea
     ){
@@ -126,7 +130,7 @@ public class ICY_CaseTriggerHandler {
         normalizedArea = normalizedArea.replace(' Team ', ' ');
         normalizedArea = normalizedArea.replaceAll('\\s+[0-9]+$', '');
         normalizedArea = normalizedArea.replaceAll('\\s+', ' ').trim();
-        
+
         if(normalizedArea.equalsIgnoreCase('qathet Powell River')){
             normalizedArea = 'Qathet Powell River';
         }
