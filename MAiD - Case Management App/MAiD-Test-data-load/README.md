@@ -21,10 +21,10 @@ MAID - CASE MANAGEMENT APP/
 ├── .github/
 ├── .sf/
 ├── .sfdx/
-├── force-app/main/default/     ← your deployable metadata, untouched
-├── manifest/                   ← your package.xml, untouched
-├── scripts/                    ← your existing SFDX scripts, untouched
-├── MAiD-Test-data-load/             ← this tool, self-contained
+├── force-app/main/default/ 
+├── manifest/                   
+├── scripts/                  
+├── MAiD-Test-data-load/            
 │   ├── scripts/
 │   │   ├── load_test_data.py
 │   │   ├── mapper.py
@@ -33,7 +33,7 @@ MAID - CASE MANAGEMENT APP/
 │   ├── mapping_config.yaml
 │   ├── requirements.txt
 │   ├── .gitignore
-│   └── README.md               ← you are here
+│   └── README.md              
 ├── package.json
 └── sfdx-project.json
 ```
