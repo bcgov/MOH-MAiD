@@ -1,0 +1,671 @@
+# mapping_config.yaml (ICY)
+#
+# Ordered pipeline for the ICY sandbox test-data load, replacing the manual
+# "ICY Test Data Seeding Procedure" doc. Stages run top-to-bottom; each
+# stage's export_as becomes available to every LATER stage's lookups.
+#
+# *** HOW "OLD_ID -> new Id" REFERENCE TABLES ACTUALLY WORK ***
+#
+# Unlike MAiD (where Account/Case have real, pre-existing business-key
+# fields - College_ID__pc, PHN__c - that persist on the inserted record and
+# can be queried afterward), most ICY objects' `OLD_ID`/`OD_ID`/`ID` columns
+# are PURE CSV bookkeeping - never sent to the org at all - so there's
+# nothing to query for afterward unless we give ourselves a way to.
+#
+# Three mechanisms are used, per object, depending on what's actually
+# available:
+#
+# 1. `bookkeeping_field` (fully automated) - for Case_Contact, Referral,
+#    Intake, and Have_And_Needs: `OLDNAME__C` is confirmed 100% blank in
+#    every row of the real data, so it's safe to repurpose - the engine
+#    writes the OLD_ID-style value into it before insert, then queries it
+#    back afterward, same mechanism MAiD relies on, just on a repurposed
+#    field instead of a pre-existing business key.
+#
+# 2. `type: composite_insert` (fully automated, no manual step) - for
+#    Account, Case, and YTS_Transition_Plan: no safe spare field exists on
+#    these 3 (checked - their only blank columns are non-createable system
+#    fields or legitimate blank business fields like Case's ClosedDate), so
+#    bookkeeping_field isn't an option. Instead of a human Data
+#    Loader/Inspector upload, these use Salesforce's Composite/SObject Tree
+#    API (via sf_runner.composite_tree_insert_batch): each record is tagged
+#    with a client-supplied referenceId (the row's OLD_ID), and Salesforce
+#    echoes the new real Id back paired with it in the SAME response - no
+#    separate query, no manual step. Batched at 200 records/call (a hard
+#    Salesforce limit) with a local progress file
+#    (output/<Stage>_composite_tree_progress.json) so a partial failure on
+#    a large object doesn't re-insert already-succeeded batches on retry.
+#
+# 3. `type: manual_insert` (still supported, not currently used by any
+#    stage) - the original one-manual-step fallback for objects like the
+#    3 above: engine prepares the CSV and writes it to output/, a human
+#    uploads it via Data Loader/Inspector and saves the success report's
+#    Old_ID/ID columns as `reference_file`. Kept as an option in case a
+#    future object needs genuine human review, or is too large/unusual for
+#    Composite Tree batching to make sense.
+#
+# *** MANUAL INPUT STILL NEEDED PER ORG (validate checks all of these) ***
+#
+# 1. record_type_static_overrides (Case_Contact, Account, Intake stages) -
+#    developer_name must be a real RecordType Developer Name in the target
+#    org (Setup > Object Manager > <Object> > Record Types) - these three
+#    objects' CSVs only contain a raw OLD-org RecordTypeId with no name
+#    attached, so there's no way to derive it automatically.
+#
+# 2. set_fields_from_query (Case, Case_Member, YTS_Have_And_Needs stages) -
+#    each must resolve to EXACTLY one User in the target org (the source
+#    procedure says OwnerId/ICY_User__c must be "a valid ICY User") - the
+#    query itself is portable across orgs already, but confirm it still
+#    matches exactly one person if this ever runs against a very different
+#    org setup.
+
+flow_api_name: null  # ICY doesn't appear to have an equivalent duplicate-prevention Flow like MAiD's - confirm and fill in if one exists.
+
+stages:
+  # ------------------------------------------------------------------
+  # Stage 0: Users - upsert on Username, with Profile/UserRole resolution
+  # (the two fields the original procedure's Data Loader mapping dialog
+  # needed manual correction for - see screenshot "PROFILENAME__C =
+  # Profile:Name" / "UserRole = UserRole:Name").
+  # ------------------------------------------------------------------
+  - name: Users
+    type: upsert_users
+    input_csv: data/ICY_Test Users.csv
+    sobject: User
+    upsert_external_id: Username
+    special_lookups:
+      - source_column: PROFILENAME__C
+        target_column: ProfileId
+        query_sobject: Profile
+        match_field: Name
+        drop_source: true
+    # 10 rows reference PROFILENAME__C='PT1'/'PT2', which don't exist as a
+    # Profile in any org checked - and inspecting those specific 10 rows
+    # shows they aren't legitimate new test personas at all: one is the
+    # admin user's own old UAT username (would silently overwrite the real
+    # admin's Profile if forced through), one is an exempt user's real name
+    # under a completely different username (would create a duplicate
+    # account for that person instead of updating their real one), one
+    # belongs to the other tool's (MAiD) UAT sandbox, and two look like
+    # Salesforce's own auto-generated placeholder usernames. Rather than
+    # fail the whole batch on REQUIRED_FIELD_MISSING or risk touching real
+    # accounts unsafely, these rows are skipped entirely once ProfileId
+    # fails to resolve.
+    drop_rows_if_blank:
+      - ProfileId
+    # CORRECTION vs the original screenshot: that Data Loader dialog showed
+    # a "UserRole -> UserRole:Name" mapping, implying a readable role-name
+    # column existed in whatever file was used there. The actual
+    # ICY_Test_Users.csv provided only has USERROLEID - a raw OLD-org Id
+    # with no name attached (same ambiguity as the RecordType-only-Id
+    # cases elsewhere in this file). There's no way to resolve that
+    # automatically without a name, so it's dropped here rather than sent
+    # as-is (which would error - it's not a valid Id in the new org).
+    # If specific test users actually need a UserRole assigned, that's a
+    # manual follow-up after the load, not something this config can infer.
+    drop_columns:
+      - USERROLEID
+      # Not a real field on User in this org under any casing (confirmed via
+      # org describe) - likely a UserPreferences flag not available in this
+      # org/API version. Every row has it populated, so it must be dropped
+      # or the whole upsert job fails on an unrecognized column.
+      - USERPREFERENCESHIDELEGACYRETIREMENTMODAL
+      # Raw OLD-org User Id (all 298 rows populated) - this is an upsert
+      # keyed on Username, not Id, and Salesforce rejects the whole job with
+      # "cannot specify Id in an insert call" for any row that doesn't match
+      # an existing Username (i.e. every genuinely new row) if a literal Id
+      # column is present at all.
+      - ID
+      # Real IDIR-style SSO Federation Ids (183/298 rows), but stale/OLD-org
+      # in this context - collided with 86 already-existing accounts in this
+      # sandbox ("This Federation ID is already in use"). Not needed for
+      # ICY test/QA purposes, so it's dropped rather than carried over.
+      - FEDERATIONIDENTIFIER
+      # Not required by Salesforce (auto-generated if omitted) and collided
+      # with 195 already-existing accounts in this sandbox
+      # ("Duplicate Nickname") for the same underlying reason as
+      # FederationIdentifier above - dropped rather than carried over.
+      - COMMUNITYNICKNAME
+    # Per the PDF: "make sure User names are populated correctly according to
+    # destination sandbox" - this source file still carries literal UAT
+    # sandbox usernames (e.g. charlotte@icySOSEUATpersona.com), which fail
+    # with DUPLICATE_USERNAME because Salesforce enforces username
+    # uniqueness GLOBALLY across every org, not just this one - the real
+    # UAT sandbox already owns those exact strings. fix_username_domain_token
+    # is resolved at deploy time against whatever --org alias is passed
+    # (case-insensitive match, replaced with the alias in lowercase to match
+    # this org's own real-user username convention, e.g. "...sosehfdv") -
+    # never hardcoded, so the same config works unchanged against any
+    # sandbox this gets pointed at.
+    fix_username_domain_token: SOSEUAT
+    # NOTE: deactivating all-but-4 users beforehand (per the procedure) is
+    # a separate manual/human-judgment step - not automated here on purpose,
+    # since deciding WHICH users to keep active is a business decision, not
+    # a mechanical transform.
+
+  # ------------------------------------------------------------------
+  # Stage 1: Case Contact - inserted WITHOUT its Case/Referral/Intake links
+  # (those don't exist yet); those get filled in later by Case_Contact_Update.
+  # rename_columns below comes directly from ICY_CaseContact_Mapping.sdl.
+  # ------------------------------------------------------------------
+  - name: Case_Contact
+    type: insert
+    input_csv: data/ICY_CaseContact.csv
+    sobject: Case_Contact__c   # CONFIRM: inferred from screenshot (ICY_Referred_By__r -> Case_Contact__c)
+    rename_columns:
+      CONTACT_PERSON_WORK_PHONE_EXTENSION__C: Contact_Person_Work_Phone_Extension__c
+      CONTACT_PERSON_CELL_PHONE_NUMBER__C: Contact_Person_Cell_Phone_Number__c
+      CONTACT_PERSON_EMAIL_ADDRESS__C: Contact_Person_Email_Address__c
+      MAILING_ADDRESS_LINE2__C: Mailing_Address_Line2__c
+      PRIMARY_REFERRAL_CONTACT__C: Primary_Referral_Contact__c
+      CONTACT__C: Contact__c
+      CONTACT_PERSON_PROFESSION_ROLE__C: Contact_Person_Profession_Role__c
+      OLDNAME__C: OldName__c
+      RELATIONSHIP_SUBTYPE__C: Relationship_Subtype__c
+      CONTACT_PERSON_LAST_NAME__C: Contact_Person_Last_Name__c
+      INACTIVE_DATE__C: Inactive_Date__c
+      PREFERRED_METHOD_OF_CONTACT__C: Preferred_method_of_contact__c
+      MAILING_ADDRESS_LINE1__C: Mailing_Address_Line1__c
+      ORGANIZATION_NAME__C: Organization_Name__c
+      SUPPORT_TEAM_MEMBER__C: Support_Team_Member__c
+      CONTACT_SUBTYPE__C: Contact_Subtype__c
+      MAILING_ADDRESS_POSTAL_CODE__C: Mailing_Address_Postal_Code__c
+      IS_ICY_CONTACT__C: Is_ICY_Contact__c
+      CONTACT_PERSON_HOME_PHONE_NUMBER__C: Contact_Person_Home_Phone_Number__c
+      OTHER_RELATIONSHIP__C: Other_Relationship__c
+      CONTACT_NOTE__C: Contact_note__c
+      CONTACT_PERSON_HOME_PHONE_EXTENSION__C: Contact_Person_Home_Phone_Extension__c
+      PROFESSIONAL_IDENTIFYING_NUMBER__C: Professional_Identifying_Number__c
+      RECORDTYPEID: RecordTypeId
+      CONTACT_PERSON_WORK_PHONE_NUMBER__C: Contact_Person_Work_Phone_Number__c
+      MAILING_ADDRESS_CITY__C: Mailing_Address_City__c
+      PROFESSION_ROLE__C: Profession_Role__c
+      CONTACT_PERSON_FIRST_NAME__C: Contact_Person_First_Name__c
+      INACTIVE__C: Inactive__c
+      MAILING_ADDRESS_PROVINCE__C: Mailing_Address_Province__c
+      CONTACT_TYPE__C: Contact_Type__c
+    record_type_static_overrides:
+      - target_column: RecordTypeId
+        developer_name: ICY_Case_Contact   # confirmed via org query - only active RecordType on Case_Contact__c
+    # Per the procedure: "Don't include CASE__C/INTAKE__C/REFERRAL__C/OLD_ID/
+    # OLD_CASE/OLD_INTAKE/OLD_REFERRAL" on this first insert. CASE__C/
+    # INTAKE__C/REFERRAL__C are confirmed 100% blank in the source data (no
+    # explicit drop needed), but OLD_CASE/OLD_INTAKE/OLD_REFERRAL are real,
+    # partially-populated bookkeeping columns (not real Salesforce fields)
+    # still needed later by Case_Contact_Update's own lookups - drop them
+    # here only, so the initial insert doesn't choke on an unrecognized
+    # column name.
+    drop_columns:
+      - OLD_CASE
+      - OLD_INTAKE
+      - OLD_REFERRAL
+    export_key_field: OLD_ID
+    bookkeeping_field: OldName__c   # confirmed 100% blank in source data - safe to repurpose
+    export_as: case_contact
+
+  # ------------------------------------------------------------------
+  # Stage 2: Account (Person Account)
+  # ------------------------------------------------------------------
+  - name: Account
+    type: composite_insert
+    input_csv: data/ICY_Account.csv   # confirm this is the correct one vs ICY_Acount.csv (likely duplicate/typo)
+    sobject: Account
+    record_type_static_overrides:
+      - target_column: RecordTypeId
+        developer_name: ICY_Person_Account   # confirmed via org query - active Person Account RT matching the PDF's "Person Account Record Type" instruction
+    # No safe field exists to auto-build a reference table for Account the
+    # bookkeeping_field way (see top-of-file comment) - automated instead
+    # via the Composite/SObject Tree API (composite_insert), no manual step.
+    export_key_field: OLD_ID
+    export_as: account
+
+  # ------------------------------------------------------------------
+  # Stage 3: Referral - depends on Case_Contact (ICY_Referred_By__c)
+  # ------------------------------------------------------------------
+  - name: Referral
+    type: insert
+    input_csv: data/ICY_Referral.csv
+    sobject: Referral__c   # CONFIRM object API name
+    rename_columns:
+      OLDNAME__C: OldName__c   # matches confirmed real field casing from Case_Contact's .sdl mapping
+    # "Other" was a valid value in the OLD org but isn't one of this org's
+    # restricted picklist values for ICY_Preferred_Method_of_Contact__c
+    # (Cell Phone / Home Phone / Other Phone / Email) - confirmed
+    # INVALID_OR_NULL_FOR_RESTRICTED_PICKLIST on 4 rows. Per user decision:
+    # map to "Other Phone", the closest equivalent.
+    value_remap:
+      ICY_PREFERRED_METHOD_OF_CONTACT__C:
+        Other: Other Phone
+    special_lookups:
+      - source_column: "RecordType:RecordType-Name"
+        target_column: RecordTypeId
+        query_sobject: RecordType
+        match_field: Name
+        drop_source: true
+      - source_column: "OWNER:Group-Name"
+        target_column: OwnerId
+        query_sobject: Group
+        match_field: Name
+        drop_source: true
+    lookups:
+      - source_column: "OLD_ICY_REFERRED_BY__C (Case Contact)"
+        target_column: ICY_Referred_By__c
+        reference: case_contact
+        drop_source: true
+    # NOTE: CASE__C stays blank here (Case doesn't exist yet, confirmed 100%
+    # blank in the source data) - filled in later by Referral_Update, same
+    # circular-dependency pattern as Case_Contact above. OLD_CASE, however,
+    # IS partially populated (116/348 rows) and is not a real Salesforce
+    # field - it's only needed later by Referral_Update's own lookup, so
+    # drop it here to avoid the initial insert choking on an unrecognized
+    # column name.
+    drop_columns:
+      - OLD_CASE
+    export_key_field: OLD_ID
+    bookkeeping_field: OldName__c   # confirmed 100% blank in source data - safe to repurpose
+    export_as: referral
+
+  # ------------------------------------------------------------------
+  # Stage 4: Intake - depends on Referral. Note: Intake's own identity
+  # column in the source CSV is "ID", not "OLD_ID" like every other
+  # object - export_key_field reflects that inconsistency deliberately.
+  # ------------------------------------------------------------------
+  - name: Intake
+    type: insert
+    input_csv: data/ICY_Intake.csv
+    sobject: Intake__c   # CONFIRM object API name
+    rename_columns:
+      OLDNAME__C: OldName__c
+    lookups:
+      - source_column: REFERRAL__C   # holds the OLD-org Referral id directly - no separate OLD_REFERRAL column exists on this object
+        target_column: Referral__c   # real API name confirmed via org describe - config previously used the raw ALL-CAPS CSV-header style (REFERRAL__C), which doesn't exact-match the org's actual field casing
+        reference: referral
+        # Without this, the stale raw REFERRAL__C column survives alongside
+        # the newly-resolved Referral__c column - Salesforce matches CSV
+        # headers to fields case-insensitively, so both reaching the Bulk
+        # API together fails as a "Duplicate field" error.
+        drop_source: true
+    record_type_static_overrides:
+      - target_column: RecordTypeId
+        developer_name: ICY_Intake   # confirmed via org query - chose over the other active option, ICY_Intake_Read_Only, per user decision
+    # NOTE: CASE__C holds a stale OLD-org Case Id (confirmed: 121/224 rows
+    # populated) - it gets correctly resolved later by Intake_Update once
+    # Case exists, same circular-dependency pattern as Case_Contact/Referral.
+    # Unlike Referral's OLD_CASE, this one IS a real field name, so it must
+    # be explicitly dropped here or the stale cross-org Id would be sent to
+    # Salesforce on insert and get rejected as an invalid reference.
+    # CREATEDBYID/LASTMODIFIEDBYID are unusually createable in this org
+    # (likely a "Set Audit Fields upon Record Creation" permission enabled
+    # for migration purposes) - normally drop_noncreateable_columns would
+    # catch these, but here they're genuinely createable and 224/224 rows
+    # are populated with stale OLD-org User Ids, causing
+    # INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY for every row.
+    # ICY_ASSIGNED_TO__C/ICY_WHO_IS_DOING__C are real custom User lookups
+    # with the same problem (stale Ids, no reference table exists to
+    # resolve OLD-org User Ids to new ones - Users has no export_as).
+    # Dropped for the same reason OwnerId already is everywhere else:
+    # no safe way to resolve to the correct new-org User, so let
+    # Salesforce default rather than send an invalid cross-reference.
+    drop_columns:
+      - CASE__C
+      - CREATEDBYID
+      - LASTMODIFIEDBYID
+      - ICY_ASSIGNED_TO__C
+      - ICY_WHO_IS_DOING__C
+    export_key_field: ID
+    bookkeeping_field: OldName__c   # confirmed 100% blank in source data - safe to repurpose
+    export_as: intake
+
+  # ------------------------------------------------------------------
+  # Stage 5: Case (standard object) - depends on Account + Referral
+  # ------------------------------------------------------------------
+  - name: Case
+    type: composite_insert
+    input_csv: data/ICY_Case.csv
+    sobject: Case
+    special_lookups:
+      - source_column: "RecordType:RecordType-Name"
+        target_column: RecordTypeId
+        query_sobject: RecordType
+        match_field: Name
+        drop_source: true
+    lookups:
+      - source_column: OLD_CONTACTID
+        target_column: ContactId
+        reference: account
+        drop_source: true
+      - source_column: OLD_ACCOUNTID
+        target_column: AccountId
+        reference: account
+        drop_source: true
+      - source_column: OLD_REFERRAL
+        target_column: Referral__c   # real API name confirmed via org describe
+        reference: referral
+        drop_source: true
+    # Resolved fresh from the org at validate/deploy time (never a hardcoded
+    # Id, which would only be valid in one specific sandbox) - matches
+    # whichever user has the admin.user@ base username AND an ICY role in
+    # THIS org, same "org-agnostic identifier resolved per-run" approach as
+    # record_type_static_overrides above.
+    set_fields_from_query:
+      - target_column: OwnerId
+        query: "SELECT Id FROM User WHERE Username LIKE 'admin.user@%' AND UserRole.Name LIKE '%ICY%'"
+    # Same reasoning as Account above - no safe field for bookkeeping_field,
+    # automated instead via composite_insert (Composite Tree API).
+    export_key_field: OLD_ID
+    export_as: case
+
+  # ------------------------------------------------------------------
+  # Stage 6: Case Member - depends on Referral + Case_Contact
+  # NOTE: source CSV's own identity column is "OD_ID" (typo, missing "L")
+  # ------------------------------------------------------------------
+  - name: Case_Member
+    type: insert
+    input_csv: data/ICY_CaseMember.csv
+    sobject: Case_Member__c   # confirmed via org describe - no "ICY_" prefix
+    rename_columns:
+      OLDNAME__C: OldName__c
+    lookups:
+      - source_column: OLD_REFERRAL
+        target_column: Referral__c   # real API name confirmed via org describe
+        reference: referral
+        drop_source: true
+      - source_column: OLD_ICY_CASE_CONTACT
+        target_column: ICY_Case_Contact__c   # real API name confirmed via org describe
+        reference: case_contact
+        drop_source: true
+    # Resolved fresh from the org at validate/deploy time - see Case stage's
+    # comment above for why this isn't a hardcoded Id.
+    set_fields_from_query:
+      - target_column: OwnerId
+        query: "SELECT Id FROM User WHERE Username LIKE 'admin.user@%' AND UserRole.Name LIKE '%ICY%'"
+      - target_column: ICY_User__c   # real API name confirmed via org describe
+        query: "SELECT Id FROM User WHERE Username LIKE 'admin.user@%' AND UserRole.Name LIKE '%ICY%'"
+    # 18 of 181 rows have a Referral__c that's blank or doesn't match any
+    # migrated Referral record. Confirmed via the actual Apex source
+    # (ICY_CaseMember_Controller.updateReferralTeamMemberIds, called from
+    # the Case_Member trigger's AfterInsert) that any "Active"-status row
+    # with an unresolved Referral__c causes a
+    # System.NullPointerException that rolls back the ENTIRE insert batch,
+    # not just the bad rows - confirmed by testing (0/181 succeeded until
+    # this was added). Per user decision: skip these 18 rather than
+    # deactivate the org's trigger (which would also stop it from
+    # maintaining Referral.Team_members_Id__c for the other 163 valid rows).
+    drop_rows_if_blank:
+      - Referral__c
+    # No export_as - nothing downstream references Case_Member by its OLD id.
+    # export_key_field is still needed here even without export_as, purely
+    # to drop this bookkeeping-only column before insert (it's never a
+    # real field and would break the whole load with "Field name not
+    # found" if left in).
+    export_key_field: OD_ID
+
+  # ------------------------------------------------------------------
+  # Stage 7: YTS Transition Plan - depends on Case
+  # ------------------------------------------------------------------
+  - name: YTS_Transition_Plan
+    type: composite_insert
+    input_csv: data/ICY_TransitionPlan(YTS_Transition_Plan).csv
+    sobject: YTS_Transition_Plan__c   # confirmed via org describe - correct as-is
+    lookups:
+      - source_column: OLD_CASE
+        target_column: Case__c   # real API name confirmed via org describe
+        reference: case
+        drop_source: true
+    # Same reasoning as Account/Case above - composite_insert (Composite
+    # Tree API), no manual step. 2,286 rows here - batched at 200/call
+    # (~12 batches) automatically, with progress tracked locally so a
+    # partial failure doesn't re-insert already-succeeded batches on retry.
+    export_key_field: OLD_ID
+    export_as: transition_plan
+
+  # ------------------------------------------------------------------
+  # Stage 8: YTS Have And Needs - depends on YTS Transition Plan
+  # ------------------------------------------------------------------
+  - name: YTS_Have_And_Needs
+    type: insert
+    input_csv: data/ICY_Transition Have And Needs (YTS_Have_And_Needs).csv
+    sobject: YTS_Haves_And_Needs__c   # confirmed via org describe - plural "Haves", not "Have"
+    rename_columns:
+      OLDNAME__C: OldName__c
+    lookups:
+      - source_column: OLD_TRANSITION_PLAN
+        target_column: Transition_Plan__c   # real API name confirmed via org describe
+        reference: transition_plan
+        drop_source: true
+    # NOTE: the PDF procedure says OwnerId needs a valid ICY User here (step
+    # 17b), but confirmed via org describe that YTS_Haves_And_Needs__c has
+    # NO OwnerId field at all in THIS org (not just non-createable - it's
+    # absent from the field list entirely) - "InvalidBatch: Field name not
+    # found: OwnerId" on every row confirmed this. The PDF's instruction
+    # doesn't hold for this object's actual schema here, so there's nothing
+    # to set - removed rather than worked around.
+    # CREATEDBYID is unusually createable in this org (likely a "Set Audit
+    # Fields upon Record Creation" permission enabled for migration) and
+    # 206/206 rows carry a stale OLD-org User Id - same issue and same fix
+    # as Intake's CREATEDBYID/LASTMODIFIEDBYID above.
+    drop_columns:
+      - CREATEDBYID
+    # Transition_Plan__c is required on this object - 14/206 rows reference
+    # an OLD_TRANSITION_PLAN value that genuinely doesn't exist anywhere in
+    # the 2,286-row YTS_Transition_Plan source file (confirmed, not a
+    # formatting mismatch) - a real gap in the source export, not something
+    # a lookup/config fix can resolve. Per user decision: skip rather than
+    # leave as a per-row REQUIRED_FIELD_MISSING failure. These same 14 also
+    # cascade downstream to 3 YTS_Goal_Steps rows that reference them (see
+    # that stage's own drop_rows_if_blank).
+    drop_rows_if_blank:
+      - Transition_Plan__c
+    export_key_field: OLD_ID
+    bookkeeping_field: OldName__c   # confirmed 100% blank in source data - safe to repurpose
+    export_as: have_and_needs
+
+  # ------------------------------------------------------------------
+  # Stage 9: YTS Goal Steps - depends on Case_Contact + Have_And_Needs
+  # ------------------------------------------------------------------
+  - name: YTS_Goal_Steps
+    type: insert
+    input_csv: data/ICY_TransitionGoalStep(YTS_Goal_Steps_c).csv
+    sobject: YTS_Goal_Steps__c   # confirmed via org describe - correct as-is
+    lookups:
+      - source_column: OLD_ICY_CASE_CONTACT
+        target_column: ICY_Case_Contact__c   # real API name confirmed via org describe
+        reference: case_contact
+        drop_source: true
+      - source_column: OLD_TRANSITION_NEEDS
+        target_column: Transition_Needs__c   # real API name confirmed via org describe
+        reference: have_and_needs
+        drop_source: true
+    # ASSIGNED_CASE_TEAM_MEMBER__C intentionally left blank per the procedure
+    # ("For now keep it blank") - OLD_ASSIGNED_CASE_TEAM_MEMBER is simply
+    # not mapped to anything, but it IS populated in 50/79 rows and isn't a
+    # real Salesforce field, so it must be dropped explicitly or the insert
+    # will choke on an unrecognized column name.
+    drop_columns:
+      - OLD_ASSIGNED_CASE_TEAM_MEMBER
+    # Transition_Needs__c is required on this object - 3/79 rows reference a
+    # Have_And_Needs record that itself couldn't be created (one of the 14
+    # skipped in that stage for missing its own required Transition_Plan__c
+    # link) - a downstream consequence of that same root gap, not a
+    # separate data problem on this file. Per user decision: skip rather
+    # than leave as a per-row REQUIRED_FIELD_MISSING failure.
+    drop_rows_if_blank:
+      - Transition_Needs__c
+    # No export_as - nothing downstream references YTS_Goal_Steps by its OLD id.
+    # export_key_field still needed to drop this bookkeeping-only column.
+    export_key_field: OLD_ID
+
+  # ------------------------------------------------------------------
+  # Stage 10: Contribution - depends on Case. OwnerId left blank per doc.
+  # ------------------------------------------------------------------
+  - name: Contribution
+    type: insert
+    input_csv: data/ICY_Contribution.csv
+    sobject: Contribution__c   # confirmed via org describe - no "ICY_" prefix
+    lookups:
+      - source_column: OLD_CASE
+        target_column: Case__c   # real API name confirmed via org describe
+        reference: case
+        drop_source: true
+    # OLD_OWNERID is a stale OLD-org OwnerId, populated on every row, and not
+    # a real Salesforce field - not mentioned in the source procedure at all,
+    # so it must be dropped explicitly or the insert will choke on an
+    # unrecognized column name. (The real "OwnerId" column, if present, is
+    # already handled by the universal drop_owner_columns() step.)
+    drop_columns:
+      - OLD_OWNERID
+    # No export_as - nothing downstream references Contribution by its OLD id.
+    # export_key_field still needed to drop this bookkeeping-only column.
+    export_key_field: OLD_ID
+
+  # ------------------------------------------------------------------
+  # Stage 11: Notes - depends on Case + Referral + Intake. OwnerId blank per doc.
+  # ------------------------------------------------------------------
+  - name: Notes
+    type: insert
+    input_csv: data/ICY_Notes(ICY_Notes).csv
+    sobject: ICY_Notes__c   # confirmed via org describe - correct as-is
+    lookups:
+      - source_column: OLD_CASE
+        target_column: Case__c   # real API name confirmed via org describe
+        reference: case
+        drop_source: true
+      - source_column: OLD_REFERRAL
+        target_column: Referral__c   # real API name confirmed via org describe
+        reference: referral
+        drop_source: true
+      - source_column: OLD_INTAKE
+        target_column: Intake__c   # real API name confirmed via org describe
+        reference: intake
+        drop_source: true
+    # OLD_OWNERID is a stale OLD-org OwnerId, populated on every row, and not
+    # a real Salesforce field - same issue as Contribution above.
+    drop_columns:
+      - OLD_OWNERID
+    # No export_as - nothing downstream references Notes by its OLD id.
+    # export_key_field still needed to drop this bookkeeping-only column.
+    export_key_field: OLD_ID
+
+  # ------------------------------------------------------------------
+  # Stage 12: Document - depends on Case + Referral + Intake. OwnerId blank per doc.
+  # ------------------------------------------------------------------
+  - name: Document
+    type: insert
+    input_csv: data/ICY_Document(ICY_Document).csv
+    sobject: ICY_Document__c   # confirmed via org describe - correct as-is
+    lookups:
+      - source_column: OLD_CASE
+        target_column: Case__c   # real API name confirmed via org describe
+        reference: case
+        drop_source: true
+      - source_column: OLD_REFERRAL
+        target_column: Referral__c   # real API name confirmed via org describe
+        reference: referral
+        drop_source: true
+      - source_column: OLD_INTAKE
+        target_column: Intake__c   # real API name confirmed via org describe
+        reference: intake
+        drop_source: true
+    # OLD_OWNERID is a stale OLD-org OwnerId, populated on every row, and not
+    # a real Salesforce field - same issue as Contribution/Notes above.
+    drop_columns:
+      - OLD_OWNERID
+    # No export_as - nothing downstream references Document by its OLD id.
+    # export_key_field still needed to drop this bookkeeping-only column.
+    export_key_field: OLD_ID
+
+  # ==================================================================
+  # UPDATE PASSES - back-fill the Case/Referral/Intake links that were
+  # deliberately left blank on the initial inserts above, now that Case
+  # exists. Each re-loads the SAME source CSV, resolves the newly-possible
+  # lookups, then updates (not inserts) by matching against that object's
+  # own reference table captured during its insert stage above.
+  # ==================================================================
+  - name: Case_Contact_Update
+    type: update
+    input_csv: data/ICY_CaseContact.csv
+    sobject: Case_Contact__c
+    match_against_reference: case_contact
+    match_key_column: OLD_ID
+    lookups:
+      - source_column: OLD_CASE
+        target_column: Case__c   # real API name confirmed via org describe
+        reference: case
+        drop_source: true
+      - source_column: OLD_REFERRAL
+        target_column: Referral__c   # real API name confirmed via org describe
+        reference: referral
+        drop_source: true
+      - source_column: OLD_INTAKE
+        target_column: Intake__c   # real API name confirmed via org describe
+        reference: intake
+        drop_source: true
+
+  - name: Referral_Update
+    type: update
+    input_csv: data/ICY_Referral.csv
+    sobject: Referral__c
+    match_against_reference: referral
+    match_key_column: OLD_ID
+    # Same picklist fix as the initial Referral insert stage - this stage
+    # reloads the SAME source CSV independently, so the fix doesn't carry
+    # over automatically; confirmed the same 4 rows fail here too without it.
+    value_remap:
+      ICY_PREFERRED_METHOD_OF_CONTACT__C:
+        Other: Other Phone
+    # This stage reuses ICY_Referral.csv, which still carries several helper/
+    # stale columns that were already resolved during the initial Referral
+    # insert:
+    #   - OLD_ICY_REFERRED_BY__C (Case Contact) / OWNER:Group-Name /
+    #     RecordType:RecordType-Name - lookup/special_lookup helper columns,
+    #     not real Salesforce fields at all.
+    #   - ICY_REFERRED_BY__C - IS a real field, but holds the SAME stale raw
+    #     OLD-org Case_Contact Id the initial insert already correctly
+    #     resolved once via the helper column above - re-sending it here
+    #     would overwrite the correct value with a stale, inaccessible one
+    #     ("INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY", confirmed live).
+    # None of these are re-declared on this stage, so they must be dropped
+    # here too or the update either chokes on an unrecognized column name
+    # (the first three) or corrupts already-correct data (the last one).
+    drop_columns:
+      - "OLD_ICY_REFERRED_BY__C (Case Contact)"
+      - "OWNER:Group-Name"
+      - "RecordType:RecordType-Name"
+      - ICY_REFERRED_BY__C
+    lookups:
+      - source_column: OLD_CASE
+        target_column: Case__c   # real API name confirmed via org describe
+        reference: case
+        drop_source: true
+
+  - name: Intake_Update
+    type: update
+    input_csv: data/ICY_Intake.csv
+    sobject: Intake__c
+    match_against_reference: intake
+    match_key_column: ID
+    lookups:
+      - source_column: CASE__C   # holds the OLD-org Case id directly, same pattern as Intake's own REFERRAL__C at insert time
+        target_column: Case__c   # real API name confirmed via org describe
+        reference: case
+        # Same reasoning as Intake's REFERRAL__C above - without this, the
+        # stale raw CASE__C column collides case-insensitively with the
+        # newly-resolved Case__c column at the Bulk API layer.
+        drop_source: true
+    # Same CREATEDBYID/LASTMODIFIEDBYID/ICY_ASSIGNED_TO__C/ICY_WHO_IS_DOING__C
+    # issue as the initial Intake insert stage above - this update pass
+    # reuses the same source CSV, so the same stale User Id columns are
+    # present here too.
+    # REFERRAL__C is the same "already correctly resolved once, don't
+    # re-send the stale raw value" issue as Referral_Update's
+    # ICY_REFERRED_BY__C above - the initial Intake insert already resolved
+    # this via its own REFERRAL__C -> Referral__c lookup (drop_source:
+    # true), but that only affected THAT run's dataframe, not this stage's
+    # fresh reload of the same CSV - re-sending it here would overwrite the
+    # correct value with a stale OLD-org Referral Id.
+    drop_columns:
+      - CREATEDBYID
+      - LASTMODIFIEDBYID
+      - ICY_ASSIGNED_TO__C
+      - ICY_WHO_IS_DOING__C
+      - REFERRAL__C

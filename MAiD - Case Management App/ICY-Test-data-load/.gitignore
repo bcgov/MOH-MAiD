@@ -1,0 +1,19 @@
+# Real/sensitive test data - CSVs are the source of truth kept locally or in a
+# secured location, never committed as plain patient-like data.
+data/*.csv
+
+# All generated output: mapped CSVs, success/failure job reports.
+output/
+
+# `sf data bulk results` writes these into the current working directory by
+# default - the tool relocates them into output/ automatically, but this is
+# a defense-in-depth backstop in case that ever fails.
+*-success-records.csv
+*-failed-records.csv
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
