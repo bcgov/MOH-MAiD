@@ -1,80 +1,136 @@
-public  class ICY_CaseTriggerHandler {
-    /*public static void sendClosedCaseEmailNotificationToLead(List<Case> caseList, Map<Id,Case> oldcaseMap){
-        Id standardCaserecordType = Schema.SObjectType.Case.getRecordTypeInfosByDeveloperName().get('ICY_Standard_Case').getRecordTypeId();
-        List<Case> casetoProcess= new List<Case>();
-        Id orgwideemailId = YTS_Utility.getICYOrgWideEmailAddressId();
-        system.debug('@@1');
-        for(Case c: caseList){
-            if(oldcaseMap.get(c.Id).Status<>c.Status &&
-                c.Status=='Closed' &&
-                String.isNotBlank(c.ICY_Geographic_Area__c)){
-                casetoProcess.add(c);
+public class ICY_CaseTriggerHandler {
+
+    public static void sendClosedCaseEmailNotificationToLead(
+        List<Case> caseList,
+        Map<Id, Case> oldcaseMap
+    ){
+        Id standardCaseRecordTypeId = Schema.SObjectType.Case
+            .getRecordTypeInfosByDeveloperName()
+            .get('ICY_Standard_Case')
+            .getRecordTypeId();
+
+        Id orgWideEmailId = YTS_Utility.getICYOrgWideEmailAddressId();
+
+        List<Messaging.SingleEmailMessage> emails =
+            new List<Messaging.SingleEmailMessage>();
+
+        for(Case caseObject : caseList){
+
+            Case oldCase = oldcaseMap.get(caseObject.Id);
+
+            if(oldCase == null ||
+               oldCase.Status == caseObject.Status ||
+               caseObject.Status != 'Closed' ||
+               caseObject.RecordTypeId != standardCaseRecordTypeId ||
+               String.isBlank(caseObject.ICY_Geographic_Area__c)){
+                continue;
             }
+
+            String plGroupName =
+                getPLGroupDeveloperName(
+                    caseObject.ICY_Geographic_Area__c
+                );
+		
+            System.debug('plGroupName'+plGroupName);
+            
+            Set<Id> recipientUserIds = new Set<Id>();
+
+            // Add only direct User members. Ignore all 00G members.
+            for(GroupMember gm : [
+                SELECT UserOrGroupId FROM GroupMember WHERE Group.DeveloperName = :plGroupName AND Group.Type = 'Regular'
+            ]){
+                if(String.valueOf(gm.UserOrGroupId).startsWith('005')){
+                    recipientUserIds.add(gm.UserOrGroupId);
+                }
+            }
+
+            Boolean ownerIsUser =
+                String.valueOf(caseObject.OwnerId).startsWith('005');
+
+            Id closedById = caseObject.ICY_Closed_By__c;
+
+            if(ownerIsUser){
+                recipientUserIds.add(caseObject.OwnerId);
+            }
+
+            // Exclude owner when the owner closed the Case
+            if(ownerIsUser && caseObject.OwnerId == closedById){
+                recipientUserIds.remove(caseObject.OwnerId);
+            }
+
+            Set<Id> userIdsToQuery = new Set<Id>();
+            userIdsToQuery.addAll(recipientUserIds);
+
+            if(closedById != null){
+                userIdsToQuery.add(closedById);
+            }
+
+            if(userIdsToQuery.isEmpty()){
+                continue;
+            }
+
+            Set<String> toAddresses = new Set<String>();
+            User whoClosed;
+
+            for(User userObject : [
+                SELECT Id, Name, Email FROM User  WHERE Id IN :userIdsToQuery AND IsActive = true
+            ]){
+                if(userObject.Id == closedById){
+                    whoClosed = userObject;
+                }
+
+                if(recipientUserIds.contains(userObject.Id) &&
+                   String.isNotBlank(userObject.Email)){
+                    toAddresses.add(userObject.Email);
+                }
+            }
+			
+            System.debug('toAddresses'+toAddresses);
+            
+            if(toAddresses.isEmpty()){
+                continue;
+            }
+
+            String recordLink = URL.getOrgDomainUrl().toExternalForm() + '/' + caseObject.Id;
+            String closedByName = whoClosed != null ? whoClosed.Name : 'a user';
+            Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
+            email.setToAddresses(new List<String>(toAddresses));
+
+            if(orgWideEmailId != null){
+                email.setOrgWideEmailAddressId(orgWideEmailId);
+            }
+
+            email.setSubject('Case#' + caseObject.CaseNumber + ' has been Closed');
+
+            email.setHtmlBody('Hi,<br/>' + 'The Case record <a href="' + recordLink + '">' +
+                caseObject.CaseNumber + '</a> has been Closed by ' + closedByName
+            );
+
+            emails.add(email);
         }
-        if(casetoProcess.isEmpty()){
-            system.debug('@@2');
-            return;
-        }else{
-            system.debug('@@3');
-            Set<String> queueNames = new Set<String>();
-            Case  caseObject = new Case ();
 
-            for(Case c: casetoProcess){
-                queueNames.add('%'+c.ICY_Geographic_Area__c);
-                caseObject = c;
-            }
-            system.debug('@@4'+caseObject);
-            Set<String> toAddressess = new Set<String>();
-            Set<Id> groupOrQueuId = new Set<Id>();
-            Set<Id> roleId = new Set<Id>();
-            Set<Id> userid = new Set<Id>();
-            For(GroupMember gm: [SELECT UserOrGroupId FROM GroupMember WHERE Group.Type = 'Queue' AND Group.Name LIKE :queueNames]){
-                if((String.valueOf(gm.UserOrGroupId)).startsWithIgnoreCase('00G')){
-                    groupOrQueuId.add(gm.UserOrGroupId);
-                }else{
-                    userid.add(gm.UserOrGroupId);
-                }
-            }
-            system.debug('groupOrQueuId'+groupOrQueuId);
-            system.debug('userid'+userid);
-            if(!groupOrQueuId.isEmpty()){
-                For(Group gm: [SELECT RelatedId,Type,DeveloperName FROM group WHERE Id IN:groupOrQueuId AND Type = 'Role']){
-                    if(gm.Type=='Role'){
-                        roleId.add(gm.RelatedId);
-                    }
-                }
-            }
-            system.debug('roleId'+roleId);
-            user whoClosed;
-            if(!roleId.isEmpty() || !userid.isEmpty()){
-                For(User u: [SELECT Id,Name, email FROM User WHERE (UserRoleId =: roleId OR ID IN:userid OR ID =:caseObject.ICY_Closed_By__c) AND isActive = true]){
-                    if(String.isBlank(caseObject.ICY_Closed_By__c) ||
-                        u.Id != caseObject.ICY_Closed_By__c){
-                        toAddressess.add(u.email);
-                    }
-                    if(U.id == caseObject.ICY_Closed_By__c){
-                        whoClosed = U;
-                    }
-                }
-            }
-            if(Test.isRunningTest()) whoClosed = [SELECT Id,Name, email FROM User WHERE ID= :UserInfo.getUserId()] ;
-            system.debug('whoClosed'+whoClosed);
-            system.debug('toAddressess'+toAddressess);
-            String Recordlink = URL.getSalesforceBaseUrl().toExternalForm()+'/'+caseObject.id;
-            if(!toAddressess.isEmpty()){
-                List<String> toAddressList = new List<String>();
-                toAddressList.addAll(toAddressess);
-                Messaging.SingleEmailMessage semail = new Messaging.SingleEmailMessage();
-                semail.setToAddresses(toAddressList);
-                if(orgwideEmailId != null) semail.setOrgWideEmailAddressId(orgwideEmailId);
-                semail.setSubject('Case#'+caseObject.CaseNumber+' has been Closed');
-                String htmlBody= 'Hi,</br>'+'The Case record <a href="'+Recordlink+'">'+caseObject.CaseNumber+'</a> has been Closed by '+whoClosed.Name;
-                semail.setHtmlBody(htmlBody);
-                system.debug('@@semail'+semail);
-                Messaging.sendEmail(new Messaging.SingleEmailMessage[] {semail});
-            }
+        if(!emails.isEmpty()){
+            Messaging.sendEmail(emails);
+        }
+    }
+	
+	
+    private static String getPLGroupDeveloperName(
+        String geographicArea
+    ){
+        String normalizedArea = geographicArea.trim();
 
+        normalizedArea = normalizedArea.replace('-', ' ');
+        normalizedArea = normalizedArea.replace('(', ' ');
+        normalizedArea = normalizedArea.replace(')', ' ');
+        normalizedArea = normalizedArea.replace(' Team ', ' ');
+        normalizedArea = normalizedArea.replaceAll('\\s+[0-9]+$', '');
+        normalizedArea = normalizedArea.replaceAll('\\s+', ' ').trim();
+        
+        if(normalizedArea.equalsIgnoreCase('qathet Powell River')){
+            normalizedArea = 'Qathet Powell River';
         }
 
-    }*/
+        return 'ICY_ACCESS_' + normalizedArea.replace(' ', '_') + '_PL';
+    }
 }
