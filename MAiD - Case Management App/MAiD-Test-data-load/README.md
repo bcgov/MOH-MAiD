@@ -181,19 +181,7 @@ or run output.
    step to never skip - it's the only check that confirms the actual org
    behaved as expected, not just the script logic.
 
-### Ask Claude Code to verify this for you
 
-If you want Claude Code to run and sanity-check this before you open a PR,
-a good prompt is:
-
-> In the `MAiD-Test-data-load/` folder, run `pytest tests/ -v` and summarize any
-> failures. Then run `python scripts/load_test_data.py validate --org MAidQA`
-> and tell me if anything looks wrong - especially any "target_column does
-> not exist on sobject" errors, since those usually mean
-> `mapping_config.yaml`'s object or field API names don't match this org.
-> Don't run `deploy` unless I explicitly ask you to.
-
----
 
 ## Relationship to your existing metadata deploy validation
 
