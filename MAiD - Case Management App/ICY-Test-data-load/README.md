@@ -58,19 +58,19 @@ same export uploaded twice under a typo'd name. Config currently points at
 `ICY_Account.csv`; confirm that's the right one (or that they're genuinely
 different exports) before running `deploy`.
 
-### 5. Account, Case, and YTS_Transition_Plan need ONE manual step each
+### 5. Eight objects load via the Composite/SObject Tree API, fully automated
 
-Unlike the other 13 objects (fully automated), these three have `type:
-manual_insert` in `mapping_config.yaml` - `deploy` prepares the CSV for you
-(Record Type resolved, dates fixed, non-createable columns dropped) and
-writes it to `output/`, but **you upload it yourself** via Data
-Loader/Inspector (exactly like the original procedure), then save the
-success report's `Old_ID`/`ID` columns as the file named in that stage's
-`reference_file`. Re-run the exact same `deploy` command afterward and it
-picks up automatically - nothing before that point gets re-run or
-re-touched. See "Why these three specifically" below for the full reason,
-and `mapping_config.yaml`'s top-of-file comment for how to switch to a
-fully-automated Composite API approach later, if wanted.
+`Account`, `Case`, `YTS_Transition_Plan`, `Case_Member`, `Contribution`,
+`Notes`, `Document`, and `YTS_Goal_Steps` all have `type: composite_insert`
+in `mapping_config.yaml` - no manual step, no Data Loader upload. Each
+record is tagged with a client-supplied `referenceId` (its `OLD_ID`), and
+Salesforce echoes the new real Id back paired with it in the *same*
+response, so there's nothing to separately query or upload. A local
+progress file (`output/<Stage>_composite_tree_progress.json`) tracks which
+rows already succeeded, so re-running the exact same `deploy` command after
+any partial failure (elsewhere in the pipeline, e.g. Users) picks up cleanly
+- already-inserted rows are skipped, not duplicated. See "Why these eight
+specifically" below for the full reason.
 
 ### 6. Manual, not automated (by design)
 
@@ -90,39 +90,41 @@ fully-automated Composite API approach later, if wanted.
 
 ---
 
-## Why Account, Case, and YTS_Transition_Plan specifically need a manual step
+## Why these eight specifically
 
-Every "OLD_ID -> new Id" reference table this tool builds needs some real,
-queryable field on the inserted record to look up afterward - MAiD's
-Account/Case have genuine business-key fields for this (College ID, PHN).
-Most ICY objects don't, but do have a **spare, entirely-blank custom field**
-(`OLDNAME__C`, confirmed 100% blank in the real data) safe to repurpose for
-this bookkeeping - that's what `bookkeeping_field` does for Case_Contact,
-Referral, Intake, and Have_And_Needs, giving those 4 (plus Users) full
-automation with resume/idempotency, same as MAiD.
+Every stage needs SOME way to tell, on a re-run, whether a given row already
+made it into the org - otherwise a re-run after any later failure
+(elsewhere in the pipeline) silently re-inserts already-succeeded rows as
+duplicates. Two mechanisms provide this:
 
-Account, Case, and YTS_Transition_Plan have **no such spare field** -
-checked directly against the real data; their only blank columns are
-non-createable system fields or legitimate blank business fields (e.g.
-Case's `ClosedDate`, which is blank only because these test cases aren't
-closed - not safe to repurpose).
+1. **`bookkeeping_field`** - for Case_Contact, Referral, Intake, and
+   Have_And_Needs: `OLDNAME__C` is a **spare, entirely-blank custom field**
+   (confirmed 100% blank in the real data) safe to repurpose - the engine
+   writes the `OLD_ID`-style value into it before insert, then queries it
+   back afterward. Needs a real, genuinely-unused org field to exist, which
+   has to be verified per object.
+2. **`type: composite_insert`** - for the other eight objects. Salesforce's
+   Composite/SObject Tree API lets you tag each record with a client-supplied
+   `referenceId` that's echoed back with the new Id in the same response,
+   plus a local progress file (`output/<Stage>_composite_tree_progress.json`)
+   tracking what's already landed - full resume/idempotency without needing
+   any org field at all. Batched at 200 records/call (a hard Salesforce
+   limit, not configurable).
 
-Three ways to resolve this were considered:
-1. **Add a small custom field** (e.g. `Migration_Old_Id__c`) to these 3
-   objects, purely for this migration - simplest to automate, but requires
-   a schema change.
-2. **Keep these 3 steps manual**, matching the original procedure exactly
-   (chosen approach - see `type: manual_insert` above) - no schema change,
-   no new automation code, at the cost of 3 manual touchpoints instead of 0.
-3. **Composite/SObject Tree API** - Salesforce's Composite API lets you tag
-   each record with a client-supplied `referenceId` that's echoed back with
-   the new Id, achieving full automation without any schema change *or*
-   manual step. Not implemented yet - it uses a different API family than
-   the Bulk API used everywhere else, with a much lower per-call record
-   limit (~200), so larger objects need batching logic. A solid future
-   upgrade for just these 3 stages if/when zero manual touchpoints becomes
-   worth the extra engineering - nothing else in the pipeline would need to
-   change to adopt it.
+`Account`, `Case`, and `YTS_Transition_Plan` need `composite_insert` because
+they genuinely have **no spare field** - checked directly against the real
+data; their only blank columns are non-createable system fields or
+legitimate blank business fields (e.g. Case's `ClosedDate`, blank only
+because these test cases aren't closed - not safe to repurpose).
+
+`Case_Member`, `Contribution`, `Notes`, `Document`, and `YTS_Goal_Steps`
+originally shipped as plain `insert` with **no bookkeeping mechanism wired
+up at all** - not a deliberate design choice, just a gap (Case_Member even
+had `OLDNAME__C` renamed to `OldName__c` in anticipation of being wired up,
+but `bookkeeping_field` was never actually set). `composite_insert` was the
+more general fix here, since three of these five objects don't have an
+`OLDNAME__C`-equivalent field at all, and it avoids auditing each one
+individually for a genuinely-safe spare field.
 
 ---
 
@@ -217,19 +219,29 @@ trigger is even less bulk-safe, lower `CHUNK_SIZE` in the script further.
 - **`upsert_users`**: upserts to `User` via `upsert_external_id` (Username).
 - **`insert`**: loads a CSV, applies `rename_columns` / `drop_columns` /
   `special_lookups` / `lookups` / `set_fields` / `record_type_static_overrides`,
-  inserts, and optionally exports a reference table (`export_as`) mapping
-  `OLD_ID -> new Id` for later stages to join against - via `bookkeeping_field`,
-  a real org field the OLD_ID gets written into before insert (see "Why
-  Account, Case, and YTS_Transition_Plan..." above for why this needs a
-  real field at all).
-- **`manual_insert`**: same prep as `insert`, but instead of calling the
-  Bulk API, writes the prepared CSV to `output/` and waits for a human to
+  inserts via the Bulk API, and optionally exports a reference table
+  (`export_as`) mapping `OLD_ID -> new Id` for later stages to join against -
+  via `bookkeeping_field`, a real org field the OLD_ID gets written into
+  before insert (see "Why these eight specifically" above for why this
+  needs a real field at all, and which 4 objects use it).
+- **`composite_insert`**: same prep as `insert`, but delivers via
+  Salesforce's Composite/SObject Tree API instead of the Bulk API - each
+  record is tagged with a client-supplied `referenceId` (`export_key_field`'s
+  value), and Salesforce echoes the new Id back paired with it in the same
+  response, no separate query needed. A local progress file
+  (`output/<Stage>_composite_tree_progress.json`) tracks already-inserted
+  rows so a re-run after a partial failure never re-inserts them - used for
+  the 8 objects with no safe `bookkeeping_field` candidate (see "Why these
+  eight specifically" above). Batched at 200 records/call (a hard
+  Salesforce limit).
+- **`manual_insert`**: same prep as `insert`, but instead of calling an API
+  at all, writes the prepared CSV to `output/` and waits for a human to
   upload it and save the resulting `Old_ID`/`ID` reference file
   (`reference_file` in config). `deploy` halts with exact instructions the
   first time it reaches one of these without that file present, and picks
-  it up automatically on the next run - used for `Account`, `Case`, and
-  `YTS_Transition_Plan`, which have no safe field for automatic
-  `bookkeeping_field`-based export.
+  it up automatically on the next run. Not currently used by any stage -
+  kept as a fallback for a future object too large/unusual for Composite
+  Tree batching, or needing genuine human review.
 - **`update`**: same prep as insert, but rows are matched against an
   **already-inserted** record of the same object (via `match_against_reference`
   + `match_key_column`) and updated rather than inserted. This is how the

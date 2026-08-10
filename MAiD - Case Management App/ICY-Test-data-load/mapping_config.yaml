@@ -36,6 +36,17 @@
 #    (output/<Stage>_composite_tree_progress.json) so a partial failure on
 #    a large object doesn't re-insert already-succeeded batches on retry.
 #
+#    Also used for Case_Member, Contribution, Notes, Document, and
+#    YTS_Goal_Steps - these originally shipped as plain `insert` with NO
+#    bookkeeping_field wired up at all (a gap, not a deliberate choice - one
+#    even had OLDNAME__C renamed to OldName__c in anticipation, but never
+#    actually plugged in), so re-running `deploy` after any partial failure
+#    (e.g. the Users stage failing, as it initially did with
+#    DUPLICATE_USERNAME) would silently re-insert every already-succeeded
+#    row as a duplicate. Composite Tree resume fixes this the same way as
+#    Account/Case/YTS_Transition_Plan, without needing to separately audit
+#    each object for a genuinely-spare field.
+#
 # 3. `type: manual_insert` (still supported, not currently used by any
 #    stage) - the original one-manual-step fallback for objects like the
 #    3 above: engine prepares the CSV and writes it to output/, a human
@@ -127,17 +138,28 @@ stages:
       # FederationIdentifier above - dropped rather than carried over.
       - COMMUNITYNICKNAME
     # Per the PDF: "make sure User names are populated correctly according to
-    # destination sandbox" - this source file still carries literal UAT
-    # sandbox usernames (e.g. charlotte@icySOSEUATpersona.com), which fail
-    # with DUPLICATE_USERNAME because Salesforce enforces username
-    # uniqueness GLOBALLY across every org, not just this one - the real
-    # UAT sandbox already owns those exact strings. fix_username_domain_token
-    # is resolved at deploy time against whatever --org alias is passed
-    # (case-insensitive match, replaced with the alias in lowercase to match
-    # this org's own real-user username convention, e.g. "...sosehfdv") -
-    # never hardcoded, so the same config works unchanged against any
-    # sandbox this gets pointed at.
-    fix_username_domain_token: SOSEUAT
+    # destination sandbox" - this source file carries literal usernames from
+    # several OTHER real environments (production, e.g.
+    # "yanping.cui@gov.bc.ca.bcmohmaid"; a different sandbox, e.g.
+    # "...@moh.com.maiduat.fc"), which all fail with DUPLICATE_USERNAME
+    # because Salesforce enforces username uniqueness GLOBALLY across every
+    # org, not just this one - the real owner of that exact string already
+    # exists somewhere else. Rather than enumerate every stale domain shape
+    # (which only ever covers ones already hit), ensure_username_domain_suffix
+    # unconditionally appends THIS org's real sandbox suffix - resolved at
+    # deploy time from an actual existing user, never the --org CLI alias
+    # (see _resolve_sandbox_suffix's docstring for why) - to every Username
+    # that doesn't already end with it. Idempotent: already-correct usernames
+    # are left untouched. Same config works unchanged against any sandbox.
+    ensure_username_domain_suffix: true
+    # Salesforce's own auto-generated Chatter-Free identities (e.g.
+    # "chatty.00d5w0000008aztuai.iwq4zdvsl5uf@chatter.salesforce.com") aren't
+    # real test personas - they're a system artifact tied to the OLD org's
+    # literal Id. ensure_username_domain_suffix would happily make one
+    # unique (and it'd "succeed"), but that just loads a meaningless
+    # placeholder account, so these are excluded before that step instead.
+    drop_username_domains:
+      - chatter.salesforce.com
     # NOTE: deactivating all-but-4 users beforehand (per the procedure) is
     # a separate manual/human-judgment step - not automated here on purpose,
     # since deciding WHICH users to keep active is a business decision, not
@@ -199,6 +221,17 @@ stages:
       - OLD_CASE
       - OLD_INTAKE
       - OLD_REFERRAL
+    # 1 of 259 rows has a genuinely blank OLD_ID (confirmed - not a parsing
+    # artifact). The resume-check query deliberately excludes blank keys
+    # (`if v` filter, since an empty string isn't a real identity to look
+    # up), so a row with no OLD_ID can NEVER be recognized as
+    # already-inserted - left as-is, it silently created a brand new
+    # duplicate Case_Contact record (CON-006688, -089, -090, -091 confirmed
+    # in SOSEDEV) on every single `deploy` run. Same reasoning as the other
+    # drop_rows_if_blank entries elsewhere - a row this tool can't safely
+    # resume gets skipped, not repeatedly duplicated.
+    drop_rows_if_blank:
+      - OLD_ID
     export_key_field: OLD_ID
     bookkeeping_field: OldName__c   # confirmed 100% blank in source data - safe to repurpose
     export_as: case_contact
@@ -360,11 +393,17 @@ stages:
   # NOTE: source CSV's own identity column is "OD_ID" (typo, missing "L")
   # ------------------------------------------------------------------
   - name: Case_Member
-    type: insert
+    # composite_insert (not plain insert): this stage had no working
+    # bookkeeping_field wired up (OLDNAME__C was renamed to OldName__c below
+    # in an earlier pass but never actually plugged in as bookkeeping_field -
+    # a re-run of `deploy` would have re-inserted all 181 rows as duplicates
+    # every time). Composite Tree API resume (see Account/Case/
+    # YTS_Transition_Plan above) fixes this without needing to separately
+    # confirm a spare field is safe to repurpose - it needs no org field at
+    # all, just export_key_field (already present) and a local progress file.
+    type: composite_insert
     input_csv: data/ICY_CaseMember.csv
     sobject: Case_Member__c   # confirmed via org describe - no "ICY_" prefix
-    rename_columns:
-      OLDNAME__C: OldName__c
     lookups:
       - source_column: OLD_REFERRAL
         target_column: Referral__c   # real API name confirmed via org describe
@@ -394,10 +433,10 @@ stages:
     drop_rows_if_blank:
       - Referral__c
     # No export_as - nothing downstream references Case_Member by its OLD id.
-    # export_key_field is still needed here even without export_as, purely
-    # to drop this bookkeeping-only column before insert (it's never a
-    # real field and would break the whole load with "Field name not
-    # found" if left in).
+    # export_key_field is still needed here even without export_as - it's
+    # the referenceId Composite Tree resume keys its local progress file on
+    # (see composite_insert's comment above), and would also break the
+    # whole load with "Field name not found" if left in as a literal column.
     export_key_field: OD_ID
 
   # ------------------------------------------------------------------
@@ -464,7 +503,12 @@ stages:
   # Stage 9: YTS Goal Steps - depends on Case_Contact + Have_And_Needs
   # ------------------------------------------------------------------
   - name: YTS_Goal_Steps
-    type: insert
+    # composite_insert (not plain insert): had no bookkeeping_field wired up
+    # at all, so a re-run of `deploy` would have re-inserted all 79 rows as
+    # duplicates every time - see Case_Member's comment above for why
+    # Composite Tree resume is the fix rather than hunting for a spare field
+    # (this object doesn't even have an OLDNAME__C-style field available).
+    type: composite_insert
     input_csv: data/ICY_TransitionGoalStep(YTS_Goal_Steps_c).csv
     sobject: YTS_Goal_Steps__c   # confirmed via org describe - correct as-is
     lookups:
@@ -492,14 +536,19 @@ stages:
     drop_rows_if_blank:
       - Transition_Needs__c
     # No export_as - nothing downstream references YTS_Goal_Steps by its OLD id.
-    # export_key_field still needed to drop this bookkeeping-only column.
+    # export_key_field still needed - it's the referenceId Composite Tree
+    # resume keys its local progress file on (see Case_Member above).
     export_key_field: OLD_ID
 
   # ------------------------------------------------------------------
   # Stage 10: Contribution - depends on Case. OwnerId left blank per doc.
   # ------------------------------------------------------------------
   - name: Contribution
-    type: insert
+    # composite_insert (not plain insert): had no bookkeeping_field wired up
+    # at all, so a re-run of `deploy` would have re-inserted all 610 rows as
+    # duplicates every time - see Case_Member's comment above for why
+    # Composite Tree resume is the fix rather than hunting for a spare field.
+    type: composite_insert
     input_csv: data/ICY_Contribution.csv
     sobject: Contribution__c   # confirmed via org describe - no "ICY_" prefix
     lookups:
@@ -515,14 +564,20 @@ stages:
     drop_columns:
       - OLD_OWNERID
     # No export_as - nothing downstream references Contribution by its OLD id.
-    # export_key_field still needed to drop this bookkeeping-only column.
+    # export_key_field still needed - it's the referenceId Composite Tree
+    # resume keys its local progress file on (see Case_Member above).
     export_key_field: OLD_ID
 
   # ------------------------------------------------------------------
   # Stage 11: Notes - depends on Case + Referral + Intake. OwnerId blank per doc.
   # ------------------------------------------------------------------
   - name: Notes
-    type: insert
+    # composite_insert (not plain insert): had no bookkeeping_field wired up
+    # at all, so a re-run of `deploy` would have re-inserted all 36 rows as
+    # duplicates every time - see Case_Member's comment above for why
+    # Composite Tree resume is the fix rather than hunting for a spare field
+    # (this object doesn't even have an OLDNAME__C-style field available).
+    type: composite_insert
     input_csv: data/ICY_Notes(ICY_Notes).csv
     sobject: ICY_Notes__c   # confirmed via org describe - correct as-is
     lookups:
@@ -543,14 +598,20 @@ stages:
     drop_columns:
       - OLD_OWNERID
     # No export_as - nothing downstream references Notes by its OLD id.
-    # export_key_field still needed to drop this bookkeeping-only column.
+    # export_key_field still needed - it's the referenceId Composite Tree
+    # resume keys its local progress file on (see Case_Member above).
     export_key_field: OLD_ID
 
   # ------------------------------------------------------------------
   # Stage 12: Document - depends on Case + Referral + Intake. OwnerId blank per doc.
   # ------------------------------------------------------------------
   - name: Document
-    type: insert
+    # composite_insert (not plain insert): had no bookkeeping_field wired up
+    # at all, so a re-run of `deploy` would have re-inserted all 339 rows as
+    # duplicates every time - see Case_Member's comment above for why
+    # Composite Tree resume is the fix rather than hunting for a spare field
+    # (this object doesn't even have an OLDNAME__C-style field available).
+    type: composite_insert
     input_csv: data/ICY_Document(ICY_Document).csv
     sobject: ICY_Document__c   # confirmed via org describe - correct as-is
     lookups:
@@ -571,7 +632,8 @@ stages:
     drop_columns:
       - OLD_OWNERID
     # No export_as - nothing downstream references Document by its OLD id.
-    # export_key_field still needed to drop this bookkeeping-only column.
+    # export_key_field still needed - it's the referenceId Composite Tree
+    # resume keys its local progress file on (see Case_Member above).
     export_key_field: OLD_ID
 
   # ==================================================================

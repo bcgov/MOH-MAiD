@@ -10,6 +10,7 @@ Requires: Salesforce CLI (`sf`) installed and already authenticated
 (`sf org login web --alias <org>`) before any of these are called.
 """
 from __future__ import annotations
+import csv
 import json
 import os
 import re
@@ -173,6 +174,86 @@ def bulk_upsert(org_alias: str, sobject: str, csv_path: str, external_id_field: 
     ], org_alias, output_dir)
 
 
+def bulk_upsert_chunked(org_alias: str, sobject: str, csv_path: str, external_id_field: str,
+                         chunk_size: int, wait_minutes: int = 10,
+                         output_dir: str = "output") -> BulkJobResult:
+    """Same as bulk_upsert, but splits csv_path into chunk_size-row pieces
+    and runs one Bulk API job per chunk, then merges every chunk's
+    success/failed CSVs into one combined pair of report files.
+
+    Bulk API 2.0 gives callers no control over its own internal batch size,
+    and this org's UserPermissionsTrigger isn't bulk-safe past ~100-200
+    records/transaction (loops per-record instead of using bulk DML/SOQL) -
+    confirmed in practice: a single unchunked upsert of the full Users CSV
+    failed EVERY row with "Too many SOQL queries: 201" once enough rows got
+    past an earlier, unrelated DUPLICATE_USERNAME problem to actually reach
+    the trigger. deactivate_users.py already works around this identical
+    limit the same way, at the same chunk size (25) - see its own
+    CHUNK_SIZE comment for the exact governor-limit numbers behind that
+    choice; this is that same fix, generalized so any upsert can use it.
+    """
+    with open(csv_path, newline="", encoding="utf-8") as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        rows = list(reader)
+
+    os.makedirs(output_dir, exist_ok=True)
+    base = os.path.splitext(os.path.basename(csv_path))[0]
+    total_succeeded = total_failed = total_processed = 0
+    success_header = failed_header = None
+    success_rows: list[list[str]] = []
+    failed_rows: list[list[str]] = []
+    last_job_id = None
+
+    for i in range(0, len(rows), chunk_size):
+        chunk = rows[i:i + chunk_size]
+        chunk_num = i // chunk_size + 1
+        chunk_path = f"{output_dir}/{base}_chunk{chunk_num}.csv"
+        with open(chunk_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(header)
+            writer.writerows(chunk)
+
+        job = bulk_upsert(org_alias, sobject, chunk_path, external_id_field,
+                           wait_minutes=wait_minutes, output_dir=output_dir)
+        last_job_id = job.job_id or last_job_id
+        total_succeeded += job.succeeded
+        total_failed += job.failed
+        total_processed += job.processed
+
+        for path, header_slot, rows_slot in (
+            (job.success_records_path, "success_header", success_rows),
+            (job.failed_records_path, "failed_header", failed_rows),
+        ):
+            if path and os.path.exists(path):
+                with open(path, newline="", encoding="utf-8", errors="replace") as f:
+                    r = csv.reader(f)
+                    h = next(r, None)
+                    if h is not None:
+                        if header_slot == "success_header" and success_header is None:
+                            success_header = h
+                        elif header_slot == "failed_header" and failed_header is None:
+                            failed_header = h
+                    rows_slot.extend(r)
+
+    merged_success_path = merged_failed_path = None
+    if success_rows and success_header is not None:
+        merged_success_path = f"{output_dir}/{base}-success-records.csv"
+        with open(merged_success_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(success_header)
+            writer.writerows(success_rows)
+    if failed_rows and failed_header is not None:
+        merged_failed_path = f"{output_dir}/{base}-failed-records.csv"
+        with open(merged_failed_path, "w", newline="", encoding="utf-8") as f:
+            writer = csv.writer(f)
+            writer.writerow(failed_header)
+            writer.writerows(failed_rows)
+
+    return BulkJobResult(last_job_id, total_processed, total_succeeded, total_failed,
+                          merged_success_path, merged_failed_path)
+
+
 def bulk_update(org_alias: str, sobject: str, csv_path: str, wait_minutes: int = 10,
                  output_dir: str = "output") -> BulkJobResult:
     """Updates existing records. There is NO separate `sf data update bulk`
@@ -189,7 +270,6 @@ def _count_csv_data_rows(path: Optional[str]) -> Optional[int]:
     """Counts data rows (excluding header) in a CSV file, if it exists and
     is readable. Returns None if the path is None or the file can't be read
     - callers treat None as "unknown", not "zero"."""
-    import csv
     if not path or not os.path.exists(path):
         return None
     try:

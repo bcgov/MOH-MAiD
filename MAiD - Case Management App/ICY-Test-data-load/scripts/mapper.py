@@ -325,39 +325,100 @@ def drop_noncreateable_columns(df: pd.DataFrame, field_meta: Dict[str, dict],
     return df.drop(columns=to_drop), to_drop
 
 
-def fix_username_domain(df: pd.DataFrame, stale_token: str, replacement_suffix: str,
-                         username_column: str = "USERNAME") -> tuple[pd.DataFrame, int]:
-    """Replaces a stale/wrong-environment token (case-insensitive) in the
-    Username column with the real sandbox suffix used by this org's own
-    existing usernames (e.g. "sosehfdv").
+def drop_rows_by_username_domain(df: pd.DataFrame, domains: list[str],
+                                  username_column: str = "USERNAME") -> tuple[pd.DataFrame, int]:
+    """Drops rows whose Username's domain (the part after "@") ends with
+    any of `domains` (case-insensitive) - e.g. "chatter.salesforce.com" for
+    Salesforce's own auto-generated Chatter-Free identities
+    (`chatty.<orgid>.<hash>@chatter.salesforce.com`).
 
-    Source CSVs are static files that may have been prepared against a
-    different sandbox than the one actually being deployed to (e.g. a
-    UAT-specific persona username like "charlotte@icySOSEUATpersona.com"
-    sitting in a file now being loaded into a different sandbox). Salesforce
-    enforces username uniqueness GLOBALLY across every Salesforce org, not
-    just the one being deployed to, so loading such a file as-is against a
-    different org fails with DUPLICATE_USERNAME (the real UAT sandbox
-    already owns that exact string) rather than silently succeeding.
+    These aren't real test personas - they're a system-generated artifact of
+    the OLD org, tied to that org's literal Id. Renaming one via
+    ensure_username_domain_suffix would "succeed" (the string becomes
+    unique) but would load a meaningless placeholder account rather than a
+    genuine ICY persona, so they're excluded entirely instead.
 
-    IMPORTANT: replacement_suffix must be the org's actual sandbox name as
-    it appears in real existing usernames (e.g. queried from the admin
-    user's own Username), NOT the --org CLI alias string - the alias is
-    just a local nickname the operator chose at login time and is not
-    guaranteed to match Salesforce's real internal sandbox name (confirmed
-    in practice: alias "SOSEHFDEV" vs real suffix "sosehfdv" - close but not
-    identical). Using the alias directly would create new usernames with a
-    subtly wrong suffix instead of fixing the problem.
+    Returns (dataframe, count of rows dropped).
+    """
+    if username_column not in df.columns or not domains:
+        return df, 0
+    domains_lower = tuple(d.lower() for d in domains)
+    usernames = df[username_column].fillna("")
+    domain_part = usernames.apply(lambda u: u.rsplit("@", 1)[-1].lower() if "@" in u else "")
+    drop_mask = domain_part.apply(lambda d: d.endswith(domains_lower))
+    dropped = int(drop_mask.sum())
+    if not dropped:
+        return df, 0
+    return df[~drop_mask].reset_index(drop=True), dropped
+
+
+def ensure_username_domain_suffix(df: pd.DataFrame, suffix: str,
+                                   username_column: str = "USERNAME") -> tuple[pd.DataFrame, int]:
+    """Appends this org's real sandbox suffix (e.g. "sosehfdv") to every
+    Username that doesn't already end with it, guaranteeing every row is
+    unique to THIS org regardless of what stale domain it arrived with.
+
+    Source CSVs are static exports that can carry usernames from ANY number
+    of other real environments - production (`...@gov.bc.ca.bcmohmaid`),
+    a different sandbox (`...@moh.com.maiduat.fc`), even Salesforce's own
+    auto-generated Chatter-Free identities (`chatty.<orgid>...@chatter.
+    salesforce.com`). Salesforce enforces username uniqueness GLOBALLY
+    across every Salesforce org, not just the one being deployed to, so
+    loading any of these as-is fails with DUPLICATE_USERNAME - the real
+    owner of that exact string already exists somewhere else.
+
+    Earlier versions of this function replaced one specific known-bad
+    token (e.g. "SOSEUAT") - that only ever covers a stale domain someone
+    has already hit, and silently leaves any other one (production,
+    Chatter-Free, a third sandbox, ...) to fail the same way. Unconditionally
+    appending this org's suffix instead needs no enumeration and fixes every
+    shape at once. Idempotent by design: a username that already ends with
+    the suffix (e.g. a second run, or a persona already prepped for this
+    exact org) is left untouched rather than double-suffixed - EXCEPT for
+    casing, always forced to lowercase (see below), never left as-is.
+
+    IMPORTANT - the whole result is lowercased, not just the appended
+    suffix: Salesforce silently stores every new Username in lowercase
+    regardless of the case submitted at insert time (confirmed in practice
+    against a live org - a mixed-case source value like
+    "charlotte@icySOSEUATpersona.com" came back as
+    "charlotte@icysoseuatpersona.com" once queried back). An earlier version
+    of this function preserved the source CSV's original casing and only
+    lowercased the appended suffix - harmless on the very first run (a
+    plain insert), but on every run after that, Salesforce's Bulk API
+    upsert matches the external-id (Username) field case-SENSITIVELY, so
+    resending the original mixed-case value no longer matches the
+    already-lowercased stored record - it's treated as a new row to insert,
+    which then fails with DUPLICATE_USERNAME against the (case-insensitive)
+    uniqueness constraint on the very record it should have matched.
+    Lowercasing everything up front means every run computes the exact same
+    value Salesforce already has on file, so the upsert match always finds
+    it.
+
+    IMPORTANT: suffix must be the org's actual sandbox name as it appears in
+    real existing usernames (e.g. queried from the admin user's own
+    Username), NOT the --org CLI alias string - the alias is just a local
+    nickname the operator chose at login time and is not guaranteed to
+    match Salesforce's real internal sandbox name (confirmed in practice:
+    alias "SOSEHFDEV" vs real suffix "sosehfdv" - close but not identical).
+    Using the alias directly would create a new, still-wrong, differently
+    -shaped duplicate instead of fixing the problem.
 
     Returns (dataframe, count of rows whose Username actually changed).
     """
     if username_column not in df.columns:
         return df, 0
     out = df.copy()
-    pattern = re.compile(re.escape(stale_token), re.IGNORECASE)
-    replacement = replacement_suffix.lower()
+    marker = "." + suffix.lower()
+
+    def fix(u):
+        if not u:
+            return u
+        lowered = u.lower()
+        return lowered if lowered.endswith(marker) else f"{lowered}{marker}"
+
     before = out[username_column]
-    after = before.apply(lambda u: pattern.sub(replacement, u) if u else u)
+    after = before.apply(fix)
     changed = int((before != after).sum())
     out[username_column] = after
     return out, changed

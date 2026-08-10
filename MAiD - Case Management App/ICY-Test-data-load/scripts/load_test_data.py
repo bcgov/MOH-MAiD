@@ -72,6 +72,13 @@ import sf_runner
 CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "mapping_config.yaml")
 OUTPUT_DIR = "output"
 
+# Same governor-limit workaround as deactivate_users.py's CHUNK_SIZE (see its
+# comment for the exact "Too many DML statements"/"Too many SOQL queries"
+# numbers this org's non-bulk-safe UserPermissionsTrigger trips at) - a
+# single unchunked Users upsert hits the identical limit, since Bulk API 2.0
+# gives callers no control over its own internal batch size.
+USER_UPSERT_CHUNK_SIZE = 25
+
 
 def load_config() -> dict:
     with open(CONFIG_PATH) as f:
@@ -156,9 +163,9 @@ def _resolve_sandbox_suffix(org_alias: str) -> str:
     the alias is just a local nickname chosen at login time and is NOT
     guaranteed to match Salesforce's real internal sandbox name (confirmed
     in practice: alias 'SOSEHFDEV' vs real suffix 'sosehfdv' - close but not
-    identical). Used by fix_username_domain_token so a stale wrong-sandbox
-    username token gets replaced with the org's actual suffix, not a
-    look-alike string that would just create a different, still-wrong one."""
+    identical). Used by ensure_username_domain_suffix so every Username ends
+    up unique to this org, not a look-alike string that would just create a
+    different, still-wrong duplicate."""
     records = sf_runner.query(
         org_alias,
         "SELECT Username FROM User WHERE Username LIKE 'admin.user@%' AND UserRole.Name LIKE '%ICY%'"
@@ -167,7 +174,7 @@ def _resolve_sandbox_suffix(org_alias: str) -> str:
         raise ValueError(
             f"Could not uniquely resolve the admin user's Username in org '{org_alias}' "
             f"(matched {len(records)} record(s)) - needed to derive the real sandbox suffix "
-            f"for fix_username_domain_token."
+            f"for ensure_username_domain_suffix."
         )
     username = records[0]["Username"]
     if "." not in username:
@@ -290,6 +297,38 @@ def run_validate(org_alias: str) -> int:
                     f"field names never do, this will break the real Bulk API load unless "
                     f"it's declared as a lookup/special_lookup source_column or drop_columns entry"
                 )
+
+    print("\n== Checking export_key_field (bookkeeping/resume key) for blank values ==")
+    any_key_checked = False
+    for stage in cfg["stages"]:
+        ekf = stage.get("export_key_field")
+        path = stage.get("input_csv")
+        if not ekf or not path or not os.path.exists(path):
+            continue
+        any_key_checked = True
+        df = mapper.load_csv(path)
+        if ekf not in df.columns:
+            continue  # already reported as a missing-column problem above
+        blank_n = int((df[ekf] == "").sum())
+        if not blank_n:
+            continue
+        if ekf in stage.get("drop_rows_if_blank", []):
+            print(f"  [{stage['name']}] {blank_n} row(s) with blank '{ekf}' - "
+                  f"already covered by drop_rows_if_blank, safe")
+        else:
+            problems.append(
+                f"[{stage['name']}] {blank_n} row(s) have a blank export_key_field "
+                f"('{ekf}') - the resume-check query deliberately excludes blank "
+                f"keys, so these rows can NEVER be recognized as already-inserted "
+                f"on a re-run, and `deploy` would silently create a new duplicate "
+                f"record for them every single time. Add '{ekf}' to this stage's "
+                f"drop_rows_if_blank to skip them safely, or fix the source data "
+                f"if they shouldn't be blank."
+            )
+            print(f"  [{stage['name']}] {blank_n} row(s) with blank '{ekf}' - "
+                  f"NOT covered by drop_rows_if_blank, WILL duplicate on every re-run")
+    if not any_key_checked:
+        print("  (no stages use export_key_field)")
 
     print("\n== Checking target org field/object names (catches typos in mapping_config.yaml) ==")
     if not problems or all("Cannot connect" not in p for p in problems):
@@ -526,13 +565,18 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
         df = mapper.normalize_us_dates(mapper.load_csv(stage["input_csv"]))
         df = mapper.drop_owner_columns(df)
 
-        if stage.get("fix_username_domain_token"):
-            stale_token = stage["fix_username_domain_token"]
+        if stage.get("drop_username_domains"):
+            df, dropped = mapper.drop_rows_by_username_domain(df, stage["drop_username_domains"])
+            if dropped:
+                print(f"  [{name}] skipping {dropped} row(s) - Salesforce auto-generated "
+                      f"username domain(s) {stage['drop_username_domains']}, not real test personas")
+
+        if stage.get("ensure_username_domain_suffix"):
             sandbox_suffix = _resolve_sandbox_suffix(org_alias)
-            df, changed = mapper.fix_username_domain(df, stale_token, sandbox_suffix)
+            df, changed = mapper.ensure_username_domain_suffix(df, sandbox_suffix)
             if changed:
-                print(f"  [{name}] rewrote {changed} Username(s): replaced stale "
-                      f"'{stale_token}' with this org's real sandbox suffix '{sandbox_suffix}'")
+                print(f"  [{name}] appended this org's real sandbox suffix "
+                      f"'.{sandbox_suffix}' to {changed} Username(s) that didn't already end with it")
 
         if stage.get("rename_columns"):
             df = mapper.rename_columns(df, stage["rename_columns"])
@@ -641,7 +685,7 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
                 job = _skip_result([{"Old_ID": k} for k in ref_map])
                 print(f"  [{name}] found {reference_file} - {len(ref_map)} record(s) loaded "
                       f"into reference table '{stage['export_as']}', no upload needed this run.")
-                summary.append((name, job, 0))
+                summary.append((name, job, 0, None))
                 continue
 
             field_meta = sf_runner.describe_sobject_fields(org_alias, stage["sobject"])
@@ -698,6 +742,8 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
                     progress = json.load(f)
                 print(f"  [{name}] found {progress_path} - {len(progress)} record(s) already "
                       f"inserted in a previous partial run, skipping those")
+            already_had = len(progress)  # for the FINAL SUMMARY tag below - captured
+            # before this run's batches add anything new to `progress`.
 
             pending = df[~df[export_key_field].isin(progress.keys())].reset_index(drop=True)
             records = mapper.build_composite_tree_records(pending, stage["sobject"], export_key_field)
@@ -738,7 +784,20 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
                 "composite-tree", total_succeeded + total_failed, total_succeeded,
                 total_failed, None, progress_path if total_failed else None,
             )
-            summary.append((name, job, 0))
+            # FINAL SUMMARY tag mirrors the plain-insert wording below, even
+            # though the mechanism differs (local progress file vs org
+            # query) - without this, a fully-resumed run (0 new rows sent)
+            # printed the exact same line as a from-scratch first run,
+            # making it look like everything had just been re-inserted.
+            newly_this_run = total_succeeded - already_had
+            if already_had and newly_this_run == 0 and total_failed == 0:
+                tag_override = "  (already existed in org - insert skipped)"
+            elif already_had:
+                tag_override = (f"  ({already_had} pre-existing row(s) from a previous run, "
+                                 f"not re-inserted)")
+            else:
+                tag_override = ""
+            summary.append((name, job, 0, tag_override))
 
             if stage.get("export_as"):
                 reference_tables[stage["export_as"]] = dict(progress)
@@ -801,8 +860,9 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
             df.to_csv(mapped_path, index=False)
 
             if stage_type == "upsert_users":
-                job = sf_runner.bulk_upsert(org_alias, stage["sobject"], mapped_path,
-                                             stage["upsert_external_id"], output_dir=OUTPUT_DIR)
+                job = sf_runner.bulk_upsert_chunked(
+                    org_alias, stage["sobject"], mapped_path, stage["upsert_external_id"],
+                    chunk_size=USER_UPSERT_CHUNK_SIZE, output_dir=OUTPUT_DIR)
             elif stage_type == "insert":
                 job = sf_runner.bulk_insert(org_alias, stage["sobject"], mapped_path, output_dir=OUTPUT_DIR)
             elif stage_type == "update":
@@ -835,7 +895,7 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
             if export_key_field and bookkeeping_field and stage.get("export_as"):
                 existing = sf_runner.query(org_alias, scoped_query)
 
-        summary.append((name, job, skip_count))
+        summary.append((name, job, skip_count, None))
 
         if stage.get("export_as") and bookkeeping_field:
             ref_map = mapper.build_lookup_map(pd.DataFrame(existing), bookkeeping_field)
@@ -846,8 +906,10 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
     print("FINAL SUMMARY")
     print("=" * 60)
     total_ok, total_fail = 0, 0
-    for name, job, skip_count in summary:
-        if job.job_id is None:
+    for name, job, skip_count, tag_override in summary:
+        if tag_override is not None:
+            tag = tag_override
+        elif job.job_id is None:
             tag = "  (already existed in org - insert skipped)"
         elif skip_count:
             tag = f"  ({skip_count} pre-existing row(s) already in org, not re-inserted)"

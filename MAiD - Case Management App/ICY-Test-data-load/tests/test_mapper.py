@@ -101,17 +101,43 @@ def test_coerce_composite_tree_field_types_converts_bool_and_numeric():
     assert fixed[0]["attributes"] == {"type": "Account", "referenceId": "old1"}
 
 
-def test_fix_username_domain_replaces_stale_token_case_insensitively():
+def test_ensure_username_domain_suffix_appends_to_any_stale_domain():
     df = pd.DataFrame({"USERNAME": [
-        "charlotte@icySOSEUATpersona.com",
-        "admin.user@gov.bc.ca.bcmohmaid.soseuat",
-        "unrelated@example.com",
+        "charlotte@icySOSEUATpersona.com",             # old UAT-persona style
+        "yanping.cui@gov.bc.ca.bcmohmaid",             # bare production username
+        "someone@moh.com.maiduat.fc",                  # a different sandbox entirely
+        "admin.user@gov.bc.ca.bcmohmaid.sosehfdv",     # already correct - must be left alone
     ]})
-    fixed, changed = mapper.fix_username_domain(df, "SOSEUAT", "sosehfdv")
-    assert changed == 2
-    assert fixed.loc[0, "USERNAME"] == "charlotte@icysosehfdvpersona.com"
-    assert fixed.loc[1, "USERNAME"] == "admin.user@gov.bc.ca.bcmohmaid.sosehfdv"
-    assert fixed.loc[2, "USERNAME"] == "unrelated@example.com"  # no stale token, untouched
+    fixed, changed = mapper.ensure_username_domain_suffix(df, "sosehfdv")
+    assert changed == 3
+    # Whole result is lowercased (not just the appended suffix) - Salesforce
+    # itself silently lowercases every Username on store, so this must match
+    # that or a re-run's upsert can't match its own previously-inserted row
+    # (see the docstring for the DUPLICATE_USERNAME failure this caused).
+    assert fixed.loc[0, "USERNAME"] == "charlotte@icysoseuatpersona.com.sosehfdv"
+    assert fixed.loc[1, "USERNAME"] == "yanping.cui@gov.bc.ca.bcmohmaid.sosehfdv"
+    assert fixed.loc[2, "USERNAME"] == "someone@moh.com.maiduat.fc.sosehfdv"
+    assert fixed.loc[3, "USERNAME"] == "admin.user@gov.bc.ca.bcmohmaid.sosehfdv"  # unchanged
+
+
+def test_ensure_username_domain_suffix_is_case_insensitive_on_the_check_but_still_lowercases():
+    df = pd.DataFrame({"USERNAME": ["Already.Done@example.com.SOSEHFDV"]})
+    fixed, changed = mapper.ensure_username_domain_suffix(df, "sosehfdv")
+    # No suffix gets appended a second time (the check is case-insensitive),
+    # but the value is still normalized to lowercase, so `changed` is 1, not 0.
+    assert changed == 1
+    assert fixed.loc[0, "USERNAME"] == "already.done@example.com.sosehfdv"
+
+
+def test_drop_rows_by_username_domain_removes_chatter_free_placeholders():
+    df = pd.DataFrame({"USERNAME": [
+        "chatty.00d5w0000008aztuai.iwq4zdvsl5uf@chatter.salesforce.com",
+        "CHATTY.SOMEONE@Chatter.Salesforce.Com",  # case-insensitive match
+        "real.persona@gov.bc.ca.bcmohmaid.sosehfdv",
+    ]})
+    fixed, dropped = mapper.drop_rows_by_username_domain(df, ["chatter.salesforce.com"])
+    assert dropped == 2
+    assert list(fixed["USERNAME"]) == ["real.persona@gov.bc.ca.bcmohmaid.sosehfdv"]
 
 
 # --------------------------------------------------------------------------
