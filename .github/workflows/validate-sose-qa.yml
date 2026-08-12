@@ -8,7 +8,7 @@ on:
       - opened
       - synchronize
     paths:
-      - "force-app/**"
+      - "MAiD - Case Management App/force-app/**"
 
 jobs:
   validate-deployment:
@@ -26,5 +26,6 @@ jobs:
           echo ${{ secrets.SFDX_AUTH_URL_SOSE_QA }} | sf org login sfdx-url -s -u
 
       - name: "Validate"
+        working-directory: "MAiD - Case Management App"
         run: |
           sf project deploy validate -d ./force-app/ -l RunLocalTests -w 30
