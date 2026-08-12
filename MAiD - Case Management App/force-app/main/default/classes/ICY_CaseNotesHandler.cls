@@ -85,7 +85,7 @@ public with sharing class ICY_CaseNotesHandler {
         }
         Set<String> emails = new Set<String>();
         for(User u : [
-            SELECT Email
+            SELECT Email, UserRoleId, UserRole.DeveloperName
             FROM User
             WHERE IsActive = true
             AND Email != null
@@ -95,7 +95,14 @@ public with sharing class ICY_CaseNotesHandler {
                 WHERE GroupId IN :groupIds
             )
         ]) {
-            emails.add(u.Email);
+            // Exclude users assigned to the ICY role.
+            Boolean hasExcludedRole =
+            u.UserRoleId != null &&
+            u.UserRole.DeveloperName == System.Label.ICY_User_Role;
+
+            if (!hasExcludedRole) {
+                emails.add(u.Email);
+            }
         }
 
         return new List<String>(emails);
