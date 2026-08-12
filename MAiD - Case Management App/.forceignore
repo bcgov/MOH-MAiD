@@ -45,6 +45,14 @@ force-app/main/default/objects/Form_1645__c/fields/Practitioner__c.field-meta.xm
 force-app/main/default/objects/Form_RXMAR__c/fields/Administering_Prescriber_Full_Name__c.field-meta.xml
 force-app/main/default/objects/Form_RXMAR__c/fields/Prescribing_Practitioner__c.field-meta.xml
 
+# Adding the commented out reports from package.xml as we are not going to use it for validation in the future. 
+force-app/main/default/reports/MAiDCaseManagementReports/S1_2023_HC_Report_IV_and_IV_and_Oral.report-meta.xml
+force-app/main/default/reports/MAiDCaseManagementReports/S1_Admin_Substance_HC_2023Report.report-meta.xml
+force-app/main/default/reports/MAiDCaseManagementReports/S2_2023_HC_ReportOral_MAiD_P8M.report-meta.xml
+force-app/main/default/reports/MAiDCaseManagementReports/S5_2023_HC_Report_Withdrawal_lhD.report-meta.xml
+force-app/main/default/reports/MAiDCaseManagementReports/S6_2023_Health_CanadaIneligible_G9B.report-meta.xml
+force-app/main/default/reports/MAiDCaseManagementReports/S7_2023_HC_ReportDied_Prior_XPB.report-meta.xml
+
 force-app/main/default/objects/IDP_User_Registration_Permission_Set__mdt
 force-app/main/default/objects/IDP_User_Registration_User_Mapping__mdt
 force-app/main/default/customMetadata
