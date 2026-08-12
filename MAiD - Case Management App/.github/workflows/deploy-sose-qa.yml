@@ -1,0 +1,34 @@
+name: Deploy to SOSE-QA
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm_deploy:
+        description: "Deploy to SOSE-QA environment"
+        type: boolean
+        default: false
+        required: true
+
+jobs:
+  deployment:
+    if: ${{ github.event.inputs.confirm_deploy == 'true' }}
+    runs-on: ubuntu-latest
+    container:
+      image: salesforce/cli:latest-slim
+    steps:
+      - name: "Checkout source code"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "Authenticate using SFDX_AUTH_URL"
+        run: |
+          echo ${{ secrets.SFDX_AUTH_URL_SOSE_QA }} | sf org login sfdx-url -s -u
+
+      - name: "Validate"
+        run: |
+          sf project deploy validate -d ./force-app/ -l RunLocalTests -w 30
+
+      - name: "Deploy"
+        run: |
+          sf project deploy start -d ./force-app/ -l RunLocalTests -w 30
