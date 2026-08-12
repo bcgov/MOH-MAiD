@@ -171,6 +171,7 @@ private class ICY_CaseNotesHandlerTest {
         System.assertEquals( 1, emails.size(), 'Only non-ICY Role users should be returned.');
     }
 
+    // Creates or retrieves the User Role matching ICY_User_Role
     private static UserRole getOrCreateICYRole() {
 
         String icyRoleDeveloperName = System.Label.ICY_User_Role;
