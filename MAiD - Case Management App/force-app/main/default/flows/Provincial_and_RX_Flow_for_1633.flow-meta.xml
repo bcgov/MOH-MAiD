@@ -421,7 +421,7 @@
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>rule_64_check</name>
-            <conditionLogic>1 AND 2 AND 3</conditionLogic>
+            <conditionLogic>1 AND 2 AND 3 AND 4</conditionLogic>
             <conditions>
                 <leftValueReference>VarRX_administered_Date</leftValueReference>
                 <operator>EqualTo</operator>
@@ -441,6 +441,13 @@
                 <operator>EqualTo</operator>
                 <rightValue>
                     <elementReference>$Record.Date_of_MAiD__c</elementReference>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>Var1634_Practitioner</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <elementReference>ListCaseDetail.Practitioner_Name__c</elementReference>
                 </rightValue>
             </conditions>
             <connector>
@@ -1236,7 +1243,7 @@
             <label>Check if 1633 is ticked on 1634</label>
         </rules>
     </decisions>
-    <description>Rule 60 Updated</description>
+    <description>Rule 64 Updated</description>
     <environments>Default</environments>
     <interviewLabel>Provincial and RX Flow for 1633 {!$Flow.CurrentDateTime}</interviewLabel>
     <label>Provincial and RX Flow for 1633</label>
@@ -1284,6 +1291,10 @@
         <outputAssignments>
             <assignToReference>Var1634_MAiD_Administration_Date</assignToReference>
             <field>MAiD_Administration_Date__c</field>
+        </outputAssignments>
+        <outputAssignments>
+            <assignToReference>Var1634_Practitioner</assignToReference>
+            <field>Practitioner__c</field>
         </outputAssignments>
         <outputAssignments>
             <assignToReference>check_if_1633_is_ticked</assignToReference>
@@ -1508,6 +1519,7 @@
         <queriedFields>Federal_Safeguards__c</queriedFields>
         <queriedFields>Type</queriedFields>
         <queriedFields>X1633__c</queriedFields>
+        <queriedFields>Practitioner_Name__c</queriedFields>
     </recordLookups>
     <recordLookups>
         <name>GetRecordsForm1633</name>
@@ -1788,6 +1800,13 @@
     <variables>
         <name>Var1634_MAiD_Administration_Date</name>
         <dataType>Date</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+    </variables>
+    <variables>
+        <name>Var1634_Practitioner</name>
+        <dataType>String</dataType>
         <isCollection>false</isCollection>
         <isInput>false</isInput>
         <isOutput>false</isOutput>
