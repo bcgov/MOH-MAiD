@@ -100,8 +100,9 @@ public with sharing class ICY_CaseNotesHandler {
             u.UserRoleId != null &&
             u.UserRole.DeveloperName == System.Label.ICY_User_Role;
 
-        if (!hasExcludedRole) {
-            emails.add(u.Email);
+            if (!hasExcludedRole) {
+                emails.add(u.Email);
+            }
         }
 
         return new List<String>(emails);
