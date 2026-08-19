@@ -62,12 +62,54 @@ def run_validate(org_alias: str) -> int:
     problems = []
 
     print(f"== Checking org connection: {org_alias} ==")
+    connected = False
     try:
         org_info = sf_runner.check_org_connection(org_alias)
         print(f"  OK - connected as {org_info.get('username', '?')} ({org_info.get('instanceUrl', '?')})")
+        connected = True
     except Exception as e:
         problems.append(f"Cannot connect to org '{org_alias}': {e}")
         print(f"  FAILED: {e}")
+
+    print("\n== Checking target org is a sandbox (this tool must never run against Production) ==")
+    confirmed_sandbox = False
+    is_production = False
+    if not connected:
+        print("  SKIPPED - org connection failed above, cannot check sandbox status until that's fixed.")
+    else:
+        try:
+            if sf_runner.is_sandbox(org_alias):
+                print("  The auth/alias org where we are performing the data load is "
+                      "currently a sandbox environment. Please proceed with data load")
+                confirmed_sandbox = True
+            else:
+                is_production = True
+                problems.append(
+                    "The auth/alias org where we are performing the data load is currently "
+                    "a Production environment. Please change it to a Sandbox environment before "
+                    "proceeding with the data load."
+                )
+                print("  FAILED: The auth/alias org where we are performing the data load is "
+                      "currently a Production environment. Please change it to a Sandbox environment "
+                      "before proceeding with the data load.")
+        except Exception as e:
+            problems.append(f"Could not determine sandbox status for org '{org_alias}': {e}")
+            print(f"  FAILED: {e}")
+
+    if is_production:
+        # Stop immediately rather than running every remaining check (CSV,
+        # object/field describes, date formats, join coverage) against a
+        # CONFIRMED Production org - those are all read-only, but there's no
+        # reason to keep making live calls against the wrong org once we
+        # already know it's the wrong org, and burying this one critical
+        # problem inside a long list of unrelated object/field mismatches
+        # (production won't have these custom objects/fields either) would
+        # make the actual issue harder to spot, not easier.
+        print("\n" + "=" * 60)
+        print("VALIDATION FAILED - 1 problem(s) found:\n")
+        print(f"  - {problems[-1]}")
+        print("\nFix the above before running `deploy`.")
+        return 1
 
     print("\n== Checking input CSVs exist and columns match config ==")
     all_objects = [("account", cfg["account"]), ("case", cfg["case"])] + \
@@ -208,6 +250,8 @@ def run_validate(org_alias: str) -> int:
         print("\nReminder (manual step, not automated):")
         print("  Please have a human confirm Record Type Names on Account/Case")
         print("  look correct before deploying - see MAiD_-_Test_Data_Set_and_Procedure doc.")
+        if confirmed_sandbox:
+            print(f"\nConfirmed: target org '{org_alias}' is a Sandbox, not Production - safe to load test data.")
         return 0
 
 
@@ -221,6 +265,19 @@ def run_deploy(org_alias: str) -> int:
     cfg = load_config()
     flow_name = cfg["flow_api_name"]
     summary = []
+
+    # Hard safety gate, checked first and before anything else - this tool
+    # must never load test data into Production. `validate` checks this too,
+    # but nothing forces someone to run `validate` before `deploy`, so this
+    # has to be enforced here independently, not just recommended there.
+    print(f"== Checking target org is a sandbox: {org_alias} ==")
+    if not sf_runner.is_sandbox(org_alias):
+        print("\nThe auth/alias org where we are performing the data load is currently a "
+              "Production environment. Please change it to a Sandbox environment before proceeding "
+              "with the data load.")
+        return 1
+    print("  The auth/alias org where we are performing the data load is currently a "
+          "sandbox environment. Please proceed with data load")
 
     print(f"== Checking Flow status: {flow_name} ==")
     active_version_id = sf_runner.get_active_flow_version_id(org_alias, flow_name)

@@ -255,6 +255,18 @@ def query(org_alias: str, soql: str, use_tooling_api: bool = False) -> list[dict
     return json.loads(out)["result"]["records"]
 
 
+def is_sandbox(org_alias: str) -> bool:
+    """Returns whether the target org is a sandbox, via the standard
+    Organization.IsSandbox field - present and reliable on every Salesforce
+    org, not something that depends on custom config. Used as a hard safety
+    gate in both `validate` and `deploy`: this tool must never load test
+    data into Production."""
+    records = query(org_alias, "SELECT IsSandbox FROM Organization")
+    if not records:
+        raise SfCommandError("Organization query returned no rows - cannot determine sandbox status")
+    return bool(records[0].get("IsSandbox"))
+
+
 def get_active_flow_version_id(org_alias: str, flow_api_name: str) -> Optional[str]:
     """Looks up the Id of whichever Flow version is CURRENTLY active for this
     Flow, via the Tooling API. This is the specific version we must restore
