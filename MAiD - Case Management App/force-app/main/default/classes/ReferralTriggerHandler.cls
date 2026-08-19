@@ -113,4 +113,24 @@ public class ReferralTriggerHandler {
             update accountsToUpdate;
         }
   }
+    
+    public static void handleGeographicAreaChange(
+        List<Referral__c> newReferrals,
+        Map<Id, Referral__c> oldReferralMap
+        ){
+        Set<Id> changedReferralIds = new Set<Id>();
+    
+        for(Referral__c r : newReferrals){
+            Referral__c oldR = oldReferralMap.get(r.Id);
+    
+            if(oldR != null &&
+               oldR.ICY_Geographic_Area__c != r.ICY_Geographic_Area__c){
+                changedReferralIds.add(r.Id);
+            }
+        }
+    
+        if(!changedReferralIds.isEmpty()){
+            ICY_Referral_Controller.removePreviousAreaIntakeShare(changedReferralIds);
+        }
+    } 
 }
