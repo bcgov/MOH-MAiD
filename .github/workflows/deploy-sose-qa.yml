@@ -31,4 +31,4 @@ jobs:
 
       - name: "Deploy"
         run: |
-          sf project deploy start -d ./force-app/ -l RunLocalTests -w 30
+          sf project deploy start -d ./force-app/ -l RunLocalTests -w 30 --ignore-conflicts
