@@ -132,6 +132,52 @@ public without sharing class ICY_Referral_Controller {
         }
 
     }
-
     
+    //Remove old ICY Intake shares and update Intake Owner when Referral Geographic Area changes
+	public static void removePreviousAreaIntakeShare(Set<Id> referralIds){
+        if(referralIds == null || referralIds.isEmpty()) return;
+    
+        Map<Id, Referral__c> referralMap = new Map<Id, Referral__c>([
+            SELECT Id, OwnerId
+            FROM Referral__c
+            WHERE Id IN :referralIds
+        ]);
+    
+        Set<Id> intakeIds = new Set<Id>();
+        List<Intake__c> intakesToUpdate = new List<Intake__c>();
+    
+        for(Intake__c i : [
+            SELECT Id, Referral__c, OwnerId
+            FROM Intake__c
+            WHERE Referral__c IN :referralIds
+        ]){
+            intakeIds.add(i.Id);
+    
+            //Update Intake Owner to the new Referral Owner
+            if(referralMap.containsKey(i.Referral__c) &&
+               i.OwnerId != referralMap.get(i.Referral__c).OwnerId){
+    
+                i.OwnerId = referralMap.get(i.Referral__c).OwnerId;
+                intakesToUpdate.add(i);
+            }
+        }
+    
+        if(!intakesToUpdate.isEmpty()){
+            UPDATE intakesToUpdate;
+        }
+    
+        if(intakeIds.isEmpty()) return;
+    
+        List<Intake__Share> sharesToDelete = [
+            SELECT Id
+            FROM Intake__Share
+            WHERE ParentId IN :intakeIds
+            AND RowCause = 'Case_Team_Member_Share__c'
+        ];
+    
+        if(!sharesToDelete.isEmpty()){
+            DELETE sharesToDelete;
+        }
+    }
+            
 }

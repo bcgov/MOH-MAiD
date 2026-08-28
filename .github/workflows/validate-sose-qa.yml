@@ -8,7 +8,7 @@ on:
       - opened
       - synchronize
     paths:
-      - "force-app/**"
+      - "MAiD - Case Management App/force-app/**"
 
 jobs:
   validate-deployment:
@@ -27,4 +27,5 @@ jobs:
 
       - name: "Validate"
         run: |
+          cd "MAiD - Case Management App"
           sf project deploy validate -d ./force-app/ -l RunLocalTests -w 30

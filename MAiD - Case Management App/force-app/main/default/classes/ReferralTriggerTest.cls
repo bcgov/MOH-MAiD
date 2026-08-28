@@ -106,4 +106,69 @@ public class ReferralTriggerTest {
         System.assertEquals('9999-999-999', updatedCase.ICY_Ref_Personal_Health_Number__c);
         System.assertEquals('1985-12-25', updatedCase.ICY_Searchable_DOB__c);
     }
+    
+     @isTest
+    static void testRemovePreviousAreaIntakeShare(){
+
+        Id queueId =
+            ICY_Referral_Controller.getICYQueueId('Coast');
+
+        Referral__c ref = new Referral__c();
+        ref.ICY_Personal_Health_Number__c = '7777777777';
+        ref.Priority__c = 'High';
+        ref.OwnerId = queueId;
+        insert ref;
+
+        String intakeId =
+            ICY_Referral_Controller.createICYIntakeRecord(ref.Id);
+
+        Intake__c intake = [
+            SELECT Id,
+                   Referral__c,
+                   OwnerId
+            FROM Intake__c
+            WHERE Id = :intakeId
+        ];
+
+        Intake__Share intakeShare = new Intake__Share(
+            ParentId = intake.Id,
+            UserOrGroupId = UserInfo.getUserId(),
+            AccessLevel = 'Edit',
+            RowCause =
+                Schema.Intake__Share.RowCause.Case_Team_Member_Share__c
+        );
+
+        insert intakeShare;
+
+        System.assertEquals(
+            1,
+            [
+                SELECT COUNT()
+                FROM Intake__Share
+                WHERE ParentId = :intake.Id
+                AND RowCause =
+                    'Case_Team_Member_Share__c'
+            ]
+        );
+
+        Test.startTest();
+
+        ICY_Referral_Controller.removePreviousAreaIntakeShare(
+            new Set<Id>{ref.Id}
+        );
+
+        Test.stopTest();
+
+        System.assertEquals(
+            0,
+            [
+                SELECT COUNT()
+                FROM Intake__Share
+                WHERE ParentId = :intake.Id
+                AND RowCause =
+                    'Case_Team_Member_Share__c'
+            ]
+        );
+    }
+
 }
