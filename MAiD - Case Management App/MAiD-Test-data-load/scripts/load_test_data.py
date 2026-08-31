@@ -71,7 +71,7 @@ def run_validate(org_alias: str) -> int:
         problems.append(f"Cannot connect to org '{org_alias}': {e}")
         print(f"  FAILED: {e}")
 
-    print("\n== Checking target org is a sandbox (this tool must never run against Production) ==")
+    print("\n== Checking target org is a sandbox (this should never run against Production) ==")
     confirmed_sandbox = False
     is_production = False
     if not connected:
@@ -326,8 +326,9 @@ def run_deploy(org_alias: str) -> int:
     acc_field_meta = sf_runner.describe_sobject_fields(org_alias, acc_cfg["sobject"])
     acc_df, acc_dropped_cols = mapper.drop_noncreateable_columns(acc_df, acc_field_meta)
     if acc_dropped_cols:
-        print(f"  Dropping {len(acc_dropped_cols)} non-createable column(s) before insert: "
-              f"{', '.join(sorted(acc_dropped_cols))}")
+        # print(f"  Dropping {len(acc_dropped_cols)} non-createable column(s) before insert: "
+        #       f"{', '.join(sorted(acc_dropped_cols))}")
+        pass
 
     # Only ask the org about the College_IDs actually present in this CSV -
     # querying the whole Account table (as an earlier version did) also pulls
@@ -401,8 +402,9 @@ def run_deploy(org_alias: str) -> int:
             case_result.dataframe, case_field_meta
         )
         if case_dropped_cols:
-            print(f"  Dropping {len(case_dropped_cols)} non-createable column(s) before insert: "
-                  f"{', '.join(sorted(case_dropped_cols))}")
+            # print(f"  Dropping {len(case_dropped_cols)} non-createable column(s) before insert: "
+            #       f"{', '.join(sorted(case_dropped_cols))}")
+            pass
         case_mapped_path = f"{OUTPUT_DIR}/Case_mapped.csv"
         case_result.dataframe.to_csv(case_mapped_path, index=False)
         _report_unmatched("Case", case_result)
@@ -441,8 +443,9 @@ def run_deploy(org_alias: str) -> int:
         form_field_meta = sf_runner.describe_sobject_fields(org_alias, f["sobject"])
         result.dataframe, form_dropped_cols = mapper.drop_noncreateable_columns(result.dataframe, form_field_meta)
         if form_dropped_cols:
-            print(f"  {f['name']}: dropping {len(form_dropped_cols)} non-createable column(s) before "
-                  f"insert: {', '.join(sorted(form_dropped_cols))}")
+            # print(f"  {f['name']}: dropping {len(form_dropped_cols)} non-createable column(s) before "
+            #       f"insert: {', '.join(sorted(form_dropped_cols))}")
+            pass
 
         case_lk = next(lk for lk in f["lookups"] if lk["map"] == "case")
         form_case_ids = sorted({v for v in result.dataframe[case_lk["target_column"]] if v})
