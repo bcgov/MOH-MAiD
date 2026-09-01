@@ -5,8 +5,7 @@ Users -> Case Contact -> Account -> Referral -> Intake -> Case -> Case
 Member -> 5 child objects (YTS Transition Plan, YTS Have And Needs, YTS
 Goal Steps, Contribution, Notes, Document) -> 3 "Update" back-fill passes.
 
-Unlike the MAiD tool (which hardcodes each of its 6 objects directly in
-Python), this is a **generic, config-driven engine**: `mapping_config.yaml`
+This is a **generic, config-driven engine**: `mapping_config.yaml`
 defines an ordered list of "stages", and `load_test_data.py` executes
 whichever stage type each one declares. Adding or changing an object means
 editing the YAML, not the Python - this scales much better across ICY's ~13
@@ -46,10 +45,8 @@ and need no change). Find the `set_fields` blocks on the `Case` and
 
 Every custom object's `sobject:` value in `mapping_config.yaml` is inferred
 from CSV filenames and your screenshots (e.g. `Referral__c`, `Intake__c`,
-`ICY_Case_Member__c`, `YTS_Transition_Plan__c`) - **not confirmed against a
-live org** the way MAiD's eventually were. Expect `validate` to catch a
-typo or two on the first run, same as MAiD's `Form_RXMAR__c` situation -
-that's exactly what it's there to do.
+`ICY_Case_Member__c`, `YTS_Transition_Plan__c`). Expect `validate` to catch a
+typo or two on the first run.
 
 ### 4. Duplicate file: `ICY_Account.csv` vs `ICY_Acount.csv`
 
@@ -158,13 +155,20 @@ Step 8 — Deploy:
     python scripts/load_test_data.py deploy --org <org> --deliverability-confirmed
 ```
 
-`validate` checks org connectivity, every stage's CSV/column presence,
-unresolved manual TODOs (see above), and target org field/object names.
-`deploy` runs all 16 stages in order, matching MAiD's Flow-check behavior:
+`validate` checks org connectivity, that the target org is a Sandbox (not
+Production - see below), every stage's CSV/column presence, unresolved
+manual TODOs (see above), and target org field/object names.
+`deploy` runs all 16 stages in order:
 if `flow_api_name` is set and that Flow is active, it halts immediately
-before touching any data (same exact message wording as MAiD). ICY doesn't
+before touching any data. ICY doesn't
 appear to have an equivalent duplicate-prevention Flow - `flow_api_name` is
 currently `null`; fill it in if one exists.
+
+`deploy` also refuses to run at all against a Production org - checked via
+the standard `Organization.IsSandbox` field, independently in both
+`validate` and `deploy` (nothing forces someone to run `validate` first, so
+`deploy` can't just rely on that). This should never load test data into
+Production.
 
 `deploy` also refuses to run at all without `--deliverability-confirmed`.
 Salesforce has no API to read Setup > Deliverability > Access to Send Email,
@@ -189,8 +193,7 @@ a hardcoded Id:
   '%ICY%'`).
 - 3 named individuals from the source PDF's exempt list are resolved by
   their GUID username prefix, which stays identical across sandbox refreshes
-  of this org (only the domain suffix, e.g. `.sosehfdv` vs `.soseuat`,
-  changes) - so the same command works unchanged against any sandbox derived
+  of this org - so the same command works unchanged against any sandbox derived
   from this org.
 - Each exempt pattern must resolve to **exactly one** user, or the script
   refuses to run rather than risk deactivating (or failing to exempt) the
@@ -278,7 +281,7 @@ Bulk API 2.0, not a workaround.
   bytes that aren't valid UTF-8 (an accented character, likely from a
   Windows export). `mapper.load_csv()` now tries UTF-8, falls back to
   cp1252, then falls back to UTF-8 with invalid bytes replaced rather than
-  crashing - this fix has also been backported to the MAiD tool.
+  crashing.
 - **Intake's `CASE__C`** is intentionally left alone during Intake's own
   insert (Case doesn't exist yet) and correctly resolved later by
   `Intake_Update` - this was initially unclear from the source procedure
@@ -295,8 +298,7 @@ pytest tests/ -v
 ```
 
 8 tests, all running offline against real (trimmed) samples of your actual
-uploaded CSVs - no org needed. These focus on what's new/different from
-MAiD's already-proven test suite: `rename_columns`, the typo'd/inconsistent
+uploaded CSVs - no org needed. These focus the typo'd/inconsistent
 key-column names, the raw-Id-vs-name RecordType distinction, and the
 already-populated-but-stale cross-org Id columns in `Case.csv`.
 

@@ -1,16 +1,20 @@
 """
 mapper.py
 
-Pure data-transformation logic for the MAiD test-data load.
+Pure data-transformation logic for the ICY test-data load.
 No Salesforce/network calls live here on purpose - this module is fully
 unit-testable offline with plain CSV fixtures (see tests/test_mapper.py).
 
 Core idea:
-  - After inserting Accounts/Cases into the target org, we export {new Id, key}
-    pairs (key = College_ID for Account, PHN for Case).
+  - After inserting a stage's records into the target org, we export
+    {new Id, key} pairs - key is each row's OLD_ID/OD_ID/ID-style identity,
+    recovered either via a repurposed, confirmed-blank bookkeeping field
+    (see mapping_config.yaml's bookkeeping_field) or the Composite/SObject
+    Tree API's referenceId echo (composite_insert stages).
   - build_lookup_map() turns that export into a dict: key -> new Id
-  - apply_lookups() rewrites the specified columns in a Form/Case dataframe by
-    joining on that dict, replacing whatever stale ID was in the source CSV.
+  - apply_lookups() rewrites the specified columns in a LATER stage's
+    dataframe by joining on that dict, replacing whatever stale OLD-org Id
+    was in the source CSV.
 """
 from __future__ import annotations
 import re

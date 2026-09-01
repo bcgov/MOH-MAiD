@@ -23,6 +23,52 @@ class SfCommandError(RuntimeError):
     pass
 
 
+# --------------------------------------------------------------------------
+# Backend logging - lets validate/deploy keep a short, calm terminal
+# transcript (stage headers, per-stage succeeded/failed counts, FINAL
+# SUMMARY) while still capturing every diagnostic detail (resolved Ids,
+# dropped columns, unresolved-lookup warnings, exempt-list entries,
+# batch-by-batch progress, ...) in a file - so nothing is lost if something
+# fails, without needing to re-run against the org just to see what
+# happened.
+# --------------------------------------------------------------------------
+_log_file = None
+
+
+def open_log(path: str) -> None:
+    """Opens (or replaces) this run's backend log file - call once near the
+    start of a script's main(). Every log() call after this writes into it,
+    in addition to whatever it also prints to the console."""
+    global _log_file
+    if _log_file is not None:
+        _log_file.close()
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    _log_file = open(path, "w", encoding="utf-8")
+
+
+def close_log() -> None:
+    """Closes the current log file, if one is open. Safe to call even if
+    open_log() was never called."""
+    global _log_file
+    if _log_file is not None:
+        _log_file.close()
+        _log_file = None
+
+
+def log(msg: str, console: bool = True) -> None:
+    """Writes msg to the open backend log file (always, verbatim, one line),
+    and also prints it to the terminal unless console=False. This is the
+    ONLY place the console/log split is decided - callers just say whether
+    a given line belongs on screen or only in the backend file; nothing
+    about the message itself changes. If no log file is open (open_log()
+    was never called), this behaves exactly like a plain print()."""
+    if _log_file is not None:
+        _log_file.write(msg + "\n")
+        _log_file.flush()
+    if console:
+        print(msg)
+
+
 def _run_raw(cmd: list[str], cwd: Optional[str] = None) -> tuple[int, str, str]:
     """Runs cmd and returns (returncode, stdout, stderr) without raising,
     regardless of exit code - most callers want _run() below instead, which
@@ -341,6 +387,18 @@ def query(org_alias: str, soql: str, use_tooling_api: bool = False) -> list[dict
         cmd.append("--use-tooling-api")
     out = _run(cmd)
     return json.loads(out)["result"]["records"]
+
+
+def is_sandbox(org_alias: str) -> bool:
+    """Returns whether the target org is a sandbox, via the standard
+    Organization.IsSandbox field - present and reliable on every Salesforce
+    org, not something that depends on custom config. Used as a hard safety
+    gate in both `validate` and `deploy`: this should never load test
+    data into Production."""
+    records = query(org_alias, "SELECT IsSandbox FROM Organization")
+    if not records:
+        raise SfCommandError("Organization query returned no rows - cannot determine sandbox status")
+    return bool(records[0].get("IsSandbox"))
 
 
 def composite_tree_insert_batch(org_alias: str, sobject: str, records: list[dict],

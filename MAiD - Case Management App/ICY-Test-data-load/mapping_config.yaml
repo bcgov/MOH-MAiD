@@ -6,9 +6,7 @@
 #
 # *** HOW "OLD_ID -> new Id" REFERENCE TABLES ACTUALLY WORK ***
 #
-# Unlike MAiD (where Account/Case have real, pre-existing business-key
-# fields - College_ID__pc, PHN__c - that persist on the inserted record and
-# can be queried afterward), most ICY objects' `OLD_ID`/`OD_ID`/`ID` columns
+# Most ICY objects' `OLD_ID`/`OD_ID`/`ID` columns
 # are PURE CSV bookkeeping - never sent to the org at all - so there's
 # nothing to query for afterward unless we give ourselves a way to.
 #
@@ -19,8 +17,7 @@
 #    Intake, and Have_And_Needs: `OLDNAME__C` is confirmed 100% blank in
 #    every row of the real data, so it's safe to repurpose - the engine
 #    writes the OLD_ID-style value into it before insert, then queries it
-#    back afterward, same mechanism MAiD relies on, just on a repurposed
-#    field instead of a pre-existing business key.
+#    back afterward, just on a repurposed field instead of a pre-existing business key.
 #
 # 2. `type: composite_insert` (fully automated, no manual step) - for
 #    Account, Case, and YTS_Transition_Plan: no safe spare field exists on
@@ -70,7 +67,7 @@
 #    matches exactly one person if this ever runs against a very different
 #    org setup.
 
-flow_api_name: null  # ICY doesn't appear to have an equivalent duplicate-prevention Flow like MAiD's - confirm and fill in if one exists.
+flow_api_name: null  # ICY doesn't appear to have an equivalent duplicate-prevention Flow - confirm and fill in if one exists.
 
 stages:
   # ------------------------------------------------------------------
@@ -96,8 +93,7 @@ stages:
     # admin user's own old UAT username (would silently overwrite the real
     # admin's Profile if forced through), one is an exempt user's real name
     # under a completely different username (would create a duplicate
-    # account for that person instead of updating their real one), one
-    # belongs to the other tool's (MAiD) UAT sandbox, and two look like
+    # account for that person instead of updating their real one), and two look like
     # Salesforce's own auto-generated placeholder usernames. Rather than
     # fail the whole batch on REQUIRED_FIELD_MISSING or risk touching real
     # accounts unsafely, these rows are skipped entirely once ProfileId

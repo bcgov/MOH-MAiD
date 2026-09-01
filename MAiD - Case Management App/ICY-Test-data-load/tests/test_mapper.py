@@ -3,8 +3,7 @@ Offline unit tests for scripts/mapper.py (ICY version).
 
 Run with zero Salesforce/network dependency: `pytest tests/ -v`.
 The core join/lookup primitives (apply_lookups, build_lookup_map,
-build_scoped_query) are identical to the MAiD tool's already-proven
-versions; this suite focuses on what's NEW/different for ICY:
+build_scoped_query); this suite focuses on what's NEW/different for ICY:
 rename_columns, and the real-data quirks found while building this
 (non-UTF-8 CSVs, raw-Id-only RecordType columns, typo'd key columns).
 """
@@ -34,7 +33,7 @@ def test_rename_columns_leaves_unmapped_columns_untouched():
     assert list(renamed.columns) == ["Real_Field__c", "B"]
 
 
-def test_build_scoped_query_matches_maid_behavior():
+def test_build_scoped_query_wraps_values_in_an_in_clause():
     q = mapper.build_scoped_query("Case_Contact__c", "OLD_ID", ["a09X001", "a09X002"])
     assert "IN (" in q
     assert "a09X001" in q and "a09X002" in q

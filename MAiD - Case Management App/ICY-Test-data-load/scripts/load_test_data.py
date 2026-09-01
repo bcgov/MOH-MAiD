@@ -2,13 +2,12 @@
 """
 load_test_data.py (ICY)
 
-Generic, config-driven version of the MAiD data-load script. Where MAiD's
-script hardcoded each of its 6 objects directly in Python, ICY's chain is
-~13 objects long with circular dependencies (Case Contact/Referral/Intake
-get inserted WITHOUT their Case links first, then updated afterward once
-Case exists) - so this reads an ordered list of "stages" from
-mapping_config.yaml and executes whichever stage type each one declares.
-Adding/changing an object means editing the YAML, not the Python.
+Generic, config-driven data-load engine. ICY's chain is ~13 objects long
+with circular dependencies (Case Contact/Referral/Intake get inserted
+WITHOUT their Case links first, then updated afterward once Case exists) -
+so this reads an ordered list of "stages" from mapping_config.yaml and
+executes whichever stage type each one declares. Adding/changing an object
+means editing the YAML, not the Python.
 
   STEP 0 (manual): Verify Email Deliverability (Setup > Deliverability >
     Access level = 'All Email'). Salesforce exposes no API to read this
@@ -56,18 +55,30 @@ _check_blocked_stages) rather than run partway and fail confusingly later.
 
 Original CSVs under data/ are never modified. All derived/mapped CSVs and
 reference tables are written to output/, which is .gitignored.
+
+TERMINAL OUTPUT vs BACKEND LOG: the terminal only ever shows stage headers,
+each stage's final succeeded/failed line, hard-halt/gate messages, and the
+FINAL SUMMARY - a short, calm transcript that won't confuse or alarm someone
+unfamiliar with the tool. Every other diagnostic line (resolved Ids, dropped
+columns, unresolved-lookup warnings, batch-by-batch progress, ...) still
+gets written in full to a per-run backend log file under output/ (see
+sf_runner.log) - nothing is lost, it just isn't printed to the screen. If a
+stage shows a nonzero failed count, that log file is where to look for why.
 """
 from __future__ import annotations
 import argparse
 import json
 import os
 import sys
+from datetime import datetime
 import yaml
 import pandas as pd
 
 sys.path.insert(0, os.path.dirname(__file__))
 import mapper
 import sf_runner
+
+log = sf_runner.log  # shorthand - see sf_runner.log's docstring for the console/log-file split
 
 CONFIG_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "mapping_config.yaml")
 OUTPUT_DIR = "output"
@@ -111,8 +122,8 @@ def _resolve_special_lookups(org_alias: str, df, special_lookups: list, stage_na
             "map": map_name,
             "drop_source": sl.get("drop_source", True),
         })
-        print(f"  [{stage_name}] resolved {len(m)} {sl['query_sobject']} record(s) "
-              f"for {sl['source_column']} -> {sl['target_column']}")
+        log(f"  [{stage_name}] resolved {len(m)} {sl['query_sobject']} record(s) "
+            f"for {sl['source_column']} -> {sl['target_column']}", console=False)
 
     if not lookups_for_apply:
         return df, []
@@ -147,14 +158,19 @@ def _resolve_reference_lookups(df, lookups: list, reference_tables: dict, stage_
 
 
 def _print_unmatched(stage_name: str, unmatched: list):
+    """Backend-log-only by design - these are per-row details (up to 10
+    shown, "...and N more" beyond that) about rows the stage still
+    processed (blanked out, not dropped), not something that needs to
+    interrupt the terminal transcript. If a stage's failed count is 0 but
+    something still looks off, this is exactly what the log file holds."""
     if unmatched:
-        print(f"  WARNING [{stage_name}]: {len(unmatched)} row(s) had an unresolved lookup "
-              f"(blanked out, not dropped):")
+        log(f"  WARNING [{stage_name}]: {len(unmatched)} row(s) had an unresolved lookup "
+            f"(blanked out, not dropped):", console=False)
         for u in unmatched[:10]:
-            print(f"    row {u['row_index']}: {u['source_column']}='{u['source_value']}' "
-                  f"-> {u['target_column']} ({u['reason']})")
+            log(f"    row {u['row_index']}: {u['source_column']}='{u['source_value']}' "
+                f"-> {u['target_column']} ({u['reason']})", console=False)
         if len(unmatched) > 10:
-            print(f"    ... and {len(unmatched) - 10} more")
+            log(f"    ... and {len(unmatched) - 10} more", console=False)
 
 
 def _resolve_sandbox_suffix(org_alias: str) -> str:
@@ -225,15 +241,57 @@ def run_validate(org_alias: str) -> int:
     cfg = load_config()
     problems = []
 
-    print(f"== Checking org connection: {org_alias} ==")
+    log(f"== Checking org connection: {org_alias} ==")
+    connected = False
     try:
         org_info = sf_runner.check_org_connection(org_alias)
-        print(f"  OK - connected as {org_info.get('username', '?')}")
+        log(f"  OK - connected as {org_info.get('username', '?')}")
+        connected = True
     except Exception as e:
         problems.append(f"Cannot connect to org '{org_alias}': {e}")
-        print(f"  FAILED: {e}")
+        log(f"  FAILED: {e}")
 
-    print("\n== Checking for stages with no working reference-table mechanism ==")
+    log("\n== Checking target org is a sandbox (this should never run against Production) ==")
+    confirmed_sandbox = False
+    is_production = False
+    if not connected:
+        log("  SKIPPED - org connection failed above, cannot check sandbox status until that's fixed.")
+    else:
+        try:
+            if sf_runner.is_sandbox(org_alias):
+                log("  The auth/alias org where we are performing the data load is "
+                    "currently a sandbox environment. Please proceed with data load")
+                confirmed_sandbox = True
+            else:
+                is_production = True
+                problems.append(
+                    "The auth/alias org where we are performing the data load is currently "
+                    "a Production environment. Please change it to a Sandbox environment before "
+                    "proceeding with the data load."
+                )
+                log("  FAILED: The auth/alias org where we are performing the data load is "
+                    "currently a Production environment. Please change it to a Sandbox environment "
+                    "before proceeding with the data load.")
+        except Exception as e:
+            problems.append(f"Could not determine sandbox status for org '{org_alias}': {e}")
+            log(f"  FAILED: {e}")
+
+    if is_production:
+        # Stop immediately rather than running every remaining check (CSV,
+        # object/field describes, date formats, join coverage) against a
+        # CONFIRMED Production org - those are all read-only, but there's no
+        # reason to keep making live calls against the wrong org once we
+        # already know it's the wrong org, and burying this one critical
+        # problem inside a long list of unrelated object/field mismatches
+        # (production may not even have these custom objects/fields) would
+        # make the actual issue harder to spot, not easier.
+        log("\n" + "=" * 60)
+        log("VALIDATION FAILED - 1 problem(s) found:\n")
+        log(f"  - {problems[-1]}")
+        log("\nFix the above before running `deploy`.")
+        return 1
+
+    log("\n== Checking for stages with no working reference-table mechanism ==")
     blocked = _blocked_stages(cfg)
     if blocked:
         for s in blocked:
@@ -243,9 +301,9 @@ def run_validate(org_alias: str) -> int:
                 f"means and how to resolve it"
             )
     else:
-        print("  OK - every stage needing a reference table has a working bookkeeping_field.")
+        log("  OK - every stage needing a reference table has a working bookkeeping_field.")
 
-    print("\n== Checking for unresolved manual TODOs in mapping_config.yaml ==")
+    log("\n== Checking for unresolved manual TODOs in mapping_config.yaml ==")
     for stage in cfg["stages"]:
         for rt in stage.get("record_type_static_overrides", []):
             if not rt.get("developer_name"):
@@ -261,7 +319,7 @@ def run_validate(org_alias: str) -> int:
                     f"in manually with a real Salesforce Id before deploy"
                 )
 
-    print("\n== Checking input CSVs exist and configured columns are present ==")
+    log("\n== Checking input CSVs exist and configured columns are present ==")
     field_types_by_stage: dict[str, dict[str, dict]] = {}
     for stage in cfg["stages"]:
         path = stage.get("input_csv")
@@ -269,10 +327,10 @@ def run_validate(org_alias: str) -> int:
             continue
         if not os.path.exists(path):
             problems.append(f"[{stage['name']}] input CSV not found: {path}")
-            print(f"  [{stage['name']}] MISSING FILE: {path}")
+            log(f"  [{stage['name']}] MISSING FILE: {path}", console=False)
             continue
         df = mapper.load_csv(path)
-        print(f"  [{stage['name']}] {path} - {len(df)} rows, {len(df.columns)} columns")
+        log(f"  [{stage['name']}] {path} - {len(df)} rows, {len(df.columns)} columns", console=False)
 
         rename_map = stage.get("rename_columns", {})
         effective_cols = {rename_map.get(c, c) for c in df.columns}
@@ -298,7 +356,7 @@ def run_validate(org_alias: str) -> int:
                     f"it's declared as a lookup/special_lookup source_column or drop_columns entry"
                 )
 
-    print("\n== Checking export_key_field (bookkeeping/resume key) for blank values ==")
+    log("\n== Checking export_key_field (bookkeeping/resume key) for blank values ==")
     any_key_checked = False
     for stage in cfg["stages"]:
         ekf = stage.get("export_key_field")
@@ -313,8 +371,8 @@ def run_validate(org_alias: str) -> int:
         if not blank_n:
             continue
         if ekf in stage.get("drop_rows_if_blank", []):
-            print(f"  [{stage['name']}] {blank_n} row(s) with blank '{ekf}' - "
-                  f"already covered by drop_rows_if_blank, safe")
+            log(f"  [{stage['name']}] {blank_n} row(s) with blank '{ekf}' - "
+                f"already covered by drop_rows_if_blank, safe", console=False)
         else:
             problems.append(
                 f"[{stage['name']}] {blank_n} row(s) have a blank export_key_field "
@@ -325,12 +383,12 @@ def run_validate(org_alias: str) -> int:
                 f"drop_rows_if_blank to skip them safely, or fix the source data "
                 f"if they shouldn't be blank."
             )
-            print(f"  [{stage['name']}] {blank_n} row(s) with blank '{ekf}' - "
-                  f"NOT covered by drop_rows_if_blank, WILL duplicate on every re-run")
+            log(f"  [{stage['name']}] {blank_n} row(s) with blank '{ekf}' - "
+                f"NOT covered by drop_rows_if_blank, WILL duplicate on every re-run", console=False)
     if not any_key_checked:
-        print("  (no stages use export_key_field)")
+        log("  (no stages use export_key_field)", console=False)
 
-    print("\n== Checking target org field/object names (catches typos in mapping_config.yaml) ==")
+    log("\n== Checking target org field/object names (catches typos in mapping_config.yaml) ==")
     if not problems or all("Cannot connect" not in p for p in problems):
         for stage in cfg["stages"]:
             sobject = stage.get("sobject")
@@ -369,9 +427,9 @@ def run_validate(org_alias: str) -> int:
                         f"sobject '{sobject}' in org '{org_alias}'"
                     )
     else:
-        print("  SKIPPED - org connection failed above.")
+        log("  SKIPPED - org connection failed above.")
 
-    print("\n== Checking set_fields_from_query resolves to exactly one record in this org ==")
+    log("\n== Checking set_fields_from_query resolves to exactly one record in this org ==")
     if not problems or all("Cannot connect" not in p for p in problems):
         any_query = False
         for stage in cfg["stages"]:
@@ -398,14 +456,14 @@ def run_validate(org_alias: str) -> int:
                         f"exactly 1) - query: {query}"
                     )
                 else:
-                    print(f"  [{stage['name']}] '{sfq['target_column']}' resolves to "
-                          f"{records[0]['Id']} in org '{org_alias}'")
+                    log(f"  [{stage['name']}] '{sfq['target_column']}' resolves to "
+                        f"{records[0]['Id']} in org '{org_alias}'", console=False)
         if not any_query:
-            print("  (no stages use set_fields_from_query)")
+            log("  (no stages use set_fields_from_query)", console=False)
     else:
-        print("  SKIPPED - org connection failed above.")
+        log("  SKIPPED - org connection failed above.")
 
-    print("\n== Checking record_type_static_overrides resolves to exactly one ACTIVE RecordType ==")
+    log("\n== Checking record_type_static_overrides resolves to exactly one ACTIVE RecordType ==")
     if not problems or all("Cannot connect" not in p for p in problems):
         any_rt = False
         for stage in cfg["stages"]:
@@ -438,17 +496,17 @@ def run_validate(org_alias: str) -> int:
                         f"sharing the same DeveloperName)."
                     )
                 else:
-                    print(f"  [{stage['name']}] '{dev_name}' resolves to {records[0]['Id']} "
-                          f"in org '{org_alias}'")
+                    log(f"  [{stage['name']}] '{dev_name}' resolves to {records[0]['Id']} "
+                        f"in org '{org_alias}'", console=False)
         if not any_rt:
-            print("  (no stages use record_type_static_overrides with a filled-in developer_name)")
+            log("  (no stages use record_type_static_overrides with a filled-in developer_name)", console=False)
     else:
-        print("  SKIPPED - org connection failed above.")
+        log("  SKIPPED - org connection failed above.")
 
-    print("\n== Checking date field formats (org 'date' fields must end up YYYY-MM-DD - "
-          "bare M/D/YYYY is auto-converted at deploy time, anything else fails the real load) ==")
+    log("\n== Checking date field formats (org 'date' fields must end up YYYY-MM-DD - "
+        "bare M/D/YYYY is auto-converted at deploy time, anything else fails the real load) ==")
     if not field_types_by_stage:
-        print("  SKIPPED - org field types unavailable (see sobject/field check above).")
+        log("  SKIPPED - org field types unavailable (see sobject/field check above).")
     else:
         for stage in cfg["stages"]:
             path = stage.get("input_csv")
@@ -469,13 +527,13 @@ def run_validate(org_alias: str) -> int:
                         f"will fail the real Bulk API load"
                     )
                 elif convertible:
-                    print(f"  [{stage['name']}] column '{col}': {convertible} value(s) will be "
-                          f"auto-converted from M/D/YYYY to YYYY-MM-DD at deploy time")
+                    log(f"  [{stage['name']}] column '{col}': {convertible} value(s) will be "
+                        f"auto-converted from M/D/YYYY to YYYY-MM-DD at deploy time", console=False)
 
-    print("\n== Checking for non-createable columns (formula/system/FLS-restricted fields the "
-          "Bulk API would reject - these are dropped automatically at deploy time) ==")
+    log("\n== Checking for non-createable columns (formula/system/FLS-restricted fields the "
+        "Bulk API would reject - these are dropped automatically at deploy time) ==")
     if not field_types_by_stage:
-        print("  SKIPPED - org field types unavailable (see sobject/field check above).")
+        log("  SKIPPED - org field types unavailable (see sobject/field check above).")
     else:
         for stage in cfg["stages"]:
             path = stage.get("input_csv")
@@ -491,26 +549,28 @@ def run_validate(org_alias: str) -> int:
             flag = "updateable" if stage.get("type") == "update" else "createable"
             _, dropped = mapper.drop_noncreateable_columns(df, field_types, protect_columns=protect, flag=flag)
             if dropped:
-                print(f"  [{stage['name']}] {len(dropped)} column(s) will be dropped before "
-                      f"insert (not {flag} in this org): {', '.join(sorted(dropped))}")
+                log(f"  [{stage['name']}] {len(dropped)} column(s) will be dropped before "
+                    f"insert (not {flag} in this org): {', '.join(sorted(dropped))}", console=False)
 
-    print("\n" + "=" * 60)
+    log("\n" + "=" * 60)
     if problems:
-        print(f"VALIDATION FAILED - {len(problems)} problem(s) found:\n")
+        log(f"VALIDATION FAILED - {len(problems)} problem(s) found:\n")
         for p in problems:
-            print(f"  - {p}")
+            log(f"  - {p}")
         result = 1
     else:
-        print("VALIDATION PASSED - safe to run `deploy`.")
-        print("\nOther reminders (manual, not automated):")
-        print("  - Confirm which users were deactivated/exempted per the source procedure.")
+        log("VALIDATION PASSED - safe to run `deploy`.")
+        log("\nOther reminders (manual, not automated):")
+        log("  - Confirm which users were deactivated/exempted per the source procedure.")
+        if confirmed_sandbox:
+            log(f"\nConfirmed: target org '{org_alias}' is a Sandbox, not Production - safe to load test data.")
         result = 0
 
     # Always shown, pass or fail - Salesforce has no API to check this setting
     # (see the --deliverability-confirmed gate on `deploy`), so it's easy to
     # forget precisely because nothing here can enforce it automatically.
-    print("\nPlease check the following setting: Verify the Email Deliverability settings:")
-    print("  Setup > Deliverability > Access level = All email")
+    log("\nPlease check the following setting: Verify the Email Deliverability settings:")
+    log("  Setup > Deliverability > Access level = All email")
 
     return result
 
@@ -519,15 +579,28 @@ def run_validate(org_alias: str) -> int:
 # DEPLOY
 # --------------------------------------------------------------------------
 def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
+    # Hard safety gate, checked first and before anything else - this tool
+    # must never load test data into Production. `validate` checks this too,
+    # but nothing forces someone to run `validate` before `deploy`, so this
+    # has to be enforced here independently, not just recommended there.
+    log(f"== Checking target org is a sandbox: {org_alias} ==")
+    if not sf_runner.is_sandbox(org_alias):
+        log("\nThe auth/alias org where we are performing the data load is currently a "
+            "Production environment. Please change it to a Sandbox environment before proceeding "
+            "with the data load.")
+        return 1
+    log("  The auth/alias org where we are performing the data load is currently a "
+        "sandbox environment. Please proceed with data load")
+
     if not deliverability_confirmed:
-        print("DEPLOY HALTED - Email Deliverability has not been confirmed (nothing has")
-        print("been touched).\n")
-        print("Salesforce provides no API to read Setup > Deliverability > Access to Send")
-        print("Email, so this can't be checked automatically - it must be confirmed by hand")
-        print("once per org before the first deploy:")
-        print("  Setup > Deliverability > Access level = 'All Email'\n")
-        print("Once confirmed, re-run with --deliverability-confirmed:")
-        print(f"  python scripts/load_test_data.py deploy --org {org_alias} --deliverability-confirmed")
+        log("DEPLOY HALTED - Email Deliverability has not been confirmed (nothing has")
+        log("been touched).\n")
+        log("Salesforce provides no API to read Setup > Deliverability > Access to Send")
+        log("Email, so this can't be checked automatically - it must be confirmed by hand")
+        log("once per org before the first deploy:")
+        log("  Setup > Deliverability > Access level = 'All Email'\n")
+        log("Once confirmed, re-run with --deliverability-confirmed:")
+        log(f"  python scripts/load_test_data.py deploy --org {org_alias} --deliverability-confirmed")
         return 1
 
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -535,24 +608,24 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
 
     blocked = _blocked_stages(cfg)
     if blocked:
-        print("DEPLOY HALTED - the following stage(s) need a reference table but have no")
-        print("working bookkeeping_field to build one from (nothing has been touched):\n")
+        log("DEPLOY HALTED - the following stage(s) need a reference table but have no")
+        log("working bookkeeping_field to build one from (nothing has been touched):\n")
         for s in blocked:
-            print(f"  - {s['name']} (needs export_as='{s['export_as']}')")
-        print("\nSee the CRITICAL FINDING comment at the top of mapping_config.yaml for what")
-        print("this means and how to resolve it (adding a small custom field is recommended).")
+            log(f"  - {s['name']} (needs export_as='{s['export_as']}')")
+        log("\nSee the CRITICAL FINDING comment at the top of mapping_config.yaml for what")
+        log("this means and how to resolve it (adding a small custom field is recommended).")
         return 1
 
     flow_name = cfg.get("flow_api_name")
     if flow_name:
-        print(f"== Checking Flow status: {flow_name} ==")
+        log(f"== Checking Flow status: {flow_name} ==")
         active_version_id = sf_runner.get_active_flow_version_id(org_alias, flow_name)
         if active_version_id:
-            print(f"\nThe flow: {flow_name} is active and it prevents the dataload. "
-                  f"To begin the data load please de-activate this flow and once all the "
-                  f"data load work is done please activate it manually.")
+            log(f"\nThe flow: {flow_name} is active and it prevents the dataload. "
+                f"To begin the data load please de-activate this flow and once all the "
+                f"data load work is done please activate it manually.")
             return 1
-        print(f"  Confirmed: Flow '{flow_name}' is deactivated. Proceeding with data load.")
+        log(f"  Confirmed: Flow '{flow_name}' is deactivated. Proceeding with data load.")
 
     reference_tables: dict = {}
     summary = []
@@ -560,7 +633,7 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
     for stage in cfg["stages"]:
         name = stage["name"]
         stage_type = stage["type"]
-        print(f"\n== Preparing {name} ({stage_type}) ==")
+        log(f"\n== Preparing {name} ({stage_type}) ==")
 
         df = mapper.normalize_us_dates(mapper.load_csv(stage["input_csv"]))
         df = mapper.drop_owner_columns(df)
@@ -568,15 +641,17 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
         if stage.get("drop_username_domains"):
             df, dropped = mapper.drop_rows_by_username_domain(df, stage["drop_username_domains"])
             if dropped:
-                print(f"  [{name}] skipping {dropped} row(s) - Salesforce auto-generated "
-                      f"username domain(s) {stage['drop_username_domains']}, not real test personas")
+                log(f"  [{name}] skipping {dropped} row(s) - Salesforce auto-generated "
+                    f"username domain(s) {stage['drop_username_domains']}, not real test personas",
+                    console=False)
 
         if stage.get("ensure_username_domain_suffix"):
             sandbox_suffix = _resolve_sandbox_suffix(org_alias)
             df, changed = mapper.ensure_username_domain_suffix(df, sandbox_suffix)
             if changed:
-                print(f"  [{name}] appended this org's real sandbox suffix "
-                      f"'.{sandbox_suffix}' to {changed} Username(s) that didn't already end with it")
+                log(f"  [{name}] appended this org's real sandbox suffix "
+                    f"'.{sandbox_suffix}' to {changed} Username(s) that didn't already end with it",
+                    console=False)
 
         if stage.get("rename_columns"):
             df = mapper.rename_columns(df, stage["rename_columns"])
@@ -584,13 +659,13 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
         if stage.get("value_remap"):
             df = mapper.remap_values(df, stage["value_remap"])
             for col, value_map in stage["value_remap"].items():
-                print(f"  [{name}] remapped value(s) in '{col}': {value_map}")
+                log(f"  [{name}] remapped value(s) in '{col}': {value_map}", console=False)
 
         if stage.get("drop_columns"):
             existing = [c for c in stage["drop_columns"] if c in df.columns]
             if existing:
                 df = df.drop(columns=existing)
-                print(f"  [{name}] dropped column(s) with no automatic resolution: {existing}")
+                log(f"  [{name}] dropped column(s) with no automatic resolution: {existing}", console=False)
 
         if stage.get("special_lookups"):
             df, unmatched = _resolve_special_lookups(org_alias, df, stage["special_lookups"], name)
@@ -626,7 +701,8 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
                 )
             resolved_id = records[0]["Id"]
             df = mapper.set_static_fields(df, {rt["target_column"]: resolved_id})
-            print(f"  [{name}] resolved Record Type '{dev_name}' -> {resolved_id} for {rt['target_column']}")
+            log(f"  [{name}] resolved Record Type '{dev_name}' -> {resolved_id} for {rt['target_column']}",
+                console=False)
 
         if stage.get("lookups"):
             df, unmatched = _resolve_reference_lookups(df, stage["lookups"], reference_tables, name)
@@ -643,8 +719,8 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
                 dropped_n = int(blank_mask.sum())
                 if dropped_n:
                     df = df[~blank_mask].reset_index(drop=True)
-                    print(f"  [{name}] skipping {dropped_n} row(s) with blank '{col}' - "
-                          f"see mapping_config.yaml comment on this stage for why")
+                    log(f"  [{name}] skipping {dropped_n} row(s) with blank '{col}' - "
+                        f"see mapping_config.yaml comment on this stage for why", console=False)
 
         for sfq in stage.get("set_fields_from_query", []):
             query = sfq["query"]
@@ -658,8 +734,8 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
                 )
             resolved_id = records[0]["Id"]
             df = mapper.set_static_fields(df, {sfq["target_column"]: resolved_id})
-            print(f"  [{name}] resolved set_fields_from_query -> {resolved_id} for "
-                  f"{sfq['target_column']}")
+            log(f"  [{name}] resolved set_fields_from_query -> {resolved_id} for "
+                f"{sfq['target_column']}", console=False)
 
         if stage.get("set_fields"):
             for field, value in stage["set_fields"].items():
@@ -683,8 +759,11 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
                 ref_map = mapper.build_lookup_map(ref_df, "Old_ID", id_field="ID")
                 reference_tables[stage["export_as"]] = ref_map
                 job = _skip_result([{"Old_ID": k} for k in ref_map])
-                print(f"  [{name}] found {reference_file} - {len(ref_map)} record(s) loaded "
-                      f"into reference table '{stage['export_as']}', no upload needed this run.")
+                # console=True (not detail) - same reasoning as the bookkeeping_field
+                # full-skip line above: this IS the stage's entire outcome for this
+                # run, not supplementary detail alongside some other visible line.
+                log(f"  [{name}] found {reference_file} - {len(ref_map)} record(s) loaded "
+                    f"into reference table '{stage['export_as']}', no upload needed this run.")
                 summary.append((name, job, 0, None))
                 continue
 
@@ -692,8 +771,8 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
             df, dropped_cols = mapper.drop_noncreateable_columns(
                 df, field_meta, protect_columns={stage["export_key_field"]})
             if dropped_cols:
-                print(f"  [{name}] dropping {len(dropped_cols)} non-createable column(s) "
-                      f"before upload: {', '.join(sorted(dropped_cols))}")
+                log(f"  [{name}] dropping {len(dropped_cols)} non-createable column(s) "
+                    f"before upload: {', '.join(sorted(dropped_cols))}", console=False)
             # export_key_field (OLD_ID) is deliberately KEPT (not dropped) here,
             # unlike automated insert stages - Data Loader/Inspector will carry
             # it through unmapped into the success report, which is exactly
@@ -701,15 +780,15 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
             ready_path = f"{OUTPUT_DIR}/{name}_ready_for_manual_upload.csv"
             df.to_csv(ready_path, index=False)
 
-            print(f"\n{'=' * 60}")
-            print(f"MANUAL STEP REQUIRED: {name}")
-            print(f"{'=' * 60}")
-            print(f"1. Upload {ready_path} via Data Loader or Inspector (insert into {stage['sobject']}).")
-            print(f"2. Open the success report, keep only two columns: Old_ID and ID.")
-            print(f"3. Save it as: {reference_file}")
-            print(f"4. Re-run this exact command - it will pick up from here automatically:")
-            print(f"     python scripts/load_test_data.py deploy --org {org_alias} --deliverability-confirmed")
-            print(f"\nNothing else has been touched - stages before this one already completed.")
+            log(f"\n{'=' * 60}")
+            log(f"MANUAL STEP REQUIRED: {name}")
+            log(f"{'=' * 60}")
+            log(f"1. Upload {ready_path} via Data Loader or Inspector (insert into {stage['sobject']}).")
+            log(f"2. Open the success report, keep only two columns: Old_ID and ID.")
+            log(f"3. Save it as: {reference_file}")
+            log(f"4. Re-run this exact command - it will pick up from here automatically:")
+            log(f"     python scripts/load_test_data.py deploy --org {org_alias} --deliverability-confirmed")
+            log(f"\nNothing else has been touched - stages before this one already completed.")
             return 1
 
         # ---- composite_insert: same "no safe bookkeeping field" objects as
@@ -724,8 +803,8 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
             df, dropped_cols = mapper.drop_noncreateable_columns(
                 df, field_meta, protect_columns={stage["export_key_field"]})
             if dropped_cols:
-                print(f"  [{name}] dropping {len(dropped_cols)} non-createable column(s) "
-                      f"before insert: {', '.join(sorted(dropped_cols))}")
+                log(f"  [{name}] dropping {len(dropped_cols)} non-createable column(s) "
+                    f"before insert: {', '.join(sorted(dropped_cols))}", console=False)
 
             export_key_field = stage["export_key_field"]
 
@@ -740,8 +819,37 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
             if os.path.exists(progress_path):
                 with open(progress_path, encoding="utf-8") as f:
                     progress = json.load(f)
-                print(f"  [{name}] found {progress_path} - {len(progress)} record(s) already "
-                      f"inserted in a previous partial run, skipping those")
+
+                # Verify every cached Id still actually exists in the org before
+                # trusting it - a sandbox refresh (or any bulk cleanup, from any
+                # source) wipes real org data without touching this local file, so
+                # a stale entry here would otherwise be silently trusted forever:
+                # the row stays "skipped" even though it no longer exists, AND
+                # every downstream stage that looks up this reference table gets
+                # handed an Id that doesn't exist either. Confirmed in practice:
+                # this org's YTS_Transition_Plan__c table was emptied out from
+                # under this tool, but this file still claimed 2286
+                # already-inserted records - which then broke YTS_Have_And_Needs'
+                # lookup with INVALID_CROSS_REFERENCE_KEY for every single row,
+                # and similarly for Case/Case__c against Referral_Update/
+                # Intake_Update.
+                cached_ids = list(dict.fromkeys(progress.values()))  # de-dup, keep order
+                still_exists: set[str] = set()
+                for i in range(0, len(cached_ids), 200):  # SOQL IN-list, same chunk size as batching below
+                    chunk_ids = cached_ids[i:i + 200]
+                    id_list = ", ".join(f"'{cid}'" for cid in chunk_ids)
+                    found = sf_runner.query(org_alias, f"SELECT Id FROM {stage['sobject']} WHERE Id IN ({id_list})")
+                    still_exists.update(r["Id"] for r in found)
+                stale_keys = [k for k, v in progress.items() if v not in still_exists]
+                if stale_keys:
+                    for k in stale_keys:
+                        del progress[k]
+                    log(f"  [{name}] {len(stale_keys)} of {len(cached_ids)} cached record(s) in "
+                        f"{progress_path} no longer exist in the org (e.g. after a sandbox refresh "
+                        f"or unrelated cleanup) - will be re-inserted")
+                if progress:
+                    log(f"  [{name}] found {progress_path} - {len(progress)} record(s) confirmed "
+                        f"still present in org, skipping those", console=False)
             already_had = len(progress)  # for the FINAL SUMMARY tag below - captured
             # before this run's batches add anything new to `progress`.
 
@@ -765,20 +873,20 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
                         batch_succeeded += 1
                     else:
                         batch_failed += 1
-                        print(f"  [{name}] batch {batch_num}/{total_batches} FAILED "
-                              f"referenceId={r.get('referenceId')}: {r.get('errors')}")
+                        log(f"  [{name}] batch {batch_num}/{total_batches} FAILED "
+                            f"referenceId={r.get('referenceId')}: {r.get('errors')}", console=False)
                 total_failed += batch_failed
                 # Persisted after EVERY batch, not just at the end, so a
                 # failure partway through a large object still leaves
                 # earlier-succeeded batches safely resumable.
                 with open(progress_path, "w", encoding="utf-8") as f:
                     json.dump(progress, f)
-                print(f"  [{name}] batch {batch_num}/{total_batches}: "
-                      f"{batch_succeeded} succeeded, {batch_failed} failed")
+                log(f"  [{name}] batch {batch_num}/{total_batches}: "
+                    f"{batch_succeeded} succeeded, {batch_failed} failed", console=False)
 
             total_succeeded = len(progress)
-            print(f"  {total_succeeded} succeeded, {total_failed} failed "
-                  f"(cumulative, includes any prior partial run)")
+            log(f"  {total_succeeded} succeeded, {total_failed} failed "
+                f"(cumulative, includes any prior partial run)")
 
             job = sf_runner.BulkJobResult(
                 "composite-tree", total_succeeded + total_failed, total_succeeded,
@@ -801,8 +909,8 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
 
             if stage.get("export_as"):
                 reference_tables[stage["export_as"]] = dict(progress)
-                print(f"  [{name}] {len(progress)} record(s) available in reference table "
-                      f"'{stage['export_as']}'")
+                log(f"  [{name}] {len(progress)} record(s) available in reference table "
+                    f"'{stage['export_as']}'", console=False)
             continue
 
         # Write this stage's own OLD-org identity value into a real,
@@ -832,8 +940,8 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
         field_meta = sf_runner.describe_sobject_fields(org_alias, stage["sobject"])
         df, dropped_cols = mapper.drop_noncreateable_columns(df, field_meta, protect_columns=protect, flag=flag)
         if dropped_cols:
-            print(f"  [{name}] dropping {len(dropped_cols)} non-{flag} column(s) before "
-                  f"insert: {', '.join(sorted(dropped_cols))}")
+            log(f"  [{name}] dropping {len(dropped_cols)} non-{flag} column(s) before "
+                f"insert: {', '.join(sorted(dropped_cols))}", console=False)
 
         # ---- Resume/idempotency (only possible where bookkeeping_field
         # gives us a real field to check the org against) ----
@@ -849,13 +957,20 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
             existing = []
 
         if df.empty and skip_count:
-            print(f"  [{name}]: all {skip_count} row(s) already exist in org (by "
-                  f"{bookkeeping_field}) - skipping insert")
+            # console=True (unlike most detail lines in this function) - this
+            # IS the stage's outcome summary for the fully-resumed case, the
+            # same role the "N succeeded, M failed" line plays in the else
+            # branch below. Leaving it log-only made a fully-skipped stage
+            # print nothing but its header, looking exactly like it silently
+            # did nothing rather than correctly recognizing 259/259 already
+            # present.
+            log(f"  [{name}]: all {skip_count} row(s) already exist in org (by "
+                f"{bookkeeping_field}) - skipping insert")
             job = _skip_result(existing)
         else:
             if skip_count:
-                print(f"  [{name}]: {skip_count} row(s) already exist in org - "
-                      f"inserting only the remaining {len(df)}")
+                log(f"  [{name}]: {skip_count} row(s) already exist in org - "
+                    f"inserting only the remaining {len(df)}", console=False)
             mapped_path = f"{OUTPUT_DIR}/{name}_mapped.csv"
             df.to_csv(mapped_path, index=False)
 
@@ -875,8 +990,8 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
                 df["Id"] = df[match_key_column].map(id_map)
                 unmatched_ids = df["Id"].isna().sum()
                 if unmatched_ids:
-                    print(f"  WARNING [{name}]: {unmatched_ids} row(s) have no matching "
-                          f"previously-inserted record - these rows will be skipped.")
+                    log(f"  WARNING [{name}]: {unmatched_ids} row(s) have no matching "
+                        f"previously-inserted record - these rows will be skipped.", console=False)
                 df = df[df["Id"].notna()]
                 # match_key_column (e.g. OLD_ID) is bookkeeping-only, never a
                 # real Salesforce field - unlike insert stages, `update` had
@@ -890,7 +1005,7 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
             else:
                 raise ValueError(f"[{name}] unknown stage type: {stage_type}")
 
-            print(f"  {job.succeeded} succeeded, {job.failed} failed {_format_result_paths(job)}")
+            log(f"  {job.succeeded} succeeded, {job.failed} failed {_format_result_paths(job)}")
 
             if export_key_field and bookkeeping_field and stage.get("export_as"):
                 existing = sf_runner.query(org_alias, scoped_query)
@@ -900,11 +1015,12 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
         if stage.get("export_as") and bookkeeping_field:
             ref_map = mapper.build_lookup_map(pd.DataFrame(existing), bookkeeping_field)
             reference_tables[stage["export_as"]] = ref_map
-            print(f"  [{name}] {len(ref_map)} record(s) available in reference table '{stage['export_as']}'")
+            log(f"  [{name}] {len(ref_map)} record(s) available in reference table '{stage['export_as']}'",
+                console=False)
 
-    print("\n" + "=" * 60)
-    print("FINAL SUMMARY")
-    print("=" * 60)
+    log("\n" + "=" * 60)
+    log("FINAL SUMMARY")
+    log("=" * 60)
     total_ok, total_fail = 0, 0
     for name, job, skip_count, tag_override in summary:
         if tag_override is not None:
@@ -916,18 +1032,18 @@ def run_deploy(org_alias: str, deliverability_confirmed: bool) -> int:
         else:
             tag = ""
         row_succeeded = job.succeeded + (skip_count if job.job_id is not None else 0)
-        print(f"  {name:25s}  {row_succeeded:4d} succeeded  /  {job.failed:4d} failed{tag}")
+        log(f"  {name:25s}  {row_succeeded:4d} succeeded  /  {job.failed:4d} failed{tag}")
         total_ok += row_succeeded
         total_fail += job.failed
-    print("-" * 60)
-    print(f"  {'TOTAL':25s}  {total_ok:4d} succeeded  /  {total_fail:4d} failed")
+    log("-" * 60)
+    log(f"  {'TOTAL':25s}  {total_ok:4d} succeeded  /  {total_fail:4d} failed")
     if total_fail:
-        print(f"\nInspect the *-failed-records.csv files in {OUTPUT_DIR}/, fix the source rows, and re-run.")
+        log(f"\nInspect the *-failed-records.csv files in {OUTPUT_DIR}/, fix the source rows, and re-run.")
 
     if flow_name:
-        print("\n" + "=" * 60)
-        print(f"ACTION REQUIRED: please activate the Flow '{flow_name}' manually now.")
-        print("=" * 60)
+        log("\n" + "=" * 60)
+        log(f"ACTION REQUIRED: please activate the Flow '{flow_name}' manually now.")
+        log("=" * 60)
 
     return 0 if total_fail == 0 else 1
 
@@ -949,10 +1065,20 @@ def main():
     )
 
     args = parser.parse_args()
-    if args.mode == "validate":
-        sys.exit(run_validate(args.org))
-    elif args.mode == "deploy":
-        sys.exit(run_deploy(args.org, args.deliverability_confirmed))
+
+    # Every run gets its own timestamped backend log file under output/ -
+    # see the module docstring's "TERMINAL OUTPUT vs BACKEND LOG" note.
+    log_path = f"{OUTPUT_DIR}/{args.mode}_{args.org}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
+    sf_runner.open_log(log_path)
+    print(f"(Full detail is being written to {log_path} - only a short summary shows here.)")
+
+    try:
+        if args.mode == "validate":
+            sys.exit(run_validate(args.org))
+        elif args.mode == "deploy":
+            sys.exit(run_deploy(args.org, args.deliverability_confirmed))
+    finally:
+        sf_runner.close_log()
 
 
 if __name__ == "__main__":
