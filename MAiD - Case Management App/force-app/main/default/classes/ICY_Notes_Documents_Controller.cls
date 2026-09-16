@@ -29,7 +29,7 @@ public with sharing class ICY_Notes_Documents_Controller {
                             Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c,Note_source__c
                             FROM ICY_Notes__c WHERE Referral__c = :parentRecordId ORDER BY CreatedDate desc];
         else if(parentRecordId.getSobjectType() == Schema.Case.SObjectType){
-            String caseNotesQuery = 'SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Description__c,ICY_Meeting_Date__c, Referral_Subject__c,Mode_Location__c,Other_Mode_Location__c,Team_Member__c, CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name, Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c,Note_Source__c FROM ICY_Notes__c WHERE Case__c =:parentRecordId';
+            String caseNotesQuery = 'SELECT ID, Name, UserRecordAccess.HasEditAccess, UserRecordAccess.HasDeleteAccess, Description__c,ICY_Meeting_Date__c, Referral_Subject__c,Mode_Location__c,Other_Mode_Location__c,Team_Member__c,Other_Team_Member__c, CreatedDate, CreatedBy.Name, LastModifiedDate, LastModifiedBy.Name, Notes_Type__c,Other__c, Attendees__c, Length_of_Meeting__c,Note_Source__c FROM ICY_Notes__c WHERE Case__c =:parentRecordId';
             if(adminNotes){
                 caseNotesQuery += ' AND Notes_Type__c = :ADMIN_NOTES_TYPE';
             }else{
@@ -61,6 +61,7 @@ public with sharing class ICY_Notes_Documents_Controller {
             String createdDate = YTS_Utility.dateFormat_eeeeMMMdyyyy(n.CreatedDate);
             String badgeCSS = n.Notes_Type__c == 'Restricted'?'slds-theme_warning':'slds-theme_success';
             String teamMember = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Team_Member__c:'';
+            String otherTeamMember = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Other_Team_Member__c:'';
             String modeLocation = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Mode_Location__c:'';
             String otherModeLocation = parentRecordId.getSobjectType() == Schema.Case.SObjectType?n.Other_Mode_Location__c:'';
             String noteSource = String.isBlank(n.Note_Source__c) ?'Case':n.Note_Source__c;
@@ -96,6 +97,7 @@ public with sharing class ICY_Notes_Documents_Controller {
                     n.createdBy.Name,
                     badgeCSS,
                     teamMember,
+                    otherTeamMember,
                     modeLocation,
                     otherModeLocation,
                     noteSource,
@@ -619,6 +621,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         @AuraEnabled public String lastModifiedBy{get;set;}
         @AuraEnabled public String badgeCSS{get;set;}
         @AuraEnabled public String teamMember{get;set;}
+        @AuraEnabled public String otherTeamMember{get;set;}
         @AuraEnabled public String modeLocation{get;set;}
         @AuraEnabled public String otherModeLocation{get;set;}
         @AuraEnabled public String noteSource{get;set;}
@@ -634,7 +637,7 @@ public with sharing class ICY_Notes_Documents_Controller {
         
         public Note(String recordId, String name, String notesType, String subject,
                         String description, Date meetingDate,String attendees, Decimal lengthOfMeeting, String lastModifiedOn, String lastModifiedBy,
-                        String createdOn, String createdBy, String badgeCSS, String teamMember,String modeLocation,String othermodeLocation,String noteSource,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEditNoteTypePL,Boolean canEditAllAsOwner,Boolean canEditOtherAsOwner,Boolean canEditNoteTypePLCs,Boolean canEditAllAsOwnerCs,Boolean canEditOtherAsOwnerCs){
+                        String createdOn, String createdBy, String badgeCSS, String teamMember,String otherTeamMember,String modeLocation,String othermodeLocation,String noteSource,Boolean hasEditAccess, Boolean hasDeleteAccess,Boolean canEditNoteTypePL,Boolean canEditAllAsOwner,Boolean canEditOtherAsOwner,Boolean canEditNoteTypePLCs,Boolean canEditAllAsOwnerCs,Boolean canEditOtherAsOwnerCs){
             this.recordId = recordId;
             this.name = name;
             this.notesType = notesType;
@@ -649,6 +652,7 @@ public with sharing class ICY_Notes_Documents_Controller {
             this.createdBy = createdBy;
             this.badgeCSS = badgeCSS;
             this.teamMember = teamMember;
+            this.otherTeamMember = otherTeamMember;
             this.modeLocation = modeLocation;
             this.otherModeLocation = otherModeLocation;
             this.noteSource= noteSource;
