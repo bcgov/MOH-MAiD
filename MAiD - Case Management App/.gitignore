@@ -37,3 +37,10 @@ Thumbs.db
 ehthumbs.db
 [Dd]esktop.ini
 $RECYCLE.BIN/
+
+# MAiD Test data load
+MAiD - Case Management App/mdapi/unpackaged.zip
+MAiD - Case Management App/.sf/config.json
+MAiD - Case Management App/MAiD-Test-data-load/data/*.csv
+MAiD - Case Management App/MAiD-Test-data-load/output/
+MAiD - Case Management App/MAiD-Test-data-load/**/__pycache__/
