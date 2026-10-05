@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BASE – shared metadata. Deploy FIRST, before icy.xml or maid.xml. -->
+<!-- Generated from docs/package-split/package-split-mapping.csv (branch feature/package-split). -->
+<!-- NOTE: Standard objects Account/Case/PersonAccount/User are deliberately NOT listed as CustomObject members: in an SFDX project that would deploy every field/record type from icy/ and maid/ too. Their shared fields are listed individually below; the 4 object-meta.xml files (sharing model etc.) are deployed with: sf project deploy start --source-dir base -->
+<!-- NOTE: PermissionSet:Salesforce_Backup_Administrator grants fields from BOTH projects – deploy only to an org that has ICY and MAiD -->
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>AppSwitcher</members>
+        <name>AppMenu</name>
+    </types>
+    <types>
+        <members>Account.Fax</members>
+        <members>Account.PersonMobilePhone</members>
+        <members>Case.ClosedDate</members>
+        <members>Case.Gender__c</members>
+        <members>Case.ICY_Case_Owner__c</members>
+        <members>Case.IsEscalated</members>
+        <members>Case.ParentId</members>
+        <members>Case.PHN__c</members>
+        <members>Case.Practitioner_Name__c</members>
+        <members>Case.Province_or_Territory_that_issued_PHN__c</members>
+        <members>Case.Record_Type_Name__c</members>
+        <members>Case.Type</members>
+        <name>CustomField</name>
+    </types>
+    <types>
+        <members>All_System_Administrators</members>
+        <name>Group</name>
+    </types>
+    <types>
+        <members>Salesforce_Backup_Administrator</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>MoH Standard User</members>
+        <name>Profile</name>
+    </types>
+    <types>
+        <members>Activities</members>
+        <members>PlatformEncryption</members>
+        <name>Settings</name>
+    </types>
+    <types>
+        <members>AccountType</members>
+        <members>CaseOrigin</members>
+        <members>CasePriority</members>
+        <members>CaseReason</members>
+        <members>CaseStatus</members>
+        <members>CaseType</members>
+        <members>LeadSource</members>
+        <members>TaskSubject</members>
+        <name>StandardValueSet</name>
+    </types>
+    <types>
+        <members>Account.Required_Account_First_Name</members>
+        <name>ValidationRule</name>
+    </types>
+    <version>65.0</version>
+</Package>
