@@ -1,0 +1,149 @@
+# mapping_config.yaml
+# Single source of truth for the MAiD sandbox test-data load.
+# Defines load order, join keys, and which columns in each Form CSV need to be
+# rewritten with fresh (this-org) IDs before insert.
+#
+# Do not reuse IDs already present in these CSVs — they are from a different org
+# and are meaningless in the target sandbox. Every ID is re-derived at load time
+# by joining on College_ID (accounts) and PHN (cases), which are stable across orgs.
+
+flow_api_name: MAiD_Prevent_Duplicate_Phn
+
+# Step 1: Account — root of the chain, inserted first, no dependencies.
+account:
+  input_csv: data/Account.csv
+  sobject: Account
+  operation: insert
+  # "RecordTypeName" in Account.csv is a Salesforce Data Loader-only
+  # convenience column (its special "RecordType:Name" mapping option
+  # resolves it to the real RecordTypeId behind the scenes in that UI).
+  # The Bulk API CLI has no equivalent - it will reject this column outright
+  # ("Field name not found: RecordTypeName"). We replicate that resolution
+  # here: query the org's real RecordType Ids by Name/DeveloperName, write
+  # them into RecordTypeId, and drop the original column before insert.
+  record_type_mapping:
+    source_column: RecordTypeName
+    target_column: RecordTypeId
+  # Column that becomes the join key for every downstream object that needs
+  # a Practitioner/Pharmacist/Prescriber lookup.
+  export_key_field: College_ID__pc
+  export_query: "SELECT Id, College_ID__pc FROM Account"
+
+# Step 2: Case — depends on Account (Practitioner_Name__c lookup).
+case:
+  input_csv: data/Case.csv
+  sobject: Case
+  operation: insert
+  depends_on: account
+  lookups:
+    - source_column: College_ID__c        # column already in Case.csv
+      target_column: Practitioner_Name__c # column to overwrite with new Account Id
+      map: account                        # which exported mapping table to use
+  export_key_field: PHN__c
+  export_query: "SELECT Id, PHN__c FROM Case"
+
+# Steps 3-8: the six Form objects. All depend on Case (Case__c via PHN).
+# Several also depend on Account (practitioner/pharmacist/prescriber lookups via College ID).
+#
+# IMPORTANT: any source_column containing a space (e.g. "College ID") is a
+# spreadsheet-only helper column added for VLOOKUP purposes - it is NEVER a
+# real Salesforce API field name (those never contain spaces), and will be
+# rejected by the Bulk API with "Field name not found" if left in the CSV.
+# `drop_source: true` removes it after the lookup resolves, same fix as
+# Account's RecordTypeName above. Columns WITHOUT a space (PHN__c,
+# College_ID__c, Administering_Prescriber_College_ID__c) are real stored
+# fields in their own right and are kept.
+forms:
+  - name: Form_1632
+    input_csv: data/Form_1632.csv
+    sobject: Form_1632__c
+    operation: insert
+    depends_on: [case]
+    lookups:
+      - source_column: PHN__c
+        target_column: Case__c
+        map: case
+
+  - name: Form_1633
+    input_csv: data/Form_1633.csv
+    sobject: Form_1633__c
+    operation: insert
+    depends_on: [case, account]
+    lookups:
+      - source_column: PHN__c
+        target_column: Case__c
+        map: case
+      - source_column: "College ID"
+        target_column: Practitioner__c
+        map: account
+        drop_source: true
+
+  - name: Form_1634
+    input_csv: data/Form_1634.csv
+    sobject: Form_1634__c
+    operation: insert
+    depends_on: [case, account]
+    lookups:
+      - source_column: PHN__c
+        target_column: Case__c
+        map: case
+      - source_column: "College Id"
+        target_column: Practitioner__c
+        map: account
+        drop_source: true
+
+  - name: Form_1641
+    input_csv: data/Form_1641.csv
+    sobject: Form_1641__c
+    operation: insert
+    depends_on: [case, account]
+    lookups:
+      - source_column: PHN__c
+        target_column: Case__c
+        map: case
+      - source_column: College_ID__c
+        target_column: Dispensing_Pharmacist__c
+        map: account
+      - source_column: "Receiving_Pharmacist_College ID"
+        target_column: Receiving_Pharmacist__c
+        map: account
+        drop_source: true
+      - source_column: "Receiving_Prescriber_Name_College ID"
+        target_column: Receiving_Prescriber_Name__c
+        map: account
+        drop_source: true
+      - source_column: "Returning_Prescriber_Name_College ID"
+        target_column: Returning_Prescriber_Name__c
+        map: account
+        drop_source: true
+
+  - name: Form_1645
+    input_csv: data/Form_1645.csv
+    sobject: Form_1645__c
+    operation: insert
+    depends_on: [case, account]
+    lookups:
+      - source_column: PHN__c
+        target_column: Case__c
+        map: case
+      - source_column: "College ID"
+        target_column: Practitioner__c
+        map: account
+        drop_source: true
+
+  - name: Form_RxMAR
+    input_csv: data/Form_RxMAR.csv
+    sobject: Form_RXMAR__c
+    operation: insert
+    depends_on: [case, account]
+    lookups:
+      - source_column: PHN__c
+        target_column: Case__c
+        map: case
+      - source_column: "Prescribing_Practitioner College ID"
+        target_column: Prescribing_Practitioner__c
+        map: account
+        drop_source: true
+      - source_column: Administering_Prescriber_College_ID__c
+        target_column: Administering_Prescriber_Full_Name__c
+        map: account

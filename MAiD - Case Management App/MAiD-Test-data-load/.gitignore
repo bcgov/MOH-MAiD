@@ -1,0 +1,15 @@
+# Real/sensitive test data - CSVs are the source of truth kept locally or in a
+# secured location, never committed as plain patient-like data.
+data/*.csv
+
+# All generated output: mapped CSVs, success/failure job reports.
+# These contain the same sensitive fields and are also run-specific -
+# they don't belong in git history.
+output/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
