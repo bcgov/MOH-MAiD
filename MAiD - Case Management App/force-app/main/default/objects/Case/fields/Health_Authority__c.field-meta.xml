@@ -13,9 +13,9 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Vancouver Island Health Authority</fullName>
+                <fullName>Island Health Authority</fullName>
                 <default>false</default>
-                <label>Vancouver Island Health Authority</label>
+                <label>Island Health Authority</label>
             </value>
             <value>
                 <fullName>Fraser Health Authority</fullName>
