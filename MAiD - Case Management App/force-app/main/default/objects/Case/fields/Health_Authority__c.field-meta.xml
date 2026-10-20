@@ -37,6 +37,12 @@
                 <default>false</default>
                 <label>Northern Health Authority</label>
             </value>
+            <value>
+                <fullName>Vancouver Island Health Authority</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Vancouver Island Health Authority</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>
