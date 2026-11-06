@@ -139,7 +139,6 @@ public without sharing class ICY_CompleteIntakeCtrl {
 
                 }
                 try{
-                    createCaseMemberRecordForUser(c, referral);
                     updateSharingForCaseMembers(personAccount, c, referral);
                 }catch(Exception ex){
                     System.debug('$$ exception :'+ex);
