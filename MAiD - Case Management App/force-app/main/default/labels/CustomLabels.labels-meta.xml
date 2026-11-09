@@ -446,4 +446,11 @@ Supplemental</value>
         <shortDescription>ICY_User_Role</shortDescription>
         <value>ICY</value>
     </labels>
+    <labels>
+        <fullName>MAiD_DuplicatePHN</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>MAiD Duplicate PHN error</shortDescription>
+        <value>There is already an open case with the same PHN.</value>
+    </labels>
 </CustomLabels>
