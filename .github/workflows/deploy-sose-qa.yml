@@ -27,8 +27,10 @@ jobs:
 
       - name: "Validate"
         run: |
+          cd "MAiD - Case Management App"
           sf project deploy validate -d ./force-app/ -l RunLocalTests -w 30
 
       - name: "Deploy"
         run: |
+          cd "MAiD - Case Management App"
           sf project deploy start -d ./force-app/ -l RunLocalTests -w 30 --ignore-conflicts
