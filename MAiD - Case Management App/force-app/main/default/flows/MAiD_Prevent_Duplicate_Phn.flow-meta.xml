@@ -3,10 +3,13 @@
     <actionCalls>
         <name>update_case_phn</name>
         <label>update case phn</label>
-        <locationX>50</locationX>
-        <locationY>431</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <actionName>GetCasePHNandVerify</actionName>
         <actionType>apex</actionType>
+        <faultConnector>
+            <targetReference>MAIDDuplicatePHN</targetReference>
+        </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
             <name>caseList</name>
@@ -14,14 +17,27 @@
                 <elementReference>$Record</elementReference>
             </value>
         </inputParameters>
+        <nameSegment>GetCasePHNandVerify</nameSegment>
+        <offset>0</offset>
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>65.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <customErrors>
+        <name>MAIDDuplicatePHN</name>
+        <label>MAIDDuplicatePHN</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <customErrorMessages>
+            <errorMessage>{!$Label.MAiD_DuplicatePHN}</errorMessage>
+            <isFieldError>false</isFieldError>
+        </customErrorMessages>
+    </customErrors>
     <decisions>
         <name>Check_if_maid_case</name>
         <label>Check if maid case</label>
-        <locationX>182</locationX>
-        <locationY>323</locationY>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
             <name>Maid_Case</name>
@@ -62,7 +78,7 @@
     </processMetadataValues>
     <processType>AutoLaunchedFlow</processType>
     <start>
-        <locationX>56</locationX>
+        <locationX>0</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Check_if_maid_case</targetReference>
