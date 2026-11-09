@@ -26,6 +26,7 @@ public class GetCasePHNandVerify {
             
             List<String> maidDeathCaseType = new List<String>{'MAiD Death Foreseeable', 'MAiD Death Not Foreseeable', 'Discontinuation of Planning: Death Prior', 'MAiD Assessment of Eligibility'};
             List<String> maidPlanningCaseType = new List<String>{'Discontinuation of Planning: Ineligible', 'Discontinuation of Planning: Withdrawn Request'};
+            String originalWarning = caseList[0].Warning_Message_If_Any__c;
             
             if(maidDeathCaseType.contains(caseList[0].Type)){
                 existingCases  = [Select
@@ -41,6 +42,11 @@ public class GetCasePHNandVerify {
                             caseList[0].Prevent_save_on_duplicate_PHN__c = true;
                         }
                     }
+                }
+                if(existingCases == NULL || existingCases.isEmpty()){
+                    caseList[0].Warning_Message_If_Any__c = null;
+                }
+                if(caseList[0].Warning_Message_If_Any__c != originalWarning || caseList[0].Prevent_save_on_duplicate_PHN__c){
                     update caseList[0];
                 }
                 
@@ -64,9 +70,13 @@ public class GetCasePHNandVerify {
                     if (preventUpdate){
                         caseList[0].Prevent_save_on_duplicate_PHN__c = true;
                     }
+                }
+                if(existingCases == NULL || existingCases.isEmpty()){
+                    caseList[0].Warning_Message_If_Any__c = null;
+                }
+                if(caseList[0].Warning_Message_If_Any__c != originalWarning || caseList[0].Prevent_save_on_duplicate_PHN__c){
                     update caseList[0];
                 }
-                
             }
             
         } catch(Exception e){
