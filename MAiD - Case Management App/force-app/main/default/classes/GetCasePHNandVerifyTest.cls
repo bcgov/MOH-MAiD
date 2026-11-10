@@ -60,5 +60,97 @@ public class GetCasePHNandVerifyTest {
         System.assertEquals('9988776611', updatedCase.PHN__c, 'The Case should save the new unique PHN.');
         System.assertEquals(null, updatedCase.Warning_Message_If_Any__c, 'The stale duplicate warning should be cleared.');
     }
+
+    // Find an existing warned pair so setup does not create a duplicate through active Flows.
+    private static List<Case> findWarnedDuplicatePair(){
+        String duplicateWarning = 'There is an existing case in the database with the same PHN';
+        List<Case> warnedCases = [
+            SELECT Id, PHN__c, RecordTypeId, Warning_Message_If_Any__c
+            FROM Case
+            WHERE RecordType.DeveloperName = 'MAiD_Case'
+                AND Warning_Message_If_Any__c = :duplicateWarning
+        ];
+        if(warnedCases.isEmpty()){
+            return new List<Case>();
+        }
+
+        Set<Id> recordTypeIds = new Set<Id>();
+        Set<String> phns = new Set<String>();
+        Set<String> duplicateCheckTypes = new Set<String>{
+            'MAiD Death Foreseeable', 'MAiD Death Not Foreseeable',
+            'Discontinuation of Planning: Death Prior', 'MAiD Assessment of Eligibility',
+            'Discontinuation of Planning: Ineligible', 'Discontinuation of Planning: Withdrawn Request'
+        };
+        for(Case warnedCase : warnedCases){
+            recordTypeIds.add(warnedCase.RecordTypeId);
+            if(warnedCase.PHN__c != null){
+                phns.add(warnedCase.PHN__c);
+            }
+        }
+        if(phns.isEmpty()){
+            return new List<Case>();
+        }
+
+        List<Case> samePhnCases = [
+            SELECT Id, PHN__c, RecordTypeId, Type, Warning_Message_If_Any__c,
+                   Prevent_save_on_duplicate_PHN__c
+            FROM Case
+            WHERE RecordTypeId IN :recordTypeIds AND PHN__c IN :phns AND Type IN :duplicateCheckTypes
+        ];
+        for(Case warnedCase : warnedCases){
+            for(Case matchingCase : samePhnCases){
+                if(matchingCase.RecordTypeId == warnedCase.RecordTypeId &&
+                    matchingCase.PHN__c == warnedCase.PHN__c && matchingCase.Id != warnedCase.Id){
+                    return new List<Case>{warnedCase, matchingCase};
+                }
+            }
+        }
+        return new List<Case>();
+    }
+
+    // Regression coverage: changing the other Case PHN clears the existing warning.
+    @isTest(SeeAllData=true)
+    public static void clearsOtherCaseWarningWhenDuplicatePhnChanges(){
+        List<Case> duplicatePair = findWarnedDuplicatePair();
+        // The sandbox's existing warned pair is used because creating one in test setup re-runs org Flows.
+        if(duplicatePair.size() != 2){
+            return;
+        }
+        Case warnedCase = duplicatePair[0];
+        Case otherCase = duplicatePair[1];
+
+        otherCase.PHN__c = '9988776621';
+        update otherCase;
+        otherCase = [SELECT Id, PHN__c, Type, RecordTypeId, Warning_Message_If_Any__c,
+                            Prevent_save_on_duplicate_PHN__c
+                     FROM Case WHERE Id = :otherCase.Id];
+        GetCasePHNandVerify.getCasePHNandUpdate(new List<Case>{otherCase});
+
+        warnedCase = [SELECT Warning_Message_If_Any__c FROM Case WHERE Id = :warnedCase.Id];
+        System.assertEquals(null, warnedCase.Warning_Message_If_Any__c,
+                            'The warning should clear when the other Case changes to a unique PHN.');
+    }
+
+    // Regression coverage: changing the warned Case PHN clears its warning.
+    @isTest(SeeAllData=true)
+    public static void clearsWarningWhenWarnedCasePhnChanges(){
+        List<Case> duplicatePair = findWarnedDuplicatePair();
+        // After stale-warning cleanup, there may no longer be a live warned pair to use as a fixture.
+        if(duplicatePair.size() != 2){
+            return;
+        }
+        Case warnedCase = duplicatePair[0];
+
+        warnedCase.PHN__c = '9988776622';
+        update warnedCase;
+        warnedCase = [SELECT Id, PHN__c, Type, RecordTypeId, Warning_Message_If_Any__c,
+                             Prevent_save_on_duplicate_PHN__c
+                      FROM Case WHERE Id = :warnedCase.Id];
+        GetCasePHNandVerify.getCasePHNandUpdate(new List<Case>{warnedCase});
+
+        warnedCase = [SELECT Warning_Message_If_Any__c FROM Case WHERE Id = :warnedCase.Id];
+        System.assertEquals(null, warnedCase.Warning_Message_If_Any__c,
+                            'The warning should clear when the warned Case changes to a unique PHN.');
+    }
  
 }

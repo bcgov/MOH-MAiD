@@ -78,11 +78,63 @@ public class GetCasePHNandVerify {
                     update caseList[0];
                 }
             }
+            if(maidDeathCaseType.contains(caseList[0].Type) || maidPlanningCaseType.contains(caseList[0].Type)){
+                clearStaleDuplicateWarnings();
+            }
             
         } catch(Exception e){
             throw e;
         }
     }
-  
-    
+
+    // Clear a warning only when no other MAiD Case remains with the same record type and PHN.
+    private static void clearStaleDuplicateWarnings(){
+        String duplicateWarning = 'There is an existing case in the database with the same PHN';
+        List<Case> warnedCases = [
+            SELECT Id, PHN__c, RecordTypeId
+            FROM Case
+            WHERE RecordType.DeveloperName = 'MAiD_Case'
+                AND Warning_Message_If_Any__c = :duplicateWarning
+        ];
+        if(warnedCases.isEmpty()){
+            return;
+        }
+
+        Set<String> phns = new Set<String>();
+        Set<Id> recordTypeIds = new Set<Id>();
+        for(Case warnedCase : warnedCases){
+            if(warnedCase.PHN__c != null){
+                phns.add(warnedCase.PHN__c);
+                recordTypeIds.add(warnedCase.RecordTypeId);
+            }
+        }
+
+        Map<String, Set<Id>> matchingCaseIdsByRecordTypeAndPhn = new Map<String, Set<Id>>();
+        if(!phns.isEmpty()){
+            for(Case matchingCase : [
+                SELECT Id, PHN__c, RecordTypeId
+                FROM Case
+                WHERE RecordTypeId IN :recordTypeIds AND PHN__c IN :phns
+            ]){
+                String key = String.valueOf(matchingCase.RecordTypeId) + '|' + matchingCase.PHN__c;
+                if(!matchingCaseIdsByRecordTypeAndPhn.containsKey(key)){
+                    matchingCaseIdsByRecordTypeAndPhn.put(key, new Set<Id>());
+                }
+                matchingCaseIdsByRecordTypeAndPhn.get(key).add(matchingCase.Id);
+            }
+        }
+
+        List<Case> casesToClear = new List<Case>();
+        for(Case warnedCase : warnedCases){
+            String key = String.valueOf(warnedCase.RecordTypeId) + '|' + warnedCase.PHN__c;
+            Set<Id> matchingIds = matchingCaseIdsByRecordTypeAndPhn.get(key);
+            if(matchingIds == null || (matchingIds.size() == 1 && matchingIds.contains(warnedCase.Id))){
+                casesToClear.add(new Case(Id = warnedCase.Id, Warning_Message_If_Any__c = null));
+            }
+        }
+
+        if(!casesToClear.isEmpty()){
+            update casesToClear;
+        }
+    }   
 }
