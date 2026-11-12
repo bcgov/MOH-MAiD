@@ -12,14 +12,21 @@
         </faultConnector>
         <flowTransactionModel>CurrentTransaction</flowTransactionModel>
         <inputParameters>
-            <name>caseList</name>
+            <name>caseRecord</name>
             <value>
                 <elementReference>$Record</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
+            </value>
+        </inputParameters>
+        <inputParameters>
+            <name>oldPHN</name>
+            <value>
+                <elementReference>$Record__Prior.PHN__c</elementReference>
+                <inputConfiguratorMode>Resource</inputConfiguratorMode>
             </value>
         </inputParameters>
         <nameSegment>GetCasePHNandVerify</nameSegment>
         <offset>0</offset>
-        <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>65.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>

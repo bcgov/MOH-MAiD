@@ -1,140 +1,123 @@
 /************************************************************************************************
-* Name      : GetCasePHNandVerify                                                         
-* Author    : Ranadheer Reddy                                                                                                                                                                 *
-* Purpose   :"This Class is called from flow to verify if the duplicate PHN exists and stop the current record from saving if the case exists with same PHN"                                                                                     
+* Name      : GetCasePHNandVerify
+* Author    : Ranadheer Reddy
+* Purpose   : Verify duplicate PHNs and update Case warning/prevent-save fields.
 ************************************************************************************************/
 public class GetCasePHNandVerify {
 
-    /*    
-    ** Method Name: getCasePHNandUpdate
-    ** Created by: Ranadheer Reddy
-    ** Created Date: 07-26-2023
-    ** Parameters : caseList
-    ** Return Type :void
-    ** Description : this method is to verify if the duplicate PHN exists and stop the current record from saving if the case exists with same PHN
-    */
-    @InvocableMethod(label = 'update case record' description = 'verify case phn and update')
-    public static void getCasePHNandUpdate(List<Case> caseList){
+    private static final Set<String> MAID_DEATH_CASE_TYPES = new Set<String>{
+        'MAiD Death Foreseeable',
+        'MAiD Death Not Foreseeable',
+        'Discontinuation of Planning: Death Prior',
+        'MAiD Assessment of Eligibility'
+    };
 
-        try {
-            List<Case> existingCases;
-            Boolean preventUpdate = false;
-                
-            //Querying the existing cases which consists of same PHN of triggering record based on case type
-            //This process is never expected to be more than 1response. So we can avoid with looping the cases. The flow is never expected to pass more than 1 cases
-            //caseList[0] is being used because there will be only one record in this scenario
-            
-            List<String> maidDeathCaseType = new List<String>{'MAiD Death Foreseeable', 'MAiD Death Not Foreseeable', 'Discontinuation of Planning: Death Prior', 'MAiD Assessment of Eligibility'};
-            List<String> maidPlanningCaseType = new List<String>{'Discontinuation of Planning: Ineligible', 'Discontinuation of Planning: Withdrawn Request'};
-            String originalWarning = caseList[0].Warning_Message_If_Any__c;
-            
-            if(maidDeathCaseType.contains(caseList[0].Type)){
-                existingCases  = [Select
-                                    Id, PHN__c, Type
-                                    From Case 
-                                    Where RecordTypeId = :caseList[0].RecordTypeId AND Id != :caseList[0].Id AND PHN__C =: caseList[0].PHN__c ];
-                caseList[0].Prevent_save_on_duplicate_PHN__c = false;
-                if(existingCases!= NULL && !existingCases.isEmpty()){
-                    for(Case cs : existingCases){
-                        if(maidPlanningCaseType.contains(cs.Type)){
-                            caseList[0].Warning_Message_If_Any__c = 'There is an existing case in the database with the same PHN';
-                        }else if(maidDeathCaseType.contains(cs.Type)){
-                            caseList[0].Prevent_save_on_duplicate_PHN__c = true;
-                        }
-                    }
-                }
-                if(existingCases == NULL || existingCases.isEmpty()){
-                    caseList[0].Warning_Message_If_Any__c = null;
-                }
-                if(caseList[0].Warning_Message_If_Any__c != originalWarning || caseList[0].Prevent_save_on_duplicate_PHN__c){
-                    update caseList[0];
-                }
-                
-            }
-    
-            if(maidPlanningCaseType.contains(caseList[0].Type)){
-                existingCases  = [Select
-                                    Id, PHN__c, Type, Status
-                                    From Case 
-                                    Where RecordTypeId = :caseList[0].RecordTypeId AND Id != :caseList[0].Id AND PHN__C =: caseList[0].PHN__c ];
-                caseList[0].Prevent_save_on_duplicate_PHN__c = false;
-                if(existingCases!= NULL && !existingCases.isEmpty()){
-                    for(Case cs : existingCases){
-                        if(maidDeathCaseType.contains(cs.Type) || maidPlanningCaseType.contains(cs.Type)){
-                            caseList[0].Warning_Message_If_Any__c = 'There is an existing case in the database with the same PHN';
-                            if (maidPlanningCaseType.contains(cs.Type) && cs.Status != 'Closed'){
-                                preventUpdate = true;
-                            }
-                        }
-                    }
-                    if (preventUpdate){
-                        caseList[0].Prevent_save_on_duplicate_PHN__c = true;
-                    }
-                }
-                if(existingCases == NULL || existingCases.isEmpty()){
-                    caseList[0].Warning_Message_If_Any__c = null;
-                }
-                if(caseList[0].Warning_Message_If_Any__c != originalWarning || caseList[0].Prevent_save_on_duplicate_PHN__c){
-                    update caseList[0];
-                }
-            }
-            if(maidDeathCaseType.contains(caseList[0].Type) || maidPlanningCaseType.contains(caseList[0].Type)){
-                clearStaleDuplicateWarnings();
-            }
-            
-        } catch(Exception e){
-            throw e;
+    private static final Set<String> MAID_PLANNING_CASE_TYPES = new Set<String>{
+        'Discontinuation of Planning: Ineligible',
+        'Discontinuation of Planning: Withdrawn Request'
+    };
+
+    // Prevent the active after-save Flow from restoring a warning cleared during a transfer.
+    private static Set<Id> casesWithTransferredWarnings = new Set<Id>();
+
+    // Matches the active Flow's caseRecord and oldPHN inputs.
+    public class CasePHNRequest {
+        @InvocableVariable(required=true)
+        public Case caseRecord;
+
+        @InvocableVariable
+        public String oldPHN;
+
+        public CasePHNRequest() {
         }
     }
 
-    // Clear a warning only when no other MAiD Case remains with the same record type and PHN.
-    private static void clearStaleDuplicateWarnings(){
-        String duplicateWarning = 'There is an existing case in the database with the same PHN';
-        List<Case> warnedCases = [
-            SELECT Id, PHN__c, RecordTypeId
-            FROM Case
-            WHERE RecordType.DeveloperName = 'MAiD_Case'
-                AND Warning_Message_If_Any__c = :duplicateWarning
-        ];
-        if(warnedCases.isEmpty()){
+    @InvocableMethod(label='update case record' description='verify case phn and update')
+    public static void getCasePHNandUpdate(List<CasePHNRequest> requests) {
+        if (requests == null || requests.isEmpty() || requests[0]?.caseRecord?.Id == null) {
             return;
         }
 
-        Set<String> phns = new Set<String>();
-        Set<Id> recordTypeIds = new Set<Id>();
-        for(Case warnedCase : warnedCases){
-            if(warnedCase.PHN__c != null){
-                phns.add(warnedCase.PHN__c);
-                recordTypeIds.add(warnedCase.RecordTypeId);
-            }
-        }
+        try {
+            // Use persisted fields so a partial Flow record cannot null unrelated values.
+            Case currentCase = [SELECT Id, RecordTypeId, Type, Status, PHN__c,
+                                Prevent_save_on_duplicate_PHN__c, Warning_Message_If_Any__c
+                                FROM Case WHERE Id = :requests[0].caseRecord.Id LIMIT 1];
 
-        Map<String, Set<Id>> matchingCaseIdsByRecordTypeAndPhn = new Map<String, Set<Id>>();
-        if(!phns.isEmpty()){
-            for(Case matchingCase : [
-                SELECT Id, PHN__c, RecordTypeId
-                FROM Case
-                WHERE RecordTypeId IN :recordTypeIds AND PHN__c IN :phns
-            ]){
-                String key = String.valueOf(matchingCase.RecordTypeId) + '|' + matchingCase.PHN__c;
-                if(!matchingCaseIdsByRecordTypeAndPhn.containsKey(key)){
-                    matchingCaseIdsByRecordTypeAndPhn.put(key, new Set<Id>());
+            String oldPHN = requests[0].oldPHN;
+            Boolean phnChanged = oldPHN != currentCase.PHN__c;
+            String originalWarning = currentCase.Warning_Message_If_Any__c;
+            Boolean originalPreventSave = currentCase.Prevent_save_on_duplicate_PHN__c;
+            Map<Id, Case> casesToUpdate = new Map<Id, Case>();
+
+            // Blanks out the Warning message on the other case matching the old phn
+            if (phnChanged && !String.isBlank(oldPHN) && currentCase.Id != null) {
+                for (Case oldPHNCase : [ SELECT Id, Warning_Message_If_Any__c FROM Case WHERE RecordTypeId = :currentCase.RecordTypeId
+                                        AND Id != :currentCase.Id AND PHN__c = :oldPHN AND Warning_Message_If_Any__c != null
+                ]) {
+                    oldPHNCase.Warning_Message_If_Any__c = null;
+                    casesToUpdate.put(oldPHNCase.Id, oldPHNCase);
                 }
-                matchingCaseIdsByRecordTypeAndPhn.get(key).add(matchingCase.Id);
             }
-        }
-
-        List<Case> casesToClear = new List<Case>();
-        for(Case warnedCase : warnedCases){
-            String key = String.valueOf(warnedCase.RecordTypeId) + '|' + warnedCase.PHN__c;
-            Set<Id> matchingIds = matchingCaseIdsByRecordTypeAndPhn.get(key);
-            if(matchingIds == null || (matchingIds.size() == 1 && matchingIds.contains(warnedCase.Id))){
-                casesToClear.add(new Case(Id = warnedCase.Id, Warning_Message_If_Any__c = null));
+            // A warning on the changed Case is stale until the new PHN checks below find a duplicate.
+            if (phnChanged) {
+                currentCase.Warning_Message_If_Any__c = null;
             }
-        }
 
-        if(!casesToClear.isEmpty()){
-            update casesToClear;
+            Boolean currentIsDeathCase = MAID_DEATH_CASE_TYPES.contains(currentCase.Type);
+            Boolean currentIsPlanningCase = MAID_PLANNING_CASE_TYPES.contains(currentCase.Type);
+
+            // Shared duplicate check for Death and Planning Cases.
+            if (currentIsDeathCase || currentIsPlanningCase) {
+                List<Case> existingCases = [ SELECT Id, Type, Status, Warning_Message_If_Any__c FROM Case
+                                            WHERE RecordTypeId = :currentCase.RecordTypeId
+                                            AND Id != :currentCase.Id
+                                            AND PHN__c = :currentCase.PHN__c
+                ];
+
+                currentCase.Prevent_save_on_duplicate_PHN__c = false;
+
+                for (Case existingCase : existingCases) {
+                    Boolean existingIsDeathCase = MAID_DEATH_CASE_TYPES.contains(existingCase.Type);
+                    Boolean existingIsPlanningCase = MAID_PLANNING_CASE_TYPES.contains(existingCase.Type);
+
+                    Boolean shouldSetWarning = (currentIsDeathCase && existingIsPlanningCase) || (currentIsPlanningCase && existingIsDeathCase) ||
+                                                (currentIsPlanningCase && existingIsPlanningCase && existingCase.Status == 'Closed');
+                    if (shouldSetWarning &&
+                        !casesWithTransferredWarnings.contains(currentCase.Id)) {
+                        currentCase.Warning_Message_If_Any__c = Label.Duplicate_PHN_Warning;
+                    }
+
+                    if (currentIsDeathCase && existingIsDeathCase) {
+                        currentCase.Prevent_save_on_duplicate_PHN__c = true;
+                    }
+                    if (currentIsPlanningCase && existingIsPlanningCase &&
+                        existingCase.Status != 'Closed') {
+                        currentCase.Prevent_save_on_duplicate_PHN__c = true;
+                    }
+
+                    //On phn update, if existing case matching current phn has a warning, blank it out and track it for this transaction.
+                    Boolean isOppositeTypeMatch = (currentIsDeathCase && existingIsPlanningCase) || (currentIsPlanningCase && existingIsDeathCase);
+                    if (phnChanged && isOppositeTypeMatch && !String.isBlank(existingCase.Warning_Message_If_Any__c)) {
+                        existingCase.Warning_Message_If_Any__c = null;
+                        casesWithTransferredWarnings.add(existingCase.Id);
+                        casesToUpdate.put(existingCase.Id, existingCase);
+                    }
+                }
+            }
+
+            // Avoid no-op DML, including recursive Flow updates.
+            if (currentCase.Id != null &&
+                (currentCase.Warning_Message_If_Any__c != originalWarning ||
+                 currentCase.Prevent_save_on_duplicate_PHN__c != originalPreventSave)) {
+                casesToUpdate.put(currentCase.Id, currentCase);
+            }
+
+            if (!casesToUpdate.isEmpty()) {
+                update casesToUpdate.values();
+            }
+        } catch (Exception e) {
+            throw e;
         }
-    }   
+    }
 }
