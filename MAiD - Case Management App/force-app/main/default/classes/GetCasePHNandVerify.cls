@@ -39,18 +39,21 @@ public class GetCasePHNandVerify {
         }
 
         try {
-            // Use persisted fields so a partial Flow record cannot null unrelated values.
+            // Querying the various field values of the current case
             Case currentCase = [SELECT Id, RecordTypeId, Type, Status, PHN__c,
                                 Prevent_save_on_duplicate_PHN__c, Warning_Message_If_Any__c
                                 FROM Case WHERE Id = :requests[0].caseRecord.Id LIMIT 1];
 
+            //VAriables for different comparisions                            
             String oldPHN = requests[0].oldPHN;
             Boolean phnChanged = oldPHN != currentCase.PHN__c;
             String originalWarning = currentCase.Warning_Message_If_Any__c;
             Boolean originalPreventSave = currentCase.Prevent_save_on_duplicate_PHN__c;
             Map<Id, Case> casesToUpdate = new Map<Id, Case>();
 
-            // Blanks out the Warning message on the other case matching the old phn
+            // For update : Blanks out the Warning message on the other case matching the old phn.
+            // A maximum of two cases, one with type = Death and the other with type = Planning can exist per PHN.
+            // No two case of same type can exist per PHN
             if (phnChanged && !String.isBlank(oldPHN) && currentCase.Id != null) {
                 for (Case oldPHNCase : [ SELECT Id, Warning_Message_If_Any__c FROM Case WHERE RecordTypeId = :currentCase.RecordTypeId
                                         AND Id != :currentCase.Id AND PHN__c = :oldPHN AND Warning_Message_If_Any__c != null
@@ -63,21 +66,23 @@ public class GetCasePHNandVerify {
             if (phnChanged) {
                 currentCase.Warning_Message_If_Any__c = null;
             }
-
+            //Variables to check current case type
             Boolean currentIsDeathCase = MAID_DEATH_CASE_TYPES.contains(currentCase.Type);
             Boolean currentIsPlanningCase = MAID_PLANNING_CASE_TYPES.contains(currentCase.Type);
 
-            // Shared duplicate check for Death and Planning Cases.
+            // Logic only for Death and Planning type
             if (currentIsDeathCase || currentIsPlanningCase) {
                 List<Case> existingCases = [ SELECT Id, Type, Status, Warning_Message_If_Any__c FROM Case
                                             WHERE RecordTypeId = :currentCase.RecordTypeId
                                             AND Id != :currentCase.Id
                                             AND PHN__c = :currentCase.PHN__c
-                ];
+                                            AND (Type IN :MAID_DEATH_CASE_TYPES OR Type IN :MAID_PLANNING_CASE_TYPES)
+                                        ];
 
                 currentCase.Prevent_save_on_duplicate_PHN__c = false;
 
                 for (Case existingCase : existingCases) {
+                    //Check for the other case's type tied tot he same PHN
                     Boolean existingIsDeathCase = MAID_DEATH_CASE_TYPES.contains(existingCase.Type);
                     Boolean existingIsPlanningCase = MAID_PLANNING_CASE_TYPES.contains(existingCase.Type);
 
