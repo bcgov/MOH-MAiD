@@ -26,8 +26,8 @@
             </value>
         </inputParameters>
         <nameSegment>GetCasePHNandVerify</nameSegment>
-         <storeOutputAutomatically>true</storeOutputAutomatically>
         <offset>0</offset>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
     </actionCalls>
     <apiVersion>65.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
