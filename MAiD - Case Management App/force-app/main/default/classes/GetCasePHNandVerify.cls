@@ -50,6 +50,7 @@ public class GetCasePHNandVerify {
             String originalWarning = currentCase.Warning_Message_If_Any__c;
             Boolean originalPreventSave = currentCase.Prevent_save_on_duplicate_PHN__c;
             Map<Id, Case> casesToUpdate = new Map<Id, Case>();
+            Boolean warningWasAlreadyOnCurrentCase = originalWarning == Label.Duplicate_PHN_Warning;
 
             // For update : Blanks out the Warning message on the other case matching the old phn.
             // A maximum of two cases, one with type = Death and the other with type = Planning can exist per PHN.
@@ -92,6 +93,7 @@ public class GetCasePHNandVerify {
                     Boolean shouldSetWarning = (currentIsDeathCase && existingIsPlanningCase) || (currentIsPlanningCase && existingIsDeathCase) ||
                                                 (currentIsPlanningCase && existingIsPlanningCase && existingCase.Status == 'Closed');
                     if (shouldSetWarning &&
+                        (phnChanged || warningWasAlreadyOnCurrentCase) &&
                         !casesWithTransferredWarnings.contains(currentCase.Id)) {
                         currentCase.Warning_Message_If_Any__c = Label.Duplicate_PHN_Warning;
                     }

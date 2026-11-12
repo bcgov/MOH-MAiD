@@ -115,6 +115,87 @@ private class GetCasePHNandVerifyTest {
                             'The existing Death Case should not receive the new Case warning.');
     }
 
+    // A Case that did not already own the warning must not acquire it merely
+    // because an unrelated field is edited while the opposite-type duplicate exists.
+    @isTest
+    static void doesNotStampWarningOnPreviouslyUnwarnedCaseDuringUnrelatedUpdate() {
+        // Insert Death first, then Planning. The newly added Planning Case owns
+        // the warning, while the existing Death Case remains blank.
+        Case death = makeCase('1000000022', DEATH_TYPE, OPEN_STATUS);
+        insert death;
+        Case planning = makeCase('1000000022', PLANNING_TYPE, OPEN_STATUS);
+        insert planning;
+
+        death = reloadCase(death.Id);
+        planning = reloadCase(planning.Id);
+        System.assertEquals(null, death.Warning_Message_If_Any__c,
+                            'The original Death Case should remain unwarned.');
+        System.assertEquals(WARNING, planning.Warning_Message_If_Any__c,
+                            'The newly added Planning Case should own the warning.');
+
+        death.Description = 'Unrelated field edit';
+        Test.startTest();
+        update death;
+        Test.stopTest();
+
+        planning = reloadCase(planning.Id);
+        death = reloadCase(death.Id);
+        System.assertEquals(WARNING, planning.Warning_Message_If_Any__c,
+                            'The Case that already owned the warning should retain it.');
+        System.assertEquals(null, death.Warning_Message_If_Any__c,
+                            'An unrelated edit must not stamp a warning on the other Case.');
+    }
+
+    // AC4: preserve the warning on its current owner while the duplicate remains.
+    @isTest
+    static void preservesWarningOnUnrelatedUpdateWhileDuplicateExists() {
+        Case planning = makeCase('1000000023', PLANNING_TYPE, OPEN_STATUS);
+        insert planning;
+        Case death = makeCase('1000000023', DEATH_TYPE, OPEN_STATUS);
+        insert death;
+
+        death = reloadCase(death.Id);
+        System.assertEquals(WARNING, death.Warning_Message_If_Any__c,
+                            'The newly added Death Case should initially own the warning.');
+
+        death.Description = 'Unrelated field edit';
+        Test.startTest();
+        update death;
+        Test.stopTest();
+
+        death = reloadCase(death.Id);
+        planning = reloadCase(planning.Id);
+        System.assertEquals(WARNING, death.Warning_Message_If_Any__c,
+                            'The warning should remain while the duplicate exists.');
+        System.assertEquals(null, planning.Warning_Message_If_Any__c,
+                            'The warning should not move to the other Case.');
+    }
+
+    // AC3: after the duplicate is deleted, saving the original Case clears its stale warning.
+    @isTest
+    static void clearsWarningAfterDuplicateIsDeletedAndOriginalIsSaved() {
+        Case planning = makeCase('1000000024', PLANNING_TYPE, OPEN_STATUS);
+        insert planning;
+        Case death = makeCase('1000000024', DEATH_TYPE, OPEN_STATUS);
+        insert death;
+
+        death = reloadCase(death.Id);
+        System.assertEquals(WARNING, death.Warning_Message_If_Any__c,
+                            'The original Case should start with the duplicate warning.');
+
+        delete planning;
+
+        death = reloadCase(death.Id);
+        death.Description = 'Save after duplicate deletion';
+        Test.startTest();
+        update death;
+        Test.stopTest();
+
+        death = reloadCase(death.Id);
+        System.assertEquals(null, death.Warning_Message_If_Any__c,
+                            'The warning should clear after the duplicate is deleted.');
+    }
+
     // A warning on the existing Case transfers to the newly created Case without being re-stamped.
     @isTest
     static void newDuplicateCaseOwnsWarningAfterCreation() {
@@ -294,14 +375,15 @@ private class GetCasePHNandVerifyTest {
     static void transfersWarningFromPlanningToChangingDeathCase() {
         Case oldDeath = makeCase('1000000014', DEATH_TYPE, OPEN_STATUS);
         insert oldDeath;
+
+        // Create the target Death/Planning pair so the new Planning Case gets
+        // its warning through normal automation. Delete the target Death to
+        // leave the warned Planning Case as the opposite-type target.
+        Case targetDeath = makeCase('1000000015', DEATH_TYPE, OPEN_STATUS);
+        insert targetDeath;
         Case targetPlanning = makeCase('1000000015', PLANNING_TYPE, OPEN_STATUS);
         insert targetPlanning;
-
-        // Seed the target Case in the state described by the scenario: a lone opposite-type
-        // Case already has a warning. Creating a matching Death here would make the update
-        // correctly fail the separate same-type duplicate rule.
-        targetPlanning.Warning_Message_If_Any__c = WARNING;
-        update targetPlanning;
+        delete targetDeath;
 
         targetPlanning = reloadCase(targetPlanning.Id);
         System.assertEquals(WARNING, targetPlanning.Warning_Message_If_Any__c);
