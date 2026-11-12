@@ -54,7 +54,7 @@ public class GetCasePHNandVerify {
             // For update : Blanks out the Warning message on the other case matching the old phn.
             // A maximum of two cases, one with type = Death and the other with type = Planning can exist per PHN.
             // No two case of same type can exist per PHN
-            if (phnChanged && !String.isBlank(oldPHN) && currentCase.Id != null) {
+            if (phnChanged && !String.isBlank(oldPHN) ) {
                 for (Case oldPHNCase : [ SELECT Id, Warning_Message_If_Any__c FROM Case WHERE RecordTypeId = :currentCase.RecordTypeId
                                         AND Id != :currentCase.Id AND PHN__c = :oldPHN AND Warning_Message_If_Any__c != null
                 ]) {
@@ -63,15 +63,18 @@ public class GetCasePHNandVerify {
                 }
             }
             // A warning on the changed Case is stale until the new PHN checks below find a duplicate.
-            if (phnChanged) {
+            /*if (phnChanged) {
                 currentCase.Warning_Message_If_Any__c = null;
-            }
+            }*/
             //Variables to check current case type
             Boolean currentIsDeathCase = MAID_DEATH_CASE_TYPES.contains(currentCase.Type);
             Boolean currentIsPlanningCase = MAID_PLANNING_CASE_TYPES.contains(currentCase.Type);
 
             // Logic only for Death and Planning type
             if (currentIsDeathCase || currentIsPlanningCase) {
+                    if (phnChanged || currentCase.Warning_Message_If_Any__c == Label.Duplicate_PHN_Warning) {
+                        currentCase.Warning_Message_If_Any__c = null;
+                    }
                 List<Case> existingCases = [ SELECT Id, Type, Status, Warning_Message_If_Any__c FROM Case
                                             WHERE RecordTypeId = :currentCase.RecordTypeId
                                             AND Id != :currentCase.Id
@@ -112,9 +115,8 @@ public class GetCasePHNandVerify {
             }
 
             // Avoid no-op DML, including recursive Flow updates.
-            if (currentCase.Id != null &&
-                (currentCase.Warning_Message_If_Any__c != originalWarning ||
-                 currentCase.Prevent_save_on_duplicate_PHN__c != originalPreventSave)) {
+            if (currentCase.Warning_Message_If_Any__c != originalWarning ||
+                 currentCase.Prevent_save_on_duplicate_PHN__c != originalPreventSave) {
                 casesToUpdate.put(currentCase.Id, currentCase);
             }
 
