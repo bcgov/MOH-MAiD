@@ -26,6 +26,7 @@
             </value>
         </inputParameters>
         <nameSegment>GetCasePHNandVerify</nameSegment>
+         <storeOutputAutomatically>true</storeOutputAutomatically>
         <offset>0</offset>
     </actionCalls>
     <apiVersion>65.0</apiVersion>
