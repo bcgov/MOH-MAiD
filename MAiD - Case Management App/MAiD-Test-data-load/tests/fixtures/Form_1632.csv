@@ -1,0 +1,6 @@
+Case__c,PHN__c,Patient_Date_of_Birth__c,Consent_to_contact_for_organ_donor_info__c,Date_Written_Request_Received__c,IsDeleted,Practitioner__c,Proxy_for_Requestor_Initialed_Safeguards__c,Proxy_Signature_Date__c,Proxy_Signed_Date_for_Request__c,Requestor_initialed_Safeguards__c,Requestor_initiated_Safeguards__c,Requestor_Signature_Date__c,SystemModstamp,Witness_Initialed_Safeguards__c,Witness_Signature_Date__c,Witness_Signed__c
+500Aw00000Iu2cfIAB,8000000001,5/29/1937,Do not know,,FALSE,,FALSE,,,FALSE,TRUE,10/11/2022,2024-04-03T17:55:18.000Z,TRUE,10/11/2022,TRUE
+500Aw00000Iu2clIAB,8000000007,9/23/1946,,,FALSE,,FALSE,,,FALSE,TRUE,12/24/2022,2023-01-07T17:56:40.000Z,TRUE,12/24/2022,TRUE
+500Aw00000Iu2cqIAB,8000000012,6/9/1944,No,,FALSE,,FALSE,,,FALSE,TRUE,3/16/2023,2024-03-13T22:08:43.000Z,TRUE,3/16/2023,TRUE
+500Aw00000Iu2csIAB,8000000014,5/14/1932,No,,FALSE,,FALSE,,,FALSE,TRUE,6/9/2023,2024-02-05T19:12:38.000Z,TRUE,6/9/2023,TRUE
+500Aw00000Iu2ciIAB,8000000004,7/26/1927,Do not know,,FALSE,,FALSE,,,FALSE,TRUE,9/19/2023,2023-10-11T19:06:10.000Z,TRUE,9/19/2023,TRUE
