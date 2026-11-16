@@ -453,4 +453,12 @@ Supplemental</value>
         <shortDescription>MAiD Duplicate PHN error</shortDescription>
         <value>There is already an open case with the same PHN.</value>
     </labels>
+    <labels>
+        <fullName>Duplicate_PHN_Warning</fullName>
+        <categories>Case</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Duplicate PHN Warning</shortDescription>
+        <value>There is an existing case in the database with the same PHN</value>
+    </labels>
 </CustomLabels>
