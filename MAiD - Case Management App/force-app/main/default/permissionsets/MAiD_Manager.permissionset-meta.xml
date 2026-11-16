@@ -5384,6 +5384,10 @@
     </userPermissions>
     <userPermissions>
         <enabled>true</enabled>
+        <name>DeleteSalesforceFiles</name>
+    </userPermissions>
+    <userPermissions>
+        <enabled>true</enabled>
         <name>EditCaseComments</name>
     </userPermissions>
     <userPermissions>
