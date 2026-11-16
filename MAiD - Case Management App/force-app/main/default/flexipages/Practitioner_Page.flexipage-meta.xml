@@ -3,6 +3,12 @@
     <flexiPageRegions>
         <itemInstances>
             <componentInstance>
+                <componentName>icyAlertBannerOutage</componentName>
+                <identifier>c_icyAlertBannerOutage</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
                 <componentInstanceProperties>
                     <name>collapsed</name>
                     <value>false</value>
